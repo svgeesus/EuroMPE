@@ -78,8 +78,11 @@ Burn in at ±12V/1week. Check burn-in drift over some weeks, determine optimum b
 Worse than comparable (and cheaper!) references: 200 max μV/V (10.8 to 18V)
 
 Regulated bipolar 11V supply for Vref, with ample PSU buffer caps.
+
 LT1964-BYP LDO negative variable regulator, 340mV dropout, 200mA SOT-23
+
 LT1761 LDO positive reg, 300mV dropout, 100ma SOT-23
+
 These should hold supply voltage to ±11V ±5mV and cope with PSU droop down to ±11.4V, and provide some noise rejection.
 
 ## Pitch DAC
@@ -100,7 +103,9 @@ Vdd abs max -0.5V to +7V so good for 5V5. Base unit needs 2, second supplies 4 m
 ### Initial accuracy
 
 INL is ±0.5 (typ) ±1.0 (max) LSB for best (C) grade.
+
 DNL is ±0.5 (typ) ±1.0 (max) LSB
+
 Gain error (away from output voltage extremes) ±0.5 (typ) ±2 max) LSB
 with a gain error TC of ±0.1ppm/C.
 
@@ -176,8 +181,11 @@ Needs level shifter for SPI. Use second SPI channel on Teensy 3.6. One quad shif
 ### Initial accuracy
 
 INL ±1 / ±4 LSB
+
 DNL ±0.1 / ±0.5 LSB
+
 Gain error 500μV / 7.5mV
+
 Zero error 	1mV / 4mV
 
 At 0..5V, 1LSB is 306μV. INL implies 13ENOB (612μV). For standard resolution 7bit data, we only need 2^6 = 64 LSB accuracy which is 19.5mV. Especilly due to the huge max zero-scale offset, we are getting 11-12 ENOB with these mV offsets. TL071 with 3mV offset is now significant wrt typical (but not max) offsets.

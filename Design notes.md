@@ -51,6 +51,7 @@ Heater by variable current (or PWM??) through a resistor?
 - [Google group](https://groups.google.com/forum/#!forum/diy-pid-control)
 - [Autotune](https://playground.arduino.cc/Code/PIDAutotuneLibrary)
 - [Example: PID control for instrument "oven"](https://groups.google.com/forum/#!topic/diy-pid-control/4EY679OWbQw)
+- [simple resistive heater with transistor for current](https://www.alanzucconi.com/2016/08/02/arduino-heater-2/)
 
 ### Current / Load
 
@@ -217,6 +218,42 @@ Internal 2.5V VRef has good remperature stability (especially C grade) and long-
 Simplest to use a second Teensy (LC or possibly 3.2) to drive the display and handle user interaction. That keeps the code and control flow separate, also frees up an SPI bus for controlling the display. Use I2C or Serial to send commands to the main Teensy 3.6, primarily to go into calibration mode.
 
 The 3.2/LC can also handle oven control duties.
+
+## MIDI decoding & DAC driving
+
+Teensy 3.6, because it has two separate SPI busses easily acessible. The speed will also likely help when driving a lot of DACs ( 1 × 16bit on one bus, 5 8 × 14bit on the other). Fast single-precision float allows all frequency calculations to be done in float, then rounded for output to DACs.
+
+Teensy 3.6 uses about 80 mA.
+
+### MIDI connections
+
+Primary interface is likely to be as a USB MIDI device, using the Teensy 3.x USB MIDI implementation. That connection requires a host, such as a computer running a DAW.
+
+Secondary interface could be DIN MIDI input, using the Arduino MIDI library and an optocoupler.
+
+Third one could be USB Host MIDI: new in Teensy 3.6 with a separate USB Host connection port.
+
+All three should register (the same) callbacks to allow input from any of the threee interfaces. All running at once? or switching between then from front panel.
+
+### MPE handling
+
+Teensy MIDI library is low-level. A higher level should be built on top, to provide the following (not specific to MPE):
+
+- handling of 14-bit MIDI CC with paired CCs (HR callbacks)
+- handling of RPN (all registered ones)
+- handling  NRPN (callback)
+- handling of tuning request and tuning dump
+- handling of HR velocity prefix
+- handling pitchbend range setting, and handling pitchbend taking into account default (MPE) and non-default range settings
+
+and in addition (for MPE):
+
+- zone setting (suggest it allows only a single zone, the latest set)
+- handling the extra CCs which become 14-bit in MPE
+- capturing allowed info from note channels
+- capturing global info from global channel and sending to all notes
+
+These would provide a second level of callbacks; the Euro-MPE implementation then provides funtions for each callback to actually control the DACs. The MIDI wrapper and the MPE wrapper should be re-usable for other Teensy projects; eventually becoming a library.
 
 ## Calibration
 

@@ -29,7 +29,12 @@ Final trim offset depends on uncertainty of meter measurement.
 
 1.5ppm/C (525μV max over 0 to 70C)
 
-Once trimmed, temperature term dominates. Need an oven, 50 or 60CC ±0.1C instead of 20 to 50C range. If running at 60 or over, maybe better going for the Industrial range (-25 to 85C) rather than Commercial (0 to 70C) for longer reference life. Oven control circuitry drives panel LED with red - orange - green for temp stability.
+Once trimmed, temperature term dominates.
+
+"So what accuracy and stability can we hope for? The AD588 specifies 0.01% max initial error (one part in 10,000 or about 13 bits), with a 1.5-ppm/°C max temperature coefficient. Over the industrial temperature range of –40°C to +100°C, this could cause a 210 ppm variation, or 1 LSB at 12 bits. So, without temperature compensation, the best uncalibrated absolute accuracy we can guarantee is about 12 bits over temperature5. If we calibrate using expensive high-precision voltage standards (racks of equipment, not ICs), and limit the temperature range that the IC sees to ±20°C around room temperature, we might just achieve a temperature-compensated absolute accuracy of about 16 bits."
+[Choosing Voltage References](http://www.analog.com/en/analog-dialogue/raqs/raq-issue-114.html)
+
+Need an oven, 50 or 60CC ±0.1C instead of 20 to 50C range. If running at 60 or over, maybe better going for the Industrial range (-25 to 85C) rather than Commercial (0 to 70C) for longer reference life. Oven control circuitry drives panel LED with red - orange - green for temp stability.
 
 Temp measurement by DS18B20 thermally epoxied to the Vref chip. Use direct power, not parasitic. Accuracy is 0.5C.
 
@@ -67,8 +72,14 @@ If reference output buffered on a central, Vref distribution board by sets of un
 
 Assume a second, unipolar buffer drives the less critical DACs. Assume 2V reference derived locally (as part of offset trim) on each Pitch DAC board.
 
+Need to measure the actual deviations with kelvin coupling vs directly hooking them up. Compare with offsets from other sources. Makes re-use of the Vref more complicated (eg for offset trimming). Perhaps the op-amps are good enough this is not needed.
+
+Ribbon cable typically 26awg which has 40mΩ/foot. 3 inch cabling 10mΩ. Contact resistance 2x IDC at 20 mΩ max each. Say 50mΩ. Assume current 2mA. Voltage drop 100μV.
 
 ### Long term drift
+
+"The data sheets of many references specify long-term drift—typically about 25 ppm/1000 hr. This error is proportional to the square root of elapsed time, so 25 ppm/1000 hr ≈ 75 ppm/year. The actual rate is likely (but not certain) to be somewhat better than this as the ageing rate often diminishes after the first few thousand hours. So, again, we have a figure around 14 bits."
+[Choosing Voltage References](http://www.analog.com/en/analog-dialogue/raqs/raq-issue-114.html)
 
 15ppm/1k hr (75μV), worst on new device and settling over time.
 
@@ -128,11 +139,14 @@ Unlike previous project, use a [OP-A] differential op-amp near the VREF to provi
 
 Vref input resistance code-dependent, lowest (around 7.5kΩ) at 0x8555
 
+Or, use a differental op-amp near the DAC to isolate from loading effects; then a 2V ref can be desived from that too.
+
+
 ### Output conditioning
 
-With a 5V ref and an output buffer [OP-B] this gives ±5V output (10 octaves) which includes Note-ON voltage, global pitchbend, and per-note pitchbend. In the analog domain this is summed [OP-C] with 2V offset (to make range -3 to +8V), and offset trim (on the 2V divider). A second? op-amp provides trimmable gain scaling to ensure an accurate 1V/oct over a 9 octave range (avoiding the ends for offset errors). Or combine into one opamp.
+With a 5V ref and an output buffer [OP-B] this gives ±5V output (10 octaves) which includes Note-ON voltage, global pitchbend, and per-note pitchbend. In the analog domain this is summed [OP-C] with 2V offset (to make range -3 to +8V), and offset trim (on the 2V divider). A second? op-amp provides trimmable gain scaling to ensure an accurate 1V/oct over a 9 octave range (avoiding the ends for offset errors). Or combine into one opamp, both gain and offest. In that case the DAC should perform the inversion, so re-inverted by the inverting mixer.
 
-Needs error analysis to be sure the error budget from resistor matching is reasonable.
+Needs error analysis to be sure the error budget from resistor matching is reasonable. Breadboard ths with OPA2777PA to measure performance, in particular gain error and offsets. Assume 0.1% resistors plus trimmers, or 0.01% resistor pack. Needs DAC on a SOIC to DIP breakout board. Check I have one spare.
 
 Note "This unity-gain difference amplifier (equal resistors) causes the input difference voltage (V2-V1) to be impressed on R5; the resulting current flows to the load. The offset voltage, however, is applied directly to the noninverting input and is amplified by +2 – like a noninverting amplifier (G = 1 + R2/R1). Thus, a 10-mV offset voltage creates 20 mV across R5, producing a 20mA output current offset. A -10-mV offset would create a -20-mA output current (current sinking from the load)."
 

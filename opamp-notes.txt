@@ -1,0 +1,6 @@
+inverting mixer with 10k 0.1% resistors and no Vos
+
+9,990 / 10,010 = 0.998001998002
+10,010 / 9,990 = 1.002002002002 10mV on 5V
+
+10k 0.1% with 9.98k (=/- 20 ohms) and 50 ohm trimmer.

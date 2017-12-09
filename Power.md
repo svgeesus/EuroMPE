@@ -16,7 +16,7 @@ Pitch DACs, Performance DACs, and the Global DACs all run at 5V5 so there is hea
 
 Both microcontrollers (Teensy 3.6 main board and Teensy LC display/oven controller) are 3V3 devices with onboard 3V3 regulators and a Vin pin which accepts 3V6 to 6V0 input. Two options:
 
-- Use Eurorack 5V supply (reduces asymettric loading on +12V rail)
+- Use Eurorack 5V supply (reduces asymmetric loading on +12V rail)
 - Use the 5V5 DAC supply (as it is there anyway and not all Euroracks have the 5V rail)
 
 Board should support either configuration, select with jumper.
@@ -27,7 +27,7 @@ Direct from Eurorack, perhaps with Schotsky diodes for reverse power protection.
 
 ## Voltage reference power
 
-Derived from Eurorack +12V and -12V using a pair of tiny (SOT-23), low dropout regulators, this provides a low current but well-regulated +11.5V -11.5V supply for the voltage reference.
+Derived from Eurorack +12V and -12V using a pair of tiny (SOT-23), low dropout regulators, this provides a low current but well-regulated +11.5V -11.5V supply for the voltage reference. AD588 draws 6 (typ) 10 (max) mA.
 
 ## Oven heater
 

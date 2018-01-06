@@ -16,6 +16,8 @@ Quick breadboard (untrimmed) shows +10V = 9.99962 sd 50μV and +5V = 4.99862 sd 
 
 On soldered protoboard, with trim, +5V = mean 5.000 003 sd 42μV with a range of 4.999 94 to 5.000 10 (a range of 160μV). Keysight 34465A @ 20C, 10PLC, 597 samples.
 
+![Mean 5.000 003V](img/5V-trimmed.png)
+
 ## Temperature
 
 1.5ppm/C (525μV max over 0 to 70C)

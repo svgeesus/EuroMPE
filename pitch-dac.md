@@ -17,6 +17,8 @@ Vdd abs max -0.5V to +7V so good for 5V5. Base unit needs 2, second supplies 4 m
 
 ## Initial accuracy
 
+1LSB is 5V / 2^16 = 76μV. At 1V/Oct, 12 tones per octave, 100 cents per tone, 1 Cent is 833μV so 1 LSB is about 1/10 cent.
+
 INL is ±0.5 (typ) ±1.0 (max) LSB for best (C) grade.
 
 DNL is ±0.5 (typ) ±1.0 (max) LSB
@@ -24,7 +26,7 @@ DNL is ±0.5 (typ) ±1.0 (max) LSB
 Gain error (away from output voltage extremes) ±0.5 (typ) ±2 max) LSB
 with a gain error TC of ±0.1ppm/C.
 
-Bipolar output depends on matching of internal resistor pair, which is typ 0.0015%
+Bipolar output depends on matching of internal resistor pair, which is typ 0.0015%. Do the error analysis here. But there is offset and gain trim after this.
 
 ## Line regulation
 
@@ -32,22 +34,22 @@ Bipolar output depends on matching of internal resistor pair, which is typ 0.001
 
 ## Load regulation
 
-DAC output impedance is 6.25 which is irrelevant as bipolar mode requires an op-amp on the output anyway.
+DAC output impedance is 6.25k which is irrelevant as bipolar mode requires an op-amp on the output anyway.
 
 ## Vref connection
 
-Unlike previous project, use a [OP-A] differential op-amp near the VREF to provide the kelvin connections for each DAC. This avoids variable loading effects from each DAC on the Vref, which become a significant source of error once the Vref offest is accurately nulled. Only the sockets used by number of channel expansion cards actually used need to be populated.
+Unlike previous project, use a dualop-amp [OP-A, OP-B] near the VREF to provide the kelvin connections for each DAC. This avoids variable loading effects from each DAC on the Vref, which become a significant source of error once the Vref offest is accurately nulled. Only the sockets used by number of channel expansion cards actually used need to be populated.
 
 "The use of separate force (F) and sense (S) connections (often referred to as a Kelvin connection) at the load removes any errors resulting from voltage drops in the force lead, but, of course, may only be used in systems where there is negative feedback. It is also impossible to use such an arrangement to drive two or more loads with equal accuracy, since feedback may only be taken from one point."
 
-Vref input resistance code-dependent, lowest (around 7.5kΩ) at 0x8555
+Vref input resistance code-dependent, lowest (around 7.5kΩ) at 0x8555 which is 660 μA at 5V.
 
-Or, use a differental op-amp near the DAC to isolate from loading effects; then a 2V ref can be desived from that too.
+Or, use a differental op-amp near the DAC to isolate from loading effects; then a 2V ref can be derived from that too.
 
 
 ## Output conditioning
 
-With a 5V ref and an output buffer [OP-B] this gives ±5V output (10 octaves) which includes Note-ON voltage, global pitchbend, and per-note pitchbend. In the analog domain this is summed [OP-C] with 2V offset (to make range -3 to +8V), and offset trim (on the 2V divider). A second? op-amp provides trimmable gain scaling to ensure an accurate 1V/oct over a 9 octave range (avoiding the ends for offset errors). Or combine into one opamp, both gain and offest. In that case the DAC should perform the inversion, so re-inverted by the inverting mixer.
+With a 5V ref and an output buffer [OP-C] this gives ±5V output (10 octaves) which includes Note-ON voltage, global pitchbend, and per-note pitchbend. In the analog domain this is summed [OP-D] with 2V offset (to make range -3 to +8V), and offset trim (on the 2V divider). This op-amp also provides trimmable gain scaling to ensure an accurate 1V/oct over a 9 octave range (avoiding the ends for offset errors). Or combine into one opamp, both gain and offest. In that case the DAC should perform the inversion, so re-inverted by the inverting mixer.
 
 Needs error analysis to be sure the error budget from resistor matching is reasonable. Breadboard ths with OPA2777PA to measure performance, in particular gain error and offsets. Assume 0.1% resistors plus trimmers, or 0.01% resistor pack. Needs DAC on a SOIC to DIP breakout board. Check I have one spare.
 

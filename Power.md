@@ -27,7 +27,7 @@ Direct from Eurorack, perhaps with Schotsky diodes for reverse power protection.
 
 ## Voltage reference power
 
-Derived from Eurorack +12V and -12V using a pair of tiny (SOT-23), low dropout regulators, this provides a low current but well-regulated +11.5V -11.5V supply for the voltage reference. AD588 draws 6 (typ) 10 (max) mA.
+Derived from Eurorack +12V and -12V using a pair of tiny (SOT-23), low dropout regulators, this provides a low current but well-regulated +11.5V -11.5V supply for the voltage reference. AD588 draws 6 (typ) 10 (max) mA. Measured max 7mA (+12) 8mA (-12).
 
 ## Oven heater
 

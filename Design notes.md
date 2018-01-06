@@ -14,88 +14,8 @@ Initial design gives two-note polyphony; expanders add another 2 notes each to m
 
 ## Voltage ref
 
-Assume trimmed AD588BQ (CERDIP-16) rather than previous mono MIDI2CV designs with untrimmed AD586M (PDIP-8) or AD780 (PDIP-8).
+See [Voltage ref](voltage-ref.md)
 
-- [Useful EEBlog article on AD588](https://www.eevblog.com/forum/testgear/ad588-reference-10-volt-0-01-1-5-ppmdeg-simple-rugged-and-affordable/)
-- [ad588 ref with 15V derived from 12VAC (Russian)](http://radio-hobby.org/modules/news/article.php?storyid=1226)
-
-### Absolute initial accuracy
-
-Initial accuracy guaranteed (individually tested) is 200ppm: 5V ±1mV. Trimming uses special pins on this Vref, not an op-amp buffer after. Trim range is ±4mV.
-
-Final trim offset depends on uncertainty of meter measurement.
-
-### Temperature
-
-1.5ppm/C (525μV max over 0 to 70C)
-
-Once trimmed, temperature term dominates.
-
-"So what accuracy and stability can we hope for? The AD588 specifies 0.01% max initial error (one part in 10,000 or about 13 bits), with a 1.5-ppm/°C max temperature coefficient. Over the industrial temperature range of –40°C to +100°C, this could cause a 210 ppm variation, or 1 LSB at 12 bits. So, without temperature compensation, the best uncalibrated absolute accuracy we can guarantee is about 12 bits over temperature5. If we calibrate using expensive high-precision voltage standards (racks of equipment, not ICs), and limit the temperature range that the IC sees to ±20°C around room temperature, we might just achieve a temperature-compensated absolute accuracy of about 16 bits."
-[Choosing Voltage References](http://www.analog.com/en/analog-dialogue/raqs/raq-issue-114.html)
-
-Need an oven, 50 or 60CC ±0.1C instead of 20 to 50C range. If running at 60 or over, maybe better going for the Industrial range (-25 to 85C) rather than Commercial (0 to 70C) for longer reference life. Oven control circuitry drives panel LED with red - orange - green for temp stability.
-
-Temp measurement by DS18B20 thermally epoxied to the Vref chip. Use direct power, not parasitic. Accuracy is 0.5C.
-
-- [Maxim DS18B20 product page](https://www.maximintegrated.com/en/products/analog/sensors-and-sensor-interface/DS18B20.html)
-- [DS18B20 (9 bit) vs. DS18S20 (12 bit)](https://www.maximintegrated.com/en/app-notes/index.mvp/id/4377)
-- [Maxim DS18B20](http://vwlowen.co.uk/arduino/ds18b20/ds18b20.htm)
-- [PJRC OneWire library docs](https://www.pjrc.com/teensy/td_libs_OneWire.html)
-- [Onewire tutorial](https://playground.arduino.cc/Learning/OneWire)
-- [original Dallas Library](https://www.milesburton.com/Dallas_Temperature_Control_Library)
-- [Arduino Library for Maxim Temperature ICs](https://github.com/milesburton/Arduino-Temperature-Control-Library)
-- [Example, Arduino DS18B20](https://create.arduino.cc/projecthub/everth-villamil-ruiz/temperature-sensor-ds18b20-3decfc)
-- [Example2, same](https://create.arduino.cc/projecthub/TheGadgetBoy/ds18b20-digital-temperature-sensor-and-arduino-9cc806)
-
-Heater by variable current (or PWM??) through a resistor?
-
-- [Arduino PID playground](http://playground.arduino.cc/Code/PIDLibrary)
-- [Arduino PID library on GitHub](https://github.com/br3ttb/Arduino-PID-Library/)
-- [PID Tutorial](http://brettbeauregard.com/blog/2011/04/improving-the-beginners-pid-introduction/)
-- [Google group](https://groups.google.com/forum/#!forum/diy-pid-control)
-- [Autotune](https://playground.arduino.cc/Code/PIDAutotuneLibrary)
-- [Example: PID control for instrument "oven"](https://groups.google.com/forum/#!topic/diy-pid-control/4EY679OWbQw)
-- [simple resistive heater with transistor for current](https://www.alanzucconi.com/2016/08/02/arduino-heater-2/)
-
-### Current / Load
-
-Load regulation good: ±50μV/mA
-
-As this design drives multiple DACs, the kelvin connections only take us from the oven to the Vref distribution board, which will have a fixed, low load (op-amp input resistances, in parallel, plus a small resistive load for stability).
-
-1mA is 5k load resistor. 10-20k static load could help assure a constant load depending on peak DAC current draws. AD5542CRZ current is code-dependent, varies from 100 to 200μA per DAC (so worst case, 9 DAC all switching together, 900μA to 1800μA).
-
-If reference buffered by diff amp next to each DAC, load is constant. But then need precision matched resistors for the differential amp!
-
-If reference output buffered on a central, Vref distribution board by sets of unity gain differential amp (one per DAC), load is constant. Kelvin connections on each DAC over 4-way jumper wire set to each DAC board. Use the Hinton scheme for balanced output, and DAC provides the kelvin connections.
-
-Assume a second, unipolar buffer drives the less critical DACs. Assume 2V reference derived locally (as part of offset trim) on each Pitch DAC board.
-
-Need to measure the actual deviations with kelvin coupling vs directly hooking them up. Compare with offsets from other sources. Makes re-use of the Vref more complicated (eg for offset trimming). Perhaps the op-amps are good enough this is not needed.
-
-Ribbon cable typically 26awg which has 40mΩ/foot. 3 inch cabling 10mΩ. Contact resistance 2x IDC at 20 mΩ max each. Say 50mΩ. Assume current 2mA. Voltage drop 100μV.
-
-### Long term drift
-
-"The data sheets of many references specify long-term drift—typically about 25 ppm/1000 hr. This error is proportional to the square root of elapsed time, so 25 ppm/1000 hr ≈ 75 ppm/year. The actual rate is likely (but not certain) to be somewhat better than this as the ageing rate often diminishes after the first few thousand hours. So, again, we have a figure around 14 bits."
-[Choosing Voltage References](http://www.analog.com/en/analog-dialogue/raqs/raq-issue-114.html)
-
-15ppm/1k hr (75μV), worst on new device and settling over time.
-
-Burn in at ±12V/1week. Check burn-in drift over some weeks, determine optimum balance between waiting and stability.
-
-### Line regulation
-
-Worse than comparable (and cheaper!) references: 200 max μV/V (10.8 to 18V)
-
-Regulated bipolar 11V supply for Vref, with ample PSU buffer caps.
-
-LT1964-BYP LDO negative variable regulator, 340mV dropout, 200mA SOT-23
-
-LT1761 LDO positive reg, 300mV dropout, 100ma SOT-23
-
-These should hold supply voltage to ±11V ±5mV and cope with PSU droop down to ±11.4V, and provide some noise rejection.
 
 ## Pitch DAC
 
@@ -174,11 +94,20 @@ Or, aassuming one of the performance controls is connected to the external input
 - rely on digital-domain attenuation on the 14bit per-note outputs (probably sufficient).
 - use digital pots? No, lots of pots (4 per note)
 
+Use 4 pots with rail-to-rail buffer amps connected to 4 adc inputs. Use to digitally scale the 14bit performance values (on all voices).
+
+- [Alpha 9mm T18 shaft pot, 10k](https://www.thonk.co.uk/shop/alpha-9mm-pots-vertical-t18/)
+- [T18 micro knobs](https://www.thonk.co.uk/shop/micro-knobs/)
+
+## Gate output
+
+- [Hinton two-transistor gate, no LED](https://www.muffwiggler.com/forum/viewtopic.php?p=2720659#2720659)
+
 ## Performance (Control Change) DAC
 
 Needs to be 14-bit capable to fully implement the HR aspect, but precision requirement lower than for pitch; most devices send 7bit data and the ones that are high resolution have ENOB less than 14.
 
-AD5648-2 octal 14-bit DAC ($19.91) NO unsuitable due to zero and gain offsets. Internal VRef of 2.5V gives unipolar 5V output. Better performance from the -2 devices at 5V than the -1 devices at 3V3. Fig. 31 shows 100mV (!!) error when sourcing or sinking 2mA. Internal 2V5 reference with 2x gain, can use external (5V) ref. Most of the graphs in datasheet use an external reference :)
+AD5648-2 octal 14-bit DAC ($19.91, got one) NO unsuitable due to zero and gain offsets. Internal VRef of 2.5V gives unipolar 5V output. Better performance from the -2 devices at 5V than the -1 devices at 3V3. Fig. 31 shows 100mV (!!) error when sourcing or sinking 2mA. Internal 2V5 reference with 2x gain, can use external (5V) ref. Most of the graphs in datasheet use an external reference :)
 Vref seems to give a couple of mV error in output wrt temperature. Fig.54 shows 4mV error in internal ref wrt temperature.
 
 DAC8168C octal 14-bit DAC ($23.96) much better offsets.
@@ -229,45 +158,14 @@ Internal 2.5V VRef has good remperature stability (especially C grade) and long-
 
 ## Display, UI
 
-Simplest to use a second Teensy (LC or possibly 3.2) to drive the display and handle user interaction. That keeps the code and control flow separate, also frees up an SPI bus for controlling the display. Use I2C or Serial to send commands to the main Teensy 3.6, primarily to go into calibration mode.
+Simplest to use a second Teensy (LC, or possibly 3.2) to drive the display and handle user interaction. That keeps the code and control flow separate, also frees up an SPI bus for controlling the display. Use I2C or Serial to send commands to the main Teensy 3.6, primarily to go into calibration mode.
 
 The 3.2/LC can also handle oven control duties.
 
-## MIDI decoding & DAC driving
 
-Teensy 3.6, because it has two separate SPI busses easily accessible. The speed will also likely help when driving a lot of DACs ( 1 × 16bit on one bus, 5 8 × 14bit on the other). Fast single-precision float allows all frequency calculations to be done in float, then rounded for output to DACs.
+## MIDI
 
-Teensy 3.6 uses about 80 mA.
-
-### MIDI connections
-
-Primary interface is likely to be as a USB MIDI device, using the Teensy 3.x USB MIDI implementation. That connection requires a host, such as a computer running a DAW.
-
-Secondary interface could be DIN MIDI input, using the Arduino MIDI library and an optocoupler.
-
-Third one could be USB Host MIDI: new in Teensy 3.6 with a separate USB Host connection port.
-
-All three should register (the same) callbacks to allow input from any of the threee interfaces. All running at once? or switching between then from front panel.
-
-### MPE handling
-
-Teensy MIDI library is low-level. A higher level should be built on top, to provide the following (not specific to MPE):
-
-- handling of 14-bit MIDI CC with paired CCs (HR callbacks)
-- handling of RPN (all registered ones)
-- handling  NRPN (callback)
-- handling of tuning request and tuning dump
-- handling of HR velocity prefix
-- handling pitchbend range setting, and handling pitchbend taking into account default (MPE) and non-default range settings
-
-and in addition (for MPE):
-
-- zone setting (suggest it allows only a single zone, the latest set)
-- handling the extra CCs which become 14-bit in MPE
-- capturing allowed info from note channels
-- capturing global info from global channel and sending to all notes
-
-These would provide a second level of callbacks; the Euro-MPE implementation then provides funtions for each callback to actually control the DACs. The MIDI wrapper and the MPE wrapper should be re-usable for other Teensy projects; eventually becoming a library.
+See [MIDI notes](midi-notes.md)
 
 ## Calibration
 

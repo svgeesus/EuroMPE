@@ -1,0 +1,1413 @@
+USB Host MIDI Testing
+Control Change, ch=9, control=74, value=64
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=43, velocity=18
+Pitchbend, ch=9, pitchbend=0
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=43, velocity=18
+Channel Aftertouch, ch=9, pressure=127
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=43, velocity=18
+Channel Aftertouch, ch=9, pressure=125
+Pitchbend, ch=9, pitchbend=-17
+Note On, ch=9, note=43, velocity=18
+Channel Aftertouch, ch=9, pressure=123
+Pitchbend, ch=9, pitchbend=-17
+Note On, ch=9, note=43, velocity=18
+Pitchbend, ch=9, pitchbend=2
+Pitchbend, ch=9, pitchbend=-17
+Note On, ch=9, note=43, velocity=18
+Channel Aftertouch, ch=9, pressure=121
+Pitchbend, ch=9, pitchbend=-17
+Note On, ch=9, note=43, velocity=18
+Channel Aftertouch, ch=9, pressure=119
+Pitchbend, ch=9, pitchbend=-17
+Note On, ch=9, note=43, velocity=18
+Pitchbend, ch=9, pitchbend=0
+Pitchbend, ch=9, pitchbend=-17
+Note On, ch=9, note=43, velocity=18
+Channel Aftertouch, ch=9, pressure=117
+Pitchbend, ch=9, pitchbend=-17
+Note On, ch=9, note=43, velocity=18
+Channel Aftertouch, ch=9, pressure=115
+Pitchbend, ch=9, pitchbend=-17
+Note On, ch=9, note=43, velocity=18
+Channel Aftertouch, ch=9, pressure=113
+Pitchbend, ch=9, pitchbend=-17
+Note On, ch=9, note=43, velocity=18
+Note Off, ch=9, note=43, release velocity=30
+Pitchbend, ch=9, pitchbend=-17
+Note On, ch=9, note=43, velocity=18
+Control Change, ch=9, control=74, value=64
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=48, velocity=20
+Control Change, ch=9, control=74, value=75
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=48, velocity=20
+Pitchbend, ch=9, pitchbend=-11
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=48, velocity=20
+Channel Aftertouch, ch=9, pressure=127
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=48, velocity=20
+Control Change, ch=9, control=74, value=127
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=48, velocity=20
+Pitchbend, ch=9, pitchbend=-18
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=48, velocity=20
+Pitchbend, ch=9, pitchbend=0
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=48, velocity=20
+Pitchbend, ch=9, pitchbend=41
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=48, velocity=20
+Pitchbend, ch=9, pitchbend=46
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=48, velocity=20
+Pitchbend, ch=9, pitchbend=12
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=48, velocity=20
+Pitchbend, ch=9, pitchbend=0
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=48, velocity=20
+Pitchbend, ch=9, pitchbend=-35
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=48, velocity=20
+Pitchbend, ch=9, pitchbend=0
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=48, velocity=20
+Pitchbend, ch=9, pitchbend=24
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=48, velocity=20
+Channel Aftertouch, ch=9, pressure=125
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=48, velocity=20
+Channel Aftertouch, ch=9, pressure=123
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=48, velocity=20
+Pitchbend, ch=9, pitchbend=-13
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=48, velocity=20
+Channel Aftertouch, ch=9, pressure=121
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=48, velocity=20
+Channel Aftertouch, ch=9, pressure=119
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=48, velocity=20
+Channel Aftertouch, ch=9, pressure=117
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=48, velocity=20
+Channel Aftertouch, ch=9, pressure=115
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=48, velocity=20
+Channel Aftertouch, ch=9, pressure=113
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=48, velocity=20
+Channel Aftertouch, ch=9, pressure=111
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=48, velocity=20
+Note Off, ch=9, note=48, release velocity=49
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=48, velocity=20
+Control Change, ch=9, control=74, value=64
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=64, velocity=18
+Pitchbend, ch=9, pitchbend=0
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=64, velocity=18
+Channel Aftertouch, ch=9, pressure=123
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=74, value=29
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=64, velocity=18
+Pitchbend, ch=9, pitchbend=16
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=64, velocity=18
+Channel Aftertouch, ch=9, pressure=125
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=64, velocity=18
+Channel Aftertouch, ch=9, pressure=127
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=74, value=34
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=64, velocity=18
+Pitchbend, ch=9, pitchbend=0
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=74, value=35
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=74, value=13
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=74, value=2
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=74, value=9
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=74, value=47
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=74, value=64
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=74, value=114
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=74, value=127
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=64, velocity=18
+Pitchbend, ch=9, pitchbend=17
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=64, velocity=18
+Pitchbend, ch=9, pitchbend=0
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=64, velocity=18
+Pitchbend, ch=9, pitchbend=-15
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=64, velocity=18
+Pitchbend, ch=9, pitchbend=0
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=64, velocity=18
+Pitchbend, ch=9, pitchbend=14
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=64, velocity=18
+Pitchbend, ch=9, pitchbend=0
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=64, velocity=18
+Channel Aftertouch, ch=9, pressure=125
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=64, velocity=18
+Channel Aftertouch, ch=9, pressure=127
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=64, velocity=18
+Pitchbend, ch=9, pitchbend=-14
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=64, velocity=18
+Pitchbend, ch=9, pitchbend=0
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=64, velocity=18
+Pitchbend, ch=9, pitchbend=13
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=64, velocity=18
+Pitchbend, ch=9, pitchbend=0
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=64, velocity=18
+Pitchbend, ch=9, pitchbend=8
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=64, velocity=18
+Pitchbend, ch=9, pitchbend=0
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=64, velocity=18
+Channel Aftertouch, ch=9, pressure=125
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Channel Aftertouch, ch=9, pressure=127
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Pitchbend, ch=9, pitchbend=0
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Pitchbend, ch=9, pitchbend=-15
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Pitchbend, ch=9, pitchbend=0
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=74, value=67
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=74, value=64
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=74, value=52
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=74, value=0
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Pitchbend, ch=9, pitchbend=9
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Channel Aftertouch, ch=9, pressure=125
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Pitchbend, ch=9, pitchbend=-10
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Channel Aftertouch, ch=9, pressure=123
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Channel Aftertouch, ch=9, pressure=121
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Pitchbend, ch=9, pitchbend=0
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Channel Aftertouch, ch=9, pressure=119
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Channel Aftertouch, ch=9, pressure=117
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Channel Aftertouch, ch=9, pressure=115
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Channel Aftertouch, ch=9, pressure=113
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Note Off, ch=9, note=64, release velocity=49
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=51
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=50
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=42
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=58
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=36
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=63
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=31
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=65
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=26
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=67
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=24
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=66
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=22
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=65
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=21
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=63
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=20
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=60
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=19
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=57
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=53
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=18
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=49
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=19
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=46
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=20
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=42
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=21
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=38
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=22
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=35
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=27
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=32
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=74
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=0
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=80
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=5
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=85
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=13
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=90
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=20
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=94
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=27
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=98
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=33
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=101
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=39
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=103
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=43
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=105
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=48
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=106
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=52
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=56
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=105
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=61
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=66
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=104
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=70
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=102
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=75
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=100
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=80
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=97
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=85
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=94
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=89
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=90
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=93
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=85
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=96
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=80
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=99
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=76
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=101
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=70
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=104
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=64
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=106
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=58
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=109
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=53
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=110
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=46
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=112
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=41
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=114
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=35
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=116
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=30
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=118
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=25
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=119
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=21
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=17
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=13
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=10
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=118
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=8
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=117
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=6
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=5
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=116
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=4
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=115
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=3
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=2
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=114
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=1
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=113
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=0
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=112
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=54
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=127
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=40
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=113
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=30
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=99
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=23
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=87
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=16
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=79
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=12
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=72
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=8
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=67
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=6
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=64
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=4
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=62
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=2
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=60
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=0
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=58
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=57
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=56
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=0
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=0
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=0
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=0
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=0
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=57
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=23
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=58
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=42
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=60
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=57
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=62
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=68
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=64
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=76
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=66
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=83
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=68
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=88
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=70
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=91
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=71
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=94
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=73
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=96
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=75
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=98
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=77
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=99
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=79
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=100
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=81
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=99
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=84
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=87
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=98
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=90
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=97
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=93
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=96
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=96
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=94
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=98
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=92
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=100
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=87
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=101
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=82
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=102
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=78
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=103
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=74
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=70
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=65
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=104
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=61
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=56
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=52
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=48
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=44
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=102
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=40
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=99
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=37
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=97
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=35
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=94
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=33
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=92
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=31
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=90
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=30
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=88
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=28
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=85
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=27
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=82
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=79
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=76
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=73
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=28
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=70
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=29
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=67
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=64
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=30
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=62
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=32
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=59
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=34
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=55
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=36
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=51
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=40
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=47
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=43
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=43
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=47
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=40
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=51
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=37
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=55
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=35
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=59
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=33
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=63
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=67
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=32
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=71
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=75
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=78
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=82
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=85
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=33
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=88
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=34
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=90
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=35
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=92
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=36
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=95
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=37
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=98
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=38
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=101
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=39
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=103
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=40
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=105
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=41
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=107
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=42
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=109
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=43
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=110
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=44
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=111
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=45
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=113
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=47
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=48
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=50
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=51
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=112
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=52
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=111
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=54
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=110
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=55
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=108
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=57
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=106
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=60
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=104
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=62
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=102
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=64
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=101
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=67
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=98
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=70
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=95
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=73
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=92
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=76
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=88
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=80
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=84
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=83
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=80
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=86
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=76
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=88
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=72
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=90
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=69
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=91
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=66
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=92
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=63
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=62
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=93
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=61
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=94
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=95
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=62
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=96
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=113, value=63
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=114, value=95
+Pitchbend, ch=9, pitchbend=-9
+Note On, ch=9, note=64, velocity=18
+Control Change, ch=9, control=74, value=64
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=70, velocity=21
+Pitchbend, ch=9, pitchbend=30
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=70, velocity=21
+Channel Aftertouch, ch=9, pressure=127
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=70, velocity=21
+Pitchbend, ch=9, pitchbend=0
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=70, velocity=21
+Pitchbend, ch=9, pitchbend=-10
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=70, velocity=21
+Pitchbend, ch=9, pitchbend=0
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=70, velocity=21
+Pitchbend, ch=9, pitchbend=16
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=70, velocity=21
+Pitchbend, ch=9, pitchbend=0
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=70, velocity=21
+Control Change, ch=9, control=74, value=85
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=70, velocity=21
+Control Change, ch=9, control=74, value=118
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=70, velocity=21
+Control Change, ch=9, control=74, value=127
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=70, velocity=21
+Control Change, ch=9, control=74, value=97
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=70, velocity=21
+Control Change, ch=9, control=74, value=64
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=70, velocity=21
+Control Change, ch=9, control=74, value=0
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=70, velocity=21
+Pitchbend, ch=9, pitchbend=-9
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=70, velocity=21
+Pitchbend, ch=9, pitchbend=-23
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=70, velocity=21
+Pitchbend, ch=9, pitchbend=0
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=70, velocity=21
+Pitchbend, ch=9, pitchbend=21
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=70, velocity=21
+Channel Aftertouch, ch=9, pressure=125
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=70, velocity=21
+Channel Aftertouch, ch=9, pressure=123
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=70, velocity=21
+Pitchbend, ch=9, pitchbend=9
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=70, velocity=21
+Channel Aftertouch, ch=9, pressure=125
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=70, velocity=21
+Channel Aftertouch, ch=9, pressure=123
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=70, velocity=21
+Pitchbend, ch=9, pitchbend=-39
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=70, velocity=21
+Channel Aftertouch, ch=9, pressure=121
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=70, velocity=21
+Channel Aftertouch, ch=9, pressure=119
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=70, velocity=21
+Pitchbend, ch=9, pitchbend=-5
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=70, velocity=21
+Channel Aftertouch, ch=9, pressure=117
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=70, velocity=21
+Channel Aftertouch, ch=9, pressure=115
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=70, velocity=21
+Pitchbend, ch=9, pitchbend=0
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=70, velocity=21
+Channel Aftertouch, ch=9, pressure=113
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=70, velocity=21
+Note Off, ch=9, note=70, release velocity=64
+Pitchbend, ch=9, pitchbend=0
+Note On, ch=9, note=70, velocity=21
+Sysex, of length=9 now complete
+Sysex, of length=9 now complete
+Sysex, of length=9 now complete
+Sysex, of length=9 now complete
+Sysex, of length=9 now complete
+Sysex, of length=9 now complete
+Sysex, of length=9 now complete
+Sysex, of length=9 now complete
+Sysex, of length=9 now complete
+Sysex, of length=9 now complete
+Control Change, ch=9, control=113, value=53
+Sysex, of length=6 now complete
+Control Change, ch=9, control=114, value=94
+Sysex, of length=6 now complete
+Control Change, ch=9, control=113, value=46
+Sysex, of length=6 now complete
+Control Change, ch=9, control=114, value=93
+Sysex, of length=6 now complete
+Control Change, ch=9, control=113, value=40
+Sysex, of length=6 now complete
+Control Change, ch=9, control=114, value=92
+Sysex, of length=6 now complete
+Control Change, ch=9, control=113, value=36
+Sysex, of length=6 now complete
+Control Change, ch=9, control=114, value=91
+Sysex, of length=6 now complete
+Control Change, ch=9, control=113, value=33
+Sysex, of length=6 now complete
+Control Change, ch=9, control=113, value=31
+Sysex, of length=6 now complete
+Control Change, ch=9, control=113, value=29
+Sysex, of length=6 now complete
+Control Change, ch=9, control=114, value=90
+Sysex, of length=6 now complete
+Control Change, ch=9, control=113, value=28
+Sysex, of length=6 now complete
+Control Change, ch=9, control=113, value=27
+Sysex, of length=6 now complete
+Control Change, ch=9, control=113, value=26
+Sysex, of length=6 now complete
+Control Change, ch=9, control=113, value=25
+Sysex, of length=6 now complete
+Control Change, ch=9, control=113, value=24
+Sysex, of length=6 now complete
+Control Change, ch=9, control=113, value=25
+Sysex, of length=6 now complete
+Control Change, ch=9, control=114, value=91
+Sysex, of length=6 now complete
+Control Change, ch=9, control=114, value=92
+Sysex, of length=6 now complete
+Control Change, ch=9, control=114, value=93
+Sysex, of length=6 now complete
+Control Change, ch=9, control=113, value=26
+Sysex, of length=6 now complete
+Control Change, ch=9, control=114, value=94
+Sysex, of length=6 now complete
+Control Change, ch=9, control=114, value=93
+Sysex, of length=6 now complete
+Control Change, ch=9, control=114, value=92
+Sysex, of length=6 now complete
+Control Change, ch=9, control=113, value=27
+Sysex, of length=6 now complete
+Control Change, ch=9, control=114, value=93
+Sysex, of length=6 now complete
+Control Change, ch=9, control=99, value=0
+Control Change, ch=9, control=98, value=2
+Control Change, ch=9, control=6, value=4
+Control Change, ch=9, control=6, value=3
+Control Change, ch=9, control=98, value=2
+Control Change, ch=9, control=6, value=4
+Program Change, ch=9, patch number=2
+Control Change, ch=9, control=98, value=2
+Control Change, ch=9, control=6, value=4
+Program Change, ch=9, patch number=3
+Control Change, ch=9, control=98, value=2
+Control Change, ch=9, control=6, value=4
+

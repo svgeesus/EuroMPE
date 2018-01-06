@@ -1,0 +1,37 @@
+Control Change, ch=9, control=98, value=2
+Control Change, ch=9, control=6, value=4
+Control Change, ch=9, control=98, value=2
+Control Change, ch=9, control=6, value=4
+Control Change, ch=16, control=111, value=13
+Note On, ch=1, note=80, velocity=96
+Control Change, ch=9, control=6, value=4
+Note On, ch=1, note=80, velocity=96
+Control Change, ch=9, control=6, value=4
+Control Change, ch=16, control=111, value=0
+Note On, ch=1, note=80, velocity=96
+Control Change, ch=9, control=6, value=4
+Note On, ch=1, note=80, velocity=96
+Control Change, ch=9, control=6, value=4
+Note On, ch=1, note=80, velocity=96
+Control Change, ch=9, control=6, value=4
+Note On, ch=1, note=80, velocity=96
+Control Change, ch=9, control=6, value=4
+Note On, ch=1, note=80, velocity=96
+Control Change, ch=9, control=6, value=4
+Note On, ch=1, note=77, velocity=96
+Note Off, ch=1, note=77, release velocity=0
+Note On, ch=1, note=77, velocity=96
+Note Off, ch=1, note=77, release velocity=0
+Note On, ch=1, note=77, velocity=96
+Note Off, ch=1, note=80, release velocity=0
+Note Off, ch=1, note=77, release velocity=0
+Note On, ch=1, note=77, velocity=96
+Note Off, ch=1, note=77, release velocity=0
+Note On, ch=1, note=77, velocity=96
+Note Off, ch=1, note=77, release velocity=0
+Note On, ch=1, note=77, velocity=96
+Note On, ch=1, note=80, velocity=49
+Note Off, ch=1, note=77, release velocity=0
+Note On, ch=1, note=77, velocity=96
+Note Off, ch=1, note=77, release velocity=0
+

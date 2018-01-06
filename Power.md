@@ -33,6 +33,11 @@ Derived from Eurorack +12V and -12V using a pair of tiny (SOT-23), low dropout r
 
 To be determined. Low current, but needs investigation.
 
+- [Transistor with Teensy](https://forum.allaboutcircuits.com/threads/incandescent-bulbs-not-lighting-via-teensy-arduino-transistor-bias-problem.134268/)
+- [Another example](https://www.petervis.com/Raspberry_PI/Driving_LEDs_with_CMOS_and_TTL_Outputs/Driving_an_LED_Using_Transistors.html)
+
+2N2222A or 2N4401
+
 ## Gate
 
 To be determined. Options for (about) 5V, 8V gates useful. Exact level not critical.

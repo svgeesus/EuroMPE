@@ -14,7 +14,7 @@ Final trim offset depends on uncertainty of meter measurement.
 
 Quick breadboard (untrimmed) shows +10V = 9.99962 sd 50μV and +5V = 4.99862 sd 42μV on Keysight 34465A @ 20C = 1.38mV error. Circuit has 22μF and 100nF caps to power rails, kelvin connections not used (bridged), powered from switching Eurorack PSU.
 
-On soldered protoboard, with trim, +5V = mean 5.000 003 sd 42μV with a range of 4.999 94 to 5.000 10 (a range of 160μV). Keysight 34465A @ 20C, 10PLC, 597 samples.
+After powering for 4 days (100 hours), socketed on soldered protoboard, with trim, +5V = mean 5.000 003 sd 42μV with a range of 4.999 94 to 5.000 10 (a range of 160μV). Keysight 34465A @ 20C, 10PLC, 597 samples.
 
 ![Mean 5.000 003V](img/5V-trimmed.png)
 
@@ -99,10 +99,22 @@ Burn in at ±12V/1week. Check burn-in drift over some weeks, determine optimum b
 
 Worse than comparable (and cheaper!) references: 200 max μV/V (10.8 to 18V)
 
-Regulated bipolar 11.3V supply for Vref, with ample PSU buffer caps.
+Regulated bipolar 11.2V supply for Vref, with ample PSU buffer caps. Check with variable PSU that 11.2V suply still gives a stable 10V out. If so, use this low-power regulator pair:
 
 LT1964-BYP LDO negative variable regulator, 340mV dropout, 200mA SOT-23
 
 LT1761 LDO positive reg, 300mV dropout, 100ma SOT-23
 
-These should hold supply voltage to ±11.3V ±5mV and cope with PSU droop down to ±11.6V, and provide some noise rejection.
+11.2 = 1.22 (1 + R2/R1) where R1 <200k. (same eqn, opposite sign for both regs)
+8.18 = R2/R1 let R1 = 22k then R2 = 180k
+
+Current in R1 is 1.22V/R1 = 56μA
+Current in R2 = current in R1 + 30nA = 56μA again.
+
+Full equation is
+Vout = 1.22(1 + R2/R1) + (Iadj * R2) where Iadj is 30nA
+Vout = 11.21V
+
+Load Reg for LT1761 at 1ma to 100mA is Vout/1.22 × -1mV = -9.1mV. Proportionally, at 10mA should be -0.9mV. For LT1964 at 1mA to 200mA  Vout/1.22 × 2mV = -18.2mV. So at 10mA again 0.9mV.
+
+These should hold supply voltage to ±11.2V ±2mV and cope with PSU droop down to ±11.6V, and provide some noise rejection.

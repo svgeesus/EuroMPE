@@ -1,6 +1,6 @@
 # MIDI decoding & DAC driving
 
-Teensy 3.6, because it has two separate SPI busses easily accessible. The speed will also likely help when driving a lot of DACs ( 1 × 16bit on one bus, 5 8 × 14bit on the other). Fast single-precision float allows all frequency calculations to be done in float, then rounded for output to DACs.
+Based on Teensy 3.6, because it has two separate SPI busses easily accessible. The speed will also likely help when driving a lot of DACs ( 1 × 16bit on one bus, 5 8 × 14bit on the other). Fast single-precision float allows all frequency calculations to be done in float, then rounded for output to DACs. Teensy 3.6 also has USB Host.
 
 Teensy 3.6 uses about 80 mA.
 
@@ -14,6 +14,8 @@ Third one could be USB Host MIDI: new in Teensy 3.6 with a separate USB Host con
 
 All three should register (the same) callbacks to allow input from any of the threee interfaces. All running at once? or switching between then from front panel.
 
+Try to use direct manipulation rather than menu-diving for normal operation.
+
 "The other alternative, which I would not recommend you try until you've at least checked with other ports and maybe measured with a voltmeter, is an external 5V supply with the VUSB-VIN pads cut apart on the bottom side of the Teensy. Then your 5V supply will power everything, and you can use one that's rated for 1A or more to make sure you have enough power."
 
 ## Per-voice MIDI connections
@@ -21,15 +23,17 @@ All three should register (the same) callbacks to allow input from any of the th
 [Roli Seaboard MIDI expression](https://support.roli.com/manuals/roli-dashboard-creator-manual/#dashboard-features-and-settings-2-4-midi-settings-panel)
 
 - Gate out (10V) with LED
-- Pitch CV out (includes transpose, per-voice Glide & global pitchbend)
-- Secondary Pitch CV out
+- Pitch CV out 16bit (includes transpose, per-voice Glide & global pitchbend)
+- Secondary Pitch CV out (derived from Pitch CV)
 - Secondary Pitch modifier input
-- Strike (attack velocity, including CC88)
-- Lift (release velocity, including CC88)
-- Slide (per-voice vertical movement, CC74)
-- Press (per-voice channel pressure)
+- Strike 14bit, (attack velocity, including CC88)
+- Lift 14bit, (release velocity, including CC88)
+- Slide 14bit, (per-voice vertical movement, CC74)
+- Press 14bit, (per-voice channel pressure)
 
 ## Global channel MIDI outputs
+
+8 14bit outputs, same board as the per-voice expression outputs
 
 ### Used by Roli Seaboard
 

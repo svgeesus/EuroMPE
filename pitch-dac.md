@@ -49,7 +49,9 @@ Or, use a differental op-amp near the DAC to isolate from loading effects; then 
 
 ## Output conditioning
 
-With a 5V ref and an output buffer [OP-C] this gives ±5V output (10 octaves) which includes Note-ON voltage, global pitchbend, and per-note pitchbend. In the analog domain this is summed [OP-D] with 2V offset (to make range -3 to +8V), and offset trim (on the 2V divider). This op-amp also provides trimmable gain scaling to ensure an accurate 1V/oct over a 9 octave range (avoiding the ends for offset errors). Or combine into one opamp, both gain and offest. In that case the DAC should perform the inversion, so re-inverted by the inverting mixer.
+With a 5V ref and an output buffer [OP-C] this gives ±5V output (10 octaves) which includes Note-ON voltage, global pitchbend, and per-note pitchbend. Note that this does not cover the full MIDI note range of 128 notes = 10.66 octaves. is that an issue in practice?
+
+In the analog domain this is summed [OP-D] with 2V offset (to make range -3 to +8V), and offset trim (on the 2V divider). This op-amp also provides trimmable gain scaling to ensure an accurate 1V/oct over a 9 octave range (avoiding the ends for offset errors). Or combine into one opamp, both gain and offest. In that case the DAC should perform the inversion, so re-inverted by the inverting mixer.
 
 Needs error analysis to be sure the error budget from resistor matching is reasonable. Breadboard ths with OPA2777PA to measure performance, in particular gain error and offsets. Assume 0.1% resistors plus trimmers, or 0.01% resistor pack. Needs DAC on a SOIC to DIP breakout board. Check I have one spare.
 

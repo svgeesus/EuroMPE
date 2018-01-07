@@ -2,7 +2,7 @@
 # Pitch DAC
 
 
-AD5542CRZ ($36.39), same as the previous, mono, MIDI2CV project, provides bipolar ±Vref output (so, ±5V).
+AD5542CRZ (, $36.39), same as the previous, mono, MIDI2CV project, provides bipolar ±Vref output (so, ±5V).
 
 ## Power
 

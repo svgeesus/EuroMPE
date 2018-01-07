@@ -55,14 +55,7 @@ Use 4 pots with rail-to-rail buffer amps connected to 4 adc inputs. Use to digit
 
 ## Performance (Control Change) DAC
 
-Needs to be 14-bit capable to fully implement the HR aspect, but precision requirement lower than for pitch; most devices send 7bit data and the ones that are high resolution have ENOB less than 14.
-
-AD5648-2 octal 14-bit DAC ($19.91, got one) NO unsuitable due to zero and gain offsets. Internal VRef of 2.5V gives unipolar 5V output. Better performance from the -2 devices at 5V than the -1 devices at 3V3. Fig. 31 shows 100mV (!!) error when sourcing or sinking 2mA. Internal 2V5 reference with 2x gain, can use external (5V) ref. Most of the graphs in datasheet use an external reference :)
-Vref seems to give a couple of mV error in output wrt temperature. Fig.54 shows 4mV error in internal ref wrt temperature.
-
-DAC8168C octal 14-bit DAC ($23.96) much better offsets.
-
-Octal DAC does 2 voices  of attack veocity, lift velocity, pressure, glide. Same board used to provide the global performance controls (mod wheel, sustain, etc). .
+See [Performance DAC](performance-dac.md)
 
 ### Power
 

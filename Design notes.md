@@ -127,3 +127,14 @@ Global offset also needs an output, for calibration plus handy to expose for oth
 ### Per-voice oscillator calibration
 
 Avoid non-linear calibration curves. These are fine for pulling poorly-tracking oscillators into tune but then the same errors affect the other modules using pitch (filters etc). Instead go for high linearity, and use with well tracking oscillators.
+
+Output the same frequency for 440Hz on all pitch channels. Use FreqMeasure library to provide a frequency input, showing the frequency on the LCD screen. This allows each oscilator to be tuned the same. These pins support measuring frequency:
+
+#define FTM0_CH0_PIN 22
+#define FTM0_CH1_PIN 23
+#define FTM0_CH2_PIN  9
+#define FTM0_CH3_PIN 10
+#define FTM0_CH4_PIN  6
+#define FTM0_CH5_PIN 20
+#define FTM0_CH6_PIN 21
+#define FTM0_CH7_PIN  5

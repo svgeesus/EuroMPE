@@ -1,8 +1,7 @@
 
 # Pitch DAC
 
-
-AD5542CRZ (, $36.39), same as the previous, mono, MIDI2CV project, provides bipolar ±Vref output (so, ±5V).
+AD5542CRZ (SOIC-14, $36.39), same as the previous, mono, MIDI2CV project, provides bipolar ±Vref output (so, ±5V).
 
 ## Power
 
@@ -10,10 +9,12 @@ Vdd absolute max is -0.3V to +6V. Spec sheet assumes 2.7 ≤ Vdd ≤ 5.5, 2.5 �
 
 ## Digital interface
 
-With Teensy 3.6, 3v3 Vdd unless level shifter used.But 3V3 has reduced dynamic range and needs a (less good) 2.5V or 3V ref, although avoiding level shifter. 5V5 allows higher dynamic range (lower noise) but allows better, 5V ref. Needs unidirectional level shifter for CS, SCLK, MOSI/Dout but those are inexpensive.
+With Teensy 3.6, 3V3 Vdd unless level shifter used. But 3V3 has reduced dynamic range and needs a (less good) 2.5V or 3V ref, although avoiding level shifter. Using 5V5 for DAC power allows higher dynamic range (lower noise) and allows better, 5V ref. Needs unidirectional level shifter for CS, SCLK, MOSI/Dout but those are inexpensive.
 
 74AHCT125 Quad Level-Shifter (PDIP, SOIC, SSOP)  good for SPI, fast enough. 2 CS, SCLK, MOSI so two pitch DACs.
 Vdd abs max -0.5V to +7V so good for 5V5. Base unit needs 2, second supplies 4 more CS; 3 used for global pich and 2 more channels (on first expander, to 4-voice). A third, fitted if needed, supplies 4 more CS for 4 more channels, only needed for 6-voice and 8-voice builds.
+
+Alternatively, use 4-channel digital isolator to prevent coupling of high speed signals, such as TI ISO7240C (SOIC-16, $6.03) which can use 3V3 input and 5V5 output with separate grounds. In that case use one per board on the DAC board, so need 3 for 4-voice and 3 more for 8-voice. Connect with 6-way cable (3V3, DGND, SCLK, MOSI, CS1, CS2).
 
 ## Initial accuracy
 
@@ -30,7 +31,7 @@ Bipolar output depends on matching of internal resistor pair, which is typ 0.001
 
 ## Line regulation
 
-±1 LSB for  ΔVdd ±10%, nothing specal needed for Vdd regulation here.
+±1 LSB for  ΔVdd ±10%, nothing specal needed for Vdd regulation here but ensure supply is low noise.
 
 ## Load regulation
 
@@ -38,7 +39,7 @@ DAC output impedance is 6.25k which is irrelevant as bipolar mode requires an op
 
 ## Vref connection
 
-Unlike previous project, use a dualop-amp [OP-A, OP-B] near the VREF to provide the kelvin connections for each DAC. This avoids variable loading effects from each DAC on the Vref, which become a significant source of error once the Vref offest is accurately nulled. Only the sockets used by number of channel expansion cards actually used need to be populated.
+Unlike previous project, use a dual op-amp [OP-A, OP-B] near the VREF to provide the kelvin connections for each DAC. This avoids variable loading effects from each DAC on the Vref, which become a significant source of error once the Vref offest is accurately nulled. Only the sockets used by number of channel expansion cards actually used need to be populated.
 
 "The use of separate force (F) and sense (S) connections (often referred to as a Kelvin connection) at the load removes any errors resulting from voltage drops in the force lead, but, of course, may only be used in systems where there is negative feedback. It is also impossible to use such an arrangement to drive two or more loads with equal accuracy, since feedback may only be taken from one point."
 
@@ -51,9 +52,9 @@ Or, use a differental op-amp near the DAC to isolate from loading effects; then 
 
 With a 5V ref and an output buffer [OP-C] this gives ±5V output (10 octaves) which includes Note-ON voltage, global pitchbend, and per-note pitchbend. Note that this does not cover the full MIDI note range of 128 notes = 10.66 octaves. is that an issue in practice?
 
-In the analog domain this is summed [OP-D] with 2V offset (to make range -3 to +8V), and offset trim (on the 2V divider). This op-amp also provides trimmable gain scaling to ensure an accurate 1V/oct over a 9 octave range (avoiding the ends for offset errors). Or combine into one opamp, both gain and offest. In that case the DAC should perform the inversion, so re-inverted by the inverting mixer.
+In the analog domain this is summed [OP-D] with 2V offset (to make range -3 to +8V), and offset trim (on the 2V divider). This op-amp also provides trimmable gain scaling to ensure an accurate 1V/oct over a 9.8 octave range (avoiding calibrating at the ends for offset errors). Or combine into one opamp, both gain and offset. In that case the DAC should perform the inversion, so re-inverted by the inverting mixer.
 
-Needs error analysis to be sure the error budget from resistor matching is reasonable. Breadboard ths with OPA2777PA to measure performance, in particular gain error and offsets. Assume 0.1% resistors plus trimmers, or 0.01% resistor pack. Needs DAC on a SOIC to DIP breakout board. Check I have one spare.
+Needs error analysis to be sure the error budget from resistor matching is reasonable. Breadboard this with OPA2777PA to measure performance, in particular gain error and offsets. Assume 0.1% resistors plus trimmers, or 0.01% resistor pack. Needs DAC on a SOIC to DIP breakout board. Check I have one spare.
 
 Note "This unity-gain difference amplifier (equal resistors) causes the input difference voltage (V2-V1) to be impressed on R5; the resulting current flows to the load. The offset voltage, however, is applied directly to the noninverting input and is amplified by +2 – like a noninverting amplifier (G = 1 + R2/R1). Thus, a 10-mV offset voltage creates 20 mV across R5, producing a 20mA output current offset. A -10-mV offset would create a -20-mA output current (current sinking from the load)."
 

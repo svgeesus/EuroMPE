@@ -44,14 +44,17 @@ Or, aassuming one of the performance controls is connected to the external input
 - rely on digital-domain attenuation on the 14bit per-note outputs (probably sufficient).
 - use digital pots? No, lots of pots (4 per note)
 
-Use 4 pots with rail-to-rail buffer amps connected to 4 adc inputs. Use to digitally scale the 14bit performance values (on all voices).
+Use 4 pots with rail-to-rail buffer amps connected to 4 adc inputs. Then use these values to digitally scale the 14bit performance values (on all voices).
 
 - [Alpha 9mm T18 shaft pot, 10k](https://www.thonk.co.uk/shop/alpha-9mm-pots-vertical-t18/)
 - [T18 micro knobs](https://www.thonk.co.uk/shop/micro-knobs/)
 
 ## Gate output
 
+Requires 8-10V drive to a gate output; also switch to allow +5V to flow through an LED as indicator (both high side swiching, npn driving pnp).
+
 - [Hinton two-transistor gate, no LED](https://www.muffwiggler.com/forum/viewtopic.php?p=2720659#2720659)
+- [PNP high-side switching](http://www.w9xt.com/page_microdesign_pt12_hv_pnp_switching.html)
 
 ## Performance (Control Change) DAC
 

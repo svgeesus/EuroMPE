@@ -56,6 +56,12 @@ Requires 8-10V drive to a gate output; also switch to allow +5V to flow through 
 - [Hinton two-transistor gate, no LED](https://www.muffwiggler.com/forum/viewtopic.php?p=2720659#2720659)
 - [PNP high-side switching](http://www.w9xt.com/page_microdesign_pt12_hv_pnp_switching.html)
 
+Pirhana diffuse 5mm rgb, through hole, 7.6mm sq, 20mA max,  $9.95 for 10
+experiment, likely good at half power. 3 pins per led.
+fixed resistors better than pwm in terms of interference.
+8 colors for the 8 voices
+10mA is 320R red, 200R green & blue. Adjust for desired color.
+
 ## Performance (Control Change) DAC
 
 See [Performance DAC](performance-dac.md)

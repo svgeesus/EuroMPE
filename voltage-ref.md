@@ -7,7 +7,7 @@ Assume trimmed AD588BQ (CERDIP-16) rather than previous mono MIDI2CV designs wit
 
 ## Absolute initial accuracy
 
-Initial accuracy guaranteed (individually tested) is 200ppm: 5V ±1mV.
+Initial accuracy guaranteed (individually tested) is 200ppm: 5V ±1mV. Or is that 200ppm of 10V, so ±2mV?
 
 Trimming uses special pins on this Vref, not an op-amp buffer after. Trim range is ±4mV. Separate trims for the +10V and +5V outputs.
 Final trim offset depends on uncertainty of meter measurement.
@@ -17,6 +17,7 @@ Quick breadboard (untrimmed) shows +10V = 9.99962 sd 50μV and +5V = 4.99862 sd 
 After powering for 4 days (100 hours), socketed on soldered protoboard, with trim, +5V = mean 5.000 003 sd 42μV with a range of 4.999 94 to 5.000 10 (a range of 160μV). Keysight 34465A @ 20C, 10PLC, 597 samples.
 
 ![Mean 5.000 003V](img/5V-trimmed.png)
+![%v range histogram](img/5V-range2.png)
 
 Still some random wandering, possibly noise spikes on the power rails from switching PSU.
 
@@ -53,7 +54,9 @@ That causes a higher drift than intended originally by LT: running on 65°C inst
 
 - [Geller labs vref oven/cooler](https://web.archive.org/web/20140524004806/http://www.gellerlabs.com:80/SVR_TempcoTest.htm)
 
-Alternatively, analog temperature sensor like LM35CA (T0-92 case) read by an ADC input. 1.100V at 110C, 250mV at 25C (absolute Centigrade voltage output).
+Alternatively, analog temperature sensor like LM35CA (T0-92 case) read by an ADC input. 1.100V at 110C, 250mV at 25C (absolute Centigrade voltage output). 0.2C (typ) 0.5C (max) absolute accuracy at 25C. 9.9 to 10.1 max mV/C slope variation (compensatable in ADC readings if needed). Long term stability ±0.08C/1k hours.
+
+Analog avoids any digital interference on the analog reference voltage.
 
 Heater by variable current (or PWM??) through a resistor?
 

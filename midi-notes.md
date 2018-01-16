@@ -24,7 +24,7 @@ Try to use direct manipulation rather than menu-diving for normal operation.
 
 
 - Gate out (8-10V) with LED, avoid PWM
-- Pitch CV out 16bit (includes transpose, per-voice Glide & global pitchbend)
+- Pitch CV out 16bit (includes per-voice Glide. Channel Coarse Tuning, Channel Fine Tuning, & global pitchbend)
 - Secondary Pitch CV out (derived from Pitch CV, voice modifier and global shift)
 - Secondary Pitch modifier input
 - Strike 14bit, (attack velocity, including CC88)
@@ -41,7 +41,7 @@ Middle C is MIDI note 60.
 8 14bit outputs, same board as the per-voice expression outputs.
 4 on/off outputs (like gates, but 0 or 5V) for switches
 
-To accomodate overall volume changes, and also the Mute all Notes CC, it may be useful to allocate one of these outputs to control an overall "volume" VCA. Mute All Notes drops all gates, but also sets volume to zero regardless of sustai or release settings.
+To accomodate overall volume changes, and also the Mute all Notes CC, it may be useful to allocate one of these outputs to control an overall "volume" VCA. Mute All Notes drops all gates, but also sets volume to zero regardless of sustain or release settings.
 
 CC68 Legato - ignore in MPE as monophonic only
 CC84 Portamento Control - unclear whether to support this

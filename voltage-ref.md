@@ -18,6 +18,10 @@ After powering for 4 days (100 hours), socketed on soldered protoboard, with tri
 
 ![Mean 5.000 003V](img/5V-trimmed.png)
 
+Still some random wandering, possibly noice spikes on the power rails from switching PSU.
+
+![Wandering time series](img/5V-still-wandering.png)
+
 ## Temperature
 
 1.5ppm/C (525μV max over 0 to 70C)
@@ -38,13 +42,17 @@ That causes a higher drift than intended originally by LT: running on 65°C inst
 - [Maxim DS18B20 product page](https://www.maximintegrated.com/en/products/analog/sensors-and-sensor-interface/DS18B20.html)
 - [DS18B20 (9 bit) vs. DS18S20 (12 bit)](https://www.maximintegrated.com/en/app-notes/index.mvp/id/4377)
 - [Maxim DS18B20](http://vwlowen.co.uk/arduino/ds18b20/ds18b20.htm)
+- [Calibration of DS18B20 in ice bath](http://www.kandrsmith.org/RJS/Misc/Hygrometers/absolutetemperature.html)
 - [PJRC OneWire library docs](https://www.pjrc.com/teensy/td_libs_OneWire.html)
 - [Onewire tutorial](https://playground.arduino.cc/Learning/OneWire)
 - [original Dallas Library](https://www.milesburton.com/Dallas_Temperature_Control_Library)
 - [Arduino Library for Maxim Temperature ICs](https://github.com/milesburton/Arduino-Temperature-Control-Library)
 - [Example, Arduino DS18B20](https://create.arduino.cc/projecthub/everth-villamil-ruiz/temperature-sensor-ds18b20-3decfc)
 - [Example2, same](https://create.arduino.cc/projecthub/TheGadgetBoy/ds18b20-digital-temperature-sensor-and-arduino-9cc806)
+
 - [Geller labs vref oven/cooler](https://web.archive.org/web/20140524004806/http://www.gellerlabs.com:80/SVR_TempcoTest.htm)
+
+Alternatively, analog temperature sensor like LM35CA (T0-92 case) read by an ADC input. 1.100V at 110C, 250mV at 25C (absolute Centigrade voltage output).
 
 Heater by variable current (or PWM??) through a resistor?
 
@@ -97,7 +105,13 @@ Burn in at ±12V/1week. Check burn-in drift over some weeks, determine optimum b
 
 ## Line regulation
 
-Worse than comparable (and cheaper!) references: 200 max μV/V (10.8 to 18V)
+Worse than comparable (and cheaper!) references: 200 max μV/V (10.8 to 18V).
+
+My case has switching power supplies which give stable but noisy power lines.
+
+![+12 volts](img/PS-+12V.png)
+![-12 volts](img/PS--12V.png)
+![ripple](img/PS-AC-ripple.png)
 
 Regulated bipolar 11.2V supply for Vref, with ample PSU buffer caps. Check with variable PSU that 11.2V suply still gives a stable 10V out. If so, use this low-power regulator pair:
 

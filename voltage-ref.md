@@ -18,9 +18,10 @@ After powering for 4 days (100 hours), socketed on soldered protoboard, with tri
 
 ![Mean 5.000 003V](img/5V-trimmed.png)
 
-Still some random wandering, possibly noice spikes on the power rails from switching PSU.
+Still some random wandering, possibly noise spikes on the power rails from switching PSU.
 
-![Wandering time series](img/5V-still-wandering.png)
+![Wandering](img/5V-wandering2.png)
+![Still wandering time series](img/5V-still-wandering.png)
 
 ## Temperature
 

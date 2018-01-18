@@ -66,47 +66,6 @@ fixed resistors better than pwm in terms of interference.
 
 See [Performance DAC](performance-dac.md)
 
-### Power
-
-Handles 5.5V so can use same supply as pitc DACs.
-
-### Digital connection
-
-Needs level shifter for SPI. Use second SPI channel on Teensy 3.6. One quad shifter handles 2 CS plus SCLK and MOSI - enough for base board 2 voices and global CC board. A second optional shifter gives 4 more CS of which 3 are used for voices 3-4, 5-6 and 7-8.
-
-### Initial accuracy
-
-INL ±1 / ±4 LSB
-
-DNL ±0.1 / ±0.5 LSB
-
-Gain error 500μV / 7.5mV
-
-Zero error 	1mV / 4mV
-
-At 0..5V, 1LSB is 306μV. INL implies 13ENOB (612μV). For standard resolution 7bit data, we only need 2^6 = 64 LSB accuracy which is 19.5mV. Especilly due to the huge max zero-scale offset, we are getting 11-12 ENOB with these mV offsets. TL071 with 3mV offset is now significant wrt typical (but not max) offsets.
-
-DAC is not trimmable without external conditioning circuitry.
-
-Long term drift (Fig.7) inside ±100ppm/2k hours
-
-### Line regulation
-
-10μV/V is fine here
-
-### Load
-
-10μV/mA
-
-Internally buffered, but poor load regulation when sinking current; will need external buffer to protect from modular environment (like getting 12V plugged into an output by mistake) and to give current drive.
-
-Consider LT1214 (100μV, $5.85 quad, PDIP-14 or SOIC-14) or OPA4172 (200μV, $3.82 quad, SOIC-14) as non-inverting output buffers. Use innie current limiting resistor. Maybe time to try a SMD board design?
-
-### Vref
-
-Internal 2.5V VRef has good remperature stability (especially C grade) and long-term drift. External Vref probably not needed.
-
-
 
 ## Display, UI
 

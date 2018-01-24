@@ -22,6 +22,11 @@ Needs level shifter for SPI. Use second SPI channel on Teensy 3.6. One quad shif
 
 Same 74AHCT125 as used for pitch DAC. One does 2 DAC (4 voices), second adds 4 more CS. Base 4-voice needs two because of the global channel, so one CS for that, two for the other four voices, one left spare.
 
+Use 4 pots with rail-to-rail buffer amps connected to 4 adc inputs. Then use these values to digitally scale the 14bit performance values (on all voices).
+
+- [Alpha 9mm T18 shaft pot, 10k](https://www.thonk.co.uk/shop/alpha-9mm-pots-vertical-t18/)
+- [T18 micro knobs](https://www.thonk.co.uk/shop/micro-knobs/)
+
 ## Vref
 
 DAC8168C Internal 2.5V VRef has good temperature stability (especially C grade) and long-term drift. External Vref probably not needed.

@@ -38,6 +38,8 @@ To be determined. Low current, but needs investigation.
 
 2N2222A or 2N4401
 
+Alternatively, a low power chip power amp driven by LC/3.2 DAC out.
+
 ## Gate
 
 To be determined. Options for (about) 5V, 8V gates useful. Exact level not critical.

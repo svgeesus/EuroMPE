@@ -1,7 +1,9 @@
 # Euro-MPE notes
 
 Goal is a Multidimensional Polyphonic Expression (MPE) implementation for Eurorack, with a focus on
-high precision CV generation (especially for pitch) and complete implementation.
+high precision CV generation (especially for pitch) and complete MIDI 1.0 & MPE implementation.
+
+Secondary aim is one-control-per-function, avoiding menu diving for normal operation.
 
 Per-note, that means:
 
@@ -10,16 +12,16 @@ Per-note, that means:
 - gate and LED from NoteOn/NoteOff
 - 4 x 14bit CV for Attack Velocity, Release Velocity, Aftertouch and Glide
 
-Initial design gives two-note polyphony; expanders add another 2 notes each to max of 8. (Spec limit is 15, but that seems way high for Eurorack). Plan to build as 4-voice.
+Initial design gives four-note polyphony; expander adds another 4 notes to max of 8. (Spec limit is 15, but that seems way high for Eurorack). Plan to build as 4-voice.
 
 ## Voltage ref
 
-See [Voltage ref](voltage-ref.md)
+See [Voltage ref](voltage-ref.md) precise 5.000 0V ref, stable over time and temperature better than 100ppm (500 μV).
 
 
 ## Pitch DAC
 
-See [Pitch DAC](pitch-dac.md)
+See [Pitch DAC](pitch-dac.md) 16-bit high linearity DAC per voice with 10 octave (10V) range.
 
 
 ## Secondary pitch output
@@ -40,14 +42,9 @@ Ideally the external input would have an attenuator, except that needs to be the
 - use digital pots? No, only 5V operation
 - rely on an external 2,4,6,8 channel VCA with a single DAC providing the CV to all VCAs. And external multichannel CV mixers.
 
-Or, aassuming one of the performance controls is connected to the external input
+Or, assuming one of the performance controls is connected to the external input
 - rely on digital-domain attenuation on the 14bit per-note outputs (probably sufficient).
 - use digital pots? No, lots of pots (4 per note)
-
-Use 4 pots with rail-to-rail buffer amps connected to 4 adc inputs. Then use these values to digitally scale the 14bit performance values (on all voices).
-
-- [Alpha 9mm T18 shaft pot, 10k](https://www.thonk.co.uk/shop/alpha-9mm-pots-vertical-t18/)
-- [T18 micro knobs](https://www.thonk.co.uk/shop/micro-knobs/)
 
 ## Gate output
 
@@ -96,13 +93,13 @@ Global offset also needs an output, for calibration plus handy to expose for oth
 
 Avoid non-linear calibration curves. These are fine for pulling poorly-tracking oscillators into tune but then the same errors affect the other modules using pitch (filters etc). Instead go for high linearity, and use with well tracking oscillators.
 
-Output the same frequency for 440Hz on all pitch channels. Use FreqMeasure library to provide a frequency input, showing the frequency on the LCD screen. This allows each oscilator to be tuned the same. These pins support measuring frequency:
+Output the same voltage (frequency calculated for the given CV, e.g. for 440Hz) on all pitch channels. Also a sine output from one of the T3.6 DAcs, e.g. 440Hz, for beat frequency tuning). Use FreqMeasure library to provide a frequency input, showing the frequency on the LCD screen. This allows each oscilator to be tuned the same. These pins support measuring frequency:
 
-#define FTM0_CH0_PIN 22
-#define FTM0_CH1_PIN 23
-#define FTM0_CH2_PIN  9
-#define FTM0_CH3_PIN 10
-#define FTM0_CH4_PIN  6
-#define FTM0_CH5_PIN 20
-#define FTM0_CH6_PIN 21
-#define FTM0_CH7_PIN  5
+- #define FTM0_CH0_PIN 22
+- #define FTM0_CH1_PIN 23
+- #define FTM0_CH2_PIN  9
+- #define FTM0_CH3_PIN 10
+- #define FTM0_CH4_PIN  6
+- #define FTM0_CH5_PIN 20
+- #define FTM0_CH6_PIN 21
+- #define FTM0_CH7_PIN  5

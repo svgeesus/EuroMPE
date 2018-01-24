@@ -1,0 +1,35 @@
+Sysex, of length=9 now complete
+0  F0
+1  0
+2  21
+3  10
+4  78
+5  3D
+6  18
+7  5F
+8  F7
+
+Sysex, of length=9 now complete
+0  F0
+1  0
+2  21
+3  10
+4  78
+5  3D
+6  17
+7  28
+8  F7
+
+Sysex, of length=9 now complete
+0  F0
+1  0
+2  21
+3  10
+4  78
+5  3D
+6  19
+7  3F
+8  F7
+
+
+17 = left, 18 = middle, 19 = right fader

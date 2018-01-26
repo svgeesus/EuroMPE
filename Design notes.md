@@ -26,7 +26,7 @@ See [Pitch DAC](pitch-dac.md) 16-bit high linearity DAC per voice with 10 octave
 
 ## Secondary pitch output
 
-Global pitch shift (via another AD5542CRZ board ) is combined [OP-D, Vishay .01% quad resistor array] with the main pitch output and a buffered [OP-E] per-note external input to give a secondary pitch output for driving filters.
+Global pitch shift (via another AD5542CRZ board) is combined [OP-D, Vishay or LT .01% or .025% quad resistor array] with the main pitch output and a buffered [OP-E, half a quad resistor array] per-note external input to give a secondary pitch output for driving filters.
 
 Pitch shift selected by a rotary encoder with LED and pushbutton. Left to decrease, right to increase in 1 semitone steps and push to reset to zero. I2C is fine as this is low speed, manual use and not rapid use.
 [Rotary Encoder - Illuminated (RGB)](https://www.sparkfun.com/products/10982)

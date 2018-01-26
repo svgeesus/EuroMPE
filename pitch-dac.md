@@ -56,9 +56,15 @@ In the analog domain this is summed [OP-D] with 2V offset (to make range -3 to +
 
 2V offset from 20k + 30k resistors [both E24 values] plus trimmer
 
-Summing from 2 * 10k resistors; trim from 1 10k resistor  + trimmer (but needs small compensating resistors, half of the trimmer value) plus current limiting innie 47R resistor and cap.
+Summing from 2 * 10k resistors; trim from the third 10k resistor  + 10 ohm? 3250 wirewound trimmer (but needs small compensating resistors, half of the trimmer value, on the input) plus current limiting innie 47R resistor and cap. 3/4 of a quad array.
+
+3250 has 5% tolerance, 10Ω has effective resolution of 1.3% (130 mΩ), tempco ±50ppm/C
+
 
 Needs error analysis to be sure the error budget from resistor matching is reasonable. Breadboard this with OPA2777PA to measure performance, in particular gain error and offsets. Assume 0.1% resistors plus trimmers, or 0.01% resistor pack. Needs DAC on a SOIC to DIP breakout board.
+
+at 10k 0.01% (100ppm) is 1 ohm; 0.025% (250ppm) is 2.5 ohm
+10,001/9999 gain gives a 1mv error on 5V.
 
 Note "This unity-gain difference amplifier (equal resistors) causes the input difference voltage (V2-V1) to be impressed on R5; the resulting current flows to the load. The offset voltage, however, is applied directly to the noninverting input and is amplified by +2 – like a noninverting amplifier (G = 1 + R2/R1). Thus, a 10-mV offset voltage creates 20 mV across R5, producing a 20mA output current offset. A -10-mV offset would create a -20-mA output current (current sinking from the load)."
 

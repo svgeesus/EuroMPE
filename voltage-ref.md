@@ -53,6 +53,7 @@ That causes a higher drift than intended originally by LT: running on 65°C inst
 - [Example2, same](https://create.arduino.cc/projecthub/TheGadgetBoy/ds18b20-digital-temperature-sensor-and-arduino-9cc806)
 
 - [Geller labs vref oven/cooler](https://web.archive.org/web/20140524004806/http://www.gellerlabs.com:80/SVR_TempcoTest.htm)
+- [Logging results on an oven with Arduino PID](https://github.com/cellularmitosis/logs/tree/master/20180126-25c-chamber-tuning)
 
 Alternatively, analog temperature sensor like LM35CA (T0-92 case) read by an ADC input. 1.100V at 110C, 250mV at 25C (absolute Centigrade voltage output). 0.2C (typ) 0.5C (max) absolute accuracy at 25C. 9.9 to 10.1 max mV/C slope variation (compensatable in ADC readings if needed). Long term stability ±0.08C/1k hours.
 

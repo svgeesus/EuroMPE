@@ -4,6 +4,7 @@ Assume trimmed AD588BQ (CERDIP-16) rather than previous mono MIDI2CV designs wit
 
 - [Useful EEBlog article on AD588](https://www.eevblog.com/forum/testgear/ad588-reference-10-volt-0-01-1-5-ppmdeg-simple-rugged-and-affordable/)
 - [ad588 ref with 15V derived from 12VAC (Russian)](http://radio-hobby.org/modules/news/article.php?storyid=1226)
+- [heated AD588 10V ref](http://www.eevblog.com/forum/metrology/temperature-stabilised-enclosures-heating-and-or-cooling/msg1414486/#msg1414486)
 
 ## Absolute initial accuracy
 

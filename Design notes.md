@@ -14,6 +14,13 @@ Per-note, that means:
 
 Initial design gives four-note polyphony; expander adds another 4 notes to max of 8. (Spec limit is 15, but that seems way high for Eurorack). Plan to build as 4-voice.
 
+## Pitch accuracy and error budget
+
+MPE 14bit glide with 48 semitone range is 4800/16384 = 0.29 cent resolution.
+
+At ±5V, 16bit, 1LSB = 152μV. 833μV is 1 cent at 1V/oct (5.4 LSB).
+    Aim is better than 2LSB (300 μV, 60 ppm, 0.4 cent) overall system performance. Idealy 1 LSB so better than 0.29 cent, but that seems hard.
+
 ## Voltage ref
 
 See [Voltage ref](voltage-ref.md) precise 5.000 0V ref, stable over time and temperature better than 100ppm (500 μV).

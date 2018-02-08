@@ -76,7 +76,24 @@ Eigenlabs has no MIDI ID code
 
 Roger Linn Design ID code is 00H 01H 37H (suspended!)
 
+Supports splits.
+
 (to-do)
+
+### Used by Futuresonus Parva (v61 on)
+
+- Slide CC74 hardwired to VCF cutoff
+- CC1 Mod Wheel
+- CC2 Breath Controller
+
+The current Parva MPE implementation only supports one zone
+
+https://community.futureson.us/t/firmware-v61-release/503
+
+### Used by K-Board 4
+
+- Sustain
+- Expression
 
 
 ### Other possibilities
@@ -86,7 +103,7 @@ Roger Linn Design ID code is 00H 01H 37H (suspended!)
 - Modulation Wheel (CC01+CC33)
 - Breath (CC02+CC34)
 - Foot Controller (CC04+CC36)
-- Expression Conrtoller (CC11+CC43)
+- Expression Controller (CC11+CC43)
 
 switches
 

@@ -110,7 +110,7 @@ Burn in at ±12V/1week. Check burn-in drift over some weeks, determine optimum b
 
 ## Line regulation
 
-Worse than comparable (and cheaper!) references: 200 max μV/V (10.8 to 18V).
+Much worse than comparable (and cheaper!) references: 200 max μV/V (10.8 to 18V).
 
 My case has switching power supplies which give stable but noisy power lines.
 
@@ -137,3 +137,12 @@ Vout = 11.21V
 Load Reg for LT1761 at 1ma to 100mA is Vout/1.22 × -1mV = -9.1mV. Proportionally, at 10mA should be -0.9mV. For LT1964 at 1mA to 200mA  Vout/1.22 × 2mV = -18.2mV. So at 10mA again 0.9mV.
 
 These should hold supply voltage to ±11.2V ±2mV and cope with PSU droop down to ±11.6V, and provide some noise rejection.
+
+Tested with  well-regulated, low ripple linear variable PSU.
+
+At 12V, stable but no improvement in wandering and spikiness despite the clean PSU.
+
+Progressively worse below 12V. Poor results at 11.2V
+Thus, not enough room to produce a secondary regulated power from 12V.
+
+

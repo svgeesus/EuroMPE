@@ -1,6 +1,6 @@
 # MIDI decoding & DAC driving
 
-Based on Teensy 3.6, because it has two separate SPI busses easily accessible. The speed will also likely help when driving a lot of DACs ( 1 × 16bit on one bus, 5 8 × 14bit on the other). Fast single-precision float allows all frequency calculations to be done in float, then rounded for output to DACs. Teensy 3.6 also has USB Host.
+Based on Teensy 3.6, because it has two separate SPI busses easily accessible. The speed will also likely help when driving a lot of DACs ( 5 or 9 × 16bit on one bus, 3 or 5 × octal 14bit on the other). Fast single-precision float allows all frequency calculations to be done in float, then rounded for output to DACs. Teensy 3.6 also has USB Host.
 
 Teensy 3.6 uses about 80 mA.
 

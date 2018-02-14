@@ -118,6 +118,8 @@ My case has switching power supplies which give stable but noisy power lines.
 ![-12 volts](img/PS--12V.png)
 ![ripple](img/PS-AC-ripple.png)
 
+### Secondary regulation
+
 Regulated bipolar 11.2V supply for Vref, with ample PSU buffer caps. Check with variable PSU that 11.2V suply still gives a stable 10V out. If so, use this low-power regulator pair:
 
 LT1964-BYP LDO negative variable regulator, 340mV dropout, 200mA SOT-23
@@ -137,6 +139,8 @@ Vout = 11.21V
 Load Reg for LT1761 at 1ma to 100mA is Vout/1.22 × -1mV = -9.1mV. Proportionally, at 10mA should be -0.9mV. For LT1964 at 1mA to 200mA  Vout/1.22 × 2mV = -18.2mV. So at 10mA again 0.9mV.
 
 These should hold supply voltage to ±11.2V ±2mV and cope with PSU droop down to ±11.6V, and provide some noise rejection.
+
+### Testing on better PSU
 
 Tested with  well-regulated, low ripple linear variable PSU.
 

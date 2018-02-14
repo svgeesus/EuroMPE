@@ -5,7 +5,7 @@ AD5542CRZ (SOIC-14, $36.39), same as the previous, mono, MIDI2CV project, provid
 
 ## Power
 
-Vdd absolute max is -0.3V to +6V. Spec sheet assumes 2.7 ≤ Vdd ≤ 5.5, 2.5 ≤ Vref ≤ Vdd. Check how close can swing to Vdd. When using a 5V ref, may need a 5.5V rail to allow clean swing to 5V output. (Previous project used a 5V rail and 2.5V ref for that reason, an op-amp then gave 2x gain).
+Vdd absolute max is -0.3V to +6V. Spec sheet assumes 2.7 ≤ Vdd ≤ 5.5, 2.5 ≤ Vref ≤ Vdd. Check how close can swing to Vdd. When using a 5V ref, may need a 5.5V rail to allow clean swing to 5V output. (Previous project used a 5V rail and AD780N 2.5V ref for that reason, an op-amp then gave 2x gain).
 
 ## Digital interface
 
@@ -18,7 +18,7 @@ Alternatively, use 4-channel digital isolator to prevent coupling of high speed 
 
 ## Initial accuracy
 
-1LSB is 5V / 2^16 = 76μV. At 1V/Oct, 12 tones per octave, 100 cents per tone, 1 Cent is 833μV so 1 LSB is about 1/10 cent.
+1LSB is 10V / 2^16 = 152μV. At 1V/Oct, 12 tones per octave, 100 cents per tone, 1 Cent is 833μV so 1 LSB is about 1/5 cent.
 
 INL is ±0.5 (typ) ±1.0 (max) LSB for best (C) grade.
 
@@ -43,33 +43,43 @@ Unlike previous project, use a dual op-amp [OP-A, OP-B] near the VREF to provide
 
 "The use of separate force (F) and sense (S) connections (often referred to as a Kelvin connection) at the load removes any errors resulting from voltage drops in the force lead, but, of course, may only be used in systems where there is negative feedback. It is also impossible to use such an arrangement to drive two or more loads with equal accuracy, since feedback may only be taken from one point."
 
-Vref input resistance code-dependent, lowest (around 7.5kΩ) at 0x8555 which is 660 μA at 5V.
-
-Or, use a differental op-amp near the DAC to isolate from loading effects; then a 2V ref can be derived from that too.
+DAC input resistance is highly code-dependent, lowest (around 7.5kΩ) at 0x8555 which is 660 μA at 5V.
 
 
 ## Output conditioning
 
-With a 5V ref and an output buffer [OP-C, no external components] this gives ±5V output (10 octaves) which includes Note-ON voltage, global pitchbend, and per-note pitchbend. Note that this does not cover the full MIDI note range of 128 notes = 10.66 octaves. is that an issue in practice?
+With a 5V ref and an output buffer [OP-C, no external components] this gives ±5V output (10 octaves) which includes Note-ON voltage, global pitchbend, and per-note pitchbend. Note that this does not cover the full MIDI note range of 128 notes = 10.66 octaves. Is that an issue in practice?
 
-In the analog domain this is summed [OP-D] with 2V offset (to make range -3 to +8V), and offset trim (on the 2V divider). This op-amp also provides trimmable gain scaling to ensure an accurate 1V/oct over a 9.8 octave range (avoiding calibrating at the ends for offset errors). Or combine into one opamp, both gain and offset. In that case the DAC should perform the inversion, so re-inverted by the inverting mixer.
+In the analog domain this is summed [OP-D] with -2V offset (to make range -3 to +8V), and offset trim (on the 2V divider). This op-amp also provides trimmable gain scaling to ensure an accurate 1V/oct over a 9.8 octave range (avoiding calibrating at the ends for offset errors). Thus the DAC should perform the inversion, so re-inverted by the inverting mixer.
 
-2V offset from 20k + 30k resistors [both E24 values] plus trimmer
+2V offset from 20k + 30k resistors [both E24 values] plus trimmer, buffered and inverted with [OP-E]
 
 Summing from 2 * 10k resistors; trim from the third 10k resistor  + 10 ohm? 3250 wirewound trimmer (but needs small compensating resistors, half of the trimmer value, on the input) plus current limiting innie 47R resistor and cap. 3/4 of a quad array.
 
 3250 has 5% tolerance, 10Ω has effective resolution of 1.3% (130 mΩ), tempco ±50ppm/C
 
 
-Needs error analysis to be sure the error budget from resistor matching is reasonable. Breadboard this with OPA2777PA to measure performance, in particular gain error and offsets. Assume  0.01% resistor pack, possibly with trimmers too. Needs DAC on a SOIC to DIP breakout board.
+Needs error analysis to be sure the error budget from resistor matching is reasonable. Breadboard this with OPA2777PA to measure performance, in particular gain error and offsets. Assume  0.01% quad resistor pack, possibly with trimmers too. Needs DAC on a SOIC to DIP breakout board.
 
-at 10k 0.01% (100ppm) is 1 ohm; 0.025% (250ppm) is 2.5 ohm
+at 10k, 0.01% (100ppm) is 1 ohm; 0.025% (250ppm) is 2.5 ohm
 10,001/9999 gain gives a 1mv error on +5V, far too big.
 
 Note "This unity-gain difference amplifier (equal resistors) causes the input difference voltage (V2-V1) to be impressed on R5; the resulting current flows to the load. The offset voltage, however, is applied directly to the noninverting input and is amplified by +2 – like a noninverting amplifier (G = 1 + R2/R1). Thus, a 10-mV offset voltage creates 20 mV across R5, producing a 20mA output current offset. A -10-mV offset would create a -20-mA output current (current sinking from the load)."
 
-OP-A could be a precision differential amp with on-chip input resistors.
+# Offset
 
-# Offset DAC
+## Offset DAC
 
-Same DAC, similar circuit in terms of SPI connection, Vref and bipolar output amp. No offset trim. Gain set lower to give ±2V swing (10k and 25k). Unity gain inverting buffer for external (global) input, normalled to 0V (2 10k resistors). Buffer for offset output (2 10k). Mixer to sum offset and external signals to send to pitch dac boards (3 10k).
+Same DAC, similar circuit in terms of SPI connection, Vref and bipolar output amp. No offset trim. Several options:
+
+A) Gain set lower to give ±2V swing (10k and 25k).
+
+B) Unity gain, with ±3V swing? In which case even an AD780N 3V ref and unity-gain op-amp buffer?
+
+Unity gain inverting buffer for external (global) input, normalled to 0V (2 10k resistors). Buffer for offset output (2 10k). Mixer to sum offset and external signals to send to pitch dac boards (3 10k).
+
+Needs 2 quad resistor packs. The less expensive 0.025% ones likely fine here.
+
+Technically a 14bit DAC would be fine here. Or the lower grade of the 16bit. In practice it is easier to use known-working DAC and code for this one too.
+
+## Secondary pitch output

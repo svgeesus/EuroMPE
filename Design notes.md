@@ -25,6 +25,9 @@ At ±5V, 16bit, 1LSB = 152μV. 833μV is 1 cent at 1V/oct (5.4 LSB).
 
 See [Voltage ref](voltage-ref.md) precise 5.000 0V ref, stable over time and temperature better than 100ppm (500 μV).
 
+## DAC driving
+
+Use one SPI channel for the pitch DACs and a second channel for the performance DACs. There is a third SPI channel, but it is inconvenient because it uses the inner Teensy pads not the outer pins.
 
 ## Pitch DAC
 
@@ -43,13 +46,14 @@ and an option for hardware quadrature decode
 [Hardware Quadrature Code for Teensy 3.x](https://forum.pjrc.com/threads/26803-Hardware-Quadrature-Code-for-Teensy-3-x)
 
 
-Ideally the external input would have an attenuator, except that needs to be the same value for all 8 voice channels. This can have a slightly more relaxed error budget:
+Ideally the external input would have an attenuator, except that needs to be the same value for all 8 voice channels. This can have a slightly more relaxed error budget. Options:
 
 - include a per-note VCA, drive with the Teensy DAC out?
 - use digital pots? No, only 5V operation
 - rely on an external 2,4,6,8 channel VCA with a single DAC providing the CV to all VCAs. And external multichannel CV mixers.
 
-Or, assuming one of the performance controls is connected to the external input
+Or, assuming one of the performance controls is connected to the external input, attenuate those:
+
 - rely on digital-domain attenuation on the 14bit per-note outputs (probably sufficient).
 - use digital pots? No, lots of pots (4 per note)
 
@@ -75,38 +79,14 @@ See [Performance DAC](performance-dac.md)
 
 Simplest to use a second Teensy (LC, or possibly 3.2) to drive the display and handle user interaction. That keeps the code and control flow separate, also frees up an SPI bus for controlling the display. Use I2C or Serial to send commands to the main Teensy 3.6, primarily to go into calibration mode.
 
-The 3.2/LC can also handle oven control duties.
+The 3.2/LC can also handle oven control duties if those are needed.
 
 
 ## MIDI
 
+Full MIDI 1.0 (including tuning control) and MPE implementation at 14bit accuracy.
 See [MIDI notes](midi-notes.md)
 
 ## Calibration
 
-Several types of calibration:
-
-### Initial setup trimming
-
-Ensure trimmers are on front panel so unit can be trimmed while in the rack, powered and warm. Firstly setting precise 5V output from reference; then setting offset (by adjusting the 2V offset reference) and gain on each pitch DAC. The 14bit outputs are untrimmed, 0-5V within 5-10mV is fine.
-
-Vref needs extensive trimming and measurement (for ageing) outside case anyway. Provide a buffered +5V jack on front panel, offset trimmer near it.
-
-Needs outputs at 0V (before offset, so provide test point? or trim outside case as a first check), -2V (= 0V after offset, for offset trim), -4.8 = -2.8V, +4.8 = +6.8V (to avoid DAC extremes where zero and FS offset complicate gain setting, for gain trim).
-
-Global offset also needs an output, for calibration plus handy to expose for other patching.
-
-### Per-voice oscillator calibration
-
-Avoid non-linear calibration curves. These are fine for pulling poorly-tracking oscillators into tune but then the same errors affect the other modules using pitch (filters etc). Instead go for high linearity, and use with well tracking oscillators.
-
-Output the same voltage (frequency calculated for the given CV, e.g. for 440Hz) on all pitch channels. Also a sine output from one of the T3.6 DAcs, e.g. 440Hz, for beat frequency tuning). Use FreqMeasure library to provide a frequency input, showing the frequency on the LCD screen. This allows each oscilator to be tuned the same. These pins support measuring frequency:
-
-- #define FTM0_CH0_PIN 22
-- #define FTM0_CH1_PIN 23
-- #define FTM0_CH2_PIN  9
-- #define FTM0_CH3_PIN 10
-- #define FTM0_CH4_PIN  6
-- #define FTM0_CH5_PIN 20
-- #define FTM0_CH6_PIN 21
-- #define FTM0_CH7_PIN  5
+Initial setup (trimming), oscillator tuning. See [Calibration details](calibration.md).

@@ -52,17 +52,18 @@ With a 5V ref and an output buffer [OP-C, no external components] this gives ±5
 
 In the analog domain this is summed [OP-D] with -2V offset (to make range -3 to +8V), and offset trim (on the 2V divider). This op-amp also provides trimmable gain scaling to ensure an accurate 1V/oct over a 9.8 octave range (avoiding calibrating at the ends for offset errors). Thus the DAC should perform the inversion, so re-inverted by the inverting mixer.
 
-2V offset from 20k + 30k resistors [both E24 values] plus trimmer, buffered and inverted with [OP-E]
+2V offset from 20k + 30k resistors [both E24 values] plus trimmer (for precision 2V, and also trimming DAC offset), buffered and inverted with [OP-E] 2 × 10k resistors. Watch TC on those 20k, 30k resistive divider.
 
-Summing from 2 * 10k resistors; trim from the third 10k resistor  + 10 ohm? 3250 wirewound trimmer (but needs small compensating resistors, half of the trimmer value, on the input) plus current limiting innie 47R resistor and cap. 3/4 of a quad array.
+Summing from 2 × 10k resistors; gain trim from the third 10k resistor  + 10 ohm? 3250 wirewound trimmer (but needs small compensating resistors, half of the trimmer value, on the input) plus current limiting innie 47R resistor and cap. 3/4 of a quad array. In total, 1.5 quad arrays per channel (3 per pair of channels).
 
 3250 has 5% tolerance, 10Ω has effective resolution of 1.3% (130 mΩ), tempco ±50ppm/C
+Maybe better to use a non-wirewound on such a small resistance.
 
 
 Needs error analysis to be sure the error budget from resistor matching is reasonable. Breadboard this with OPA2777PA to measure performance, in particular gain error and offsets. Assume  0.01% quad resistor pack, possibly with trimmers too. Needs DAC on a SOIC to DIP breakout board.
 
 at 10k, 0.01% (100ppm) is 1 ohm; 0.025% (250ppm) is 2.5 ohm
-10,001/9999 gain gives a 1mv error on +5V, far too big.
+10,001/9999 gain gives a 1mv error on +5V, far too big. Overall gain will need trimming.
 
 Note "This unity-gain difference amplifier (equal resistors) causes the input difference voltage (V2-V1) to be impressed on R5; the resulting current flows to the load. The offset voltage, however, is applied directly to the noninverting input and is amplified by +2 – like a noninverting amplifier (G = 1 + R2/R1). Thus, a 10-mV offset voltage creates 20 mV across R5, producing a 20mA output current offset. A -10-mV offset would create a -20-mA output current (current sinking from the load)."
 
@@ -76,10 +77,16 @@ A) Gain set lower to give ±2V swing (10k and 25k).
 
 B) Unity gain, with ±3V swing? In which case even an AD780N 3V ref and unity-gain op-amp buffer?
 
-Unity gain inverting buffer for external (global) input, normalled to 0V (2 10k resistors). Buffer for offset output (2 10k). Mixer to sum offset and external signals to send to pitch dac boards (3 10k).
-
-Needs 2 quad resistor packs. The less expensive 0.025% ones likely fine here.
+Unity gain inverting buffer for external (global) input, normalled to 0V (2 × 10k 0.025% resistors).
 
 Technically a 14bit DAC would be fine here. Or the lower grade of the 16bit. In practice it is easier to use known-working DAC and code for this one too.
 
+## Offset external Input
+
+Inverting buffer for offset output (2 × 10k).
+
 ## Secondary pitch output
+
+ Mixer to sum offset and external signals to send to pitch dac boards (3 × 10k).
+
+Needs 2 quad resistor packs for offset. The less expensive 0.025% ones likely fine here.

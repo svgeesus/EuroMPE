@@ -14,7 +14,7 @@ Vref seems to give a couple of mV error in output wrt temperature. Fig.54 shows 
 
 ## Power
 
-Same clean 5.5V as the pitch DACs use
+Same clean 5.5V as the pitch DACs use. Most graphs in datasheet are at AVdd =  5.5V.
 
 ## Digital interface
 
@@ -27,6 +27,7 @@ Needs level shifter for SPI. Use second SPI channel on Teensy 3.6. One quad shif
 
 DAC8168C Internal 2.5V VRef has initial accuracy of 100μV (0.004%), good temperature stability (especially 2x gain C grade) and long-term drift. External Vref probably not needed.
 Internal Vref in DAC8168C is adequate for general non-pitch CV duties. Output is 0 to 5V.
+Note internal Vref is disabled by default, see datasheet Table 5 for enable command.
 
 ## Initial accuracy
 
@@ -46,24 +47,32 @@ At 0..5V, 1LSB is 306μV. TL071 with 3mV offset is now significant wrt typical (
 
 DAC is not trimmable without external conditioning circuitry.
 
-Long term drift (Fig.7) inside ±100ppm/2k hours
+Long term drift (Fig.7) inside ±500μV (±100ppm) /2k hours
 
 ## Line regulation
 
 10μV/V is fine here
 
+"The power applied to AVDD should be well-regulated and low noise. Switching power supplies and dc/dc converters often have high-frequency glitches or spikes riding on the output voltage. In addition, digital components can create similar high-frequency spikes as their internal logic switches states. This noise can easily couple into the DAC output voltage through various paths between the power connections an analog output"
+
 ## Load
 
-10μV/mA
+30μV/mA (sourcing)
 
-Internally buffered, but poor load regulation when sinking current; will need external buffer to protect from modular environment (like getting 12V plugged into an output by mistake) and to give current drive.
+Internally buffered, but poor load regulation; will need external buffer to protect from modular environment (like getting 12V plugged into an output by mistake) and to give current drive.
 
+## Support circuitry
+
+1μF supply bypass cap on AVdd. Optional 150nF cap for lower noise on Vref (likely not needed).
+"a 1μF to 10μF capacitor and 0.1μF bypass capacitor are strongly recommended"
 
 ## Output conditioning
 
-3mV offset on TL074 is not significant, though if an inexpensive alternative op-amp is better (1mV or less, does not need to be high precision) use that.
+3mV offset on TL074 is not that significant, though if an inexpensive alternative op-amp is better (1mV or less, does not need to be high precision) use that.
 
 Consider LT1214 (100μV, $5.85 quad, PDIP-14 or SOIC-14) or OPA4172 (200μV, $3.82 quad, SOIC-14) as non-inverting output buffers. Use innie current limiting resistor. Maybe time to try a SMD board design?
+
+Bipolar peration is possible (datasheet p.47) but not needed here, all the MIDI CC are unipolar for the MPE performance controls.
 
 
 ## Fading (all voice 'attenuators')

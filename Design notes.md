@@ -59,16 +59,18 @@ Or, assuming one of the performance controls is connected to the external input,
 
 ## Gate output
 
-Requires 8-10V drive to a gate output; also switch to allow +5V to flow through an LED as indicator (both high side swiching, npn driving pnp).
+Requires 8-10V drive to a gate output; also switch to allow +5V to flow through an LED as indicator (both high side swiching, npn driving pnp). Driven from 3V3 logic high, transition should be 1.5 to 2V. 3-terminal variable regulator to give 6 to 10V from +12V rail.
 
 - [Hinton two-transistor gate, no LED](https://www.muffwiggler.com/forum/viewtopic.php?p=2720659#2720659)
 - [PNP high-side switching](http://www.w9xt.com/page_microdesign_pt12_hv_pnp_switching.html)
+- [gate buffers](https://synthnerd.wordpress.com/2016/03/17/synth-diy-gate-buffer/)
 
 Pirhana diffuse 5mm rgb, through hole, 7.6mm sq, 20mA max,  $9.95 for 10
 experiment, likely good at half power. 3 pins per led.
 fixed resistors better than pwm in terms of interference.
-8 colors for the 8 voices
+8 colors for the 8 voices, easier to set up in software to allow for 4-voice or 8-voice builds.
 10mA is 320R red, 200R green & blue. Adjust for desired color.
+Or ue an external 16-channel PWM chip to offload PWMing the LEDs.
 
 ## Performance (Control Change) DAC
 

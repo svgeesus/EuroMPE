@@ -23,7 +23,7 @@ At ±5V, 16bit, 1LSB = 152μV. 833μV is 1 cent at 1V/oct (5.4 LSB).
 
 ## Voltage ref
 
-See [Voltage ref](voltage-ref.md) precise 5.000 0V ref, stable over time and temperature better than 100ppm (500 μV).
+See [Voltage ref](voltage-ref-LM399.md) precise 5.000 0V ref, stable over time and temperature better than 100ppm (500 μV).
 
 ## DAC driving
 

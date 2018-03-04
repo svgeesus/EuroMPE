@@ -5,7 +5,7 @@ One octal DAC does 2 voices  of attack veocity, lift velocity, pressure, glide. 
 
 ## Chip selection
 
-Needs to be 14-bit capable to fully implement the HR aspect, but precision requirement lower than for pitch; most devices send 7bit data and the ones that are high resolution have ENOB less than 14. 1 LSB at 14bit is 300μV but 1 LSB at 7bit is a huge 39mV.
+Needs to be 14-bit capable to fully implement the HR aspect, but precision requirement lower than for pitch; most devices send 7bit data and the ones that are high resolution have ENOB less than 14. 1 LSB at 14bit is 300μV but 1 LSB at 7bit is a huge 39mV. Aim for around 10ENOB.
 
 **AD5648-2** octal 14-bit DAC ($19.91, got one) NO unsuitable due to zero and gain offsets. Internal VRef of 2.5V gives unipolar 5V output. Better performance from the -2 devices at 5V than the -1 devices at 3V3. Fig. 31 shows **100mV** (!!) error when sourcing or sinking 2mA. Internal 2V5 reference with 2x gain, can use external (5V) ref. Notice most of the graphs in datasheet use an external reference :)
 Vref seems to give a couple of mV error in output wrt temperature. Fig.54 shows 4mV error in internal ref wrt temperature.
@@ -20,7 +20,7 @@ Same clean 5.5V as the pitch DACs use
 
 Needs level shifter for SPI. Use second SPI channel on Teensy 3.6. One quad shifter handles 2 CS plus SCLK and MOSI - enough for base board 2 voices and global CC board. A second shifter gives 4 more CS of which 3 are used for voices 3-4, 5-6 and 7-8.
 
-Same 74AHCT125 as used for pitch DAC. One does 2 DAC (4 voices), second adds 4 more CS. Base 4-voice needs two because of the global channel, so one CS for that, two for the other four voices, one left spare. Or would each DAC need its own SCLK and MOSI? In that case one per 2 voices, plus one for global.
+74AHCT125. One does 2 DAC (4 voices), second adds 4 more CS. Base 4-voice needs two because of the global channel, so one CS for that, two for the other four voices, one left spare. Or would each DAC need its own SCLK and MOSI? In that case one per 2 voices, plus one for global (3 for 4 voice, 5 for 8 voice).
 
 
 ## Vref
@@ -32,17 +32,17 @@ Internal Vref in DAC8168C is adequate for general non-pitch CV duties. Output is
 
 From **DAC8168C** datasheet, assuming internal Vref:
 
-INL 300 μV / 1.2mV (±1 / ±4 LSB)
+INL 300μV / 1.2mV (±1 / ±4 LSB)
 
-DNL ±0.1 / ±0.5 LSB
+DNL 30μV / 150μV (±0.1 / ±0.5 LSB)
 
-Gain error 1mV / 4mV (±0.01% / ±0.15% of FSR) with  (±1 ppm of FSR)/°C drift
+Gain error 1mV / 4mV (±0.01% / ±0.15% of FSR) with  5μV (±1 ppm of FSR)/°C drift
 
-Offset error
+Offset error  ±1 / ±4 mV with ±0.5 μV/°C drift
 
 Zero error 	1mV / 4mV with  ±2 μV/°C drift
 
-At 0..5V, 1LSB is 306μV. INL implies 13ENOB (612μV). For standard resolution 7bit data, we only need 2^6 = 64 LSB accuracy which is 19.5mV. Especilly due to the huge max zero-scale offset, we are getting 11-12 ENOB with these mV offsets. TL071 with 3mV offset is now significant wrt typical (but not max) offsets.
+At 0..5V, 1LSB is 306μV. TL071 with 3mV offset is now significant wrt typical (but not max) offsets.
 
 DAC is not trimmable without external conditioning circuitry.
 

@@ -10,9 +10,17 @@ On the downside, the initial accuracy is _really terrible_; each device needs to
 
 6.95V (typ) with a huge variation - 6.75 to 7.3V !! -200 to +350mA !! Absolutely requires measurement of initial value, monitoring of value over time for burning until stable to desired precision, then trimming in the output conditioning stage to desired output voltage.
 
+Accuracy is improved by running the heater from bipolar supplies, keeping the return current off the 0V plane.
+
+Output voltage varies with zener current, 1mA is the optimum value for stability. There is about 1μV of voltage change for 1μA of current change.
+
+"The LM399 is much more sensitive to board stress than the LTZ [because the LTZ has a special mechanical arrangement in the die mount]-- so the LM399 should be mounted off of the PCB a little bit to allow for this."
+
 ## Temperature
 
 Specified as 0.3 (typ) 1.0 (max) ppm/C over 0 to 70C ambient (A grade). Major effect on the tempco of the eventual 5V reference is the tempco of the resistive divider.
+
+- [LM399 tempco is not linear](https://www.eevblog.com/forum/metrology/lm399-based-10-v-reference/msg467770/#msg467770)
 
 Has its own heater and thermal regulation circuit, so there is a stable temperature inside the can.
 It works well with a large voltage difference, and the use of negative as well as positive supplies also helps. Limit is 40V. Agilent 34401 uses +15 and -15 for the heater circuit.
@@ -22,6 +30,8 @@ Use +12 and -12 direct from Eurorack power. Also avoids dumping current into the
 Temperature is not adjustable, chip runs at a die temperature of 95C and junction temperature 90C. Besides the supplied plastic insulator cap, additional foam insulation above and below the LM399 means the heater circuit does less work, improving stability.
 
 Heater supply current stated to be 8.5mA (typ) 15mA (max) on 30V heater. For the same power, 10.6 mA (typ) 18.8 mA (max) on 24V. Note huge inrush current of 140mA (typ) 200mA (max) (on 30V, so higher on 24V). Can use inrush currrent limiting resistor (max 200R, see datasheet Fig G09) to damp this, with slower time to thermal stabilisation. However the normal time is 3s so plenty of leeway there. 180R limits inrush current to 130mA at 24V.
+
+"If properly insulated, an LM399 can have a ppm/K figure of between 0.1ppm/K to 0.2ppm/K-- the data sheet is *very* conservative.  [Note that the DMM manufacturers are not insulating these other than the plastic insulator that they come in-- they would benefit by better insulating the top and bottom of the LM399 to keep the heat in, and the heater power down" (Bob Dobkin)
 
 ## Current / Load
 
@@ -39,7 +49,22 @@ Specified as 8ppm/√kHr at ambient 22 to 28C, 1kHr, 1mA zener current ±0.1%. S
 
 ## Line regulation
 
-Not directly specified. heater circuit seems to tolerate a large voltage range. Zener circuit is current driven, so high stability current is needed (bootstrapped from output voltage, not power rail).
+Not directly specified. heater circuit seems to tolerate a large voltage range.
+
+"any resistor on the heater seems to worse the PSRR slightly."
+
+and
+
+"Since PSRR decreases on higher voltages the heater voltage should be choosen as high as possible."
+
+Zener circuit is current driven, so high stability current is needed.
+
+"In contrast, the LM199 is measured in still air of 25°C to 28°C at a reverse current of 1 mA ±0.5%" (AN-161)
+
+A precision current source gives the best stability (not a resistor from the ower rail, as with most circuits in the datasheet). This can be bootstrapped from output voltage rather than using a separate (and less stable) reference. For circuit starting, a high value resistor to power may be needed.
+
+- [LM399  PSRR, part 1](https://www.eevblog.com/forum/metrology/lm399-based-10-v-reference/msg441913/#msg441913)
+- [LM399 PSRR, part 2](https://www.eevblog.com/forum/metrology/lm399-based-10-v-reference/msg443181/#msg443181)
 
 ## Output conditioning
 
@@ -56,13 +81,14 @@ Compare carefully.
 
 "Placing a capacitor across the feedback resistor reduces either form of clock feedthrough by limiting the bandwidth of the closed loop gain. "
 
+
 100nF film cap for noise filtering.
 
 Keep the 100nF decoupling cap very close to the positive power input.
 
 The output voltage is bootstrapped round via a resistor to set the zener current to 1mA (range is 0.5 to 10mA, above 1mA has no benefit). A 200k pull-up resistor allows the circuit to start (there seems to be debate on whether this is needed; less so if the output buffer uses a single rail rather than split rails).
 
-For 5V output, use a unity-gain non-inverting follower then a resistive divider load to get the exact 5V on the distribution board.
+[NO] For 5V output, use a unity-gain non-inverting follower then a resistive divider load to get the exact 5V on the distribution board. No, because then a separate constant current source is needed. Amping up gives enough potential difference above the zener voltage that the Vref can bootstrap itself as a constant current source.
 
 ### Adjusting to 5.000V
 

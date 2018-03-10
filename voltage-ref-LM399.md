@@ -65,6 +65,8 @@ A precision current source gives the best stability (not a resistor from the owe
 
 " Since the dynamic impedance is constant with current changes regulation is better than discrete zeners. For optimum regulation, lower operating currents are preferred since the ratio of source resistance to zener impedance is higher, and the attenuation of input changes is greater. Further, at low currents, the voltage drop in the wiring is minimized." (ΑΝ-161)
 
+XDevs KX-lowcost uses 25ppm/C resistors for the op-amp divider, but 5ppm/C resistor for the bootstrapped current source. (And no pullup resistor for startup) [KX low-cost](https://xdevs.com/article/kx-ref/#lm399opt)
+
 
 - [LM399  PSRR, part 1](https://www.eevblog.com/forum/metrology/lm399-based-10-v-reference/msg441913/#msg441913)
 - [LM399 PSRR, part 2](https://www.eevblog.com/forum/metrology/lm399-based-10-v-reference/msg443181/#msg443181)
@@ -90,6 +92,8 @@ On a LM399 I had around 4-6 ppm difference depending on how the reference was pl
 Chopper-stabilised zero-drift op-amps seem to be favoured for stability.
 
 LTC2050HV (used on the Ian Johnston adjustable reference) has almost zero Vos and drift, while also having low switching noise.
+
+"The chopper amplifier LTC2057, with TCVOS of 0.015uV/°C, contributes only 0.0025ppm/°C of output error, thus effectively eliminating TCVOS as an error consideration." [LM399 low cost version](https://xdevs.com/article/kx-ref/#lm399opt)
 
 Max PSU voltage is 11V though, so needs a separate derived PSU. Supply current is 0.8mA.
 

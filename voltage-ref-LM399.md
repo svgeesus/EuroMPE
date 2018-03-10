@@ -59,12 +59,29 @@ and
 
 Zener circuit is current driven, so high stability current is needed.
 
-"In contrast, the LM199 is measured in still air of 25°C to 28°C at a reverse current of 1 mA ±0.5%" (AN-161)
+"In contrast, the LM199 is measured in still air of 25°C to 28°C at a reverse current of 1 mA ±0.5%" (AN-161) 0.5% is 5μΑ.
 
-A precision current source gives the best stability (not a resistor from the ower rail, as with most circuits in the datasheet). This can be bootstrapped from output voltage rather than using a separate (and less stable) reference. For circuit starting, a high value resistor to power may be needed.
+A precision current source gives the best stability (not a resistor from the ower rail, as with most circuits in the datasheet). This can be bootstrapped from output voltage rather than using a separate (and less stable) reference. For circuit starting, a high value resistor to power may be needed. This should be less than 10% of the total zener current (investigate).
+
+" Since the dynamic impedance is constant with current changes regulation is better than discrete zeners. For optimum regulation, lower operating currents are preferred since the ratio of source resistance to zener impedance is higher, and the attenuation of input changes is greater. Further, at low currents, the voltage drop in the wiring is minimized." (ΑΝ-161)
+
 
 - [LM399  PSRR, part 1](https://www.eevblog.com/forum/metrology/lm399-based-10-v-reference/msg441913/#msg441913)
 - [LM399 PSRR, part 2](https://www.eevblog.com/forum/metrology/lm399-based-10-v-reference/msg443181/#msg443181)
+
+## Layout and mechanical considerations
+
+"Mounting is an important consideration for optimum performance. Although the thermal shield minimizes the heat low, the LM199 should not be exposed to a direct air flow such as from a cooling fan. This can cause as much as a 100% increase in power dissipation degrading the thermal regulation and increasing the drift. Normal conviction currents do not degrade performance." (AN-161)
+
+"The printed circuit board (PCB) layout is also important. Firstly, 4-wire sensing should be used to eliminate ohmic drops in pc traces. Although the voltage drops are small the temperature coefficient of the voltage developed along a copper trace can add significantly to the drift. For example, a trace with 1 Ω resistance and 2 mA current flow will develop 2 mV drop. The TC of copper is 0.004%/°C so the 2 mV drop will change at 8 μV/°C, an additional 1 ppm drift error. Of course, the effects of voltage drops in the printed circuit traces are eliminated with 4-wire operation. The heater current also should not be allowed to flow through the voltage reference traces. Over a −55°C to +125°C temperature range the heater current will change from about 1 mA to over 40 mA. These magnitudes of current flowing reference leads or reference ground can cause huge errors compared to the drift of the LM199." (AN-161)
+
+"Thermocouple effects can also use errors. The kovar leads from the LM199 package from a thermocouple with copper printed circuit board traces. Since the package of the 199 is heated, there is a heat flow along the leads of the LM199 package. If the leads terminate into unequal sizes of copper on the p.c. board greater heat will be absorbed by the larger copper trace and a temperature difference will develop. A temperature difference of 1°C between the two leads of the reference will generate about 30 μA. Therefore, the copper traces to the zener should be equal in size. This will generally keep the errors due to thermocouple effects under about 15 μV.
+The LM199 should be mounted flush on the p.c. board with a minimum of space between the thermal shield and the boards. This minimizes air flow across the kovar leads on the board surface, which also can cause thermocouple voltages. Air currents across the leads usually appear as ultra-low frequency noise of about 10 μV to 20 μV amplitude." (AN-161)
+
+"Sockets are generally no good idea.
+On a LM399 I had around 4-6 ppm difference depending on how the reference was placed into the socket." [Andreas, EEVBlog](https://www.eevblog.com/forum/projects/project-kx-diy-calibrator-reference-sourcemeter/msg826499/#msg826499)
+
+"Having the reference in a case is absolutely recommended, mostly due to air drafts. I can´t say that having a metal or plastic case seems to make a difference for me. Neither from an EMC or stability point. One reason the metal case is of little use for EMC is that the noise entering through the binding posts are the same for metal and plastic. Good design of the PCB probably is the best. " [Lars, Experiments on 10V references, EEVBlog](https://www.eevblog.com/forum/metrology/best-out-of-the-box-10v-reference/msg1197529/#msg1197529)
 
 ## Output conditioning
 
@@ -79,7 +96,9 @@ Max PSU voltage is 11V though, so needs a separate derived PSU. Supply current i
 LTC2057 is up to 36V. LTC2057HS8#PBF
 Compare carefully.
 
-"Placing a capacitor across the feedback resistor reduces either form of clock feedthrough by limiting the bandwidth of the closed loop gain. "
+Watch out for [50kHz oscillation](https://www.eevblog.com/forum/projects/project-kx-diy-calibrator-reference-sourcemeter/msg580093/#msg580093) on LTC2057 (chopper frequency).
+
+"Placing a capacitor across the feedback resistor reduces either form of clock feedthrough by limiting the bandwidth of the closed loop gain. " 10nF film or NP0/CoG.
 
 
 100nF film cap for noise filtering.

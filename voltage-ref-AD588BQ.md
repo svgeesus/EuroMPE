@@ -19,13 +19,13 @@ Quick breadboard (untrimmed) shows +10V = 9.99962 sd 50μV and +5V = 4.99862 sd 
 
 After powering for 4 days (100 hours), socketed on soldered protoboard, with trim, +5V = mean 5.000 003 sd 42μV with a range of 4.999 94 to 5.000 10 (a range of 160μV). Keysight 34465A @ 20C, 10PLC, 597 samples.
 
-![Mean 5.000 003V](img/5V-trimmed.png)
-![%v range histogram](img/5V-range2.png)
+![Mean 5.000 003V](img/AD588/5V-trimmed.png)
+![%v range histogram](img/AD588/5V-range2.png)
 
 Still some random wandering, possibly noise spikes on the power rails from switching PSU.
 
-![Wandering](img/5V-wandering2.png)
-![Still wandering time series](img/5V-still-wandering.png)
+![Wandering](img/AD588/5V-wandering2.png)
+![Still wandering time series](img/AD588/5V-still-wandering.png)
 
 ## Temperature
 
@@ -116,9 +116,9 @@ Much worse than comparable (and cheaper!) references: 200 max μV/V (10.8 to 18V
 
 My case has switching power supplies which give stable but noisy power lines.
 
-![+12 volts](img/PS-+12V.png)
-![-12 volts](img/PS--12V.png)
-![ripple](img/PS-AC-ripple.png)
+![+12 volts](img/AD588/PS-+12V.png)
+![-12 volts](img/AD588/PS--12V.png)
+![ripple](img/AD588/PS-AC-ripple.png)
 
 ### Secondary regulation
 

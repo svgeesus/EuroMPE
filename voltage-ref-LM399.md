@@ -80,10 +80,26 @@ XDevs KX-lowcost uses 25ppm/C resistors for the op-amp divider, but 5ppm/C resis
 "Thermocouple effects can also use errors. The kovar leads from the LM199 package from a thermocouple with copper printed circuit board traces. Since the package of the 199 is heated, there is a heat flow along the leads of the LM199 package. If the leads terminate into unequal sizes of copper on the p.c. board greater heat will be absorbed by the larger copper trace and a temperature difference will develop. A temperature difference of 1°C between the two leads of the reference will generate about 30 μA. Therefore, the copper traces to the zener should be equal in size. This will generally keep the errors due to thermocouple effects under about 15 μV.
 The LM199 should be mounted flush on the p.c. board with a minimum of space between the thermal shield and the boards. This minimizes air flow across the kovar leads on the board surface, which also can cause thermocouple voltages. Air currents across the leads usually appear as ultra-low frequency noise of about 10 μV to 20 μV amplitude." (AN-161)
 
+However, opinions vary on lead length:
+
+- Long leads without slot:   around 5 degres stray within pad  + 1,7 degrees from pad to pad
+- Long leads with slots:      around 5-6 degres stray within pad + 2,3 degrees from pad to pad
+- Short leads without slot: around 9-11 degres stray within pad + 3,1 degrees from pad to pad
+- short leads with slots:     around 12-15 degres stray within pad + 6,6 degrees from pad to pad
+
+[Andreas, Re: Slot or Not, EEVBlog](https://www.eevblog.com/forum/metrology/ultra-precision-reference-ltz1000/msg288588/#msg288588)
+
 "Sockets are generally no good idea.
 On a LM399 I had around 4-6 ppm difference depending on how the reference was placed into the socket." [Andreas, EEVBlog](https://www.eevblog.com/forum/projects/project-kx-diy-calibrator-reference-sourcemeter/msg826499/#msg826499)
 
 "Having the reference in a case is absolutely recommended, mostly due to air drafts. I can´t say that having a metal or plastic case seems to make a difference for me. Neither from an EMC or stability point. One reason the metal case is of little use for EMC is that the noise entering through the binding posts are the same for metal and plastic. Good design of the PCB probably is the best. " [Lars, Experiments on 10V references, EEVBlog](https://www.eevblog.com/forum/metrology/best-out-of-the-box-10v-reference/msg1197529/#msg1197529)
+
+"It is winter. Perhaps you have zapped it by ESD.
+
+This is one reason why I place a 100nF capacitor (SMD) directly on the
+pads over the zener output and over the heater input.
+Besides ESD it also rejects some mains line noise for the case" [Andreas, EEVBlog](https://www.eevblog.com/forum/metrology/lm399-based-10-v-reference/msg620762/#msg620762)
+
 
 ## Output conditioning
 

@@ -41,7 +41,7 @@ Load regulation not directly specified, as this is a shunt regulator. In this pr
 
 Higher at first, reduces with square root of 1000 hours in use. Needs 100 hours burn-in before initial measurement.
 
-Specified as 8ppm/√kHr at ambient 22 to 28C, 1kHr, 1mA zener current ±0.1%. So 4ppm at 4kHr, 2ppm at 16kHr (almost 2 years). Note influence of zener current stability, hence the popularity of bootstrapped references.
+Specified as 8ppm/√kHr at ambient 22 to 28C, 1kHr, 1mA zener current ±0.1%. So 8ppm in first 1kHr, 8+4=12ppm at 4kHr, 12+2=14ppm at 16kHr (almost 2 years). Note influence of zener current stability, hence the popularity of bootstrapped references.
 
 - [LM399 10 channel ageing/monitoring](http://www.ianjohnston.com/index.php/onlineshop/10-ch-lm399-testing-detail)
 

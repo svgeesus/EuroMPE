@@ -16,6 +16,12 @@ Output voltage varies with zener current, 1mA is the optimum value for stability
 
 "The LM399 is much more sensitive to board stress than the LTZ [because the LTZ has a special mechanical arrangement in the die mount]-- so the LM399 should be mounted off of the PCB a little bit to allow for this."
 
+### Test results
+
+Five samples of LM399AH from Linear.com were tested. All have datecode  week 50, 2017.
+
+![LM399-2](img/LM399/399-2-Vz.png) ![LM399-2-hist](img/LM399/399-2-Vz-hist.png)
+
 ## Temperature
 
 Specified as 0.3 (typ) 1.0 (max) ppm/C over 0 to 70C ambient (A grade). Major effect on the tempco of the eventual 5V reference is the tempco of the resistive divider.

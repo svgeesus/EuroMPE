@@ -65,6 +65,13 @@ A precision current source gives the best stability (not a resistor from the owe
 
 " Since the dynamic impedance is constant with current changes regulation is better than discrete zeners. For optimum regulation, lower operating currents are preferred since the ratio of source resistance to zener impedance is higher, and the attenuation of input changes is greater. Further, at low currents, the voltage drop in the wiring is minimized." (ΑΝ-161)
 
+"PSRR comes from 2 or 3 contributions:
+1) The temperature regulator part
+2) the OP buffering the outout if used
+3) the current source to drive the zener part of the LM399 - often this a resisitor from the scaled up voltage.
+
+With modern voltage regulators, the PSRR is not that important any more. Even a 7812 can keep the supply resonable stable - with only a few mV in change 55 ppm/V are not a probem at all." [Kleinstein, EEVBlog](https://www.eevblog.com/forum/metrology/lm399-based-10-v-reference/msg849709/#msg849709)
+
 XDevs KX-lowcost uses 25ppm/C resistors for the op-amp divider, but 5ppm/C resistor for the bootstrapped current source. (And no pullup resistor for startup) [KX low-cost](https://xdevs.com/article/kx-ref/#lm399opt)
 
 
@@ -79,6 +86,8 @@ XDevs KX-lowcost uses 25ppm/C resistors for the op-amp divider, but 5ppm/C resis
 
 "Thermocouple effects can also use errors. The kovar leads from the LM199 package from a thermocouple with copper printed circuit board traces. Since the package of the 199 is heated, there is a heat flow along the leads of the LM199 package. If the leads terminate into unequal sizes of copper on the p.c. board greater heat will be absorbed by the larger copper trace and a temperature difference will develop. A temperature difference of 1°C between the two leads of the reference will generate about 30 μA. Therefore, the copper traces to the zener should be equal in size. This will generally keep the errors due to thermocouple effects under about 15 μV.
 The LM199 should be mounted flush on the p.c. board with a minimum of space between the thermal shield and the boards. This minimizes air flow across the kovar leads on the board surface, which also can cause thermocouple voltages. Air currents across the leads usually appear as ultra-low frequency noise of about 10 μV to 20 μV amplitude." (AN-161)
+
+- [Slot or Not thermo measurements on LM399](https://www.eevblog.com/forum/metrology/ultra-precision-reference-ltz1000/msg278247/?topicseen#msg278247)
 
 However, opinions vary on lead length:
 
@@ -128,6 +137,8 @@ Keep the 100nF decoupling cap very close to the positive power input.
 The output voltage is bootstrapped round via a resistor to set the zener current to 1mA (range is 0.5 to 10mA, above 1mA has no benefit). A 200k pull-up resistor allows the circuit to start (there seems to be debate on whether this is needed; less so if the output buffer uses a single rail rather than split rails).
 
 [NO] For 5V output, use a unity-gain non-inverting follower then a resistive divider load to get the exact 5V on the distribution board. No, because then a separate constant current source is needed. Amping up gives enough potential difference above the zener voltage that the Vref can bootstrap itself as a constant current source.
+
+"Probably of greater importance, is that the supporting circuitry (most people use the LT1013, because they don't really understand the circuit or proper analog circuit design, so they just copy what others are doing)-- it is very difficult to get amplifiers in TO metal cans any more.  It is a well known effect that board stress from mechanical movement-- caused either by temperature or humidity, can and will have an effect on *epoxy* packaged devices.  For G10 or FR4 epoxy glass PC material, the effects of humidity can be severe.  The epoxy IC packages also can vary stress on the die if the temperature or humidity changes.  This can cause voltage fluctuations of 10's (and worst-case 100's) of micro-Volts.  This is not the case though with most chopper-style amps-- the offset change due to die stress is "inside the compensation loop", and so these offsets are automatically removed-- (and I know this because I asked the Linear-Tech applications engineers about this very thing-- concerning the LTC2057)." [DiligentMinds.com, EEVBlog](https://www.eevblog.com/forum/metrology/ultra-precision-reference-ltz1000/msg278688/#msg278688)
 
 ### Adjusting to 5.000V
 

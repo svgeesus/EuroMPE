@@ -18,9 +18,15 @@ Output voltage varies with zener current, 1mA is the optimum value for stability
 
 ### Test results
 
-Five samples of LM399AH from Linear.com were tested. All have datecode  week 50, 2017.
+Five samples of LM399AH from Linear.com were tested. All have datecode  week 50, 2017. Initial results (before ageing, temp 19 to 23C over the longer runs, 100PLC):
 
-![LM399-2](img/LM399/399-2-Vz.png) ![LM399-2-hist](img/LM399/399-2-Vz-hist.png)
+![LM399-1](img/LM399/399-1-Vz.png) ![LM399-1-hist](img/LM399/399-1-Vz-hist.png) ![LM399-1-trend](img/LM399/399-1-Vz-trend.png)
+
+![LM399-2](img/LM399/399-2-Vz.png) ![LM399-2-hist](img/LM399/399-2-Vz-hist.png) ![LM399-2-trend](img/LM399/399-2-Vz-trend.png)
+
+![LM399-4](img/LM399/399-4-Vz.png) ![LM399-4-hist](img/LM399/399-4-Vz-hist.png) ![LM399-4-trend](img/LM399/399-4-Vz-trend.png)
+
+![LM399-5](img/LM399/399-5-Vz.png) ![LM399-5-hist](img/LM399/399-5-Vz-hist.png) ![LM399-5-trend](img/LM399/399-5-Vz-trend.png)
 
 ## Temperature
 

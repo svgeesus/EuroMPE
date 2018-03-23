@@ -20,6 +20,13 @@ Output voltage varies with zener current, 1mA is the optimum value for stability
 
 Five samples of LM399AH from Linear.com were tested. All have datecode  week 50, 2017. Initial results (before ageing, temp 19 to 23C over the longer runs, 100PLC):
 
+- 1   7.000
+- 2   7.010
+- 3   ?
+- 4   7.032
+- 5   7.040
+
+
 ![LM399-1](img/LM399/399-1-Vz.png) ![LM399-1-hist](img/LM399/399-1-Vz-hist.png) ![LM399-1-trend](img/LM399/399-1-Vz-trend.png)
 
 ![LM399-2](img/LM399/399-2-Vz.png) ![LM399-2-hist](img/LM399/399-2-Vz-hist.png) ![LM399-2-trend](img/LM399/399-2-Vz-trend.png)
@@ -124,6 +131,14 @@ Besides ESD it also rejects some mains line noise for the case" [Andreas, EEVBlo
 
 ## Output conditioning
 
+### Noise filtering
+
+"It does not make a significant difference between filtering before or after amplification. Between the LM399 and the OP it is very easy to implement a simple RC filter: e.g. a resistor in the 100 Ohms to 1 K range and a 100nF-1µF capacitor. So this is the obvious place for some filtering.
+
+The noise level of the LM399 is around 10 times the noise level of typical precision OPs. There is no practical way to filter out the really low frequency noise.  So the useful amount of filtering is limited to what is simple. As an alternative to complicated filtering there is the option to use a second LM399.
+
+Usually one would avoid using a second OP in the path to reduce extra errors. So things like a more capacitive tolerant output would normally be done with the same OP as the 7 to 10 V step." [Kleinstein, EEVBlog](http://www.eevblog.com/forum/metrology/lm399-based-10-v-reference/msg1455583/#msg1455583)
+
 ### Buffer op-amp
 
 Chopper-stabilised zero-drift op-amps seem to be favoured for stability.
@@ -160,5 +175,19 @@ Most circuits amp up the output to 10V; in this case needs low tempco resistor d
 - [LM399 influence of resistors](http://www.eevblog.com/forum/metrology/influence-of-resistors-in-lm399-reference-circuit/msg1214075/#msg1214075)
 - [xdevs LM399 ref](https://xdevs.com/article/kx-ref/#lm399opt)
 - [xdevs LM399 calculator](https://xdevs.com/lmx99/)
+- [cellularmitosis resistor/gain calculator](https://gist.github.com/cellularmitosis/eef3564c692acc4b590869112042e0f6)
+
+LM399-1
+    7.0000 	Iz=1.0 	If=0.077 	Rz=3K 	Rf=39K 	Rg=91K 	*Vop=10.0000*
+
+LM399-2
+    7.0125 	Iz=1.0 	If=0.138 	Rz=3K3 	Rf=24K 	Rg=51K 	Vop=10.3125
+    7.0200 	1.0 	0.390 	3K9 	10K 	18K 	10.9200
+
+LM399-4
+    7.0364 	Iz=1.0 	If=0.164 	Rz=1K8 	Rf=11K 	Rg=43K 	Vop=8.8364
+
+LM399-5
+    7.0500 	Iz=1.0 	If=0.150 	Rz=3K 	Rf=20K 	Rg=47K 	*Vop10.0500*
 
 

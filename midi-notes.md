@@ -131,10 +131,14 @@ and in addition (for MPE):
 - capturing allowed info from note channels
 - capturing global info from global channel and sending to all notes
 
-These would provide a second level of callbacks; the Euro-MPE implementation then provides funtions for each callback to actually control the DACs. The MIDI wrapper and the MPE wrapper should be re-usable for other Teensy projects; eventually becoming a library.
+These would provide a second level of callbacks; the Euro-MPE implementation then provides functions for each callback to actually control the DACs. The MIDI wrapper and the MPE wrapper should be re-usable for other Teensy projects; eventually becoming a library.
 
 ## Comparable projects
 
 Useful but more basic (12bit, mono) MIDI2CV with Highest, lowest and Last note priorities:
 
 - [useful T2 MIDI2CV](https://github.com/elkayem/usbMIDI2CV_MC/blob/master/usbMIDI2CV_MC.ino)
+
+8-voice Eurorack module (but just gate, Pitch CV, Velocity and one other). Not quite MPE. 12V gate, 0-12V pitchCV at unspecified accuracy.
+
+- [Polyend Poly](https://polyend.com/poly/) .

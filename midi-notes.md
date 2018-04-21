@@ -8,9 +8,13 @@ Teensy 3.6 uses about 80 mA.
 
 Primary interface is likely to be as a USB MIDI device, using the Teensy 3.x USB MIDI implementation. That connection requires a host, such as a computer running a DAW.
 
-Secondary interface could be DIN MIDI input, using the Arduino MIDI library and an optocoupler. (Linnstrument has DIN MIDI option, as well as USB)
+Secondary interface could be DIN MIDI input, using the Arduino MIDI library and an optocoupler. (Linnstrument has DIN MIDI option, as well as USB).
 
-Third one could be USB Host MIDI: new in Teensy 3.6 with a separate USB Host connection port.
+- [Professional MIDI, by Graham Hinton](http://www.hinton-instruments.co.uk/reference/midi/promidi/index.htm)
+
+[Deltron 650-0500](http://www.newark.com/deltron-components/650-0500/connector-din-jack-5-position/dp/69K6137?st=Deltron%20650-0500) DIN 5-pin panel socket (circular, nut fixing)
+
+Third one is USB Host MIDI: new in Teensy 3.6 with a separate USB Host connection port. Allows direct, DAWless connection of an MPE keyboard or other controller.
 
 All three should register (the same) callbacks to allow input from any of the threee interfaces. All running at once? or switching between then from front panel.
 

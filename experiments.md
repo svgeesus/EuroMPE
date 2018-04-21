@@ -2,9 +2,9 @@
 
 Breaking down to small, testable, breadboardable sub-tasks.
 
-- build & test LM399 burn-in board [struggling to see]()
-- pitch DAC on breadboard [done](code/EncoderTest/EncoderTest.ino)
-- read encoder from Teensy LC/3.6 [done]
+- build & test LM399 burn-in board *struggling to see, got microscope, waiting on parts*
+- pitch DAC on breadboard [done](code/)
+- read encoder from Teensy LC/3.6 [done](code/EncoderTest/EncoderTest.ino)
 - RGB LED, resistors and Teensy PWM
 - RGB LED with offloaded 16-channel PWM chip
 - control pitch DAC in 0.5V steps

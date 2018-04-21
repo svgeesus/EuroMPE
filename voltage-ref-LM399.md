@@ -21,7 +21,7 @@ Output voltage varies with zener current, 1mA is the optimum value for stability
 Five samples of LM399AH from Linear.com were tested. All have datecode  week 50, 2017. Initial results (before ageing, temp 19 to 23C over the longer runs, 100PLC):
 
 - 1   7.000
-- 2   7.010
+- 2   7.012
 - 3   ?
 - 4   7.032
 - 5   7.040
@@ -29,7 +29,7 @@ Five samples of LM399AH from Linear.com were tested. All have datecode  week 50,
 
 ![LM399-1](img/LM399/399-1-Vz.png) ![LM399-1-hist](img/LM399/399-1-Vz-hist.png) ![LM399-1-trend](img/LM399/399-1-Vz-trend.png)
 
-![LM399-2](img/LM399/399-2-Vz.png) ![LM399-2-hist](img/LM399/399-2-Vz-hist.png) ![LM399-2-trend](img/LM399/399-2-Vz-trend.png)
+![LM399-2](img/LM399/399-2-Vz-b.png) ![LM399-2-hist](img/LM399/399-2-Vz-hist-b.png) ![LM399-2-trend](img/LM399/399-2-Vz-trend.png)
 
 ![LM399-4](img/LM399/399-4-Vz.png) ![LM399-4-hist](img/LM399/399-4-Vz-hist.png) ![LM399-4-trend](img/LM399/399-4-Vz-trend.png)
 
@@ -128,6 +128,10 @@ This is one reason why I place a 100nF capacitor (SMD) directly on the
 pads over the zener output and over the heater input.
 Besides ESD it also rejects some mains line noise for the case" [Andreas, EEVBlog](https://www.eevblog.com/forum/metrology/lm399-based-10-v-reference/msg620762/#msg620762)
 
+Kelvin connection to 399
+
+"I'd go for additional tap (thin wires is ok) for voltage sense. So you have 6 wires going out of the LM399 ;)." [TiN, EEVBlog](http://www.eevblog.com/forum/metrology/lm399-based-10-v-reference/msg1455785/#msg1455785)
+
 
 ## Output conditioning
 
@@ -162,6 +166,16 @@ Watch out for [50kHz oscillation](https://www.eevblog.com/forum/projects/project
 Keep the 100nF decoupling cap very close to the positive power input.
 
 The output voltage is bootstrapped round via a resistor to set the zener current to 1mA (range is 0.5 to 10mA, above 1mA has no benefit). A 200k pull-up resistor allows the circuit to start (there seems to be debate on whether this is needed; less so if the output buffer uses a single rail rather than split rails).
+
+"The BEST way to filter out 1/f noise is to not generate it in the first place.  So, you select a reference source and device under test that has the smallest amount of 1/f noise that you can find (and/or afford), and go with that.  You have to be realistic and understand that unless you have quantum based intrinsic standards, you are going to have to accept some level of noise in your measurements, and the final uncertainty will not be zero.
+
+That said, as an example, you can put a 100mHz filter on the output of a voltage reference like an LM399, and this will reduce the apparent noise by about 6X (1uVpp)-- but you will NOT be able to filter out changes in the LM399 that happen over minutes (about 1ppm jumps in the reference voltage).  So, because of this, the LM399 cannot be relied upon for anything better than about 1ppm.  If left on continuously, the LM399 will exhibit a temporal drift (of typically 4ppm/a, but some are better than that).  If you only turn it on for a very short period to take a measurement, then turn it off for a very long period, the long term temporal drift can be negligible, but you are still limited to the 1ppm uncertainty due to the 1ppm "jumps" in the output (due to low Zener current, which you can do nothing about).  If you are looking for better than 1ppm uncertainty, then an LTZ1000 is the only commercially available reference that has a long track record of providing sub-ppm uncertainties and annual drift rates.  (Obviously, some LM399s and LTZ1000s are better than others, and typically 1 out of 100 will be exceptionally good).
+
+The same goes for resistors-- there are many known drift mechanisms and ways of dealing with those drifts.  A hermetic package eliminate a whole set of problems.  After that, artificial aging can significantly reduce temporal aging effects.  After that, placing the resistor in a thermally lagged enclosure can improve temporal drift, and short term temperature drift.  Keeping the resistor in a thermally stable environment (oil or oil bath) can further reduce temporal drift.  Different resistance wire materials can have very good temporal stability-- some better than others.  Zeranin-30 and Evanohm alloys are probably the most stable." [Magnificent Bastard on EEVBlog](http://www.eevblog.com/forum/metrology/noise-analysis-and-reduction-for-ppm-level-measurements/msg1468869/#msg1468869)
+
+"the 100nF on the output is not in the cirquit diagram.
+And I think this is one essential component to imrove EMI.
+(But should be mounted kelvin sensed between output and LM399)." [Andreas, EEVBlog](http://www.eevblog.com/forum/metrology/lm399-based-10-v-reference/msg1460647/#msg1460647)
 
 [NO] For 5V output, use a unity-gain non-inverting follower then a resistive divider load to get the exact 5V on the distribution board. No, because then a separate constant current source is needed. Amping up gives enough potential difference above the zener voltage that the Vref can bootstrap itself as a constant current source.
 

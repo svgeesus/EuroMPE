@@ -24,7 +24,7 @@ INL is ±0.5 (typ) ±1.0 (max) LSB for best (C) grade.
 
 DNL is ±0.5 (typ) ±1.0 (max) LSB
 
-Gain error (away from output voltage extremes) ±0.5 (typ) ±2 max) LSB
+Gain error (away from output voltage extremes) ±0.5 (typ) ±2 (max) LSB
 with a gain error TC of ±0.1ppm/C.
 
 Bipolar output depends on matching of internal resistor pair, which is typ 0.0015%. Do the error analysis here. But there is offset and gain trim after this.
@@ -50,6 +50,8 @@ DAC input resistance is highly code-dependent, lowest (around 7.5kΩ) at 0x8555 
 
 With a 5V ref and an output buffer [OP-C, no external components] this gives ±5V output (10 octaves) which includes Note-ON voltage, global pitchbend, and per-note pitchbend. Note that this does not cover the full MIDI note range of 128 notes = 10.66 octaves. Is that an issue in practice?
 
+Op-amps here need a max Vos of 100μV (1LSB), preferably better. Are chopper amps suitable here? LT1150 operates on 12V bipolar supples, has 10μV max offset. Mouser $9.04 each, $8.28/10, $5.99/25 so go for 25 = 141.25 be damn sure they work first!
+
 In the analog domain this is summed [OP-D] with -2V offset (to make range -3 to +8V), and offset trim (on the 2V divider). This op-amp also provides trimmable gain scaling to ensure an accurate 1V/oct over a 9.8 octave range (avoiding calibrating at the ends for offset errors). Thus the DAC should perform the inversion, so re-inverted by the inverting mixer.
 
 2V offset from 20k + 30k resistors [both E24 values] plus trimmer (for precision 2V, and also trimming DAC offset), buffered and inverted with [OP-E] 2 × 10k resistors. Watch TC on those 20k, 30k resistive divider.
@@ -57,36 +59,51 @@ In the analog domain this is summed [OP-D] with -2V offset (to make range -3 to 
 Summing from 2 × 10k resistors; gain trim from the third 10k resistor  + 10 ohm? 3250 wirewound trimmer (but needs small compensating resistors, half of the trimmer value, on the input) plus current limiting innie 47R resistor and cap. 3/4 of a quad array. In total, 1.5 quad arrays per channel (3 per pair of channels).
 
 3250 has 5% tolerance, 10Ω has effective resolution of 1.3% (130 mΩ), tempco ±50ppm/C
-Maybe better to use a non-wirewound on such a small resistance.
+Maybe better to use a non-wirewound on such a small resistance. Or use a high value, in parallel with one resistor of the divider to lower the value slightly. Jumper selects which one to lower.
 
 
-Needs error analysis to be sure the error budget from resistor matching is reasonable. Breadboard this with OPA2777PA to measure performance, in particular gain error and offsets. Assume  0.01% quad resistor pack, possibly with trimmers too. Needs DAC on a SOIC to DIP breakout board.
+Needs error analysis to be sure the error budget from resistor matching is reasonable. Breadboard this with OPA2777PA to measure performance, in particular gain error and offsets. Assume  0.01% quad resistor pack, possibly with trimmers too. Needs DAC on a SOIC to DIP breakout board [GOT].
 
 at 10k, 0.01% (100ppm) is 1 ohm; 0.025% (250ppm) is 2.5 ohm
 10,001/9999 gain gives a 1mv error on +5V, far too big. Overall gain will need trimming.
 
 Note "This unity-gain difference amplifier (equal resistors) causes the input difference voltage (V2-V1) to be impressed on R5; the resulting current flows to the load. The offset voltage, however, is applied directly to the noninverting input and is amplified by +2 – like a noninverting amplifier (G = 1 + R2/R1). Thus, a 10-mV offset voltage creates 20 mV across R5, producing a 20mA output current offset. A -10-mV offset would create a -20-mA output current (current sinking from the load)."
 
-# Offset
+3 op-amps per channel = 12 for 4 voice, plus 2-op-amps for DAC vref driving per voice = 8 for 4 voice.
+
+# Offset for secondary pitch output
+
+One global offset for all voices.
 
 ## Offset DAC
 
 Same DAC, similar circuit in terms of SPI connection, Vref and bipolar output amp. No offset trim. Several options:
 
-A) Gain set lower to give ±2V swing (10k and 25k).
+A) Gain set lower to give ±3V swing (10k and 20k).
 
 B) Unity gain, with ±3V swing? In which case even an AD780N 3V ref and unity-gain op-amp buffer?
 
 Unity gain inverting buffer for external (global) input, normalled to 0V (2 × 10k 0.025% resistors).
 
-Technically a 14bit DAC would be fine here. Or the lower grade of the 16bit. In practice it is easier to use known-working DAC and code for this one too.
+Technically a 14bit DAC would be fine here. Or the lower grade of the 16bit. In practice it is easier to use known-working DAC and code for this one too. So:
+
+DAC plus output buffer [off-OP-A].
 
 ## Offset external Input
 
-Inverting buffer for offset output (2 × 10k).
+Non-inverting buffer for input. Does this need to be as precise? [off-OP-B]
+
+## Offset summing
+
+Inverting mixer to sum offset and external signals to send to pitch dac boards (3 × 10k). [off-OP-C]
+
+Inverting buffer for offset output (2 × 10k) [off-OP-D]
+
+Needs 2 quad resistor packs for offset. The less expensive 0.025% ones likely fine here.
 
 ## Secondary pitch output
 
- Mixer to sum offset and external signals to send to pitch dac boards (3 × 10k).
+Inverting buffer for pitch DAC inversion prior to mixing [sec-OP-A]
 
-Needs 2 quad resistor packs for offset. The less expensive 0.025% ones likely fine here.
+Inverting mixer for pitch DAC and offset [sec-OP-B]
+

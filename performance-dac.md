@@ -3,7 +3,7 @@
 
 One octal DAC does 2 voices  of attack veocity, lift velocity, pressure, glide. Perf DAC board has 2 DACs so 4 voices.
 
-Similar board also used to provide the global performance controls (mod wheel, sustain, etc) but with one DAC.
+Similar circuitry also used to provide the global performance controls (mod wheel, sustain, etc) but with one DAC.
 
 ## Chip selection
 
@@ -39,7 +39,7 @@ INL 300μV / 1.2mV (±1 / ±4 LSB)
 
 DNL 30μV / 150μV (±0.1 / ±0.5 LSB)
 
-Gain error 1mV / 4mV (±0.01% / ±0.15% of FSR) with  5μV (±1 ppm of FSR)/°C drift
+Gain error 0.5mV / 7.5mV (±0.01% / ±0.15% of FSR) with  5μV (±1 ppm of FSR)/°C drift
 
 Offset error  ±1 / ±4 mV with ±0.5 μV/°C drift
 
@@ -81,8 +81,8 @@ Bipolar operation is possible (datasheet p.47) but not needed here, all the MIDI
 
 Use 4 pots with rail-to-rail input and output buffer amps connected to 4 adc inputs. Then use these values to digitally scale the 14bit performance values (on *all* voices), providing per-performance-output attenuator function across all channels.
 
-- [Alpha 9mm T18 shaft pot, 10k](https://www.thonk.co.uk/shop/alpha-9mm-pots-vertical-t18/)
-- [T18 micro knobs](https://www.thonk.co.uk/shop/micro-knobs/)
+- [Alpha 9mm T18 shaft pot, 10k](https://www.thonk.co.uk/shop/alpha-9mm-pots-vertical-t18/) [GOT]
+- [T18 micro knobs](https://www.thonk.co.uk/shop/micro-knobs/) [GOT]
 
 or (takes more space, but easier to see the value)
 

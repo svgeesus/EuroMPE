@@ -149,11 +149,11 @@ Chopper-stabilised zero-drift op-amps seem to be favoured for stability.
 
 LTC2050HV (used on the Ian Johnston adjustable reference) has almost zero Vos and drift, while also having low switching noise.
 
+Max PSU voltage is 11V for 2050HV though, so  would need a separate derived PSU. Supply current is 0.8mA.
+
 "The chopper amplifier LTC2057, with TCVOS of 0.015uV/°C, contributes only 0.0025ppm/°C of output error, thus effectively eliminating TCVOS as an error consideration." [LM399 low cost version](https://xdevs.com/article/kx-ref/#lm399opt)
 
-Max PSU voltage is 11V though, so needs a separate derived PSU. Supply current is 0.8mA.
-
-LTC2057 is up to 36V. LTC2057HS8#PBF
+LTC2057 is up to 36V. LTC2057IS8#PBF in SO-8 Mouser $3.36/1, $3.08/10, $2.23/25
 Compare carefully.
 
 Watch out for [50kHz oscillation](https://www.eevblog.com/forum/projects/project-kx-diy-calibrator-reference-sourcemeter/msg580093/#msg580093) on LTC2057 (chopper frequency).

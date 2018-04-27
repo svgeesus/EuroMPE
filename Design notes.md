@@ -74,10 +74,14 @@ Or ue an external 16-channel PWM chip to offload PWMing the LEDs.
 
 ## Performance (Control Change) DAC
 
-See [Performance DAC](performance-dac.md)
+See [Performance DAC](performance-dac.md). Provides four performance controls per voice (attack velocity, release velocity, pressure, glide) at 12-13ENOB.
 
 
 ## Display, UI
+
+Aim for direct manipulation style. Normal operation requires no menu diving.
+
+Display used for tuning, calibration, and setting if uncommon options.
 
 Simplest to use a second Teensy (LC, or possibly 3.2) to drive the display and handle user interaction. That keeps the code and control flow separate, also frees up an SPI bus for controlling the display. Use I2C or Serial to send commands to the main Teensy 3.6, primarily to go into calibration mode.
 

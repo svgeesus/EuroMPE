@@ -27,7 +27,7 @@ DNL is ±0.5 (typ) ±1.0 (max) LSB
 Gain error (away from output voltage extremes) ±0.5 (typ) ±2 (max) LSB
 with a gain error TC of ±0.1ppm/C.
 
-Bipolar output depends on matching of internal resistor pair, which is typ 0.0015%. Do the error analysis here. But there is offset and gain trim after this.
+Bipolar output depends on matching of internal resistor pair, which is typ 0.0015%. Do the error analysis here. But there is offset and gain trim after this; and matching of internal pair is better than best available LT5400 0.01% pack.
 
 ## Line regulation
 
@@ -39,7 +39,7 @@ DAC output impedance is 6.25k which is irrelevant as bipolar mode requires an op
 
 ## Vref connection
 
-Unlike previous project, use a dual op-amp [OP-A, OP-B] near the VREF to provide the kelvin connections for each DAC. This avoids variable loading effects from each DAC on the Vref, which become a significant source of error once the Vref offest is accurately nulled. Only the sockets used by number of channel expansion cards actually used need to be populated.
+Unlike previous project, use a dual op-amp [OP-A, OP-B] near the VREF to provide the kelvin connections for each DAC. This avoids variable loading effects from each DAC on the Vref, which become a significant source of error once the Vref offest is accurately nulled. Only the positions used by number of channel expansion cards actually used need to be populated.
 
 "The use of separate force (F) and sense (S) connections (often referred to as a Kelvin connection) at the load removes any errors resulting from voltage drops in the force lead, but, of course, may only be used in systems where there is negative feedback. It is also impossible to use such an arrangement to drive two or more loads with equal accuracy, since feedback may only be taken from one point."
 

@@ -66,6 +66,8 @@ Specified as 8ppm/√kHr at ambient 22 to 28C, 1kHr, 1mA zener current ±0.1%. S
 
 "Vz changes by 1uV for every deviation of 1uA of zener current from the nominal 1mA"
 
+"The LM399 is getting rather hot in normal operation. So unless really brute force is used the thermal conditions on un-soldering and soldering are not that severe compared to a normal power cycle." [Kleinstein, EEVBlog](http://www.eevblog.com/forum/metrology/lt$30-ebay-lm399lt1001-2-55-07-510v-vref-module-hack-step-1-poc/msg1537199/#msg1537199)
+
 ## Line regulation
 
 Not directly specified. heater circuit seems to tolerate a large voltage range.
@@ -156,6 +158,8 @@ Max PSU voltage is 11V for 2050HV though, so  would need a separate derived PSU.
 LTC2057 is up to 36V. LTC2057IS8#PBF in SO-8 Mouser $3.36/1, $3.08/10, $2.23/25
 Compare carefully.
 
+"Be careful of a '2057 used by itself as an output buffer...keep the current very low (<<2mA), say driving a meter input circuit only.  Otherwise its demodulater won't work well and you'll get errors.  For instance: If someone were to drive an ADC Ref input that would need another amp in between.  Or they should be careful trying to do a direct comparison with another Vref, etc.  AZ Choppers usually need another companion amp in their feedback loop if you're using it as a buffer - and that should be low noise." [MisterDiodes, EEVBlog](http://www.eevblog.com/forum/metrology/usa-cal-club-round-2/msg1502974/#msg1502974)
+
 Watch out for [50kHz oscillation](https://www.eevblog.com/forum/projects/project-kx-diy-calibrator-reference-sourcemeter/msg580093/#msg580093) on LTC2057 (chopper frequency).
 
 "Placing a capacitor across the feedback resistor reduces either form of clock feedthrough by limiting the bandwidth of the closed loop gain. " 10nF film or NP0/CoG.
@@ -176,6 +180,18 @@ The same goes for resistors-- there are many known drift mechanisms and ways of 
 "the 100nF on the output is not in the cirquit diagram.
 And I think this is one essential component to imrove EMI.
 (But should be mounted kelvin sensed between output and LM399)." [Andreas, EEVBlog](http://www.eevblog.com/forum/metrology/lm399-based-10-v-reference/msg1460647/#msg1460647)
+
+"I always put 100nF additionally over the zener pins of the LM399 to improve the EMI behaviour.
+additionally 100nF + 47uF for the heater.
+If you want to trim you should use the trimming scheme
+(Figure Standard Cell Replacement) of the data sheet to reduce the influence of the T.C. of the trimmer."
+"on the heater side yes. (ceramic is ok since the 47uF is in parallel).
+
+on the zener side: it depends.
+If you have large vibrations you could see it theoretically
+on the output signal. (microphonic effect).
+So if you are not shure a film capacitor on the zener side is the safe way."
+[Andreas, EEVBlog](http://www.eevblog.com/forum/metrology/first-lm399-10v-reference/msg1532795/#msg1532795)
 
 [NO] For 5V output, use a unity-gain non-inverting follower then a resistive divider load to get the exact 5V on the distribution board. No, because then a separate constant current source is needed. Amping up gives enough potential difference above the zener voltage that the Vref can bootstrap itself as a constant current source.
 

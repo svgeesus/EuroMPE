@@ -19,5 +19,10 @@ Breaking down to small, testable, breadboardable sub-tasks.
 - freqcount/freqmeasure input circuit
 - ISO7240CDWR optical SPI isolator on SOIC-16 breakout board
 - I2C master/slave communication between Teensy LC and Teensy 3.6
+- test DipTrace.
+    quick schematic for vref
+    and for pitch dac
+    try and offsets module (through-hole, existing components) with pcb put vref on daughter board with kelvin so can have that option.
+    pcb to osh park
 
 

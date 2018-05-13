@@ -21,9 +21,9 @@ OPA2227U (not PA) good for typ but wide max spread. Dual.
 **OPA2277U** (not UA) better on max spread. SOIC-8 dual (quad not in high grade)
     ±10μV typ ±20μV max at 25C ±50μV max at -40 to +85C
 
-LTC2057 chopper. Possible chopper noise/breakthrough. *single only*
+LTC2057 chopper. Possible chopper noise/breakthrough. *single only* "too good"
     0.5V typ 4μV max at 25C 5μV max at -40 to +85C
 
 excluded:
 
-LT1013 (non-DIP pachages have 300μV max at 25C)
+LT1013 (non-DIP packages have 300μV max at 25C)

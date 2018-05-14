@@ -8,7 +8,7 @@ On the downside, the initial accuracy is _really terrible_; each device needs to
 
 ## Absolute initial accuracy
 
-6.95V (typ) with a huge variation - 6.75 to 7.3V !! -200 to +350mA !! Absolutely requires measurement of initial value, monitoring of value over time for burning until stable to desired precision, then trimming in the output conditioning stage to desired output voltage.
+6.95V (typ) with a huge variation - 6.75 to 7.3V !! -200 to +350mV !! Absolutely requires measurement of initial value, monitoring of value over time for burning until stable to desired precision, then trimming in the output conditioning stage to desired output voltage.
 
 Accuracy is improved by running the heater from bipolar supplies, keeping the return current off the 0V plane.
 
@@ -208,16 +208,21 @@ Most circuits amp up the output to 10V; in this case needs low tempco resistor d
 - [cellularmitosis resistor/gain calculator](https://gist.github.com/cellularmitosis/eef3564c692acc4b590869112042e0f6)
 
 LM399-1
+
     7.0000 	Iz=1.0 	If=0.077 	Rz=3K 	Rf=39K 	Rg=91K 	*Vop=10.0000*
 
 LM399-2
+
     7.0125 	Iz=1.0 	If=0.138 	Rz=3K3 	Rf=24K 	Rg=51K 	Vop=10.3125
-    7.0200 	1.0 	0.390 	3K9 	10K 	18K 	10.9200
+
+    7.0200 	Iz=1.0 	If=0.390 	Rz=3K9 	Rf=10K 	Rg=18K 	Vop=10.9200
 
 LM399-4
+
     7.0364 	Iz=1.0 	If=0.164 	Rz=1K8 	Rf=11K 	Rg=43K 	Vop=8.8364
 
 LM399-5
+
     7.0500 	Iz=1.0 	If=0.150 	Rz=3K 	Rf=20K 	Rg=47K 	*Vop10.0500*
 
 

@@ -3,6 +3,8 @@
 
 One octal DAC does 2 voices  of attack veocity, lift velocity, pressure, glide. Perf DAC board has 2 DACs so 4 voices.
 
+*Note* final MPE specification reduces precision of pressure & glide to 7bit. However, later expansion to 14bit not ruled out. Implement 14bit as an experiment; 7bit still supported.
+
 Similar circuitry also used to provide the global performance controls (mod wheel, sustain, etc) but with one DAC.
 
 ## Chip selection

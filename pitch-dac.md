@@ -50,7 +50,7 @@ DAC input resistance is highly code-dependent, lowest (around 7.5kΩ) at 0x8555 
 
 With a 5V ref and an output buffer [OP-C, no external components] this gives ±5V output (10 octaves) which includes Note-ON voltage, global pitchbend, and per-note pitchbend. Note that this does not cover the full MIDI note range of 128 notes = 10.66 octaves. Is that an issue in practice?
 
-Op-amps here need a max Vos of 100μV (1LSB), preferably better. Are chopper amps suitable here? LT1150 operates on 12V bipolar supples, has 10μV max offset. Mouser $9.04 each, $8.28/10, $5.99/25 so go for 25 = 141.25 be damn sure they work first! OPA4192D (quad, SOIC-14 which performs better than the TSSOP) 8μV (typ) 50μV (max) $3.67/10 seems good, probably adequate and cheaper.
+Op-amps here need a max Vos of 100μV (1LSB), preferably better. Are chopper amps suitable here? LT1150 operates on 12V bipolar supples, has 10μV max offset. Mouser $9.04 each, $8.28/10, $5.99/25 so go for 25 = 141.25 be damn sure they work first! **OPA4192D** (quad, SOIC-14 which performs better than the TSSOP) 8μV (typ) 50μV (max) $3.67/10 seems good, probably adequate and cheaper.
 
 In the analog domain this is summed [OP-D] with -2V offset (to make range -3 to +8V), and offset trim (on the 2V divider). This op-amp also provides trimmable gain scaling to ensure an accurate 1V/oct over a 9.8 octave range (avoiding calibrating at the ends for offset errors). Thus the DAC should perform the inversion, so re-inverted by the inverting mixer.
 

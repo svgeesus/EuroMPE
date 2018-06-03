@@ -18,11 +18,13 @@ Candidates for pitch CV:
 OPA2227U (not PA) good for typ but wide max spread. Dual.
     ±5μV typ ±75μV max at 25C ±100μV max at -40 to +85C
 
-**OPA2277U** (not UA) better on max spread. SOIC-8 dual (quad not in high grade)
+OPA2277U (not UA) better on max spread. SOIC-8 dual (quad not in high grade)
     ±10μV typ ±20μV max at 25C ±50μV max at -40 to +85C
 
-LTC2057 chopper. Possible chopper noise/breakthrough. *single only* "too good"
-    0.5V typ 4μV max at 25C 5μV max at -40 to +85C
+**OPA4192ID** SOIC-14 quad. ±8μV typ ±50μV max at -40 to +85C
+
+LTC2057 chopper. Possible chopper noise/breakthrough. *single only* "too good". Problems if current drawn exceeds 1mA, chopper breakthrough. Frequency beating.
+    0.5μV typ 4μV max at 25C 5μV max at -40 to +85C
 
 excluded:
 

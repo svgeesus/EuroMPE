@@ -109,5 +109,5 @@ Inverting buffer for pitch DAC inversion prior to mixing [sec-OP-A]
 
 Inverting mixer for pitch DAC and offset [sec-OP-B]
 
-OPA4192ID for two channels of secondary pitch output.
+OPA4192ID for two channels of secondary pitch output; two for 4-voice.
 

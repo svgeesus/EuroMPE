@@ -2,7 +2,7 @@
 
 ## Main digital board
 
-Eurorack 5V power, 3V3 Vdd (from T3.6 onboard). T3.6, analog input conditioning (602 rail-to-rail op-amps), frequency measuring circuitry, LC/3.2 for display and oven control, OLED display, DAC for heater output, analog input for temp measurement. Encoder and LED for pitch offset. SPI outputs for DACs. Gate logic outputs. Pedal logic outputs. I2C for communication with LC/3.2. Buttons and encoder for option selection and menu navigation. One for entire module.
+Eurorack 5V power, 3V3 Vdd (from T3.6 onboard). T3.6, analog input conditioning (602 rail-to-rail op-amps), frequency measuring circuitry, LC/3.2 for display, OLED display, analog input for temp measurement. Encoder and LED for pitch offset. SPI outputs for DACs. Gate logic outputs. Pedal logic outputs. I2C for communication with LC/3.2. Buttons and encoder for option selection and menu navigation. One for entire module.
 
 ## Gate and LED boards
 
@@ -10,15 +10,15 @@ Eurorack 5V power, 3V3 Vdd (from T3.6 onboard). T3.6, analog input conditioning 
 
 ## Analog power board
 
-Eurorack +12V -12V for op-amps. Creates clean 5V5 from +12V for DACs. Powers pitch DACs, offset DAC, global DACs and performance DACs. Also creates +11.4, -11.4 for Vref board. One for entire module. Run across width of first 4 voice boards.
+Eurorack +12V -12V for op-amps. Creates clean 5V5 from +12V for DACs. Powers pitch DACs, offset DAC, global DACs and performance DACs. One for entire module. Run across width of first 4 voice boards.
 
 ## Vref generator board
 
-Small (for ovening). Connections for clean +11.4/-11.4/Analog 0V; temperature sensor feed; whatever (+12V)for heating; kelvin 5V and 0V output connections. Test point for unbuffered 10V and 5V outputs. Leads for front-panel trimmers for 5V and 10V.  One for entire module. Screened, insulated, off the back of the module somewhere.
+Small, insulated against drafts. Connections for +12/-12/Analog 0V; temperature sensor feed; bipolar power for heating; kelvin 10V and (multiple) 0V output connections. Test point for unbuffered 10V outputs.  One for entire module. Screened, insulated, off the back of the module somewhere.
 
 ## Vref distribution board
 
-Provides 5 (9) onward-forwarding kelvin connections for the 5 (9) 16-bit DAC Vrefs. Also buffered output for front-panel 5V output. Also across the back of the first four voices (with connections for the other 4)? One for entire module.
+Trimmed divider from 10.0x00 V to 5V precision Vref.  Leads for front-panel trimmer for 5V. Provides 5 (9) onward-forwarding kelvin connections for the 5 (9) 16-bit DAC Vrefs. Also buffered output for front-panel 5V output. Also across the back of the first four voices (with connections for the other 4)? One for entire module.
 
 ## Pitch DAC boards
 
@@ -36,24 +36,17 @@ One octal 14-bit DAC and octal buffer for performance DAC (one board does 2 voic
 
 Four on-off panel-mount 5V outputs for pedal CV; like gate board (but without LEDs?). Goes above global DAC board.
 
+## Global DAC board
+
+Try to re-use the perf DAC board entirely. 8 outputs.
+
 ## Off boards (panel mount)
 
 - DIN MIDI input
 - USB device input
 - USB Host input
+- Kelvin 4-pole output for 5V measurement? (Mini 4-pole XLR?)
 
-Where do the input selection pushbuttons and leds go?
+Where do the input selection pushbuttons and leds go? What about the LCD?
 
-## Development panel
-
-Banana jacks for:
-
-- Analog 0V
-- Analog 5V
-- Analog 10V
-- +11.4V
-- -11.4V
-- Temperature
-
-Not needed for deployment, just for measuring and development.
 

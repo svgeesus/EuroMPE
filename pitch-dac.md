@@ -101,9 +101,13 @@ Inverting buffer for offset output (2 × 10k) [off-OP-D]
 
 Needs 2 quad resistor packs for offset. The less expensive 0.025% ones likely fine here.
 
-## Secondary pitch output
+One quad low-offset op-amp. OPA4192ID is good here.
+
+## Secondary pitch output (per voice)
 
 Inverting buffer for pitch DAC inversion prior to mixing [sec-OP-A]
 
 Inverting mixer for pitch DAC and offset [sec-OP-B]
+
+OPA4192ID for two channels of secondary pitch output.
 

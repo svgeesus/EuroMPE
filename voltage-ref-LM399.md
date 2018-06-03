@@ -35,6 +35,10 @@ Five samples of LM399AH from Linear.com were tested. All have datecode  week 50,
 
 ![LM399-5](img/LM399/399-5-Vz.png) ![LM399-5-hist](img/LM399/399-5-Vz-hist.png) ![LM399-5-trend](img/LM399/399-5-Vz-trend.png)
 
+After ageing (2 months), Ian Johnston burn-in board with 0.01% 2ppm resistors, LTC2050 op-amp, 10.9V power supply, bubble-wrap insulation on both sides of LM399: **10.201,25V sd 11μV**. Long run, temperature varied 19 to 24C as histogram shows.
+
+![LM399-2-10V](img/LM399/399-2-10v-b.png) ![LM399-2-10V hist](img/LM399/399-2-10v-hist-b.png) ![LM399-2-10V trend](img/LM399/399-2-10v-trend-b.png)
+
 ## Temperature
 
 Specified as 0.3 (typ) 1.0 (max) ppm/C over 0 to 70C ambient (A grade). Major effect on the tempco of the eventual 5V reference is the tempco of the resistive divider.
@@ -159,6 +163,8 @@ LTC2057 is up to 36V. LTC2057IS8#PBF in SO-8 Mouser $3.36/1, $3.08/10, $2.23/25
 Compare carefully.
 
 "Be careful of a '2057 used by itself as an output buffer...keep the current very low (<<2mA), say driving a meter input circuit only.  Otherwise its demodulater won't work well and you'll get errors.  For instance: If someone were to drive an ADC Ref input that would need another amp in between.  Or they should be careful trying to do a direct comparison with another Vref, etc.  AZ Choppers usually need another companion amp in their feedback loop if you're using it as a buffer - and that should be low noise." [MisterDiodes, EEVBlog](http://www.eevblog.com/forum/metrology/usa-cal-club-round-2/msg1502974/#msg1502974)
+
+For a pair of 10k resistors uses as 10V to 5V divider, current with 10 potential is 0.5mA.
 
 Watch out for [50kHz oscillation](https://www.eevblog.com/forum/projects/project-kx-diy-calibrator-reference-sourcemeter/msg580093/#msg580093) on LTC2057 (chopper frequency).
 

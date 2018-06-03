@@ -24,5 +24,8 @@ Breaking down to small, testable, breadboardable sub-tasks.
     and for pitch dac
     try and offsets module (through-hole, existing components) with pcb put vref on daughter board with kelvin so can have that option.
     pcb to osh park
+- slew rate limiter test
+- AD22103KTZ temp sensor to Teensy ADC
+
 
 

@@ -74,7 +74,9 @@ Internally buffered, but poor load regulation; will need external buffer to prot
 
 3mV offset on TL074 is 3LSB; not that significant, though if an inexpensive alternative op-amp is better (1mV or less, does not need to be high precision) use that.
 
-Consider *LT1014* (50μV/180μV, SOIC-14) **LT1214** (150μV/550μV, 50mA  $5.85 quad, PDIP-14 or SOIC-14) or *OPA4172* (200μV/1mV, 75mA 60Ω, $3.82 quad, SOIC-14) as non-inverting output buffers. Use innie current limiting resistor. Maybe time to try a SMD board design?
+Consider *LT1014* (50μV/180μV, SOIC-14) **LT1214** (150μV/550μV, 50mA  $5.85 quad, PDIP-14 or SOIC-14) or *OPA4172IDR* (200μV/1mV, 75mA 60Ω, $2.49 per 10, quad, SOIC-14) as non-inverting output buffers. Use innie current limiting resistor. Time to try a SMD board design!
+
+Better to use a slew limiter on the output, so one quad op-amp only does for 2 outputs. See circuit in OPA192 datasheet for slew limiter. 5V/ms (160Hz lowpass) seems like a good starting point.
 
 Bipolar operation is possible (datasheet p.47) but not needed here, all the MIDI CC are unipolar for the MPE performance controls. So *could* use singe-rail op-amps which swing to 0V on input and output. Probably easier to use bipolar devices though.
 
@@ -96,3 +98,4 @@ or (takes more space, but easier to see the value)
 - [RAR on GitHub](https://github.com/dxinteractive/ResponsiveAnalogRead)
 - [Example responsive analog read](https://forum.pjrc.com/threads/45376-Example-code-for-MIDI-controllers-with-Pots-and-Buttons)
 
+May need buffering, though this project does not need a fast rate of reading these pots. Would use a 3V3 RR-I/O op-amp.

@@ -2,7 +2,7 @@
 
 ## Main digital board
 
-Eurorack 5V power, 3V3 Vdd (from T3.6 onboard). T3.6, analog input conditioning (602 rail-to-rail op-amps), frequency measuring circuitry, LC/3.2 for display, OLED display, analog input for temp measurement. Encoder and LED for pitch offset. SPI outputs for DACs. Gate logic outputs. Pedal logic outputs. I2C for communication with LC/3.2. Buttons and encoder for option selection and menu navigation. One for entire module.
+Eurorack 5V power, 3V3 Vdd (from T3.6 onboard). T3.6, analog input conditioning (602 rail-to-rail op-amps), frequency measuring circuitry, LC/3.2 for display, OLED display, analog input for temp measurement. Encoder and LED for pitch offset. SPI outputs for DACs. Gate logic outputs. Pedal logic outputs. I2C for communication with LC/3.2 and to control LED PWM. Buttons and encoder for option selection and menu navigation. One for entire module.
 
 ## Gate and LED boards
 

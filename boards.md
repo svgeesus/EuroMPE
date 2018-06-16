@@ -6,7 +6,7 @@ Eurorack 5V power, 3V3 Vdd (from T3.6 onboard). T3.6, analog input conditioning 
 
 ## Gate and LED boards
 
-5V power for LEDs, derived 8-10V power for gate, LEDs, transistors. One board does 4 gates. 2 boards for 8 voices.
+5V power for LEDs, derived 8-10V power for gate, LEDs, transistors. One board does 4 gates. 2 boards for 8 voices. I2C logic level bidirectional converter.
 
 ## Analog power board
 

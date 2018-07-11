@@ -7,11 +7,11 @@ Breaking down to small, testable, breadboardable sub-tasks.
 - control pitch DAC in 0.5V steps
 - read encoder from Teensy LC/3.6 [done](code/EncoderTest/EncoderTest.ino)
 - RGB LED, resistors and Teensy PWM
-- RGB LED with offloaded 16-channel PWM chip from Adafruit
+- RGB LED with offloaded 16-channel PWM chip from Adafruit *in progress, I2C ok, PWM not ok*
     - needed different level shifter for I2C
 - octal DAC on breakout board
 - DIN MIDI input, 3V3
-- 8-10V gate out options:
+- 8-10V gate out options: *5V not enough for Intellijel ADSR*
     - 74AHCT125 (5V only, so no)
     - [this] two-transistor high-side
     - LM324 comparator
@@ -21,12 +21,15 @@ Breaking down to small, testable, breadboardable sub-tasks.
     needs 3V3 circuit, 74AHCT14 is 4.5 to 5.5V, check transistor bias resistor values.
 - ISO7240CDWR optical SPI isolator on SOIC-16 breakout board
 - I2C master/slave communication between Teensy LC and Teensy 3.6
+- LCD menu system with LC/3.2
 - test DipTrace.
     quick schematic for vref
     and for pitch dac
-    try and offsets module (through-hole, existing components) with pcb put vref on daughter board with kelvin so can have that option.
+    try andoffsets module (through-hole, existing components) with pcb.
+        put vref on daughter board with kelvin so can have that option.
     pcb to osh park
 - slew rate limiter test
+    - prototype one-channel perf dac board on breadboard, measure.
 - AD22103KTZ temp sensor to Teensy ADC
 
 

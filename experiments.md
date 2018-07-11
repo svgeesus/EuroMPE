@@ -27,7 +27,7 @@ Breaking down to small, testable, breadboardable sub-tasks.
 - test DipTrace.
    -  quick schematic for vref
     - and for pitch dac
-    - try an offsets module (through-hole, existing components) with pcb.
+    - try a dual offsets module (through-hole, existing components) with pcb.
         - put vref on daughter board with kelvin, so can have that option.
         - no need for precise 10V to 5V trimmed divider, stability more important than abs value here
     - pcb to osh park

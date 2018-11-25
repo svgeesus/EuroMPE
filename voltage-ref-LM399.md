@@ -75,6 +75,10 @@ Specified as 8ppm/√kHr at ambient 22 to 28C, 1kHr, 1mA zener current ±0.1%. S
 ## Line regulation
 
 Not directly specified. heater circuit seems to tolerate a large voltage range.
+ [Andreas, EEVBlog](http://www.eevblog.com/forum/metrology/lm399-based-10-v-reference/msg1708226/#msg1708226)
+
+
+"the LM399 dampens the supply noise at least by 3K / 1 Ohm"
 
 "any resistor on the heater seems to worse the PSRR slightly."
 
@@ -148,6 +152,10 @@ Kelvin connection to 399
 The noise level of the LM399 is around 10 times the noise level of typical precision OPs. There is no practical way to filter out the really low frequency noise.  So the useful amount of filtering is limited to what is simple. As an alternative to complicated filtering there is the option to use a second LM399.
 
 Usually one would avoid using a second OP in the path to reduce extra errors. So things like a more capacitive tolerant output would normally be done with the same OP as the 7 to 10 V step." [Kleinstein, EEVBlog](http://www.eevblog.com/forum/metrology/lm399-based-10-v-reference/msg1455583/#msg1455583)
+
+"Most designs are rather old. So mobile phones, WIFI etc. did not play a role.
+On LM399 a 100nF cap improves massively EMI behaviour.
+Leakage is negligible compared to 1 Ohms output impedance." [Andreas, EEVBlog](http://www.eevblog.com/forum/metrology/ultra-precision-reference-ltz1000/msg1917350/#msg1917350)
 
 ### Buffer op-amp
 

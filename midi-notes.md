@@ -10,6 +10,8 @@ Primary interface is likely to be as a USB MIDI device, using the Teensy 3.x USB
 
 Secondary interface could be DIN MIDI input, using the Arduino MIDI library and an optocoupler. (Linnstrument has DIN MIDI option, as well as USB).
 
+Remember that default on MIDI library is now to echo input to output, so if it also has a MIDI out or thru, [turn Thru off](https://github.com/FortySevenEffects/arduino_midi_library/blob/master/src/MIDI.h#L214)
+
 - [Professional MIDI, by Graham Hinton](http://www.hinton-instruments.co.uk/reference/midi/promidi/index.htm)
 
 [Deltron 650-0500](http://www.newark.com/deltron-components/650-0500/connector-din-jack-5-position/dp/69K6137?st=Deltron%20650-0500) DIN 5-pin panel socket (circular, nut fixing)

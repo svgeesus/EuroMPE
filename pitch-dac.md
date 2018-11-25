@@ -39,7 +39,7 @@ DAC output impedance is 6.25k which is irrelevant as bipolar mode requires an op
 
 ## Vref connection
 
-Unlike previous project, use a dual op-amp [OP-A, OP-B] near the VREF to provide the kelvin connections for each DAC. This avoids variable loading effects from each DAC on the Vref, which become a significant source of error once the Vref offest is accurately nulled. Only the positions used by number of channel expansion cards actually used need to be populated.
+Unlike previous project, use a dual op-amp [noninv OP-A, OP-B check common mode range] near the VREF to provide the kelvin connections for each DAC. This avoids variable loading effects from each DAC on the Vref, which become a significant source of error once the Vref offest is accurately nulled. Only the positions used by number of channel expansion cards actually used need to be populated.
 
 "The use of separate force (F) and sense (S) connections (often referred to as a Kelvin connection) at the load removes any errors resulting from voltage drops in the force lead, but, of course, may only be used in systems where there is negative feedback. It is also impossible to use such an arrangement to drive two or more loads with equal accuracy, since feedback may only be taken from one point."
 
@@ -48,13 +48,13 @@ DAC input resistance is highly code-dependent, lowest (around 7.5kΩ) at 0x8555 
 
 ## Output conditioning
 
-With a 5V ref and an output buffer [OP-C, no external components] this gives ±5V output (10 octaves) which includes Note-ON voltage, global pitchbend, and per-note pitchbend. Note that this does not cover the full MIDI note range of 128 notes = 10.66 octaves. Is that an issue in practice?
+With a 5V ref and an output buffer [unity OP-C, no external components] this gives ±5V output (10 octaves) which includes Note-ON voltage, global pitchbend, and per-note pitchbend. Note that this does not cover the full MIDI note range of 128 notes = 10.66 octaves. Is that an issue in practice?
 
-Op-amps here need a max Vos of 100μV (1LSB), preferably better. Are chopper amps suitable here? LT1150 operates on 12V bipolar supples, has 10μV max offset. Mouser $9.04 each, $8.28/10, $5.99/25 so go for 25 = 141.25 be damn sure they work first! **OPA4192D** (quad, SOIC-14 which performs better than the TSSOP) 8μV (typ) 50μV (max) $3.67/10 seems good, probably adequate and cheaper.
+Op-amps here need a max Vos of 100μV (1LSB), preferably better. Are chopper amps suitable here? LT1150 operates on 12V bipolar supples, has 10μV max offset. Mouser $9.04 each, $8.28/10, $5.99/25 so go for 25 = 141.25 be damn sure they work first! **OPA4192D** (quad, SOIC-14 which performs better than the TSSOP) 8μV (typ) 50μV (max) $3.67/10 seems good, probably adequate (common-mode input to within 100mV of each rail) and cheaper. Note however Fig. offset voltage vs. common-mode voltage, bad results between 3V and 1.5V from positive rail (i.e. 9 to 10.5V on 12V rails) - not suitable as 10V distribution amp?
 
-In the analog domain this is summed [OP-D] with -2V offset (to make range -3 to +8V), and offset trim (on the 2V divider). This op-amp also provides trimmable gain scaling to ensure an accurate 1V/oct over a 9.8 octave range (avoiding calibrating at the ends for offset errors). Thus the DAC should perform the inversion, so re-inverted by the inverting mixer.
+In the analog domain this is summed [inv OP-D] with -2V offset (to make range -3 to +8V), and offset trim (on the 2V divider). This op-amp also provides trimmable gain scaling to ensure an accurate 1V/oct over a 9.8 octave range (avoiding calibrating at the ends for offset errors). Thus the DAC should perform the inversion, so re-inverted by the inverting mixer.
 
-2V offset from 20k + 30k resistors [both E24 values] plus trimmer (for precision 2V, and also trimming DAC offset), buffered and inverted with [OP-E] 2 × 10k resistors. Watch TC on those 20k, 30k resistive divider.
+2V offset from 20k + 30k resistors [both E24 values] plus trimmer (for precision 2V, and also trimming DAC offset), buffered and inverted with [inv OP-E] 2 × 10k resistors. Watch TC on those 20k, 30k resistive divider.
 
 Summing from 2 × 10k resistors; gain trim from the third 10k resistor  + 10 ohm? 3250 wirewound trimmer (but needs small compensating resistors, half of the trimmer value, on the input) plus current limiting innie 47R resistor and cap. 3/4 of a quad array. In total, 1.5 quad arrays per channel (3 per pair of channels).
 
@@ -77,7 +77,7 @@ One global offset for all voices.
 
 ## Offset DAC
 
-Same DAC, similar circuit in terms of SPI connection, Vref and bipolar output amp. No offset trim. Several options:
+Same DAC, similar circuit in terms of SPI connection, Vref and bipolar output amp. Gain trim (or do digitally?) but no offset trim. Several options:
 
 A) Gain set lower to give ±3V swing (10k and 20k).
 
@@ -87,17 +87,17 @@ Unity gain inverting buffer for external (global) input, normalled to 0V (2 × 1
 
 Technically a 14bit DAC would be fine here. Or the lower grade of the 16bit. In practice it is easier to use known-working DAC and code for this one too. So:
 
-DAC plus output buffer [off-OP-A].
+DAC plus output buffer [unity off-OP-A].
 
 ## Offset external Input
 
-Non-inverting buffer for input. Does this need to be as precise? [off-OP-B]
+Non-inverting buffer for input. Does this need to be as precise? [unity off-OP-B] Check adequate common mode range
 
 ## Offset summing
 
-Inverting mixer to sum offset and external signals to send to pitch dac boards (3 × 10k). [off-OP-C]
+Inverting mixer to sum offset and external signals to send to pitch dac boards (3 × 10k). [inv off-OP-C]
 
-Inverting buffer for offset output (2 × 10k) [off-OP-D]
+Inverting buffer for offset output jack (2 × 10k) [inv off-OP-D]
 
 Needs 2 quad resistor packs for offset. The less expensive 0.025% ones likely fine here.
 
@@ -105,9 +105,9 @@ One quad low-offset op-amp. OPA4192ID is good here.
 
 ## Secondary pitch output (per voice)
 
-Inverting buffer for pitch DAC inversion prior to mixing [sec-OP-A]
+Inverting buffer for pitch DAC inversion prior to mixing [inv sec-OP-A]
 
-Inverting mixer for pitch DAC and offset [sec-OP-B]
+Inverting mixer for pitch DAC and offset [inv sec-OP-B]
 
 OPA4192ID for two channels of secondary pitch output; two for 4-voice.
 

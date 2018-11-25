@@ -27,7 +27,7 @@ DNL is ±0.5 (typ) ±1.0 (max) LSB
 Gain error (away from output voltage extremes) ±0.5 (typ) ±2 (max) LSB
 with a gain error TC of ±0.1ppm/C.
 
-Bipolar output depends on matching of internal resistor pair, which is typ 0.0015%. Do the error analysis here. But there is offset and gain trim after this; and matching of internal pair is better than best available LT5400 0.01% pack.
+Bipolar output depends on matching of internal resistor pair, which is typ 0.0015% (15ppm). Do the error analysis here. But there is offset and gain trim after this; and matching of internal pair is better than best available LT5400 0.01% pack.
 
 ## Line regulation
 
@@ -57,6 +57,12 @@ In the analog domain this is summed [inv OP-D] with -2V offset (to make range -3
 2V offset from 20k + 30k resistors [both E24 values] plus trimmer (for precision 2V, and also trimming DAC offset), buffered and inverted with [inv OP-E] 2 × 10k resistors. Watch TC on those 20k, 30k resistive divider.
 
 Summing from 2 × 10k resistors; gain trim from the third 10k resistor  + 10 ohm? 3250 wirewound trimmer (but needs small compensating resistors, half of the trimmer value, on the input) plus current limiting innie 47R resistor and cap. 3/4 of a quad array. In total, 1.5 quad arrays per channel (3 per pair of channels).
+
+LT5400 A-grade resistor pack. 0.01% within-package matching, 0.2ppm/°C within-package drift and 8ppm/°C absolute drift.
+
+"Note 6: (∆R/R)CMRR (Matching for CMRR) is a metric for the contribution of error from the LT5400 when used in a difference configuration using the specific resistor pairs of R1/R2 and R4/R3"
+
+"The LT5400 specifies matching in the most conservative possible way. In each device, the ratio error of the largest of the four resistors to the smallest of the four resistors meets the specified matching level."
 
 3250 has 5% tolerance, 10Ω has effective resolution of 1.3% (130 mΩ), tempco ±50ppm/C
 Maybe better to use a non-wirewound on such a small resistance. Or use a high value, in parallel with one resistor of the divider to lower the value slightly. Jumper selects which one to lower.

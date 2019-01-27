@@ -165,14 +165,17 @@ LTC2050HV (used on the Ian Johnston adjustable reference) has almost zero Vos an
 
 Max PSU voltage is 11V for 2050HV though, so  would need a separate derived PSU. Supply current is 0.8mA.
 
-"The chopper amplifier LTC2057, with TCVOS of 0.015uV/°C, contributes only 0.0025ppm/°C of output error, thus effectively eliminating TCVOS as an error consideration." [LM399 low cost version](https://xdevs.com/article/kx-ref/#lm399opt)
-
 LTC2057 is up to 36V. LTC2057IS8#PBF in SO-8 Mouser $3.36/1, $3.08/10, $2.23/25
 Compare carefully.
 
+"The chopper amplifier LTC2057, with TCVOS of 0.015uV/°C, contributes only 0.0025ppm/°C of output error, thus effectively eliminating TCVOS as an error consideration." [LM399 low cost version](https://xdevs.com/article/kx-ref/#lm399opt)
+
+"I learned yesterday that the choppers need a low impedance at their *input* pins. The OPA189 with 100k to the non inverting input had a 650uV offset. With a 20pf or 2000pF COG cap to ground the offset was less than 0.2uV. Other op amps like the LTC2058 and he ADA4522 need the full 2000pF to get below 1uV. I don't know yet if higher capacitance helps them more." [ChuckB, EEVBlog](http://www.eevblog.com/forum/metrology/output-protection-for-diy-references/msg2122366/#msg2122366)
+
+
 "Be careful of a '2057 used by itself as an output buffer...keep the current very low (<<2mA), say driving a meter input circuit only.  Otherwise its demodulater won't work well and you'll get errors.  For instance: If someone were to drive an ADC Ref input that would need another amp in between.  Or they should be careful trying to do a direct comparison with another Vref, etc.  AZ Choppers usually need another companion amp in their feedback loop if you're using it as a buffer - and that should be low noise." [MisterDiodes, EEVBlog](http://www.eevblog.com/forum/metrology/usa-cal-club-round-2/msg1502974/#msg1502974)
 
-For a pair of 10k resistors uses as 10V to 5V divider, current with 10 potential is 0.5mA.
+For a pair of 10k resistors used as 10V to 5V divider, current is 0.5mA. Maybe use higher value resistors, but is at least a small and constant current.
 
 Watch out for [50kHz oscillation](https://www.eevblog.com/forum/projects/project-kx-diy-calibrator-reference-sourcemeter/msg580093/#msg580093) on LTC2057 (chopper frequency).
 

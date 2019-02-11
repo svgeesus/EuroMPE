@@ -53,7 +53,7 @@ Maybe [Adafruit BME280 I2C or SPI Temperature Humidity Pressure Sensor](https://
 - barometric pressure with ±1 hPa absolute accuracy, 12 Pascal resolution
 - temperature with ±1.0°C accuracy (use for ambient case temp)
 
-Or (humidity and temperature, no pressure)  [Adafruit Sensirion SHT31-D - Temperature & Humidity Sensor](https://www.adafruit.com/product/2857) $13.95. Board 12.7mm x 18mm.
+Or (humidity and temperature, no pressure)  [Adafruit Sensirion SHT31-D - Temperature & Humidity Sensor](https://www.adafruit.com/product/2857) $13.95. I2C, 2 addresses supported. Board 12.7mm x 18mm.
 
 - relative humidity ±2% accuracy
 - temperature  ±0.3°C accuracy
@@ -69,6 +69,6 @@ Looks like SHT31-D for humidity and temp, plus BMP388 for pressure (and check on
 
 ## Voltage rails
 
-A 10V ref plus some op-amps to shift and scale to a 0 to 3V3 range. Jumpers to switch between rails and test points, for calibration. Software calibration based on known voltages.
+A 10V ref plus some op-amps to shift and scale to a 0 to 3V3 range. Jumpers to switch between rails and test points, for calibration. Software calibration based on known voltages. Interesting range is 12.5 to 11.0V
 
 Duplicates functionality of an existing module, but may be better for logging.

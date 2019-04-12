@@ -2,7 +2,7 @@
 
 ## Intro
 
-LM399AH has ultra-high long term stability and drift over temperature, as it has an on-chip thermal stabilisation. It uses a hermetically sealed metal can so is unaffected by relative humidity, and the long leads protect against board stress. It is used in mid-range 6.5 digit multimeters as a voltage reference, for this reason (the higher-end 7.5 digit and above meters use the more stable, less noisy and more expensive LTZ1000A).
+LM399AH has ultra-high long term stability and drift over temperature, as it has an on-chip thermal stabilisation. It uses a hermetically sealed metal can, so is unaffected by relative humidity, and the long leads protect against board stress. It is used in mid-range 6.5 digit multimeters as a voltage reference, for this reason (the higher-end 7.5 digit and above meters use the more stable, less noisy and more expensive LTZ1000A).
 
 On the downside, the initial accuracy is _really terrible_; each device needs to be burned in for hundreds of hours and then measured to see what voltage it produces.
 
@@ -26,6 +26,7 @@ Five samples of LM399AH from Linear.com were tested. All have datecode  week 50,
 - 4   7.032
 - 5   7.040
 
+Samples 1, 4 & 5 on breadboard. Samples 2,3 on Ian Johnston burn-in board with two different op-amp choices. Circuit for sample 3 did not work; needs to be desoldered and tested in a new circuit.
 
 ![LM399-1](img/LM399/399-1-Vz.png) ![LM399-1-hist](img/LM399/399-1-Vz-hist.png) ![LM399-1-trend](img/LM399/399-1-Vz-trend.png)
 
@@ -90,7 +91,7 @@ Zener circuit is current driven, so high stability current is needed.
 
 "In contrast, the LM199 is measured in still air of 25°C to 28°C at a reverse current of 1 mA ±0.5%" (AN-161) 0.5% is 5μΑ.
 
-A precision current source gives the best stability (not a resistor from the ower rail, as with most circuits in the datasheet). This can be bootstrapped from output voltage rather than using a separate (and less stable) reference. For circuit starting, a high value resistor to power may be needed. This should be less than 10% of the total zener current (investigate).
+A precision current source gives the best stability (not a resistor from the power rail, as with most circuits in the datasheet). This can be bootstrapped from output voltage rather than using a separate (and less stable) reference. For circuit starting, a high value resistor to power _may_ be needed. This should be less than 10% of the total zener current (investigate).
 
 " Since the dynamic impedance is constant with current changes regulation is better than discrete zeners. For optimum regulation, lower operating currents are preferred since the ratio of source resistance to zener impedance is higher, and the attenuation of input changes is greater. Further, at low currents, the voltage drop in the wiring is minimized." (ΑΝ-161)
 
@@ -109,11 +110,11 @@ XDevs KX-lowcost uses 25ppm/C resistors for the op-amp divider, but 5ppm/C resis
 
 ## Layout and mechanical considerations
 
-"Mounting is an important consideration for optimum performance. Although the thermal shield minimizes the heat low, the LM199 should not be exposed to a direct air flow such as from a cooling fan. This can cause as much as a 100% increase in power dissipation degrading the thermal regulation and increasing the drift. Normal conviction currents do not degrade performance." (AN-161)
+"Mounting is an important consideration for optimum performance. Although the thermal shield minimizes the heat loss, the LM199 should not be exposed to a direct air flow such as from a cooling fan. This can cause as much as a 100% increase in power dissipation degrading the thermal regulation and increasing the drift. Normal convection currents do not degrade performance." (AN-161)
 
 "The printed circuit board (PCB) layout is also important. Firstly, 4-wire sensing should be used to eliminate ohmic drops in pc traces. Although the voltage drops are small the temperature coefficient of the voltage developed along a copper trace can add significantly to the drift. For example, a trace with 1 Ω resistance and 2 mA current flow will develop 2 mV drop. The TC of copper is 0.004%/°C so the 2 mV drop will change at 8 μV/°C, an additional 1 ppm drift error. Of course, the effects of voltage drops in the printed circuit traces are eliminated with 4-wire operation. The heater current also should not be allowed to flow through the voltage reference traces. Over a −55°C to +125°C temperature range the heater current will change from about 1 mA to over 40 mA. These magnitudes of current flowing reference leads or reference ground can cause huge errors compared to the drift of the LM199." (AN-161)
 
-"Thermocouple effects can also use errors. The kovar leads from the LM199 package form a thermocouple with copper printed circuit board traces. Since the package of the 199 is heated, there is a heat flow along the leads of the LM199 package. If the leads terminate into unequal sizes of copper on the p.c. board greater heat will be absorbed by the larger copper trace and a temperature difference will develop. A temperature difference of 1°C between the two leads of the reference will generate about 30 μA. Therefore, the copper traces to the zener should be equal in size. This will generally keep the errors due to thermocouple effects under about 15 μV.
+"Thermocouple effects can also cause errors. The kovar leads from the LM199 package form a thermocouple with copper printed circuit board traces. Since the package of the 199 is heated, there is a heat flow along the leads of the LM199 package. If the leads terminate into unequal sizes of copper on the p.c. board greater heat will be absorbed by the larger copper trace and a temperature difference will develop. A temperature difference of 1°C between the two leads of the reference will generate about 30 μA. Therefore, the copper traces to the zener should be equal in size. This will generally keep the errors due to thermocouple effects under about 15 μV.
 The LM199 should be mounted flush on the p.c. board with a minimum of space between the thermal shield and the boards. This minimizes air flow across the kovar leads on the board surface, which also can cause thermocouple voltages. Air currents across the leads usually appear as ultra-low frequency noise of about 10 μV to 20 μV amplitude." (AN-161)
 
 - [Slot or Not thermo measurements on LM399](https://www.eevblog.com/forum/metrology/ultra-precision-reference-ltz1000/msg278247/?topicseen#msg278247)
@@ -242,4 +243,5 @@ LM399-5
 
     7.0500 	Iz=1.0 	If=0.150 	Rz=3K 	Rf=20K 	Rg=47K 	*Vop10.0500*
 
+For lowest tempco, resistive divider should be two identical, low tempco 10k resistors R1, R2 placed closely together and in good thermal contact (ground plane under, copper sheet with thermal epoxy over). One has a small resistance R3 in series (to increase the value by more than the error in the resistor matching and deviation from precisely 10V), plus (series resistor R4 and series rheostat trimmer VR5)  in parallel (to, at minimum resistance value, decrease total resistance beow the max error.
 

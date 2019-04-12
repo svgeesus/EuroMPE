@@ -99,3 +99,5 @@ or (takes more space, but easier to see the value)
 - [Example responsive analog read](https://forum.pjrc.com/threads/45376-Example-code-for-MIDI-controllers-with-Pots-and-Buttons)
 
 May need buffering, though this project does not need a fast rate of reading these pots. Would use a 3V3 RR-I/O op-amp.
+
+"It is advisable to place a 10nF capacitor from the wiper to ground against RF and other interference." [Gerrit, PJRC forum](https://forum.pjrc.com/threads/55126-MIDI-Faderbox-fader-choice?p=197818&viewfull=1#post197818)

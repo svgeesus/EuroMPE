@@ -1,22 +1,32 @@
 
 # Pitch DAC
 
-AD5542CRZ (SOIC-14, $36.39), same as the previous, mono, MIDI2CV project, provides bipolar ±Vref output (so, ±5V).
+Use a very linear, well behaved 16-bit DAC.
+
+Over 10 octaves, at the desired precision, 16 bits is barely sufficient (0.2 cents). More bits would be desirable, to give finer precision and to allow for the loss of precision from using a calibration curve. However, 20bit or 18bit DACs can be expensive, and some are no better than 16bit INL; 24bit DACs are widely available and cheap, but tuned for audio AC performance not DC accuracy and linearity.
+
+**AD5542CRZ** (SOIC-14, $36.39), same as I used in my previous, mono, MIDI2CV project, provides bipolar ±Vref output (so, ±5V) with one bipolar-powered op-amp in the output loop. Power up to +5V5. INL ±0.5LSB (typ) ±1.0LSB (max, = 15ppm) for best (C) grade. SPI needs 16bit transfer.
+
+_AD5781ARUZ_ (TSSOP-20, $31.38) 18bit. INL ±0.5 LSB (max, = 1.9ppm) for B grade, ±4 LSB (max, = 15ppm) linearity for A grade. _Mouser does not stock the best (B) grade. A grade has more resolution, but same INL, as the 16bit AD5542CRZ_ Bipolar ±Vref output, power up to ±16.5V. Optimal suply for lowest zero-scale and gain errors is ±9.5V (datasheet, figs 20 & 22, _noting results are given for 5V and for ±10V spans while I need a ±5V span_). SPI needs 24bit transfer. Needs Schottky diode for power rail syncronization, see datasheet fig. 50. Is actually less expensive than AD5542CRZ.
+
+_AD5791BRUZ_ (TSSOP-20, $99.61/5) or _AD5791ARUZ_ (TSSOP-20, $60.29/5) 20bit, 1ppm linearity, bipolar ±Vref output, power up to ±16.5V. Very expensive, considering 4-voice needs 5 of them.
 
 ## Power
 
 Vdd absolute max is -0.3V to +6V. Spec sheet assumes 2.7 ≤ Vdd ≤ 5.5, 2.5 ≤ Vref ≤ Vdd. Check how close can swing to Vdd. When using a 5V ref, may need a 5.5V rail to allow clean swing to 5V output. (Previous project used a 5V rail and AD780N 2.5V ref for that reason, an op-amp then gave 2x gain).
 
+Advantage of a 12V-derived 5V5 rail (or ±12V-derived ±9V5 rails), compared to using Eurorac 5V power, is that filtering and smoothing can be applied, reducing switching PSU noise and increasing decoupling from the digital circuitry running on Eurorack 5V.
+
 ## Digital interface
 
 With Teensy 3.6, 3V3 Vdd unless level shifter used. But 3V3 has reduced dynamic range and needs a (less good) 2.5V or 3V ref, although avoiding level shifter. Using 5V5 for DAC power allows higher dynamic range (lower noise) and allows better, 5V ref. Needs unidirectional level shifter for CS, SCLK, MOSI/Dout but those are inexpensive.
 
-74AHCT125 Quad Level-Shifter (PDIP, SOIC, SSOP)  good for SPI, fast enough. 2 CS, SCLK, MOSI so two pitch DACs.
+**74AHCT125** Quad Level-Shifter (PDIP, SOIC, SSOP)  good for SPI, fast enough. 2 CS, SCLK, MOSI so two pitch DACs.
 Vdd abs max -0.5V to +7V so good for 5V5. Base unit needs 2, second supplies 4 more CS; 3 used for global pich and 2 more channels (on first expander, to 4-voice). A third, fitted if needed, supplies 4 more CS for 4 more channels, only needed for 6-voice and 8-voice builds.
 
-Alternatively, use 4-channel digital isolator to prevent coupling of high speed signals, such as TI ISO7240C (SOIC-16, $6.03) which can use 3V3 input and 5V5 output with separate grounds. In that case use one per board on the DAC board, so need 3 for 4-voice and 2 more for 8-voice. Connect with 6-way cable (3V3, DGND, SCLK, MOSI, CS1, CS2).
+Alternatively, use 4-channel digital isolator to prevent coupling of high speed signals, such as TI **ISO7240C** (SOIC-16, $6.03) which can use 3V3 input and 5V5 output with separate grounds. In that case use one per board on the DAC board, so need 3 for 4-voice and 2 more for 8-voice. Connect with 6-way cable (3V3, DGND, SCLK, MOSI, CS1, CS2).
 
-## Initial accuracy
+## Initial accuracy (AD5542CRZ)
 
 1LSB is 10V / 2^16 = 152μV. At 1V/Oct, 12 tones per octave, 100 cents per tone, 1 Cent is 833μV so 1 LSB is about 1/5 cent.
 

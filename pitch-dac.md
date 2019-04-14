@@ -5,11 +5,13 @@ Use a very linear, well behaved 16-bit DAC.
 
 Over 10 octaves, at the desired precision, 16 bits is barely sufficient (0.2 cents). More bits would be desirable, to give finer precision and to allow for the loss of precision from using a calibration curve. However, 20bit or 18bit DACs can be expensive, and some are no better than 16bit INL; 24bit DACs are widely available and cheap, but tuned for audio AC performance not DC accuracy and linearity.
 
-**AD5542CRZ** (SOIC-14, $36.39), same as I used in my previous, mono, MIDI2CV project, provides bipolar ±Vref output (so, ±5V) with one bipolar-powered op-amp in the output loop. Power up to +5V5. INL ±0.5LSB (typ) ±1.0LSB (max, = 15ppm) for best (C) grade. SPI needs 16bit transfer.
+**AD5542CRZ** (SOIC-14, $36.39), same as I used in my previous, mono, MIDI2CV project, provides bipolar ±Vref output (so, ±5V) with one bipolar-powered op-amp in the output loop. Power up to +5V5. INL ±0.5LSB (typ) ±1.0LSB (max, = 15ppm) for best (C) grade. DNL is ±1 LSB max = 15ppm. SPI needs 16bit transfer.
 
-_AD5781ARUZ_ (TSSOP-20, $31.38) 18bit. INL ±0.5 LSB (max, = 1.9ppm) for B grade, ±4 LSB (max, = 15ppm) linearity for A grade. _Mouser does not stock the best (B) grade. A grade has more resolution, but same INL, as the 16bit AD5542CRZ_ Bipolar ±Vref output, power up to ±16.5V. Optimal suply for lowest zero-scale and gain errors is ±9.5V (datasheet, figs 20 & 22, _noting results are given for 5V and for ±10V spans while I need a ±5V span_). SPI needs 24bit transfer. Needs Schottky diode for power rail syncronization, see datasheet fig. 50. Is actually less expensive than AD5542CRZ.
+**AD5781ARUZ** (TSSOP-20, $31.38) 18bit. INL ±1 LSB (max, 5V vref, = 3.6ppm) for B grade, ±4 LSB (max, = 15ppm) for A grade. _Mouser does not stock the best (B) grade. A grade has more resolution, but same INL, as the 16bit AD5542CRZ_ DNL is ±1 LSB max = 3.6ppm for _both_ grades. Bipolar ±Vref output, power up to ±16.5V. Optimal suply for lowest zero-scale and gain errors is ±9.5V (datasheet, figs 20 & 22, _noting results are given for 5V and for ±10V spans while I need a ±5V span_). SPI needs 24bit transfer. Needs Schottky diode for power rail syncronization, see datasheet fig. 50. A grade is actually less expensive than AD5542CRZ, with better DNL.
 
 _AD5791BRUZ_ (TSSOP-20, $99.61/5) or _AD5791ARUZ_ (TSSOP-20, $60.29/5) 20bit, 1ppm linearity, bipolar ±Vref output, power up to ±16.5V. Very expensive, considering 4-voice needs 5 of them.
+
+Conclusion: AD5781ARUZ gives 16bit INL with 18bit DNL at slightly lower cost than AD5542CRZ.
 
 ## Power
 
@@ -26,18 +28,31 @@ Vdd abs max -0.5V to +7V so good for 5V5. Base unit needs 2, second supplies 4 m
 
 Alternatively, use 4-channel digital isolator to prevent coupling of high speed signals, such as TI **ISO7240C** (SOIC-16, $6.03) which can use 3V3 input and 5V5 output with separate grounds. In that case use one per board on the DAC board, so need 3 for 4-voice and 2 more for 8-voice. Connect with 6-way cable (3V3, DGND, SCLK, MOSI, CS1, CS2).
 
-## Initial accuracy (AD5542CRZ)
+## Initial accuracy
 
+### AD5542CRZ
 1LSB is 10V / 2^16 = 152μV. At 1V/Oct, 12 tones per octave, 100 cents per tone, 1 Cent is 833μV so 1 LSB is about 1/5 cent.
 
-INL is ±0.5 (typ) ±1.0 (max) LSB for best (C) grade.
+INL is ±0.5 (typ) ±1.0 (max) LSB for best (C) grade = 15ppm.
 
-DNL is ±0.5 (typ) ±1.0 (max) LSB
+DNL is ±0.5 (typ) ±1.0 (max) LSB = 15ppm.
 
-Gain error (away from output voltage extremes) ±0.5 (typ) ±2 (max) LSB
+Gain error (away from output voltage extremes) ±0.5 (typ) ±2 (max) LSB = 7μV (typ) 30μV (max)
 with a gain error TC of ±0.1ppm/C.
 
 Bipolar output depends on matching of internal resistor pair, which is typ 0.0015% (15ppm). Do the error analysis here. But there is offset and gain trim after this; and matching of internal pair is better than best available LT5400 0.01% pack.
+
+### AD5781ARUZ
+
+1LSB is 10V / 2^18 = 38μV. At 1V/Oct, 12 tones per octave, 100 cents per tone, 1 Cent is 833μV so 1 LSB is about 1/20 cent.
+
+INL is ±2 (typ) ±4 (max) LSB for worst (A) grade = 15ppm.
+
+DNL at 5V vref is ±0.5 (typ) ±1.0 (max) LSB = 3.6ppm.
+
+Linearity Error Long-Term Stability is 0.03 LSB after 1k hours at 100C.
+
+Gain error (away from output voltage extremes) is 0.4ppm (typ) 20ppm FSR (max) = 2μV (typ) 100μV (max) with a gain error TC of ±0.04ppm FSR/C.
 
 ## Line regulation
 
@@ -45,15 +60,15 @@ Bipolar output depends on matching of internal resistor pair, which is typ 0.001
 
 ## Load regulation
 
-DAC output impedance is 6.25k which is irrelevant as bipolar mode requires an op-amp on the output anyway.
+DAC output impedance is 6.25k for AD5542CRZ,  3.4k for AD5781ARUZ which is irrelevant as bipolar mode requires an op-amp on the output anyway.
 
 ## Vref connection
 
-Unlike previous project, use a dual op-amp [noninv OP-A, OP-B check common mode range] near the VREF to provide the kelvin connections for each DAC. This avoids variable loading effects from each DAC on the Vref, which become a significant source of error once the Vref offest is accurately nulled. Only the positions used by number of channel expansion cards actually used need to be populated.
+Unlike previous project, use a dual op-amp [noninv OP-A, OP-B check common mode range] on a Vref distribution board,near the VREF, to provide the kelvin connections for each DAC. This avoids variable loading effects from each DAC on the Vref, which become a significant source of error once the Vref offest is accurately nulled. Only the positions used by number of channel expansion cards actually used need to be populated.
 
 "The use of separate force (F) and sense (S) connections (often referred to as a Kelvin connection) at the load removes any errors resulting from voltage drops in the force lead, but, of course, may only be used in systems where there is negative feedback. It is also impossible to use such an arrangement to drive two or more loads with equal accuracy, since feedback may only be taken from one point."
 
-DAC input resistance is highly code-dependent, lowest (around 7.5kΩ) at 0x8555 which is 660 μA at 5V.
+DAC input resistance is highly code-dependent. For AD5542CRZ lowest (around 7.5kΩ) at 0x8555 which is 660 μA at 5V. For AD5781ARUZ, lowest (around 5kΩ) which is 1mA at 5V.
 
 
 ## Output conditioning

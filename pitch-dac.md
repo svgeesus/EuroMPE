@@ -120,11 +120,11 @@ B) Unity gain, with ±3V swing? In which case even an AD780N 3V ref and unity-ga
 
 Unity gain inverting buffer for external (global) input, normalled to 0V (2 × 10k 0.025% resistors).
 
-Technically a 14bit DAC would be fine here. Or the lower grade of the 16bit. In practice it is easier to use known-working DAC and code for this one too. So:
+Technically a 14bit DAC would be fine here. Or the lower grade of the 16bit. In practice it is easier to use known-working DAC, schematic, similar board layout, and code for this one too. So use the exact same DAC as for pitch CV.
 
 DAC plus output buffer [unity off-OP-A].
 
-## Offset external Input
+## Offset external input
 
 Non-inverting buffer for input. Does this need to be as precise? [unity off-OP-B] Check adequate common mode range
 

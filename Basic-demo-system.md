@@ -23,7 +23,7 @@ Quad modules should also have per-voice CV control for expression.
 
 [Example system](https://www.modulargrid.net/e/racks/view/901763) using a Vermona 4-voice as a placeholder for the MPE MIDI to CV.
 
-![sample system]()
+![sample system](img/fur-voice.png)
 
 ### Doepfer [A-111-4](http://www.doepfer.de/A1114.htm) quad oscillator
 
@@ -51,3 +51,18 @@ Consolidated A,D,S.R knobs plus CVs with polarising attenuators.
 
 Four gate inputs (no retriggering?) and four envelope outputs with LED indication. [Internal jumpers](http://www.doepfer.de/a100_man/A141_4_connectors_and_jumpers.pdf) allow normalling to VCF or VCA.
 
+### Doepfer [A-132-8](http://www.doepfer.de/a1328.htm) Octal Poly VCA
+
+Four pairs of linear followed by (switchable) linear or exponential VCAs. Consolidated controls for default gain of the linear and expo VCAs.
+
+Per-voice expression: four linear inputs and four expo inputs, e.g. envelope on linear and attack velocity on expo.
+
+Four outputs plus a summed output, could be sufficient for a minimal system or if a mono-in, stereo-out effect (chorus, etc) is added. If not:
+
+### Doepfer [A-138s](http://www.doepfer.de/A138s.htm) Mini Stereo Mixer
+
+Simple (not voltage controlled) 4 mono inputs to one stereo output mixer. Per-voice level and pan.
+
+### Joranalogue Audio Design [Transmit 2](https://joranalogue.com/collections/eurorack/products/transmit-2)
+
+Stereo, electronically balanced output module with level/clip indicators.

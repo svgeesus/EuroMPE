@@ -66,3 +66,17 @@ Simple (not voltage controlled) 4 mono inputs to one stereo output mixer. Per-vo
 ### Joranalogue Audio Design [Transmit 2](https://joranalogue.com/collections/eurorack/products/transmit-2)
 
 Stereo, electronically balanced output module with level/clip indicators.
+
+## Alternative polyphonic racks
+
+[Useful thread on Muffs](https://www.muffwiggler.com/forum/viewtopic.php?t=214867)
+
+### [rack by ckwjr](https://www.muffwiggler.com/forum/viewtopic.php?p=3025615#3025615)
+
+![ckwjr](img/ckwjr.png)
+
+CV/gate only from the Hermod.
+
+### [rack by 2disbetter](https://www.muffwiggler.com/forum/viewtopic.php?t=213206)
+
+Uses an Expert Sleepers FH-2 as the MPE to CV converter. Interesting discussion of the benefits vs. several polysynths

@@ -1,15 +1,15 @@
 # Basic 4-voice for MPE demo
 
-Exploration of the basic setup needed for a four-voice polyphonic Eurorack system, to be driven by an MPE MIDI-to-CV converter providing:
+Exploration of the basic setup needed for a four-voice polyphonic Eurorack system, to be driven by an [MPE MIDI-to-CV converter](Design%20notes.md) providing:
 
-- 4 gates
-- 4 pitch CV
-- 4 attack velocity
+- 4 gates → envelope generators
+- 4 pitch CV → oscillators, filters
+- 4 attack velocity -> VCAs
 - 4 release velocity, lol
-- 4 Y-axis CV
-- 4 pressure CV
+- 4 Y-axis CV → modulation of something, osc FM, PWM etc
+- 4 pressure CV → modulation of something else, filter FM, distortion etc
 
-(plus the usual global MIDI CVs).
+(plus the usual global MIDI CVs for XYZ sliders, mod wheel, etc).
 
 ## Consolidated controls
 

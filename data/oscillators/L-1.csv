@@ -4,6 +4,7 @@
 # second series, descending from 0
 # nom,  volt,      vsd,         freq,       fsd
 # V,    V,         V,           Hz,         mHz
+# lower limit of Keysight 34465A frequency measurement.
 -5.0,  -4.99994,   0.000001,    3.331142,   0.4628
 -4.5,  -4.49990,   0.000002,    4.759217,   0.9170
 -4.0,  -3.99992,   0.000001,    6.744772,   1.340
@@ -35,6 +36,7 @@
 7.5,   7.49997,    .000002,    14338.39,   314.30
 8.0,   7.99998,    .000001,    14788.36,   447.80
 8.5,   8.49997,    .000001,    15062.89,   448.52
+# frequency nt increasing much beond 8.5V.
 
 
 # 28.3C at start, in case; range 28.0 to 28.4, at end 28.2

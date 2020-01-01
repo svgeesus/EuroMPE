@@ -1,6 +1,6 @@
 # Oscillators
 
-A study of the tuning accuracy and stability of four analog voltage controlled oscillators.
+A study of the tuning accuracy and stability of several analog voltage controlled oscillators.
 
 ## Materials & Methods
 
@@ -17,4 +17,4 @@ Expo converters will have their own errors, so will not give a perfect curve
 
 Oscillators may display self-heating, especially at higher frequencies where currents through the expo converter are higher
 
-Oscillators which use a voltage rail or a voltage regulator as a voltage reference will display very poor line regulations which will manifest as stability drift over time.
+Oscillators which use a voltage rail or a voltage regulator as a voltage reference will display very poor line regulations, which will manifest as stability drift over time.

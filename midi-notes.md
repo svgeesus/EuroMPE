@@ -4,6 +4,8 @@ Based on Teensy 3.6, because it has two separate SPI busses easily accessible. T
 
 Teensy 3.6 uses about 80 mA.
 
+USB Host include a TPS2055A current limiter chip.
+
 ## MIDI connections
 
 Primary interface is likely to be as a USB MIDI device, using the Teensy 3.x USB MIDI implementation. That connection requires a host, such as a computer running a DAW.

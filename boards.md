@@ -22,7 +22,7 @@ Trimmed divider from 10.0x00 V to 5V precision Vref.  Leads for front-panel trim
 
 ## Pitch DAC boards
 
-Two 16-bit pitch DACs; level shifter or opto-isolator for SPI connection; two Vref inputs; offset and gain pots per-DAC; two secondary pitch output mixers and input buffers. 5V5 from analog power board, +12/-12V for op-amps. Two for 4-voice, 4 for 8-voice. Front board for panel jacks with 90-degree soldered connection for DAC board.
+Two 18-bit pitch DACs; level shifter or opto-isolator for SPI connection; two Vref inputs; offset and gain pots per-DAC; two secondary pitch output mixers and input buffers. 5V5 from analog power board, +12/-12V for op-amps. Two for 4-voice, 4 for 8-voice. Front board for panel jacks with 90-degree soldered connection for DAC board.
 
 ## Offset DAC board
 

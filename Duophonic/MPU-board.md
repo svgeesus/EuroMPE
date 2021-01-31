@@ -1,4 +1,4 @@
-# Main MPU board.
+# Duophonic MPE MIDI - Main MPU board.
 
 ## Power
 

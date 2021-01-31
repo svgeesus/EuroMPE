@@ -22,7 +22,7 @@ Trimmed divider from 10.0x00 V to 5V precision Vref.  Leads for front-panel trim
 
 ## Pitch DAC boards
 
-Two 18-bit pitch DACs; level shifter or opto-isolator for SPI connection; two Vref inputs; offset and gain pots per-DAC; two secondary pitch output mixers and input buffers. 5V5 from analog power board, +12/-12V for op-amps. Two for 4-voice, 4 for 8-voice. Front board for panel jacks with 90-degree soldered connection for DAC board.
+Two 18-bit pitch DACs; level shifter or opto-isolator for SPI connection; two Vref inputs; offset and gain pots per-DAC; two secondary pitch output mixers and input buffers. 5V5 from analog power board, +12/-12V for op-amps. Two for 4-voice, 4 for 8-voice. Front board for panel jacks with 90-degree soldered connection for DAC board. Board should be horizontal, and preferably sandwiched between a pair of GND plane boards for shielding, with cotton wool between the layers to limit convection and drafts.
 
 ## Offset DAC board
 
@@ -30,7 +30,7 @@ Similar circuitry to (part of) pitch DAC board. One DAC, different scaling, anal
 
 ## Performance DAC boards
 
-One octal 14-bit DAC and octal buffer for performance DAC (one board does 2 voices; 2 boards for 4 voice,4 for 8 voice). Needs level shifters from 3V3 to 5V5 but less worries about digital feedthrough. Same board also used for global CV outputs. 5V5 from analog power board, +12/-12V for op-amps. Front board for panel jacks with 90-degree soldered connection for DAC board.
+One octal 14-bit DAC and octal buffer for performance DAC (one board does 2 voices; 2 boards for 4 voice,4 for 8 voice). Needs level shifters from 3V3 to 5V5 but less worries about digital feedthrough. Same board also used for global CV outputs. 5V5 from analog power board, +12/-12V for op-amps. Front board for panel jacks with 90-degree soldered connection for DAC board. Could be vertical, ie parallel to jack board.
 
 ## Pedal output board (?)
 

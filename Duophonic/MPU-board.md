@@ -41,7 +41,7 @@ Note that second SPI channel (MOSI1 MISO1 SCLK1) in different place on T3.6 & T4
 
 ## Display
 
-Display: LC/3.2 for display?  if so, I2C for communication with LC/3.2.
+Display: LC/3.2 for display?  if so, I2C (or CAN bus) for communication with LC/3.2.
 Or use main MCU, and I2C for display. Slow, but high speed not needed. Remember the external pull-up resistors.
 
 - 18 SDA

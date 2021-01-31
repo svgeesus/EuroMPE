@@ -9,16 +9,16 @@ MPU needs USB host and hardware floating point, so Teensy 3.6 or Teensy 4.1. Bot
 
 T4.1 ($26.85) is somewhat overpowered but has 480Mbit/s on both USB and Host so potentially lower latency (T3.6 is 480 on Host only). T4.1 has 100mA power consumption at full clock speed though.
 
-T3.6 ($29.25) has less memory, has 2 DAC outs (not needed here), power draw unspecified but less than 4.1.
+T3.6 ($29.25) has less memory, has 2 DAC outs (not needed here), power draw unspecified (@@measure it) but less than 4.1.
 
-The two are somewhat pin-compatible. Where possible, pins below are chosen to be shared between the two MCUs. Lots of uncertainties though, tst on breadboard before rolling a PCB and maybe stick with one MCU rather than trying to be compatible. Downside, running out of room on T3.6 means making a second board.
+The two are _somewhat_ pin-compatible. Where possible, pins below are chosen to be shared between the two MCUs. Lots of uncertainties though, test on breadboard before rolling a PCB and maybe stick with one MCU rather than trying to be compatible. Downside, running out of room on T3.6 means making a second board.
 
 ## MIDI
 
 DIN MIDI in needs serial input. RX1/TX1 hard to use on a dual-function T3.6/T4.1 design.
 
 - 07 RX2/RX3
-- 08 TX2/TX3 _not used here_
+- _08 TX2/TX3 not used here_
 
 USB MIDI & USB Host MIDI.
 
@@ -29,17 +29,19 @@ Two [SPI](https://www.pjrc.com/teensy/td_libs_SPI.html) outputs for DACs (use th
 Note that second SPI channel (MOSI1 MISO1 SCLK1) in different place on T3.6 & T4.1! Pin numbers are 4.1/3.6 (if different).
 
 - 11 MOSI
-- 12 MISO _not needed_
+- _12 MISO not needed_
 - 13 SCLK (or on 3.6, 14 for no LED, frees up 13 for FreqCount)
 - ?? CS-Pitch1
 - ?? CS-Pitch2
 - 26/00 MOSI1
-- 39/01 MISO1 _not needed_
+- _39/01 MISO1 not needed_
 - 27/32 SCLK1
 - ?? CS-Perf
 - ?? CS-CC
 
-## Display
+## UI: Display & Controls
+
+### Display
 
 Display: LC/3.2 for display?  if so, I2C (or CAN bus) for communication with LC/3.2.
 Or use main MCU, and I2C for display. Slow, but high speed not needed. Remember the external pull-up resistors.
@@ -53,19 +55,30 @@ Or [Adafruit 128x64 I2C OLED](https://www.adafruit.com/product/938) 40mA.
 > I found that with both u8g2 and Adafruit SSD1306, I was getting extremely slow frame updates. 37ms with u8g2 and 25ms with Adafruit SSD1306. By changing the bus clock speed (setBusClock(1000000) for u8g2, constructor argument for Adafruit), my update time went to 8us and 2us respectively. The frame is doing a clear, drawing a single line of text (which moves over time), and then updates.
 [I2C OLED performance on Teensy 4.0 with different clock speeds](https://forum.pjrc.com/threads/61060-I2C-OLED-performance-on-Teensy-4-0-with-different-clock-speeds)
 
+### Encoder, buttons
+
 Buttons and [encoder](https://www.pjrc.com/teensy/td_libs_Encoder.html) for option selection and menu navigation. T3.6 & T4.1 can use any pins for encoders.
 
-?? Encoder-A
-?? Encoder-B
-?? Encoder-switch
-?? Button-1
-?? Button-2
-?? Button-3
-?? Button-4
+- ?? Encoder-A
+- ?? Encoder-B
+- ?? Encoder-switch
+- ?? Button-1
+- ?? Button-2
+- ?? Button-3
+- ?? Button-4
+
+Use encoder switch as OK, needs anther button for "back".
+Also needs "Calibrate" "Tune" and "Setup" ? Single button for common functions.
+
+### Mode switch(es)
+
+Unclear if MPE/non-MPE is needed.
+
+Duophonic/Unison switch at minimum, perhaps Duophonic/Unison/Harmonic or use another switch (plus the encoder) for Harmonic. Double press to reset.
 
 ## Frequency measurement
 
-Frequency measuring circuitry for auto calibration.
+Frequency measuring circuitry for auto calibration. How to select channel? Should there be a 440Hz reference output?
 
 > FreqCount: best for 1 kHz to 8 MHz (up to 65 MHz with Teensy 3.0 & 3.1)
 > FreqMeasure: best for 0.1 Hz to 1 kHz
@@ -89,6 +102,13 @@ Gate logic outputs. PWM for two gate LEDs. Choose pins carefully so PWM-capable 
 - 37 LED1 PWM G
 - 29 LED1 PWM B
 - 30 Gate2
+
+Alternatively, use chainable [2mm I2C DotStar 2020 RGB LEDs](https://www.adafruit.com/product/3341) or, larger, [5mm DotStar 5050](https://www.adafruit.com/product/2343) which do their own PWM. 5V though, needs 74AHCT125  or similar level shifter.
+
+- 18 SDA
+- 19 SCL
+- 20 Gate1
+- 21 Gate2
 
 ## Digital outs
 

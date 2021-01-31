@@ -1,0 +1,2 @@
+High (120ms) latency on Teensy 4 with software MIDI-through
+https://forum.pjrc.com/threads/65205-MIDI-Passthrough-Control-with-Op-Amp

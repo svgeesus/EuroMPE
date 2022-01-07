@@ -18,7 +18,7 @@ There are three MIDI inputs
 ## Analog voice CV
 
 There are two voice channels. Like Euro-MPE,
-each channel has
+each channel has (original design but no, see below):
 
 - color LED for gate
 - Gate
@@ -38,7 +38,7 @@ each channel has
     3. Slide (forward-back, CC 74)
     4. Press (aftertouch)
 
-A difference from the Euro-MPE design is that, if osssets are used, there is one offset DAC per voice, rather than one for all voices. But that doubes the number of expensive DACs (from 2 to 4).
+A difference from the Euro-MPE design is that, if offsets are used, there is one offset DAC per voice, rather than one for all voices. But that doubes the number of expensive DACs (from 2 to 4).
 
 This also results in 8 jacks plus an led and an encoder, which is cramped and can't be done in a single vertical line. Making the encoder for offset be shared between channels, doesn't really free up enough space.
 

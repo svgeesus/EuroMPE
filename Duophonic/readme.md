@@ -17,28 +17,7 @@ There are three MIDI inputs
 
 ## Analog voice CV
 
-There are two voice channels. Like Euro-MPE,
-each channel has (original design but no, see below):
-
-- color LED for gate
-- Gate
-- Oscillator pitch CV, highly linear 18bit, low tempco DAC
-    - includes pitchbend (Glide) and any microtuning
-    - See [Pitch DAC](../pitch-dac.md)
-- Filter offset input
-- Filter output, mixed from
-    - Osc pitch CV
-    - Offset DAC
-    - offset input
-    Related to offsets circuitry, but somewhat lower precision requirement
-    Button to indicate adjusting offset (in cents, from encoder)
-- Four MPE-compatible expression outputs (14bit)
-    1. Stike (attack velocity)
-    2. Lift (release velocity)
-    3. Slide (forward-back, CC 74)
-    4. Press (aftertouch)
-
-A difference from the Euro-MPE design is that, if offsets are used, there is one offset DAC per voice, rather than one for all voices. But that doubes the number of expensive DACs (from 2 to 4).
+There are two voice channels. A difference from the Euro-MPE design is that, if offsets are used, there is one offset DAC per voice, rather than one for all voices. But that doubes the number of expensive DACs (from 2 to 4).
 
 This also results in 8 jacks plus an led and an encoder, which is cramped and can't be done in a single vertical line. Making the encoder for offset be shared between channels, doesn't really free up enough space.
 
@@ -47,8 +26,8 @@ Dropping the offset and the input, but adding a second buffered pitch CV output 
 - color LED for gate
 - Gate
 - Oscillator pitch CV, highly linear 18bit, low tempco DAC
-    - includes pitchbend (Glide) and any microtuning
-    - See [Pitch DAC](../pitch-dac.md)
+  - includes pitchbend (Glide) and any microtuning
+  - See [Pitch DAC](../pitch-dac.md)
 - Second pitch CV output
 - Four MPE-compatible expression outputs (14bit)
     1. Stike (attack velocity)
@@ -63,12 +42,14 @@ Dropping the offset and the input, but adding a second buffered pitch CV output 
 There are also eight general CV outputs (14bit), re-using the same board design that produces the two channels of performance outputs. See [Performance DAC](../performance-dac.md). Perhaps (considering mainly the Roli Seaboard):
 
 Top row
+
 - Slider1 (CC107)
 - Slider2 (CC109)
 - Slider3 (CC111)
 - XY Pad X (CC114)
 
 Bottom row
+
 - Modulation Wheel (CC01+CC33)
 - Breath (CC02+CC34)
 - Expression Controller (CC11+CC43)
@@ -124,5 +105,4 @@ See [MPU board](MPU-board.md).
 
 ## Notes
 
-https://support.roli.com/support/solutions/articles/36000025050-slide-absolute-vs-relative
-Slide: Absolute vs. Relative
+- [Slide: Absolute vs. Relative](https://support.roli.com/support/solutions/articles/36000025050-slide-absolute-vs-relative)

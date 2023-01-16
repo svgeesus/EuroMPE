@@ -14,7 +14,7 @@ Needs to be 14-bit capable to fully implement the HR aspect, but precision requi
 **AD5648-2** octal 14-bit DAC ($19.91, got one) NO unsuitable due to zero and gain offsets. Internal VRef of 2.5V gives unipolar 5V output. Better performance from the -2 devices at 5V than the -1 devices at 3V3. Fig. 31 shows **100mV** (!!) error when sourcing or sinking 2mA. Internal 2V5 reference with 2x gain, can use external (5V) ref. Notice most of the graphs in datasheet use an external reference :)
 Vref seems to give a couple of mV error in output wrt temperature. Fig.54 shows 4mV error in internal ref wrt temperature.
 
-**DAC8168C** octal 14-bit DAC (TSSOP-16, $23.96) much better offsets ±1 / ±4 mV.
+**DAC8168C** (or DAC8168ICPW  seems more available) octal 14-bit DAC (TSSOP-16, $27.26) much better offsets ±1 / ±4 mV.
 
 ## Power
 
@@ -101,3 +101,5 @@ or (takes more space, but easier to see the value)
 May need buffering, though this project does not need a fast rate of reading these pots. Would use a 3V3 RR-I/O op-amp.
 
 "It is advisable to place a 10nF capacitor from the wiper to ground against RF and other interference." [Gerrit, PJRC forum](https://forum.pjrc.com/threads/55126-MIDI-Faderbox-fader-choice?p=197818&viewfull=1#post197818)
+
+Maybe use [elapsedMillis](https://www.pjrc.com/teensy/td_timing_elaspedMillis.html) to only ready the pots every so often.

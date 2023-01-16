@@ -17,18 +17,16 @@ There are three MIDI inputs
 
 ## Analog voice CV
 
-There are two voice channels. A difference from the Euro-MPE design is that, if offsets are used, there is one offset DAC per voice, rather than one for all voices. But that doubes the number of expensive DACs (from 2 to 4).
-
-This also results in 8 jacks plus an led and an encoder, which is cramped and can't be done in a single vertical line. Making the encoder for offset be shared between channels, doesn't really free up enough space.
+There are two voice channels. A difference from the Euro-MPE design is that offset DAC is not needed (would have doubled the number of DACs, and the 18-bit pitch DACs are expensive).
 
 Dropping the offset and the input, but adding a second buffered pitch CV output to go to a separate offsets module, gives 7 jacks plus an led which is fine in one vertical row. Also reduces number of DACs. That would be
 
-- color LED for gate
+- color LED for gate and to indicate note played (12 color scale)
 - Gate
 - Oscillator pitch CV, highly linear 18bit, low tempco DAC
   - includes pitchbend (Glide) and any microtuning
-  - See [Pitch DAC](../pitch-dac.md)
-- Second pitch CV output
+  - See [Pitch DAC](pitch-dac.md)
+- Second (identical) pitch CV output. Or just rely on passive mults?
 - Four MPE-compatible expression outputs (14bit)
     1. Stike (attack velocity)
     2. Lift (release velocity)
@@ -90,12 +88,9 @@ Like the original EuroMPE, there should be a [tuning input](../calibration.md) w
 
 ## Voltage reference
 
-The [LM399AH plus differential distribution](../voltage-ref-LM399.md)
-solution used by EuroMPE was very expensive, needed a lot of bur in and support circuitry, and was only worthwhile with 4 or more voices.
-
 For duophonic, perhaps one LTC6655CHMS8-5#PBF ($8.95/1) per pitch DAC, which has 1.25mV initial accuracy and kelvin connection, would be good? Mouser does not stock the better LCC version. No trim though.
 
-Or LT1236ACS8-5#PBF ($9.32/1) has trim (worsens tempco) no kelvin.
+Or LT1236ACS8-5#PBF ($9.32/1) has trim (worsens tempco) no kelvin. One could be reference for both pitch DACs.
 
 Or MAX6126AASA50+ ($7.81/1) no trim, kelvin connections for Vref and GND, 1mV initial accuracy, 0.5ppm/C (typ) 3ppm/C (max). As used in transpositeurs.
 

@@ -24,6 +24,8 @@ Trimmed divider from 10.0x00 V to 5V precision Vref.  Leads for front-panel trim
 
 Two 18-bit pitch DACs; level shifter or opto-isolator for SPI connection; two Vref inputs; offset and gain pots per-DAC; two secondary pitch output mixers and input buffers. 5V5 from analog power board, +12/-12V for op-amps. Two for 4-voice, 4 for 8-voice. Front board for panel jacks with 90-degree soldered connection for DAC board. Board should be horizontal, and preferably sandwiched between a pair of GND plane boards for shielding, with cotton wool between the layers to limit convection and drafts.
 
+See [Better SPI Bus Design in 3 Steps](https://www.pjrc.com/better-spi-bus-design-in-3-steps/)
+
 ## Offset DAC board
 
 Similar circuitry to (part of) pitch DAC board. One DAC, different scaling, analog input buffer, mixing op-amp. 5V5 from analog power board, +12/-12V for op-amps. Maybe add the frequency (tuning) input and DAC (tuning) output jacks and buffers here too?  One for entire module.

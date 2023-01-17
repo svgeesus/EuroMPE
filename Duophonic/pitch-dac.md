@@ -54,40 +54,20 @@ DAC output impedance is 3.4k for AD5781ARUZ which is irrelevant as bipolar mode 
 
 ## Vref connection
 
-A pair of op-amps (one non inverting for VrefP, one inverting for VrefN) per pitch DAC for (required) kelvin connections. AD5781 datasheet uses AD8676 ($6.89/1) dual op-amp for Vref buffers, which is 12 uV Vos low noise rail-to-rail. R/R does not seem to be needed for a 5V output on ±12 or ±9.5 rails.
+A pair of op-amps (one non inverting for VrefP, one inverting for VrefN) per pitch DAC for (required) kelvin connections. AD5781 datasheet uses AD8676 ($6.89/1) dual op-amp for Vref buffers, which is 12 uV Vos low noise rail-to-rail. R/R does not seem to be needed for a 5V output on ±12 or ±9.5 rails. Low input bias is specifically needed to achieve the rated performance.
 
 DAC input resistance is highly code-dependent. For AD5781ARUZ, lowest (around 5kΩ) which is 1mA at 5V.
 
 
 ## Output conditioning
 
-With a 5V ref and an output buffer [unity OP-C, no external components] this gives ±5V output (10 octaves) which includes Note-ON voltage, global pitchbend, and per-note pitchbend. Note that this does not cover the full MIDI note range of 128 notes = 10.66 octaves. Is that an issue in practice?
+With a 5V ref and an output buffer [unity OP-C, no external components] this gives ±5V output (10 octaves) which includes Note-ON voltage, global pitchbend, and per-note pitchbend. Note that this does not cover the full MIDI note range of 128 notes = 10.66 octaves. Not an issue in practice.
 
-Op-amps here need a max Vos of 100μV (1LSB), preferably better. Are chopper amps suitable here? LT1150 operates on 12V bipolar supples, has 10μV max offset. Mouser $9.04 each, $8.28/10, $5.99/25 so go for 25 = 141.25 be damn sure they work first! **OPA4192D** (quad, SOIC-14 which performs better than the TSSOP) 8μV (typ) 50μV (max) $3.67/10 seems good, probably adequate (common-mode input to within 100mV of each rail) and cheaper. Note however Fig. offset voltage vs. common-mode voltage, bad results between 3V and 1.5V from positive rail (i.e. 9 to 10.5V on 12V rails) - not suitable as 10V distribution amp?
+Op-amps here need a max Vos of 100μV (1LSB), preferably better. Input bias current however is not as crucial here. AD8675 is the Analog Devices recommendation.
 
-**No** In the analog domain this is summed [inv OP-D] with -2V offset (to make range -3 to +8V), and offset trim (on the 2V divider). This op-amp also provides trimmable gain scaling to ensure an accurate 1V/oct over a 9.8 octave range (avoiding calibrating at the ends for offset errors). Thus the DAC should perform the inversion, so re-inverted by the inverting mixer.
+Are chopper amps suitable here? LT1150 operates on 12V bipolar supples, has 10μV max offset. Mouser $9.04 each, $8.28/10, $5.99/25 so go for 25 = 141.25 be damn sure they work first! **OPA4192D** (quad, SOIC-14 which performs better than the TSSOP) 8μV (typ) 50μV (max) $3.67/10 seems good, probably adequate (common-mode input to within 100mV of each rail) and cheaper. Note however Fig. offset voltage vs. common-mode voltage, bad results between 3V and 1.5V from positive rail (i.e. 9 to 10.5V on 12V rails) - not suitable as 10V distribution amp?
 
-2V offset from 20k + 30k resistors [both E24 values] plus trimmer (for precision 2V, and also trimming DAC offset), buffered and inverted with [inv OP-E] 2 × 10k resistors. Watch TC on those 20k, 30k resistive divider.
-
-**Yes** just do the offset trim in the digital domain, avoiding errors from a 2V offset and the more complex Vref connection. Output remains simply -5 to +5V. Gain trimming still needed, so OP-D still required sadly, unless it can be combined with the output op-amp somehow.
-
-Summing from 2 × 10k resistors; gain trim from the third 10k resistor  + 10 ohm? 3250 wirewound trimmer (but needs small compensating resistors, half of the trimmer value, on the input) plus current limiting innie 47R resistor and cap. 3/4 of a quad array. In total, 1.5 quad arrays per channel (3 per pair of channels). **No, need to use a complete array to get benefit of within-package matching:**
-
-LT5400 A-grade resistor pack. 0.01% _within-package_ matching, 0.2ppm/°C within-package drift and 8ppm/°C absolute drift.
-
-"Note 6: (∆R/R)CMRR (Matching for CMRR) is a metric for the contribution of error from the LT5400 when used in a difference configuration using the specific resistor pairs of R1/R2 and R4/R3"
-
-"The LT5400 specifies matching in the most conservative possible way. In each device, the ratio error of the largest of the four resistors to the smallest of the four resistors meets the specified matching level."
-
-3250 has 5% tolerance, 10Ω has effective resolution of 1.3% (130 mΩ), tempco ±50ppm/C
-Maybe better to use a non-wirewound on such a small resistance. Or use a high value, in parallel with one resistor of the divider to lower the value slightly. Jumper selects which one to lower.
-
-
-Needs error analysis to be sure the error budget from resistor matching is reasonable. Breadboard this with OPA2777PA to measure performance, in particular gain error and offsets. Assume  0.01% quad resistor pack, possibly with trimmers too. Needs DAC on a SOIC to DIP breakout board [GOT].
-
-at 10k, 0.01% (100ppm) is 1 ohm; 0.025% (250ppm) is 2.5 ohm
-10,001/9999 gain gives a 1mv error on +5V, far too big. Overall gain will need trimming.
 
 Note "This unity-gain difference amplifier (equal resistors) causes the input difference voltage (V2-V1) to be impressed on R5; the resulting current flows to the load. The offset voltage, however, is applied directly to the noninverting input and is amplified by +2 – like a noninverting amplifier (G = 1 + R2/R1). Thus, a 10-mV offset voltage creates 20 mV across R5, producing a 20mA output current offset. A -10-mV offset would create a -20-mA output current (current sinking from the load)."
 
-3 op-amps per channel = 12 for 4 voice, plus 2-op-amps for DAC vref driving per voice = 8 for 4 voice.
+3 op-amps per channel = 6

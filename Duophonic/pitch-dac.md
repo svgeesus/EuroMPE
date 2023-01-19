@@ -23,12 +23,8 @@ Advantage of ±12V-derived ±9V5 rails, compared to using Eurorack 5V power, is 
 
 ## Digital interface
 
-With Teensy 3.6, for AD5542CRZ 3V3 Vdd unless level shifter used. But 3V3 has reduced dynamic range and needs a (less good) 2.5V or 3V ref, although avoiding level shifter. Using 5V5 for DAC power allows higher dynamic range (lower noise) and allows better, 5V ref. Needs unidirectional level shifter for CS, SCLK, MOSI/Dout but those are inexpensive. For AD5781ARUZ 2V7 to 5V5 can be used.
+With Teensy 4.1, for AD5781ARUZ no level shifters needed.
 
-**74AHCT125** Quad Level-Shifter (PDIP, SOIC, SSOP)  good for SPI, fast enough. 2 CS, SCLK, MOSI so two pitch DACs.
-Vdd abs max -0.5V to +7V so good for 5V5. Base unit needs 2, second supplies 4 more CS; 3 used for global pich and 2 more channels (on first expander, to 4-voice). A third, fitted if needed, supplies 4 more CS for 4 more channels, only needed for 6-voice and 8-voice builds.
-
-Alternatively, use 4-channel digital isolator to prevent coupling of high speed signals, such as TI **ISO7240C** (SOIC-16, $6.03) which can use 3V3 input and 5V5 output with separate grounds. In that case use one per board on the DAC board, so need 3 for 4-voice and 2 more for 8-voice. Connect with 6-way cable (3V3, DGND, SCLK, MOSI, CS1, CS2). Does this really help with digital feedthrough? Not needed for AD5781ARUZ, simplifying design.
 
 ## Initial accuracy
 
@@ -54,7 +50,7 @@ DAC output impedance is 3.4k for AD5781ARUZ which is irrelevant as bipolar mode 
 
 ## Vref connection
 
-A pair of op-amps (one non inverting for VrefP, one inverting for VrefN) per pitch DAC for (required) kelvin connections. AD5781 datasheet uses AD8676 ($6.89/1) dual op-amp for Vref buffers, which is 12 uV Vos low noise rail-to-rail. R/R does not seem to be needed for a 5V output on ±12 or ±9.5 rails. Low input bias is specifically needed to achieve the rated performance.
+A pair of op-amps (one non inverting for VrefP, one inverting for VrefN) then, per pitch DAC, a pair of unity gain buffers for (required) kelvin connections. AD5781 datasheet uses AD8676 ($6.89/1) dual op-amp for Vref buffers, which is 12 uV Vos low noise rail-to-rail. R/R does not seem to be needed for a 5V output on ±12 or ±9.5 rails. Low input bias is specifically needed to achieve the rated performance.
 
 DAC input resistance is highly code-dependent. For AD5781ARUZ, lowest (around 5kΩ) which is 1mA at 5V.
 

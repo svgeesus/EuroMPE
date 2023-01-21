@@ -5,39 +5,40 @@
 Driven by Eurorack 5V power, generates logic 3V3 Vdd (from Teensy onboard, <250mA).
 ## MCU choice
 
-MPU needs USB host and hardware floating point, so Teensy 3.6 or Teensy 4.1. Both are 3V3-only.
+MPU needs USB host and hardware floating point, so Teensy 3.6 (about to be discontinued) or **Teensy 4.1**. Both are 3V3-only.
 
 T4.1 ($26.85) is somewhat overpowered but has 480Mbit/s on both USB and Host so potentially lower latency (T3.6 is 480 on Host only). T4.1 has 100mA power consumption at full clock speed though.
 
-T3.6 ($29.25) has less memory, has 2 DAC outs (not needed here), power draw unspecified (@@measure it) but less than 4.1.
+T3.6 ($29.25) has less memory, has 2 DAC outs (not needed here), power draw unspecified (@@measure it) but less than 4.1. Unobtainable due to NXP parts shortage, likely to be discontinued along with 3.5, 3.2 and LC!
 
 The two are _somewhat_ pin-compatible. Where possible, pins below are chosen to be shared between the two MCUs. Lots of uncertainties though, test on breadboard before rolling a PCB and maybe stick with one MCU rather than trying to be compatible. Downside, running out of room on T3.6 means making a second board.
 
 ## MIDI
 
-DIN MIDI in needs serial input. RX1/TX1 hard to use on a dual-function T3.6/T4.1 design.
+DIN MIDI in needs serial input. 
 
-- 07 RX2/RX3
-- _08 TX2/TX3 not used here_
+- 01 RX1 (4.1, not 3.6), or
+- 07 RX2/RX3 (same on 4.1 and 3.6)
+_
 
 USB MIDI & USB Host MIDI.
 
 ## SPI
 
-Two [SPI](https://www.pjrc.com/teensy/td_libs_SPI.html) outputs for DACs (use the faster FIFO one for the two pitch DACs, because MPE pitchbend messages send a lot of data; use the second one for the octal performance DAC and octal CC DAC) with associated chip selects.
+Two [SPI](https://www.pjrc.com/teensy/td_libs_SPI.html) outputs for DACs (use the faster FIFO one for the  pitch DAC, because MPE pitchbend messages send a lot of data; use the second one for the octal performance DAC and octal CC DAC) with associated chip selects.
 
 Note that second SPI channel (MOSI1 MISO1 SCLK1) in different place on T3.6 & T4.1! Pin numbers are 4.1/3.6 (if different).
 
 - 11 MOSI
 - _12 MISO not needed_
-- 13 SCLK (or on 3.6, 14 for no LED, frees up 13 for FreqCount)
-- ?? CS-Pitch1
-- ?? CS-Pitch2
+- 13 SCLK 
+- ?? CS-Pitch (any convenient one, like 10 or 12)
 - 26/00 MOSI1
 - _39/01 MISO1 not needed_
 - 27/32 SCLK1
-- ?? CS-Perf
-- ?? CS-CC
+- ?? CS-Perf (any convenient, 28)
+- ?? CS-CC  (any convenient, 29)
+
 
 ## UI: Display & Controls
 
@@ -46,8 +47,8 @@ Note that second SPI channel (MOSI1 MISO1 SCLK1) in different place on T3.6 & T4
 Display: LC/3.2 for display?  if so, I2C (or CAN bus) for communication with LC/3.2.
 Or use main MCU, and I2C for display. Slow, but high speed not needed. Remember the external pull-up resistors.
 
-- 18 SDA
-- 19 SCL
+- 18 SDA = A4
+- 19 SCL = A5
 
 OLED display [Adafruit 128x32 I2C OLED](https://www.adafruit.com/product/4440) might be too small, but the bigger displays are SPI only. 20mA.
 Or [Adafruit 128x64 I2C OLED](https://www.adafruit.com/product/938) 40mA.
@@ -76,6 +77,10 @@ Unclear if MPE/non-MPE is needed.
 
 Duophonic/Unison switch at minimum, perhaps Duophonic/Unison/Harmonic or use another switch (plus the encoder) for Harmonic. Double press to reset.
 
+### Non-MPE channel selector
+
+Could hide this in a menu; main usage is MPE. Also hide MPE behaviour on split (unlikely) in a setup menu.
+
 ## Frequency measurement
 
 Frequency measuring circuitry for auto calibration. How to select channel? Should there be a 440Hz reference output?
@@ -85,15 +90,15 @@ Frequency measuring circuitry for auto calibration. How to select channel? Shoul
 
 Test how low FreqCount can go, or connect both circuits and choose between inputs depending on result.
 
-- 9/13 [FreqCount](https://www.pjrc.com/teensy/td_libs_FreqCount.html)
-- 3/22 [FreqMeasure](https://www.pjrc.com/teensy/td_libs_FreqMeasure.html)
+- 9 [FreqCount](https://www.pjrc.com/teensy/td_libs_FreqCount.html)
+- 22 [FreqMeasure](https://www.pjrc.com/teensy/td_libs_FreqMeasure.html)
 
 ## Gate outs
 
-Gate logic outputs. PWM for two gate LEDs. Choose pins carefully so PWM-capable on both 4.1 and 3.6. Check current draw is okay. Might still be better to use an external 6+ channel PWM chip; then needs I2C connection though.
+Gate logic outputs. PWM for two gate LEDs. Check current draw is okay. Might still be better to use an external 6+ channel PWM chip; then needs I2C connection though.
 
 - 02 Gate1
-- 03  **conflict with T4.1 FreqMeasure**
+- 03 Gate 2
 - 04 LED1 PWM R
 - 05 LED1 PWM G
 - 06 LED1 PWM B
@@ -101,9 +106,9 @@ Gate logic outputs. PWM for two gate LEDs. Choose pins carefully so PWM-capable 
 - 36 LED1 PWM R
 - 37 LED1 PWM G
 - 29 LED1 PWM B
-- 30 Gate2
 
-Alternatively, use chainable [2mm I2C DotStar 2020 RGB LEDs](https://www.adafruit.com/product/3341) or, larger, [5mm DotStar 5050](https://www.adafruit.com/product/2343) which do their own PWM. 5V though, needs 74AHCT125  or similar level shifter.
+
+**No** Alternatively, use chainable [2mm I2C DotStar 2020 RGB LEDs](https://www.adafruit.com/product/3341) or, larger, [5mm DotStar 5050](https://www.adafruit.com/product/2343) which do their own PWM. 5V though, needs 74AHCT125  or similar level shifter.
 
 - 18 SDA
 - 19 SCL

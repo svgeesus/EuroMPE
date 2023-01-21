@@ -74,18 +74,22 @@ Internally buffered, but poor load regulation; will need external buffer to prot
 
 ## Support circuitry
 
-1μF supply bypass cap on AVdd. Optional 150nF cap for lower noise on Vref (likely not needed).
-"a 1μF to 10μF capacitor and 0.1μF bypass capacitor are strongly recommended"
+4.7μF + 100nF supply bypass caps on AVdd. 
+"a 1μF to 10μF capacitor and 0.1μF bypass capacitor are strongly recommended".
+
+Optional 150nF cap for lower noise on Vref (likely not needed).
 
 ## Output conditioning
 
-3mV offset on TL074 is 3LSB; not that significant, though if an inexpensive alternative op-amp is better (1mV or less, does not need to be high precision) use that.
+3mV offset on TL074B is 3LSB; not that significant, though if an inexpensive alternative op-amp is better (1mV or less, does not need to be high precision) use that.
 
-Consider _LT1014_ (50μV/180μV, SOIC-14) _LT1214_ (150μV/550μV, 50mA  $5.85 quad, PDIP-14 or SOIC-14) or **OPA4172IDR** (200μV/1mV, 75mA 60Ω, $2.49 per 10, quad, SOIC-14) as non-inverting output buffers. Use innie current limiting resistor. 
+Quad amps: TL074A is cheap (TL074ACDT 3mV/6mV, $0.867/10) but consider **OPA4172IDR** (200μV/1mV, 75mA 60Ω, $2.49/10, SOIC-14, out of stock) or OPA4197IDR (25μV/100μV, $3.96/10, out of stock), **OPA4202ID** (20μV/250μV, low slew rate 0.35V/μs, $2.81/10 SOIC-14 in stock) as non-inverting output buffers. Use innie current limiting resistor. 
 
-Better to use a slew limiter on the output, so one quad op-amp only does for 2 outputs. See circuit in OPA192 datasheet for slew limiter. 5V/ms (160Hz lowpass) seems like a good starting point.
+Better to use a slew limiter on the output, so one quad op-amp only does for 2 outputs. See circuit in TI [Single Op-Amp Slew Rate Limiter](http://www.ti.com/lit/pdf/TIDU026) for slew limiter. 5V/ms (160Hz lowpass) seems like a good starting point. Breadboard then examine stepped ramp on scope to determine optimal slew rate. "Op-amp slew rate = 10x-100x slew rate limiter value." OPA4202 likely too slow.
 
 Bipolar operation is possible (datasheet p.47) but not needed here, all the MIDI CC are unipolar for the MPE performance controls. So *could* use singe-rail op-amps which swing to 0V on input and output. Probably easier to use bipolar devices though.
+
+Given wide variety of op-amp capabilities, fluctuating pricing and wildly varying lead times and availability, split perf dac board into the DAC part and the buffer/slew part so one can be built with cheap parts then another with better parts, for testing and to avoid replacing the DAC. Standardize on one footprint, so SOIC-14 quad.
 
 
 ## Fading (all voice 'attenuators')
@@ -94,7 +98,7 @@ Use 4 pots with rail-to-rail input and output buffer amps connected to 4 adc inp
 
 Experiment to see if buffering is needed. 10k pots should be low enough to drive ADC but check current draw of 4 in parallel (1.3mA, seems fine).
 
-Allow a dead zone at each end so easy to get "fully off" or "fully on" values. Experiment with curve between the two extremes, linear is probably not waht is wanted here.
+Allow a dead zone at each end so easy to get "fully off" or "fully on" values. Experiment with curve between the two extremes, linear is probably not what is wanted here.
 
 - [Alpha 9mm T18 shaft pot, 10k](https://www.thonk.co.uk/shop/alpha-9mm-pots-vertical-t18/) [GOT]
 - [T18 micro knobs](https://www.thonk.co.uk/shop/micro-knobs/) [GOT]

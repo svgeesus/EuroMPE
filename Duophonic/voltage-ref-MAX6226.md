@@ -45,11 +45,17 @@ Okay at 9 (typ) to 80 max μV/V.
 
 ### Secondary regulation
 
-Use same regulated +9.5V supply as pitch DACs.
+Use same regulated +9.5V supply as pitch DACs. Off-board, to protect from thermal effects.
 
-LT1761 LDO positive reg, 300mV dropout, 100ma SOT-23
+## Buffering
+
+Dual low-drift op-amp to provide the +5V Vref and -5V VrefN outputs needed by the pitch DACs.
+Pair of close-tolerance low thermal drify resistors for the VrefN op-amp.
+Decoupling caps.
 
 ## Board design
+
+Try a U cutout around the MAX-6226 for rigidity and freedom form humidity effects.
 
 > Note that although the MAX6226’s ceramic package
 prevents the output voltage from being affected by

@@ -56,7 +56,7 @@ AD5781 datasheet uses AD8676 (AD8676BRZ $6.89/1) dual op-amp for Vref buffers, w
 
 OPA2197ID (OPA2197ID $2.97/1) dual is 25uV typ 100uV max Vos, 5nA Ibias so twice as bad at half the price.
 
-OPA2186 another (OPA2186DR $2.22/10 newer, more available) option. 1μV/10μV Vos! 4.8 max nA over temp, 55pA @25C.
+OPA2186 another (OPA2186DR $2.22/10 newer, more available) option. 1μV/10μV Vos as it is chopper stabilized. 4.8 max nA over temp, 55pA @25C. Check slew rate 0.35 V/μs is ok for slew limiter, if used. Quad version has 4x worse Vos. The maximum power supply voltage for the OPAx186 is 24 V (±12 V). (Abs Max 26V)
 
 OPA4187IPW (1μV/10μV TSSOP-14 $5.60/10 in stock) a bit expensive
 
@@ -67,15 +67,15 @@ DAC input resistance is highly code-dependent. For AD5781ARUZ, lowest (around 5k
 
 With a 5V ref and an output buffer [unity OP-C, no external components] this gives ±5V output (10 octaves) which includes Note-ON voltage, global pitchbend, and per-note pitchbend. Note that this does not cover the full MIDI note range of 128 notes = 10.66 octaves. Not an issue in practice.
 
-Op-amps here need a max Vos of 100μV (1LSB), preferably better. Input bias current however is not as crucial here. 
+Op-amps here need a max Vos of 100μV (1LSB), preferably better. Input bias current however is not as crucial here (unless Vref buffers and output buffers use the same quad.) 
 
 AD8675 is the Analog Devices recommendation (mouser only has the less good A grade).
 
 OPA197 an alternative. Or use a quad OPA4197 for both vref buffers, output, and one left over for slew limit if desired. All hinges on unstable availability and huge lead times!
 
-Are chopper amps suitable here? LT1150 operates on 12V bipolar supples, has 10μV max offset. Mouser $9.04 each, $8.28/10, $5.99/25 so go for 25 = 141.25 be damn sure they work first! **OPA4192D** (quad, SOIC-14 which performs better than the TSSOP) 8μV (typ) 50μV (max) $3.67/10 seems good, probably adequate (common-mode input to within 100mV of each rail) and cheaper. Note however Fig. offset voltage vs. common-mode voltage, bad results between 3V and 1.5V from positive rail (i.e. 9 to 10.5V on 12V rails) - not suitable as 10V distribution amp?
+Are chopper amps suitable here? LT1150 operates on 12V bipolar supples, has 10μV max offset. Mouser $9.04 each, $8.28/10, $5.99/25 so go for 25 = 141.25 be damn sure they work first! **OPA4192D** (quad, SOIC-14 which performs better than the TSSOP) 8μV (typ) 50μV (max) $3.67/10 seems good, probably adequate (common-mode input to within 100mV of each rail) and cheaper. 
 
 
 Note "This unity-gain difference amplifier (equal resistors) causes the input difference voltage (V2-V1) to be impressed on R5; the resulting current flows to the load. The offset voltage, however, is applied directly to the noninverting input and is amplified by +2 – like a noninverting amplifier (G = 1 + R2/R1). Thus, a 10-mV offset voltage creates 20 mV across R5, producing a 20mA output current offset. A -10-mV offset would create a -20-mA output current (current sinking from the load)."
 
-3 op-amps per channel = 6
+3 op-amps per channel = 6 or 4 is slew limit = 8.

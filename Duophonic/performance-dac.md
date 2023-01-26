@@ -31,12 +31,12 @@ Needs level shifter for SPI. Use second SPI channel on Teensy 4.1. One quad shif
 **74AHCT125** Quad Level-Shifter (PDIP, SOIC, SSOP)  good for SPI, fast enough. 
 Vdd abs max -0.5V to +7V so good for 5V5. 
 
-Check how many lines are actually needed - MOSI, SCLK, CS, LDAC?. TSSOP-14 has neither CLR nor LDAC.
+TSSOP-14 has neither CLR nor LDAC, only needs 3 lines through level shifter.
 
 
 ## Vref
 
-DAC8168C Internal 2.5V VRef has initial accuracy of 100μV (0.004%), good temperature stability (especially 2x gain C grade) and long-term drift. External Vref probably not needed.
+DAC8168C Internal 2.5V VRef has initial accuracy of 100μV (0.004%), good temperature stability (especially 2x gain C grade) and long-term drift. External Vref not needed.
 Internal Vref in DAC8168C is adequate for general non-pitch CV duties. Output is 0 to 5V.
 Note internal Vref is disabled by default, see datasheet Table 5 for enable command.
 
@@ -70,7 +70,7 @@ Long term drift (Fig.7) inside ±500μV (±100ppm) /2k hours
 
 30μV/mA (sourcing)
 
-Internally buffered, but poor load regulation; will need external buffer to protect from modular environment (like getting 12V plugged into an output by mistake) and to give current drive.
+Internally buffered, but _poor_ load regulation; will need external buffer to protect from modular environment (like getting 12V plugged into an output by mistake) and to give current drive.
 
 ## Support circuitry
 
@@ -89,10 +89,14 @@ Better to use a slew limiter on the output, so one quad op-amp only does for 2 o
 
 Bipolar operation is possible (datasheet p.47) but not needed here, all the MIDI CC are unipolar for the MPE performance controls. So *could* use singe-rail op-amps which swing to 0V on input and output. Probably easier to use bipolar devices though.
 
-Given wide variety of op-amp capabilities, fluctuating pricing and wildly varying lead times and availability, split perf dac board into the DAC part and the buffer/slew part so one can be built with cheap parts then another with better parts, for testing and to avoid replacing the DAC. Standardize on one footprint, so SOIC-14 quad.
+Given wide variety of op-amp capabilities, fluctuating pricing and wildly varying lead times and availability, split perf dac board into the DAC part and the buffer/slew part so one can be built with cheap parts then another with better parts, for testing and to avoid replacing the DAC. Standardize on one op-amp footprint, so SOIC-14 quad.
+
+Op-amp board needs bipolar supply OR R/R in and out op-amps to ensure accurate 0V. Bipolar is easier. Check CMRR though.
 
 
 ## Fading (all voice 'attenuators')
+
+(Not on same board).
 
 Use 4 pots with rail-to-rail input and output buffer amps connected to 4 adc inputs. Teensy 4.1 only has 10bit (enob) ADC. Then use these values to digitally scale the 14bit performance values (on *all* voices), providing per-performance-output attenuator function across all channels.
 

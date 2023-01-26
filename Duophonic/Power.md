@@ -6,11 +6,14 @@ Usual (bad) Eurorack power over ribbon cable with +12V, 0V, -12V and optional +5
 
 ## Digital and Analog 0V
 
-Module uses two ribbon cables. 0V on one is treated as digital ground, and +5V on that capble powers digital circuits. 0V on the other is treated as analog ground, with +12 and -12 powering op-amps and and a +5.5V supply for DACs is derived from +12V. This means the connection between them occurs at the PSU busboard. This should reduce digital return currents on analog ground.
+Module uses two ribbon cables. 0V on one is treated as digital ground, and +5V on that cable powers digital circuits. 
+0V on the other is treated as analog ground, with +12 and -12 powering op-amps.  
+This means the connection between them occurs at the PSU busboard. 
+This should reduce digital return currents on analog ground.
 
 ## DAC power
 
-Performance DACs, and the Global DAC  run at 5V5 so there is headroom above the internal 5V reference. High voltage side of the logic level converters for those DACs use 5V5 also.
+Performance DACs, and the Global DAC  run at 5V5 so there is headroom above the internal 5V reference. High voltage side of the logic level converters for those DACs use 5V5 also. Derived from +12V.
 
 Pitch DACs run at ±9.5V and the Vref for those can use the +9.5 rail as well. No logic level conversion needed.
 
@@ -26,7 +29,7 @@ Direct from Eurorack, perhaps with Schotsky diodes for reverse power protection.
 
 ## Voltage reference power
 
-Depends on Vref chip used.
+Same as Pitch DAC power.
 
 ## Gate
 

@@ -128,12 +128,14 @@ Could need analog ins, or I2C, depending on hardware. Not at all a must-have.
 
 ## Development & Testing plan
 
-1. T3.6 on breadboard, power from +5V, measure current consumption
+1. T4.1 on breadboard, power from +5V, measure current consumption
 2. Test I2C display, see if update speed okay and feasible for menus
 3. Test PWM of two RGB LEDS. Test 10V gate output. Fabricate board.
 4. Test FreqCount & FreqMeasure
 5. Test DIN MIDI input
+5a. Sketch front panel to get PCB dimensions.
 6. Fabricate & test octal perfDAC/CCDAC board (same board, different CS)
 7. Fabricate pitch CV board, test
 8. Write higher-level, MPE-capable MIDI library
-9. Fabricate MCU carrier board
+9. Fabricate MCU and display carrier board
+10. Front panel

@@ -16,6 +16,8 @@ Vref seems to give a couple of mV error in output wrt temperature. Fig.54 shows 
 
 **DAC8168C** (or DAC8168ICPW  seems more available) octal 14-bit DAC (TSSOP-16, $27.26) much better offsets ±1 / ±4 mV.
 
+(_Note to self:_ This is the 14-bit version of the DAC8568 which I used in another  (mainly through-hole) project, OctalDAC wavemix).
+
 ![DAC](./img/DAC8168-14-pinout.png)
 
 ## Power

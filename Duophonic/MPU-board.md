@@ -3,6 +3,7 @@
 ## Power
 
 Driven by Eurorack 5V power, generates logic 3V3 Vdd (from Teensy onboard, <250mA).
+
 ## MCU choice
 
 MPU needs USB host and hardware floating point, so Teensy 3.6 (about to be discontinued) or **Teensy 4.1**. Both are 3V3-only.
@@ -38,6 +39,9 @@ Note that second SPI channel (MOSI1 MISO1 SCLK1) in different place on T3.6 & T4
 - 27/32 SCLK1
 - ?? CS-Perf (any convenient, 28)
 - ?? CS-CC  (any convenient, 29)
+
+Use pull-up resistors on chip selects, per 
+[Better SPI Bus Design in 3 Steps](https://www.pjrc.com/better-spi-bus-design-in-3-steps/)
 
 
 ## UI: Display & Controls

@@ -8,6 +8,7 @@ Over 10 octaves, at the desired precision, 16 bits is barely sufficient (0.2 cen
 _AD5542CRZ_ (SOIC-14, $52.61/1 in stock), same as I used in my previous, mono, MIDI2CV project, provides bipolar ±Vref output (so, ±5V) with one bipolar-powered op-amp in the output loop. Power up to +5V5. INL ±0.5LSB (typ) ±1.0LSB (max, = 15ppm) for best (C) grade. DNL is ±1 LSB max = 15ppm. SPI needs 16bit transfer.
 
 **AD5781ARUZ** (TSSOP-20, $40.96/1 no stock til April 2023) 18bit. INL ±1 LSB (max, 5V vref, = 3.6ppm) for B grade, ±4 LSB (max, = 15ppm) for A grade. _Mouser does not stock the best (B) grade. A grade has more resolution, but same INL, as the 16bit AD5542CRZ. Digikey has A grade at €30.15, B grade at €42.50_    DNL however is ±1 LSB max = 3.6ppm for _both_ grades. Bipolar ±Vref output, power up to ±16.5V. SPI needs 24bit transfer. Needs Schottky diode for power rail syncronization, see datasheet fig. 50. A grade is actually less expensive than AD5542CRZ, with better DNL. Check that the layout is going to be reasonable on a 2-layer board.
+Got 1, May 2020.
 
 _AD5791BRUZ_ (TSSOP-20, $133.24/1 no stock) or _AD5791ARUZ_ (TSSOP-20, $84.45/1 no stock) 20bit, 1ppm linearity, bipolar ±Vref output, power up to ±16.5V. Very expensive.
 
@@ -25,10 +26,7 @@ Advantage of ±12V-derived ±9V5 rails, compared to using Eurorack 5V power, is 
 
 With Teensy 4.1, for AD5781ARUZ no level shifters needed.
 
-
 ## Initial accuracy
-
-### AD5781ARUZ
 
 1LSB is 10V / 2^18 = 38μV. At 1V/Oct, 12 tones per octave, 100 cents per tone, 1 Cent is 833μV so 1 LSB is about 1/20 cent.
 
@@ -62,7 +60,6 @@ OPA4187IPW (1μV/10μV TSSOP-14 $5.60/10 in stock) a bit expensive
 
 DAC input resistance is highly code-dependent. For AD5781ARUZ, lowest (around 5kΩ) which is 1mA at 5V.
 
-
 ## Output conditioning
 
 With a 5V ref and an output buffer [unity OP-C, no external components] this gives ±5V output (10 octaves) which includes Note-ON voltage, global pitchbend, and per-note pitchbend. Note that this does not cover the full MIDI note range of 128 notes = 10.66 octaves. Not an issue in practice.
@@ -74,7 +71,6 @@ AD8675 is the Analog Devices recommendation (mouser only has the less good A gra
 OPA197 an alternative. Or use a quad OPA4197 for both vref buffers, output, and one left over for slew limit if desired. All hinges on unstable availability and huge lead times!
 
 Are chopper amps suitable here? LT1150 operates on 12V bipolar supples, has 10μV max offset. Mouser $9.04 each, $8.28/10, $5.99/25 so go for 25 = 141.25 be damn sure they work first! **OPA4192D** (quad, SOIC-14 which performs better than the TSSOP) 8μV (typ) 50μV (max) $3.67/10 seems good, probably adequate (common-mode input to within 100mV of each rail) and cheaper. 
-
 
 Note "This unity-gain difference amplifier (equal resistors) causes the input difference voltage (V2-V1) to be impressed on R5; the resulting current flows to the load. The offset voltage, however, is applied directly to the noninverting input and is amplified by +2 – like a noninverting amplifier (G = 1 + R2/R1). Thus, a 10-mV offset voltage creates 20 mV across R5, producing a 20mA output current offset. A -10-mV offset would create a -20-mA output current (current sinking from the load)."
 

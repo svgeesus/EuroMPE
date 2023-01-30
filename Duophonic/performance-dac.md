@@ -16,7 +16,7 @@ Vref seems to give a couple of mV error in output wrt temperature. Fig.54 shows 
 
 **DAC8168C** (or DAC8168ICPW  seems more available) octal 14-bit DAC (TSSOP-16, $27.26) much better offsets ±1 / ±4 mV.
 
-(_Note to self:_ This is the 14-bit version of the DAC8568 which I used in another  (mainly through-hole) project, OctalDAC wavemix).
+(Note to self:_ This is the 14-bit version of the DAC8568 which I used in another  (mainly through-hole) project, OctalDAC wavemix).
 
 ![DAC](./img/DAC8168-14-pinout.png)
 
@@ -30,10 +30,10 @@ Logic level high is 0.625 * Vdd so 3.4V, ie it is a 5V logic device with that Vd
 
 Needs level shifter for SPI. Use second SPI channel on Teensy 4.1. One quad shifter handles CS (SYNC) plus SCLK and MOSI
 
-**74AHCT125** Quad Level-Shifter (PDIP, SOIC, SSOP)  good for SPI, fast enough. 
-Vdd abs max -0.5V to +7V so good for 5V5. 
+**74AHCT125** Quad Level-Shifter (SSOP-14)  good for SPI, fast enough.
+Vdd abs max -0.5V to +7V so good for 5V5. Enables are active low, so tie all to ground.
 
-TSSOP-14 has neither CLR nor LDAC, only needs 3 lines through level shifter.
+TSSOP-14 DAC has neither CLR nor LDAC, only needs 3 lines through level shifter.
 
 
 ## Vref

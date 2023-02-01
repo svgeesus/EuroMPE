@@ -54,7 +54,7 @@ Or use main MCU, and I2C for display. Slow, but high speed not needed. Remember 
 - 18 SDA = A4
 - 19 SCL = A5
 
-OLED display [Adafruit 128x32 I2C OLED](https://www.adafruit.com/product/4440) might be too small, but the bigger displays are SPI only. 20mA.
+OLED display [Adafruit 128x32 I2C OLED](https://www.adafruit.com/product/4440) might be too small, but the bigger displays are SPI only. 20mA.35mm by 20mm.
 Or [Adafruit 128x64 I2C OLED](https://www.adafruit.com/product/938) 40mA.
 
 > I found that with both u8g2 and Adafruit SSD1306, I was getting extremely slow frame updates. 37ms with u8g2 and 25ms with Adafruit SSD1306. By changing the bus clock speed (setBusClock(1000000) for u8g2, constructor argument for Adafruit), my update time went to 8us and 2us respectively. The frame is doing a clear, drawing a single line of text (which moves over time), and then updates.

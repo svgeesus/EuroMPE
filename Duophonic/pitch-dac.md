@@ -26,6 +26,8 @@ Advantage of ±12V-derived ±9V5 rails, compared to using Eurorack 5V power, is 
 
 With Teensy 4.1, for AD5781ARUZ no level shifters needed.
 
+Data is written to the AD5781 in a 24-bit word format.
+
 ## Initial accuracy
 
 1LSB is 10V / 2^18 = 38μV. At 1V/Oct, 12 tones per octave, 100 cents per tone, 1 Cent is 833μV so 1 LSB is about 1/20 cent.

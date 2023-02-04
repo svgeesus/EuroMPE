@@ -25,7 +25,7 @@ Perf DAC boards are 4 jacks high by 2 wide.
 Need another set of controls next to that,
 4 pots for perf faders and one input for calibration.
 
-[Teensy 4.1](https://www.pjrc.com/store/teensy41.html) is 61.7mm (around 12hp) long, but extra space for whatever is plugged into the USB device port.
+[Teensy 4.1](https://www.pjrc.com/store/teensy41.html) is 61.7mm (around 12hp) long, 17.8mm wide, but allow extra space for whatever is plugged into the USB device port.
 
 Display is likely to be above the Teensy and PCB is 20 x 35mm. 
 Panel Size：30.00mm × 11.50mm × 1.45mm

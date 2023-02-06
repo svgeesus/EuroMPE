@@ -14,7 +14,7 @@ Needs to be 14-bit capable to fully implement the HR aspect, but precision requi
 _AD5648-2_ octal 14-bit DAC ($19.91, got one) NO unsuitable due to zero and gain offsets. Internal VRef of 2.5V gives unipolar 5V output. Better performance from the -2 devices at 5V than the -1 devices at 3V3. Fig. 31 shows **100mV** (!!) error when sourcing or sinking 2mA. Internal 2V5 reference with 2x gain, can use external (5V) ref. Notice most of the graphs in datasheet use an external reference :)
 Vref seems to give a couple of mV error in output wrt temperature. Fig.54 shows 4mV error in internal ref wrt temperature.
 
-**DAC8168C** (or DAC8168ICPW  seems more available) octal 14-bit DAC (TSSOP-16, $27.26) much better offsets ±1 / ±4 mV.
+**DAC8168C** (or DAC8168ICPW  seems more available) octal 14-bit DAC (TSSOP-16, $27.26, **got 4 Jan 2018** ) much better offsets ±1 / ±4 mV.
 
 (Note to self:_ This is the 14-bit version of the DAC8568 which I used in another  (mainly through-hole) project, OctalDAC wavemix).
 
@@ -30,7 +30,7 @@ Logic level high is 0.625 * Vdd so 3.4V, ie it is a 5V logic device with that Vd
 
 Needs level shifter for SPI. Use second SPI channel on Teensy 4.1. One quad shifter handles CS (SYNC) plus SCLK and MOSI
 
-**74AHCT125** Quad Level-Shifter (SSOP-14)  good for SPI, fast enough.
+**74AHCT125** Quad Level-Shifter (SSOP-14, **got 10 Jan 2018** plus 10 DIP)  good for SPI, fast enough.
 Vdd abs max -0.5V to +7V so good for 5V5. Enables are active low, so tie all to ground.
 
 TSSOP-14 DAC has neither CLR nor LDAC, only needs 3 lines through level shifter.

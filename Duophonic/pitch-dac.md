@@ -5,10 +5,10 @@ Use a very linear, well behaved 16-bit DAC per voice (so, two needed).
 
 Over 10 octaves, at the desired precision, 16 bits is barely sufficient (0.2 cents). More bits would be desirable, to give finer precision and to allow for the loss of precision from using a calibration curve. However, 20bit or 18bit DACs can be expensive, and some are no better than 16bit INL; 24bit DACs are widely available and cheap, but tuned for audio AC performance not DC accuracy and linearity.
 
-_AD5542CRZ_ (SOIC-14, $52.61/1 in stock), same as I used in my previous, mono, MIDI2CV project, provides bipolar ±Vref output (so, ±5V) with one bipolar-powered op-amp in the output loop. Power up to +5V5. INL ±0.5LSB (typ) ±1.0LSB (max, = 15ppm) for best (C) grade. DNL is ±1 LSB max = 15ppm. SPI needs 16bit transfer.
+_AD5542CRZ_ (SOIC-14, now $52.61/1 in stock **got 6 Jan 2018** when they were $35), same as I used in my previous, mono, MIDI2CV project, provides bipolar ±Vref output (so, ±5V) with one bipolar-powered op-amp in the output loop. Power up to +5V5. INL ±0.5LSB (typ) ±1.0LSB (max, = 15ppm) for best (C) grade. DNL is ±1 LSB max = 15ppm. SPI needs 16bit transfer.
 
 **AD5781ARUZ** (TSSOP-20, $40.96/1 no stock til April 2023) 18bit. INL ±1 LSB (max, 5V vref, = 3.6ppm) for B grade, ±4 LSB (max, = 15ppm) for A grade. _Mouser does not stock the best (B) grade. A grade has more resolution, but same INL, as the 16bit AD5542CRZ. Digikey has A grade at €30.15, B grade at €42.50_    DNL however is ±1 LSB max = 3.6ppm for _both_ grades. Bipolar ±Vref output, power up to ±16.5V. SPI needs 24bit transfer. Needs Schottky diode for power rail syncronization, see datasheet fig. 50. A grade is actually less expensive than AD5542CRZ, with better DNL. Check that the layout is going to be reasonable on a 2-layer board.
-Got 1, May 2020.
+**Got 1, May 2020**.
 
 _AD5791BRUZ_ (TSSOP-20, $133.24/1 no stock) or _AD5791ARUZ_ (TSSOP-20, $84.45/1 no stock) 20bit, 1ppm linearity, bipolar ±Vref output, power up to ±16.5V. Very expensive.
 
@@ -18,7 +18,7 @@ Conclusion: AD5781ARUZ gives 16bit INL with 18bit DNL at slightly lower cost tha
 
 ## Power
 
-AD5781ARUZ Vdd and Vss abs max of 16.5V. Spec sheet assumes VDD = +12.5 V to +16.5 V, VSS = −16.5 V to −12.5 V. Optimal supply for lowest zero-scale and gain errors is ±9.5V (datasheet, figs 20 & 22, _noting results are given for either 5V and for ±10V spans while I need a ±5V span_).
+AD5781ARUZ Vdd and Vss abs max of 16.5V. Spec sheet assumes VDD = +12.5 V to +16.5 V, VSS = −16.5 V to −12.5 V. Optimal supply for lowest zero-scale and gain errors is ±9.5V (datasheet, figs 20 & 22, _noting results are given for 5V and for ±10V spans while I need a ±5V span_).
 
 Advantage of ±12V-derived ±9V5 rails, compared to using Eurorack 5V power, is that filtering and smoothing can be applied, reducing switching PSU noise and increasing decoupling from the digital circuitry running on Eurorack 5V.
 
@@ -27,6 +27,8 @@ Advantage of ±12V-derived ±9V5 rails, compared to using Eurorack 5V power, is 
 With Teensy 4.1, for AD5781ARUZ no level shifters needed.
 
 Data is written to the AD5781 in a 24-bit word format.
+
+To isolate from digital 0V noise, consider optical isolator. ISO724x high speed quad isolator (got 2, Jan 2018). MOSI, SCLK, CS/SYNC and ?LDAC however AD5781 has separate DGND, AGND pins. Also isolator would need separate, DAC-side 3V3 supply.
 
 ## Initial accuracy
 
@@ -52,13 +54,13 @@ DAC output impedance is 3.4k for AD5781ARUZ which is irrelevant as bipolar mode 
 
 A pair of op-amps (one non inverting for VrefP, one inverting for VrefN) then, per pitch DAC, a pair of unity gain buffers for (required) kelvin connections. 
 
-AD5781 datasheet uses AD8676 (AD8676BRZ $6.89/1) dual op-amp for Vref buffers, which is 12uV typ 50uV max Vos, 2nA Ibias, very low noise rail-to-rail. R/R does not seem to be needed for a 5V output on ±12 or ±9.5 rails. Low input bias is specifically needed to achieve the rated performance.
+AD5781 datasheet uses AD8676 (AD8676BRZ $6.89/1) dual op-amp for Vref buffers, which is 12uV typ 50uV max Vos, 2nA Ibias, very low noise rail-to-rail. R/R does not seem to be needed for a 5V output on ±12 or ±9.5 rails. Low input bias is _specifically needed_ to achieve the rated performance.
 
-OPA2197ID (OPA2197ID $2.97/1) dual is 25uV typ 100uV max Vos, 5nA Ibias so twice as bad at half the price.
+_OPA2197ID_ (OPA2197ID $2.97/1) dual is 25uV typ 100uV max Vos, 5nA Ibias so twice as bad at half the price. (Quad OPA4197ID, got 10 May 2020)
 
-OPA2186 another (OPA2186DR $2.22/10 newer, more available) option. 1μV/10μV Vos as it is chopper stabilized. 4.8 max nA over temp, 55pA @25C. Check slew rate 0.35 V/μs is ok for slew limiter, if used. Quad version has 4x worse Vos. The maximum power supply voltage for the OPAx186 is 24 V (±12 V). (Abs Max 26V)
+**OPA2186D** another (OPA2186DR $2.22/10 newer, more available) option. 1μV/10μV Vos as it is chopper stabilized. 4.8 max nA Ibias over temp, 55pA @25C. Check **slew rate 0.35 V/μs** is ok for slew limiter, if used. Quad version has 4x worse Vos. The maximum power supply voltage for the OPAx186 is 24 V (±12 V). (Abs Max 26V)
 
-OPA4187IPW (1μV/10μV TSSOP-14 $5.60/10 in stock) a bit expensive
+OPA4187IPW (1μV/10μV TSSOP-14 $5.60/10 in stock) quad a bit expensive
 
 DAC input resistance is highly code-dependent. For AD5781ARUZ, lowest (around 5kΩ) which is 1mA at 5V.
 
@@ -66,14 +68,18 @@ DAC input resistance is highly code-dependent. For AD5781ARUZ, lowest (around 5k
 
 With a 5V ref and an output buffer [unity OP-C, no external components] this gives ±5V output (10 octaves) which includes Note-ON voltage, global pitchbend, and per-note pitchbend. Note that this does not cover the full MIDI note range of 128 notes = 10.66 octaves. Not an issue in practice.
 
-Op-amps here need a max Vos of 100μV (1LSB), preferably better. Input bias current however is not as crucial here (unless Vref buffers and output buffers use the same quad.) 
+Op-amps here need a max Vos of 38μV (1LSB at 18bits), preferably better. Input bias current however is not as crucial here (unless Vref buffers and output buffers use the same quad.) 
 
 AD8675 is the Analog Devices recommendation (mouser only has the less good A grade).
 
-OPA197 an alternative. Or use a quad OPA4197 for both vref buffers, output, and one left over for slew limit if desired. All hinges on unstable availability and huge lead times!
+OPA197 an alternative. Or use a quad OPA4197 for both vref buffers, output, and one left over for slew limit if desired (not a good idea for pitch) or to drive two outputs. All hinges on unstable availability and huge lead times!
 
-Are chopper amps suitable here? LT1150 operates on 12V bipolar supples, has 10μV max offset. Mouser $9.04 each, $8.28/10, $5.99/25 so go for 25 = 141.25 be damn sure they work first! **OPA4192D** (quad, SOIC-14 which performs better than the TSSOP) 8μV (typ) 50μV (max) $3.67/10 seems good, probably adequate (common-mode input to within 100mV of each rail) and cheaper. 
+Are chopper amps suitable here? LT1150 operates on 12V bipolar supples, has 10μV max offset. Mouser $9.04 each, $8.28/10, $5.99/25 so go for 25 = 141.25 be damn sure they work first! **OPA4192D** (quad, SOIC-14 which performs better than the TSSOP) 8μV (typ) 50μV (max) $3.67/10 seems good, probably adequate (common-mode input to within 100mV of each rail) and cheaper.
 
 Note "This unity-gain difference amplifier (equal resistors) causes the input difference voltage (V2-V1) to be impressed on R5; the resulting current flows to the load. The offset voltage, however, is applied directly to the noninverting input and is amplified by +2 – like a noninverting amplifier (G = 1 + R2/R1). Thus, a 10-mV offset voltage creates 20 mV across R5, producing a 20mA output current offset. A -10-mV offset would create a -20-mA output current (current sinking from the load)."
 
-3 op-amps per channel = 6 or 4 is slew limit = 8.
+Should the output buffer be able to drive a capacitive load (so, two resistors and cap in feedback loop).
+
+![capacitive load circuits](./img/x2077_capacitive_loads.png)
+
+3 op-amps per channel = 6 or 4 if slew limit /  dual buffered outs = 8.

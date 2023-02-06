@@ -7,9 +7,9 @@ Usual (bad) Eurorack power over ribbon cable with +12V, 0V, -12V and optional +5
 ## Digital and Analog 0V
 
 Module uses two ribbon cables. 0V on one is treated as digital ground, and +5V on that cable powers digital circuits. 
-0V on the other is treated as analog ground, with +12 and -12 powering op-amps.  
-This means the connection between them occurs at the PSU busboard. 
-This should reduce digital return currents on analog ground.
+0V on the other is treated as analog ground, with +12 and -12 powering op-amps and secondary voltage regulators.  
+This means the connection between digital and analog occurs at the PSU busboard. 
+This should reduce digital return currents on analog ground. However, digital 0V to SPI DAC meets analog 0V unless isolator is used.
 
 ## DAC power
 
@@ -21,7 +21,7 @@ Use LT1763 adjustable regulators (500mA is ample) to produce 5V5 and 9V5, with 6
 
 ## Microcontroller power
 
-Teensy 4.1 main board is a 3V3 device with onboard 3V3 regulators and a Vin pin which accepts 3V6 to 6V0 input. Use Eurorack 5V supply (reduces asymmetric loading on +12V rail)
+Teensy 4.1 main board is a 3V3 device with onboard 3V3 regulators and a Vin pin which accepts 3V6 to 6V0 input. Use Eurorack 5V supply (reduces asymmetric loading on +12V rail). Current draw can be 100mA, depends on clock speed.
 
 ## Analog power
 

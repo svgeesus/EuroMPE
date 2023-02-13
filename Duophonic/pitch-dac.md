@@ -83,3 +83,12 @@ Should the output buffer be able to drive a capacitive load (so, two resistors a
 ![capacitive load circuits](./img/x2077_capacitive_loads.png)
 
 3 op-amps per channel = 6 or 4 if slew limit /  dual buffered outs = 8.
+
+## Work Plan
+
+- Have one DAC. 
+- Check slew rate ad corner freq for 4k7, 220R, 100pf.
+- Get OPA2186DR, other components for one board
+- Lay out board, fab
+- Bulid and test one board with VREF board.
+- If all okay, order 2 more DAC and components for other board. Else refine, redo board.

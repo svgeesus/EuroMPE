@@ -130,3 +130,12 @@ May need buffering, though this project does not need a fast rate of reading the
 "It is advisable to place a 10nF capacitor from the wiper to ground against RF and other interference." [Gerrit, PJRC forum](https://forum.pjrc.com/threads/55126-MIDI-Faderbox-fader-choice?p=197818&viewfull=1#post197818)
 
 Maybe use [elapsedMillis](https://www.pjrc.com/teensy/td_timing_elaspedMillis.html) to only ready the pots every so often.
+
+## Workplan
+
+- Breadboard op-amp slew circuit, test with any DAC stepped at 7bit resolution. Get good capacitor values for sufficient slew.
+- Lay out panel jack PCB and op-amp PCB, check enough room for connectors and easy to routs
+- Lay out perf DAC board, send to OSH Park to enable testing a populated DAC board.
+- Build perf DAC board
+- Test perf DAC board with 5V5 supplies
+- Test perf DAC with output to breadboarded op-amp circuit.

@@ -75,5 +75,10 @@ paddle induced stress to the die. The absence of electrical
 contact will eliminate the possibility of any ground current
 redistribution.
 
+## Work plan
 
+- Design vref board with dual op-amp
+- Fab board
+- order Vref, op-amp (same as pitch DAC uses)
+- build, test, burn-in
 

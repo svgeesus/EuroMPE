@@ -62,6 +62,7 @@ OutF and OutS join at inverting op-amp input.
 Pin 8 clear of copper, mask (no mechanical connection).
 
 Full bottom ground plane; top ground plane with vias by caps and GND connection, runs under device (like eval kit, contrary to data sheet?). Thik input and OutF traces; narrow NR, OutS.
+see [EEVBlog posting](https://www.eevblog.com/forum/metrology/max6226-vref-and-ground-planes/)
 
 ?? Try a U cutout around the MAX-6226 for rigidity and freedom form humidity effects.
 

@@ -8,7 +8,7 @@ excellent temperature stability
 
 ![pinout](./img/MAX6226-pinout.png)
 
- - [EEV metrology thread on MAX6226](https://www.eevblog.com/forum/metrology/max6226-voltage-reference/msg3569644/#msg3569644)
+- [EEV metrology thread on MAX6226](https://www.eevblog.com/forum/metrology/max6226-voltage-reference/msg3569644/#msg3569644)
 
 Vref board needs to provide both +5V and -5V to drive the pitch DACs.
 
@@ -16,11 +16,9 @@ Vref board needs to provide both +5V and -5V to drive the pitch DACs.
 
 Good initial accuracy ±0.02% (±1mV). But not trimmable, would need digital-domain trim.
 
-
 ## Temperature
 
 Very good at 1ppm/C typ, 3ppm/C max (15μV max over 0 to 70C)
-
 
 ## Thermal Hysteresis
 
@@ -49,19 +47,26 @@ Use same regulated +9.5V supply as pitch DACs. Off-board, to protect from therma
 
 ## Buffering
 
-Dual low-drift op-amp to provide the +5V Vref and -5V VrefN outputs needed by the pitch DACs.
-Pair of close-tolerance low thermal drify resistors for the VrefN op-amp.
+Dual low-drift **OPA2186D** op-amp to provide the +5V Vref and -5V VrefN outputs needed by the pitch DACs.
+Pair of close-tolerance low thermal drift resistors for the VrefN op-amp.
 Decoupling caps.
 
 ## Board design
+
+Power input: 4 wires +9.5, 0V, 0V, -9.5.
 
 1μF and 100nF input caps, 100nF noise cap, 1μF and 100nF output caps, all C0G ceramic.
 
 OutF and OutS join at inverting op-amp input.
 
+Voltage output: pair of 4-pin headers
+
+- +5 +5 0V 0V
+- -5 -5 0V 0V
+
 Pin 8 clear of copper, mask (no mechanical connection).
 
-Full bottom ground plane; top ground plane with vias by caps and GND connection, runs under device (like eval kit, contrary to data sheet?). Thik input and OutF traces; narrow NR, OutS.
+Full bottom ground plane; top ground plane with vias by caps and GND connection, runs under device (like eval kit, contrary to data sheet?). Thick input and OutF traces; narrow NR, OutS.
 see [EEVBlog posting](https://www.eevblog.com/forum/metrology/max6226-vref-and-ground-planes/)
 
 ?? Try a U cutout around the MAX-6226 for rigidity and freedom form humidity effects.
@@ -84,10 +89,36 @@ paddle induced stress to the die. The absence of electrical
 contact will eliminate the possibility of any ground current
 redistribution.
 
+## BOM
+
+Voltage reference
+(1) AD MAX6226ALA50+ Ceramic LCC $11.79/1 = **$11.79** get 3
+
+Low Vos low Ibias precision op-amp (dual)
+(1) TI OPA2186DR SOIC-8 $2.22/10 = **$22.20**
+
+Decoupling and NR caps
+(4) Kemet C1206C104K3GEC7210 25V 100nF C0G 1206 ceramics $0.051/100 = **$5.10 GOT**
+
+Bulk ceramic caps
+(2) Kemet C1206X105K3RACTU  25V 1μF X7R 10% 1206 ceramic $0.839/10 = **$8.39**
+
+Low-ppm close tolerance resistors
+(2) Susumu RG2012V-103-P-T1 10k 0.02% 5ppm 0805 $2.57/25 = **$64.25 GOT**
+
+PCB
+
+Right-angle 0.1" connectors
+(1) Adafruit Break-away 0.1" 36-pin strip right-angle male header (10 pack) **$5.95**
+https://www.adafruit.com/product/1540
+
+Double ended connectors
+Adafruit Extra-long break-away 0.1" 16-pin strip male header (5 pieces) **$3.00**
+https://www.adafruit.com/product/400
+
 ## Work plan
 
 - Design vref board with dual op-amp
 - Fab board
 - order Vref, op-amp (same as pitch DAC uses)
 - build, test, burn-in
-

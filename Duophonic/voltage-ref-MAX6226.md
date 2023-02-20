@@ -51,6 +51,12 @@ Dual low-drift **OPA2186D** op-amp to provide the +5V Vref and -5V VrefN outputs
 Pair of close-tolerance low thermal drift resistors for the VrefN op-amp.
 Decoupling caps.
 
+## Schematic
+
+![Schematic](./img/vref-schematic-v0.1.png)
+
+- [Schematic](./vref-schematic.pdf)
+
 ## Board design
 
 Power input: 4 wires +9.5, 0V, 0V, -9.5.
@@ -88,6 +94,8 @@ the mechanical contact will eliminate the possibility of
 paddle induced stress to the die. The absence of electrical
 contact will eliminate the possibility of any ground current
 redistribution.
+
+![board](./img/vref-board-v.01.png)
 
 ## BOM
 

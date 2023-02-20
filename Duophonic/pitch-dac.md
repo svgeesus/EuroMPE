@@ -84,7 +84,18 @@ Should the output buffer be able to drive a capacitive load (so, two resistors a
 
 ![capacitive load circuits](./img/x2077_capacitive_loads.png)
 
+[Understanding stabilization capacitors](https://northcoastsynthesis.com/news/understanding-stabilization-capacitors/)
+
 3 op-amps per channel = 6 or 4 if slew limit /  dual buffered outs = 8.
+
+## BOM
+
+Stabilization film caps
+(2) Cornell Dubilier FCP0805H101J-J1 0805 $0.526/10 = **$5.26** [Mouser](https://www.mouser.com/ProductDetail/Cornell-Dubilier-CDE/FCP0805H101J-J1)
+
+Bulk ceramic caps
+(2) Kemet C1206X105K3RACTU  25V 1μF X7R 10% 1206 ceramic $0.839/10 = **$8.39**
+
 
 ## Work Plan
 

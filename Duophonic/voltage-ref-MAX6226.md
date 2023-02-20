@@ -97,6 +97,11 @@ redistribution.
 
 ![board](./img/vref-board-v.01.png)
 
+> We detected a 2 layer board of 1.99 x 1.15 inches (50.5 x 29.2mm)
+> 3 boards will cost $11.40 
+
+![osh](./img/vref-top-osh.png)
+
 ## BOM
 
 Voltage reference

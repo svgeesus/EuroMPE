@@ -88,14 +88,36 @@ Should the output buffer be able to drive a capacitive load (so, two resistors a
 
 3 op-amps per channel = 6 or 4 if slew limit /  dual buffered outs = 8.
 
-## BOM
+## Schematic
 
-Stabilization film caps
-(2) Cornell Dubilier FCP0805H101J-J1 0805 $0.526/10 = **$5.26** [Mouser](https://www.mouser.com/ProductDetail/Cornell-Dubilier-CDE/FCP0805H101J-J1)
+![Schematic](./img/pitchdac-schematic.png) ([PDF](./pitchdac-schematic.pdf))
 
-Bulk ceramic caps
+## Board
+
+Separate digital and analog ground planes.
+
+>  We detected a 2 layer board of 2.16 x 1.20 inches (54.9 x 30.6mm)
+> 3 boards will cost $13.00 
+
+May be _slightly_ wide, check. Was going for 6HP (30mm).
+
+![Board](./img/pitchdac-board.png)
+
+## BOM (per DAC board, need 2)
+
+### Stabilization film caps
+
+(2) Cornell Dubilier FCP0805H101J-J1 33pF 0805 $0.526/10 = **$5.26** [Mouser](https://www.mouser.com/ProductDetail/Cornell-Dubilier-CDE/FCP0805H101J-J1)
+
+### Bulk ceramic caps
+
 (2) Kemet C1206X105K3RACTU  25V 1μF X7R 10% 1206 ceramic $0.839/10 = **$8.39**
 
+(10) Samsung CL31B106KAHNFNE  25V 10μF X7R 10% 1206 ceramic $0.094/10 =	**$0.94**  [Mouser](https://www.mouser.com/ProductDetail/Samsung-Electro-Mechanics/CL31B106KAHNFNE)
+
+### Decoupling and NR caps
+
+(10) Kemet C1206C104K3GEC7210 25V 100nF C0G 1206 ceramics $0.051/100 = **$5.10 GOT**
 
 ## Work Plan
 
@@ -103,5 +125,5 @@ Bulk ceramic caps
 - Check slew rate and corner freq for 4k7, 220R, 100pf.
 - Get OPA2186DR, other components for one board
 - Lay out board, fab
-- Build and test one DAC board with VREF board.
+- Build and test one DAC board with (previously tested) VREF board.
 - If all okay, order 2 more DAC and components for other board. Else refine, redo board.

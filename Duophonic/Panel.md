@@ -85,3 +85,6 @@ Need global outs, 8 jacks, same as perf dac board but rotated to be 4 wide and 2
 
 USB Host, USB device, DIN Midi (not on PCB; panel mount).
 
+- [Panel mount USB-B to Micro-B cable](https://www.sparkfun.com/products/15463)
+(M3 holes 28.5mm spacing)
+- [USB host cable](https://www.pjrc.com/store/cable_usb_host_t36.html) no data sheet; **GOT**

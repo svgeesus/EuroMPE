@@ -48,7 +48,11 @@ Use same regulated +9.5V supply as pitch DACs. Off-board, to protect from therma
 ## Buffering
 
 Dual low-drift **OPA2186D** op-amp to provide the +5V Vref and -5V VrefN outputs needed by the pitch DACs.
+
 Pair of close-tolerance low thermal drift resistors for the VrefN op-amp.
+Use of Vishay matched-pair resistors [suggested on EEVBlog](https://www.eevblog.com/forum/metrology/max6226-vref-and-ground-planes/msg4725761/#msg4725761) such as [these](https://www.mouser.com/ProductDetail/Vishay-Thin-Film/MPM2002QT3?qs=KOdD7VNvzR83jUiiLOdaaQ%3D%3D) 10k/10k 0.01% ratio, 25ppm/C.
+Is it feasible to make a board that accepts either?
+
 Decoupling caps.
 
 ## Schematic

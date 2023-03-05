@@ -18,20 +18,20 @@ plus 5mm LED, 7.6mm square so allow 9mm?
 
 ![LED](./img/FD-115TRGB.png)
 
-- (108 - 9 - (7 * 6.2) ) / 6 = 9.26mm between jack holes.
-- (108 - 9 - (6 * 6.2) ) / 5 = 12.36mm between jack holes.
+- For 7 jacks: (108 - 9 - (7 * 6.2) ) / 6 = 9.26mm between jack holes.
+- For 6 jacks: (108 - 9 - (6 * 6.2) ) / 5 = 12.36mm between jack holes.
 
 Thoniconn jacks are 12mm high, 9mm wide.
 
 ![Thonkiconn](./img/thonkiconn-pj398sm.jpg)
 
-- (108 - 9 - (7 * 12) ) = 15mm = 3mm between jacks, seems tight.
-- (108 - 9 - (6 * 12) ) = 27mm = 5.4mm between jacks.
+- (108 - 9 - (7 * 12) ) = 15mm = 3mm between jack bodies, seems tight.
+- (108 - 9 - (6 * 12) ) = 27mm = 5.4mm between jack bodies.
 
 Or, used width-wise,
 
-- (108 - 9 - (7 * 9) ) = 36mm = 6mm between jacks
-- (108 - 9 - (6 * 9) ) = 45mm = 9mm between jacks.
+- (108 - 9 - (7 * 9) ) = 36mm = 6mm between jack bodies
+- (108 - 9 - (6 * 9) ) = 45mm = 9mm between jack bodies.
 
 So 7 jacks plus LED seems fine with jacks width-wise;
 use *5.08mm* (2/10 inch) inter-jack spacing

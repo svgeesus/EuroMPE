@@ -1,9 +1,12 @@
 # Eurorack Duophonic MIDI
 
-Inspired by the use of duophony on the ARP 2600 and Odyssey.
+Inspired by the use of duophony on the ARP 2600 and Odyssey,
+this is a MIDI to CV Eurorack module
+with twin outputs:
+low-note priority and high-note priority.
 
 Re-utilising designs from the Euro-MPE project,
-this is a high-precsion, flexible, performance oriented
+this aims to be a high-precsion, flexible, and performance oriented
 duophonic MIDI to Eurockack CV module.
 It's MPE compatible so there is expression on each of the two notes.
 
@@ -15,25 +18,22 @@ There are three MIDI inputs
 2. USB device in, for DAW
 3. USB Host in, for USB keyboards
 
+
 ## Analog voice CV
 
-There are two voice channels. A difference from the Euro-MPE design is that offset DAC is not needed (would have doubled the number of DACs, and the 18-bit pitch DACs are expensive).
-
-Dropping the offset and the input, but adding a second buffered pitch CV output to go to a separate offsets module, gives 7 jacks plus an led which is fine in one vertical row. Also reduces number of DACs. That would be
+There are two voice channels:
 
 - color LED for gate and to indicate note played (12 color scale)
-- Gate
+- Gate, see [Gate/LED](./Gate-LED.md).
 - Oscillator pitch CV, highly linear 18bit, low tempco DAC
   - includes pitchbend (Glide) and any microtuning
   - See [Pitch DAC](pitch-dac.md)
-- Second (identical) pitch CV output. Or just rely on passive mults?
-- Four MPE-compatible expression outputs (14bit)
-    1. Stike (attack velocity)
+- Second (identical) pitch CV output
+- Four MPE-compatible expression outputs (14bit), see [Performance DAC](../performance-dac.md)
+    1. Strike (attack velocity)
     2. Lift (release velocity)
     3. Slide (forward-back, CC 74)
     4. Press (aftertouch)
-
-@@TODO lay out panel for one voice, to check spacing.
 
 ## Analog general CC CV
 
@@ -88,15 +88,16 @@ Like the original EuroMPE, there should be a [tuning input](../calibration.md) w
 
 ## Voltage reference
 
-For duophonic, perhaps one LTC6655CHMS8-5#PBF ($8.95/1) per pitch DAC, which has 1.25mV initial accuracy and kelvin connection, would be good? Mouser does not stock the better LCC version. No trim though.
-
-Or LT1236ACS8-5#PBF ($9.32/1) has trim (worsens tempco) no kelvin. One could be reference for both pitch DACs.
-
-Or MAX6126AASA50+ ($7.81/1) no trim, kelvin connections for Vref and GND, 1mV initial accuracy, 0.5ppm/C (typ) 3ppm/C (max). As used in transpositeurs.
+For the pitch DAC, a Max 6226 hermetic ceramic is used, see [](voltage-ref-MAX6226.md).
+For the performance DACs, the internal reference on the octal DAC is easily sufficient.
 
 ## Main MPU board
 
-See [MPU board](MPU-board.md).
+See [MPU board](./MPU-board.md).
+
+## Power
+
+See [Power](./Power.md)
 
 ## Notes
 

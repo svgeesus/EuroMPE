@@ -28,3 +28,21 @@ Notice [this thread](https://forum.pjrc.com/threads/28460-teensy3-1-tlc59711-16-
 Also [this thread](https://forum.pjrc.com/threads/24599-IntervalTimer-and-LED-fading?highlight=TLC59711) on why Teensy PWM is better than a PWM chip; uses an op-amp integrator to smooth the PWM signal and to provide the current drive rather than getting it from the Teensy. LMV358 SOIC-8 dual op-amp is [cheap](https://www.mouser.com/ProductDetail/Diodes-Incorporated/LMV358SG-13) at $0.414/10, need 3 for 2 RGB LEDs.
 
 ![analog LED from PWM](./img/analogled.jpg)
+
+[Constant current LED with op-amp](https://www.allaboutcircuits.com/technical-articles/the-basics-behind-constant-current-led-drive-circuitry/)
+
+## Gate
+
+Use [two-transistor gate output from Graham Hinton](https://modwiggler.com/forum/viewtopic.php?p=2720659&sid=8184a7a1e66cf2090d4727f4a460bd16#p2720659):
+
+![gate](./img/Hinton_2955_14vgate_1.png)
+
+>> Both transistors are used as switches, not amplifiers. The first transistor turns on at any input voltage above about 1V, this then turns on the second transistor which pulls the output up to +ve (+14V taken from the Roland). It assumes that the input is a Gate and has a fairly fast rise/fall time and is not an analogue signal like a LFO triangle. If you want to use slow rise/fall signals you need a Schmitt trigger.
+
+Fixing the known inaccuracy in that schematic:
+
+> Try a resistor like 10k between its base and emitter so that it is driven by voltage rather than current.
+
+![gate2](./img/ramsden-gate-buffer.jpg)
+
+See also [Synth DIY: Gate Buffer ](https://synthnerd.wordpress.com/2016/03/17/synth-diy-gate-buffer/)

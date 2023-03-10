@@ -46,6 +46,8 @@ Gain error (away from output voltage extremes) is 0.4ppm (typ) 20ppm FSR (max) =
 
 ±1 LSB for  ΔVdd ±10%, nothing specal needed for Vdd regulation here but ensure supply is low noise.
 
+Needs Schottky diode across power rails, see datasheet fig. 50.
+
 ## Load regulation
 
 DAC output impedance is 3.4k for AD5781ARUZ so buffer with an op-amp on the output.

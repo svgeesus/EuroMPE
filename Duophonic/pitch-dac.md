@@ -103,6 +103,9 @@ Separate digital and analog ground planes.
 
 May be _slightly_ wide, check. Was going for 6HP (30mm).
 
+Put a couple of standoff holes here to secure the two DAC boards together. 
+Check fouling on vref board.
+
 ![Board](./img/pitchdac-board.png)
 
 ## BOM (per DAC board, need 2)

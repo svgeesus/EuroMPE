@@ -98,7 +98,7 @@ Should the output buffer be able to drive a capacitive load (so, two resistors a
 
 Separate digital and analog ground planes.
 
->  We detected a 2 layer board of 2.16 x 1.20 inches (54.9 x 30.6mm)
+> We detected a 2 layer board of 2.16 x 1.20 inches (54.9 x 30.6mm)
 > 3 boards will cost $13.00 
 
 May be _slightly_ wide, check. Was going for 6HP (30mm).
@@ -106,6 +106,10 @@ May be _slightly_ wide, check. Was going for 6HP (30mm).
 ![Board](./img/pitchdac-board.png)
 
 ## BOM (per DAC board, need 2)
+
+### DAC
+
+(1) Analog Devices [AD5781ARUZ ](https://www.mouser.com/ProductDetail/Analog-Devices/AD5781ARUZ) $40.96  = **$40.96**
 
 ### Stabilization film caps
 
@@ -115,20 +119,30 @@ May be _slightly_ wide, check. Was going for 6HP (30mm).
 
 (2) Kemet C1206X105K3RACTU  25V 1μF X7R 10% 1206 ceramic $0.839/10 = **$8.39**
 
-(10) Samsung CL31B106KAHNFNE  25V 10μF X7R 10% 1206 ceramic $0.094/10 =	**$0.94**  [Mouser](https://www.mouser.com/ProductDetail/Samsung-Electro-Mechanics/CL31B106KAHNFNE)
+(10) Samsung CL31B106KAHNFNE  25V 10μF X7R 10% 1206 ceramic $0.094/10 =	**$1.88**  [Mouser](https://www.mouser.com/ProductDetail/Samsung-Electro-Mechanics/CL31B106KAHNFNE) get 20
 
 ### Decoupling and NR caps
 
 (10) Kemet C1206C104K3GEC7210 25V 100nF C0G 1206 ceramics $0.051/100 = **$5.10 GOT**
 
+### Resistors
+
+(2) Susumu [RR1220P-472-D ](https://www.mouser.com/ProductDetail/Susumu/RR1220P-472-D) 0805 4k7 0.5% 25ppm $0.13/10 = **$1.30**
+
+(2) Susumu [RR1220P-221-D ](https://www.mouser.com/ProductDetail/Susumu/RR1220P-221-D) 0805 220R 0.5% 25ppm $0.127/10 = **$1.27**
+
 ### Op-Amps
 
 (2) TI [OPA2186DR](https://www.mouser.com/ProductDetail/Texas-Instruments/OPA2186DR) $2.22/10 = **$22.20**
 
+### Schottky diode
+
+(1) Kyocera [SD0805S040S0R5](https://www.mouser.com/ProductDetail/KYOCERA-AVX/SD0805S040S0R5?qs=jCA%252BPfw4LHZwphObYhjVUA%3D%3D) 0805 40V $0.44/1 = **$1.32**
+
 ## Work Plan
 
 - Have one DAC.
-- Check slew rate and corner freq for 4k7, 220R, 100pf.
+- Check slew rate and corner freq for 4k7, 220R, 1nF; breadboard with TL074 to check.
 - Get OPA2186DR, other components for one board
 - Lay out board, fab
 - Build and test one DAC board with (previously tested) VREF board.

@@ -17,7 +17,7 @@ Performance DACs, and the Global DAC  run at 5V5 so there is headroom above the 
 
 Pitch DACs run at ±9.5V and the Vref for those can use the +9.5 rail as well. No logic level conversion needed.
 
-Use LT1763 (SOIC-8, 500mA) adjustable regulators (500mA is ample) to produce 5V5 and 9V5, with 6μ8 C0G output cap. -9V5 from LT1964 adjustable (200mA still plenty).
+Use LT1763 (SOIC-8, 500mA) adjustable regulators (500mA is ample) to produce 5V5 and 9V5, with 6μ8 C0G output cap. -9V5 from LT1964 adjustable (SOT-23, 200mA still plenty).
 
 ## Microcontroller power
 
@@ -41,9 +41,9 @@ To be determined. Options for (about) 5V, 8V gates useful. Exact level not criti
 
 ### LT1763 for 9V5
 
-10μF input cap, 100pF noise bypass cap, 6μ8F to 10μF output cap (see Fig 3. Stability and discussion of ceramic dielectrics: go for X7R).
+10μF input cap, 1nF noise bypass cap, 6μ8F to 10μF output cap (see Fig 3. Stability and discussion of ceramic dielectrics: go for X7R).
 
-Minimum top resistor (R2) value is 2.6k. Try with 4k7. First approximation:
+_Minimum_ top resistor (R2) value is 2.6k. Try with 47k. First approximation:
 
 9.5 = 1.22(1 + r2/r1)
 
@@ -53,16 +53,16 @@ Minimum top resistor (R2) value is 2.6k. Try with 4k7. First approximation:
 
 r1 = (1.22 × r2)/8.28
 
-r1 = (1.22 × 4700)/8.28
+r1 = (1.22 × 47000)/8.28
 
-r1 = 698 which happily is an E96 value.
+r1 = 6k98 which happily is an E96 value.
 
 Second approximation:
 
-Vout = 1.22(1 + 4700/698) + 30E-9 ×  4700 = 9.435V. Second term is 141μV so ignore.
+Vout = 1.22(1 + 47000/6980) + 30E-9 ×  47000 = 9.436V. Second term is 1.41mV so ignore.
 
-Current through r1 is 1.22/698 = 1.7mA
-Current through r2 is (9.5-1.22)/4700 = 1.7mA
+Current through r1 is 1.22/6980 = 170μA
+Current through r2 is (9.5-1.22)/47000 = 170μA. 
 
 Power = output current times in-out voltage differential, plus ground current times input voltage. Say 50mA × (12.5 - 9.5) + 2mA × 12.5 = 175mW.
 
@@ -80,15 +80,39 @@ Higher rise due to bigger voltage drop.
 
 4.28 = 1.22 × r2/r1
 
-r1 = (1.22 × 4700)/4.28
+r1 = (1.22 × 47000)/4.28
 
-r1 = 1k34, closest E96 is 1k33.
+r1 = 13k4, closest E96 is 13k3.
 
-Vout = 1.22(1 + 4700/1330) + 30E-9 ×  4700 = 5.53V.
+Vout = 1.22(1 + 47000/13300) + 30E-9 ×  47000 = 5.53V.
 
 Power = 50mA × (12.5 - 5.5) + 2mA × 12.5 = 375mW.
 
 At 74C/W, rise above ambient is 28C.
+
+### LT1964-BYP for -9V5
+
+10μF? input cap, 1nF noise bypass cap, 6μ8F to 10μF output cap
+
+-9.5 = -1.22(1 + r2/r1)
+
+-9.5 = -1.22 + 1.22 × r2/r1
+
+-8.28 = -1.22 × r2/r1
+
+r1 = (-1.22 × r2)/-8.28
+
+r1 = (-1.22 × 47000)/-8.28
+
+r1 = 6k98
+
+Vout = -1.22(1 + 47000/6980) - 30E-9 ×  47000 = -9.436V.
+
+Power = -50mA × (-12.5 - -9.5) + -2mA × -12.5 = 175mW.
+
+At 135C/w, 23.5C above ambient.
+
+![lt1964](./img/lt1964-adj.png)
 
 ## Work Plan
 

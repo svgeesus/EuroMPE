@@ -140,7 +140,7 @@ Check fouling on vref board.
 
 ### Schottky diode
 
-(1) Kyocera [SD0805S040S0R5](https://www.mouser.com/ProductDetail/KYOCERA-AVX/SD0805S040S0R5?qs=jCA%252BPfw4LHZwphObYhjVUA%3D%3D) 0805 40V $0.44/1 = **$1.32**
+(1) Kyocera [SD0805S040S0R5](https://www.mouser.com/ProductDetail/KYOCERA-AVX/SD0805S040S0R5) 0805 40V $0.44/1 = **$1.32**
 
 ## Work Plan
 

@@ -18,7 +18,7 @@ Vref seems to give a couple of mV error in output wrt temperature. Fig.54 shows 
 
 (Note to self:_ This is the 14-bit version of the DAC8568 which I used in another  (mainly through-hole) project, OctalDAC wavemix).
 
-![DAC](./img/DAC8168-14-pinout.png)
+![DAC](./img/DAC8168-16-pinout.png)
 
 ## Power
 
@@ -33,7 +33,7 @@ Needs level shifter for SPI. Use second SPI channel on Teensy 4.1. One quad shif
 **74AHCT125** Quad Level-Shifter (SSOP-14, **got 10 Jan 2018** plus 10 DIP)  good for SPI, fast enough.
 Vdd abs max -0.5V to +7V so good for 5V5. Enables are active low, so tie all to ground.
 
-TSSOP-14 DAC has neither CLR nor LDAC, only needs 3 lines through level shifter.
+TSSOP-14 DAC has neither CLR nor LDAC, only needs 3 lines through level shifter. However best (C) grade is TSSOP-16.
 
 
 ## Vref
@@ -138,8 +138,12 @@ See [32bit SPI to DAC8168](https://forum.pjrc.com/threads/72317-Dac8568-gt-dac81
 ## Workplan
 
 - Breadboard op-amp slew circuit, test with any DAC stepped at 7bit resolution. Get good capacitor values for sufficient slew.
-- Lay out panel jack PCB and op-amp PCB, check enough room for connectors and easy to routs
+- Check existing parts stock, to be sure.
+- Lay out panel jack PCB and op-amp PCB, check enough room for connectors and easy to route
 - Lay out perf DAC board, send to OSH Park to enable testing a populated DAC board.
+- Order parts
 - Build perf DAC board
 - Test perf DAC board with 5V5 supplies
 - Test perf DAC with output to breadboarded op-amp circuit.
+- Order op amp and panel boards from OSH Park
+- Assemble completed perf DAC, measure, check against panel drawing

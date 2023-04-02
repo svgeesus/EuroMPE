@@ -104,6 +104,8 @@ redistribution.
 > We detected a 2 layer board of 1.99 x 1.15 inches (50.5 x 29.2mm)
 > 3 boards will cost $11.40 
 
+Bord [ordered at OSH Park 31 Mar 2023](https://oshpark.com/shared_projects/fTokzv8n)
+
 ![osh](./img/vref-top-osh.png)
 
 ## BOM

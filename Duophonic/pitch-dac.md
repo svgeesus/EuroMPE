@@ -28,7 +28,9 @@ With Teensy 4.1, for AD5781ARUZ no level shifters needed.
 
 Data is written to the AD5781 in a 24-bit word format.
 
-To isolate from digital 0V noise, consider optical isolator. ISO724x high speed quad isolator (got 2, Jan 2018). MOSI, SCLK, CS/SYNC and ?LDAC however AD5781 has separate DGND, AGND pins. Also isolator would need separate, DAC-side 3V3 supply.
+To isolate from digital 0V noise, consider optical isolator. ISO724x high speed quad isolator (got 2, Jan 2018). MOSI, SCLK, CS/SYNC and ?LDAC however AD5781 has separate DGND, AGND pins. Also isolator would need separate, DAC-side 3V3 supply. So, NO.
+
+[10k pullup on SPI CS line](https://www.pjrc.com/better-spi-bus-design-in-3-steps/).
 
 ## Initial accuracy
 
@@ -98,15 +100,18 @@ Should the output buffer be able to drive a capacitive load (so, two resistors a
 
 Separate digital and analog ground planes.
 
-> We detected a 2 layer board of 2.16 x 1.20 inches (54.9 x 30.6mm)
-> 3 boards will cost $13.00 
+> We detected a 2 layer board of 2.20 x 1.17 inches (55.8 x 29.7mm)
+> 3 boards will cost $12.85
 
 May be _slightly_ wide, check. Was going for 6HP (30mm).
 
-Put a couple of standoff holes here to secure the two DAC boards together. 
-Check fouling on vref board.
+Put a couple of standoff holes here to secure the two DAC boards together? NO tried and the boards are too small.
 
 ![Board](./img/pitchdac-board.png)
+
+Board [ordered at OSH Park](https://oshpark.com/shared_projects/gQY5hg1l) 31 Mar 2023.
+
+![osh](./img/pitchdac-top-osh.png)
 
 ## BOM (per DAC board, need 2)
 
@@ -133,6 +138,8 @@ Check fouling on vref board.
 (2) Susumu [RR1220P-472-D ](https://www.mouser.com/ProductDetail/Susumu/RR1220P-472-D) 0805 4k7 0.5% 25ppm $0.13/10 = **$1.30**
 
 (2) Susumu [RR1220P-221-D ](https://www.mouser.com/ProductDetail/Susumu/RR1220P-221-D) 0805 220R 0.5% 25ppm $0.127/10 = **$1.27**
+
+(1) Any 0805 10k will do.
 
 ### Op-Amps
 

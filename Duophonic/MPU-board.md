@@ -16,13 +16,26 @@ The two are _somewhat_ pin-compatible. Where possible, pins below are chosen to 
 
 ## MIDI
 
-DIN MIDI in needs serial input. 
+[DIN MIDI](https://www.pjrc.com/teensy/td_libs_MIDI.html) in needs serial input and 6N138 optoisolator with [1k pulldown](https://forum.pjrc.com/threads/54891-MIDI-serial-(DIN)-to-usbMIDI-issues-got-weird-MIDI-messages?p=287082#post287082)
+and 4.7-10 kΩ base-emitter resistor. NO use 6N137, with transistor for level shift and inversion.
 
-- 01 RX1 (4.1, not 3.6), or
+MIDI hardware spec states <5mA to turn on, < 2μs rise and fall times. Also pin 2 and shield go from not connected, to connected by 100nF caps for RF purposes.
+
+Apparently 6N138 and or H11L1 are too slow per MIDI spec and 6N137 is better. These are not drop-in replacements, the support circuitry differs. H11L1 is slower, 0.1μs rise/fall while 6N137 is 23ns rise, 7ns fall.
+
+> _(6N137 with)_ An NPN transistor with the collector pulled up to 3.3V. This will also give you a second inversion. The diagram below shows my circuit. The difference is you would have R41 pull up to 3.3V (not isolated 5V as in mine). I would probably make it 10K. C2 is a bypass cap, the datasheet recommends it. Put it as close to pins 8 and 5 as you can. [source](https://forum.pjrc.com/threads/66877-Teensy-4-0-serial-optocoupler-6n137s?p=276314&viewfull=1#post276314)
+
+- [Opto-couple confusion – 6N137 or 6N138?](https://gr33nonline.wordpress.com/2019/05/15/opto-couple-confusion-6n137-or-6n138/)
+- [Teensy 4.0 serial optocoupler 6n137s](https://forum.pjrc.com/threads/66877-Teensy-4-0-serial-optocoupler-6n137s)
+- [MIDI Input with 6N137, 6N138, or 6N139](https://www.kieranreck.co.uk/blog/midi-input-with-6n137-6n138-or-6n139)
+
+[Vishay 6N137](https://www.mouser.com/ProductDetail/Vishay-Semiconductors/6N137?qs=xCMk%252BIHWTZMrQz4FyDXhMg%3D%3D) PDIP8, $1.76/1.
+
+- 00 RX1 (4.1, not 3.6), or
 - 07 RX2/RX3 (same on 4.1 and 3.6)
 _
 
-USB MIDI & USB Host MIDI.
+[USB MIDI](https://www.pjrc.com/teensy/td_midi.html) & [USB Host MIDI](https://github.com/PaulStoffregen/USBHost_t36).
 
 ## SPI
 
@@ -134,12 +147,12 @@ Could need analog ins, or I2C, depending on hardware. Not at all a must-have.
 
 1. T4.1 on breadboard, power from +5V, measure current consumption
 2. Test I2C display, see if update speed okay and feasible for menus
-3. Test PWM of two RGB LEDS. Test 10V gate output. Fabricate board.
+3. Test PWM of two RGB LEDS. Test 10V gate output. Fabricate [Gate-LED](./Gate-LED.md) board.
 4. Test FreqCount & FreqMeasure
 5. Test DIN MIDI input
-5a. Sketch front panel to get PCB dimensions.
-6. Fabricate & test octal perfDAC/CCDAC board (same board, different CS)
-7. Fabricate pitch CV board, test
-8. Write higher-level, MPE-capable MIDI library
-9. Fabricate MCU and display carrier board
-10. Front panel
+6. Sketch front panel to get PCB dimensions.
+7. Fabricate & test octal perfDAC/CCDAC board (same board, different CS)
+8. Fabricate pitch CV board, test
+9. Write higher-level, MPE-capable MIDI library
+10. Fabricate MCU and display carrier board
+11. Front panel

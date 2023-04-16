@@ -16,12 +16,22 @@ The two are _somewhat_ pin-compatible. Where possible, pins below are chosen to 
 
 ## MIDI
 
+MIDI hardware spec states < 5mA to turn on, < 2μs rise and fall times. Also pin 2 and shield go from not connected, to connected by 100nF caps for RF purposes.
+
 [DIN MIDI](https://www.pjrc.com/teensy/td_libs_MIDI.html) in needs serial input and 6N138 optoisolator with [1k pulldown](https://forum.pjrc.com/threads/54891-MIDI-serial-(DIN)-to-usbMIDI-issues-got-weird-MIDI-messages?p=287082#post287082)
-and 4.7-10 kΩ base-emitter resistor. NO use 6N137, with transistor for level shift and inversion.
+and 4.7-10 kΩ base-emitter resistor. 
 
-MIDI hardware spec states <5mA to turn on, < 2μs rise and fall times. Also pin 2 and shield go from not connected, to connected by 100nF caps for RF purposes.
+6N139 is lower-current (0.5mA) version of 6N138 (1.6mA).  
 
-Apparently 6N138 and or H11L1 are too slow per MIDI spec and 6N137 is better. These are not drop-in replacements, the support circuitry differs. H11L1 is slower, 0.1μs rise/fall while 6N137 is 23ns rise, 7ns fall.
+Avago Max propogation delay to low: 6N139 25μs, 6N138 10μs. To high, 6N139 60μs, 6N138 35μs. 
+
+Fairchild is worse, max propogation delay to low: 6N139 30μs, 6N138 15μs. To high, 6N139 90μs, 6N138 50μs.
+
+Vishay 6N137 max propogation delay to low: 75ns; to high: 75ns.
+
+NO use 6N137, with transistor for level shift and inversion.
+
+Apparently 6N138 and or H11L1 are too slow per MIDI spec and 6N137 is better. These are not drop-in replacements, the support circuitry differs.
 
 > _(6N137 with)_ An NPN transistor with the collector pulled up to 3.3V. This will also give you a second inversion. The diagram below shows my circuit. The difference is you would have R41 pull up to 3.3V (not isolated 5V as in mine). I would probably make it 10K. C2 is a bypass cap, the datasheet recommends it. Put it as close to pins 8 and 5 as you can. [source](https://forum.pjrc.com/threads/66877-Teensy-4-0-serial-optocoupler-6n137s?p=276314&viewfull=1#post276314)
 

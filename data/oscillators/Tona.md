@@ -1,5 +1,6 @@
 # Tona frequency analysis
 
+## Tunng range (0V CV)
 
 Coarse mid-way,
     fine mid-way, no external CV

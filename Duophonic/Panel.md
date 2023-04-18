@@ -5,19 +5,22 @@
 Panel height 128.5mm but with mounting holes and rails, 
 Usable panel height 112mm.
 
-Max PCB height 108mm. 
+Max PCB height **108mm**.
 
 ## Width of two output channels
 
 Width for the two channels part is 6HP (30mm)
 because Adafruit TLC59711 breakout is 28.38mm.
 
-Either 6 or 7 jacks (4 perf, one or two pich, gate) 
+## Front jack spacing for duophonic output
+
+8 jacks (4 perf, two pitch, trigger, gate) 
 which use 6.2mm holes,
 plus 5mm LED, 7.6mm square so allow 9mm?
 
 ![LED](./img/FD-115TRGB.png)
 
+- For 8 jacks: (108 - 9 - (8 * 6.2) ) / 7 = 7.06mm between jack holes.
 - For 7 jacks: (108 - 9 - (7 * 6.2) ) / 6 = 9.26mm between jack holes.
 - For 6 jacks: (108 - 9 - (6 * 6.2) ) / 5 = 12.36mm between jack holes.
 
@@ -25,16 +28,18 @@ Thoniconn jacks are 12mm high, 9mm wide.
 
 ![Thonkiconn](./img/thonkiconn-pj398sm.jpg)
 
+- (108 - 9 - (8 * 12) ) = 3mm will not fit!
 - (108 - 9 - (7 * 12) ) = 15mm = 3mm between jack bodies, seems tight.
 - (108 - 9 - (6 * 12) ) = 27mm = 5.4mm between jack bodies.
 
 Or, used width-wise,
 
+- (108 - 9 - (8 * 9) ) = 27mm = 3.8mm between jack bodies, a bit tight.
 - (108 - 9 - (7 * 9) ) = 36mm = 6mm between jack bodies
 - (108 - 9 - (6 * 9) ) = 45mm = 9mm between jack bodies.
 
 So 7 jacks plus LED seems fine with jacks width-wise;
-use *5.08mm* (2/10 inch) inter-jack spacing
+8 jacks plus LED may be ok but seems tight.
 
 ## Perf DAC boards
 
@@ -58,13 +63,15 @@ Behind that a sandwich (three horizontal boards) two pich dac with the vref in b
 - (2 * 9) + 5.08 = **23.08mm** high
 - (2 * 12) = 5.08? = again 24 to 30mm wide.
 
-## Trigger & LED board
+## Gate, Trigger & LED board
 
-Board for trigger transistors, level translators for LEDs, horizontal behind jack panel and LED board.
+Board for gate and trigger transistors, level translators for LEDs, horizontal behind jack panel and LED board.
 
-- 9 + 9 + 2? = 18 - **20mm** high.
+- 9 + 9 + 9 + 2? = 27 - **29mm** high.
 
-Check: 51.24 + 23.08 + 20 +5.08 + 5.08 = 104.48mm so fits in 108 with wiggle room between boards.
+Check: 51.24 + 23.08 + 29 +5.08 + 5.08 = 113.48mm so will not fit in 108!
+
+Will need to use staggered or offset jacks, not a single vertical row per channel.
 
 ## MPU board
 

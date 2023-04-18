@@ -1,6 +1,6 @@
 # Gate and LED
 
-Provides gate outputs and LED indication of gate status.
+Provides gate, trigger outputs and LED indication of gate status.
 
 RGB LEDs give feedback on what note is playing.
 
@@ -31,7 +31,7 @@ Also [this thread](https://forum.pjrc.com/threads/24599-IntervalTimer-and-LED-fa
 
 [Constant current LED with op-amp](https://www.allaboutcircuits.com/technical-articles/the-basics-behind-constant-current-led-drive-circuitry/)
 
-## Gate
+## Gate & Trigger
 
 Use [two-transistor gate output from Graham Hinton](https://modwiggler.com/forum/viewtopic.php?p=2720659&sid=8184a7a1e66cf2090d4727f4a460bd16#p2720659):
 

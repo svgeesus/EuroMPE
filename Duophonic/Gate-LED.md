@@ -18,6 +18,7 @@ PWM: native on Teensy, or use a PWM LED driver chip like:
 
 - [PCA9685](https://www.adafruit.com/product/815) (16 channels, I2C)
 - [TLC59711](https://www.adafruit.com/product/1455) (12 channels, SPI, 15mA, 5 to 17V.)
+- [NCP5623](https://www.mouser.com/ProductDetail/onsemi/NCP5623DTBR2G?qs=atIEnC%2F2K4UXlMf9SxIM5g%3D%3D) (3 channels, 5bit, I2C, fixed address)
 
 Mouser out of stock bare TLC59711 but carries the Adafruit boards which are 22.75mm x 28.38mm so minimum 6HP (30mm) for that part.
 
@@ -26,6 +27,8 @@ Voltage translation: SN74AHCT125 (up to 5V5) or LED driver does that too.
 Notice [this thread](https://forum.pjrc.com/threads/28460-teensy3-1-tlc59711-16-bit-led-driver-timing-issue-and-flicker?highlight=TLC59711) on using the Adafruit TLC59711 library. [Alternate library](https://github.com/ulrichstern/Tlc59711) with [wiki notes](https://github.com/ulrichstern/Tlc59711/wiki#electronics-notes) uses transactions, does not use old SPI clock multiplier.
 
 Also [this thread](https://forum.pjrc.com/threads/24599-IntervalTimer-and-LED-fading?highlight=TLC59711) on why Teensy PWM is better than a PWM chip; uses an op-amp integrator to smooth the PWM signal and to provide the current drive rather than getting it from the Teensy. LMV358 SOIC-8 dual op-amp is [cheap](https://www.mouser.com/ProductDetail/Diodes-Incorporated/LMV358SG-13) at $0.414/10, need 3 for 2 RGB LEDs.
+
+This is driven anode, but Pirhana RGB LEDs are common anode so this won't work.
 
 ![analog LED from PWM](./img/analogled.jpg)
 
@@ -46,3 +49,26 @@ Fixing the known inaccuracy in that schematic:
 ![gate2](./img/ramsden-gate-buffer.jpg)
 
 See also [Synth DIY: Gate Buffer ](https://synthnerd.wordpress.com/2016/03/17/synth-diy-gate-buffer/)
+
+Gate is +10V.
+
+Trigger is +10V for 10ms.
+
+## Boards
+
+Panel board with 4 jacks on one row, 2 LEDs above, one edge connector below.
+
+- 4 for gate and trig
+- 6 for two rgb
+- 4 for gnd
+
+Circuitry board with power connections (5V for level shifters, 10V for gate/trig),
+digital outs (4) for gate and trig,
+pwm outs (6) for two RGB LEDs,
+gnd connection to teensy.
+
+## Work Plan
+
+- experiment with level shifter & Teensy PWM to drive bare RGB LED. Looking for range of colors, flicker, CPU usage
+- breadboard two-transistor gate
+- sketch to output 10ms pulse with a timer.

@@ -12,9 +12,12 @@ Max PCB height **108mm**.
 Width for the two channels part is 6HP (30mm)
 because Adafruit TLC59711 breakout is 28.38mm.
 
+If using paired jacks (gate and trig, two pitch)
+then 8HP (40mm).
+
 ## Front jack spacing for duophonic output
 
-8 jacks (4 perf, two pitch, trigger, gate) 
+8 Thoniconn PJ398SM jacks (4 perf, two pitch, trigger, gate)
 which use 6.2mm holes,
 plus 5mm LED, 7.6mm square so allow 9mm?
 
@@ -41,6 +44,9 @@ Or, used width-wise,
 So 7 jacks plus LED seems fine with jacks width-wise;
 8 jacks plus LED may be ok but seems tight.
 
+Pairing gate & trig, pitch outs gives effective 6 high,
+but now wider.
+
 ## Perf DAC boards
 
 Perf DAC boards are 4 jacks high by 2 wide (for the front panel, jack board).
@@ -54,6 +60,8 @@ behind that the Perf DAC board itself, likely smaller.
 Need another set of controls next to that,
 4 pots for perf faders and one input for calibration.
 
+So keep these in a single line.
+
 ## Pitch DAC boards
 
 Pitch DAC boards are 2 jacks high by 2 wide (for the front panel, jack board).
@@ -62,6 +70,20 @@ Behind that a sandwich (three horizontal boards) two pich dac with the vref in b
 
 - (2 * 9) + 5.08 = **23.08mm** high
 - (2 * 12) = 5.08? = again 24 to 30mm wide.
+
+Or with paired outputs they are now 1 high by 4 wide,
+with spacing between the channels for visual grouping.
+Put the jacks vertically in that case,
+so 12mm high for jack body by 4 * 9 = 36mm wide
+in 8HP that leaves (40 - 36) = 4mm between channels,
+even if jacks but exactly against each other!
+
+Stacking headers 2.54mm allow 3mm.
+Tall ones are 8.5 to 11mm above the board; shorter ones are 7mm.
+Ensure good mechanical support (square pins, not blade pins)
+
+- (1 * 12) + (2 * 3) = **18mm** high
+- (4 * 9) = 36mm wide, minimum plus inter-channel space **40mm**
 
 ## Gate, Trigger & LED board
 
@@ -72,6 +94,20 @@ Board for gate and trigger transistors, level translators for LEDs, horizontal b
 Check: 51.24 + 23.08 + 29 +5.08 + 5.08 = 113.48mm so will not fit in 108!
 
 Will need to use staggered or offset jacks, not a single vertical row per channel.
+
+- (1 * 12) + 3 + 9 = **24mm** high
+- (4 * 9) = 36mm wide, minimum plus inter-channel space **40mm**
+
+One edge connector for all connections so:
+
+- 4 for gate and trig
+- 6 for two rgb
+- 4 for gnd
+
+at 40mm max width, 2.54 per connection, up to 15. So 14 wide fits well.
+
+Check: 51.24 + 18 + 24 + 5.08 + 5.08 = 103.4 so fits nicely in 108mm.
+But is now super wide and a bit cramped.
 
 ## MPU board
 

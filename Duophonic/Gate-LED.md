@@ -69,6 +69,7 @@ gnd connection to teensy.
 
 ## Work Plan
 
+- check two flush side-by-side Thonkiconn allow patch cables to be inserted without fouling
 - experiment with level shifter & Teensy PWM to drive bare RGB LED. Looking for range of colors, flicker, CPU usage
 - breadboard two-transistor gate
 - sketch to output 10ms pulse with a timer.

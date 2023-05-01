@@ -14,9 +14,11 @@ Needs to be 14-bit capable to fully implement the HR aspect, but precision requi
 _AD5648-2_ octal 14-bit DAC ($19.91, got one) NO unsuitable due to zero and gain offsets. Internal VRef of 2.5V gives unipolar 5V output. Better performance from the -2 devices at 5V than the -1 devices at 3V3. Fig. 31 shows **100mV** (!!) error when sourcing or sinking 2mA. Internal 2V5 reference with 2x gain, can use external (5V) ref. Notice most of the graphs in datasheet use an external reference :)
 Vref seems to give a couple of mV error in output wrt temperature. Fig.54 shows 4mV error in internal ref wrt temperature.
 
-**DAC8168C** (or DAC8168ICPW  seems more available) octal 14-bit DAC (TSSOP-16, $27.26, **got 4 Jan 2018** ) much better offsets ±1 / ±4 mV.
+**DAC8168C** (or DAC8168ICPW  seems more available) octal 14-bit DAC (TSSOP-16, $27.26, **got 3, 4 Jan 2018** ) much better offsets ±1 / ±4 mV.
 
 (Note to self:_ This is the 14-bit version of the DAC8568 which I used in another  (mainly through-hole) project, OctalDAC wavemix).
+
+TSSOP-14 DAC has neither CLR nor LDAC, only needs 3 lines through level shifter. However best (C) grade is TSSOP-16.
 
 ![DAC](./img/DAC8168-16-pinout.png)
 
@@ -32,9 +34,6 @@ Needs level shifter for SPI. Use second SPI channel on Teensy 4.1. One quad shif
 
 **74AHCT125** Quad Level-Shifter (SSOP-14, **got 10 Jan 2018** plus 10 DIP)  good for SPI, fast enough.
 Vdd abs max -0.5V to +7V so good for 5V5. Enables are active low, so tie all to ground.
-
-TSSOP-14 DAC has neither CLR nor LDAC, only needs 3 lines through level shifter. However best (C) grade is TSSOP-16.
-
 
 ## Vref
 
@@ -52,9 +51,9 @@ DNL 30μV / 150μV (±0.1 / ±0.5 LSB)
 
 Gain error 0.5mV / 7.5mV (±0.01% / ±0.15% of FSR) with  5μV (±1 ppm of FSR)/°C drift
 
-Offset error  ±1 / ±4 mV with ±0.5 μV/°C drift
+Offset error ±1 / ±4 mV with ±0.5 μV/°C drift
 
-Zero error 	1mV / 4mV with  ±2 μV/°C drift
+Zero error 1mV / 4mV with  ±2 μV/°C drift
 
 At 0 to 5V, 1LSB is 306μV. TL071 with 3mV offset is now significant wrt typical (but not max) offsets.
 
@@ -94,13 +93,13 @@ OPA4192 out of stock at Mouser. OPA4187?? (0.2V/μs $5.60/10 in stock) seems ove
 - [my slew rate question on MW in 2018](https://modwiggler.com/forum/viewtopic.php?t=202240)
 - [interpolation in midi-vs-cv](https://www.elektronauts.com/t/midi-vs-cv/156000/123)
 - [zipper noise in MIDI to CV](https://gearspace.com/board/electronic-music-instruments-and-electronic-music-production/718498-zipper-noise-kenton-pro-2000-mkii.html)
+- [MIDI vs I2C CV control on Haken Continuum driving Moog Voyager](https://www.hakenaudio.com/voltage-converter) notes excessive smoothing in Moog MIDI to CV generation limits expressive attack
 
 Bipolar operation is possible (datasheet p.47) but not needed here, all the MIDI CC are unipolar for the MPE performance controls. So *could* use singe-rail op-amps which swing to 0V on input and output. Probably easier to use bipolar devices though.
 
 Given wide variety of op-amp capabilities, fluctuating pricing and wildly varying lead times and availability, split perf dac board into the DAC part and the buffer/slew part so one can be built with cheap parts then another with better parts, for testing and to avoid replacing the DAC. Standardize on one op-amp footprint, so SOIC-14 quad or TSSOP-14 quad.
 
 Op-amp board needs bipolar supply OR R/R in and out op-amps to ensure accurate 0V. Bipolar is easier. Check CMRR though.
-
 
 ## Fading (all voice 'attenuators')
 
@@ -139,6 +138,7 @@ See [32bit SPI to DAC8168](https://forum.pjrc.com/threads/72317-Dac8568-gt-dac81
 
 - Breadboard op-amp slew circuit, test with any DAC stepped at 7bit resolution. Get good capacitor values for sufficient slew.
 - Check existing parts stock, to be sure.
+- Select an op-amp for post-dac conditioning.
 - Lay out panel jack PCB and op-amp PCB, check enough room for connectors and easy to route
 - Lay out perf DAC board, send to OSH Park to enable testing a populated DAC board.
 - Order parts

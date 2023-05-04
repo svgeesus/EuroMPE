@@ -134,10 +134,11 @@ PCB
 
 Right-angle 0.1" connectors
 (1) Adafruit Break-away 0.1" 36-pin strip right-angle male header (10 pack) **$5.95**
-https://www.adafruit.com/product/1540
+https://www.adafruit.com/product/1540 out of stock
+TE 9-103329-0 40-position **$2.31**
 
 Double ended connectors
-Adafruit Extra-long break-away 0.1" 16-pin strip male header (5 pieces) **$3.00**
+Adafruit Extra-long break-away 0.1" 16-pin strip male header (5 pieces) **$3.00 GOT**
 https://www.adafruit.com/product/400
 
 ## Work plan

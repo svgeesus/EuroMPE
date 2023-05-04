@@ -139,7 +139,7 @@ Board [ordered at OSH Park](https://oshpark.com/shared_projects/gQY5hg1l) 31 Mar
 
 (2) Susumu [RR1220P-221-D ](https://www.mouser.com/ProductDetail/Susumu/RR1220P-221-D) 0805 220R 0.5% 25ppm $0.127/10 = **$1.27**
 
-(1) Any 0805 10k will do.
+(1) Any 0805 10k will do. Susumu RR1220P-103-D 
 
 ### Op-Amps
 

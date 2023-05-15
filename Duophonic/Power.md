@@ -9,15 +9,15 @@ Usual (bad) Eurorack power over ribbon cable with +12V, 0V, -12V and optional +5
 Module uses two ribbon cables. 0V on one is treated as digital ground, and +5V on that cable powers digital circuits. 
 0V on the other is treated as analog ground, with +12 and -12 powering op-amps and secondary voltage regulators.  
 This means the connection between digital and analog occurs at the PSU busboard. 
-This should reduce digital return currents on analog ground. However, digital 0V to SPI DAC meets analog 0V unless isolator is used.
+This should reduce digital return currents on analog ground. However, digital 0V to SPI DAC meets analog 0V unless isolator is used, and other connections between grounds will occur due to panel jacks and external patching.
 
 ## DAC power
 
-Performance DACs, and the Global DAC  run at 5V5 so there is headroom above the internal 5V reference. High voltage side of the logic level converters for those DACs use 5V5 also. Derived from +12V.
+Performance DACs, and the Global DAC  run at 5V5 so there is headroom above the internal 5V reference. High voltage side of the logic level converters for those DACs use 5V5 also **is that still true**. Derived from +12V.
 
-Pitch DACs run at ±9.5V and the Vref for those can use the +9.5 rail as well. No logic level conversion needed.
+Pitch DACs run at ±9.5V and the Vref for those uses ±9.5V as well. No logic level conversion needed, pitch DAC is 3V3 compatible.
 
-Use LT1763 (SOIC-8, 500mA) adjustable regulators (500mA is ample) to produce 5V5 and 9V5, with 6μ8 C0G output cap. -9V5 from LT1964 adjustable (SOT-23, 200mA still plenty).
+Use LT1763 (SOIC-8, 500mA) adjustable regulators (500mA is ample) to produce 5V5 and 9V5, with 6μ8 C0G output cap. -9V5 from LT1964-BYP adjustable (SOT-23, 200mA still plenty).
 
 ## Microcontroller power
 
@@ -38,6 +38,10 @@ Same as Pitch DAC power.
 To be determined. Options for (about) 5V, 8V gates useful. Exact level not critical.
 
 ## Analog power board
+
+Eurorack power connector, usual 10μF smoothing caps (or greater)?
+Top plane mostly gnd (for low impedance and also cooling) with traces for ±9V5;
+bottom plane gnd (again for cooling), well stitched to top, with traces for ±12V.
 
 ### LT1763 for 9V5
 

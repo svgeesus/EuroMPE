@@ -84,7 +84,7 @@ Are chopper amps suitable here? LT1150 operates on 12V bipolar supples, has 10μ
 
 Note "This unity-gain difference amplifier (equal resistors) causes the input difference voltage (V2-V1) to be impressed on R5; the resulting current flows to the load. The offset voltage, however, is applied directly to the noninverting input and is amplified by +2 – like a noninverting amplifier (G = 1 + R2/R1). Thus, a 10-mV offset voltage creates 20 mV across R5, producing a 20mA output current offset. A -10-mV offset would create a -20-mA output current (current sinking from the load)."
 
-Should the output buffer be able to drive a capacitive load (so, two resistors and cap in feedback loop).
+Should the output buffer be able to drive a capacitive load (so, two resistors and cap in feedback loop). Chosen values (4k7, 3n3) give a 10kHz cuttoff which seems ample.
 
 ![capacitive load circuits](./img/x2077_capacitive_loads.png)
 
@@ -109,7 +109,7 @@ Put a couple of standoff holes here to secure the two DAC boards together? NO tr
 
 ![Board](./img/pitchdac-board.png)
 
-Board [ordered at OSH Park](https://oshpark.com/shared_projects/gQY5hg1l) 31 Mar 2023.
+Board [ordered at OSH Park](https://oshpark.com/shared_projects/gQY5hg1l) 31 Mar 2023. GOT.
 
 ![osh](./img/pitchdac-top-osh.png)
 

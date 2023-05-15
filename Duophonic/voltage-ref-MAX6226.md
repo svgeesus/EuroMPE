@@ -65,7 +65,7 @@ Decoupling caps.
 
 Power input: 4 wires +9.5, 0V, 0V, -9.5.
 
-1μF and 100nF input caps, 100nF noise cap, 1μF and 100nF output caps, all C0G ceramic.
+1μF and 100nF input caps, 100nF noise cap, 1μF and 100nF output caps, all C0G ceramic. Later went for X7R on the 1μF for cost and footprint reasons.
 
 OutF and OutS join at inverting op-amp input.
 
@@ -74,12 +74,13 @@ Voltage output: pair of 4-pin headers
 - +5 +5 0V 0V
 - -5 -5 0V 0V
 
-Pin 8 clear of copper, mask (no mechanical connection).
+Pin 8 is (per spec sheet) clear of copper, mask (no mechanical connection).
 
-Full bottom ground plane; top ground plane with vias by caps and GND connection, runs under device (like eval kit, contrary to data sheet?). Thick input and OutF traces; narrow NR, OutS.
+Full bottom ground plane; top ground connections with vias by caps and GND connection, runs under device (like eval kit, contrary to data sheet?). Thick input and OutF traces; narrow NR, OutS.
 see [EEVBlog posting](https://www.eevblog.com/forum/metrology/max6226-vref-and-ground-planes/)
 
 ?? Try a U cutout around the MAX-6226 for rigidity and freedom form humidity effects.
+NO. No evidence this helps, especially on a board this small.
 
 > Note that although the MAX6226’s ceramic package
 prevents the output voltage from being affected by
@@ -104,38 +105,42 @@ redistribution.
 > We detected a 2 layer board of 1.99 x 1.15 inches (50.5 x 29.2mm)
 > 3 boards will cost $11.40 
 
-Board [ordered at OSH Park 31 Mar 2023](https://oshpark.com/shared_projects/fTokzv8n)
+Board [ordered at OSH Park 31 Mar 2023](https://oshpark.com/shared_projects/fTokzv8n) Got.
 
 ![osh](./img/vref-top-osh.png)
 
 ## BOM
 
-Voltage reference
+### Voltage reference
 
 (1) AD MAX6226ALA50+ Ceramic LCC $11.79/1 = **$11.79** get 3
 
-Low Vos low Ibias precision op-amp (dual)
+### Low Vos low Ibias precision op-amp (dual)
 
 (1) TI OPA2186DR SOIC-8 $2.22/10 = **$22.20**
 
-Decoupling and NR caps
+### Decoupling and NR caps
 
 (4) Kemet C1206C104K3GEC7210 25V 100nF C0G 1206 ceramics $0.051/100 = **$5.10 GOT**
 
-Bulk ceramic caps
+### Bulk ceramic caps
 
 (2) Kemet C1206X105K3RACTU  25V 1μF X7R 10% 1206 ceramic $0.839/10 = **$8.39**
 
-Low-ppm close tolerance resistors
+### Low-ppm close tolerance resistors
 
 (2) Susumu RG2012V-103-P-T1 10k 0.02% 5ppm 0805 $2.57/25 = **$64.25 GOT**
+Same as is used for the offsets module.
 
-PCB
+### PCB
+
+### Pin connectors
 
 Right-angle 0.1" connectors
 (1) Adafruit Break-away 0.1" 36-pin strip right-angle male header (10 pack) **$5.95**
 https://www.adafruit.com/product/1540 out of stock
-TE 9-103329-0 40-position **$2.31**
+
+TE 9-103329-0 40-position **$2.31/1**
 
 Double ended connectors
 Adafruit Extra-long break-away 0.1" 16-pin strip male header (5 pieces) **$3.00 GOT**

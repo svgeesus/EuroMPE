@@ -1,3 +1,6 @@
 # EuroMPE
 
-Eurorack MPE implementation, 2 to 8 voices
+Eurorack MPE implementation:
+
+- [Polyphonic](./Polyphonic/Design%20notes.md), 4 to 8 voices (historical)
+- [Duophonic](./Duophonic/readme.md), 2 voices

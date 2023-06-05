@@ -1,0 +1,31 @@
+inverting mixer with 10k 0.1% resistors and no Vos
+
+9,990 / 10,010 = 0.998001998002
+10,010 / 9,990 = 1.002002002002 10mV on 5V
+
+even with LT5400 0.01% resistor pack:
+
+9,999 / 10,001 = 0.999800019998
+10,001 / 9,999 = 1.000200020002 1mV on 5V
+
+
+Use pair of resistors, plus high value trimmer (connected as rheostat) in parallel with the higher of the two. 70% trimmer value should, in parallel, bring the two into balance. Gives adequate trim range with less effect on tempco and no need for super low resistance (10 ohm, 1 ohm) trimmers.
+
+Gain imbalances from mismatched resistors much more significant than small offsets from op-amps; and affect tracking more.
+
+Candidates for pitch CV:
+
+OPA2227U (not PA) good for typ but wide max spread. Dual.
+    ±5μV typ ±75μV max at 25C ±100μV max at -40 to +85C
+
+OPA2277U (not UA) better on max spread. SOIC-8 dual (quad not in high grade)
+    ±10μV typ ±20μV max at 25C ±50μV max at -40 to +85C
+
+**OPA4192ID** SOIC-14 **quad**. ±8μV typ ±50μV max at -40 to +85C
+
+LTC2057 chopper. Possible chopper noise/breakthrough. *single only* "too good". Problems if current drawn exceeds 1mA, chopper breakthrough. Frequency beating.
+    0.5μV typ 4μV max at 25C 5μV max at -40 to +85C
+
+excluded:
+
+LT1013 (non-DIP packages have 300μV max at 25C)

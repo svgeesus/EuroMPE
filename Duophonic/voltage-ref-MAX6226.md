@@ -152,5 +152,5 @@ https://www.adafruit.com/product/400
 - [x] Fab board
 - [x] Check existing component inventory
 - [x] order Vref, op-amp (same as pitch DAC uses)
-- [ ] build, test
-- [ ]burn-in
+- [ ] Build, test
+- [ ] Burn-in

@@ -82,13 +82,13 @@ Not clear that the two non-MPE modes are needed. Better if the module accepts ei
 
 ## Tuning
 
-Like the original EuroMPE, there should be a [tuning input](../calibration.md) which displays the current note; an auto-tuning mode can use this to calculate a linearising calibration curve. Because this is setup not playing, it's okay to go to a menu for this.
+Like the original EuroMPE, there should be a [tuning input](../Polyphonic/calibration.md) which displays the current note; an auto-tuning mode can use this to calculate a linearising calibration curve. Because this is setup not playing, it's okay to go to a menu for this.
 
 ?? Because the tuner is in the same module as the MIDI interface, it knows when the gates are low and can do auto-tuning for drift control after x minutes of inactivity ??
 
 ## Voltage reference
 
-For the pitch DAC, a Max 6226 hermetic ceramic is used, see [](voltage-ref-MAX6226.md).
+For the pitch DAC, a Max 6226 hermetic ceramic is used, see [Vref](./voltage-ref-MAX6226.md).
 For the performance DACs, the internal reference on the octal DAC is easily sufficient.
 
 ## Main MPU board

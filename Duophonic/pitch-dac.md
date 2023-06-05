@@ -151,9 +151,9 @@ Board [ordered at OSH Park](https://oshpark.com/shared_projects/gQY5hg1l) 31 Mar
 
 ## Work Plan
 
-- Have one DAC.
-- Check slew rate and corner freq for 4k7, 220R, 1nF; breadboard with TL074 to check.
-- Get OPA2186DR, other components for one board
-- Lay out board, fab
-- Build and test one DAC board with (previously tested) VREF board.
-- If all okay, order 2 more DAC and components for other board. Else refine, redo board.
+- [x] Have one DAC.
+- [ ] Check slew rate and corner freq for 4k7, 220R, 1nF; breadboard with TL074 to check.
+- [x] Get OPA2186DR, other components for one board
+- [x] Lay out board, fab
+- [ ] Build and test one DAC board with (previously tested) VREF board.
+- [ ] If all okay, order 2 more DAC and components for other board. Else refine, redo board.

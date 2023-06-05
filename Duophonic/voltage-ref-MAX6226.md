@@ -148,8 +148,9 @@ https://www.adafruit.com/product/400
 
 ## Work plan
 
-- Design vref board with dual op-amp
-- Fab board
-- Check existing component inventory
-- order Vref, op-amp (same as pitch DAC uses)
-- build, test, burn-in
+- [x] Design vref board with dual op-amp
+- [x] Fab board
+- [x] Check existing component inventory
+- [x] order Vref, op-amp (same as pitch DAC uses)
+- [ ] build, test
+- [ ]burn-in

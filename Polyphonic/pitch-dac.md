@@ -33,6 +33,7 @@ Alternatively, use 4-channel digital isolator to prevent coupling of high speed 
 ## Initial accuracy
 
 ### AD5542CRZ
+
 1LSB is 10V / 2^16 = 152μV. At 1V/Oct, 12 tones per octave, 100 cents per tone, 1 Cent is 833μV so 1 LSB is about 1/5 cent.
 
 INL is ±0.5 (typ) ±1.0 (max) LSB for best (C) grade = 15ppm.
@@ -72,7 +73,6 @@ Unlike previous project, use a dual op-amp [noninv OP-A, OP-B check common mode 
 
 DAC input resistance is highly code-dependent. For AD5542CRZ lowest (around 7.5kΩ) at 0x8555 which is 660 μA at 5V. For AD5781ARUZ, lowest (around 5kΩ) which is 1mA at 5V.
 
-
 ## Output conditioning
 
 With a 5V ref and an output buffer [unity OP-C, no external components] this gives ±5V output (10 octaves) which includes Note-ON voltage, global pitchbend, and per-note pitchbend. Note that this does not cover the full MIDI note range of 128 notes = 10.66 octaves. Is that an issue in practice?
@@ -95,7 +95,6 @@ LT5400 A-grade resistor pack. 0.01% _within-package_ matching, 0.2ppm/°C within
 
 3250 has 5% tolerance, 10Ω has effective resolution of 1.3% (130 mΩ), tempco ±50ppm/C
 Maybe better to use a non-wirewound on such a small resistance. Or use a high value, in parallel with one resistor of the divider to lower the value slightly. Jumper selects which one to lower.
-
 
 Needs error analysis to be sure the error budget from resistor matching is reasonable. Breadboard this with OPA2777PA to measure performance, in particular gain error and offsets. Assume  0.01% quad resistor pack, possibly with trimmers too. Needs DAC on a SOIC to DIP breakout board [GOT].
 

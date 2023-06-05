@@ -28,17 +28,17 @@ Five samples of LM399AH from Linear.com were tested. All have datecode  week 50,
 
 Samples 1, 4 & 5 on breadboard. Samples 2,3 on Ian Johnston burn-in board with two different op-amp choices. Circuit for sample 3 did not work; needs to be desoldered and tested in a new circuit.
 
-![LM399-1](img/LM399/399-1-Vz.png) ![LM399-1-hist](img/LM399/399-1-Vz-hist.png) ![LM399-1-trend](img/LM399/399-1-Vz-trend.png)
+![LM399-1](../img/LM399/399-1-Vz.png) ![LM399-1-hist](../img/LM399/399-1-Vz-hist.png) ![LM399-1-trend](../img/LM399/399-1-Vz-trend.png)
 
-![LM399-2](img/LM399/399-2-Vz-b.png) ![LM399-2-hist](img/LM399/399-2-Vz-hist-b.png) ![LM399-2-trend](img/LM399/399-2-Vz-trend.png)
+![LM399-2](../img/LM399/399-2-Vz-b.png) ![LM399-2-hist](../img/LM399/399-2-Vz-hist-b.png) ![LM399-2-trend](../img/LM399/399-2-Vz-trend.png)
 
-![LM399-4](img/LM399/399-4-Vz.png) ![LM399-4-hist](img/LM399/399-4-Vz-hist.png) ![LM399-4-trend](img/LM399/399-4-Vz-trend.png)
+![LM399-4](../img/LM399/399-4-Vz.png) ![LM399-4-hist](../img/LM399/399-4-Vz-hist.png) ![LM399-4-trend](../img/LM399/399-4-Vz-trend.png)
 
-![LM399-5](img/LM399/399-5-Vz.png) ![LM399-5-hist](img/LM399/399-5-Vz-hist.png) ![LM399-5-trend](img/LM399/399-5-Vz-trend.png)
+![LM399-5](../img/LM399/399-5-Vz.png) ![LM399-5-hist](../img/LM399/399-5-Vz-hist.png) ![LM399-5-trend](../img/LM399/399-5-Vz-trend.png)
 
 After ageing (2 months), Ian Johnston burn-in board with 0.01% 2ppm resistors, LTC2050 op-amp, 10.9V power supply, bubble-wrap insulation on both sides of LM399: **10.201,25V sd 11μV**. Long run, temperature varied 19 to 24C as histogram shows.
 
-![LM399-2-10V](img/LM399/399-2-10v-b.png) ![LM399-2-10V hist](img/LM399/399-2-10v-hist-b.png) ![LM399-2-10V trend](img/LM399/399-2-10v-trend-b.png)
+![LM399-2-10V](../img/LM399/399-2-10v-b.png) ![LM399-2-10V hist](../img/LM399/399-2-10v-hist-b.png) ![LM399-2-10V trend](../img/LM399/399-2-10v-trend-b.png)
 
 ## Temperature
 

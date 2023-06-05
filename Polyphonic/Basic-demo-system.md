@@ -23,7 +23,7 @@ Quad modules should also have per-voice CV control for expression.
 
 [Example system](https://www.modulargrid.net/e/racks/view/901763) using a Vermona 4-voice as a placeholder for the MPE MIDI to CV.
 
-![sample system](img/fur-voice.png)
+![sample system](../img/fur-voice.png)
 
 ### Doepfer [A-111-4](http://www.doepfer.de/A1114.htm) quad oscillator
 
@@ -73,7 +73,7 @@ Stereo, electronically balanced output module with level/clip indicators.
 
 ### [rack by ckwjr](https://www.muffwiggler.com/forum/viewtopic.php?p=3025615#3025615)
 
-![ckwjr](img/ckwjr.png)
+![ckwjr](../img/ckwjr.png)
 
 CV/gate only from the Hermod.
 

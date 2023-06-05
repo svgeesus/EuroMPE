@@ -19,12 +19,12 @@ Quick breadboard (untrimmed) shows +10V = 9.99962 sd 50μV and +5V = 4.99862 sd 
 
 After powering for 4 days (100 hours), socketed on soldered protoboard, with trim, +5V = mean 5.000 003 sd 42μV with a range of 4.999 94 to 5.000 10 (a range of 160μV). Keysight 34465A @ 20C, 10PLC, 597 samples.
 
-![Mean 5.000 003V](img/AD588/5V-trimmed.png)
-![%v range histogram](img/AD588/5V-range2.png)
+![Mean 5.000 003V](../img/AD588/5V-trimmed.png)
+![%v range histogram](../img/AD588/5V-range2.png)
 
 Still some random wandering, possibly noise spikes on the power rails from switching PSU.
 
-![Wandering](img/AD588/5V-wandering2.png)
+![Wandering](../img/AD588/5V-wandering2.png)
 ![Still wandering time series](img/AD588/5V-still-wandering.png)
 
 ## Temperature
@@ -42,7 +42,8 @@ Temp measurement by DS18B20 thermally epoxied to the Vref chip. Use direct power
 
 "But anyhow, HP engineers originally designed this circuit to run on 95°C, also due to the required ambient temperature of 55°C.
 That causes a higher drift than intended originally by LT: running on 65°C instead gives typically -1.. -2ppm/year, and other designs of 8 1/2 digit DMM, standards and calibrators use 45..55°C oven temperature for around 1..2 ppm/year guaranteed stability."
-[EEVBlog 34465A discussion]http://www.eevblog.com/forum/testgear/keysight's-new-34465a-(6-5-digit)-and-34470a-(7-5-digit)-bench-multimeters/msg626805/#msg626805
+
+[EEVBlog 34465A discussion](http://www.eevblog.com/forum/testgear/keysight's-new-34465a-(6-5-digit)-and-34470a-(7-5-digit)-bench-multimeters/msg626805/#msg626805)
 
 - [Maxim DS18B20 product page](https://www.maximintegrated.com/en/products/analog/sensors-and-sensor-interface/DS18B20.html)
 - [DS18B20 (9 bit) vs. DS18S20 (12 bit)](https://www.maximintegrated.com/en/app-notes/index.mvp/id/4377)
@@ -116,9 +117,9 @@ Much worse than comparable (and cheaper!) references: 200 max μV/V (10.8 to 18V
 
 My case has switching power supplies which give stable but noisy power lines.
 
-![+12 volts](img/AD588/PS-+12V.png)
-![-12 volts](img/AD588/PS--12V.png)
-![ripple](img/AD588/PS-AC-ripple.png)
+![+12 volts](../img/AD588/PS-+12V.png)
+![-12 volts](../img/AD588/PS--12V.png)
+![ripple](../img/AD588/PS-AC-ripple.png)
 
 ### Secondary regulation
 

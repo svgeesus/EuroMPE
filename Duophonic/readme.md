@@ -5,10 +5,10 @@ this is a MIDI to CV Eurorack module
 with twin outputs:
 low-note priority and high-note priority.
 
-Re-utilising designs from the Euro-MPE project,
-this aims to be a high-precsion, flexible, and performance oriented
+Re-utilising designs from the polyphonic Euro-MPE project,
+this aims to be a high-precison, flexible, and performance oriented
 duophonic MIDI to Eurockack CV module.
-It's MPE compatible so there is expression on each of the two notes.
+It's MPE compatible, so there is independent expression on each of the two notes.
 
 ## MIDI connection
 
@@ -82,7 +82,7 @@ Not clear that the two non-MPE modes are needed. Better if the module accepts ei
 
 ## Tuning
 
-Like the original EuroMPE, there should be a [tuning input](../Polyphonic/calibration.md) which displays the current note; an auto-tuning mode can use this to calculate a linearising calibration curve. Because this is setup not playing, it's okay to go to a menu for this.
+Like the original polyphonic EuroMPE, there should be a [tuning input](./calibration.md) which displays the current note; an auto-tuning mode can use this to calculate a linearising calibration curve. Because this is setup not playing, it's okay to go to a menu for this.
 
 ?? Because the tuner is in the same module as the MIDI interface, it knows when the gates are low and can do auto-tuning for drift control after x minutes of inactivity ??
 

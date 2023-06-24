@@ -27,9 +27,9 @@ There are two voice channels:
 - Gate, see [Gate/LED](./Gate-LED.md).
 - Oscillator pitch CV, highly linear 18bit, low tempco DAC
   - includes pitchbend (Glide) and any microtuning
-  - See [Pitch DAC](pitch-dac.md)
+  - See [Pitch DAC](./pitch-dac.md)
 - Second (identical) pitch CV output
-- Four MPE-compatible expression outputs (14bit), see [Performance DAC](../performance-dac.md)
+- Four MPE-compatible expression outputs (14bit), see [Performance DAC](./performance-dac.md)
     1. Strike (attack velocity)
     2. Lift (release velocity)
     3. Slide (forward-back, CC 74)
@@ -37,7 +37,7 @@ There are two voice channels:
 
 ## Analog general CC CV
 
-There are also eight general CV outputs (14bit), re-using the same board design that produces the two channels of performance outputs. See [Performance DAC](../performance-dac.md). Perhaps (considering mainly the Roli Seaboard):
+There are also eight general CV outputs (14bit), re-using the same board design that produces the two channels of performance outputs. See [Performance DAC](performance-dac.md). Perhaps (considering mainly the Roli Seaboard):
 
 Top row
 

@@ -33,7 +33,9 @@ Logic level high is 0.625 * Vdd so 3.4V, ie it is a 5V logic device with that Vd
 Needs level shifter for SPI. Use second SPI channel on Teensy 4.1. One quad shifter handles CS (SYNC) plus SCLK and MOSI
 
 **74AHCT125** Quad Level-Shifter (SSOP-14, **got 10 Jan 2018** plus 10 DIP)  good for SPI, fast enough.
-Vdd abs max -0.5V to +7V so good for 5V5. Enables are active low, so tie all to ground.
+Vdd abs max -0.5V to +7V so good for 5V5.
+
+Enables are active low, so tie all to ground.
 
 ## Vref
 
@@ -45,7 +47,7 @@ Note internal Vref is disabled by default, see datasheet Table 5 for enable comm
 
 From **DAC8168C** datasheet, assuming internal Vref:
 
-INL 300μV / 1.2mV (±1 / ±4 LSB)
+INL 300μV / 1.2mV (±1 / ±4 LSB, typ / max)
 
 DNL 30μV / 150μV (±0.1 / ±0.5 LSB)
 
@@ -65,17 +67,19 @@ Long term drift (Fig.7) inside ±500μV (±100ppm) /2k hours
 
 10μV/V is fine here
 
-"The power applied to AVDD should be well-regulated and low noise. Switching power supplies and dc/dc converters often have high-frequency glitches or spikes riding on the output voltage. In addition, digital components can create similar high-frequency spikes as their internal logic switches states. This noise can easily couple into the DAC output voltage through various paths between the power connections an analog output"
+"The power applied to AVdd should be well-regulated and low noise. Switching power supplies and dc/dc converters often have high-frequency glitches or spikes riding on the output voltage. In addition, digital components can create similar high-frequency spikes as their internal logic switches states. This noise can easily couple into the DAC output voltage through various paths between the power connections an analog output"
+
+So powering from the analog, regulated 5V5 supply helps here.
 
 ## Load
 
 30μV/mA (sourcing)
 
-Internally buffered, but _poor_ load regulation; will need external buffer to protect from modular environment (like getting 12V plugged into an output by mistake) and to give current drive.
+Internally buffered, but _poor_ load regulation; will need external buffer to protect from modular environment (like getting 12V plugged into an output by mistake), to provide a constant high-impedance load for the DAC, and to give current drive with low output impedance.
 
 ## Support circuitry
 
-4.7μF + 100nF supply bypass caps on AVdd. 
+4.7μF + 100nF supply bypass caps on AVdd.
 "a 1μF to 10μF capacitor and 0.1μF bypass capacitor are strongly recommended".
 
 Optional 150nF cap for lower noise on Vref (likely not needed).
@@ -86,7 +90,9 @@ Optional 150nF cap for lower noise on Vref (likely not needed).
 
 Quad amps: TL074A is cheap (TL074ACDT 3mV/6mV, $0.867/10) but consider **OPA4172IPW** (200μV/1mV, 0 V/μs, 75mA 60Ω, $3.32/10, TSSOP-14, currently in stock) or OPA4197IDR (25μV/100μV, $3.96/10, out of stock), **OPA4202ID** (20μV/250μV, low slew rate 0.35V/μs, $2.81/10 SOIC-14 in stock) as non-inverting output buffers. Use innie current limiting resistor.
 
-Better to use a slew limiter or low-pass filter on the output, so one quad op-amp only does for 2 outputs. See circuit in TI [Single Op-Amp Slew Rate Limiter](http://www.ti.com/lit/pdf/TIDU026) for slew limiter. Needs fast recovery from overload, adequate slew rate. 5V/ms (160Hz lowpass) seems like a good starting point. Breadboard then examine stepped ramp on scope to determine optimal slew rate. "Op-amp slew rate = 10x-100x slew rate limiter value." OPA4202 likely too slow.
+DAC settling time, 1/4 scale to 3/4 scale is 10μs typ, so 20μs full scale and 40μs for fastest possible square wave = 25kHz in theory (will be slower).
+
+Better to use a slew limiter or low-pass filter on the output to avoid stair-stepping and VCA crackles; so one quad op-amp only does for 2 outputs. See circuit in TI [Single Op-Amp Slew Rate Limiter](http://www.ti.com/lit/pdf/TIDU026) for slew limiter. Needs fast recovery from overload, adequate slew rate. 5V/ms (160Hz lowpass) seems like a good starting point. Breadboard then examine stepped ramp on scope to determine optimal slew rate. "Op-amp slew rate = 10x-100x slew rate limiter value." OPA4202 likely too slow.
 OPA4192 out of stock at Mouser. OPA4187?? (0.2V/μs $5.60/10 in stock) seems over-specified for Vos, slow slew, and expensive
 
 OR do slew in software so it is configurable and can be disabled for true 14bit inputs.

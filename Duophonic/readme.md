@@ -18,18 +18,17 @@ There are three MIDI inputs
 2. USB device in, for DAW
 3. USB Host in, for USB keyboards
 
-
 ## Analog voice CV
 
 There are two voice channels:
 
 - color LED for gate and to indicate note played (12 color scale)
-- Gate, see [Gate/LED](./Gate-LED.md).
+- Gate and Trigger, see [Gate/LED](./Gate-LED.md).
 - Oscillator pitch CV, highly linear 18bit, low tempco DAC
   - includes pitchbend (Glide) and any microtuning
   - See [Pitch DAC](./pitch-dac.md)
 - Second (identical) pitch CV output
-- Four MPE-compatible expression outputs (14bit), see [Performance DAC](./performance-dac.md)
+- Four MPE-compatible expression outputs (14bit) per voice, see [Performance DAC](./performance-dac.md)
     1. Strike (attack velocity)
     2. Lift (release velocity)
     3. Slide (forward-back, CC 74)

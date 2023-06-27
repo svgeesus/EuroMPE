@@ -169,6 +169,8 @@ Then use broadcast mode to set all channels to zero.
 
 See [32bit SPI to DAC8168](https://forum.pjrc.com/threads/72317-Dac8568-gt-dac8168?p=321896&viewfull=1#post321896) using SPI.transfer32()
 
+[Asynchronous writes to multiple SPI channels](https://forum.pjrc.com/threads/61676-SPI-pins-teensy-4-1?p=245308&viewfull=1#post245308)
+
 ## Workplan
 
 - Breadboard op-amp slew circuit, test with any DAC stepped at 7bit resolution. Get good capacitor values for sufficient slew.

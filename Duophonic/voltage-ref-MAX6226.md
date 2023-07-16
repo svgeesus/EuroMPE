@@ -26,16 +26,17 @@ Very good at 5ppm.
 
 ## Long term drift
 
-"The data sheets of many references specify long-term drift—typically about 25 ppm/1000 hr. This error is proportional to the square root of elapsed time, so 25 ppm/1000 hr ≈ 75 ppm/year. The actual rate is likely (but not certain) to be somewhat better than this as the ageing rate often diminishes after the first few thousand hours. So, again, we have a figure around 14 bits."
+> The data sheets of many references specify long-term drift—typically about 25 ppm/1000 hr. This error is proportional to the square root of elapsed time, so 25 ppm/1000 hr ≈ 75 ppm/year. The actual rate is likely (but not certain) to be somewhat better than this as the ageing rate often diminishes after the first few thousand hours. So, again, we have a figure around 14 bits.
 [Choosing Voltage References](http://www.analog.com/en/analog-dialogue/raqs/raq-issue-114.html)
 
 11ppm/1k hr (55μV), worst on new device and settling over time.
 
 ## Current / Load
 
-Load regulation good: ±50μV/mA
+Load regulation good: ±50μV/mA and the load is high and constant.
 
-As this design drives two DACs, the kelvin connections only take us to the Vref and Vrefn buffers.
+As this design drives two DACs, the kelvin connections only take us to the Vrefp and Vrefn buffers.
+The [DAC boards](./pitch-dac.md) provide their own force/sense buffers to drive the voltage reference inputs on each DAC.
 
 ## Line regulation
 
@@ -48,6 +49,26 @@ Use same regulated +9.5V supply as pitch DACs. Off-board, to protect from therma
 ## Buffering
 
 Dual low-drift **OPA2186D** op-amp to provide the +5V Vref and -5V VrefN outputs needed by the pitch DACs.
+
+> For the reference buffers, the AD8676 dual amplifier is recommended, based on its low noise, low offset error, low offset error drift, and low input bias currents.
+>
+> Egan, M. _The 20-Bit DAC Is the Easiest Part of a 1-ppm-Accurate Precision Voltage Source_
+
+ <table>
+ <tr><td></td><th>noise</th><th>offset error</th><th>offset error drift</th><th>input bias current</th></tr>
+ <tr><th>AD8676B</th><td>125nV RMS</td><td>±12/50 µV</td><td>±0.2/±0.6 μV/°C</td><td>±4.5nA</td></tr>
+ <tr><th>OPA2186</th><td>0.1μV (100nV) p-p</td><td>±1/±10 µV</td><td>±0.01/±0.04 μV/°C</td><td>±4.8nA</td></tr>
+ </table>
+
+So the OPA2186 is comparable on some criteria and much superior on offset and offset drift.
+
+> The input bias current specification of the reference buffers is important, as excessive bias currents will degrade the dc linearity. The degradation of integral nonlinearity, in ppm, as a function of input bias current, is typically:
+>
+> Extra INL error = (0.2 * Ibias) / (Vrefp - Vrefn)^2
+>
+> where IBIAS is in nA; VREFP and VREFN are in volts. For example, with a ±10-V reference input span, an input bias current of 100 nA will increase the INL by 0.05 ppm.
+>
+> Egan, M. _The 20-Bit DAC Is the Easiest Part of a 1-ppm-Accurate Precision Voltage Source_
 
 Pair of close-tolerance low thermal drift resistors for the VrefN op-amp.
 Use of Vishay matched-pair resistors [suggested on EEVBlog](https://www.eevblog.com/forum/metrology/max6226-vref-and-ground-planes/msg4725761/#msg4725761) such as [these](https://www.mouser.com/ProductDetail/Vishay-Thin-Film/MPM2002QT3?qs=KOdD7VNvzR83jUiiLOdaaQ%3D%3D) 10k/10k 0.01% ratio, 25ppm/C.
@@ -113,11 +134,11 @@ Board [ordered at OSH Park 31 Mar 2023](https://oshpark.com/shared_projects/fTok
 
 ### Voltage reference
 
-(1) AD MAX6226ALA50+ Ceramic LCC $11.79/1 = **$11.79** get 3
+(1) AD MAX6226ALA50+ Ceramic LCC $11.79/1 = **$11.79** get 3 **GOT**
 
 ### Low Vos low Ibias precision op-amp (dual)
 
-(1) TI OPA2186DR SOIC-8 $2.22/10 = **$22.20**
+(1) TI OPA2186DR SOIC-8 $2.22/10 = **$22.20 GOT**
 
 ### Decoupling and NR caps
 
@@ -125,7 +146,7 @@ Board [ordered at OSH Park 31 Mar 2023](https://oshpark.com/shared_projects/fTok
 
 ### Bulk ceramic caps
 
-(2) Kemet C1206X105K3RACTU  25V 1μF X7R 10% 1206 ceramic $0.839/10 = **$8.39**
+(2) Kemet C1206X105K3RACTU  25V 1μF X7R 10% 1206 ceramic $0.839/10 = **$8.39 GOT**
 
 ### Low-ppm close tolerance resistors
 
@@ -140,7 +161,7 @@ Right-angle 0.1" connectors
 (1) Adafruit Break-away 0.1" 36-pin strip right-angle male header (10 pack) **$5.95**
 https://www.adafruit.com/product/1540 out of stock
 
-TE 9-103329-0 40-position **$2.31/1**
+TE 9-103329-0 40-position **$2.31/1** **GOT 3**
 
 Double ended connectors
 Adafruit Extra-long break-away 0.1" 16-pin strip male header (5 pieces) **$3.00 GOT**

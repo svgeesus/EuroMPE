@@ -44,6 +44,10 @@ Linearity Error Long-Term Stability is 0.03 LSB after 1k hours at 100C.
 
 Gain error (away from output voltage extremes) is 0.4ppm (typ) 20ppm FSR (max) = 2μV (typ) 100μV (max) with a gain error TC of ±0.04ppm FSR/C.
 
+Poorly documented LIN COMP register applies third-order residual non-linearity compensation. See [EEBlog post on AD6791 LIN COMP](https://www.eevblog.com/forum/metrology/ad5791-based-dac-platform/msg4938403/#msg4938403)
+
+> The specifications in this data sheet are obtained with LIN COMP = 0000 for reference spans up to and including 10 V and with LIN COMP = 1100 for a reference span of 20 V. The default value of the LIN COMP bits is 0000.
+
 ## Line regulation
 
 ±1 LSB for  ΔVdd ±10%, nothing specal needed for Vdd regulation here but ensure supply is low noise.
@@ -56,7 +60,7 @@ DAC output impedance is 3.4k for AD5781ARUZ so buffer with an op-amp on the outp
 
 ## Vref connection
 
-A pair of op-amps (one non inverting for VrefP, one inverting for VrefN) then, per pitch DAC, a pair of unity gain buffers for (required) kelvin connections. 
+A pair of op-amps (one non inverting for VrefP, one inverting for VrefN) then, per pitch DAC, a pair of unity gain buffers for (required) kelvin connections. DAC Vref input impedance is 5/6.6/? kΩ at midscale, but code dependent.
 
 AD5781 datasheet uses AD8676 (AD8676BRZ $6.89/1) dual op-amp for Vref buffers, which is 12uV typ 50uV max Vos, 2nA Ibias, very low noise rail-to-rail. R/R does not seem to be needed for a 5V output on ±12 or ±9.5 rails. Low input bias is _specifically needed_ to achieve the rated performance.
 
@@ -66,11 +70,9 @@ _OPA2197ID_ (OPA2197ID $2.97/1) dual is 25uV typ 100uV max Vos, 5nA Ibias so twi
 
 OPA4187IPW (1μV/10μV TSSOP-14 $5.60/10 in stock) quad a bit expensive
 
-DAC input resistance is highly code-dependent. For AD5781ARUZ, lowest (around 5kΩ) which is 1mA at 5V.
-
 ## Output conditioning
 
-With a 5V ref and an output buffer [unity OP-C, no external components] this gives ±5V output (10 octaves) which includes Note-ON voltage, global pitchbend, and per-note pitchbend. Note that this does not cover the full MIDI note range of 128 notes = 10.66 octaves. Not an issue in practice.
+With a ±5V ref and an output buffer in the "Unity Gain configuration" from the data sheet Fig. 51 this gives ±5V output (10 octaves) which includes Note-ON voltage, global pitchbend, and per-note pitchbend. Note that this does not cover the full MIDI note range of 128 notes = 10.66 octaves. Not an issue in practice.
 
 Op-amps here need a max Vos of 38μV (1LSB at 18bits), preferably better. Input bias current however is not as crucial here (unless Vref buffers and output buffers use the same quad.) 
 
@@ -78,11 +80,15 @@ AD8675 is the Analog Devices recommendation (mouser only has the less good A gra
 
 OPA197 an alternative. Or use a quad OPA4197 for both vref buffers, output, and one left over for slew limit if desired (not a good idea for pitch) or to drive two outputs. All hinges on unstable availability and huge lead times!
 
-**OPA2186D** same as Vref drivers looks suitable.
+**OPA2186D** same as Vref drivers looks suitable, with Vos = ±1/±10 µV.
 
 Are chopper amps suitable here? LT1150 operates on 12V bipolar supples, has 10μV max offset. Mouser $9.04 each, $8.28/10, $5.99/25 so go for 25 = 141.25 be damn sure they work first! **OPA4192D** (quad, SOIC-14 which performs better than the TSSOP) 8μV (typ) 50μV (max) $3.67/10 seems good, probably adequate (common-mode input to within 100mV of each rail) and cheaper.
 
-Note "This unity-gain difference amplifier (equal resistors) causes the input difference voltage (V2-V1) to be impressed on R5; the resulting current flows to the load. The offset voltage, however, is applied directly to the noninverting input and is amplified by +2 – like a noninverting amplifier (G = 1 + R2/R1). Thus, a 10-mV offset voltage creates 20 mV across R5, producing a 20mA output current offset. A -10-mV offset would create a -20-mA output current (current sinking from the load)."
+Because the OPA2186D has a low input bias of ±4.8nA the Fig. 52 Output Amplifier in Unity Gain with Amplifier Input Bias Current Compensation was not used on the first board revision.
+
+Note:
+
+> This unity-gain difference amplifier (equal resistors) causes the input difference voltage (V2-V1) to be impressed on R5; the resulting current flows to the load. The offset voltage, however, is applied directly to the noninverting input and is amplified by +2 – like a noninverting amplifier (G = 1 + R2/R1). Thus, a 10-mV offset voltage creates 20 mV across R5, producing a 20mA output current offset. A -10-mV offset would create a -20-mA output current (current sinking from the load).
 
 Should the output buffer be able to drive a capacitive load (so, two resistors and cap in feedback loop). Chosen values (4k7, 3n3) give a 10kHz cuttoff which seems ample.
 
@@ -117,17 +123,17 @@ Board [ordered at OSH Park](https://oshpark.com/shared_projects/gQY5hg1l) 31 Mar
 
 ### DAC
 
-(1) Analog Devices [AD5781ARUZ ](https://www.mouser.com/ProductDetail/Analog-Devices/AD5781ARUZ) $40.96  = **$40.96**
+(1) Analog Devices [AD5781ARUZ ](https://www.mouser.com/ProductDetail/Analog-Devices/AD5781ARUZ) $40.96  = **$40.96 GOT** has 1 already, got another 1 for now. Might be enough if no errors :)
 
 ### Stabilization film caps
 
-(2) Cornell Dubilier FCP0805H101J-J1 33pF 0805 $0.526/10 = **$5.26** [Mouser](https://www.mouser.com/ProductDetail/Cornell-Dubilier-CDE/FCP0805H101J-J1)
+(2) Cornell Dubilier FCP0805H101J-J1 33pF 0805 $0.526/10 = **$5.26 GOT** [Mouser](https://www.mouser.com/ProductDetail/Cornell-Dubilier-CDE/FCP0805H101J-J1)
 
 ### Bulk ceramic caps
 
-(2) Kemet C1206X105K3RACTU  25V 1μF X7R 10% 1206 ceramic $0.839/10 = **$8.39**
+(2) Kemet C1206X105K3RACTU  25V 1μF X7R 10% 1206 ceramic $0.839/10 = **$8.39 GOT**
 
-(10) Samsung CL31B106KAHNFNE  25V 10μF X7R 10% 1206 ceramic $0.094/10 =	**$1.88**  [Mouser](https://www.mouser.com/ProductDetail/Samsung-Electro-Mechanics/CL31B106KAHNFNE) get 20
+(10) Samsung CL31B106KAHNFNE  25V 10μF X7R 10% 1206 ceramic $0.094/10 =	**$1.88 GOT**  [Mouser](https://www.mouser.com/ProductDetail/Samsung-Electro-Mechanics/CL31B106KAHNFNE) get 20
 
 ### Decoupling and NR caps
 
@@ -135,24 +141,24 @@ Board [ordered at OSH Park](https://oshpark.com/shared_projects/gQY5hg1l) 31 Mar
 
 ### Resistors
 
-(2) Susumu [RR1220P-472-D ](https://www.mouser.com/ProductDetail/Susumu/RR1220P-472-D) 0805 4k7 0.5% 25ppm $0.13/10 = **$1.30**
+(2) Susumu [RR1220P-472-D ](https://www.mouser.com/ProductDetail/Susumu/RR1220P-472-D) 0805 4k7 0.5% 25ppm $0.13/10 = **$1.30 GOT**
 
-(2) Susumu [RR1220P-221-D ](https://www.mouser.com/ProductDetail/Susumu/RR1220P-221-D) 0805 220R 0.5% 25ppm $0.127/10 = **$1.27**
+(2) Susumu [RR1220P-221-D ](https://www.mouser.com/ProductDetail/Susumu/RR1220P-221-D) 0805 220R 0.5% 25ppm $0.127/10 = **$1.27 GOT**
 
-(1) Any 0805 10k will do. Susumu RR1220P-103-D 
+(1) Any 0805 10k will do. Susumu RR1220P-103-D **GOT**
 
 ### Op-Amps
 
-(2) TI [OPA2186DR](https://www.mouser.com/ProductDetail/Texas-Instruments/OPA2186DR) $2.22/10 = **$22.20**
+(2) TI [OPA2186DR](https://www.mouser.com/ProductDetail/Texas-Instruments/OPA2186DR) $2.22/10 = **$22.20 GOT**
 
 ### Schottky diode
 
-(1) Kyocera [SD0805S040S0R5](https://www.mouser.com/ProductDetail/KYOCERA-AVX/SD0805S040S0R5) 0805 40V $0.44/1 = **$1.32**
+(1) Kyocera [SD0805S040S0R5](https://www.mouser.com/ProductDetail/KYOCERA-AVX/SD0805S040S0R5) 0805 40V $0.44/1 = **$1.32 GOT 4**
 
 ## Work Plan
 
 - [x] Have one DAC.
-- [ ] Check slew rate and corner freq for 4k7, 220R, 1nF; breadboard with TL074 to check.
+- [ ] Check slew rate and corner freq for 4k7, 220R, 1nF; breadboard with TL074 to check. (Nope, oscilloscope busted)
 - [x] Get OPA2186DR, other components for one board
 - [x] Lay out board, fab
 - [ ] Build and test one DAC board with (previously tested) VREF board.

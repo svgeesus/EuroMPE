@@ -15,6 +15,8 @@ because Adafruit TLC59711 breakout is 28.38mm.
 If using paired jacks (gate and trig, two pitch)
 then 8HP (40mm).
 
+[Panel mockup (svg)](./mock-channel.svg)
+
 ## Front jack spacing for duophonic output
 
 8 Thoniconn PJ398SM jacks (4 perf, two pitch, trigger, gate)

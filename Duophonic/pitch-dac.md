@@ -48,6 +48,8 @@ Poorly documented LIN COMP register applies third-order residual non-linearity c
 
 > The specifications in this data sheet are obtained with LIN COMP = 0000 for reference spans up to and including 10 V and with LIN COMP = 1100 for a reference span of 20 V. The default value of the LIN COMP bits is 0000.
 
+Maybe check the linear vs. R2R segmentation, like [this EEVBlog post](https://www.eevblog.com/forum/metrology/ad5791-based-dac-platform/msg4610125/#msg4610125)?
+
 ## Line regulation
 
 ±1 LSB for  ΔVdd ±10%, nothing specal needed for Vdd regulation here but ensure supply is low noise.
@@ -59,6 +61,8 @@ Needs Schottky diode across power rails, see datasheet fig. 50.
 DAC output impedance is 3.4k for AD5781ARUZ so buffer with an op-amp on the output.
 
 ## Vref connection
+
+See [The 20-Bit DAC Is the Easiest Part of a 1-ppm-Accurate Precision Voltage Source](https://www.analog.com/en/analog-dialogue/articles/20-bit-dac-and-accurate-precision-voltage-source.html) for general guidance (with the 20 bit version of this DAC, the AD5791).
 
 A pair of op-amps (one non inverting for VrefP, one inverting for VrefN) then, per pitch DAC, a pair of unity gain buffers for (required) kelvin connections. DAC Vref input impedance is 5/6.6/? kΩ at midscale, but code dependent.
 

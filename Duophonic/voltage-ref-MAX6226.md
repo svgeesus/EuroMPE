@@ -46,6 +46,10 @@ Okay at 9 (typ) to 80 max μV/V.
 
 Use same regulated +9.5V supply as pitch DACs. Off-board, to protect from thermal effects.
 
+## Noise
+
+**Spectral noise** at 5V output is 145 nV/√Hz at 1kHz, reducing to 95 nV/√Hz with 100nF noise reducing cap. **Flicker noise** 2.85 μVP-P at 0.1-10Hz.
+
 ## Buffering
 
 Dual low-drift **OPA2186D** op-amp to provide the +5V Vref and -5V VrefN outputs needed by the pitch DACs.

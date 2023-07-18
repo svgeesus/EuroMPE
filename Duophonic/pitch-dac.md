@@ -36,19 +36,25 @@ To isolate from digital 0V noise, consider optical isolator. ISO724x high speed 
 
 1LSB is 10V / 2^18 = 38μV. At 1V/Oct, 12 tones per octave, 100 cents per tone, 1 Cent is 833μV so 1 LSB is about 1/20 cent.
 
-INL is ±2 (typ) ±4 (max) LSB for worst (A) grade = 15ppm.
+**INL** is ±2 (typ) ±4 (max) LSB for worst (A) grade = 15ppm.
 
-DNL at 5V vref is ±0.5 (typ) ±1.0 (max) LSB = 3.6ppm.
+**DNL** at 5V vref is ±0.5 (typ) ±1.0 (max) LSB = 3.6ppm.
 
-Linearity Error Long-Term Stability is 0.03 LSB after 1k hours at 100C.
+Linearity Error **Long-Term Stability** is 0.03 LSB after 1k hours at 100C.
 
-Gain error (away from output voltage extremes) is 0.4ppm (typ) 20ppm FSR (max) = 2μV (typ) 100μV (max) with a gain error TC of ±0.04ppm FSR/C.
+**Gain error** (away from output voltage extremes) is 0.4ppm (typ) 20ppm FSR (max) = 2μV (typ) 100μV (max) with a gain error TC of ±0.04ppm FSR/C.
 
 Poorly documented LIN COMP register applies third-order residual non-linearity compensation. See [EEBlog post on AD6791 LIN COMP](https://www.eevblog.com/forum/metrology/ad5791-based-dac-platform/msg4938403/#msg4938403)
 
 > The specifications in this data sheet are obtained with LIN COMP = 0000 for reference spans up to and including 10 V and with LIN COMP = 1100 for a reference span of 20 V. The default value of the LIN COMP bits is 0000.
 
 Maybe check the linear vs. R2R segmentation, like [this EEVBlog post](https://www.eevblog.com/forum/metrology/ad5791-based-dac-platform/msg4610125/#msg4610125)?
+
+## Noise
+
+**Spectral noise** 7.5 nV/√Hz at 1kHz, 10kHz and 100kHz.  Dwarfed by the Vref which is 10x noisier at 95 nV/√Hz even with the capacitor. **Flicker noise** 1.1 μV p-p, half that of the Vref.
+
+Board shields SPI lines with digital ground.
 
 ## Line regulation
 
@@ -88,7 +94,9 @@ OPA197 an alternative. Or use a quad OPA4197 for both vref buffers, output, and 
 
 Are chopper amps suitable here? LT1150 operates on 12V bipolar supples, has 10μV max offset. Mouser $9.04 each, $8.28/10, $5.99/25 so go for 25 = 141.25 be damn sure they work first! **OPA4192D** (quad, SOIC-14 which performs better than the TSSOP) 8μV (typ) 50μV (max) $3.67/10 seems good, probably adequate (common-mode input to within 100mV of each rail) and cheaper.
 
-Because the OPA2186D has a low input bias of ±4.8nA the Fig. 52 Output Amplifier in Unity Gain with Amplifier Input Bias Current Compensation was not used on the first board revision.
+Because the OPA2186D has a low input bias of ±4.8nA the Fig. 52 Output Amplifier in Unity Gain with Amplifier Input Bias Current Compensation was not used on the first board revision. Also there are [reports](https://www.eevblog.com/forum/metrology/ad5791-based-dac-platform/msg4965718/#msg4965718) that this compensation has little effect:
+
+> In the last two versions of AD5791-based multifunction calibrators, I have included support for both DAC modes (Gain 1x with Ib compensation and Gain 2x) to implement unipolar and bipolar ranges. During the tests, I did not find any measurable differences. Even the INL curve matches up to 0.1 ppm.
 
 Note:
 

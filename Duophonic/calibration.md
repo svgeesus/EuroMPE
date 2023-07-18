@@ -29,3 +29,7 @@ Current [panel](./Panel.md) has per-voice tuning inputs.
 Level from oscillator should be plenty high, no need for amplification. May need some low-pass filtering to get rid of above-audio signals that could cause false triggering?
 
 Main requirement is to hard clip to a 0..3V3 signal with a rail-to-rail op-amp so it can be fed to the Teensy. Experiment on breadboard.
+
+OPA2365 ($3.17/1) has specified overload recovery time < 0.1μs and RRIO. Use 2k current-limiting input resistor (<10mA) then rely on protection diodes.
+
+[Simple and fast precision clamp with RRIO](https://www.eevblog.com/forum/projects/limiting-op-amp-output/msg441564/#msg441564) and [even simpler](https://www.eevblog.com/forum/projects/limiting-op-amp-output/msg732673/#msg732673)

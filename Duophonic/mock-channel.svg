@@ -67,8 +67,11 @@
         <use href="#Thoniconn-vertical-ud" x="0" y="105.2"/> 
         <use href="#Thoniconn-vertical-ud" x="21" y="105.2"/> 
         <!-- to tune board, 2 groups of 3 at 0.1 inch -->
-        <rect x="16.2" y="109.3" width="2.54" height="7.62" style="fill:#855"/>
-        <rect x="37.2" y="109.3" width="2.54" height="7.62" style="fill:#855"/>
+        <rect x="9.5" y="109.3" width="2.54" height="7.62" style="fill:#855"/>
+        <rect x="30.5" y="109.3" width="2.54" height="7.62" style="fill:#855"/>
+
+        <rect x="1" y="83" width="38" height="34.4" style="stroke: #668"/>
+
         <rect x="0" y="76" width="40" height="41.4" style="stroke: #966"/>
     </g>
     <g>
@@ -103,6 +106,14 @@
     <use href="#Thoniconn-vertical" x="10" y="72"/> 
     <use href="#Thoniconn-vertical" x="21" y="80"/> 
     <use href="#Thoniconn-vertical" x="31" y="72"/> 
+
+    <!-- to op-amp buffer board, 4 groups of 3 (2 signal, 1 gnd) at 0.1 inch -->
+    <rect x="7" y="72" width="2.54" height="7.62" style="fill:#575"/>
+    <rect x="28" y="72" width="2.54" height="7.62" style="fill:#575"/>
+    <rect x="9.5" y="100" width="2.54" height="7.62" style="fill:#575"/>
+    <rect x="30.5" y="100" width="2.54" height="7.62" style="fill:#575"/>
+
+    <rect x="6" y="72" width="27.8" height="36" style="stroke: #686"/>
 
     <rect x="0" y="72" width="40" height="36" style="stroke: #966"/>
 

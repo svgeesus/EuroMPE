@@ -9,10 +9,7 @@ Max PCB height **108mm**.
 
 ## Width of two output channels
 
-Width for the two channels part is 6HP (30mm)
-because Adafruit TLC59711 breakout is 28.38mm.
-
-If using paired jacks (gate and trig, two pitch)
+Using paired jacks (gate and trig, two pitch)
 then 8HP (40mm).
 
 [Panel mockup (svg)](./mock-channel.svg)
@@ -115,12 +112,38 @@ But is now super wide and a bit cramped.
 
 [Teensy 4.1](https://www.pjrc.com/store/teensy41.html) is 61.7mm (around 12hp) long, 17.8mm wide, but allow extra space for whatever is plugged into the USB device port.
 
-Display is likely to be above the Teensy and PCB is 20 x 35mm.
+Display is likely to be above the Teensy and PCB is 20 x 35mm. (Adafruit diagram says 1.1 inches which is 33.02mm by 0.86 inch which is 21.844mm)
+
 Panel Size：30.00mm × 11.50mm × 1.45mm
+[0.91" 128x32 I2C OLED Display](https://www.adafruit.com/product/4440)
 
-Line of pushbuttons under display, 4 plus "back".
+Wow that looks tiny on such a big panel!
 
-Need room for rotary encoder. Could be right of display, above the pots/input lane.
+![panel](./img/oled-panel.png)
+
+**Check which version** the original and the STEMMA QT are slightly different sizes!
+
+![STEMMA PCB](./img/adafruit_products_0-91_STEMMA_OLED_fab_print.png)
+
+Group of pushbuttons to left of display, 3 plus "back". See [User Interface](./ui.md)
+
+<!-- Thonk C&K are huge, 12mm diameter, far too big -->
+
+[Adafruit Mini Soft Touch Push-button Switches](https://www.adafruit.com/product/3983) 6x6mm SMD.
+
+Need room for rotary encoder. Could be right of display.
+
+[Rotary Encoder - Illuminated](https://www.sparkfun.com/products/15141) Sparkfun
+
+Use as placeholder, not clear RGB led is needed here. 14mm wide 13.2m high but that excludes pins (14mm with pins). M9 threaded shaft, 6mm turning shaft.
+
+## Perf fading pots
+
+Song Huei short trimmer 9mm pots [from Thonk](https://www.thonk.co.uk/shop/short-trimmer-pots/). 10k gives 330μA per pot, *4 is 1.32mA total which seems fine. May be enough to avoid a buffer for the ADC?
+
+![trimmer](./img/SongHuei-trimmer.png)
+
+10.6mm wide at PCB footprint, 9.7mm wide body, 6mm shaft. 12.5mm high including pins. Shaft 5.5mm from top of body.
 
 ## Global outputs
 
@@ -133,3 +156,16 @@ USB Host, USB device, DIN Midi (not on PCB; panel mount).
 - [Panel mount USB-B to Micro-B cable](https://www.sparkfun.com/products/15463)
 (M3 holes 28.5mm spacing)
 - [USB host cable](https://www.pjrc.com/store/cable_usb_host_t36.html) no data sheet; **GOT**
+- [Deltron 650-0500](https://www.mouser.com/ProductDetail/Deltron/650-0500?) **GOT**
+
+![Deltron](./img/Deltron-650-0500.png)
+
+USB-B socket is 12mm wide, 11.16mm high. Hole is 8.45mm high, 7.78mm wide. Internal block 3.18mm high 5.6mm wide.
+
+![USB-B](./img/USB-B-receptacle.png)
+
+Dimensions of external bracket unknown, measure. For now assume 34mm wide, 16mm high
+
+![USB-B panel](./img/USB-panel.png)
+
+Dimensions of PJRC Host cable unknown, but as a placeholder [this cable](https://thepihut.com/products/panel-mount-usb-cable-a-male-to-a-female) has M3 screws 30mm apart, is 38.30 wide and 11.90 high.

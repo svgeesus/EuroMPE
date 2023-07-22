@@ -134,7 +134,7 @@
 
     <!-- <use href="#Deltron" x="-60" y="50"/> -->
     <!-- DIN socket -->
-    <g transform="translate(-58 54)">
+    <g transform="translate(-59 54)">
         <circle r="7.95"/>
         <circle r="8.925"/>
     </g>

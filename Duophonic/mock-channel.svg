@@ -87,6 +87,10 @@
             <circle r="4.5"/>
             <circle r="3" style="fill:#9F9"/>
         </symbol>
+        <symbol id="Teensy4.1vertical" width="18.3" height="61.7" viewbox="0 0 18.3 61.7">
+            <rect x="0" y="0.7" width="18.3" height="61" style="fill:#0602"/>
+            <rect x="5.12" y="0" width="8.06" height="5.7"/>
+        </symbol>
 
     </defs>
     <!-- outside edge of panel, 6HP -->
@@ -127,6 +131,7 @@
 
         <rect x="0" y="76" width="40" height="41.4" style="stroke: #966"/>
     </g>
+
     <g>
 
         <!-- <rect x="0" y="32.3" width="40" height="12" style="stroke: #966"/> -->
@@ -223,10 +228,11 @@
     <use href="#SparkfunRGBencoder" x="-24" y="12"/>
     <rect x="-70" y="10.5" width="64" height="22" style="stroke: #966"/>
 
+    <use href="#Teensy4.1vertical" x="-50" y="12"/>
 
     <!-- <use href="#Deltron" x="-60" y="50"/> -->
     <!-- DIN socket -->
-    <g transform="translate(-58 54)">
+    <g transform="translate(-59 54)">
         <circle r="7.95"/>
         <circle r="8.925"/>
     </g>

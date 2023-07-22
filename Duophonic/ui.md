@@ -17,6 +17,8 @@ They are instead used for:
 
 Monochrome OLED, 128x32 pixels 0.91 inch diagonal.
 
+[Many fonts for 128x32 displays](https://github.com/datacute/TinyOLED-Fonts/tree/master)
+
 ## Encoder
 
 Rotary encoder for menu scrolling, with integrated switch for "accept".

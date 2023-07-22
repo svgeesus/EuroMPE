@@ -57,9 +57,7 @@ behind that the Perf DAC board itself, likely smaller.
 - (2 * 12) + 5.08? = 24 to 30mm short side, probably squeeze up a bit to make less wide.
 
 Need another set of controls next to that,
-4 pots for perf faders and one input for calibration.
-
-So keep these in a single line.
+4 pots for perf faders.
 
 ## Pitch DAC boards
 
@@ -70,7 +68,7 @@ Behind that a sandwich (three horizontal boards) two pich dac with the vref in b
 - (2 * 9) + 5.08 = **23.08mm** high
 - (2 * 12) = 5.08? = again 24 to 30mm wide.
 
-Or with paired outputs they are now 1 high by 4 wide,
+With paired outputs they are now 1 high by 4 wide,
 with spacing between the channels for visual grouping.
 Put the jacks vertically in that case,
 so 12mm high for jack body by 4 * 9 = 36mm wide
@@ -105,14 +103,18 @@ One edge connector for all connections so:
 
 at 40mm max width, 2.54 per connection, up to 15. So 14 wide fits well.
 
+Also needs the two tuning inputs.
+
 Check: 51.24 + 18 + 24 + 5.08 + 5.08 = 103.4 so fits nicely in 108mm.
 But is now super wide and a bit cramped.
 
 ## MPU board
 
-[Teensy 4.1](https://www.pjrc.com/store/teensy41.html) is 61.7mm (around 12hp) long, 17.8mm wide, but allow extra space for whatever is plugged into the USB device port.
+[Teensy 4.1](https://www.pjrc.com/store/teensy41.html) is 60.96mm long plus 0.7mm for the USB connector = 61.7mm plus (if a cable is plugged in there, but not if a cable goes to D+ and D- pads.) room for the USB plug. Width is 17.78±0.6 so say 18.3.
 
-Display is likely to be above the Teensy and PCB is 20 x 35mm. (Adafruit diagram says 1.1 inches which is 33.02mm by 0.86 inch which is 21.844mm)
+![Teensy 4.1](./img/dimensions_teensy41.png)
+
+Display is likely to be above the Teensy and the display PCB is 20 x 35mm. (Adafruit diagram says 1.1 inches which is 33.02mm by 0.86 inch which is 21.844mm)
 
 Panel Size：30.00mm × 11.50mm × 1.45mm
 [0.91" 128x32 I2C OLED Display](https://www.adafruit.com/product/4440)

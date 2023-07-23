@@ -36,7 +36,7 @@ This is driven anode, but Pirhana RGB LEDs are common anode so this won't work.
 
 ## Gate & Trigger
 
-Use [two-transistor gate output from Graham Hinton](https://modwiggler.com/forum/viewtopic.php?p=2720659&sid=8184a7a1e66cf2090d4727f4a460bd16#p2720659):
+Avoid the  [two-transistor gate output from Graham Hinton](https://modwiggler.com/forum/viewtopic.php?p=2720659&sid=8184a7a1e66cf2090d4727f4a460bd16#p2720659) because the description sounds good but buiders report unreliable operation:
 
 ![gate](./img/Hinton_2955_14vgate_1.png)
 
@@ -48,15 +48,15 @@ Fixing the known inaccuracy in that schematic:
 
 ![gate2](./img/ramsden-gate-buffer.jpg)
 
-See also [Synth DIY: Gate Buffer ](https://synthnerd.wordpress.com/2016/03/17/synth-diy-gate-buffer/)
+See also [Synth DIY: Gate Buffer ](https://synthnerd.wordpress.com/2016/03/17/synth-diy-gate-buffer/) and [a known bad Gate in the original Arturia Beatstep](https://synthnerd.wordpress.com/arturia-beatstep/) which gives load-dependent 4V gates!
 
-Gate is +10V.
+Gate is +10V. Test droop into low loads like 10k.
 
 Trigger is +10V for 10ms.
 
 ## Boards
 
-Panel board with 4 jacks on one row, 2 LEDs above, one edge connector below.
+Panel board with 6 jacks on three rows (Gate, Trigger, Tune per voice), 2 LEDs above, one edge connector below.
 
 - 4 for gate and trig
 - 6 for two rgb
@@ -69,7 +69,6 @@ gnd connection to teensy.
 
 ## Work Plan
 
-- check two flush side-by-side Thonkiconn allow patch cables to be inserted without fouling
-- experiment with level shifter & Teensy PWM to drive bare RGB LED. Looking for range of colors, flicker, CPU usage
-- breadboard two-transistor gate
-- sketch to output 10ms pulse with a timer.
+- [ ] experiment with level shifter & Teensy PWM to drive bare RGB LED. Looking for range of colors, flicker, CPU usage
+- [ ] breadboard two-transistor gate
+- [ ] sketch to output 10ms pulse with a timer.

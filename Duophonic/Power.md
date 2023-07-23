@@ -6,22 +6,22 @@ Usual (bad) Eurorack power over ribbon cable with +12V, 0V, -12V and optional +5
 
 ## Digital and Analog 0V
 
-Module uses two ribbon cables. 0V on one is treated as digital ground, and +5V on that cable powers digital circuits. 
+Module uses two ribbon cables. 0V on one is treated as digital ground, and +5V on that cable powers digital circuits.
 0V on the other is treated as analog ground, with +12 and -12 powering op-amps and secondary voltage regulators.  
 This means the connection between digital and analog occurs at the PSU busboard. 
 This should reduce digital return currents on analog ground. However, digital 0V to SPI DAC meets analog 0V unless isolator is used, and other connections between grounds will occur due to panel jacks and external patching.
 
 ## DAC power
 
-Performance DACs, and the Global DAC  run at 5V5 so there is headroom above the internal 5V reference. High voltage side of the logic level converters for those DACs use 5V5 also **is that still true**. Derived from +12V.
+[Performance DACs](./performance-dac.md), and the Global DAC which re-uses the same boards, run at 5V5 so there is headroom above the internal 5V reference. High voltage side of the logic level converters for those DACs use 5V5 also **is that still true**. Derived from +12V.
 
-Pitch DACs run at ±9.5V and the Vref for those uses ±9.5V as well. No logic level conversion needed, pitch DAC is 3V3 compatible.
+[Pitch DACs](./pitch-dac.md) run at ±9.5V and the Vref for those uses ±9.5V as well. No logic level conversion needed, pitch DAC is 3V3 compatible.
 
 Use LT1763 (SOIC-8, 500mA) adjustable regulators (500mA is ample) to produce 5V5 and 9V5, with 6μ8 C0G output cap. -9V5 from LT1964-BYP adjustable (SOT-23, 200mA still plenty).
 
 ## Microcontroller power
 
-Teensy 4.1 main board is a 3V3 device with onboard 3V3 regulators and a Vin pin which accepts 3V6 to 6V0 input. Use Eurorack 5V supply (reduces asymmetric loading on +12V rail). Current draw can be 100mA, depends on clock speed.
+Teensy 4.1 [main board](./MPU-board.md) is a 3V3 device with onboard 3V3 regulators and a Vin pin which accepts 3V6 to 6V0 input. Use Eurorack 5V supply (reduces asymmetric loading on +12V rail). Current draw can be 100mA, depends on clock speed.
 
 ## Analog power
 
@@ -31,11 +31,13 @@ Pitch DAC op-amps can run on ±9.5V to handle ±5V CV.
 
 ## Voltage reference power
 
-Same as Pitch DAC power.
+[Vref](./voltage-ref-MAX6226.md) power is same +9V5 as Pitch DAC power.
 
 ## Gate
 
 To be determined. Options for (about) 5V, 8V gates useful. Exact level not critical.
+
+Same [Gate and LED board](./Gate-LED.md) needs voltage level conversion and current drive for the two RGB LEDs.
 
 ## Analog power board
 

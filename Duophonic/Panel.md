@@ -22,29 +22,13 @@ plus 5mm LED, 7.6mm square so allow 9mm?
 
 ![LED](./img/FD-115TRGB.png)
 
-- For 8 jacks: (108 - 9 - (8 * 6.2) ) / 7 = 7.06mm between jack holes.
-- For 7 jacks: (108 - 9 - (7 * 6.2) ) / 6 = 9.26mm between jack holes.
-- For 6 jacks: (108 - 9 - (6 * 6.2) ) / 5 = 12.36mm between jack holes.
-
 Thoniconn jacks are 12mm high, 9mm wide.
 
 ![Thonkiconn](./img/thonkiconn-pj398sm.jpg)
 
-- (108 - 9 - (8 * 12) ) = 3mm will not fit!
-- (108 - 9 - (7 * 12) ) = 15mm = 3mm between jack bodies, seems tight.
-- (108 - 9 - (6 * 12) ) = 27mm = 5.4mm between jack bodies.
+Staggered spacing allows more room for inserting jacks; single-in-line looked neater but would not fit (9 jacks plus LED all in one line) and impossibly cramped.
 
-Or, used width-wise,
-
-- (108 - 9 - (8 * 9) ) = 27mm = 3.8mm between jack bodies, a bit tight.
-- (108 - 9 - (7 * 9) ) = 36mm = 6mm between jack bodies
-- (108 - 9 - (6 * 9) ) = 45mm = 9mm between jack bodies.
-
-So 7 jacks plus LED seems fine with jacks width-wise;
-8 jacks plus LED may be ok but seems tight.
-
-Pairing gate & trig, pitch outs gives effective 6 high,
-but now wider.
+Consider using reverse-mounted pin connectors for shallower depth; electronics boards need to be snug against thr jack boards to not foul the MPU board.
 
 ## Perf DAC boards
 
@@ -52,9 +36,6 @@ Perf DAC boards are 4 jacks high by 2 wide (for the front panel, jack board).
 
 Behind that an op-amp board for buffering and slew, likely similar size;
 behind that the Perf DAC board itself, likely smaller.
-
-- (4 * 9) + (3 * 5.08) = **51.24mm** long side,
-- (2 * 12) + 5.08? = 24 to 30mm short side, probably squeeze up a bit to make less wide.
 
 Need another set of controls next to that,
 4 pots for perf faders.
@@ -110,13 +91,15 @@ But is now super wide and a bit cramped.
 
 ## MPU board
 
+Main constraint in [layout mockup](./mock-channel.svg) is mechanical attachment of MPU board to display/button/encoder board (at the top) and fader board (at the bottom) while clearing  the global output (secondary perfDAC) board which will need to be fairly shallow.
+
 [Teensy 4.1](https://www.pjrc.com/store/teensy41.html) is 60.96mm long plus 0.7mm for the USB connector = 61.7mm plus (if a cable is plugged in there, but not if a cable goes to D+ and D- pads.) room for the USB plug. Width is 17.78±0.6 so say 18.3.
 
 ![Teensy 4.1](./img/dimensions_teensy41.png)
 
 Display is likely to be above the Teensy and the display PCB is 20 x 35mm. (Adafruit diagram says 1.1 inches which is 33.02mm by 0.86 inch which is 21.844mm)
 
-Panel Size：30.00mm × 11.50mm × 1.45mm
+Display panel Size：30.00mm × 11.50mm × 1.45mm
 [0.91" 128x32 I2C OLED Display](https://www.adafruit.com/product/4440)
 
 Wow that looks tiny on such a big panel!
@@ -133,11 +116,11 @@ Group of pushbuttons to left of display, 3 plus "back". See [User Interface](./u
 
 [Adafruit Mini Soft Touch Push-button Switches](https://www.adafruit.com/product/3983) 6x6mm SMD.
 
-Need room for rotary encoder. Could be right of display.
+Rotary encoder to right of display.
 
 [Rotary Encoder - Illuminated](https://www.sparkfun.com/products/15141) Sparkfun
 
-Use as placeholder, not clear RGB led is needed here. 14mm wide 13.2m high but that excludes pins (14mm with pins). M9 threaded shaft, 6mm turning shaft.
+Use Sparkfun encoder as placeholder, not clear RGB led is needed here. It does need to be firmly attached to panel as it supports this board and then the MPU board too,14mm wide 13.2m high but that excludes pins (14mm with pins). M9 threaded shaft, 6mm turning shaft.
 
 ## Perf fading pots
 

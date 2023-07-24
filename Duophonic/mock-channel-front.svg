@@ -61,11 +61,17 @@
             <circle r="3" style="fill:#9F9"/>
         </symbol>
     </defs>
+        
     <!-- outside edge of panel, 14(main)+8(channel) = 22HP -->
-    <rect class="keep" x="-70.8" y="0" width="110.8" height="128.5"/>
+    <rect class="keep" x="-71.4" y="0" width="111.4" height="128.5"/>
+    <!-- circular holes just to indicate position -->
+    <circle r="1.6" cx="-58.78" cy="3"/>
+    <circle r="1.6" cx="-58.78" cy="125.5"/>
+    <circle r="1.6" cx="33.2" cy="3"/>
+    <circle r="1.6" cx="33.2" cy="125.5"/>
 
     <!-- allowable PCB area -->
-    <rect  class="keep" x="-70.8" y="10.25" width="110.8" height="108" stroke-dasharray="0.3 0.7" stroke="#666"/>
+    <rect  class="keep" x="-71.4" y="10.25" width="111.4" height="108" stroke-dasharray="0.3 0.7" stroke="#666"/>
 
     <!-- move origin to top of pcb area -->
     <g id="pcb-area" transform="translate(0, 10.25)">

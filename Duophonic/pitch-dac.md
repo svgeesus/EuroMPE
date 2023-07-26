@@ -26,7 +26,9 @@ Advantage of ±12V-derived ±9V5 rails, compared to using Eurorack 5V power, is 
 
 With Teensy 4.1, for AD5781ARUZ no level shifters needed.
 
-Data is written to the AD5781 in a 24-bit word format.
+Data is written to the AD5781 in a 24-bit word format, which sadly precluses SPI.transfer16() or SPI.transfer32()
+
+Minimum CS (SYNC) high time 48ns. SCLK min cycle time 40ns which is 25MHz. So use well below that (start at 10MHz).
 
 To isolate from digital 0V noise, consider optical isolator. ISO724x high speed quad isolator (got 2, Jan 2018). MOSI, SCLK, CS/SYNC and ?LDAC however AD5781 has separate DGND, AGND pins. Also isolator would need separate, DAC-side 3V3 supply. So, NO.
 
@@ -114,6 +116,10 @@ Should the output buffer be able to drive a capacitive load (so, two resistors a
 
 ![Schematic](./img/pitchdac-schematic.png) ([PDF](./pitchdac-schematic.pdf))
 
+Should CLR and RESET have been tied high? YES oops v.01 board does not, fixed in v.02:
+
+> If the RESET pin is not used, it should be hardwired to IOVCC.
+
 ## Board
 
 Separate digital and analog ground planes.
@@ -173,5 +179,6 @@ Board [ordered at OSH Park](https://oshpark.com/shared_projects/gQY5hg1l) 31 Mar
 - [ ] Check slew rate and corner freq for 4k7, 220R, 1nF; breadboard with TL074 to check. (Nope, oscilloscope busted)
 - [x] Get OPA2186DR, other components for one board
 - [x] Lay out board, fab
+- [ ] Fab v.02 board and get stencil, too
 - [ ] Build and test one DAC board with (previously tested) VREF board.
 - [ ] If all okay, order 2 more DAC and components for other board. Else refine, redo board.

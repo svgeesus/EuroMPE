@@ -8975,14 +8975,6 @@ Source: &lt;a href="https://datasheet.datasheetarchive.com/originals/distributor
 <pinref part="R5" gate="G$1" pin="2"/>
 <wire x1="22.86" y1="68.58" x2="12.7" y2="68.58" width="0.1524" layer="91"/>
 <junction x="12.7" y="68.58"/>
-<pinref part="IC1" gate="G$1" pin="!RESET"/>
-<wire x1="43.18" y1="68.58" x2="43.18" y2="73.66" width="0.1524" layer="91"/>
-<wire x1="43.18" y1="73.66" x2="40.64" y2="73.66" width="0.1524" layer="91"/>
-<junction x="35.56" y="73.66"/>
-<pinref part="IC1" gate="G$1" pin="!CLR"/>
-<wire x1="40.64" y1="73.66" x2="35.56" y2="73.66" width="0.1524" layer="91"/>
-<wire x1="40.64" y1="68.58" x2="40.64" y2="73.66" width="0.1524" layer="91"/>
-<junction x="40.64" y="73.66"/>
 </segment>
 </net>
 <net name="REFN_F" class="0">

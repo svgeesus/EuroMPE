@@ -5,7 +5,7 @@
 Low level, collect data and dispatch to handlers
 
 - Francois Best [MIDI Library](https://www.pjrc.com/teensy/td_libs_MIDI.html) (version 5 on [GitHub](https://github.com/FortySevenEffects/arduino_midi_library) but 4 may be simpler to use here)
-- Paul Stoffregen USB MIDI Host using [ USBHost_t36](https://github.com/PaulStoffregen/USBHost_t36)
+- Paul Stoffregen USB MIDI Host using [USBHost_t36](https://github.com/PaulStoffregen/USBHost_t36)
 - Teensyduino [USB MIDI](https://www.pjrc.com/teensy/td_midi.html)
 
 Note that [Arduino USBMIDI](https://github.com/lathoub/Arduino-USBMIDI) claims to support Teensy 4.1 but does not support USB Host.

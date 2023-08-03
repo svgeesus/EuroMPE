@@ -154,3 +154,5 @@ Dimensions of external bracket unknown, measure. For now assume 34mm wide, 16mm 
 ![USB-B panel](./img/USB-panel.png)
 
 Dimensions of PJRC Host cable unknown, but as a placeholder [this cable](https://thepihut.com/products/panel-mount-usb-cable-a-male-to-a-female) has M3 screws 30mm apart, is 38.30 wide and 11.90 high.
+
+If adding a TRS MIDI input, use a circuit which accepts either Type-A or Type-B, like [this one](https://github.com/kay-lpzw/LPZW_TRS_MIDI/)

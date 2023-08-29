@@ -34,6 +34,8 @@ This is driven anode, but Pirhana RGB LEDs are common anode so this won't work.
 
 [Constant current LED with op-amp](https://www.allaboutcircuits.com/technical-articles/the-basics-behind-constant-current-led-drive-circuitry/)
 
+- [How to Hook up (common anode) RGB LEDs](https://forum.pjrc.com/threads/73390-How-to-Hook-up-RGB-LEDs-with-a-Proprietary-Switch-Circuit)
+
 ## Gate & Trigger
 
 Avoid the  [two-transistor gate output from Graham Hinton](https://modwiggler.com/forum/viewtopic.php?p=2720659&sid=8184a7a1e66cf2090d4727f4a460bd16#p2720659) because the description sounds good but buiders report unreliable operation:

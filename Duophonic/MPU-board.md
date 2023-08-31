@@ -10,6 +10,12 @@ MPU needs USB host and hardware floating point, so Teensy 3.6 (about to be disco
 
 T4.1 ($26.85) is somewhat overpowered but has 480Mbit/s on both USB and Host so potentially lower latency (T3.6 is 480 on Host only). T4.1 has 100mA power consumption at full clock speed though.
 
+[T4 power consumption](https://forum.pjrc.com/threads/69159-Teensy-4-0-at-24Mhz-still-drawing-100mA-Why?p=297146&viewfull=1#post297146):
+freq    current
+24      60mA
+150     80mA
+600     100mA
+
 T3.6 ($29.25) has less memory, has 2 DAC outs (not needed here), power draw unspecified (@@measure it) but less than 4.1. Unobtainable due to NXP parts shortage, likely to be discontinued along with 3.5, 3.2 and LC!
 
 The two are _somewhat_ pin-compatible. Where possible, pins below are chosen to be shared between the two MCUs. Lots of uncertainties though, test on breadboard before rolling a PCB and maybe stick with one MCU rather than trying to be compatible. Downside, running out of room on T3.6 means making a second board.

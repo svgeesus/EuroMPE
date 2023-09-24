@@ -26,7 +26,7 @@ Advantage of ±12V-derived ±9V5 rails, compared to using Eurorack 5V power, is 
 
 With Teensy 4.1, for AD5781ARUZ no level shifters needed.
 
-Data is written to the AD5781 in a 24-bit word format, which sadly precluses SPI.transfer16() or SPI.transfer32()
+Data is written to the AD5781 in a 24-bit word format, which sadly precludes SPI.transfer16() or SPI.transfer32()
 
 Minimum CS (SYNC) high time 48ns. SCLK min cycle time 40ns which is 25MHz. So use well below that (start at 10MHz).
 
@@ -133,9 +133,11 @@ Put a couple of standoff holes here to secure the two DAC boards together? NO tr
 
 ![Board](./img/pitchdac-board.png)
 
-Board [ordered at OSH Park](https://oshpark.com/shared_projects/gQY5hg1l) 31 Mar 2023. GOT.
+Board v0.1 [ordered at OSH Park](https://oshpark.com/shared_projects/gQY5hg1l) 31 Mar 2023. GOT.
 
 ![osh](./img/pitchdac-top-osh.png)
+
+Board v0.2 with missing traces from CLR and RESET corrected.
 
 ## BOM (per DAC board, need 2)
 

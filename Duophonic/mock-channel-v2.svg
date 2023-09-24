@@ -238,8 +238,8 @@
 
     <!-- DIN socket -->
     <g transform="translate(-26 97)">
-        <circle r="7.95"/>
-        <circle r="8.925"/> <!--17.85 / 2 -->
+        <circle r="7.95"/>  <!-- 15.9 / 2 -->
+        <circle r="8.925"/> <!-- 17.85 / 2 -->
     </g>
 
     <!-- USB-B receptacle, vertical -->

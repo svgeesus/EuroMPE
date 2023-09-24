@@ -145,6 +145,8 @@ USB Host, USB device, DIN Midi (not on PCB; panel mount).
 
 ![Deltron](./img/Deltron-650-0500.png)
 
+Deltron 5-way 45° needs 8mm radius circular cut-out plus 3.2mm wide 1.2mm rect key. Outer flange is 17.85mm diameter,
+ 
 USB-B socket is 12mm wide, 11.16mm high. Hole is 8.45mm high, 7.78mm wide. Internal block 3.18mm high 5.6mm wide.
 
 ![USB-B](./img/USB-B-receptacle.png)

@@ -233,13 +233,13 @@
     <use href="#SparkfunRGBencoder" x="-24" y="12"/>
     <rect x="-70" y="10.5" width="67" height="20" style="stroke: #966"/>
 
-    <use href="#Teensy4.1horizontal" x="-67" y="16"/>
+    <use href="#Teensy4.1horizontal" x="-65" y="16"/>
     <!-- <rect x="-34" y="10.5" width="32" height="108" style="stroke: #696"/> -->
 
     <!-- DIN socket -->
     <g transform="translate(-26 97)">
         <circle r="7.95"/>
-        <circle r="8.925"/>
+        <circle r="8.925"/> <!--17.85 / 2 -->
     </g>
 
     <!-- USB-B receptacle, vertical -->

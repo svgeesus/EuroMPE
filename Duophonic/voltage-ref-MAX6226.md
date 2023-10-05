@@ -139,23 +139,28 @@ Board [ordered at OSH Park 31 Mar 2023](https://oshpark.com/shared_projects/fTok
 ### Voltage reference
 
 (1) AD MAX6226ALA50+ Ceramic LCC $11.79/1 = **$11.79** get 3 **GOT**
+IC1
 
 ### Low Vos low Ibias precision op-amp (dual)
 
 (1) TI OPA2186DR SOIC-8 $2.22/10 = **$22.20 GOT**
+U1
 
 ### Decoupling and NR caps
 
 (4) Kemet C1206C104K3GEC7210 25V 100nF C0G 1206 ceramics $0.051/100 = **$5.10 GOT**
+C2, C3, C4, C6, C7
 
 ### Bulk ceramic caps
 
 (2) Kemet C1206X105K3RACTU  25V 1μF X7R 10% 1206 ceramic $0.839/10 = **$8.39 GOT**
+C1, C5
 
 ### Low-ppm close tolerance resistors
 
 (2) Susumu RG2012V-103-P-T1 10k 0.02% 5ppm 0805 $2.57/25 = **$64.25 GOT**
 Same as is used for the offsets module.
+R1, R2
 
 ### PCB
 

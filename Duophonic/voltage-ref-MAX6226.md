@@ -40,7 +40,9 @@ The [DAC boards](./pitch-dac.md) provide their own force/sense buffers to drive 
 
 ## Line regulation
 
-Okay at 9 (typ) to 80 max μV/V.
+Okay at 9 (typ) to 80 max μV/V. [EEVBlog](https://www.eevblog.com/forum/metrology/max6226-voltage-reference/msg3569644/#msg3569644) found 100μV/V in practice (datasheet uses pulse rather than continuous changes, to avoid self-heating effects as supply voltage changes).
+
+So a [well-regulated supply](./Power.md) is essential.
 
 ### Secondary regulation
 
@@ -184,3 +186,7 @@ https://www.adafruit.com/product/400
 - [x] order Vref, op-amp (same as pitch DAC uses)
 - [ ] Build, test
 - [ ] Burn-in
+
+**Disaster**, unable to locate the Susumu RG2012V-103-P-T1 10k 0.02% 5ppm!!
+
+For testing, temporarily substituted a pair of Susumu RG2012N-104-W-T1 100k 0.05% 10ppm.

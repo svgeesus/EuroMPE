@@ -20,6 +20,8 @@ Conclusion: AD5781ARUZ gives 16bit INL with 18bit DNL at slightly lower cost tha
 
 AD5781ARUZ Vdd and Vss abs max of 16.5V. Spec sheet assumes VDD = +12.5 V to +16.5 V, VSS = −16.5 V to −12.5 V. Optimal supply for lowest zero-scale and gain errors is ±9.5V (datasheet, figs 20 & 22, _noting results are given for 5V and for ±10V spans while I need a ±5V span_).
 
+![Voltage dependent zero-scale errors](./img/Fig20.png)
+
 Advantage of ±12V-derived ±9V5 rails, compared to using Eurorack 5V power, is that filtering and smoothing can be applied, reducing switching PSU noise and increasing decoupling from the digital circuitry running on Eurorack 5V.
 
 ## Digital interface

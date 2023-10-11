@@ -6,9 +6,9 @@ Driven by Eurorack 5V power, generates logic 3V3 Vdd (from Teensy onboard, <250m
 
 ## MCU choice
 
-MPU needs USB host and hardware floating point, so Teensy 3.6 (about to be discontinued) or **Teensy 4.1**. Both are 3V3-only.
+MPU needs USB host and hardware floating point, so Teensy 3.6 (now discontinued) or **Teensy 4.1**. Both are 3V3-only.
 
-T4.1 ($26.85) is somewhat overpowered but has 480Mbit/s on both USB and Host so potentially lower latency (T3.6 is 480 on Host only). T4.1 has 100mA power consumption at full clock speed though.
+T4.1 ($26.85) is somewhat overpowered but has 480Mbit/s on both USB and Host so potentially lower latency (T3.6 was 480 on Host only). T4.1 has 100mA power consumption at full clock speed though.
 
 [T4 power consumption](https://forum.pjrc.com/threads/69159-Teensy-4-0-at-24Mhz-still-drawing-100mA-Why?p=297146&viewfull=1#post297146):
 freq    current
@@ -16,9 +16,7 @@ freq    current
 150     80mA
 600     100mA
 
-T3.6 ($29.25) has less memory, has 2 DAC outs (not needed here), power draw unspecified (@@measure it) but less than 4.1. Unobtainable due to NXP parts shortage, likely to be discontinued along with 3.5, 3.2 and LC!
-
-The two are _somewhat_ pin-compatible. Where possible, pins below are chosen to be shared between the two MCUs. Lots of uncertainties though, test on breadboard before rolling a PCB and maybe stick with one MCU rather than trying to be compatible. Downside, running out of room on T3.6 means making a second board.
+T3.6 ($29.25) had less memory, has 2 DAC outs (not needed here), power draw unspecified (@@measure it) but less than 4.1. Unobtainable due to NXP parts shortage, was discontinued along with 3.5, 3.2 and LC!
 
 ## MIDI
 
@@ -47,9 +45,7 @@ Apparently 6N138 and or H11L1 are too slow per MIDI spec and 6N137 is better. Th
 
 [Vishay 6N137](https://www.mouser.com/ProductDetail/Vishay-Semiconductors/6N137?qs=xCMk%252BIHWTZMrQz4FyDXhMg%3D%3D) PDIP8, $1.76/1.
 
-- 00 RX1 (4.1, not 3.6), or
-- 07 RX2/RX3 (same on 4.1 and 3.6)
-_
+- 00 RX1
 
 [USB MIDI](https://www.pjrc.com/teensy/td_midi.html) & [USB Host MIDI](https://github.com/PaulStoffregen/USBHost_t36).
 
@@ -57,17 +53,15 @@ _
 
 Two [SPI](https://www.pjrc.com/teensy/td_libs_SPI.html) outputs for DACs (use the faster FIFO one for the  pitch DAC, because MPE pitchbend messages send a lot of data; use the second one for the octal performance DAC and octal CC DAC) with associated chip selects.
 
-Note that second SPI channel (MOSI1 MISO1 SCLK1) in different place on T3.6 & T4.1! Pin numbers are 4.1/3.6 (if different).
-
 - 11 MOSI
 - _12 MISO not needed_
 - 13 SCLK 
-- ?? CS-Pitch (any convenient one, like 10 or 12)
-- 26/00 MOSI1
-- _39/01 MISO1 not needed_
-- 27/32 SCLK1
-- ?? CS-Perf (any convenient, 28)
-- ?? CS-CC  (any convenient, 29)
+- 12 CS-Pitch (any convenient one, like 10 or 12)
+- 26 MOSI1
+- _39 MISO1 not needed_
+- 27 SCLK1
+- 28 CS-Perf (any convenient, 28)
+- 29 CS-CC  (any convenient, 29)
 
 Use pull-up resistors on chip selects, per 
 [Better SPI Bus Design in 3 Steps](https://www.pjrc.com/better-spi-bus-design-in-3-steps/)
@@ -128,31 +122,31 @@ Test how low FreqCount can go, or connect both circuits and choose between input
 - 9 [FreqCount](https://www.pjrc.com/teensy/td_libs_FreqCount.html)
 - 22 [FreqMeasure](https://www.pjrc.com/teensy/td_libs_FreqMeasure.html)
 
-## Gate outs
+## Gate and Trigger outs
 
-Gate logic outputs. PWM for two gate LEDs. Check current draw is okay. Might still be better to use an external 6+ channel PWM chip; then needs I2C connection though.
+Gate logic outputs.
 
-- 02 Gate1
-- 03 Gate 2
-- 04 LED1 PWM R
-- 05 LED1 PWM G
-- 06 LED1 PWM B
-- 09  **conflict with T4.1 FreqCount**
-- 36 LED1 PWM R
-- 37 LED1 PWM G
-- 29 LED1 PWM B
+- 02 Low Gate
+- 03 High Gate
+- 04 Low Trigger
+- 05 High Trigger
 
+But maybe better to group these closer to the RGB LED outs as they all get routed to the same [Gate-LED](./Gate-LED.md) board.
 
-**No** Alternatively, use chainable [2mm I2C DotStar 2020 RGB LEDs](https://www.adafruit.com/product/3341) or, larger, [5mm DotStar 5050](https://www.adafruit.com/product/2343) which do their own PWM. 5V though, needs 74AHCT125  or similar level shifter.
+### RGB LED control
 
-- 18 SDA
-- 19 SCL
-- 20 Gate1
-- 21 Gate2
+Two (Low, High channel) RGB LEDs need 6 PWM outputs. See [PWM Frequency](https://www.pjrc.com/teensy/td_pulse.html) these are at 4.482 kHz by default:
+
+- 34 Low R
+- 35 Low G
+- 36 Low B
+- 37 High R
+- 38 High G
+- 39 High B
 
 ## Digital outs
 
-Two pedal logic outputs, if desired.
+Two pedal logic outputs, if desired. ?Not really needed?
 
 - ?? Pedal 1
 - ?? Pedal 2
@@ -163,7 +157,7 @@ Could need analog ins, or I2C, depending on hardware. Not at all a must-have.
 
 ## Development & Testing plan
 
-1. T4.1 on breadboard, power from +5V, measure current consumption
+1. T4.1 on breadboard, power from +5V, measure current consumption at various clock speeds.
 2. Test I2C display, see if update speed okay and feasible for menus
 3. Test PWM of two RGB LEDS. Test 10V gate output. Fabricate [Gate-LED](./Gate-LED.md) board.
 4. Test FreqCount & FreqMeasure

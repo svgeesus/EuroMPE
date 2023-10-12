@@ -136,6 +136,12 @@ Board [ordered at OSH Park 31 Mar 2023](https://oshpark.com/shared_projects/fTok
 
 ![osh](./img/vref-top-osh.png)
 
+Pin 1 of MAX6226 is indicated by a cross and is aligned to the top-left corner on this board (indicated by small dot on silkscreen).
+
+Pin 1 of OPA2186 is on the side with the bevel, and is aligned closest to JP2 on this board.
+
+![soic-8](./img/soic-8.png)
+
 ## BOM
 
 ### Voltage reference

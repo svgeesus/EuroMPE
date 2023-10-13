@@ -199,6 +199,6 @@ For testing, temporarily substituted a pair of Susumu RG2012N-104-W-T1 100k 0.05
 
 ### Initial power-up
 
-Measured using Leysight 34465A, 10V range, 100PLC. **4.99946V**  (range 4.99937 to 4.99953). Climbed fractionally over first few hours, mainly at the start (chip warmup?) to **4.999528V**.
+Measured using Keysight 34465A, 10V range, 100PLC. **4.99946V**  (range 4.99937 to 4.99953). Climbed fractionally over first few hours, mainly at the start (chip warmup?) to **4.999528V**.
 
 ![vref first hours](./img/Vref-first-run.png)

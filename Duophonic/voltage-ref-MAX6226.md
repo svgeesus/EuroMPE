@@ -190,9 +190,15 @@ https://www.adafruit.com/product/400
 - [x] Fab board
 - [x] Check existing component inventory
 - [x] order Vref, op-amp (same as pitch DAC uses)
-- [ ] Build, test
+- [x] Build, test
 - [ ] Burn-in
 
 **Disaster**, unable to locate the Susumu RG2012V-103-P-T1 10k 0.02% 5ppm!!
 
 For testing, temporarily substituted a pair of Susumu RG2012N-104-W-T1 100k 0.05% 10ppm.
+
+### Initial power-up
+
+Measured using Leysight 34465A, 10V range, 100PLC. **4.99946V**  (range 4.99937 to 4.99953). Climbed fractionally over first few hours, mainly at the start (chip warmup?) to **4.999528V**.
+
+![vref first hours](./img/Vref-first-run.png)

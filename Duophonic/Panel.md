@@ -151,10 +151,11 @@ USB-B socket is 12mm wide, 11.16mm high. Hole is 8.45mm high, 7.78mm wide. Inter
 
 ![USB-B](./img/USB-B-receptacle.png)
 
-Dimensions of external bracket unknown, measure. For now assume 34mm wide, 16mm high
+Dimensions of external bracket unknown, measure. For now assume 34mm wide, 16mm high. Actually measures 36.91mm wide, 14.17mm high.
 
 ![USB-B panel](./img/USB-panel.png)
 
 Dimensions of PJRC Host cable unknown, but as a placeholder [this cable](https://thepihut.com/products/panel-mount-usb-cable-a-male-to-a-female) has M3 screws 30mm apart, is 38.30 wide and 11.90 high.
+Actual PJRC one is 11.15mm high and 38.85mm wide. (33.72 + 24.76) ÷ 2 = 29.24 centers (really?).
 
 If adding a TRS MIDI input, use a circuit which accepts either Type-A or Type-B, like [this one](https://github.com/kay-lpzw/LPZW_TRS_MIDI/)

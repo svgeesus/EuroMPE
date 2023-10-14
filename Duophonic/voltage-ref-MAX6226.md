@@ -223,6 +223,10 @@ Used without correction (i.e. assuming it is -5.000000V), this would give 0.0053
 
 ![vref-negative](./img/Vref-negative-later.png)
 
+The drift continued but then seemed to level off.
+
+![vref-negative-still-drifting](./img/vref-negative-drift2.png)
+
 However the positive voltage output now seemed stable at **4.999573V** sd 14µV.
 
 ![vref-positive](./img/vref-pos-later.png)

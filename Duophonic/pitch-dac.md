@@ -112,7 +112,7 @@ Should the output buffer be able to drive a capacitive load (so, two resistors a
 
 [Understanding stabilization capacitors](https://northcoastsynthesis.com/news/understanding-stabilization-capacitors/)
 
-3 op-amps per channel = 6 or 4 if slew limit /  dual buffered outs = 8.
+Also see the output parts of the [Dave Jones buffered mult](https://www.modwiggler.com/forum/viewtopic.php?p=1445492#p1445492).
 
 ## Schematic
 
@@ -121,6 +121,8 @@ Should the output buffer be able to drive a capacitive load (so, two resistors a
 Should CLR and RESET have been tied high? YES oops v.01 board does not, fixed in v.02:
 
 > If the RESET pin is not used, it should be hardwired to IOVCC.
+
+Also v0.1 board is **missing the input resistors** which should be matched to the feedback resistor and close tolerance to avoid introducing errors. **Redo the board!!**
 
 ## Board
 

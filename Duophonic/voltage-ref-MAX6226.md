@@ -200,6 +200,7 @@ For testing, temporarily substituted a pair of Susumu RG2012N-104-W-T1 100k 0.05
 ### Initial power-up
 
 Measured using Keysight 34465A, 10V range, 100PLC. **4.99946V**  (range 4.99937 to 4.99953). Climbed fractionally over first few hours, mainly at the start (chip warmup?) to **4.999528V**.
+This is -4.72E-4 × 100 = -0.0472% initial accuracy, outside spec sheet ±0.02% (±1mV)
 
 ![vref first hours](./img/Vref-first-run.png)
 

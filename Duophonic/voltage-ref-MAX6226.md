@@ -199,18 +199,23 @@ For testing, temporarily substituted a pair of Susumu RG2012N-104-W-T1 100k 0.05
 
 ### Initial power-up
 
-Measured using Keysight 34465A, 10V range, 100PLC. **4.99946V**  (range 4.99937 to 4.99953). Climbed fractionally over first few hours, mainly at the start (chip warmup?) to **4.999528V**.
-This is -4.72E-4 × 100 = -0.0472% initial accuracy, outside spec sheet ±0.02% (±1mV)
+Measured using Keysight 34465A, 10V range, 100PLC. **4.99946V**  (range 4.99937 to 4.99953). Climbed fractionally over first 30 minutes (chip warmup?) then stable over 3 hours at **4.999528V**.
+This -0.472mV error is -4.72E-4 / 5 × 100 = -0.00944% initial accuracy, within spec sheet ±0.02% (±1mV)
 
 ![vref first hours](./img/Vref-first-run.png)
 
 Drift = 280 ÷ 4.999528 = 56.0052868991 (56ppm) in 3 hours
 
-Negative voltage however is drifty:
+Negative voltage however is very drifty (mean **4.989221V** with a **6mV** span!):
 
 ![vref negative drifts](./img/Vref-negative-drifty.png)
 
 Drift = 6,100 ÷ 4.98221 = 1,224.35625957 (1224ppm) in 6 hours
 
+After running overnight, negative voltage drift had continued, mean was now **-4.994695V** sd 28µV
 
+![vref-negative](./img/Vref-negative-later.png)
 
+However the positive voltage output now seemed stable at **4.999573V** sd 14µV.
+
+![vref-positive](./img/vref-pos-later.png)

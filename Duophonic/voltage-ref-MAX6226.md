@@ -199,10 +199,12 @@ For testing, temporarily substituted a pair of Susumu RG2012N-104-W-T1 100k 0.05
 
 ### Initial power-up
 
+![photo](./img/vref-breadboard.jpg)
+
 Measured using Keysight 34465A, 10V range, 100PLC. **4.99946V**  (range 4.99937 to 4.99953). Climbed fractionally over first 30 minutes (chip warmup?) then stable over 3 hours at **4.999528V**.
 This -0.472mV error is -4.72E-4 / 5 × 100 = -0.00944% initial accuracy, within spec sheet ±0.02% (±1mV)
 
-Used without correction (i.e. assuming the reference is 5.000000V) would give 4.72E-4 × 1,200 = 0.5664 cents error at 5V, which is outside the error budget. So the code needs to store measured calibration readings for the positive and negative reference voltages.
+Used without correction (i.e. assuming the reference is 5.000000V) would give -4.72E-4 × 1,200 = **-0.5664** cents error at 5V, which is outside the error budget. So the code needs to store measured calibration readings for the positive and negative reference voltages.
 
 ![vref first hours](./img/Vref-first-run.png)
 
@@ -214,7 +216,10 @@ Negative voltage however is very drifty (mean **4.989221V** with a **6mV** span!
 
 Drift = 6,100 ÷ 4.98221 = 1,224.35625957 (1224ppm) in 6 hours
 
-After running overnight, negative voltage drift had continued, mean was now **-4.994695V** sd 28µV
+After running overnight, negative voltage drift had continued, mean was now **-4.994695V** sd 28µV. 
+This is 0.005305 ÷ 5 × 100 = 0.1061% error, much larger than the baseline Vref error spec.
+
+Used without correction (i.e. assuming it is -5.000000V), this would give 0.005305 × 1,200 = **6.366** cents error(!!) at -5V.
 
 ![vref-negative](./img/Vref-negative-later.png)
 

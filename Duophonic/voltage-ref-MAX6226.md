@@ -202,6 +202,8 @@ For testing, temporarily substituted a pair of Susumu RG2012N-104-W-T1 100k 0.05
 Measured using Keysight 34465A, 10V range, 100PLC. **4.99946V**  (range 4.99937 to 4.99953). Climbed fractionally over first 30 minutes (chip warmup?) then stable over 3 hours at **4.999528V**.
 This -0.472mV error is -4.72E-4 / 5 × 100 = -0.00944% initial accuracy, within spec sheet ±0.02% (±1mV)
 
+Used without correction (i.e. assuming the reference is 5.000000V) would give 4.72E-4 × 1,200 = 0.5664 cents error at 5V, which is outside the error budget. So the code needs to store measured calibration readings for the positive and negative reference voltages.
+
 ![vref first hours](./img/Vref-first-run.png)
 
 Drift = 280 ÷ 4.999528 = 56.0052868991 (56ppm) in 3 hours

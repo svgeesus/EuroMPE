@@ -193,12 +193,23 @@ https://www.adafruit.com/product/400
 - [x] Build, test
 - [ ] Burn-in
 
-**Disaster**, unable to locate the Susumu RG2012V-103-P-T1 10k 0.02% 5ppm!!
+**Disaster**, unable to locate the Susumu RG2012V-103-P-T1 10k 0.02% 5ppm/C !!
 
-For testing, temporarily substituted a pair of Susumu RG2012N-104-W-T1 100k 0.05% 10ppm.
+For testing, temporarily substituted a pair of Susumu RG2012N-104-W-T1 100k 0.05% 10ppm/C.
 
 ### Initial power-up
 
 Measured using Keysight 34465A, 10V range, 100PLC. **4.99946V**  (range 4.99937 to 4.99953). Climbed fractionally over first few hours, mainly at the start (chip warmup?) to **4.999528V**.
 
 ![vref first hours](./img/Vref-first-run.png)
+
+Drift = 280 ÷ 4.999528 = 56.0052868991 (56ppm) in 3 hours
+
+Negative voltage however is drifty:
+
+![vref negative drifts](./img/Vref-negative-drifty.png)
+
+Drift = 6,100 ÷ 4.98221 = 1,224.35625957 (1224ppm) in 6 hours
+
+
+

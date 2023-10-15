@@ -122,18 +122,12 @@ Should CLR and RESET have been tied high? YES oops v.01 board does not, fixed in
 
 > If the RESET pin is not used, it should be hardwired to IOVCC.
 
-Also v0.1 board is **missing the input resistors** which should be matched to the feedback resistor and close tolerance to avoid introducing errors. **Redo the board!!**
-
 ## Board
 
 Separate digital and analog ground planes.
 
-> We detected a 2 layer board of 2.20 x 1.17 inches (55.8 x 29.7mm)
-> 3 boards will cost $12.85
-
-May be _slightly_ wide, check. Was going for 6HP (30mm).
-
-Put a couple of standoff holes here to secure the two DAC boards together? NO tried and the boards are too small.
+> We detected a 2 layer board of 2.36 x 1.17 inches (59.9 x 29.7mm)
+> 3 boards will cost $13.75 
 
 ![Board](./img/pitchdac-board.png)
 
@@ -141,7 +135,9 @@ Board v0.1 [ordered at OSH Park](https://oshpark.com/shared_projects/gQY5hg1l) 3
 
 ![osh](./img/pitchdac-top-osh.png)
 
-Board v0.2 with missing traces from CLR and RESET corrected.
+Board v0.2 with missing traces from CLR and RESET, corrected.
+
+Board v0.2 [ordered at OSH Park](https://oshpark.com/shared_projects/CAPz0qsG) 14 Oct 2023.
 
 ## BOM (per DAC board, need 2)
 
@@ -152,6 +148,8 @@ Board v0.2 with missing traces from CLR and RESET corrected.
 ### Stabilization film caps
 
 (2) Cornell Dubilier FCP0805H101J-J1 33pF 0805 $0.526/10 = **$5.26 GOT** [Mouser](https://www.mouser.com/ProductDetail/Cornell-Dubilier-CDE/FCP0805H101J-J1)
+
+**need to get the stabilization cap value finalized!**
 
 ### Bulk ceramic caps
 
@@ -165,11 +163,11 @@ Board v0.2 with missing traces from CLR and RESET corrected.
 
 ### Resistors
 
-(2) Susumu [RR1220P-472-D ](https://www.mouser.com/ProductDetail/Susumu/RR1220P-472-D) 0805 4k7 0.5% 25ppm $0.13/10 = **$1.30 GOT**
+(2) Susumu [RR1220P-472-D ](https://www.mouser.com/ProductDetail/Susumu/RR1220P-472-D) 0805 4k7 0.5% 25ppm $0.13/10 = **$1.30 GOT** 
 
-(2) Susumu [RR1220P-221-D ](https://www.mouser.com/ProductDetail/Susumu/RR1220P-221-D) 0805 220R 0.5% 25ppm $0.127/10 = **$1.27 GOT**
+(2) Susumu [RR1220P-221-D ](https://www.mouser.com/ProductDetail/Susumu/RR1220P-221-D) 0805 220R 0.5% 25ppm $0.127/10 = **$1.27 GOT** 
 
-(1) Any 0805 10k will do. Susumu RR1220P-103-D **GOT**
+(1) Any 0805 10k will do for the pullup. Susumu RR1220P-103-D **GOT**
 
 ### Op-Amps
 
@@ -182,9 +180,10 @@ Board v0.2 with missing traces from CLR and RESET corrected.
 ## Work Plan
 
 - [x] Have one DAC.
-- [ ] Check slew rate and corner freq for 4k7, 220R, 1nF; breadboard with TL074 to check. (Nope, oscilloscope busted)
+- [ ] Check slew rate and corner freq for 10k, 220R, 33pF; breadboard with TL074 to check. (Nope, oscilloscope busted)
 - [x] Get OPA2186DR, other components for one board
 - [x] Lay out v0.1 board, fab
-- [ ] Fab v.02 board and get stencil, too
+- [x] Lay out v0.2 board
+- [x] Fab v0.2 board and get stencil, too
 - [ ] Build and test one DAC board with (previously tested) VREF board.
 - [ ] If all okay, order 2 more DAC and components for other board. Else refine, redo board.

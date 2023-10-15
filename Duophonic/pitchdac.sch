@@ -8774,12 +8774,12 @@ Source: &lt;a href="https://datasheet.datasheetarchive.com/originals/distributor
 <part name="AGND2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="AGND" device=""/>
 <part name="AGND3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="AGND" device=""/>
 <part name="AGND4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="AGND" device=""/>
-<part name="C201" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805K" package3d_urn="urn:adsk.eagle:package:23681/2" value="22pF"/>
-<part name="C101" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805K" package3d_urn="urn:adsk.eagle:package:23681/2" value="22pF"/>
+<part name="C201" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805K" package3d_urn="urn:adsk.eagle:package:23681/2" value="100pF"/>
+<part name="C101" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805K" package3d_urn="urn:adsk.eagle:package:23681/2" value="100pF"/>
 <part name="R3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805W" package3d_urn="urn:adsk.eagle:package:23537/2" value="220R"/>
 <part name="R6" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805W" package3d_urn="urn:adsk.eagle:package:23537/2" value="220R"/>
-<part name="R5" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805W" package3d_urn="urn:adsk.eagle:package:23537/2" value="10k 0.02% 5ppm"/>
-<part name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805W" package3d_urn="urn:adsk.eagle:package:23537/2" value="10k 0.02% 5ppm"/>
+<part name="R5" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805W" package3d_urn="urn:adsk.eagle:package:23537/2" value="4k7"/>
+<part name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805W" package3d_urn="urn:adsk.eagle:package:23537/2" value="4k7"/>
 <part name="C3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="100nF"/>
 <part name="C4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="100nF"/>
 <part name="C5" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="100nF"/>
@@ -8797,8 +8797,6 @@ Source: &lt;a href="https://datasheet.datasheetarchive.com/originals/distributor
 <part name="D1" library="SD0805S040S0R5" deviceset="SD0805S040S0R5" device=""/>
 <part name="PITCH" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X6" device="/90" package3d_urn="urn:adsk.eagle:package:22475/2"/>
 <part name="R7" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805W" package3d_urn="urn:adsk.eagle:package:23537/2" value="10k"/>
-<part name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805W" package3d_urn="urn:adsk.eagle:package:23537/2" value="10k 0.02% 5ppm"/>
-<part name="R4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805W" package3d_urn="urn:adsk.eagle:package:23537/2" value="10k 0.02% 5ppm"/>
 </parts>
 <sheets>
 <sheet>
@@ -8950,14 +8948,6 @@ Source: &lt;a href="https://datasheet.datasheetarchive.com/originals/distributor
 <attribute name="NAME" x="21.3614" y="59.69" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="26.162" y="59.69" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="R1" gate="G$1" x="104.14" y="60.96" smashed="yes">
-<attribute name="NAME" x="100.33" y="62.4586" size="1.778" layer="95"/>
-<attribute name="VALUE" x="100.33" y="57.658" size="1.778" layer="96"/>
-</instance>
-<instance part="R4" gate="G$1" x="104.14" y="22.86" smashed="yes">
-<attribute name="NAME" x="100.33" y="24.3586" size="1.778" layer="95"/>
-<attribute name="VALUE" x="100.33" y="19.558" size="1.778" layer="96"/>
-</instance>
 </instances>
 <busses>
 </busses>
@@ -9056,12 +9046,12 @@ Source: &lt;a href="https://datasheet.datasheetarchive.com/originals/distributor
 <label x="81.28" y="66.04" size="1.778" layer="95"/>
 <wire x1="53.34" y1="71.12" x2="93.98" y2="71.12" width="0.1524" layer="91"/>
 <wire x1="93.98" y1="71.12" x2="93.98" y2="60.96" width="0.1524" layer="91"/>
-<pinref part="R4" gate="G$1" pin="1"/>
 <wire x1="93.98" y1="60.96" x2="93.98" y2="22.86" width="0.1524" layer="91"/>
-<wire x1="93.98" y1="22.86" x2="99.06" y2="22.86" width="0.1524" layer="91"/>
-<pinref part="R1" gate="G$1" pin="1"/>
-<wire x1="99.06" y1="60.96" x2="93.98" y2="60.96" width="0.1524" layer="91"/>
 <junction x="93.98" y="60.96"/>
+<pinref part="U2" gate="A" pin="+IN"/>
+<wire x1="114.3" y1="60.96" x2="93.98" y2="60.96" width="0.1524" layer="91"/>
+<pinref part="U2" gate="B" pin="+IN"/>
+<wire x1="114.3" y1="22.86" x2="93.98" y2="22.86" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$15" class="0">
@@ -9402,20 +9392,6 @@ Source: &lt;a href="https://datasheet.datasheetarchive.com/originals/distributor
 <pinref part="REFN" gate="A" pin="2"/>
 <wire x1="68.58" y1="7.62" x2="81.28" y2="7.62" width="0.1524" layer="91"/>
 <label x="66.04" y="5.08" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="N$2" class="0">
-<segment>
-<pinref part="U2" gate="A" pin="+IN"/>
-<wire x1="109.22" y1="60.96" x2="114.3" y2="60.96" width="0.1524" layer="91"/>
-<pinref part="R1" gate="G$1" pin="2"/>
-</segment>
-</net>
-<net name="N$3" class="0">
-<segment>
-<pinref part="U2" gate="B" pin="+IN"/>
-<wire x1="109.22" y1="22.86" x2="114.3" y2="22.86" width="0.1524" layer="91"/>
-<pinref part="R4" gate="G$1" pin="2"/>
 </segment>
 </net>
 </nets>

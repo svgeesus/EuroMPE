@@ -112,7 +112,7 @@ Should the output buffer be able to drive a capacitive load (so, two resistors a
 
 [Understanding stabilization capacitors](https://northcoastsynthesis.com/news/understanding-stabilization-capacitors/)
 
-Also see the output parts of the [Dave Jones buffered mult](https://www.modwiggler.com/forum/viewtopic.php?p=1445492#p1445492).
+[The Tale Of The 1 kΩ Output Resistor](https://www.njohnson.co.uk/index.php?menu=2&submenu=2&subsubmenu=16)
 
 ## Schematic
 
@@ -137,7 +137,7 @@ Board v0.1 [ordered at OSH Park](https://oshpark.com/shared_projects/gQY5hg1l) 3
 
 Board v0.2 with missing traces from CLR and RESET, corrected.
 
-Board v0.2 [ordered at OSH Park](https://oshpark.com/shared_projects/CAPz0qsG) 14 Oct 2023.
+Board v0.2 [ordered at OSH Park](https://oshpark.com/shared_projects/UpIebEcc) 15 Oct 2023.
 
 ## BOM (per DAC board, need 2)
 

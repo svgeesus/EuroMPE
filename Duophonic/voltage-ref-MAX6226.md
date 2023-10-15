@@ -230,3 +230,7 @@ The drift continued but then seemed to level off.
 However the positive voltage output now seemed stable at **4.999573V** sd 14µV.
 
 ![vref-positive](./img/vref-pos-later.png)
+
+Next day, negative drift continues (drift over 17 hours):
+
+![vref-neg-next-day](./img/vref-neg-15h.png)

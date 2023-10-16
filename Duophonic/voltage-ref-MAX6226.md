@@ -234,3 +234,15 @@ However the positive voltage output now seemed stable at **4.999573V** sd 14µV.
 Next day, negative drift continues (drift over 17 hours):
 
 ![vref-neg-next-day](./img/vref-neg-15h.png)
+
+Mean value now **-4.997343V** sd 9µV.
+
+![vref neg day 3](./img/vref-neg-day-3.png)
+
+Meanwhile, same day, positive ref very stable at **4.999727V** sd 6µV.
+
+![vref pos day 3](./img/vref-pos-day3.png)
+
+untill it did an unexplained, sudden 30µV jump and became less noisy:
+
+![vref unexplained jump](./img/vref-pos-odd-jump.png)

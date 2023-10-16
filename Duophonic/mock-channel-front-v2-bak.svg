@@ -19,47 +19,47 @@
     <defs>
     <!-- jack origin is center of jack socket hole -->
         <symbol id="Thoniconn-vertical" width="9" height="12" viewBox="-4.5 -6 9 12">
-            <rect x="-4.5" y="-6" width="9" height="10.5" style="fill: #BBB"/>
+            <!-- <rect x="-4.5" y="-6" width="9" height="10.5" style="fill: #BBB"/>
             <rect x="-4" y="-3" width="8" height="6"/>
-            <rect x="-0.4" y="4.5" width="0.8" height="1.5"/>
+            <rect x="-0.4" y="4.5" width="0.8" height="1.5"/> -->
             <circle r="3"/>
             <circle r="1.8"/>
-            <circle r="0.7" style="fill:blue"/> 
+            <!-- <circle r="0.7" style="fill:blue"/>  -->
         </symbol>
         <symbol id="Thoniconn-vertical-ud" width="9" height="12" viewBox="-4.5 -6 9 12">
-            <rect x="-4.5" y="-4.5" width="9" height="10.5" style="fill: #BBB"/>
+            <!-- <rect x="-4.5" y="-4.5" width="9" height="10.5" style="fill: #BBB"/>
             <rect x="-4" y="-3" width="8" height="6"/>
-            <rect x="-0.4" y="-6.0" width="0.8" height="1.5"/>
+            <rect x="-0.4" y="-6.0" width="0.8" height="1.5"/> -->
             <circle r="3"/>
             <circle r="1.8"/>
             <!-- <circle r="0.7" style="fill:blue"/>  -->
         </symbol>
         <symbol id="Thoniconn-horizontal" height="9" width="12" viewBox="-6 -4.5 12 9">
-            <rect y="-4.5" x="-6" height="9" width="10.5" style="fill: #BBB"/>
+            <!-- <rect y="-4.5" x="-6" height="9" width="10.5" style="fill: #BBB"/>
             <rect y="-4" x="-3" height="8" width="6"/>
-            <rect y="-0.4" x="4.5" height="0.8" width="1.5"/>
+            <rect y="-0.4" x="4.5" height="0.8" width="1.5"/> -->
             <circle r="3"/>
             <circle r="1.8"/>
         </symbol>
         <symbol id="RGBled" height="7.8" width="7.8" viewBox="-3.9 -3.9 7.8 7.8">
-            <rect x="-3.9" y="-3.9" width="7.8" height="7.8" style="fill: #DCC"/>
+            <!-- <rect x="-3.9" y="-3.9" width="7.8" height="7.8" style="fill: #DCC"/> -->
             <circle r="2.7" style="fill:#CE6"/>
         </symbol>
         <symbol id="SongHuei" height="12.5" width="10.6" viewBox="-5.3 -5.5 10.6 12.5">
-            <rect x="-4.85" y="-5.5"  height="12.5" width="9.7" style="fill: #BBB"/>
+            <!-- <rect x="-4.85" y="-5.5"  height="12.5" width="9.7" style="fill: #BBB"/>
             <rect x="-5.3" y="-1.1" height="2.2" width="0.55"/>
-            <rect x="4.75" y="-1.1" height="2.2" width="0.55"/>
+            <rect x="4.75" y="-1.1" height="2.2" width="0.55"/> -->
             <circle r="3.2"/>
             <circle r="3.0"/>
-            <circle r="0.7" style="fill:yellow"/> 
+            <!-- <circle r="0.7" style="fill:yellow"/>  -->
         </symbol>
         <symbol id="oled091" height="21.844" width="33.02" viewBox="0 0 21.844 33.02">
         <!-- origin is upper left -->
-            <rect x="0" y="0" height="21.844" width="33.02"/>
+            <!-- <rect x="0" y="0" height="21.844" width="33.02"/>
             <circle cx="2.54" cy="2.54" r="1.27"/>
             <circle cx="30.48" cy="2.54" r="1.27"/>
             <circle cx="2.54" cy="19.304" r="1.27"/>
-            <circle cx="30.48" cy="19.304" r="1.27"/>
+            <circle cx="30.48" cy="19.304" r="1.27"/> -->
             <rect x="2.54" y="5.207" width="29.972" height="11.43" style="fill:#444"/>
         </symbol>
         <symbol id="CKtact" height="12" width="12" viewBox="-6 -6 12 12">
@@ -69,7 +69,7 @@
         </symbol>
         <symbol id="SMDtact" height="6" width="6" viewBox="-3 -3 6 6">
         <!-- origin is center of switch -->
-            <rect x="-3" y="-3" width="6" height="6" style="fill:#CC9"/>
+            <!-- <rect x="-3" y="-3" width="6" height="6" style="fill:#CC9"/> -->
             <circle r="2.5" style="fill:#997"/>
 
         </symbol>
@@ -79,11 +79,11 @@
             <circle r="8.925"/>
         </symbol>
         <symbol id="SparkfunRGBencoder" width="14" height="14.5" viewBox="-7 -7 14 14.5">
-            <rect x="-6.2" y="-6.6" width="12.4" height="13.2" style="fill:#AAA"/>
+            <!-- <rect x="-6.2" y="-6.6" width="12.4" height="13.2" style="fill:#AAA"/>
             <rect x="-7" y="-1" width="0.8" height="2" />
             <rect x="6.2" y="-1" width="0.8" height="2" />
             <rect x="-5" y="-7" width="10" height="0.5" />
-            <rect x="-3.5" y="6.5" width="7" height="1" />
+            <rect x="-3.5" y="6.5" width="7" height="1" /> -->
             <circle r="4.5"/>
             <circle r="3" style="fill:#9F9"/>
         </symbol>
@@ -124,7 +124,7 @@
         <use href="#RGBled" x="5" y="76"/>
         <use href="#RGBled" x="26" y="76" />
         <!-- to gate and trig and LED board 14 at 0.1 inch -->
-        <rect x="2.22" y="84.2" width="35.56" height="2.54" style="fill:#55A"/>
+        <!-- <rect x="2.22" y="84.2" width="35.56" height="2.54" style="fill:#55A"/> -->
         <!-- <use href="#Thoniconn-vertical-ud" x="10" y="95.2"/>  -->
         <use href="#Thoniconn-vertical" x="0" y="87.2"/> 
         <use href="#Thoniconn-vertical" x="10" y="87.2"/> 
@@ -138,9 +138,9 @@
         <!-- <rect x="9.5" y="109.3" width="2.54" height="7.62" style="fill:#855"/>
         <rect x="30.5" y="109.3" width="2.54" height="7.62" style="fill:#855"/> -->
 
-        <rect x="0" y="83" width="40" height="28.4" style="stroke: #668"/>
+        <!-- <rect x="0" y="83" width="40" height="28.4" style="stroke: #668"/> -->
 
-        <rect x="0" y="76" width="40" height="35.6" style="stroke: #966"/>
+        <!-- <rect x="0" y="76" width="40" height="35.6" style="stroke: #966"/> -->
     </g>
 
     <!-- pitch dac -->
@@ -152,14 +152,14 @@
         <use href="#Thoniconn-vertical" x="21" y="88"/> 
         <use href="#Thoniconn-vertical" x="31" y="88"/> 
         <!-- Lower DAC connector 6 at 0.1inch spacing -->
-        <rect x="12.38" y="100.2" width="15.24" height="2.54" style="fill:#555"/>
+        <!-- <rect x="12.38" y="100.2" width="15.24" height="2.54" style="fill:#555"/> -->
         <!-- board is 29.7mm wide -->
-        <rect x="5.15" y="100.2" width="29.7" height="2.54" style="stroke: #696"/>
+        <!-- <rect x="5.15" y="100.2" width="29.7" height="2.54" style="stroke: #696"/> -->
         <!-- Upper DAC connector -->
-        <rect x="12.38" y="85" width="15.24" height="2.54" style="fill:#555"/>
-        <rect x="5.15" y="85" width="29.7" height="2.54" style="stroke: #696"/>
+        <!-- <rect x="12.38" y="85" width="15.24" height="2.54" style="fill:#555"/>
+        <rect x="5.15" y="85" width="29.7" height="2.54" style="stroke: #696"/> -->
         <!-- DAC boards are 23.3mm apart at pin centers. seems too much. -->
-        <rect x="0" y="84.5" width="40" height="18.7" style="stroke: #966"/>
+        <!-- <rect x="0" y="84.5" width="40" height="18.7" style="stroke: #966"/> -->
     </g>
 
     <g transform="translate(0,-16.5)">
@@ -176,9 +176,9 @@
 
         <use href="#Thoniconn-vertical" x="5" y="112"/> 
         <use href="#Thoniconn-vertical" x="26" y="112"/> 
-
+<!-- 
         <rect x="10" y="73" width="20" height="50" style="stroke: #686"/>
-        <rect x="4" y="72" width="32" height="52.4" style="stroke: #966"/>
+        <rect x="4" y="72" width="32" height="52.4" style="stroke: #966"/> -->
         
         <!-- fader pots align with jacks-->
         <g transform="translate(0,0.5)">
@@ -187,16 +187,16 @@
         <use href="#SongHuei" x="-14" y="86"/>
         <use href="#SongHuei" x="-14" y="73"/>
         </g>
-        <rect x="-15.0" y="72.5" width="13" height="52.5" style="stroke: #966"/>
+        <!-- <rect x="-15.0" y="72.5" width="13" height="52.5" style="stroke: #966"/> -->
 
         <!-- guide lines -->
-        <g style="fill:none; stroke:red; stroke-width:0.5" transform="translate(0, 6)">
+        <!-- <g style="fill:none; stroke:red; stroke-width:0.5" transform="translate(0, 6)">
             <line x1="-15" y1="73" x2="35" y2="73"/>
             <line x1="-15" y1="86" x2="35" y2="86"/>
             <line x1="-15" y1="99" x2="35" y2="99"/>
             <line x1="-15" y1="112" x2="35" y2="112"/>
 
-        </g>        
+        </g>         -->
     </g>
     <!-- that takes it to 109mm high overall, should still fit -->
 
@@ -220,8 +220,8 @@
         <use href="#Thoniconn-vertical" x="8" y="112"/> 
         <use href="#Thoniconn-vertical" x="23" y="112"/> 
 
-       <rect x="10" y="73" width="20" height="50" style="stroke: #686"/>
-        <rect x="8" y="72" width="24" height="52.4" style="stroke: #966"/>
+       <!-- <rect x="10" y="73" width="20" height="50" style="stroke: #686"/>
+        <rect x="8" y="72" width="24" height="52.4" style="stroke: #966"/> -->
     </g>
 
     <!-- screen, buttons, encoder-->
@@ -231,26 +231,26 @@
     <use href="#SMDtact" x="-68" y="20"/>
     <use href="#SMDtact" x="-59" y="20"/>
     <use href="#SparkfunRGBencoder" x="-24" y="12"/>
-    <rect x="-70" y="10.5" width="67" height="20" style="stroke: #966"/>
+    <!-- <rect x="-70" y="10.5" width="67" height="20" style="stroke: #966"/> -->
 
-    <use href="#Teensy4.1horizontal" x="-65" y="16"/>
+    <!-- <use href="#Teensy4.1horizontal" x="-67" y="16"/> -->
     <!-- <rect x="-34" y="10.5" width="32" height="108" style="stroke: #696"/> -->
 
     <!-- DIN socket -->
     <g transform="translate(-26 97)">
-        <circle r="7.95"/>  <!-- 15.9 / 2 -->
-        <circle r="8.925"/> <!-- 17.85 / 2 -->
+        <circle r="7.95"/>
+        <circle r="8.925"/>
     </g>
 
     <!-- USB-B receptacle, vertical -->
     <g transform="translate(-62 97)">
-        <circle cy="-11.37" r="7.075" style="stroke:none; fill: #333"/>
-        <circle cy="11.37" r="7.075" style="stroke:none; fill: #333"/>
-        <rect y="-11.37" x="-7.075" height="22.74" width="14.17" style="stroke:none; fill: #333"/>
-        <circle cy="-11.37" r="1.6" style="fill: #EEE"/>
-        <circle cy="11.37" r="1.6" style="fill: #EEE"/>
+        <!-- <circle cy="-14.25" r="7" style="stroke:none; fill: #333"/>
+        <circle cy="14.25" r="7" style="stroke:none; fill: #333"/>
+        <rect y="-13.5" x="-7" height="27" width="14" style="stroke:none; fill: #333"/> -->
+        <!-- <circle cy="-14.25" r="1.6" style="fill: #EEE"/>
+        <circle cy="14.25" r="1.6" style="fill: #EEE"/> -->
         <rect y="-9" x="-7" height="18" width="14" style="fill:white"/>
-        <rect y="-6" x="-5.58" height="12" width="11.16" style="fill:#121"/>
+        <rect y="-6" x="-5.58" height="12" width="11.16" style=""/>
         <rect y="-4.225" x="-3.89" height="8.45" width="7.78" style="fill:#BBB"/>
         <rect y="-2.8" x="-1.59" height="5.6" width="3.18" style="fill:white"/>
     </g>
@@ -258,12 +258,12 @@
     <!-- are these too close together to plug/unplug easily? -->
     <!-- USB-A receptacle, vertical -->
     <g transform="translate(-44 97)">
-        <circle cy="-15" r="5.575" style="stroke:none; fill: #996"/>
-        <circle cy="15" r="5.575" style="stroke:none; fill: #996"/>
-        <rect y="-15" x="-5.575" height="30" width="11.15" style="stroke:none; fill: #996"/>
-        <circle cy="-15" r="1.6" style="fill: #EEE"/>
-        <circle cy="15" r="1.6" style="fill: #EEE"/>
-        <rect y="-8" x="-5.575" height="16" width="11.15" style="fill:white"/>
+        <!-- <circle cy="-15" r="5.95" style="stroke:none; fill: #996"/>
+        <circle cy="15" r="5.95" style="stroke:none; fill: #996"/>
+        <rect y="-15" x="-5.95" height="30" width="11.9" style="stroke:none; fill: #996"/> -->
+        <!-- <circle cy="-15" r="1.6" style="fill: #EEE"/> 
+        <circle cy="15" r="1.6" style="fill: #EEE"/> -->
+        <rect y="-8" x="-5.95" height="16" width="11.9" style="fill:white"/>
         <!-- <rect y="-6" x="-5.58" height="12" width="11.16" style=""/> -->
         <rect y="-7.325" x="-3.55" height="14.65" width="7.1" style="fill:#BBB"/>
         <rect y="-5.55" x="0.8" height="11.10" width="2" style="fill:white"/>

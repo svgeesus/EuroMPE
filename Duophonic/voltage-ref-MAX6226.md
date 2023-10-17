@@ -243,6 +243,8 @@ Meanwhile, same day, positive ref very stable at **4.999727V** sd 6µV.
 
 ![vref pos day 3](./img/vref-pos-day3.png)
 
-untill it did an unexplained, sudden 30µV jump and became less noisy:
+until it did an unexplained, sudden 30µV jump and became less noisy:
 
 ![vref unexplained jump](./img/vref-pos-odd-jump.png)
+
+then hours later did a -30µV jump and became more noisy again:

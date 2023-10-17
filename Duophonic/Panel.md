@@ -130,6 +130,8 @@ Song Huei short trimmer 9mm pots [from Thonk](https://www.thonk.co.uk/shop/short
 
 10.6mm wide at PCB footprint, 9.7mm wide body, 6mm shaft. 12.5mm high including pins. Shaft 5.5mm from top of body.
 
+These are _not threaded_ so cannot be used to attach the front PCB to the panel. Maybe make one PCB for the perfdac jacks and the trimmers?
+
 ## Global outputs
 
 Need global outs, 8 jacks, same as perf dac board but rotated to be 4 wide and 2 high.

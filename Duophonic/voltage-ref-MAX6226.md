@@ -197,11 +197,13 @@ https://www.adafruit.com/product/400
 
 For testing, temporarily substituted a pair of Susumu RG2012N-104-W-T1 100k 0.05% 10ppm/C.
 
+## Test results - positive reference
+
 ### Initial power-up
 
 ![photo](./img/vref-breadboard.jpg)
 
-Measured using Keysight 34465A, 10V range, 100PLC. **4.99946V**  (range 4.99937 to 4.99953). Climbed fractionally over first 30 minutes (chip warmup?) then stable over 3 hours at **4.999528V**.
+Measured using Keysight 34465A, 10V range, 100PLC. Reference chip 1 **4.99946V**  (range 4.99937 to 4.99953). Climbed fractionally over first 30 minutes (chip warmup?) then stable over 3 hours at **4.999528V**.
 This -0.472mV error is -4.72E-4 / 5 × 100 = -0.00944% initial accuracy, within spec sheet ±0.02% (±1mV)
 
 Used without correction (i.e. assuming the reference is 5.000000V) would give -4.72E-4 × 1,200 = **-0.5664** cents error at 5V, which is outside the error budget. So the code needs to store measured calibration readings for the positive and negative reference voltages.
@@ -209,6 +211,43 @@ Used without correction (i.e. assuming the reference is 5.000000V) would give -4
 ![vref first hours](./img/Vref-first-run.png)
 
 Drift = 280 ÷ 4.999528 = 56.0052868991 (56ppm) in 3 hours
+
+However after some hours the positive voltage output now seemed stable at **4.999573V** sd 14µV.
+
+![vref-positive](./img/vref-pos-later.png)
+
+The next day day, positive ref very stable at **4.999727V** sd 6µV.
+
+![vref pos day 3](./img/vref-pos-day3.png)
+
+until it did an unexplained, sudden 30µV jump and became less noisy:
+
+![vref unexplained jump](./img/vref-pos-odd-jump.png)
+
+then hours later did a -30µV jump and became more noisy again:
+
+![vref-2jumps](./img/vref-pos-2jumps.png)
+
+Feedback on these results [from the EEVblog volt-nust forum](https://www.eevblog.com/forum/metrology/max6226-voltage-reference/msg5116593/#msg5116593) suggested several points:
+
+ - The reference might be oscillating
+ - The auto-zero op-amp might be oscillating
+ - There might need to be an RC network on the op-amp power rails to prevent spike injection to the reference
+ - The divider resistor pair was too high and should be around 5k to 10k.
+ - The breadboard could be adding noise and vibration sensitivity
+
+Testing on another board (reference 2) with no op-amp, and measurement taken from wires soldered directly to the junction of the force and sense traces showed a good initial result
+
+![vref2-pos](./img/vref2-pos-first-noop.png)
+
+and the results of a two hour test look similar to reference 1: **5.00014V** sd 10µV
+
+![vref2-pos-2h](./img/vref2-pos-2h-noop.png)
+
+This seems to indicate that the voltage reference itself is oscillating, and this is not caused by the AZ op-amp.
+
+
+## Test results - negative reference
 
 Negative voltage however is very drifty (mean **4.989221V** with a **6mV** span!):
 
@@ -227,9 +266,7 @@ The drift continued but then seemed to level off.
 
 ![vref-negative-still-drifting](./img/vref-negative-drift2.png)
 
-However the positive voltage output now seemed stable at **4.999573V** sd 14µV.
 
-![vref-positive](./img/vref-pos-later.png)
 
 Next day, negative drift continues (drift over 17 hours):
 
@@ -238,13 +275,3 @@ Next day, negative drift continues (drift over 17 hours):
 Mean value now **-4.997343V** sd 9µV.
 
 ![vref neg day 3](./img/vref-neg-day-3.png)
-
-Meanwhile, same day, positive ref very stable at **4.999727V** sd 6µV.
-
-![vref pos day 3](./img/vref-pos-day3.png)
-
-until it did an unexplained, sudden 30µV jump and became less noisy:
-
-![vref unexplained jump](./img/vref-pos-odd-jump.png)
-
-then hours later did a -30µV jump and became more noisy again:

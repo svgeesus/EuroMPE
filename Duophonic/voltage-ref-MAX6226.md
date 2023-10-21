@@ -212,6 +212,8 @@ Used without correction (i.e. assuming the reference is 5.000000V) would give -4
 
 Drift = 280 ÷ 4.999528 = 56.0052868991 (56ppm) in 3 hours
 
+### Burn-in
+
 However after some hours the positive voltage output now seemed stable at **4.999573V** sd 14µV.
 
 ![vref-positive](./img/vref-pos-later.png)
@@ -240,11 +242,21 @@ Testing on another board (reference 2) with no op-amp, and measurement taken fro
 
 ![vref2-pos](./img/vref2-pos-first-noop.png)
 
-and the results of a two hour test look similar to reference 1: **5.00014V** sd 10µV
+though the results of a two hour test look similar to reference 1: **5.00014V** sd 10µV
 
 ![vref2-pos-2h](./img/vref2-pos-2h-noop.png)
 
 This seems to indicate that the voltage reference itself is oscillating, and this is not caused by the AZ op-amp.
+
+### RC filtering
+
+Tested with 10R ([Dale CMF60](https://www.mouser.com/ProductDetail/Vishay-Dale/CMF6010R000FHEK?qs=UEmB0FaNOjjUdV%2F3hm1Qzw%3D%3D) inline from power supply then 100µF Nichicon electrolytic.
+
+R = 10.01551 (4 wire)
+
+Oscillation is gone
+
+![vref2 RC filtered power](./img/vref-pos-RCfilter-power.png)
 
 
 ## Test results - negative reference

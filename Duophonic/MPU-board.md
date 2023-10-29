@@ -144,6 +144,16 @@ Two (Low, High channel) RGB LEDs need 6 PWM outputs. See [PWM Frequency](https:/
 - 38 High G
 - 39 High B
 
+### "Fader" pots
+
+Four 10k low-rise trimmer pots for the four performance outputs. These are read by Teensy ADC and used to digitally fade down the perfDAC values on both channels of that output. Set pinMode to INPUT ([ADC pinmode input check](https://forum.pjrc.com/threads/68621-ADC-voltage-measurements-wrong-and-jumping-on-Teensy-4-1?p=292784&viewfull=1#post292784)).
+
+[1nF between wiper and AGND](https://forum.pjrc.com/threads/73545-Solutions-for-Erratic-Potentiometers?p=331814&viewfull=1#post331814) for each pot.
+
+Might need low-pass RC filter or op-amp buffer but try the software solution first.
+
+ResponsiveAnalogRead for the values. 10bit is sufficient.
+
 ## Digital outs
 
 Two pedal logic outputs, if desired. ?Not really needed?

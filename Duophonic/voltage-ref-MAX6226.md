@@ -54,7 +54,7 @@ Use same regulated +9.5V supply as pitch DACs. Off-board, to protect from therma
 
 ## Buffering
 
-Dual low-drift **OPA2186D** op-amp to provide the +5V Vref and -5V VrefN outputs needed by the pitch DACs.
+Dual zero-drift **OPA2186D** op-amp to provide the +5V Vref and -5V VrefN outputs needed by the pitch DACs. However, significant charge injection spikes at the chopper frequency require resistive isolation on inputs,and RC filtering on outputs. A non-auto-zero, e-trim op-amp such as **OPA2192** may be more suitable despite the significantly higher (mean) input bias current.
 
 > For the reference buffers, the AD8676 dual amplifier is recommended, based on its low noise, low offset error, low offset error drift, and low input bias currents.
 >
@@ -64,6 +64,7 @@ Dual low-drift **OPA2186D** op-amp to provide the +5V Vref and -5V VrefN outputs
  <tr><td></td><th>noise</th><th>offset error</th><th>offset error drift</th><th>input bias current</th></tr>
  <tr><th>AD8676B</th><td>125nV RMS</td><td>±12/50 µV</td><td>±0.2/±0.6 μV/°C</td><td>±4.5nA</td></tr>
  <tr><th>OPA2186</th><td>0.1μV (100nV) p-p</td><td>±1/±10 µV</td><td>±0.01/±0.04 μV/°C</td><td>±4.8nA</td></tr>
+ <tr><th>OPA2192</th><td>4 μV p-p</td><td>±8/±50 μV</td><td>±0.1/±0.5 μV/°C</td><td><b>±5/±20 pA</b></td></tr>
  </table>
 
 So the OPA2186 is comparable on some criteria and much superior on offset and offset drift.
@@ -76,11 +77,23 @@ So the OPA2186 is comparable on some criteria and much superior on offset and of
 >
 > Egan, M. _The 20-Bit DAC Is the Easiest Part of a 1-ppm-Accurate Precision Voltage Source_
 
+Maybe try a non-autozero non-chopper op-amp. **OPA2192** looks suitable: Vos ±8μV typ, ±50μV max, drift ±0.1 typ, ±0.5 max μV/°C.
+
+See figs 32 and 33 in the datasheet:
+
+![fig32](./img/opa2192-fig32.png) ![fig33](./img/opa2192-fig33.png)
+
+See Figure 69. Precision Reference Buffer in the datasheet (driving a 10μF capacitive load with great stability).
+
 Pair of close-tolerance low thermal drift resistors for the VrefN op-amp.
 Use of Vishay matched-pair resistors [suggested on EEVBlog](https://www.eevblog.com/forum/metrology/max6226-vref-and-ground-planes/msg4725761/#msg4725761) such as [these](https://www.mouser.com/ProductDetail/Vishay-Thin-Film/MPM2002QT3?qs=KOdD7VNvzR83jUiiLOdaaQ%3D%3D) 10k/10k 0.01% ratio, 25ppm/C.
 Is it feasible to make a board that accepts either?
 
 Decoupling caps.
+
+Needs an RC network at the output to prevent amplification of chopper pulses:
+
+> The extremely short duration of these pulses prevents the pulses from amplifying; however, the pulses can be coupled to the output of the amplifier through the feedback network. The most effective method to prevent transients in the input bias current from producing additional noise at the amplifier output is to use a low-pass filter, such as an RC network.
 
 ## Schematic
 
@@ -95,6 +108,19 @@ Power input: 4 wires +9.5, 0V, 0V, -9.5.
 1μF and 100nF input caps, 100nF noise cap, 1μF and 100nF output caps, all C0G ceramic. Later went for X7R on the 1μF for cost and footprint reasons.
 
 OutF and OutS join at inverting op-amp input.
+
+Unclear how to add serial resistance in a force/sense configuration. See [EEVBlog](https://www.eevblog.com/forum/metrology/zero-drift-amplifier-input-bias-current/msg4987996/#msg4987996):
+
+> I've seen similar misbehavior many times, AZ getting upset by caps on any inputs or output, ussualy it's exposed as abnormal offset voltage or low freq. noise.  Cure is isolation by resistors, try to insert R in between cap & input, and inverting input is no exception
+
+and [EEVBlog](https://www.eevblog.com/forum/metrology/zero-drift-amplifier-input-bias-current/msg4988155/#msg4988155):
+
+> A series resistor can be a good idea, but for the very low noise types like the ADA4522 or OPA189 this may also add significant noise.
+
+and [EEVBlog](https://www.eevblog.com/forum/metrology/zero-drift-amplifier-input-bias-current/msg4989268/#msg4989268):
+
+> Well, based on the above to cure the issue with for example OPA189 we have to wire it as follows:
+> the 3k3=10k||5k and with the C6/C7 1n caps it equalizes the impedancies both inputs see.
 
 Voltage output: pair of 4-pin headers
 
@@ -152,6 +178,11 @@ IC1
 ### Low Vos low Ibias precision op-amp (dual)
 
 (1) TI OPA2186DR SOIC-8 $2.22/10 = **$22.20 GOT**
+U1
+
+or
+
+(1) TI [OPA2192ID]() SOIC-8 $4.62/10 = **$46.20**
 U1
 
 ### Decoupling and NR caps

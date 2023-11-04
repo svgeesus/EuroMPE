@@ -36,6 +36,8 @@ This is driven anode, but Pirhana RGB LEDs are common anode so this won't work.
 
 - [How to Hook up (common anode) RGB LEDs](https://forum.pjrc.com/threads/73390-How-to-Hook-up-RGB-LEDs-with-a-Proprietary-Switch-Circuit)
 
+The [straightforward solution](https://www.pjrc.com/teensy/tutorial2.html) works fine with no visible flicker; just modified to common anode so the common pin goes to 3V3 not ground, and the PWM gives brightest light at zero not 255.
+
 ## Gate & Trigger
 
 Avoid the  [two-transistor gate output from Graham Hinton](https://modwiggler.com/forum/viewtopic.php?p=2720659&sid=8184a7a1e66cf2090d4727f4a460bd16#p2720659) because the description sounds good but buiders report unreliable operation:
@@ -58,7 +60,7 @@ Trigger is +10V for 10ms.
 
 ## Boards
 
-Panel board with 6 jacks on three rows (Gate, Trigger, Tune per voice), 2 LEDs above, one edge connector below.
+Panel board with 6 jacks on two rows (Gate & Trigger, Tune per voice), 2 LEDs above, one edge connector below.
 
 - 4 for gate and trig
 - 6 for two rgb
@@ -72,5 +74,7 @@ gnd connection to teensy.
 ## Work Plan
 
 - [ ] experiment with level shifter & Teensy PWM to drive bare RGB LED. Looking for range of colors, flicker, CPU usage
+  - _It works fine with no level shifter, just 3v3 is okay. Tested with 270R, use higher value as this is too bright._
 - [ ] breadboard two-transistor gate
+- [ ] breadboard op-amp gate
 - [ ] sketch to output 10ms pulse with a timer.

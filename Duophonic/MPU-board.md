@@ -148,11 +148,11 @@ Two (Low, High channel) RGB LEDs need 6 PWM outputs. See [PWM Frequency](https:/
 
 Four 10k low-rise trimmer pots for the four performance outputs. These are read by Teensy ADC and used to digitally fade down the perfDAC values on both channels of that output. Set pinMode to INPUT ([ADC pinmode input check](https://forum.pjrc.com/threads/68621-ADC-voltage-measurements-wrong-and-jumping-on-Teensy-4-1?p=292784&viewfull=1#post292784)).
 
-[1nF between wiper and AGND](https://forum.pjrc.com/threads/73545-Solutions-for-Erratic-Potentiometers?p=331814&viewfull=1#post331814) for each pot.
+[1nF between wiper and AGND](https://forum.pjrc.com/threads/73545-Solutions-for-Erratic-Potentiometers?p=331814&viewfull=1#post331814) for each pot. But [values are hard to predict](https://forum.pjrc.com/threads/67463-Suitable-op-amp-for-driving-the-teensy4-ADC?p=281188&viewfull=1#post281188) and [20x the value of the 1.5pF ADC internal cap, ie 30-40pf](https://forum.pjrc.com/threads/67463-Suitable-op-amp-for-driving-the-teensy4-ADC?p=281200&viewfull=1#post281200) is also recommended.
 
-Might need low-pass RC filter or op-amp buffer but try the software solution first.
+_Might_ need low-pass RC filter or op-amp buffer but try the software solution first.
 
-ResponsiveAnalogRead for the values. 10bit is sufficient.
+[ResponsiveAnalogRead](https://github.com/dxinteractive/ResponsiveAnalogRead) for the values. 10bit is sufficient. Use [pinMode(pin, INPUT_DISABLE)](https://forum.pjrc.com/threads/69671-Teensy-4-0-4-1-web-pages-need-a-warning-about-INPUT_DISABLE-on-Analog-Inputs)
 
 ## Digital outs
 
@@ -163,18 +163,21 @@ Two pedal logic outputs, if desired. ?Not really needed?
 
 ## Case & Osc temp monitoring (?)
 
-Could need analog ins, or I2C, depending on hardware. Not at all a must-have.
+Could need analog ins, or I2C, depending on hardware. Not _at all_ a must-have.
 
 ## Development & Testing plan
 
-1. T4.1 on breadboard, power from +5V, measure current consumption at various clock speeds.
-2. Test I2C display, see if update speed okay and feasible for menus
-3. Test PWM of two RGB LEDS. Test 10V gate output. Fabricate [Gate-LED](./Gate-LED.md) board.
-4. Test FreqCount & FreqMeasure
-5. Test DIN MIDI input
-6. Sketch front panel to get PCB dimensions.
-7. Fabricate & test octal perfDAC/CCDAC board (same board, different CS)
-8. Fabricate pitch CV board, test
-9. Write higher-level, MPE-capable MIDI library
-10. Fabricate MCU and display carrier board
-11. Front panel
+- [ ] T4.1 on breadboard, power from +5V, measure current consumption at various clock speeds.
+- [ ] 10k pot, ADC, ResponsiveAnalogRead
+- [ ] Test I2C display, see if update speed okay and feasible for menus
+- [x] Test PWM of RGB LED. 
+- [ ] Test 10V gate output. 
+- [ ] Fabricate [Gate-LED](./Gate-LED.md) board.
+- [ ] Test FreqCount & FreqMeasure
+- [ ] Test DIN MIDI input
+- [x] Sketch front panel to get PCB dimensions.
+- [ ] Fabricate & test [octal perfDAC/CCDAC](./performance-dac.md) board (same board, different CS)
+- [ ] Fabricate [pitch CV](./pitch-dac.md) board, test
+- [ ] Write higher-level, MPE-capable MIDI library
+- [ ] Fabricate MCU and display carrier board
+- [ ] Front panel

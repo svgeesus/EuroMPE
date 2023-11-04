@@ -197,9 +197,15 @@ C1, C5
 
 ### Low-ppm close tolerance resistors
 
-(2) Susumu RG2012V-103-P-T1 10k 0.02% 5ppm 0805 $2.57/25 = **$64.25 GOT**
+(2) Susumu RG2012V-103-P-T1 10k 0.02% 5ppm 0805 $2.57/25 = **$64.25 GOT but can't find**
+now $2.31/10 = **23.10**
 Same as is used for the offsets module.
 R1, R2
+
+or
+
+(2) Susumu RG2012V-182-P-T1 1.8k 0.02% 5ppm 0805 $2.30/10 = **$23.00**
+
 
 ### PCB
 

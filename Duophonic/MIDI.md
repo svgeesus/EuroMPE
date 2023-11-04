@@ -10,6 +10,8 @@ Low level, collect data and dispatch to handlers
 
 Note that [Arduino USBMIDI](https://github.com/lathoub/Arduino-USBMIDI) claims to support Teensy 4.1 but does not support USB Host.
 
+Note [bug in MIDI.hpp re system common messages](https://forum.pjrc.com/threads/73743-midi-tune-select-problem?p=333274&viewfull=1#post333274)
+
 High level, implement MIDI 1.0, HRV and and MPE specifications
 
 - My own library.

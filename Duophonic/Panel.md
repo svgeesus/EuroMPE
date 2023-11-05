@@ -93,9 +93,11 @@ But is now super wide and a bit cramped.
 
 Main constraint in [layout mockup](./mock-channel.svg) is mechanical attachment of MPU board to display/button/encoder board (at the top) and fader board (at the bottom) while clearing  the global output (secondary perfDAC) board which will need to be fairly shallow.
 
-[Teensy 4.1](https://www.pjrc.com/store/teensy41.html) is 60.96mm long plus 0.7mm for the USB connector = 61.7mm plus (if a cable is plugged in there, but not if a cable goes to D+ and D- pads.) room for the USB plug. Width is 17.78±0.6 so say 18.3.
+[Teensy 4.1](https://www.pjrc.com/store/teensy41.html) is 60.96mm long plus 0.7mm for the USB connector = 61.7mm plus (if a cable is plugged in there, but not if a cable goes to D+ and D- pads.) around 40mm more to leave room for the USB plug. Width is 17.78±0.6 so say 18.3.
 
 ![Teensy 4.1](./img/dimensions_teensy41.png)
+
+### Display
 
 Display is likely to be above the Teensy and the display PCB is 20 x 35mm. (Adafruit diagram says 1.1 inches which is 33.02mm by 0.86 inch which is 21.844mm)
 
@@ -110,17 +112,31 @@ Wow that looks tiny on such a big panel!
 
 ![STEMMA PCB](./img/adafruit_products_0-91_STEMMA_OLED_fab_print.png)
 
+Alternatively the [1.3" 128x64 OLED graphic display](https://www.adafruit.com/product/938) **GOT** I2C or SPI.
+
+35.19mm wide by 35.18mm high (including lower mounting lugs). Display width 35.19mm, height 19.0mm.
+
+![1.3"](./img/adafruit-1.3-128x64-fabpring.png)
+
+### Buttons
+
 Group of pushbuttons to left of display, 3 plus "back". See [User Interface](./ui.md)
 
-<!-- Thonk C&K are huge, 12mm diameter, far too big -->
-
 [Adafruit Mini Soft Touch Push-button Switches](https://www.adafruit.com/product/3983) 6x6mm SMD.
+
+![soft touch](./img/adafruit-soft-touch-push.png)
+
+3.5mm body height above pcb, 5mm to top of button.
+
+### Encoder
 
 Rotary encoder to right of display.
 
 [Rotary Encoder - Illuminated](https://www.sparkfun.com/products/15141) Sparkfun
 
-Use Sparkfun encoder as placeholder, not clear RGB led is needed here. It does need to be firmly attached to panel as it supports this board and then the MPU board too,14mm wide 13.2m high but that excludes pins (14mm with pins). M9 threaded shaft, 6mm turning shaft.
+Use Sparkfun encoder as placeholder, not clear RGB led is needed here. It does need to be firmly attached to panel as it supports this board and then the MPU board too. Better to use mounting standoffs as well.
+
+14mm wide 13.2m high but that excludes pins (14mm with pins). M9 threaded shaft, 6mm turning shaft.
 
 ## Perf fading pots
 

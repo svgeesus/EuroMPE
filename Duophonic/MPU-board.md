@@ -18,6 +18,8 @@ freq    current
 
 T3.6 ($29.25) had less memory, has 2 DAC outs (not needed here), power draw unspecified (@@measure it) but less than 4.1. Unobtainable due to NXP parts shortage, was discontinued along with 3.5, 3.2 and LC!
 
+Ensure USB cable plugged into the micro-USB (which leads to the panel-mount USB socket) clears the back of the [Gate LED board](./Gate-LED.md).
+
 ## MIDI
 
 MIDI hardware spec states < 5mA to turn on, < 2μs rise and fall times. Also pin 2 and shield go from not connected, to connected by 100nF caps for RF purposes.
@@ -170,8 +172,8 @@ Could need analog ins, or I2C, depending on hardware. Not _at all_ a must-have.
 - [ ] T4.1 on breadboard, power from +5V, measure current consumption at various clock speeds.
 - [ ] 10k pot, ADC, ResponsiveAnalogRead
 - [ ] Test I2C display, see if update speed okay and feasible for menus
-- [x] Test PWM of RGB LED. 
-- [ ] Test 10V gate output. 
+- [x] Test PWM of RGB LED.
+- [ ] Test 10V gate output.
 - [ ] Fabricate [Gate-LED](./Gate-LED.md) board.
 - [ ] Test FreqCount & FreqMeasure
 - [ ] Test DIN MIDI input

@@ -157,7 +157,7 @@ Need global outs, 8 jacks, same as perf dac board but rotated to be 4 wide and 2
 USB Host, USB device, DIN Midi (not on PCB; panel mount).
 
 - [Panel mount USB-B to Micro-B cable](https://www.sparkfun.com/products/15463)
-(M3 holes 28.5mm spacing)
+(M3 holes 28.5mm spacing) **GOT**
 - [USB host cable](https://www.pjrc.com/store/cable_usb_host_t36.html) no data sheet; **GOT**
 - [Deltron 650-0500](https://www.mouser.com/ProductDetail/Deltron/650-0500?) **GOT**
 
@@ -177,3 +177,9 @@ Dimensions of PJRC Host cable unknown, but as a placeholder [this cable](https:/
 Actual PJRC one is 11.15mm high and 38.85mm wide. (33.72 + 24.76) ÷ 2 = 29.24 centers (really?).
 
 If adding a TRS MIDI input, use a circuit which accepts either Type-A or Type-B, like [this one](https://github.com/kay-lpzw/LPZW_TRS_MIDI/)
+
+## Work Plan
+
+- [x] Experiment with font sizes on 128x64 display
+- [x] Order the tact switches **2023-11-04**
+- [ ] Mock up starting menu with Tune, Conf, Run

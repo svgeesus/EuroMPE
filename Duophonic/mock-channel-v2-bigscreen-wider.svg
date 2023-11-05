@@ -171,7 +171,7 @@
         <rect x="0" y="84.5" width="40" height="18.7" style="stroke: #966"/>
     </g>
 
-    <g transform="translate(8,-16.5)">
+    <g transform="translate(8,-17)">
         <!-- perf DAC -->
         <!-- 13mm center-to-center vertical spacing -->
         <use href="#Thoniconn-vertical" x="5" y="73"/> 
@@ -187,7 +187,7 @@
         <use href="#Thoniconn-vertical" x="26" y="112"/> 
 
         <rect x="10" y="73" width="20" height="50" style="stroke: #686"/>
-        <rect x="-16.5" y="72" width="52" height="52.8" style="stroke: #966"/>
+        <rect x="-16.5" y="73" width="52" height="51.8" style="stroke: #966"/>
         
         <!-- fader pots align with jacks-->
         <g transform="translate(-1.5,0.5)">
@@ -203,7 +203,9 @@
             <line x1="-15" y1="86" x2="32" y2="86"/>
             <line x1="-15" y1="99" x2="32" y2="99"/>
             <line x1="-15" y1="112" x2="32" y2="112"/>
-
+            <g style="stroke: green">
+                <line x1="-15.5" y1="73" x2="-15.5" y2="33"/>
+            </g>
         </g>        
     </g>
     <!-- that takes it to 109mm high overall, should still fit -->
@@ -213,7 +215,7 @@
     <rect x="27.4" y="0" width="1.2" height="108" style="fill:#777;fill-opacity:0.2;stroke:none"/>
     </g>
 
-    <g transform="rotate(-90 20 90) translate(29 -70.5)" >
+    <g transform="rotate(-90 20 90) translate(29 -68.5)" >
 <!-- perf DAC 2 -->
 <!-- is going to need a totally different front jack board that mates to the same perfdac board -->
         <use href="#Thoniconn-vertical" x="8" y="73"/> 

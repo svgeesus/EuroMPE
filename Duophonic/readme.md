@@ -35,6 +35,8 @@ There are two voice channels, each with:
     3. Slide (forward-back, CC 74)
     4. Press (aftertouch)
 
+Any per-channel calibration curves are still applied, so in monophonic mode two different oscillators which have been calibrated will play in unison.
+
 ## Analog general CC CV
 
 There are also eight general CV outputs (14bit), re-using the same board design that produces the two channels of performance outputs. See [Performance DAC](performance-dac.md). Perhaps (considering mainly the Roli Seaboard):
@@ -49,11 +51,9 @@ Top row
 Bottom row
 
 - Modulation Wheel (CC01+CC33)
-- Breath (CC02+CC34)
 - Expression Controller (CC11+CC43)
+- Breath (CC02+CC34)
 - XY Pad Y (CC113)
-
-Any per-channel calibration curves are still applied, so in monophonic mode two different oscillators which have been calibrated will play in unison.
 
 ## Modes
 
@@ -82,7 +82,7 @@ Not clear that the two non-MPE modes are needed. Better if the module accepts ei
 
 ## Tuning
 
-Like the original polyphonic EuroMPE, there should be a [tuning input](./calibration.md) which displays the current note; an auto-tuning mode can use this to calculate a linearising calibration curve. Because this is setup not playing, it's okay to go to a menu for this.
+Like the original polyphonic EuroMPE, there is a [tuning input](./calibration.md) per channel, which displays the current note; an auto-tuning mode can use this to calculate a linearising calibration curve. Because this is setup not playing, it's okay to go to a menu for this.
 
 ?? Because the tuner is in the same module as the MIDI interface, it knows when the gates are low and can do auto-tuning for drift control after x minutes of inactivity ??
 

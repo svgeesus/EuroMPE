@@ -33,7 +33,7 @@ Very good at 5ppm.
 
 ## Current / Load
 
-Load regulation good: ±50μV/mA and the load is high and constant.
+Load regulation good: ±50μV/mA and the load impedance is high and constant.
 
 As this design drives two DACs, the kelvin connections only take us to the Vrefp and Vrefn buffers.
 The [DAC boards](./pitch-dac.md) provide their own force/sense buffers to drive the voltage reference inputs on each DAC.
@@ -54,7 +54,7 @@ Use same regulated +9.5V supply as pitch DACs. Off-board, to protect from therma
 
 ## Buffering
 
-Dual zero-drift **OPA2186D** op-amp to provide the +5V Vref and -5V VrefN outputs needed by the pitch DACs. However, significant charge injection spikes at the chopper frequency require resistive isolation on inputs,and RC filtering on outputs. A non-auto-zero, e-trim op-amp such as **OPA2192** may be more suitable despite the significantly higher (mean) input bias current.
+v0.1 used dual zero-drift **OPA2186D** op-amp to provide the +5V Vref and -5V VrefN outputs needed by the pitch DACs. However, significant charge injection spikes at the chopper frequency require resistive isolation on inputs, and RC filtering on outputs. A non-auto-zero, e-trim op-amp such as **OPA2192** may be more suitable and input bias current is even lower.
 
 > For the reference buffers, the AD8676 dual amplifier is recommended, based on its low noise, low offset error, low offset error drift, and low input bias currents.
 >
@@ -67,7 +67,7 @@ Dual zero-drift **OPA2186D** op-amp to provide the +5V Vref and -5V VrefN output
  <tr><th>OPA2192</th><td>4 μV p-p</td><td>±8/±50 μV</td><td>±0.1/±0.5 μV/°C</td><td><b>±5/±20 pA</b></td></tr>
  </table>
 
-So the OPA2186 is comparable on some criteria and much superior on offset and offset drift.
+So the OPA2186 is comparable on some criteria and much superior on offset and offset drift. OPA219 worse on offsets (still very good though) and better on input bias current.
 
 > The input bias current specification of the reference buffers is important, as excessive bias currents will degrade the dc linearity. The degradation of integral nonlinearity, in ppm, as a function of input bias current, is typically:
 >
@@ -223,12 +223,16 @@ https://www.adafruit.com/product/400
 
 ## Work plan
 
-- [x] Design vref board with dual op-amp
-- [x] Fab board
+- [x] Design v0.1 Vref board with dual op-amp
+- [x] Fab v0.1 board
 - [x] Check existing component inventory
 - [x] order Vref, op-amp (same as pitch DAC uses)
 - [x] Build, test
-- [ ] Burn-in
+- [x] Burn-in (over 300 hours at this point)
+- [ ] Do stability analysis for innie OPA2192 with 2 R and 1 C
+- [ ] Design and fab temporary [power board](./Power.md) to test for ripple, noise, need for isolation resistors
+- [ ] Design v0.2 Vref board
+- [ ] Fab v0.2 board
 
 **Disaster**, unable to locate the Susumu RG2012V-103-P-T1 10k 0.02% 5ppm/C !!
 
@@ -289,11 +293,13 @@ This seems to indicate that the voltage reference itself is oscillating, and thi
 
 Tested with 10R ([Dale CMF60](https://www.mouser.com/ProductDetail/Vishay-Dale/CMF6010R000FHEK?qs=UEmB0FaNOjjUdV%2F3hm1Qzw%3D%3D) inline from power supply then 100µF Nichicon electrolytic.
 
-R = 10.01551 (4 wire)
+R = 10.01551 (4 wire) - had planned to measure current draw when oscillating but the RC cures oscillation so moot.
 
 Oscillation is gone
 
 ![vref2 RC filtered power](./img/vref-pos-RCfilter-power.png)
+
+Measured ripple on the Tenma 72-8335A power supply was 9mv which seems high. Need to test VRef with a better regulated power supply. RC network did not reduce ripple at all.
 
 
 ## Test results - negative reference

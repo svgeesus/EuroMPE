@@ -94,9 +94,9 @@ AD8675 is the Analog Devices recommendation (mouser only has the less good A gra
 
 OPA197 an alternative. Or use a quad OPA4197 for both vref buffers, output, and one left over for slew limit if desired (not a good idea for pitch) or to drive two outputs. All hinges on unstable availability and huge lead times!
 
-**OPA2186D** same as Vref drivers looks suitable, with Vos = ±1/±10 µV.
+Initial plan was **OPA2186D** same as v0.1 Vref drivers, with Vos = ±1μV typ ±10 µV max. Given how the chopper amp destabilized the voltage reference and required extensive resistive decoupling from power supplies, inputs and outputs it seems better to go for a non-chopper design.
 
-Are chopper amps suitable here? LT1150 operates on 12V bipolar supples, has 10μV max offset. Mouser $9.04 each, $8.28/10, $5.99/25 so go for 25 = 141.25 be damn sure they work first! **OPA4192D** (quad, SOIC-14 which performs better than the TSSOP) 8μV (typ) 50μV (max) $3.67/10 seems good, probably adequate (common-mode input to within 100mV of each rail) and cheaper.
+**OPA2192** as used in v0.2 voltage reference, with Vos ±8μV typ, ±50μV max, drift ±0.1 typ, ±0.5 max μV/°C still seems good so try it here too.
 
 Because the OPA2186D has a low input bias of ±4.8nA the Fig. 52 Output Amplifier in Unity Gain with Amplifier Input Bias Current Compensation was not used on the first board revision. Also there are [reports](https://www.eevblog.com/forum/metrology/ad5791-based-dac-platform/msg4965718/#msg4965718) that this compensation has little effect:
 

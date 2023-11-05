@@ -22,6 +22,8 @@ Ensure USB cable plugged into the micro-USB (which leads to the panel-mount USB 
 
 ## MIDI
 
+### DIN MIDI
+
 MIDI hardware spec states < 5mA to turn on, < 2μs rise and fall times. Also pin 2 and shield go from not connected, to connected by 100nF caps for RF purposes.
 
 [DIN MIDI](https://www.pjrc.com/teensy/td_libs_MIDI.html) in needs serial input and 6N138 optoisolator with [1k pulldown](https://forum.pjrc.com/threads/54891-MIDI-serial-(DIN)-to-usbMIDI-issues-got-weird-MIDI-messages?p=287082#post287082)
@@ -49,19 +51,25 @@ Apparently 6N138 and or H11L1 are too slow per MIDI spec and 6N137 is better. Th
 
 - 00 RX1
 
-[USB MIDI](https://www.pjrc.com/teensy/td_midi.html) & [USB Host MIDI](https://github.com/PaulStoffregen/USBHost_t36).
+### USB MIDI (device)
+
+[USB MIDI](https://www.pjrc.com/teensy/td_midi.html) 
+
+### USB MIDI (host)
+
+ [USB Host MIDI](https://github.com/PaulStoffregen/USBHost_t36).
 
 ## SPI
 
 Two [SPI](https://www.pjrc.com/teensy/td_libs_SPI.html) outputs for DACs (use the faster FIFO one for the  pitch DAC, because MPE pitchbend messages send a lot of data; use the second one for the octal performance DAC and octal CC DAC) with associated chip selects.
 
-- 11 MOSI
+- 11 MOSI pitchDACs
 - _12 MISO not needed_
-- 13 SCLK 
-- 12 CS-Pitch (any convenient one, like 10 or 12)
-- 26 MOSI1
+- 13 SCLK pitchDAC
+- 10 CS-Pitch (any convenient one, like 10)
+- 26 MOSI1 perfDACs
 - _39 MISO1 not needed_
-- 27 SCLK1
+- 27 SCLK1 perfDACs
 - 28 CS-Perf (any convenient, 28)
 - 29 CS-CC  (any convenient, 29)
 

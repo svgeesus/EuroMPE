@@ -20,10 +20,11 @@ There are three MIDI inputs
 
 ## Analog voice CV
 
-There are two voice channels:
+There are two voice channels, each with:
 
 - color LED for gate and to indicate note played (12 color scale)
 - Gate and Trigger, see [Gate/LED](./Gate-LED.md).
+- Tuning input (from oscillator)
 - Oscillator pitch CV, highly linear 18bit, low tempco DAC
   - includes pitchbend (Glide) and any microtuning
   - See [Pitch DAC](./pitch-dac.md)

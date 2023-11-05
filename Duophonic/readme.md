@@ -99,6 +99,10 @@ See [MPU board](./MPU-board.md).
 
 See [Power](./Power.md)
 
+## Panel
+
+Not settled, but this is the [current panel concept](./mock-channel-v2-bigscreen-wider.svg).
+
 ## Notes
 
 - [Slide: Absolute vs. Relative](https://support.roli.com/support/solutions/articles/36000025050-slide-absolute-vs-relative)

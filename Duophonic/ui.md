@@ -16,7 +16,7 @@ They are instead used for:
 
 ## Menu (mockup)
 
-Three screens: Tune, Config, Run. Activated by the three buttons. _might not need "back"_.
+Three screens: Tune, Config, Run. Activated by the three buttons. _might not need "back"_. OK selects current option, goes back to previous screen.
 
 - **Tune**
   - Manual

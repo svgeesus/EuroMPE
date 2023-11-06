@@ -16,7 +16,7 @@ They are instead used for:
 
 ## Menu (mockup)
 
-Three screens: Tune, Config, Run. Activated by the three buttons. _might not need "back"_. OK selects current option, goes back to previous screen.
+Three screens: Tune, Config, Run. Activated by the three buttons. _might not need "back"_. OK selects current option, goes back to previous screen. If Back not needed, split config into A-H and MPE config
 
 - **Tune**
   - Manual
@@ -50,6 +50,8 @@ Three screens: Tune, Config, Run. Activated by the three buttons. _might not nee
     - 16
 
 The list of CC names should also include RPNs? How to include NRPN?
+
+Last state should persist over power cycling.
 
 ## Screen
 

@@ -301,6 +301,12 @@ Oscillation is gone
 
 Measured ripple on the Tenma 72-8335A power supply was 9mv which seems high. Need to test VRef with a better regulated power supply. RC network did not reduce ripple at all.
 
+### Death
+
+Testing after 4 weeks of continuous powering (for ageing) both vref boards are dead.
+Maybe the PSU went above the +13V abs max rating at some point?
+Short circuit is a less likely cause, can't see how that could have happened.
+
 
 ## Test results - negative reference
 

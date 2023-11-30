@@ -61,17 +61,21 @@ Apparently 6N138 and or H11L1 are too slow per MIDI spec and 6N137 is better. Th
 
 ## SPI
 
-Two [SPI](https://www.pjrc.com/teensy/td_libs_SPI.html) outputs for DACs (use the faster FIFO one for the  pitch DAC, because MPE pitchbend messages send a lot of data; use the second one for the octal performance DAC and octal CC DAC) with associated chip selects.
+Two [SPI](https://www.pjrc.com/teensy/td_libs_SPI.html) outputs for DACs (use the faster FIFO one for the  pitch DAC, because MPE pitchbend messages send a lot of data; use the second one for the octal performance DAC and octal CC DAC) with associated chip selects. Or maybe, if the perf dacs are being updated at high frequency to do smoothing in software, they would be better on the FIFO one.
+
+If the display ends up using SPI rather than I2C then that would need a third set of MOSI/SCLK and another CS.
 
 - 11 MOSI pitchDACs
 - _12 MISO not needed_
 - 13 SCLK pitchDAC
-- 10 CS-Pitch (any convenient one, like 10)
+- 10 CS-Pitch1 (any convenient one, like 10)
+- 8 CS-Pitch2 (9 is used for FreqCount)
 - 26 MOSI1 perfDACs
 - _39 MISO1 not needed_
 - 27 SCLK1 perfDACs
 - 28 CS-Perf (any convenient, 28)
 - 29 CS-CC  (any convenient, 29)
+- 30 CS-Display  (any convenient, 30)
 
 Use pull-up resistors on chip selects, per 
 [Better SPI Bus Design in 3 Steps](https://www.pjrc.com/better-spi-bus-design-in-3-steps/)
@@ -134,7 +138,7 @@ Test how low FreqCount can go, or connect both circuits and choose between input
 
 ## Gate and Trigger outs
 
-Gate logic outputs.
+Gate logic outputs. Any convenient pins can be used.
 
 - 02 Low Gate
 - 03 High Gate

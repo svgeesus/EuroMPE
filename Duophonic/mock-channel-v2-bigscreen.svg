@@ -233,6 +233,9 @@
         <rect x="8" y="72" width="24" height="52.4" style="stroke: #966"/>
     </g>
 
+<!-- MPU board -->
+    <rect x="-71" y="10.5" width="69" height="36" style="stroke: #966"/>
+
     <!-- screen, buttons, encoder-->
     <use href="#oled13" x="-54" y="11"/>
     <use href="#SMDtact" x="-70" y="19.5"/>
@@ -240,7 +243,6 @@
     <use href="#SMDtact" x="-70" y="29"/>
     <use href="#SMDtact" x="-62" y="29"/>
     <use href="#SparkfunRGBencoder" x="-17" y="20"/>
-    <rect x="-71" y="10.5" width="69" height="36" style="stroke: #966"/>
 
     <use href="#Teensy4.1horizontal" x="-65" y="16"/>
     <!-- <rect x="-34" y="10.5" width="32" height="108" style="stroke: #696"/> -->

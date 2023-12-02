@@ -12,7 +12,7 @@ Max PCB height **108mm**.
 Using paired jacks (gate and trig, two pitch)
 then 8HP (40mm).
 
-[Panel mockup (svg)](./mock-channel-front-v2.svg) and [Panel mockup layout view with daughter boards, connectors etc (svg)](./mock-channel-v2.svg)
+[Panel mockup (svg)](./m) and [Panel mockup layout view with daughter boards, connectors etc (svg)](./mock-channel-v2-bigscreen-wider.svg)
 
 ## Front jack spacing for duophonic output
 

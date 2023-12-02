@@ -103,15 +103,22 @@ Or [Adafruit 128x64 I2C OLED](https://www.adafruit.com/product/938) 40mA.
 
 Buttons and [encoder](https://www.pjrc.com/teensy/td_libs_Encoder.html) for option selection and menu navigation. T3.6 & T4.1 can use any pins for encoders.
 
-- ?? Encoder-A
-- ?? Encoder-B
-- ?? Encoder-switch
-- ?? Button-1
-- ?? Button-2
-- ?? Button-3
-- ?? Button-4
+- 20 Encoder-A
+- 21 Encoder-B
+- 23 Encoder-switch
+- 14 Button-1
+- 15 Button-2
+- 16 Button-3
+- 17 Button-4
+
+Encoder circuit (from Bourns PEC12R datasheet) four 10k, two 10nF:
+
+![filter](./img/encoder-filter.png)
+
+[Hardware debounce vs. software hysteresis for encoders](https://forum.arduino.cc/t/rotary-encoder-debouncing/361438/12)
 
 Use encoder switch as OK, needs anther button for "back".
+
 Also needs "Calibrate" "Tune" and "Setup" ? Single button for common functions.
 
 ### Mode switch(es)
@@ -129,12 +136,22 @@ Could hide this in a menu; main usage is MPE. Also hide MPE behaviour on split (
 Frequency measuring circuitry for auto calibration. How to select channel? Should there be a 440Hz reference output?
 
 > FreqCount: best for 1 kHz to 8 MHz (up to 65 MHz with Teensy 3.0 & 3.1)
+
 > FreqMeasure: best for 0.1 Hz to 1 kHz
 
 Test how low FreqCount can go, or connect both circuits and choose between inputs depending on result.
 
 - 9 [FreqCount](https://www.pjrc.com/teensy/td_libs_FreqCount.html)
 - 22 [FreqMeasure](https://www.pjrc.com/teensy/td_libs_FreqMeasure.html)
+
+> (for FreqMeasure) At relatively low frequencies, under 1 kHz, only minimal CPU time is used. However, as the frequency increases, the interrupt demands more CPU time. A hardware low-pass filter is recommended if the input frequency could possibly be much higher than several kHz.
+
+For [FreqMeasureMulti](https://github.com/PaulStoffregen/FreqMeasureMulti) the supported pins on Teensy 4.1 are:
+
+0-9, 22-25, 28, 29, 33, 36, 37, 42-47, 48-50(dups), 51, 52-53 (dups), 54
+
+- 6 FreqMeasureMulti Low
+- 7 FreqMeasureMulti High
 
 ## Gate and Trigger outs
 
@@ -168,6 +185,11 @@ _Might_ need low-pass RC filter or op-amp buffer but try the software solution f
 
 [ResponsiveAnalogRead](https://github.com/dxinteractive/ResponsiveAnalogRead) for the values. 10bit is sufficient. Use [pinMode(pin, INPUT_DISABLE)](https://forum.pjrc.com/threads/69671-Teensy-4-0-4-1-web-pages-need-a-warning-about-INPUT_DISABLE-on-Analog-Inputs)
 
+- 24 (A10)
+- 25 (A11)
+- 40 (A16)
+- 41 (A17)
+
 ## Digital outs
 
 Two pedal logic outputs, if desired. ?Not really needed?
@@ -179,19 +201,32 @@ Two pedal logic outputs, if desired. ?Not really needed?
 
 Could need analog ins, or I2C, depending on hardware. Not _at all_ a must-have.
 
+## Overall pinout
+
+_Italic_ items are not immediately needed but need specific pins, so reserved in case.
+
+![pinout](./img/MPU-pinout-v01.png)
+
 ## Development & Testing plan
 
 - [ ] T4.1 on breadboard, power from +5V, measure current consumption at various clock speeds.
 - [ ] 10k pot, ADC, ResponsiveAnalogRead
 - [ ] Test I2C display, see if update speed okay and feasible for menus
+- [ ] Test SPI display, start on menu/dashboard layout
 - [x] Test PWM of RGB LED.
 - [ ] Test 10V gate output.
 - [ ] Fabricate [Gate-LED](./Gate-LED.md) board.
 - [ ] Test FreqCount & FreqMeasure
 - [ ] Test DIN MIDI input
-- [x] Sketch front panel to get PCB dimensions.
+- [x] Sketch [front panel](./Panel.md) to get PCB dimensions.
 - [ ] Fabricate & test [octal perfDAC/CCDAC](./performance-dac.md) board (same board, different CS)
 - [ ] Fabricate [pitch CV](./pitch-dac.md) board, test
 - [ ] Write higher-level, MPE-capable MIDI library
 - [ ] Fabricate MCU and display carrier board
 - [ ] Front panel
+
+## Testing results
+
+### Frequency measurement
+
+Frequencies tested by loopback of pwm output to FreqMeasureMulti inputs (sketch Three_PWM_in_Serial_Output). Tested 20Hz, 20kHz, 440 Hz. Limit to accuracy is the exact frequency produced by PWM.

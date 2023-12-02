@@ -153,6 +153,8 @@ For [FreqMeasureMulti](https://github.com/PaulStoffregen/FreqMeasureMulti) the s
 - 6 FreqMeasureMulti Low
 - 7 FreqMeasureMulti High
 
+Useful frequency range for calibration (see [MIDI](./MIDI.md)) is 16.35Hz to 7040.00Hz, and for oscillator tuning and musical use is 65.41 Hz to 4186.01 Hz.
+
 ## Gate and Trigger outs
 
 Gate logic outputs. Any convenient pins can be used.
@@ -212,11 +214,13 @@ _Italic_ items are not immediately needed but need specific pins, so reserved in
 - [ ] T4.1 on breadboard, power from +5V, measure current consumption at various clock speeds.
 - [ ] 10k pot, ADC, ResponsiveAnalogRead
 - [ ] Test I2C display, see if update speed okay and feasible for menus
-- [ ] Test SPI display, start on menu/dashboard layout
+- [x] Test SPI display
+- [ ] start on menu/dashboard layout
 - [x] Test PWM of RGB LED.
 - [ ] Test 10V gate output.
 - [ ] Fabricate [Gate-LED](./Gate-LED.md) board.
-- [ ] Test FreqCount & FreqMeasure
+- [ ] Test FreqCount
+- [x] Test FreqMeasure (and FreqMeasureMulti)
 - [ ] Test DIN MIDI input
 - [x] Sketch [front panel](./Panel.md) to get PCB dimensions.
 - [ ] Fabricate & test [octal perfDAC/CCDAC](./performance-dac.md) board (same board, different CS)
@@ -227,6 +231,26 @@ _Italic_ items are not immediately needed but need specific pins, so reserved in
 
 ## Testing results
 
-### Frequency measurement
+### Frequency measurement results
 
-Frequencies tested by loopback of pwm output to FreqMeasureMulti inputs (sketch Three_PWM_in_Serial_Output). Tested 20Hz, 20kHz, 440 Hz. Limit to accuracy is the exact frequency produced by PWM.
+Frequencies tested by loopback of pwm output to FreqMeasureMulti inputs (sketch Three_PWM_in_Serial_Output). Tested 20Hz, 20kHz, 440 Hz. Limit to verifying accuracy is the exact frequency produced by PWM, especially at higher frequencies, and the limits of a gate-interval frequency meter at low frequencies.
+
+Teensy 4.0 (FreqMeasureMulti, at 600MHz) compared to Keysight 34465A (gate time 1s).
+
+PWM at 16.35 Hz, Teensy reports 17.8819, Keysight (AC Filter >3Hz) 17.88204 Hz, sd 1.4 μHz. Seems PWM cannot reliably go that low.
+
+PWM at 20Hz, Teensy reports 20.0003 Hz while Keysight (AC Filter >3Hz, 1s gate) reports 20.000382 Hz sd 129nHz, an error of -82 ppm. Keysight is doing gate interval not timing between rising edges, so Keysight is more likely to be incorrect here! Also 20Hz is a third of the 60Hz mains frequency.
+
+PWM at 45Hz, Teensy reports 45.0003 Hz while Keysight (AC filter >3 Hz, 1s gate) reports 45.000567 Hz sd 0.45 μHz, an error of -267 ppm. Again likely the Keysight is in error there.
+
+PWM at 200Hz, Teensy reports 200.0000 while Keysight (AC Filter >20Hz, 1s gate) reports 200.00123 Hz sd 1.55 μHz, an error of -1.23 ppb
+
+On 440Hz (concert A), Teensy reports 440.0066 Hz while Keysight 34465A (AC filter >20Hz, gate time 100ms) reports 440.009 Hz, sd 30 μHz which is an error of -2.4ppb !
+
+PWM at 2kHz, Teensy reports 2000.0000 while Keysight (AC Filter >20Hz, 1s gate) reports 2.000012 kHz sd 13.5 μHz, an error of -12 ppb
+
+PWM at 4kHz, Teensy reports 4000.0000 while Keysight (AC Filter >20Hz, 1s gate) reports 4.000025 kHz sd 33 μHz, an error of -25 ppm. Still good agreement there, but likely the Teensy is starting to be in error and we should be using FreqCount instead.
+
+PWM at 8kHz, Teensy reports 7999.5732 while Keysight (AC Filter >20Hz, 1s gate) reports 8.000050 kHz sd 50 μHz, an error of -476 ppm.
+
+Worryingly with PWM specified as 20kHz, Teensy reports 20000Hz while Keysight (AC Filter >20Hz, 1s gate) reports 18.18kHz sd 439 Hz (!) implying the PWM frequency is both inaccurate and unstable.

@@ -20,6 +20,47 @@ Doesn't yet exist as a library but verious sketches implement parts.
 
 Voice allocation is not in that library, module specific.
 
+## Note range
+
+Range of [musical frequencies for MIDI notes](https://www.inspiredacoustics.com/en/MIDI_note_numbers_and_center_frequencies) assuming :
+
+- Equal temperament tuning
+- MIDI 60 is C4
+- A4 is concert A, 440Hz
+- C4 is 0V, Doepfer Eurorack standard
+- pitch CV range +5V to -5V
+- DAC verification should avoid the note extremes to minimize linearity error
+
+127 (G9)           = 12543.85
+120 (C9, 5V)       =  8372.02
+119 (B8, 4 11/12V) =  7902.13
+117 (A8, 4.75V)    =  7040.00 exactly
+108 (C8, 4V)       =  4186.01
+105 (A7)           =  3520.00 exactly
+93  (A6)           =  1760.00 exactly
+81  (A5)           =   880.00 exactly
+69  (A4)           =   440.00 exactly
+60  (C4, 0V)       =   261.63
+57  (A3)           =   220.00 exactly
+45  (A2)           =   110.00 exactly
+36  (C2, -2V)      =    65.41
+33  (A1, -2.25V )  =    55.00 exactly
+24  (C1, -3V)      =    32.70
+21  (A0, -3.25V)   =    27.50 exactly
+16  (E0)           =    20.60
+9   (A-1, -4.25V)  =    16.35 exactly
+
+Note that:
+
+- A8 is a convenient 4.750 V corresponding to an exact integer frequency 7040 Hz
+- C8 is a convenient 4v for testing, and also corresponds to the _highest_ note on an 88-key piano
+- C2 is -2V and also the _lowest_ note on an 88-key piano
+- A2 is a convenient -2.250 V corresponding to an exact integer frequency 55 Hz
+- E0 is the lower limit of audibility
+- A-1 is -4.25V and exact 16.350 Hz, useful for auto tuning
+- MIDI notes 121 to 127 are unreachable with a ±5V DAC swing if the C4 = 0V Doepfer tuning is maintained. Also not musically useful notes.
+- MIDI notes 0 to 15 inaudible, so not musically useful
+
 ## Note priority
 
 Dispatching key events to the two channels: first one is lowest note priority, second channel is highest note priority. So can be used as one of two popular monosynth styles, as well as duophonic.

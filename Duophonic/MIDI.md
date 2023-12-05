@@ -31,24 +31,28 @@ Range of [musical frequencies for MIDI notes](https://www.inspiredacoustics.com/
 - pitch CV range +5V to -5V
 - DAC verification should avoid the note extremes to minimize linearity error
 
-127 (G9)           = 12543.85
-120 (C9, 5V)       =  8372.02
-119 (B8, 4 11/12V) =  7902.13
-117 (A8, 4.75V)    =  7040.00 exactly
-108 (C8, 4V)       =  4186.01
-105 (A7)           =  3520.00 exactly
-93  (A6)           =  1760.00 exactly
-81  (A5)           =   880.00 exactly
-69  (A4)           =   440.00 exactly
-60  (C4, 0V)       =   261.63
-57  (A3)           =   220.00 exactly
-45  (A2)           =   110.00 exactly
-36  (C2, -2V)      =    65.41
-33  (A1, -2.25V )  =    55.00 exactly
-24  (C1, -3V)      =    32.70
-21  (A0, -3.25V)   =    27.50 exactly
-16  (E0)           =    20.60
-9   (A-1, -4.25V)  =    16.35 exactly
+| MIDI 	| Name 	| Voltage  	| Frequency 	|
+|------	|------	|----------	|-----------	|
+| 127  	| G9   	|          	| 12,543.85 	|
+| 120  	| C9   	| 5V       	| 8372.02   	|
+| 119  	| B8   	| 4 11/12V 	| 7902.13   	|
+| 117  	| A8   	| 4.75V    	| 7040.00   	|
+| 108  	| C8   	| 4V       	| 4186.01   	|
+| 105  	| A7   	| 3.75V    	| 3520.00   	|
+| 93   	| A6   	| 2.75V    	| 1760.00   	|
+| 81   	| A5   	| 1.75V    	| 880.00    	|
+| 69   	| A4   	| 0.75V    	| 440.00    	|
+| 60   	| C4   	| 0V       	| 261.63    	|
+| 57   	| A3   	| -0.25V   	| 220.00    	|
+| 45   	| A2   	| -1.25V   	| 110.00    	|
+| 36   	| C2   	| -2V      	| 65.41     	|
+| 33   	| A1   	| -2.25V   	| 55.00     	|
+| 24   	| C1   	| -3V      	| 32.70     	|
+| 21   	| A0   	| -3.25V   	| 27.50     	|
+| 16   	| E0   	|          	| 20.60     	|
+| 9   	| A-1   | -4.25V    | 16.35     	|
+
+Frequencies for the A notes are exact, others are rounded.
 
 Note that:
 

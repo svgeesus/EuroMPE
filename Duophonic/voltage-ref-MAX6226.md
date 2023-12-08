@@ -172,7 +172,7 @@ Pin 1 of OPA2186 is on the side with the bevel, and is aligned closest to JP2 on
 
 ### Voltage reference
 
-(1) AD MAX6226ALA50+ Ceramic LCC $11.79/1 = **$11.79** get 3 **GOT**
+(1) AD MAX6226ALA50+ Ceramic LCC $11.79/1 = **$11.79** get 3 **GOT** 3 more ordered 8 Dec 2023
 IC1
 
 ### Low Vos low Ibias precision op-amp (dual)
@@ -182,7 +182,7 @@ U1
 
 or
 
-(1) TI [OPA2192ID]() SOIC-8 $4.62/10 = **$46.20**
+(1) TI [OPA2192IDR](https://www.mouser.com/ProductDetail/Texas-Instruments/OPA2192IDR?) SOIC-8 $4.63/10 = **$46.30**
 U1
 
 ### Decoupling and NR caps
@@ -204,7 +204,15 @@ R1, R2
 
 or
 
-(2) Susumu RG2012V-182-P-T1 1.8k 0.02% 5ppm 0805 $2.30/10 = **$23.00**
+(2) Susumu RG2012V-182-P-T1 1.8k 0.02% 5ppm 0805 $2.30/10 = **$23.00** 6 ordered 8 Dec 2023
+
+or
+
+(2) Vishay PLTU0805U1002LST5 10k 0.01% 2ppm 0805 $9.31/1 = **$18.62**
+
+or even
+
+(1) Vishay Y1685V0001TT9W bulk foil 2-resistor network
 
 
 ### PCB

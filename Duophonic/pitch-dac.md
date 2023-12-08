@@ -173,6 +173,10 @@ Board v0.2 [ordered at OSH Park](https://oshpark.com/shared_projects/UpIebEcc) 1
 
 (2) TI [OPA2186DR](https://www.mouser.com/ProductDetail/Texas-Instruments/OPA2186DR) $2.22/10 = **$22.20 GOT**
 
+but no those choppers are a pain in the ass, so
+
+(2) TI [OPA2192IDR](https://www.mouser.com/ProductDetail/Texas-Instruments/OPA2192IDR?) SOIC-8 $4.63/10 = **$46.30** ordered 8 Dec 2023
+
 ### Schottky diode
 
 (1) Kyocera [SD0805S040S0R5](https://www.mouser.com/ProductDetail/KYOCERA-AVX/SD0805S040S0R5) 0805 40V $0.44/1 = **$1.32 GOT 4**

@@ -71,9 +71,11 @@
             <circle r="7.95"/>
             <circle r="8.925"/>
         </symbol>
-        <symbol id="SparkfunRGBencoder" width="14" height="14.5" viewBox="-7 -7 14 14.5">
+
+        <symbol id="SparkfunRGBencoder" width="18" height="18.5" viewBox="-9 -9 18 18.5">
+            <circle r="6.25" style="stroke:#557; stroke-width:0.5"/>
             <circle r="4.5"/>
-            <circle r="3" style="fill:#9F9"/>
+            <circle r="3" />
         </symbol>
         <symbol id="Teensy4.1vertical" width="18.3" height="61.7" viewbox="0 0 18.3 61.7">
             <rect x="0" y="0.7" width="18.3" height="61" style="fill:#0602"/>
@@ -183,14 +185,16 @@
 
     </g>
 
+
     <g transform="translate(2, 0)">
         <!-- screen, buttons, encoder-->
-        <use href="#oled13" x="-52" y="11"/>
-        <use href="#SMDtact" x="-70" y="19.5"/>
-        <use href="#SMDtact" x="-62" y="19.5"/>
-        <use href="#SMDtact" x="-70" y="29"/>
-        <use href="#SMDtact" x="-62" y="29"/>
-        <use href="#SparkfunRGBencoder" x="-13" y="20"/>
+        <use href="#oled13" x="-53" y="11"/>
+        <use href="#SMDtact" x="-71" y="19.5"/>
+        <use href="#SMDtact" x="-63" y="19.5"/>
+        <use href="#SMDtact" x="-71" y="29"/>
+        <use href="#SMDtact" x="-63" y="29"/>
+        <rect x="-72" y="18" width="16" height="18" class="keep"/>
+        <use href="#SparkfunRGBencoder" x="-15" y="18"/>
     </g>
 
 

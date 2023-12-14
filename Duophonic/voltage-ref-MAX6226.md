@@ -237,6 +237,8 @@ https://www.adafruit.com/product/400
 - [x] order Vref, op-amp (same as pitch DAC uses)
 - [x] Build, test
 - [x] Burn-in (over 300 hours at this point)
+- [ ] Figure out why the boards died
+- [ ] Try again with v0.1 board and 9V battery power (eliminate ripple, possible over-voltage)
 - [ ] Do stability analysis for innie OPA2192 with 2 R and 1 C
 - [ ] Design and fab temporary [power board](./Power.md) to test for ripple, noise, need for isolation resistors
 - [ ] Design v0.2 Vref board

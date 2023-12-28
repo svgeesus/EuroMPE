@@ -188,7 +188,9 @@
         <use href="#Thoniconn-vertical" x="5" y="112"/> 
         <use href="#Thoniconn-vertical" x="26" y="112"/> 
 
-        <rect x="10" y="73" width="20" height="50" style="stroke: #686"/>
+        <!-- KiCad PerfDAC board -->
+        <rect x="7" y="82" width="26.27" height="33.68" style="stroke: #686"/>
+        <!-- <rect x="10" y="73" width="20" height="50" style="stroke: #686"/> -->
         <rect x="-16.5" y="73" width="52" height="51.8" style="stroke: #966"/>
         
         <!-- fader pots align with jacks-->
@@ -232,8 +234,10 @@
         <use href="#Thoniconn-vertical" x="8" y="112"/> 
         <use href="#Thoniconn-vertical" x="23" y="112"/> 
 
-       <rect x="10" y="73" width="20" height="50" style="stroke: #686"/>
         <rect x="8" y="72" width="24" height="52.4" style="stroke: #966"/>
+
+        <!-- KiCad PerfDAC board -->
+        <rect x="7" y="82" width="26.27" height="33.68" style="stroke: #686"/>
     </g>
 
     <g transform="translate(2, 0)">

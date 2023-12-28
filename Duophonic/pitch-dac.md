@@ -173,7 +173,7 @@ Board v0.2 [ordered at OSH Park](https://oshpark.com/shared_projects/UpIebEcc) 1
 
 (2) TI [OPA2186DR](https://www.mouser.com/ProductDetail/Texas-Instruments/OPA2186DR) $2.22/10 = **$22.20 GOT**
 
-but no those choppers are a pain in the ass, so
+but no those choppers are a _pain in the ass,_ so
 
 (2) TI [OPA2192IDR](https://www.mouser.com/ProductDetail/Texas-Instruments/OPA2192IDR?) SOIC-8 $4.63/10 = **$46.30** ordered 8 Dec 2023
 

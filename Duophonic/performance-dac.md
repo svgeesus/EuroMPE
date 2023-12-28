@@ -30,12 +30,14 @@ Clean 5.5V. Most graphs in datasheet are at AVdd =  5.5V.
 
 Logic level high is 0.625 * Vdd so 3.4V, ie it is a 5V logic device with that Vdd.
 
-Needs level shifter for SPI. Use second SPI channel on Teensy 4.1. One quad shifter handles CS (SYNC) plus SCLK and MOSI
+Needs level shifter for SPI. Use second SPI channel on Teensy 4.1. One quad shifter handles CS (SYNC) plus SCLK and MOSI and optionally LDAC.
 
 **74AHCT125** Quad Level-Shifter (SSOP-14, **got 10 Jan 2018** plus 10 DIP)  good for SPI, fast enough.
 Vdd abs max -0.5V to +7V so good for 5V5.
 
 Enables are active low, so tie all to ground.
+
+[Check for MISO tri-state behavior](https://www.pjrc.com/better-spi-bus-design-in-3-steps/) with a pair of 10 resistors.
 
 ## Vref
 
@@ -77,12 +79,16 @@ So powering from the analog, regulated 5V5 supply helps here.
 
 Internally buffered, but _poor_ load regulation; will need external buffer to protect from modular environment (like getting 12V plugged into an output by mistake), to provide a constant high-impedance load for the DAC, and to give current drive with low output impedance.
 
+> **8.2.3 Output Amplifier**
+> The output buffer amplifier is capable of generating rail-to-rail voltages on its output, giving a maximum output range of 0V to AVDD. It is capable of driving a load of 2kΩ in parallel with 3000pF to GND. The source and sink capabilities of the output amplifier can be seen in the Typical Characteristics. The typical slew rate is 0.75V/μs, with a typical full-scale settling time of 5μs with the output unloaded.
+
 ## Support circuitry
 
 4.7μF + 100nF supply bypass caps on AVdd.
-"a 1μF to 10μF capacitor and 0.1μF bypass capacitor are strongly recommended".
 
-Optional 150nF cap for lower noise on Vref (likely not needed).
+> a 1μF to 10μF capacitor and 0.1μF bypass capacitor are strongly recommended.
+
+Optional 150nF cap for lower noise on Vref (likely not needed, but place footprint on board).
 
 ## Output conditioning
 
@@ -160,12 +166,50 @@ Three separate boards, stacking and parallel to panel, for:
 SYNC is active-low CS. Din is MOSI. SCLK is SCLK :)
 Synchronous update mode so LDAC tied to GND.
 But check this allows updating only some channels, not (re)writing to them all.
+Better to bring out LDAC through level shifter so there is flexibility on controlling it from Teensy or tying low permanently.
+
+### DAC board
+
+#### Schematic
+
+![Schematic](./img/PerfDAC-schematic.png)
+
+### DAC PCB
+
+> We detected a 2 layer board of 1.33 x 1.03 inches (33.7 x 26.3mm). 3 boards will cost $6.85
+
+### DAC BOM  (per DAC board, need 2)
+
+#### Resistors
+
+(1) R1 10k 0805 any tolerance **GOT**
+(1) R2 0R 0805 or solder bridge, optional (**GOT**)
+
+#### Capacitors
+
+(1) C1 Kemet C1206X105K3RACTU  25V 1μF X7R 10% 1206 ceramic $0.839/10 = **$8.39 GOT**
+or
+(1) [Kemet C1206C475K3RACTU](https://www.mouser.com/ProductDetail/KEMET/C1206C475K3RACTU?qs=sGAEpiMZZMvsSlwiRhF8qok1fkaRbtAXC1WGxIuEg%252Bg%3D) 25V 4.7μF X7R 10% 1206 MLCC $0.156/10 =  **$1.56**
+
+(2) C2, C3 Kemet C1206C104K3GEC7210 25V 100nF C0G 1206 ceramics $0.051/100 = **$5.10 GOT**
+
+(1) C4  [Murata GRM31C5C1H154JE02L](https://www.mouser.com/ProductDetail/Murata-Electronics/GRM31C5C1H154JE02L?qs=qSfuJ%252Bfl%2Fd70Xb0PJyHSQA%3D%3D) 50V 0.15μF 1206 C0G $0.241/10 = **$2.41**
+
+(2) Kemet C1206C104K3GEC7210 25V 100nF C0G 1206 ceramics $0.051/100 = **$5.10 GOT**
+
+#### DAC
+
+(1) DAC8168ICPW  14-bit octal $25.98/1 = **$25.98 GOT**
+
+#### Logic
+
+(1) [SN74AHCT125QDRQ1](https://www.mouser.com/ProductDetail/Texas-Instruments/SN74AHCT125QDRQ1?qs=zhgwDAIOVxtE5BLiD9k5oQ%3D%3D) Quad bus buffer $0.385/10 = **$3.85 GOT**
 
 ## Code
 
 Enable internal ref (disabled by default) in setup: command 090A0000h.
 
-Then use broadcast mode to set all channels to zero.
+Then use broadcast mode to set all channels to zero (but zero is the C-grade power-on default).
 
 See [32bit SPI to DAC8168](https://forum.pjrc.com/threads/72317-Dac8568-gt-dac8168?p=321896&viewfull=1#post321896) using SPI.transfer32()
 

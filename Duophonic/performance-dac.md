@@ -183,6 +183,10 @@ Better to bring out LDAC through level shifter so there is flexibility on contro
 
 ![bottom](img/PerfDAC-bottom-osh.png)
 
+![3D](img/PerfDAC-3D.png)
+
+_Notice that the buffer board connections should be on the other side of the board!_
+
 ### DAC BOM  (per DAC board, need 2)
 
 #### Resistors

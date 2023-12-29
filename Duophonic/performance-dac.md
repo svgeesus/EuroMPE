@@ -176,7 +176,12 @@ Better to bring out LDAC through level shifter so there is flexibility on contro
 
 ### DAC PCB
 
-> We detected a 2 layer board of 1.33 x 1.03 inches (33.7 x 26.3mm). 3 boards will cost $6.85
+> We detected a 2 layer board of 1.33 x 1.03 inches (33.8 x 26.3mm)
+> 3 boards will cost $6.85
+
+![top](img/PerfDAC-top-osh.png)
+
+![bottom](img/PerfDAC-bottom-osh.png)
 
 ### DAC BOM  (per DAC board, need 2)
 

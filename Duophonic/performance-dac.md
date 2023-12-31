@@ -106,6 +106,8 @@ Uses half the amount of op-amps (one per output). Needs testing.
 
 Capture some MIDI output from the Roli Seaboard to see what rate of changes is sent on changes in pressure etc; suspect it is fairly slow (and 7bit).
 
+Test using pitch bend, or slow filter sweeps with some resonance
+
 Remember same board is used for the analog general CC CV section, so also capture some data on that (mod wheel, breath, etc). Some of these are 14bit CC:
 
 - Modulation Wheel (CC01+CC33)
@@ -183,7 +185,11 @@ Better to bring out LDAC through level shifter so there is flexibility on contro
 
 ![bottom](img/PerfDAC-bottom-osh.png)
 
+3D views, front and back
+
 ![3D](img/PerfDAC-3D.png)
+
+![3D back](img/PerfDAC-3D-back.png)
 
 _Notice that the buffer board connections should be on the other side of the board!_
 

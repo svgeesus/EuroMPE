@@ -236,7 +236,8 @@ See [32bit SPI to DAC8168](https://forum.pjrc.com/threads/72317-Dac8568-gt-dac81
 - [ ] Check existing parts stock, to be sure.
 - [ ] Select an op-amp for post-dac conditioning.
 - [ ] Lay out panel jack PCB and op-amp PCB, check enough room for connectors and easy to route
-- [ ] Lay out perf DAC board, send to OSH Park to enable testing a populated DAC board.
+- [x] Lay out perf DAC board, 
+- [ ] send to OSH Park to enable testing a populated DAC board.
 - [ ] Order parts
 - [ ] Build perf DAC board
 - [ ] Test perf DAC board with 5V5 supplies

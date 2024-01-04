@@ -22,6 +22,8 @@ Ensure USB cable plugged into the micro-USB (which leads to the panel-mount USB 
 
 ## MIDI
 
+For software details, see [EuroMPE MIDI](./MIDI.md). This section relates to the input hardware portions on the MPU board, only.
+
 ### DIN MIDI
 
 MIDI hardware spec states < 5mA to turn on, < 2μs rise and fall times. Also pin 2 and shield go from not connected, to connected by 100nF caps for RF purposes.
@@ -31,7 +33,7 @@ and 4.7-10 kΩ base-emitter resistor.
 
 6N139 is lower-current (0.5mA) version of 6N138 (1.6mA).  
 
-Avago Max propogation delay to low: 6N139 25μs, 6N138 10μs. To high, 6N139 60μs, 6N138 35μs. 
+Avago Max propogation delay to low: 6N139 25μs, 6N138 10μs. To high, 6N139 60μs, 6N138 35μs.
 
 Fairchild is worse, max propogation delay to low: 6N139 30μs, 6N138 15μs. To high, 6N139 90μs, 6N138 50μs.
 
@@ -46,6 +48,7 @@ Apparently 6N138 and or H11L1 are too slow per MIDI spec and 6N137 is better. Th
 - [Opto-couple confusion – 6N137 or 6N138?](https://gr33nonline.wordpress.com/2019/05/15/opto-couple-confusion-6n137-or-6n138/)
 - [Teensy 4.0 serial optocoupler 6n137s](https://forum.pjrc.com/threads/66877-Teensy-4-0-serial-optocoupler-6n137s)
 - [MIDI Input with 6N137, 6N138, or 6N139](https://www.kieranreck.co.uk/blog/midi-input-with-6n137-6n138-or-6n139)
+- [Optocouplers: Defending Your Microcontroller, MIDI, And A Hot Tip For Speed](https://hackaday.com/2018/05/09/optocouplers-defending-your-microcontroller-midi-and-a-hot-tip-for-speed/) especially the comments
 
 [Vishay 6N137](https://www.mouser.com/ProductDetail/Vishay-Semiconductors/6N137?qs=xCMk%252BIHWTZMrQz4FyDXhMg%3D%3D) PDIP8, $1.76/1.
 
@@ -187,6 +190,8 @@ _Might_ need low-pass RC filter or op-amp buffer but try the software solution f
 
 [ResponsiveAnalogRead](https://github.com/dxinteractive/ResponsiveAnalogRead) for the values. 10bit is sufficient. Use [pinMode(pin, INPUT_DISABLE)](https://forum.pjrc.com/threads/69671-Teensy-4-0-4-1-web-pages-need-a-warning-about-INPUT_DISABLE-on-Analog-Inputs)
 
+> pinMode(A0, INPUT_DISABLE);
+
 - 24 (A10)
 - 25 (A11)
 - 40 (A16)
@@ -206,6 +211,7 @@ Could need analog ins, or I2C, depending on hardware. Not _at all_ a must-have.
 ## Overall pinout
 
 _Italic_ items are not immediately needed but need specific pins, so reserved in case.
+Depending on testing of [PerfDAC](), an additional pin for LDAC might be needed. Pins 33-35 still available.
 
 ![pinout](./img/MPU-pinout-v01.png)
 

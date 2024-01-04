@@ -219,6 +219,7 @@ Depending on testing of [PerfDAC](), an additional pin for LDAC might be needed.
 
 - [ ] T4.1 on breadboard, power from +5V, measure current consumption at various clock speeds.
 - [ ] 10k pot, ADC, ResponsiveAnalogRead
+- [ ]  Create comparative DIN-MIDI input board with several alternatives, for testing.
 - [ ] Test I2C display, see if update speed okay and feasible for menus
 - [x] Test SPI display
 - [ ] start on menu/dashboard layout

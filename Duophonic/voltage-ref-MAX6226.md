@@ -4,7 +4,13 @@ Post-COVID supply chain has much less availability for good voltage references.
 
 MAX6226_50 (Ceramic LCC) is available at MOQ 1, 
 has great stability due to the hermetic ceramic package,
-excellent temperature stability
+excellent temperature stability.
+
+However initial tests produced oscillation, and chip failure after 4 weeks.
+
+Linear [LT1236LS8](./voltage-ref-LT1236.md) may be an alternative option if MAX6226_50 cannot be made to work reliably.
+
+Both use ceramic LS8 package with copper pads underneath the device. This gives improved stability, particularly to moisture and PCB flex, but makes soldering difficult without a reflow oven. Hot air tends to blow the lightweight ceramic chip off the board, so holding in place with tweezers is required.
 
 ![pinout](./img/MAX6226-pinout.png)
 

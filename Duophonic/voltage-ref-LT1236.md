@@ -143,7 +143,7 @@ U1
 
 ### Low-ppm close tolerance resistors
 
-(2) Susumu RG2012V-182-P-T1 1.8k 0.02% 5ppm 0805 $2.30/10 = **$23.00** 6 ordered 8 Dec 2023
+(2) Susumu RG2012V-182-P-T1 1.8k 0.02% 5ppm 0805 $2.30/10 = **$23.00 GOT** 6 ordered 8 Dec 2023
 
 ### PCB
 

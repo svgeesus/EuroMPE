@@ -28,7 +28,7 @@ Advantage of ±12V-derived ±9V5 rails, compared to using Eurorack 5V power, is 
 
 With Teensy 4.1, for AD5781ARUZ no level shifters needed.
 
-Data is written to the AD5781 in a 24-bit word format, which sadly precludes SPI.transfer16() or SPI.transfer32()
+Data is written to the AD5781 in a 24-bit word format, which sadly precludes SPI.transfer16() or SPI.transfer32(); however there is an [SPI.transfer(buffer, size)](https://www.arduino.cc/reference/en/language/functions/communication/spi/transfer/), where size would be 3, which might work, see [example](https://forum.pjrc.com/index.php?threads/spi-write-24bits.74194/#post-336450). Another option (without buffer overwrite) is [SPI.transfer(txBuffer, rxBuffer, cnt);](https://forum.pjrc.com/index.php?threads/spi-write-24bits.74194/#post-336456) where rxbuffer can be NULL
 
 Minimum CS (SYNC) high time 48ns. SCLK min cycle time 40ns which is 25MHz. So use well below that (start at 10MHz).
 
@@ -127,7 +127,7 @@ Should CLR and RESET have been tied high? YES oops v.01 board does not, fixed in
 Separate digital and analog ground planes.
 
 > We detected a 2 layer board of 2.36 x 1.17 inches (59.9 x 29.7mm)
-> 3 boards will cost $13.75 
+> 3 boards will cost $13.75
 
 ![Board](./img/pitchdac-board.png)
 
@@ -137,7 +137,7 @@ Board v0.1 [ordered at OSH Park](https://oshpark.com/shared_projects/gQY5hg1l) 3
 
 Board v0.2 with missing traces from CLR and RESET, corrected.
 
-Board v0.2 [ordered at OSH Park](https://oshpark.com/shared_projects/UpIebEcc) 15 Oct 2023.
+Board v0.2 [ordered at OSH Park](https://oshpark.com/shared_projects/UpIebEcc) 15 Oct 2023. GOT.
 
 ## BOM (per DAC board, need 2)
 
@@ -155,7 +155,7 @@ Board v0.2 [ordered at OSH Park](https://oshpark.com/shared_projects/UpIebEcc) 1
 
 (2) Kemet C1206X105K3RACTU  25V 1μF X7R 10% 1206 ceramic $0.839/10 = **$8.39 GOT**
 
-(10) Samsung CL31B106KAHNFNE  25V 10μF X7R 10% 1206 ceramic $0.094/10 =	**$1.88 GOT**  [Mouser](https://www.mouser.com/ProductDetail/Samsung-Electro-Mechanics/CL31B106KAHNFNE) get 20
+(10) Samsung CL31B106KAHNFNE  25V 10μF X7R 10% 1206 ceramic $0.094/10 = **$1.88 GOT**  [Mouser](https://www.mouser.com/ProductDetail/Samsung-Electro-Mechanics/CL31B106KAHNFNE) get 20
 
 ### Decoupling and NR caps
 

@@ -103,9 +103,9 @@ Needs an RC network at the output to prevent amplification of chopper pulses:
 
 ## Schematic
 
-![Schematic](./img/vref-schematic-v0.1.png)
+![Schematic](./img/vref-max-schematic-v0.1.png)
 
-- [Schematic](./vref-schematic.pdf)
+- [Schematic](./vref-max-schematic.pdf)
 
 ## Board design
 

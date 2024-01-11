@@ -20,6 +20,8 @@ Pin 5 is trim, unconnected if not used; different from MAX6226_50 where pin 5 is
 
 Fairly good at 2ppm/C typ, 5ppm/C max, not as good as MAX6226_50 1ppm/C typ, 3ppm/C max.
 
+Bourns wirewound trimmers with 50ppm/C are fearsomely expensive (3057Y-1-503  is $32.91/1) compared to the 100ppm/C cermet types (3296P-1-503LF $2.42/1). As this application is ratiometric, the tempco effect should be diminished.
+
 ## Thermal Hysteresis
 
 Very good at 3ppm.

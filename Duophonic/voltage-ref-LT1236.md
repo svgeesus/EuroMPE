@@ -2,6 +2,8 @@
 
 Linear LT1236LS8 may be an alternative to [MAX6226](./voltage-ref-MAX6226.md) if MAX6226_50 cannot be made to work reliably.
 
+[EEVBlog thread on LT1236LS8 internals](https://www.eevblog.com/forum/metrology/decapping-the-lt1236ls8/msg2933682/#msg2933682)
+
 Both use ceramic LS8 package with copper pads underneath the device. This gives improved stability, particularly to moisture and PCB flex, but makes soldering difficult without a reflow oven. Hot air tends to blow the lightweight ceramic chip off the board, so holding in place with tweezers is required.
 
 ![pinout](./img/LT1236LS8-pinout.png)
@@ -20,7 +22,9 @@ Pin 5 is trim, unconnected if not used; different from MAX6226_50 where pin 5 is
 
 Fairly good at 2ppm/C typ, 5ppm/C max, not as good as MAX6226_50 1ppm/C typ, 3ppm/C max.
 
-Bourns wirewound trimmers with 50ppm/C are fearsomely expensive (3057Y-1-503  is $32.91/1) compared to the 100ppm/C cermet types (3296P-1-503LF $2.42/1). As this application is ratiometric, the tempco effect should be diminished.
+Bourns wirewound trimmers with 50ppm/C are fearsomely expensive (3057Y-1-503 is $32.91/1) compared to the 100ppm/C cermet types (3296P-1-503LF $2.42/1). As this application is ratiometric, the tempco effect should be diminished.
+
+See [Bourns® Precision Trimming Potentiometers with Improved Linearity and Lower CRV](https://www.bourns.com/docs/technical-documents/technical-library/trimmers/technical-articles/bourns_custom_trimmer_white_paper.pdf?sfvrsn=69fd77f6_9)
 
 ## Thermal Hysteresis
 
@@ -108,20 +112,32 @@ Power input: 4 wires +9.5, 0V, 0V, -9.5.
 
 1μF and 100nF input caps, 1μF (or less; that is a maximum) and 100nF output caps, all C0G ceramic. Later went for X7R on the 1μF for cost and footprint reasons.
 
+> Because of internal current drain on the output, actual
+worst-case occurs at ILOAD = 0. Significantly better load
+transient response is obtained by moving slightly away
+from these points. See Load Transient Response curves
+for details
+(Datasheet, "Capacitive Loading and Transient Response")
+
 Voltage output: pair of 4-pin headers
 
 - +5 +5 0V 0V
 - -5 -5 0V 0V
 
-Pin 8 is (per spec sheet) clear of copper, mask (no mechanical connection).
-
-Full bottom ground plane; top ground connections with vias by caps and GND connection, runs under device 
+Full bottom ground plane; top ground connections with vias by caps and GND connection, runs under device
 
 Pin 1 of MAX6226 is indicated by a circular mark and is aligned to the top-left corner on this board (indicated by small dot on silkscreen).
 
 Pin 1 of OPA2186 is on the side with the bevel, and is aligned closest to JP2 on this board.
 
 ![soic-8](./img/soic-8.png)
+
+Output cap may need around [5R serial resistance](https://www.eevblog.com/forum/metrology/yet-another-basic-10v-reference-tear-my-design-apart!/msg1666097/#msg1666097) to avoid ringing. Electrolytics were better here than ceramics.
+
+> In critical applications,
+a 10μF solid tantalum capacitor with several ohms
+in series provides optimum output bypass.
+(Datasheet, "Capacitive Loading and Transient Response")
 
 ## BOM
 
@@ -143,9 +159,17 @@ U1
 
 (2) Kemet C1206X105K3RACTU  25V 1μF X7R 10% 1206 ceramic $0.839/10 = **$8.39 GOT**
 
+or
+
+(2) muRata GRM31C5C1E474JE01L 25V 0.47μF G0G 5% 1206 ceramic $0.474/10 = **$4.74**
+
 ### Low-ppm close tolerance resistors
 
 (2) Susumu RG2012V-182-P-T1 1.8k 0.02% 5ppm 0805 $2.30/10 = **$23.00 GOT** 6 ordered 8 Dec 2023
+
+### Generic ESR-increasing resistors
+
+(2) Yaego RC0805JR-075R1L 5.1R 5% 0805 thick film $0.026/10 = **$0.26**
 
 ### PCB
 
@@ -168,7 +192,7 @@ https://www.adafruit.com/product/400
 - [x] Check existing component inventory
 - [ ] order Vref, op-amp (same as pitch DAC uses)
 - [ ] Build, test
-- [ ] Burn-in 
+- [ ] Burn-in
 - [ ] Do stability analysis for innie OPA2192 with 2 R and 1 C
 - [ ] Design and fab temporary [power board](./Power.md) to test for ripple, noise, need for isolation resistors
 

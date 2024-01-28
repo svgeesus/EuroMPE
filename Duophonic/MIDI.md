@@ -73,6 +73,8 @@ Dispatching key events to the two channels: first one is lowest note priority, s
 
 ## Smoothing and update rate
 
+DIN MIDI is 31,250 baud with 10 bits (1 start, 8 data, 1 stop, no parity) per byte transferred = 3,125 bytes/sec. 3 bytes per MIDI CC means max update rate (for a single CC using all the bandwidth) is ~1000 CC per second.
+
 Interesting quote [from Haken MPE+](https://www.hakenaudio.com/mpe):
 
 > Data smoothing is not a bad thing for the synthesizer to do — in fact, the Sampling Theorem tells us that smoothing is always necessary to avoid aliasing!  Aliasing is not a problem unique to audio sample streams, but also X,Y,Z control streams encoded in Midi. The common sample rates for audio are 44.1, 48, or 96 kHz.  The effective sample rate for the most popular MPE controllers’  Z data is ~25 Hz, and ~500 Hz for the Continuum Fingerboard. MPE+ lets the controller specify the best amount of smoothing to avoid update noise (aka zipper noise or aliasing) but still retain the finger motion information in the data.  [Clarification: The Continuum internally has an effective sample rate of ~3 kHz for Z; this data is processed to create the optimized ~500 Hz effective sample rate control stream for Midi transmission.]

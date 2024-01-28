@@ -77,7 +77,7 @@ A non-auto-zero, e-trim op-amp such as **OPA2192** is suitable, and input bias c
  <tr><th>OPA2192</th><td>4 μV p-p</td><td>±8/±50 μV</td><td>±0.1/±0.5 μV/°C</td><td><b>±5/±20 pA</b></td></tr>
  </table>
 
-So the OPA2186 is comparable on some criteria and much superior on offset and offset drift. OPA219 worse on offsets (still very good though) and better on input bias current.
+So the OPA2186 is comparable on some criteria and much superior on offset and offset drift. OPA2192 worse on offsets (still very good though) and better on input bias current.
 
 > The input bias current specification of the reference buffers is important, as excessive bias currents will degrade the dc linearity. The degradation of integral nonlinearity, in ppm, as a function of input bias current, is typically:
 >
@@ -101,6 +101,7 @@ Is it feasible to make a board that accepts either?
 
 Decoupling caps.
 
+Use small serial resistors for the larger decoupling caps because too-low ESR of the ceramic cps might affect stability. Can test with either 5R resistors or solder bridge to see the effect.
 
 ## Schematic
 

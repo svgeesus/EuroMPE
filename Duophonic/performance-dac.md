@@ -3,7 +3,7 @@
 
 One octal DAC does 2 voices  of attack veocity, lift velocity, pressure, glide. 
 
-*Note* final MPE specification reduces precision of pressure & glide to 7bit. However, later expansion to 14bit not ruled out. Implement 14bit as an experiment; 7bit still supported.
+*Note* final MPE specification reduces precision of pressure & glide to 7bit. However, later expansion to 14bit not ruled out. Implement 14bit as an experiment; 7bit still supported. See [MIDI](./MIDI.md) on precision, smoothing and update rate.
 
 Similar circuitry also used to provide the global performance controls (mod wheel, sustain, etc).
 

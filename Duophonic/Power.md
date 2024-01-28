@@ -19,6 +19,8 @@ This should reduce digital return currents on analog ground. However, digital 0V
 
 Use LT1763 (SOIC-8, 500mA) adjustable regulators (500mA is ample) to produce 5V5 and 9V5, with 6μ8 C0G output cap. -9V5 from LT1964-BYP adjustable (SOT-23, 200mA still plenty).
 
+For testing, a 317 regulator with R1 = 240R and R2 = 820R gives 5V5, while with R2 = 1k54 it gives 9V3.
+
 ## Microcontroller power
 
 Teensy 4.1 [main board](./MPU-board.md) is a 3V3 device with onboard 3V3 regulators and a Vin pin which accepts 3V6 to 6V0 input. Use Eurorack 5V supply (reduces asymmetric loading on +12V rail). Current draw can be 100mA, depends on clock speed.
@@ -42,10 +44,36 @@ Same [Gate and LED board](./Gate-LED.md) needs voltage level conversion and curr
 ## Analog power board
 
 Eurorack power connector, usual 10μF smoothing caps (or greater)?
-Top plane mostly gnd (for low impedance and also cooling) with traces for ±9V5;
-bottom plane gnd (again for cooling), well stitched to top, with traces for ±12V.
+Top plane mostly gnd (for low impedance and also cooling) with traces for ±9V5 and for +5V5 outputs;
+bottom plane gnd (again for cooling), well stitched to top, with traces for ±12V inputs.
 
 ### LT1763 for 9V5
+
+> Output Capacitance and Transient Response
+The regulators are designed to be stable with a wide range
+of output capacitors. Output capacitor ESR affects stability,
+most notably with small capacitors. A 3.3μF minimum
+output value with ESR of 3Ω or less is recommended to
+prevent oscillation. Transient response is a function of
+output capacitance. Larger values of output capacitance
+decrease peak deviations, providing improved transient
+response for large load current changes. Bypass capacitors,
+used to decouple individual components powered by
+the regulator, increase the effective output capacitor value.
+Larger values of reference bypass capacitance dictate
+larger output capacitors. For 100pF of bypass capacitance,
+4.7μF of output capacitor is recommended. With 1000pF
+or more of bypass capacitance, a 6.8μF output capacitor
+is required.
+
+![stability](./img/lt1763-stability.png)
+
+> The shaded region of Figure B1 defines the regulator’s
+stability range. The minimum ESR needed is set by the
+amount of bypass capacitance used, while maximum
+ESR is 3Ω.
+
+> (source: DEMO MANUAL DC368A)
 
 10μF input cap, 1nF noise bypass cap, 6μ8F to 10μF output cap (see Fig 3. Stability and discussion of ceramic dielectrics: go for X7R).
 

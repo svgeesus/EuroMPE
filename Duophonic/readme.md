@@ -55,7 +55,9 @@ Bottom row
 - Breath (CC02+CC34)
 - XY Pad Y (CC113)
 
-## Modes
+## MIDI Modes
+
+Probably, only Duophonic MPE mode is needed. See [MIDI](./MIDI.md)
 
 ### Monophonic (unison MPE)
 
@@ -88,7 +90,8 @@ Like the original polyphonic EuroMPE, there is a [tuning input](./calibration.md
 
 ## Voltage reference
 
-For the pitch DAC, a Max 6226 hermetic ceramic is used, see [Vref](./voltage-ref-MAX6226.md).
+For the pitch DAC, a Max 6226 hermetic ceramic is used, see [Vref MAX6226](./voltage-ref-MAX6226.md). As that prototype had problems, and alternative is the [Vref LT1236](./voltage-ref-LT1236.md).
+
 For the performance DACs, the internal reference on the octal DAC is easily sufficient.
 
 ## Main MPU board
@@ -101,7 +104,9 @@ See [Power](./Power.md)
 
 ## Panel
 
-Not settled, but this is the [current panel concept](./mock-channel-v2-bigscreen-wider.svg).
+Not settled, but this is the [current panel concept](./mock-channel-v2-bigscreen-wider.svg) (SVG)
+
+![panel](./img/panel.png)
 
 ## Notes
 

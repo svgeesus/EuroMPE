@@ -105,7 +105,7 @@ Use small serial resistors for the larger decoupling caps because too-low ESR of
 
 ## Schematic
 
-not yet
+![schematic](./img/vref-lt-schematic-v0.1.png)
 
 ## Board design
 
@@ -168,9 +168,13 @@ or
 
 (2) Susumu RG2012V-182-P-T1 1.8k 0.02% 5ppm 0805 $2.30/10 = **$23.00 GOT** 6 ordered 8 Dec 2023
 
-### Generic ESR-increasing resistors
+### Generic ESR-increasing, trimming, load resistors
 
 (2) Yaego RC0805JR-075R1L 5.1R 5% 0805 thick film $0.026/10 = **$0.26**
+
+### Diode
+
+(1) 1N4148 Diodes Incorporated 1N4148W-7-F SOD-123 $0.095/10 = **$0.95**
 
 ### PCB
 

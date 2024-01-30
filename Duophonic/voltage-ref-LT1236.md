@@ -101,7 +101,7 @@ Is it feasible to make a board that accepts either?
 
 Decoupling caps.
 
-Use small serial resistors for the larger decoupling caps because too-low ESR of the ceramic cps might affect stability. Can test with either 5R resistors or solder bridge to see the effect.
+Use small serial resistors for the larger decoupling caps because too-low ESR of the ceramic caps might affect stability. Can test with either 5R resistors or solder bridge to see the effect.
 
 ## Schematic
 
@@ -140,6 +140,8 @@ a 10μF solid tantalum capacitor with several ohms
 in series provides optimum output bypass.
 (Datasheet, "Capacitive Loading and Transient Response")
 
+![Vref 3D](./img/vref_LT1236-3D.png)
+
 ## BOM
 
 ### Voltage reference
@@ -168,9 +170,12 @@ or
 
 (2) Susumu RG2012V-182-P-T1 1.8k 0.02% 5ppm 0805 $2.30/10 = **$23.00 GOT** 6 ordered 8 Dec 2023
 
-### Generic ESR-increasing, trimming, load resistors
+### Generic ESR-increasing, trimming, and load resistors
 
 (2) Yaego RC0805JR-075R1L 5.1R 5% 0805 thick film $0.026/10 = **$0.26**
+(1) Yaego RC0805FR-0710RL  10R 0805 $0.027/10 = **$0.27**
+(1) Yaego RC0805FR-0727KL 27k 0805 $0.016/10 = **$0.16**
+(1) Yaego RC0805FR-0710KL  10k 0805 $0.016/10 = **$0.16**
 
 ### Diode
 
@@ -189,6 +194,8 @@ TE 9-103329-0 40-position **$2.31/1** **GOT 3**
 Double ended connectors
 Adafruit Extra-long break-away 0.1" 16-pin strip male header (5 pieces) **$3.00 GOT**
 https://www.adafruit.com/product/400
+
+pins are (measured with micrometer) 45.06 ÷ 2 = 22.53mm apart
 
 ## Work plan
 

@@ -127,13 +127,13 @@ Voltage output: pair of 4-pin headers
 
 Full bottom ground plane; top ground connections with vias by caps and GND connection, runs under device
 
-Pin 1 of MAX6226 is indicated by a circular mark and is aligned to the top-left corner on this board (indicated by small dot on silkscreen).
+Pin 1 of LT1236 is indicated by a circular mark and is aligned to the top-left corner on this board (indicated by small dot on silkscreen).
 
-Pin 1 of OPA2186 is on the side with the bevel, and is aligned closest to JP2 on this board.
+Pin 1 of OPA2186 is on the side with the bevel, and is aligned closest to R5 on this board.
 
 ![soic-8](./img/soic-8.png)
 
-Output cap may need around [5R serial resistance](https://www.eevblog.com/forum/metrology/yet-another-basic-10v-reference-tear-my-design-apart!/msg1666097/#msg1666097) to avoid ringing. Electrolytics were better here than ceramics.
+Input and output caps hve [5R serial resistance](https://www.eevblog.com/forum/metrology/yet-another-basic-10v-reference-tear-my-design-apart!/msg1666097/#msg1666097) to avoid ringing. Electrolytics were better here than ceramics.
 
 > In critical applications,
 a 10μF solid tantalum capacitor with several ohms

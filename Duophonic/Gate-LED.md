@@ -36,7 +36,16 @@ This is driven anode, but Pirhana RGB LEDs are common anode so this won't work.
 
 - [How to Hook up (common anode) RGB LEDs](https://forum.pjrc.com/threads/73390-How-to-Hook-up-RGB-LEDs-with-a-Proprietary-Switch-Circuit)
 
-The [straightforward solution](https://www.pjrc.com/teensy/tutorial2.html) works fine with no visible flicker; just modified to common anode so the common pin goes to 3V3 not ground, and the PWM gives brightest light at zero not 255.
+The [straightforward solution](https://www.pjrc.com/teensy/tutorial2.html) works fine with no visible flicker; just modified to common anode so the common pin goes to 3V3 not ground, and the PWM gives brightest light at zero not 255. But better to increase the PWM resolution to 10 bits.
+Can still be a problem with PWM not fully going to zero. Workaround:
+
+```
+if( PWM == 0){ digitalWriteFast( PIN , LOW ); }
+```
+
+> Red: 800 mcd typical brightness, Green: 1500 mcd, Blue: 700 mcd (3000 mcd total)
+
+So scale resistors appropriately, 270R is too bright for green.
 
 ## Gate & Trigger
 

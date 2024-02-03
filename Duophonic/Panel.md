@@ -126,7 +126,7 @@ Group of pushbuttons to left of display, 3 plus "back". See [User Interface](./u
 
 ![soft touch](./img/adafruit-soft-touch-push.png)
 
-3.5mm body height above pcb, 5mm to top of button.
+3.5mm body height above pcb, 5mm to top of button. Will need to be on a small daughter board to be at same height as the top of the screen.
 
 ### Encoder
 
@@ -181,5 +181,5 @@ If adding a TRS MIDI input, use a circuit which accepts either Type-A or Type-B,
 ## Work Plan
 
 - [x] Experiment with font sizes on 128x64 display
-- [x] Order the tact switches **2023-11-04**
+- [x] Order the tact switches **2023-11-04, GOT**
 - [ ] Mock up starting menu with Tune, Conf, Run

@@ -39,9 +39,11 @@ This is driven anode, but Pirhana RGB LEDs are common anode so this won't work.
 The [straightforward solution](https://www.pjrc.com/teensy/tutorial2.html) works fine with no visible flicker; just modified to common anode so the common pin goes to 3V3 not ground, and the PWM gives brightest light at zero not 255. But better to increase the PWM resolution to 10 bits.
 Can still be a problem with PWM not fully going to zero. Workaround:
 
-```
+```C
 if( PWM == 0){ digitalWriteFast( PIN , LOW ); }
 ```
+
+Scope shows PWM duty cycle varies between 0.67% and 99.82% at 146.48kHz
 
 > Red: 800 mcd typical brightness, Green: 1500 mcd, Blue: 700 mcd (3000 mcd total)
 

@@ -170,6 +170,8 @@ For [FreqMeasureMulti](https://github.com/PaulStoffregen/FreqMeasureMulti) the s
 
 Useful frequency range for calibration (see [MIDI](./MIDI.md)) is 16.35Hz to 7040.00Hz, and for oscillator tuning and musical use is 65.41 Hz to 4186.01 Hz.
 
+**Check** pin 7 [conflicts with PWM timers](https://www.pjrc.com/teensy/td_pulse.html), maybe swap the two Gate outs with the two FreqMeasureMulti to avoid.
+
 ## Gate and Trigger outs
 
 Gate logic outputs. Any convenient pins can be used.
@@ -236,6 +238,7 @@ Depending on testing of [PerfDAC](), an additional pin for LDAC might be needed.
 - [x] Test SPI display
 - [ ] start on menu/dashboard layout
 - [x] Test PWM of RGB LED.
+  - Problems getting to exactly 0 and 100%
 - [ ] Test 10V gate output.
 - [ ] Fabricate [Gate-LED](./Gate-LED.md) board.
 - [ ] Test FreqCount

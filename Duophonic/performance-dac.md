@@ -102,7 +102,7 @@ Better to use a slew limiter or low-pass filter on the output to avoid stair-ste
 OPA4192 out of stock at Mouser. OPA4187?? (0.2V/μs $5.60/10 in stock) seems over-specified for Vos, slow slew, and expensive
 
 OR do slew in software so it is configurable and can be disabled for true 14bit inputs.
-Uses half the amount of op-amps (one per output). Needs testing.
+Uses half the amount of op-amps (one per output). Needs testing. Use [ellapsedMicros](https://www.pjrc.com/teensy/td_timing_elaspedMillis.html) variables to update DAC on a regular clock, eg 10kHz. Interleave the updates for the two DACs so they don't coincide.
 
 Capture some MIDI output from the Roli Seaboard to see what rate of changes is sent on changes in pressure etc; suspect it is fairly slow (and 7bit).
 

@@ -185,7 +185,7 @@ But maybe better to group these closer to the RGB LED outs as they all get route
 
 ### RGB LED control
 
-Two (Low, High channel) RGB LEDs need 6 PWM outputs. See [PWM Frequency](https://www.pjrc.com/teensy/td_pulse.html) these are at 4.482 kHz by default:
+Two (Low, High channel) RGB LEDs need 6 PWM outputs. See [PWM Frequency](https://www.pjrc.com/teensy/td_pulse.html) and [freq measure multi on teensy 4.0](https://forum.pjrc.com/index.php?threads/freq-measure-multi-on-teensy-4-0.74384/#post-338376). These are at 4.482 kHz by default:
 
 - 28 Low R (FlexPWM3.1)
 - 24 Low G (FlexPWM1.2)
@@ -206,8 +206,8 @@ _Might_ need low-pass RC filter or op-amp buffer but try the software solution f
 
 > pinMode(A0, INPUT_DISABLE);
 
-- 24 (A10)
-- 25 (A11)
+- 38 (A14)
+- 39 (A15)
 - 40 (A16)
 - 41 (A17)
 
@@ -238,7 +238,8 @@ Depending on testing of [PerfDAC](), an additional pin for LDAC might be needed.
 - [x] Test SPI display
 - [ ] start on menu/dashboard layout
 - [x] Test PWM of RGB LED.
-  - Problems getting to exactly 0 and 100%
+  - [Problems getting to exactly 0 and 100%](https://forum.pjrc.com/index.php?threads/full-range-pwm-for-rgb-led-control.74386/)
+  - Solved by special-casing PWM extremes.
 - [ ] Test 10V gate output.
 - [ ] Fabricate [Gate-LED](./Gate-LED.md) board.
 - [ ] Test FreqCount
@@ -246,6 +247,7 @@ Depending on testing of [PerfDAC](), an additional pin for LDAC might be needed.
 - [ ] Test DIN MIDI input
 - [x] Sketch [front panel](./Panel.md) to get PCB dimensions.
 - [ ] Fabricate & test [octal perfDAC/CCDAC](./performance-dac.md) board (same board, different CS)
+  - DAC and level shift board ordered
 - [ ] Fabricate [pitch CV](./pitch-dac.md) board, test
 - [ ] Write higher-level, MPE-capable MIDI library
 - [ ] Fabricate MCU and display carrier board

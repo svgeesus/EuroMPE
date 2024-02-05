@@ -165,8 +165,8 @@ For [FreqMeasureMulti](https://github.com/PaulStoffregen/FreqMeasureMulti) the s
 
 0-9, 22-25, 28, 29, 33, 36, 37, 42-47, 48-50(dups), 51, 52-53 (dups), 54
 
-- 6 FreqMeasureMulti Low
-- 7 FreqMeasureMulti High
+- 2 FreqMeasureMulti Low (FlexPWM4.2)
+- 3 FreqMeasureMulti High (FlexPWM4.2)
 
 Useful frequency range for calibration (see [MIDI](./MIDI.md)) is 16.35Hz to 7040.00Hz, and for oscillator tuning and musical use is 65.41 Hz to 4186.01 Hz.
 
@@ -176,10 +176,10 @@ Useful frequency range for calibration (see [MIDI](./MIDI.md)) is 16.35Hz to 704
 
 Gate logic outputs. Any convenient pins can be used.
 
-- 02 Low Gate
-- 03 High Gate
 - 04 Low Trigger
 - 05 High Trigger
+- 06 Low Gate
+- 07 High Gate
 
 But maybe better to group these closer to the RGB LED outs as they all get routed to the same [Gate-LED](./Gate-LED.md) board.
 
@@ -187,12 +187,12 @@ But maybe better to group these closer to the RGB LED outs as they all get route
 
 Two (Low, High channel) RGB LEDs need 6 PWM outputs. See [PWM Frequency](https://www.pjrc.com/teensy/td_pulse.html) these are at 4.482 kHz by default:
 
-- 34 Low R
-- 35 Low G
-- 36 Low B
-- 37 High R
-- 38 High G
-- 39 High B
+- 28 Low R (FlexPWM3.1)
+- 24 Low G (FlexPWM1.2)
+- 25 Low B (FlexPWM1.3)
+- 36 High R (FlexPWM2.3)
+- 37 High G (FlexPWM2.3)
+- 29 High B (FlexPWM3.1)
 
 ### "Fader" pots
 

@@ -122,7 +122,7 @@ might also be driven by 14bit NRPN. Avoid over-slewing on 14bit inputs, which ar
 - [zipper noise in MIDI to CV](https://gearspace.com/board/electronic-music-instruments-and-electronic-music-production/718498-zipper-noise-kenton-pro-2000-mkii.html)
 - [MIDI vs I2C CV control on Haken Continuum driving Moog Voyager](https://www.hakenaudio.com/voltage-converter) notes excessive smoothing in Moog MIDI to CV generation limits expressive attack
 
-Bipolar operation is possible (datasheet p.47) but not needed here, all the MIDI CC are unipolar for the MPE performance controls. So *could* use singe-rail op-amps which swing to 0V on input and output. Probably easier to use bipolar devices though.
+Bipolar operation is possible (datasheet p.47) but not needed here, all the MIDI CC are unipolar for the MPE performance controls. So *could* use singe-rail, rail-to-rail input and output op-amps which swing to 0V on input and output. Probably easier to use bipolar devices though.
 
 Given wide variety of op-amp capabilities, fluctuating pricing and wildly varying lead times and availability, split perf dac board into the DAC part and the buffer/slew part so one can be built with cheap parts then another with better parts, for testing and to avoid replacing the DAC. Standardize on one op-amp footprint, so SOIC-14 quad or TSSOP-14 quad.
 
@@ -176,7 +176,7 @@ Better to bring out LDAC through level shifter so there is flexibility on contro
 
 ![Schematic](./img/PerfDAC-schematic.png)
 
-### DAC PCB
+#### DAC PCB
 
 > We detected a 2 layer board of 1.33 x 1.03 inches (33.8 x 26.3mm)
 > 3 boards will cost $6.85

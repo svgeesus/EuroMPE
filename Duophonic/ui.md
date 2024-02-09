@@ -57,8 +57,8 @@ Last state should persist over power cycling.
 
 Monochrome OLED, 128x64 pixels 1.3 inch diagonal.
 
-[Many fonts for 128x32 displays](https://github.com/datacute/TinyOLED-Fonts/tree/master)
-[Adafruit TTF font converter](https://github.com/adafruit/Adafruit-GFX-Library/tree/master/fontconvert)
+- [Many fonts for 128x32 displays](https://github.com/datacute/TinyOLED-Fonts/tree/master)
+- [Adafruit TTF font converter](https://github.com/adafruit/Adafruit-GFX-Library/tree/master/fontconvert)
 
 ## Encoder
 
@@ -72,3 +72,7 @@ Rotary encoder for menu scrolling, with integrated switch for "accept".
 4. Run (normal operation)
 
 [Thonk C&K Tactile D6R](https://www.thonk.co.uk/shop/radio-music-switch/)
+
+## Development & Testing plan
+
+- [ ] Investigate [GEM](https://github.com/Spirik/GEM/wiki) menu system

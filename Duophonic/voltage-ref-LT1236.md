@@ -107,6 +107,8 @@ Use small serial resistors for the larger decoupling caps because too-low ESR of
 
 ![schematic](./img/vref-lt-schematic-v0.1.png)
 
+[schematic (PDF)](./vref-lt-schematic.pdf)
+
 ## Board design
 
 Power input: 4 wires +9.5, 0V, 0V, -9.5.

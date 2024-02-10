@@ -149,6 +149,8 @@ in series provides optimum output bypass.
 
 2 layer board of 1.57 x 1.03 inches (40.0 x 26.2 mm) ordered 2024-02-10
 
+![top](./img/vref-lt1236-top-osh.png) top and ![bottom](./img/vref-lt1236-bottom-osh.png) bottom
+
 ![Vref 3D](./img/vref_LT1236-3D.png)
 
 ## BOM
@@ -189,6 +191,11 @@ or
 ### Diode
 
 (1) 1N4148 Diodes Incorporated 1N4148W-7-F SOD-123 $0.095/10 = **$0.95**
+
+
+### Trimmer
+
+(1) 
 
 ### PCB
 

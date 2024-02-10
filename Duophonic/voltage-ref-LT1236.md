@@ -122,6 +122,9 @@ from these points. See Load Transient Response curves
 for details
 (Datasheet, "Capacitive Loading and Transient Response")
 
+Thus, 10k load resistor draws constant 0.5mA from reference
+(assuming drain from the op-amp input currents is negligible in comparison).
+
 Voltage output: pair of 4-pin headers
 
 - +5 +5 0V 0V
@@ -135,12 +138,16 @@ Pin 1 of OPA2186 is on the side with the bevel, and is aligned closest to R5 on 
 
 ![soic-8](./img/soic-8.png)
 
-Input and output caps hve [5R serial resistance](https://www.eevblog.com/forum/metrology/yet-another-basic-10v-reference-tear-my-design-apart!/msg1666097/#msg1666097) to avoid ringing. Electrolytics were better here than ceramics.
+Input cap has [5R serial resistance](https://www.eevblog.com/forum/metrology/yet-another-basic-10v-reference-tear-my-design-apart!/msg1666097/#msg1666097) to avoid ringing. Electrolytics were better here than ceramics.
 
 > In critical applications,
 a 10μF solid tantalum capacitor with several ohms
 in series provides optimum output bypass.
 (Datasheet, "Capacitive Loading and Transient Response")
+
+![Vref](./img/vref-lt1236-board-v.01.png)
+
+2 layer board of 1.57 x 1.03 inches (40.0 x 26.2 mm) ordered 2024-02-10
 
 ![Vref 3D](./img/vref_LT1236-3D.png)
 

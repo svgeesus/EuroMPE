@@ -208,8 +208,8 @@ pins are (measured with micrometer) 45.06 ÷ 2 = 22.53mm apart
 
 ## Work plan
 
-- [ ] Design v0.1 Vref board with dual op-amp
-- [ ] Fab v0.1 board
+- [x] Design v0.1 Vref board with dual op-amp
+- [x] Fab v0.1 board
 - [x] Check existing component inventory
 - [ ] order Vref, op-amp (same as pitch DAC uses)
 - [ ] Build, test

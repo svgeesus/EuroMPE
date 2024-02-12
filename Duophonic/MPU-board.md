@@ -8,7 +8,7 @@ Driven by Eurorack 5V power, generates logic 3V3 Vdd (from Teensy onboard, <250m
 
 MPU needs USB host and hardware floating point, so Teensy 3.6 (now discontinued) or **Teensy 4.1**. Both are 3V3-only.
 
-T4.1 ($26.85) is somewhat overpowered but has 480Mbit/s on both USB and Host so potentially lower latency (T3.6 was 480 on Host only). T4.1 has 100mA power consumption at full clock speed though.
+T4.1 ($26.85) is somewhat overpowered but has 480Mbit/s on both USB and Host so potentially lower latency (T3.6 was 480 on Host only). T4.1 has 100mA power consumption at full clock speed (or [68ms if you switch off the orange LED and don't use USB Serial](https://forum.pjrc.com/index.php?threads/the-power-consumption-of-teensys-processor.74442/#post-338912)).
 
 [T4 power consumption](https://forum.pjrc.com/threads/69159-Teensy-4-0-at-24Mhz-still-drawing-100mA-Why?p=297146&viewfull=1#post297146):
 freq    current

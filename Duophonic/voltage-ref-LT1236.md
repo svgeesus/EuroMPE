@@ -1,4 +1,4 @@
-# Voltage ref 
+# Voltage ref
 
 Linear LT1236LS8 may be an alternative to [MAX6226](./voltage-ref-MAX6226.md) if MAX6226_50 cannot be made to work reliably.
 
@@ -162,7 +162,7 @@ IC1
 
 ### Low Vos low Ibias precision op-amp (dual)
 
-(1) TI [OPA2192IDR](https://www.mouser.com/ProductDetail/Texas-Instruments/OPA2192IDR?) SOIC-8 $4.63/10 = **$46.30**
+(1) TI [OPA2192IDR](https://www.mouser.com/ProductDetail/Texas-Instruments/OPA2192IDR?) SOIC-8 $4.63/10 = **$46.30** **GOT 10 Dec 2023**
 U1
 
 ### Decoupling caps
@@ -183,10 +183,10 @@ or
 
 ### Generic ESR-increasing, trimming, and load resistors
 
-(2) Yaego RC0805JR-075R1L 5.1R 5% 0805 thick film $0.026/10 = **$0.26**
-(1) Yaego RC0805FR-0710RL  10R 0805 $0.027/10 = **$0.27**
-(1) Yaego RC0805FR-0727KL 27k 0805 $0.016/10 = **$0.16**
-(1) Yaego RC0805FR-0710KL  10k 0805 $0.016/10 = **$0.16**
+- (2) Yaego RC0805JR-075R1L 5.1R 5% 0805 thick film $0.026/10 = **$0.26**
+- (1) Yaego RC0805FR-0710RL  10R 0805 $0.027/10 = **$0.27**
+- (1) Yaego RC0805FR-0727KL 27k 0805 $0.016/10 = **$0.16**
+- (1) Yaego RC0805FR-0710KL  10k 0805 $0.016/10 = **$0.16**
 
 ### Diode
 
@@ -195,9 +195,11 @@ or
 
 ### Trimmer
 
-(1) 
+(1) Bourns 3296P-1-503LF $2.13/10  or $2.42/1 get 5 = **$12.10**
 
 ### PCB
+
+Ordered OSH Park 10 Feb 2024.
 
 ### Pin connectors
 

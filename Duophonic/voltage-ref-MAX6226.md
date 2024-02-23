@@ -188,7 +188,7 @@ U1
 
 or
 
-(1) TI [OPA2192IDR](https://www.mouser.com/ProductDetail/Texas-Instruments/OPA2192IDR?) SOIC-8 $4.63/10 = **$46.30**
+(1) TI [OPA2192IDR](https://www.mouser.com/ProductDetail/Texas-Instruments/OPA2192IDR?) SOIC-8 $4.63/10 = **$46.30** **GOT 10 Dec 2023**
 U1
 
 ### Decoupling and NR caps

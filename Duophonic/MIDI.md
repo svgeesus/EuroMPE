@@ -52,7 +52,7 @@ Range of [musical frequencies for MIDI notes](https://www.inspiredacoustics.com/
 | 16   	| E0   	|          	| 20.60     	|
 | 9   	| A-1   | -4.25V    | 16.35     	|
 
-Frequencies for the A notes are exact, others are rounded.
+Frequencies for the A notes are _exact_, others are rounded.
 
 Note that:
 

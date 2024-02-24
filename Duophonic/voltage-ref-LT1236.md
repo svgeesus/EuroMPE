@@ -152,6 +152,7 @@ in series provides optimum output bypass.
 ![top](./img/vref-lt1236-top-osh.png) top and ![bottom](./img/vref-lt1236-bottom-osh.png) bottom
 
 ![Vref 3D](./img/vref_LT1236-3D.png)
+![Vref 3D alternate view](./img/vref_LT1236-b-3D.png)
 
 ## BOM
 

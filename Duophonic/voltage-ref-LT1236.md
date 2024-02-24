@@ -158,7 +158,7 @@ in series provides optimum output bypass.
 
 ### Voltage reference
 
-(1) [LT1236AILS8-5#PBF ](https://www.mouser.com/ProductDetail/Analog-Devices/LT1236AILS8-5PBF?qs=ytflclh7QUXCvMb52%2F4eDQ%3D%3D) Ceramic LCC $11.77/1 = **$11.77** get 3 to 5
+(1) [LT1236AILS8-5#PBF ](https://www.mouser.com/ProductDetail/Analog-Devices/LT1236AILS8-5PBF?qs=ytflclh7QUXCvMb52%2F4eDQ%3D%3D) Ceramic LCC $11.77/1 = **$11.77** **GOT 4 24 Feb 2024**
 IC1
 
 ### Low Vos low Ibias precision op-amp (dual)
@@ -176,27 +176,27 @@ U1
 
 or
 
-(2) muRata GRM31C5C1E474JE01L 25V 0.47μF G0G 5% 1206 ceramic $0.474/10 = **$4.74**
+(2) muRata GRM31C5C1E474JE01L 25V 0.47μF G0G 5% 1206 ceramic $0.474/10 = **$4.74** **GOT 10 24 Feb 2024**
 
 ### Low-ppm close tolerance resistors
 
-(2) Susumu RG2012V-182-P-T1 1.8k 0.02% 5ppm 0805 $2.30/10 = **$23.00 GOT** 6 ordered 8 Dec 2023
+(2) Susumu RG2012V-182-P-T1 1.8k 0.02% 5ppm 0805 $2.30/10 = **$23.00 GOT** 6 ordered 8 Dec 2023 **GOT 6 more 24 Feb 2024**
 
 ### Generic ESR-increasing, trimming, and load resistors
 
-- (2) Yaego RC0805JR-075R1L 5.1R 5% 0805 thick film $0.026/10 = **$0.26**
-- (1) Yaego RC0805FR-0710RL  10R 0805 $0.027/10 = **$0.27**
-- (1) Yaego RC0805FR-0727KL 27k 0805 $0.016/10 = **$0.16**
-- (1) Yaego RC0805FR-0710KL  10k 0805 $0.016/10 = **$0.16**
+- (2) Yaego RC0805JR-075R1L 5.1R 5% 0805 thick film $0.026/10 = **$0.26** **GOT 10 24 Feb 2024**
+- (1) Yaego RC0805FR-0710RL  10R 0805 $0.027/10 = **$0.27** **GOT 10 24 Feb 2024**
+- (1) Yaego RC0805FR-0727KL 27k 0805 $0.016/10 = **$0.16** **GOT 10 24 Feb 2024**
+- (1) Yaego RC0805FR-0710KL  10k 0805 $0.016/10 = **$0.16** **GOT 10 24 Feb 2024**
 
 ### Diode
 
-(1) 1N4148 Diodes Incorporated 1N4148W-7-F SOD-123 $0.095/10 = **$0.95**
+(1) 1N4148 Diodes Incorporated 1N4148W-7-F SOD-123 $0.095/10 = **$0.95** **GOT 10 24 Feb 2024**
 
 
 ### Trimmer
 
-(1) Bourns 3296P-1-503LF $2.13/10  or $2.42/1 get 5 = **$12.10**
+(1) Bourns 3296P-1-503LF $2.13/10  or $2.42/1 get 5 = **$12.10** **GOT 5 24 Feb 2024**
 
 ### PCB
 

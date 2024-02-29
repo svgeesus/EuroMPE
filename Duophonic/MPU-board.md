@@ -64,7 +64,9 @@ Apparently 6N138 and or H11L1 are too slow per MIDI spec and 6N137 is better. Th
 
 ### USB MIDI (host)
 
- [USB Host MIDI](https://github.com/PaulStoffregen/USBHost_t36).
+ [USB Host MIDI](https://github.com/PaulStoffregen/USBHost_t36).- [Multiple USB MIDI on USBHost](https://forum.pjrc.com/index.php?threads/resolved-multiple-midi-devices-must-be-defined-to-support-connectivity-thru-a-usb-hub-on-t4-usbhost.74561/#post-339883)
+
+
 
 ## SPI
 

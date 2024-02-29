@@ -66,7 +66,8 @@ Apparently 6N138 and or H11L1 are too slow per MIDI spec and 6N137 is better. Th
 
  [USB Host MIDI](https://github.com/PaulStoffregen/USBHost_t36).- [Multiple USB MIDI on USBHost](https://forum.pjrc.com/index.php?threads/resolved-multiple-midi-devices-must-be-defined-to-support-connectivity-thru-a-usb-hub-on-t4-usbhost.74561/#post-339883)
 
-
+> You need 2 MIDIDevice_BigBuffer. Each MIDI instrument/controller/device you connect gets serviced by 1 of those. To use 2 devices, you need 2 instances.
+> You only need 1 USBhost. In fact, you can't use more than 1, because Teensy has only 1 USB host port.
 
 ## SPI
 

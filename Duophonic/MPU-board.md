@@ -214,6 +214,10 @@ _Might_ need low-pass RC filter or op-amp buffer but try the software solution f
 - 40 (A16)
 - 41 (A17)
 
+- [GND vs. AGND on Teensy 4.1 and 3.6](https://forum.pjrc.com/index.php?threads/teensy-4-1-agnd-retired.65599/#post-319809)
+
+So treat the HND between pins 13 and 41/A17 as AGND and the one between Vin and 3V3 as DGND seems prudent.
+
 ## Digital outs
 
 Two pedal logic outputs, if desired. ?Not really needed?

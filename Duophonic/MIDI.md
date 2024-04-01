@@ -65,6 +65,10 @@ Note that:
 - MIDI notes 121 to 127 are unreachable with a ±5V DAC swing if the C4 = 0V Doepfer tuning is maintained. Also not musically useful notes.
 - MIDI notes 0 to 15 inaudible, so not musically useful
 
+## Duophony
+
+- [Duophony on SoS](https://www.soundonsound.com/techniques/duophony)
+
 ## Note priority
 
 Dispatching key events to the two channels: first one is lowest note priority, second channel is highest note priority. So can be used as one of two popular monosynth styles, as well as duophonic.

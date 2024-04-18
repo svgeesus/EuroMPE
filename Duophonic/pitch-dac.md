@@ -108,6 +108,8 @@ Note:
 
 Should the output buffer be able to drive a capacitive load (so, two resistors and cap in feedback loop). Chosen values (4k7, 3n3) give a 10kHz cuttoff which seems ample.
 
+DAC has a 3k4 output resistance so the feedback resistance [should be the same](https://eng.libretexts.org/Bookshelves/Electrical_Engineering/Electronics/Operational_Amplifiers_and_Linear_Integrated_Circuits_-_Theory_and_Application_(Fiore)/05%3A_Practical_Limitations_of_Op_Amp_Circuits/5.05%3A_Offsets#section_1) to reduce the effect of the input bias current.It is currently 4k7
+
 ![capacitive load circuits](./img/x2077_capacitive_loads.png)
 
 [Understanding stabilization capacitors](https://northcoastsynthesis.com/news/understanding-stabilization-capacitors/)

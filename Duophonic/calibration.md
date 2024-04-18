@@ -28,6 +28,10 @@ Once in tune, run a frequency sweep measuring at least 30 steps and calculating 
 
 Current [panel](./Panel.md) has per-voice tuning inputs.
 
+### MIDI Tune Request
+
+Respond to F6 Tune Request by tuning both channels. Will only work if the oscillator outputs are looked back to the tune inputs.
+
 ### Tune-in conditioning circuitry
 
 Level from oscillator should be plenty high, no need for amplification. May need some low-pass filtering to get rid of above-audio signals that could cause false triggering?

@@ -128,6 +128,20 @@ Given wide variety of op-amp capabilities, fluctuating pricing and wildly varyin
 
 Op-amp board needs bipolar supply OR R/R in and out op-amps to ensure accurate 0V. Bipolar is easier. Check CMRR though.
 
+## Code
+
+```C++
+#define PerfDAC_CS1 32
+#define PerfDAC_CS2 31
+#define PerfDAC_CS3 30
+#define PerfDAC_MOSI1 26
+#define PerfDAC_SCLK1 27
+pinMode(PerfDAC_CS1, OUTPUT);
+pinMode(PerfDAC_CS2, OUTPUT);
+pinMode(PerfDAC_CS3, OUTPUT);
+SPI.beginTransaction(SPISettings(24000000, MSBFIRST, SPI_MODE1));
+```
+
 ## Fading (all voice 'attenuators')
 
 (Not on same board).

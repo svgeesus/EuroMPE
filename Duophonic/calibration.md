@@ -37,3 +37,9 @@ Main requirement is to hard clip to a 0..3V3 signal with a rail-to-rail op-amp s
 OPA2365 ($3.17/1) has specified overload recovery time < 0.1μs and RRIO. Use 2k current-limiting input resistor (<10mA) then rely on protection diodes.
 
 [Simple and fast precision clamp with RRIO](https://www.eevblog.com/forum/projects/limiting-op-amp-output/msg441564/#msg441564) and [even simpler](https://www.eevblog.com/forum/projects/limiting-op-amp-output/msg732673/#msg732673)
+
+### Calibrating the calibrator
+
+Keysight 34465A as measurement device.
+
+Leo Bodnar [LBE-1420 GPS locked clock source](https://www.leobodnar.com/shop/index.php?main_page=product_info&cPath=107&products_id=393&zenid=fef464de4ee6cf4f24df5e55bba72372) as reference.

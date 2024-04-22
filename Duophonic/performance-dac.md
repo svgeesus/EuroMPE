@@ -130,6 +130,14 @@ Op-amp board needs bipolar supply OR R/R in and out op-amps to ensure accurate 0
 
 ## Code
 
+Enable internal ref (disabled by default) in setup: command 090A0000h.
+
+Then use broadcast mode to set all channels to zero (but zero is the C-grade power-on default).
+
+See [32bit SPI to DAC8168](https://forum.pjrc.com/threads/72317-Dac8568-gt-dac8168?p=321896&viewfull=1#post321896) using SPI.transfer32()
+
+[Asynchronous writes to multiple SPI channels](https://forum.pjrc.com/threads/61676-SPI-pins-teensy-4-1?p=245308&viewfull=1#post245308)
+
 ```C++
 #define PerfDAC_CS1 32
 #define PerfDAC_CS2 31
@@ -139,7 +147,7 @@ Op-amp board needs bipolar supply OR R/R in and out op-amps to ensure accurate 0
 pinMode(PerfDAC_CS1, OUTPUT);
 pinMode(PerfDAC_CS2, OUTPUT);
 pinMode(PerfDAC_CS3, OUTPUT);
-SPI.beginTransaction(SPISettings(24000000, MSBFIRST, SPI_MODE1));
+SPI1.beginTransaction(SPISettings(24000000, MSBFIRST, SPI_MODE1));
 ```
 
 ## Fading (all voice 'attenuators')
@@ -235,16 +243,6 @@ or
 #### Logic
 
 (1) [SN74AHCT125QDRQ1](https://www.mouser.com/ProductDetail/Texas-Instruments/SN74AHCT125QDRQ1?qs=zhgwDAIOVxtE5BLiD9k5oQ%3D%3D) Quad bus buffer $0.385/10 = **$3.85 GOT**
-
-## Code
-
-Enable internal ref (disabled by default) in setup: command 090A0000h.
-
-Then use broadcast mode to set all channels to zero (but zero is the C-grade power-on default).
-
-See [32bit SPI to DAC8168](https://forum.pjrc.com/threads/72317-Dac8568-gt-dac8168?p=321896&viewfull=1#post321896) using SPI.transfer32()
-
-[Asynchronous writes to multiple SPI channels](https://forum.pjrc.com/threads/61676-SPI-pins-teensy-4-1?p=245308&viewfull=1#post245308)
 
 ## Workplan
 

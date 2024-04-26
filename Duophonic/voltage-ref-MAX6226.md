@@ -247,9 +247,7 @@ https://www.adafruit.com/product/400
 - [ ] Try again with v0.1 board and 9V battery power (eliminate ripple, possible over-voltage)
 - [ ] Do stability analysis for innie OPA2192 with 2 R and 1 C
 - [ ] Design and fab temporary [power board](./Power.md) to test for ripple, noise, need for isolation resistors
-- [ ] Design v0.2 Vref board
-- [ ] Fab v0.2 board
-- [ ] If all else fails, try a new design with MAX6126 (similar, not hermetic, easier to reliably solder without reflow oven)
+- [x] If all else fails, try a [new design with LT126](./voltage-ref-LT1236.md)
 
 **Disaster**, unable to locate the Susumu RG2012V-103-P-T1 10k 0.02% 5ppm/C !!
 

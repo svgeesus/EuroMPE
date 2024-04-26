@@ -36,21 +36,21 @@ Range of [musical frequencies for MIDI notes](https://www.inspiredacoustics.com/
 | 127  	| G9   	|          	| 12,543.85 	|
 | 120  	| C9   	| 5V       	| 8372.02   	|
 | 119  	| B8   	| 4 11/12V 	| 7902.13   	|
-| 117  	| A8   	| 4.75V    	| 7040.00   	|
+| 117  	| **A8**   	| 4.75V    	| 7040.00   	|
 | 108  	| C8   	| 4V       	| 4186.01   	|
-| 105  	| A7   	| 3.75V    	| 3520.00   	|
-| 93   	| A6   	| 2.75V    	| 1760.00   	|
-| 81   	| A5   	| 1.75V    	| 880.00    	|
-| 69   	| A4   	| 0.75V    	| 440.00    	|
+| 105  	| **A7**   	| 3.75V    	| 3520.00   	|
+| 93   	| **A6**   	| 2.75V    	| 1760.00   	|
+| 81   	| **A5**   	| 1.75V    	| 880.00    	|
+| 69   	| **A4**   	| 0.75V    	| 440.00    	|
 | 60   	| C4   	| 0V       	| 261.63    	|
-| 57   	| A3   	| -0.25V   	| 220.00    	|
-| 45   	| A2   	| -1.25V   	| 110.00    	|
+| 57   	| **A3**   	| -0.25V   	| 220.00    	|
+| 45   	| **A2**   	| -1.25V   	| 110.00    	|
 | 36   	| C2   	| -2V      	| 65.41     	|
-| 33   	| A1   	| -2.25V   	| 55.00     	|
+| 33   	| **A1**   	| -2.25V   	| 55.00     	|
 | 24   	| C1   	| -3V      	| 32.70     	|
-| 21   	| A0   	| -3.25V   	| 27.50     	|
+| 21   	| **A0**   	| -3.25V   	| 27.50     	|
 | 16   	| E0   	|          	| 20.60     	|
-| 9   	| A-1   | -4.25V    | 16.35     	|
+| 9   	| **A-1**   | -4.25V    | 16.35     	|
 
 Frequencies for the A notes are _exact_, others are rounded.
 
@@ -96,3 +96,171 @@ Useful discussion on [Osmose, CC87, CC74 for 14-bit output](https://community.vc
 [MIDI BigBuffer to avoid losing data with high throughput](https://forum.pjrc.com/threads/70227-USBhost_t36-MIDI-losing-midi-note-on-off-events-(Teensy-3-6)-during-modwheel-change?p=306436&viewfull=1#post306436)
 
 [class MIDIDevice_BigBuffer ](https://github.com/PaulStoffregen/USBHost_t36/blob/b6f94f7605b3f6cb57a10e41cab51b25b47f7736/USBHost_t36.h#L1521C53-L1521C53) required for 480 speed.
+
+## Controllers
+
+### Roli Seaboard Rise 1
+
+![Roli](./img/roli-seaboard-mpe-settings.png)
+
+The three sliders are by default (in MPE mode) set to CC 107, 109, 111 while the touchpad is set to x-axis CC 113, y-axis CC 114. However they seem to generate SysEx F0 instead.
+
+```
+ TIMESTAMP IN PORT STATUS DATA1 DATA2 CHAN NOTE EVENT               
+ Opened MIDI Input
+ Closed MIDI Input
+ Opened MIDI Input
+ 00000BE7   2  --     F0  Buffer:     9 Bytes   System Exclusive      
+ SYSX: F0 00 21 10 78 3D 17 06 F7
+ 00000C0F   2  --     F0  Buffer:     9 Bytes   System Exclusive      
+ SYSX: F0 00 21 10 78 3D 17 0A F7
+ 00000C37   2  --     F0  Buffer:     9 Bytes   System Exclusive      
+ SYSX: F0 00 21 10 78 3D 17 1C F7
+ 00000C60   2  --     F0  Buffer:     9 Bytes   System Exclusive      
+ SYSX: F0 00 21 10 78 3D 17 27 F7
+```
+
+And for keys (remembering in MPE 74 Brightness is used for front-back Slide)
+
+```
+ TIMESTAMP IN PORT STATUS DATA1 DATA2 CHAN NOTE EVENT               
+ Opened MIDI Input
+ 0005534E   2  --     B1    4A    08    2  ---  CC: Brightness        
+ 0005534E   2  --     E1    00    40    2  ---  Pitch Bend            
+ 0005534E   2  --     91    39    1E    2  A  3 Note On               
+ 00055358   2  --     B1    4A    06    2  ---  CC: Brightness        
+ 0005535B   2  --     E1    00    40    2  ---  Pitch Bend            
+ 00055362   2  --     D1    37    --    2  ---  Channel Aft           
+ 00055369   2  --     D1    39    --    2  ---  Channel Aft           
+ 00055370   2  --     D1    3B    --    2  ---  Channel Aft           
+ 00055377   2  --     D1    3D    --    2  ---  Channel Aft           
+ 0005537E   2  --     D1    3F    --    2  ---  Channel Aft           
+ 00055384   2  --     D1    41    --    2  ---  Channel Aft           
+ 0005538B   2  --     D1    43    --    2  ---  Channel Aft           
+ 0005538B   2  --     B1    4A    05    2  ---  CC: Brightness        
+ 00055392   2  --     D1    45    --    2  ---  Channel Aft           
+ 00055399   2  --     D1    47    --    2  ---  Channel Aft           
+ 000553A0   2  --     D1    49    --    2  ---  Channel Aft           
+ 000553A5   2  --     B1    4A    04    2  ---  CC: Brightness        
+ 000553A7   2  --     D1    4B    --    2  ---  Channel Aft           
+ 000553AE   2  --     D1    4D    --    2  ---  Channel Aft           
+ 000553B5   2  --     D1    4F    --    2  ---  Channel Aft           
+ 000553BC   2  --     D1    51    --    2  ---  Channel Aft           
+ 000553C3   2  --     D1    53    --    2  ---  Channel Aft           
+ 000553CA   2  --     D1    55    --    2  ---  Channel Aft           
+ 000553D1   2  --     D1    57    --    2  ---  Channel Aft           
+ 000553D8   2  --     D1    59    --    2  ---  Channel Aft           
+ 000553DF   2  --     D1    5B    --    2  ---  Channel Aft           
+ 000553E7   2  --     D1    5D    --    2  ---  Channel Aft           
+ 000553ED   2  --     D1    5F    --    2  ---  Channel Aft           
+ 000553F3   2  --     B1    4A    05    2  ---  CC: Brightness        
+ 000553FB   2  --     D1    60    --    2  ---  Channel Aft           
+ 00055409   2  --     D1    61    --    2  ---  Channel Aft           
+ 00055418   2  --     D1    62    --    2  ---  Channel Aft           
+ 0005541B   2  --     B1    4A    06    2  ---  CC: Brightness        
+ 000554B8   2  --     D1    61    --    2  ---  Channel Aft           
+ 000554BF   2  --     D1    60    --    2  ---  Channel Aft           
+ 000554C6   2  --     D1    5E    --    2  ---  Channel Aft           
+ 000554CD   2  --     D1    5D    --    2  ---  Channel Aft           
+ 000554D3   2  --     E1    10    40    2  ---  Pitch Bend            
+ 000554D4   2  --     D1    5F    --    2  ---  Channel Aft           
+ 000554DC   2  --     D1    61    --    2  ---  Channel Aft           
+ 000554DE   2  --     B1    4A    07    2  ---  CC: Brightness        
+ 000554E1   2  --     E1    24    40    2  ---  Pitch Bend            
+ 000554E3   2  --     D1    63    --    2  ---  Channel Aft           
+ 000554EA   2  --     B1    4A    05    2  ---  CC: Brightness        
+ 000554EE   2  --     E1    41    40    2  ---  Pitch Bend            
+ 000554F1   2  --     D1    61    --    2  ---  Channel Aft           
+ 000554FB   2  --     E1    51    40    2  ---  Pitch Bend            
+ 000554FF   2  --     D1    5F    --    2  ---  Channel Aft           
+ 00055505   2  --     D1    5D    --    2  ---  Channel Aft           
+ 00055507   2  --     E1    0E    41    2  ---  Pitch Bend            
+ 0005550C   2  --     D1    5F    --    2  ---  Channel Aft           
+ 00055512   2  --     B1    4A    04    2  ---  CC: Brightness        
+ 00055514   2  --     D1    61    --    2  ---  Channel Aft           
+ 00055515   2  --     E1    1D    41    2  ---  Pitch Bend            
+ 0005551B   2  --     D1    63    --    2  ---  Channel Aft           
+ 00055522   2  --     D1    65    --    2  ---  Channel Aft           
+ 00055522   2  --     E1    2A    41    2  ---  Pitch Bend            
+ 00055529   2  --     D1    66    --    2  ---  Channel Aft           
+ 0005552C   2  --     B1    4A    06    2  ---  CC: Brightness        
+ 0005552F   2  --     E1    39    41    2  ---  Pitch Bend            
+ 00055530   2  --     D1    64    --    2  ---  Channel Aft           
+ 00055537   2  --     D1    62    --    2  ---  Channel Aft           
+ 0005553B   2  --     E1    7D    41    2  ---  Pitch Bend            
+ 0005553D   2  --     D1    60    --    2  ---  Channel Aft           
+ 00055544   2  --     D1    62    --    2  ---  Channel Aft           
+ 00055545   2  --     B1    4A    03    2  ---  CC: Brightness        
+ 00055548   2  --     E1    4D    42    2  ---  Pitch Bend            
+ 0005554B   2  --     D1    64    --    2  ---  Channel Aft           
+ 00055552   2  --     D1    66    --    2  ---  Channel Aft           
+ 00055555   2  --     E1    54    42    2  ---  Pitch Bend            
+ 00055559   2  --     D1    68    --    2  ---  Channel Aft           
+ 0005555F   2  --     B1    4A    04    2  ---  CC: Brightness        
+ 00055560   2  --     D1    66    --    2  ---  Channel Aft           
+ 00055562   2  --     E1    6C    42    2  ---  Pitch Bend            
+ 00055567   2  --     D1    68    --    2  ---  Channel Aft           
+ 0005556D   2  --     B1    4A    05    2  ---  CC: Brightness        
+ 0005556F   2  --     D1    66    --    2  ---  Channel Aft           
+ 00055570   2  --     E1    0C    43    2  ---  Pitch Bend            
+ 00055576   2  --     D1    64    --    2  ---  Channel Aft           
+ 00055579   2  --     B1    4A    04    2  ---  CC: Brightness        
+ 0005557C   2  --     D1    66    --    2  ---  Channel Aft           
+ 0005557C   2  --     E1    26    43    2  ---  Pitch Bend            
+ 00055583   2  --     D1    68    --    2  ---  Channel Aft           
+ 00055589   2  --     E1    2C    43    2  ---  Pitch Bend            
+ 0005558A   2  --     D1    66    --    2  ---  Channel Aft           
+ 00055591   2  --     D1    64    --    2  ---  Channel Aft           
+ 00055593   2  --     B1    4A    08    2  ---  CC: Brightness        
+ 00055596   2  --     E1    51    43    2  ---  Pitch Bend            
+ 00055598   2  --     D1    62    --    2  ---  Channel Aft           
+ 000555A0   2  --     D1    64    --    2  ---  Channel Aft           
+ 000555A0   2  --     B1    4A    07    2  ---  CC: Brightness        
+ 000555A3   2  --     E1    71    43    2  ---  Pitch Bend            
+ 000555A6   2  --     D1    63    --    2  ---  Channel Aft           
+ 000555AD   2  --     D1    65    --    2  ---  Channel Aft           
+ 000555AE   2  --     B1    4A    06    2  ---  CC: Brightness        
+ 000555B0   2  --     E1    7C    43    2  ---  Pitch Bend            
+ 000555B4   2  --     D1    67    --    2  ---  Channel Aft           
+ 000555BB   2  --     B1    4A    07    2  ---  CC: Brightness        
+ 000555BB   2  --     D1    69    --    2  ---  Channel Aft           
+ 000555BD   2  --     E1    00    44    2  ---  Pitch Bend            
+ 000555C2   2  --     D1    6B    --    2  ---  Channel Aft           
+ 000555C7   2  --     B1    4A    08    2  ---  CC: Brightness        
+ 000555CA   2  --     D1    6D    --    2  ---  Channel Aft           
+ 000555D0   2  --     D1    6F    --    2  ---  Channel Aft           
+ 000555D7   2  --     D1    71    --    2  ---  Channel Aft           
+ 000555DF   2  --     D1    73    --    2  ---  Channel Aft           
+ 000555E6   2  --     D1    74    --    2  ---  Channel Aft           
+ 000555ED   2  --     D1    73    --    2  ---  Channel Aft           
+ 000555EF   2  --     B1    4A    09    2  ---  CC: Brightness        
+ 00055602   2  --     D1    72    --    2  ---  Channel Aft           
+ 00055616   2  --     B1    4A    08    2  ---  CC: Brightness        
+ 0005562C   2  --     D1    71    --    2  ---  Channel Aft           
+ 00055647   2  --     D1    70    --    2  ---  Channel Aft           
+ 0005565C   2  --     D1    6F    --    2  ---  Channel Aft           
+ 00055663   2  --     D1    6E    --    2  ---  Channel Aft           
+ 0005566A   2  --     D1    6D    --    2  ---  Channel Aft           
+ 00055671   2  --     D1    6B    --    2  ---  Channel Aft           
+ 00055678   2  --     D1    69    --    2  ---  Channel Aft           
+ 0005567D   2  --     B1    4A    07    2  ---  CC: Brightness        
+ 0005567F   2  --     D1    67    --    2  ---  Channel Aft           
+ 00055686   2  --     D1    65    --    2  ---  Channel Aft           
+ 0005568D   2  --     D1    63    --    2  ---  Channel Aft           
+ 00055694   2  --     D1    61    --    2  ---  Channel Aft           
+ 00055697   2  --     B1    4A    08    2  ---  CC: Brightness        
+ 0005569B   2  --     D1    5F    --    2  ---  Channel Aft           
+ 000556A2   2  --     D1    5D    --    2  ---  Channel Aft           
+ 000556A9   2  --     D1    5B    --    2  ---  Channel Aft           
+ 000556B0   2  --     D1    59    --    2  ---  Channel Aft           
+ 000556B7   2  --     D1    57    --    2  ---  Channel Aft           
+ 000556BE   2  --     D1    55    --    2  ---  Channel Aft           
+ 000556C5   2  --     D1    53    --    2  ---  Channel Aft           
+ 000556CC   2  --     D1    51    --    2  ---  Channel Aft           
+ 000556D4   2  --     D1    4F    --    2  ---  Channel Aft           
+ 000556D6   2  --     81    39    39    2  A  3 Note Off              
+ 0005DB72   2  --     F0  Buffer:     9 Bytes   System Exclusive      
+ SYSX: F0 00 21 10 78 3E 28 06 F7
+```
+
+The short SysEx seems to be sent periodically as a sort of keep-alive?

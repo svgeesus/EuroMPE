@@ -75,17 +75,25 @@ Two [SPI](https://www.pjrc.com/teensy/td_libs_SPI.html) outputs for DACs (use th
 
 If the display ends up using SPI rather than I2C then that would need a third set of MOSI/SCLK and another CS.
 
+### SPI 0
+
 - 11 MOSI pitchDACs
 - _12 MISO not needed_
 - 13 SCLK pitchDAC
-- 10 CS-Pitch1 (any convenient one, like 10)
-- 8 CS-Pitch2 (9 is used for FreqCount)
+- 10 CS-Pitch1 (any convenient)
+- 8 CS-Pitch2 (not 9 which is used for FreqCount)
+
+### SPI 1
+
 - 26 MOSI1 perfDACs
 - _39 MISO1 not needed_
 - 27 SCLK1 perfDACs
-- 28 CS-Perf (any convenient, 28)
-- 29 CS-CC  (any convenient, 29)
-- 30 CS-Display  (any convenient, 30)
+- 30 DC-Display (any convenient)
+- 31 RST-Display  (any convenient)
+- 32 CS3-Display  (any convenient)
+- 33 spare
+- 34 CS2-CC  (any convenient)
+- 35 CS1-Perf (any convenient)
 
 Use pull-up resistors on chip selects, per 
 [Better SPI Bus Design in 3 Steps](https://www.pjrc.com/better-spi-bus-design-in-3-steps/)
@@ -101,9 +109,9 @@ also (same forum post):
 
 ## UI: Display & Controls
 
-### Display
+### I2C Display?
 
-Display: LC/3.2 for display?  if so, I2C (or CAN bus) for communication with LC/3.2.
+**NO** Display: LC/3.2 for display?  if so, I2C (or CAN bus) for communication with LC/3.2.
 Or use main MCU, and I2C for display. Slow, but high speed not needed. Remember the external pull-up resistors.
 
 - 18 SDA = A4
@@ -116,6 +124,15 @@ Or [Adafruit 128x64 I2C OLED](https://www.adafruit.com/product/938) 40mA.
 [I2C OLED performance on Teensy 4.0 with different clock speeds](https://forum.pjrc.com/threads/61060-I2C-OLED-performance-on-Teensy-4-0-with-different-clock-speeds)
 
 [Advice on ground noise and OLED displays](https://modwiggler.com/forum/viewtopic.php?p=3999696#p3999696)
+
+## SPI Display
+
+Using [Adafruit OLED 128x64 1.3inch](./display.md). Needs DC, CS, and RST.
+
+- 12 Display DC
+- 26 MOSI1 (shared with PerfDACs)
+- 27 SCLK (shared with PerfDACs)
+- 
 
 ### Encoder, buttons
 
@@ -190,11 +207,11 @@ But maybe better to group these closer to the RGB LED outs as they all get route
 
 Two (Low, High channel) RGB LEDs need 6 PWM outputs. See [PWM Frequency](https://www.pjrc.com/teensy/td_pulse.html) and [freq measure multi on teensy 4.0](https://forum.pjrc.com/index.php?threads/freq-measure-multi-on-teensy-4-0.74384/#post-338376). These are at 4.482 kHz by default:
 
-- 28 Low R (FlexPWM3.1)
 - 24 Low G (FlexPWM1.2)
 - 25 Low B (FlexPWM1.3)
 - 36 High R (FlexPWM2.3)
 - 37 High G (FlexPWM2.3)
+- 28 Low R (FlexPWM3.1)
 - 29 High B (FlexPWM3.1)
 
 ### "Fader" pots

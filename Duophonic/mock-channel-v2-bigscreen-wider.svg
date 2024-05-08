@@ -229,7 +229,7 @@
     <rect x="27.4" y="0" width="1.2" height="108" style="fill:#777;fill-opacity:0.2;stroke:none"/>
     </g>
 
-    <g transform="rotate(-90 20 90) translate(29 -68.5)" >
+    <g transform="rotate(-90 20 90) translate(26 -68.5)" >
 <!-- perf DAC 2 -->
 <!-- is going to need a totally different front jack board that mates to the same perfdac board -->
         <use href="#Thoniconn-vertical" x="8" y="73"/> 
@@ -269,20 +269,26 @@
         <use href="#SMDtact" x="-63" y="29"/>
         <rect x="-72" y="18" width="16" height="18" class="keep"/>
         <use href="#SparkfunRGBencoder" x="-15" y="18"/>
-        <rect x="-72.5" y="10.5" width="76" height="36" style="stroke: #966"/>
+        <!-- display, buttons, encoder board -->
+        <rect x="-72.5" y="10.5" width="76" height="39" style="stroke: #966"/>
     </g>
 
-    <use href="#Teensy4.1horizontal" x="-65" y="18"/>
-    <!-- <rect x="-34" y="10.5" width="32" height="108" style="stroke: #696"/> -->
+    <use href="#Teensy4.1horizontal" x="-65" y="24.2"/>
+    <!-- MPU board -->
+    <rect x="-70.5" y="10.5" width="76" height="39" style="stroke: #696"/>
+    <rect x="-33"  height="9.4" width="28" y="11.8" style="fill:#787; fill-opacity: 0.4"/>
+    <circle r="2.5" cx="-1" cy="16" style="fill:#ACF; fill-opacity: 0.4"/>
+    <circle r="2.5" cx="-44" cy="16" style="fill:#ACF; fill-opacity: 0.4"/>
+    <circle r="2.5" cx="-38" cy="16" style="fill:#ACF; fill-opacity: 0.4"/>
 
     <!-- DIN socket -->
-    <g transform="translate(-26 97)">
+    <g transform="translate(-26 98)">
         <circle r="7.95"/>  <!-- 15.9 / 2 -->
         <circle r="8.925"/> <!-- 17.85 / 2 -->
     </g>
 
     <!-- USB-B receptacle, vertical -->
-    <g transform="translate(-62 97)">
+    <g transform="translate(-62 98)">
         <circle cy="-11.37" r="7.075" style="stroke:none; fill: #333"/>
         <circle cy="11.37" r="7.075" style="stroke:none; fill: #333"/>
         <rect y="-11.37" x="-7.075" height="22.74" width="14.17" style="stroke:none; fill: #333"/>
@@ -296,7 +302,7 @@
 
     <!-- are these too close together to plug/unplug easily? -->
     <!-- USB-A receptacle, vertical -->
-    <g transform="translate(-44 97)">
+    <g transform="translate(-44 98)">
         <circle cy="-15" r="5.575" style="stroke:none; fill: #996"/>
         <circle cy="15" r="5.575" style="stroke:none; fill: #996"/>
         <rect y="-15" x="-5.575" height="30" width="11.15" style="stroke:none; fill: #996"/>

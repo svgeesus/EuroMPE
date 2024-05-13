@@ -71,29 +71,30 @@ Apparently 6N138 and or H11L1 are too slow per MIDI spec and 6N137 is better. Th
 
 ## SPI
 
-Two [SPI](https://www.pjrc.com/teensy/td_libs_SPI.html) outputs for DACs (use the faster FIFO one for the  pitch DAC, because MPE pitchbend messages send a lot of data; use the second one for the octal performance DAC and octal CC DAC) with associated chip selects. Or maybe, if the perf dacs are being updated at high frequency to do smoothing in software, they would be better on the FIFO one.
+Two [SPI](https://www.pjrc.com/teensy/td_libs_SPI.html) outputs for DACs (use SPI0, the faster FIFO one, for the  pitch DAC, because MPE pitchbend messages send a lot of data; use SPI1, the second one, for the octal performance DAC and octal CC DAC) with associated chip selects. Or maybe, if the perf dacs are being updated at high frequency to do smoothing in software, they would be better on the FIFO one.
 
-If the display ends up using SPI rather than I2C then that would need a third set of MOSI/SCLK and another CS.
+SPI Display is also on SPI1.
+
 
 ### SPI 0
 
+- 8 CS-Pitch2 (not 9 which is used for FreqCount)
+- 10 CS-Pitch1 (any convenient)
 - 11 MOSI pitchDACs
 - _12 MISO not needed_
 - 13 SCLK pitchDAC
-- 10 CS-Pitch1 (any convenient)
-- 8 CS-Pitch2 (not 9 which is used for FreqCount)
 
 ### SPI 1
 
 - 26 MOSI1 perfDACs
 - _39 MISO1 not needed_
 - 27 SCLK1 perfDACs
-- 30 DC-Display (any convenient)
-- 31 RST-Display  (any convenient)
-- 32 CS3-Display  (any convenient)
-- 33 spare
-- 34 CS2-CC  (any convenient)
-- 35 CS1-Perf (any convenient)
+- 30 CS1-Perf (any convenient)
+- 31 CS2-CC  (any convenient) 
+- 32 spare
+- 33 CS3-Display  (any convenient)
+- 34 RST-Display  (any convenient)
+- 35 DC-Display (any convenient)
 
 Use pull-up resistors on chip selects, per 
 [Better SPI Bus Design in 3 Steps](https://www.pjrc.com/better-spi-bus-design-in-3-steps/)
@@ -109,32 +110,15 @@ also (same forum post):
 
 ## UI: Display & Controls
 
-### I2C Display?
-
-**NO** Display: LC/3.2 for display?  if so, I2C (or CAN bus) for communication with LC/3.2.
-Or use main MCU, and I2C for display. Slow, but high speed not needed. Remember the external pull-up resistors.
-
-- 18 SDA = A4
-- 19 SCL = A5
-
-OLED display [Adafruit 128x32 I2C OLED](https://www.adafruit.com/product/4440) might be too small, but the bigger displays are SPI only. 20mA.35mm by 20mm.
-Or [Adafruit 128x64 I2C OLED](https://www.adafruit.com/product/938) 40mA.
-
-> I found that with both u8g2 and Adafruit SSD1306, I was getting extremely slow frame updates. 37ms with u8g2 and 25ms with Adafruit SSD1306. By changing the bus clock speed (setBusClock(1000000) for u8g2, constructor argument for Adafruit), my update time went to 8us and 2us respectively. The frame is doing a clear, drawing a single line of text (which moves over time), and then updates.
-[I2C OLED performance on Teensy 4.0 with different clock speeds](https://forum.pjrc.com/threads/61060-I2C-OLED-performance-on-Teensy-4-0-with-different-clock-speeds)
-
-[Advice on ground noise and OLED displays](https://modwiggler.com/forum/viewtopic.php?p=3999696#p3999696)
-
 ## SPI Display
 
 Using [Adafruit OLED 128x64 1.3inch](./display.md). Needs DC, CS, and RST.
 
-- 12 Display DC
-- 26 MOSI1 (shared with PerfDACs)
-- 27 SCLK (shared with PerfDACs)
-- 
+See SPI section, above.
 
-### Encoder, buttons
+[Advice on ground noise and OLED displays](https://modwiggler.com/forum/viewtopic.php?p=3999696#p3999696)
+
+## Encoder, buttons
 
 Buttons and [encoder](https://www.pjrc.com/teensy/td_libs_Encoder.html) for option selection and menu navigation. T3.6 & T4.1 can use any pins for encoders.
 
@@ -156,7 +140,7 @@ Use encoder switch as OK, needs anther button for "back".
 
 Also needs "Calibrate" "Tune" and "Setup" ? Single button for common functions.
 
-### Mode switch(es)
+## Mode switch(es)
 
 Unclear if MPE/non-MPE is needed.
 
@@ -218,6 +202,8 @@ Two (Low, High channel) RGB LEDs need 6 PWM outputs. See [PWM Frequency](https:/
 
 Four 10k low-rise trimmer pots for the four performance outputs. These are read by Teensy ADC and used to digitally fade down the perfDAC values on both channels of that output. Set pinMode to INPUT ([ADC pinmode input check](https://forum.pjrc.com/threads/68621-ADC-voltage-measurements-wrong-and-jumping-on-Teensy-4-1?p=292784&viewfull=1#post292784)).
 
+Current draw for four 10k pots on 3V3 is 13.2 mA which seems fine.
+
 [1nF between wiper and AGND](https://forum.pjrc.com/threads/73545-Solutions-for-Erratic-Potentiometers?p=331814&viewfull=1#post331814) for each pot. But [values are hard to predict](https://forum.pjrc.com/threads/67463-Suitable-op-amp-for-driving-the-teensy4-ADC?p=281188&viewfull=1#post281188) and [20x the value of the 1.5pF ADC internal cap, ie 30-40pf](https://forum.pjrc.com/threads/67463-Suitable-op-amp-for-driving-the-teensy4-ADC?p=281200&viewfull=1#post281200) is also recommended.
 
 _Might_ need low-pass RC filter or op-amp buffer but try the software solution first.
@@ -233,7 +219,7 @@ _Might_ need low-pass RC filter or op-amp buffer but try the software solution f
 
 - [GND vs. AGND on Teensy 4.1 and 3.6](https://forum.pjrc.com/index.php?threads/teensy-4-1-agnd-retired.65599/#post-319809)
 
-So treat the HND between pins 13 and 41/A17 as AGND and the one between Vin and 3V3 as DGND seems prudent.
+So treat the GND between pins 13 and 41/A17 as AGND and the one between Vin and 3V3 as DGND seems prudent.
 
 ## Digital outs
 
@@ -249,9 +235,29 @@ Could need analog ins, or I2C, depending on hardware. Not _at all_ a must-have.
 ## Overall pinout
 
 _Italic_ items are not immediately needed but need specific pins, so reserved in case.
-Depending on testing of [PerfDAC](), an additional pin for LDAC might be needed. Pins 33-35 still available.
+Depending on testing of [PerfDAC](), an additional pin for LDAC might be needed.
 
 ![pinout](./img/MPU-pinout-v01.png)
+
+## Schematic
+
+Few components on the board, mainly breaking out to multi-pin connectors to other boards.
+The Eurorack power connector is there.
+
+## Board
+
+From the front panel mockup, dimensions are tight: 77mm wide by 39.5mm high. Could expand _one mm_ wider before colliding with the [Gate, LED, Tune](./Gate-LED.md) board, but needs enough room for the micro USB cable (unless using the D+, D- pads). Could expand _very slightly_ higher, constraints are staying within safe rack rail distances and not coliding with or pushing down the [PerfDAC2 (MIDI CC)](./performance-dac.md) board.
+
+## BOM
+
+### Capacitors
+
+- 4 Kyocera AVX 0805YA102FAT2A  1nF 16V 1% C0G 0805  $0.361/10 =  **$3.61**
+- 3 Nichicon 10μF 105C 16V **GOT**
+
+### Connectors
+
+- 1 Samtec TST-108-01-L-D 8x2 shrouded header $2.55/1 = **$2.55** 3d model requested 2024-05-11
 
 ## Development & Testing plan
 

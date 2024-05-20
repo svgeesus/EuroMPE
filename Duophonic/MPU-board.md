@@ -29,7 +29,7 @@ For software details, see [EuroMPE MIDI](./MIDI.md). This section relates to the
 MIDI hardware spec states < 5mA to turn on, < 2μs rise and fall times. Also pin 2 and shield go from not connected, to connected by 100nF caps for RF purposes.
 
 [DIN MIDI](https://www.pjrc.com/teensy/td_libs_MIDI.html) in needs serial input and 6N138 optoisolator with [1k pulldown](https://forum.pjrc.com/threads/54891-MIDI-serial-(DIN)-to-usbMIDI-issues-got-weird-MIDI-messages?p=287082#post287082)
-and 4.7-10 kΩ base-emitter resistor. 
+and [4.7-10 kΩ base-emitter resistor](https://forum.pjrc.com/index.php?threads/midi-5-pin-din-and-trs-swiching-circuit.71303/#post-343562). 
 
 6N139 is lower-current (0.5mA) version of 6N138 (1.6mA).  
 
@@ -221,9 +221,9 @@ _Might_ need low-pass RC filter or op-amp buffer but try the software solution f
 
 So treat the GND between pins 13 and 41/A17 as AGND and the one between Vin and 3V3 as DGND seems prudent.
 
-## Digital outs
+## Digital outs?
 
-Two pedal logic outputs, if desired. ?Not really needed?
+**No** Two pedal logic outputs, if desired. ?Not really needed?
 
 - ?? Pedal 1
 - ?? Pedal 2

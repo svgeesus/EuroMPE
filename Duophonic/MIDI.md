@@ -97,6 +97,28 @@ Useful discussion on [Osmose, CC87, CC74 for 14-bit output](https://community.vc
 
 [class MIDIDevice_BigBuffer ](https://github.com/PaulStoffregen/USBHost_t36/blob/b6f94f7605b3f6cb57a10e41cab51b25b47f7736/USBHost_t36.h#L1521C53-L1521C53) required for 480 speed.
 
+## Reading MIDI data
+
+Setup:
+```
+#include <USBHost_t36.h>
+#include <MIDI.h>
+
+USBHost thisUSB;
+USBHub hub1(thisUSB);
+MIDIDevice_BigBuffer usbhostMIDI(thisUSB);
+
+MIDI_CREATE_DEFAULT_INSTANCE();
+```
+
+And then in the loop:
+```
+    MIDI.read();
+    usbMIDI.read();
+    thisUSB.Task();
+    usbhostMIDI.read();
+```
+
 ## Controllers
 
 ### Roli Seaboard Rise 1

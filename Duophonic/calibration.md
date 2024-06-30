@@ -40,7 +40,9 @@ Main requirement is to hard clip to a 0..3V3 signal with a rail-to-rail op-amp s
 
 OPA2365 ($3.17/1) has specified overload recovery time < 0.1μs and RRIO. Use 2k current-limiting input resistor (<10mA) then rely on protection diodes.
 
-[Simple and fast precision clamp with RRIO](https://www.eevblog.com/forum/projects/limiting-op-amp-output/msg441564/#msg441564) and [even simpler](https://www.eevblog.com/forum/projects/limiting-op-amp-output/msg732673/#msg732673)
+[Simple and fast bipolar-supply precision clamp with RRIO](https://www.eevblog.com/forum/projects/limiting-op-amp-output/msg441564/#msg441564) and [even simpler, unipolar-supply](https://www.eevblog.com/forum/projects/limiting-op-amp-output/msg732673/#msg732673)
+
+Should this have a Schmidt-trigger inverter or something like that to ensure even low-level signals are square-wave like? Build and test the simple op-amp clamp and check results on scope.
 
 ### Calibrating the calibrator
 

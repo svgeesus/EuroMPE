@@ -244,6 +244,8 @@ Depending on testing of [PerfDAC](), an additional pin for LDAC might be needed.
 Few components on the board, mainly breaking out to multi-pin connectors to other boards.
 The Eurorack power connector is there.
 
+[MPU on socket in KiCad](https://forum.kicad.info/t/advise-one-choosing-components/51516/5)
+
 ## Board
 
 From the front panel mockup, dimensions are tight: 77mm wide by 39.5mm high. Could expand _one mm_ wider before colliding with the [Gate, LED, Tune](./Gate-LED.md) board, but needs enough room for the micro USB cable (unless using the D+, D- pads). Could expand _very slightly_ higher, constraints are staying within safe rack rail distances and not coliding with or pushing down the [PerfDAC2 (MIDI CC)](./performance-dac.md) board.

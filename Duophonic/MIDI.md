@@ -12,6 +12,10 @@ Note that [Arduino USBMIDI](https://github.com/lathoub/Arduino-USBMIDI) claims t
 
 Note [bug in MIDI.hpp re system common messages](https://forum.pjrc.com/threads/73743-midi-tune-select-problem?p=333274&viewfull=1#post333274)
 
+Detect devices connected to USB host:
+
+> myusb.task() is what polls for a connected USB device.
+
 High level, implement MIDI 1.0, HRV and and MPE specifications
 
 - My own library.

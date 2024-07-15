@@ -177,6 +177,8 @@ May need buffering, though this project does not need a fast rate of reading the
 
 "It is advisable to place a 10nF capacitor from the wiper to ground against RF and other interference." [Gerrit, PJRC forum](https://forum.pjrc.com/threads/55126-MIDI-Faderbox-fader-choice?p=197818&viewfull=1#post197818)
 
+[Discussion of ADC input capacitance, SPICE models](https://forum.pjrc.com/index.php?threads/some-comments-on-circuits-using-the-analog-input.75431/#post-346211)
+
 Maybe use [elapsedMillis](https://www.pjrc.com/teensy/td_timing_elaspedMillis.html) to only ready the pots every so often.
 
 ## Board
@@ -246,7 +248,7 @@ or
 
 ### Buffer board
 
-![O_C buffer](./img/O_C-T41%20output_buffer.png) Ornament and Crime T41 DAC output buffer
+![O_C buffer](./img/O_C-T41%20output_buffer.png) Ornament and Crime T41 DAC output buffer has 4x gain (not needed here) and bipolar offset (also not needed). 220R current limiter seems a bit high, but is inside the loop.
 
 ## Workplan
 

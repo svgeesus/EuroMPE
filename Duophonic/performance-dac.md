@@ -244,6 +244,10 @@ or
 
 (1) [SN74AHCT125QDRQ1](https://www.mouser.com/ProductDetail/Texas-Instruments/SN74AHCT125QDRQ1?qs=zhgwDAIOVxtE5BLiD9k5oQ%3D%3D) Quad bus buffer $0.385/10 = **$3.85 GOT**
 
+### Buffer board
+
+![O_C buffer](./img/O_C-T41%20output_buffer.png) Ornament and Crime T41 DAC output buffer
+
 ## Workplan
 
 - [ ] Breadboard op-amp slew circuit, test with any DAC stepped at 7bit resolution. Get good capacitor values for sufficient slew.

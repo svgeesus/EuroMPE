@@ -176,6 +176,8 @@ Useful frequency range for calibration (see [MIDI](./MIDI.md)) is 16.35Hz to 704
 
 **Check** pin 7 [conflicts with PWM timers](https://www.pjrc.com/teensy/td_pulse.html), maybe swap the two Gate outs with the two FreqMeasureMulti to avoid.
 
+[fast rising edges](https://forum.pjrc.com/index.php?threads/can-flexpwm-inputs-be-configured-to-have-hys-schmitt-trigger.73509/#post-331551) perhaps use 74LVC14.
+
 ## Gate and Trigger outs
 
 Gate logic outputs. Any convenient pins can be used.

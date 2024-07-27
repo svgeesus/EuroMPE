@@ -236,7 +236,7 @@ Could need analog ins, or I2C, depending on hardware. Not _at all_ a must-have.
 
 ## Overall pinout
 
-_Italic_ items are not immediately needed but need specific pins, so reserved in case.
+_Italic_ items are not immediately needed but, if used, need specific pins, so they are reserved in case.
 Depending on testing of [PerfDAC](), an additional pin for LDAC might be needed.
 
 ![pinout](./img/MPU-pinout-v01.png)

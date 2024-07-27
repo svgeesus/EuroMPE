@@ -101,6 +101,12 @@ Useful discussion on [Osmose, CC87, CC74 for 14-bit output](https://community.vc
 
 [class MIDIDevice_BigBuffer ](https://github.com/PaulStoffregen/USBHost_t36/blob/b6f94f7605b3f6cb57a10e41cab51b25b47f7736/USBHost_t36.h#L1521C53-L1521C53) required for 480 speed.
 
+## Combining data sources
+
+The SoS [review of the Arturia Polybrute 12](https://www.soundonsound.com/reviews/arturia-polybrute-12) mentions Pluck (short AD) and Touch (key position modified by ADSR) to control filter and VCA.
+
+> The third mode is FullTouch Env > AT, and this is the one that’s going to cause confusion, not least because the manual doesn’t describe it fully. (A lack of detail was a fault with the original PolyBrute manual, too.) Having spent hours trying to work out what was happening, I admitted defeat and contacted Arturia. It turns out that, when designing sounds to take advantage of FullTouch AT and FullTouch AT > Z, the developers found that they were leaving the filter and amplifier open so that they could use FullTouch to control other aspects of note development, timbre and modulation. So they designed a mode in which the VCF and VCA envelopes no longer act as ADSR contour generators, but are replaced by modulation values that are determined by the key velocity and vertical position. Having decided upon the basis of the system, they then decided to make each of those values the sum of two new signals. The first of these is called Pluck, and this is a simple AD transient. Its fastest attack rate is quoted as below 4ms, but it can be lengthened a little by increasing the value of the attack fader of the appropriate envelope generator. The decay rate is then controlled by the decay fader, and the maximum amplitude of the transient is controlled by the velocity fader, although there’s a lower velocity threshold that helps to ensure that you don’t generate a Pluck by accident. The second signal is called Touch, which is a contour determined by the position of the key at any given moment. However, the ADSR faders in each of the VCF and VCA envelope panes also affect this. The attack and decay faders determine the slew rate when the key moves down or up, respectively. The Sustain value is more complex. When positioned below 50 percent, the generated values are lower than they would otherwise be, lowering the relative amplitude of the Touch and emphasising the Pluck to create, well, plucked sounds. But when the Sustain is positioned above 50 percent, the Touch signal remains high. This was implemented so that the VCA can be kept open even while a key is being moved up and down to control the filter. The release fader then controls the release time as you would expect. Finally, the aftertouch sensor at the bottom of the key’s travel is again active, so you can still lean into a note and generate Poly‑AT in addition to all of the above.
+
 ## Reading MIDI data
 
 Setup:
@@ -290,3 +296,7 @@ And for keys (remembering in MPE 74 Brightness is used for front-back Slide)
 ```
 
 The short SysEx seems to be sent periodically as a sort of keep-alive?
+
+### Polybrute 12 MPE
+
+> I should also mention that, in addition to all of the above, the PolyBrute 12 supports MPE. When sending, all of the aftertouch modes send channel pressure on a per‑note basis, with the FullTouch Env > Z and FullTouch Env > AT modes sending MIDI CC74 as the secondary parameter when a key is pushed into the aftertouch sensor at the bottom of its travel. When receiving, channel aftertouch, poly aftertouch, FullTouch AT and FullTouch AT > Z are each routed to aftertouch and MIDI CC74 on a per‑note basis, while FullTouch Env > AT is routed to the VCF envelope and aftertouch respectively.

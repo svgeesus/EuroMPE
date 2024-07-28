@@ -7,7 +7,7 @@ low-note priority and high-note priority.
 
 Re-utilising designs from the polyphonic Euro-MPE project,
 this aims to be a high-precison, flexible, and performance oriented
-duophonic MIDI to Eurockack CV module.
+duophonic MIDI to Eurorack CV module.
 It's MPE compatible, so there is independent expression on each of the two notes.
 
 ## MIDI connection
@@ -24,11 +24,11 @@ There are two voice channels, each with:
 
 - color LED for gate and to indicate note played (12 color scale)
 - Gate and Trigger, see [Gate/LED](./Gate-LED.md).
-- Tuning input (from oscillator)
-- Oscillator pitch CV, highly linear 18bit, low tempco DAC
+- Tuning input (from oscillator), see [calibration](./calibration.md)
+- Oscillator pitch CV, highly linear [18bit, low tempco DAC](./pitch-dac.md)
   - includes pitchbend (Glide) and any microtuning
   - See [Pitch DAC](./pitch-dac.md)
-- Second (identical) pitch CV output
+- Second (identical) pitch CV output (for dual oscillator voices, or for filter cutoff)
 - Four MPE-compatible expression outputs (14bit) per voice, see [Performance DAC](./performance-dac.md)
     1. Strike (attack velocity)
     2. Lift (release velocity)
@@ -104,7 +104,11 @@ See [Power](./Power.md)
 
 ## Panel
 
-Not settled, but this is the [current panel concept](./mock-channel-v2-bigscreen-wider.svg) (SVG)
+Not settled, but this is the [current panel concept](./mock-channel-front-v2-bigscreen-wider.svg) (SVG)
+
+![panel](./img/panel-front.png)
+
+and also [current panel with boards and components](./mock-channel-v2-bigscreen-wider.svg) (SVG)
 
 ![panel](./img/panel.png)
 

@@ -7,12 +7,17 @@ Usable panel height 112mm.
 
 Max PCB height **108mm**.
 
-## Width of two output channels
+## Panel width
 
-Using paired jacks (gate and trig, two pitch)
-then 8HP (40mm).
+Current design is 24HP = 121.60mm.
 
-[Panel mockup (svg)](./m) and [Panel mockup layout view with daughter boards, connectors etc (svg)](./mock-channel-v2-bigscreen-wider.svg)
+[Panel concept](./mock-channel-front-v2-bigscreen-wider.svg) (SVG)
+
+![panel](./img/panel-front.png)
+
+and also [current panel with boards and components](./mock-channel-v2-bigscreen-wider.svg) (SVG)
+
+![panel](./img/panel.png)
 
 ## Front jack spacing for duophonic output
 
@@ -114,6 +119,8 @@ Wow that looks tiny on such a big panel!
 
 Alternatively the [1.3" 128x64 OLED graphic display](https://www.adafruit.com/product/938) **GOT** I2C or SPI.
 
+![oled screen photo](./img/oled_13.png)
+
 35.19mm wide by 35.18mm high (including lower mounting lugs). Display width 35.19mm, height 19.0mm.
 
 ![1.3"](./img/adafruit-1.3-128x64-fabpring.png)
@@ -123,6 +130,8 @@ Alternatively the [1.3" 128x64 OLED graphic display](https://www.adafruit.com/pr
 Group of pushbuttons to left of display, 3 plus "back". See [User Interface](./ui.md)
 
 [Adafruit Mini Soft Touch Push-button Switches](https://www.adafruit.com/product/3983) 6x6mm SMD.
+
+![tact photo](./img/tact.png)
 
 ![soft touch](./img/adafruit-soft-touch-push.png)
 

@@ -29,18 +29,23 @@ Voice allocation is not in that library, module specific.
 Range of [musical frequencies for MIDI notes](https://www.inspiredacoustics.com/en/MIDI_note_numbers_and_center_frequencies) assuming :
 
 - Equal temperament tuning
-- MIDI 60 is C4
-- A4 is concert A, 440Hz
-- C4 is 0V, Doepfer Eurorack standard
+- MIDI 60 is C4, middle C (thus MIDI 69 is A4, concert A)
+- A4 is 440Hz
+- C4 is by default 0V, Doepfer Eurorack standard (thus tuning to 440Hz needs 0.75V)
 - pitch CV range +5V to -5V
 - DAC verification should avoid the note extremes to minimize linearity error
+- With pitchbend, note numbers are non-integer
+
+![Formula](./img/midi-note-to-frequency.png)
+
+Voltage = 0.75 + (n - 69)/12
 
 | MIDI 	| Name 	| Voltage  	| Frequency 	|
 |------	|------	|----------	|-----------	|
-| 127  	| G9   	|          	| 12,543.85 	|
-| 120  	| C9   	| 5V       	| 8372.02   	|
-| 119  	| B8   	| 4 11/12V 	| 7902.13   	|
-| 117  	| **A8**   	| 4.75V    	| 7040.00   	|
+| _127_  	| G9   	|          	| 12,543.85 	|
+| _120_  	| C9   	| 5V       	| 8372.02   	|
+| _119_  	| B8   	| 4 11/12V 	| 7902.13   	|
+| _117_  	| **A8**   	| 4.75V    	| 7040.00   	|
 | 108  	| C8   	| 4V       	| 4186.01   	|
 | 105  	| **A7**   	| 3.75V    	| 3520.00   	|
 | 93   	| **A6**   	| 2.75V    	| 1760.00   	|
@@ -50,13 +55,15 @@ Range of [musical frequencies for MIDI notes](https://www.inspiredacoustics.com/
 | 57   	| **A3**   	| -0.25V   	| 220.00    	|
 | 45   	| **A2**   	| -1.25V   	| 110.00    	|
 | 36   	| C2   	| -2V      	| 65.41     	|
-| 33   	| **A1**   	| -2.25V   	| 55.00     	|
-| 24   	| C1   	| -3V      	| 32.70     	|
-| 21   	| **A0**   	| -3.25V   	| 27.50     	|
-| 16   	| E0   	|          	| 20.60     	|
-| 9   	| **A-1**   | -4.25V    | 16.35     	|
+| _33_   	| **A1**   	| -2.25V   	| 55.00     	|
+| _24_   	| C1   	| -3V      	| 32.70     	|
+| _21_   	| **A0**   	| -3.25V   	| 27.50     	|
+| _16_   	| E0   	|          	| 20.60     	|
+| _9_   	| **A-1**   | -4.25V    | 16.35     	|
+| _0_       | C-2       |  -5V      | 8.18     |
 
 Frequencies for the A notes are _exact_, others are rounded.
+MIDI notes outside 88-key piano range are in italics.
 
 Note that:
 
@@ -295,7 +302,12 @@ And for keys (remembering in MPE 74 Brightness is used for front-back Slide)
  SYSX: F0 00 21 10 78 3E 28 06 F7
 ```
 
-The short SysEx seems to be sent periodically as a sort of keep-alive?
+The short SysEx seems to be sent periodically as a sort of keep-alive? 00H 21H 10H is registered to ROLI Ltd. Presumably 78 is the [device ID](https://www.2writers.com/eddie/MidiGlossary.htm#DeviceId) and 3E is the Seaboard Rise 1 Model ID? Although the earlier trace had 3D. Thus, 28 06 is the actual data.
+
+- [Starting and ending SysEx](http://midi.teragonaudio.com/tech/midispec/sysex.htm)
+- [SysEx IDs](https://midi.org/sysexidtable)
+
+[Reaper: Using the Seaboard RISE & GRAND with Reaper](https://support.roli.com/support/solutions/articles/36000024635-reaper-using-the-seaboard-rise-grand-with-reaper)
 
 ### Polybrute 12 MPE
 

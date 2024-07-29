@@ -28,6 +28,12 @@ Once in tune, run a frequency sweep measuring at least 30 steps and calculating 
 
 Current [panel](./Panel.md) has per-voice tuning inputs.
 
+> calibrating only octaves it also runs foul of the same quirk in some oscillators where they go out of tune just a semitone or two before 0v – with possibly even worse results, as you would now have a bad data point for 0v.
+
+> Not all sound sources can take a full negative to positive swing pitch control voltages. Many digital modules in particular only listen to positive voltages, and may be go of tune as you get close to 0 volts no matter what you do. Also, I’ve seen some analog modules which track differently above 0 volts than they do below 0 volts.
+
+> [Calibr8or firmware for Ornament & Crime](https://learningmodular.com/calibr8or/)
+
 ### MIDI Tune Request
 
 Respond to F6 Tune Request by tuning both channels. Will only work if the oscillator outputs are looked back to the tune inputs.

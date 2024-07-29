@@ -82,6 +82,8 @@ _OPA2197ID_ (OPA2197ID $2.97/1) dual is 25uV typ 100uV max Vos, 5nA Ibias so twi
 
 **OPA2186D** another (OPA2186DR $2.22/10 newer, more available; SOIC-8) option. 1μV/10μV Vos as it is chopper stabilized. 4.8 max nA Ibias over temp, 55pA @25C. Check **slew rate 0.35 V/μs** is ok for slew limiter, if used. Quad version has _4x worse Vos_ so use duals. The _maximum_ power supply voltage for the OPAx186 is 24 V (±12 V). (Abs Max 26V). So running on ±9.5V looks good.
 
+**OPA2192** ($4.63/10) Vos ±8μV typ, ±50μV max, drift ±0.1 typ, ±0.5 max μV/°C.
+
 OPA4187IPW (1μV/10μV TSSOP-14 $5.60/10 in stock) quad a bit expensive
 
 ## Output conditioning

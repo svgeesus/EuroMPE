@@ -14,6 +14,16 @@ Might be better to allow re-calibration after pitch Vref drift though (annual ma
 
 ## Per-voice oscillator calibration (tuning)
 
+### Manual Tuning
+
+Tune ... Manual ... Low | High | Both
+
+Puts out 0.75V for concert A. LED shows by color (red is low, blue is high, green is in tune) and OLED displays closest note (eg B4#) and cents high/low.
+
+### Auto tuning
+
+Tune ... Auto ... Low | High | Both
+
 Avoid non-linear calibration curves. These are fine for pulling poorly-tracking oscillators into tune but then the same errors affect the other modules using pitch (filters etc). Instead go for high linearity, and use with well tracking oscillators.
 
 Two stages: analog coarse tune (manual oscilator tuning to a fixed pitch) then digital fine tune and linearization (measuring frequency per-oscillator at a range of voltages, for linearity and for oscillator range).

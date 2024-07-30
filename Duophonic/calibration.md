@@ -39,9 +39,9 @@ Once in tune, run a frequency sweep measuring at least 30 steps and calculating 
 Current [panel](./Panel.md) has per-voice tuning inputs.
 
 > calibrating only octaves it also runs foul of the same quirk in some oscillators where they go out of tune just a semitone or two before 0v – with possibly even worse results, as you would now have a bad data point for 0v.
-
+>
 > Not all sound sources can take a full negative to positive swing pitch control voltages. Many digital modules in particular only listen to positive voltages, and may be go of tune as you get close to 0 volts no matter what you do. Also, I’ve seen some analog modules which track differently above 0 volts than they do below 0 volts.
-
+>
 > [Calibr8or firmware for Ornament & Crime](https://learningmodular.com/calibr8or/)
 
 ### MIDI Tune Request
@@ -55,6 +55,7 @@ Level from oscillator should be plenty high, no need for amplification. May need
 Main requirement is to hard clip to a 0..3V3 signal with a rail-to-rail op-amp so it can be fed to the Teensy. Experiment on breadboard.
 
 > The FlexPWM timer used by FreqMeasureMulti requires very fast edges. Your signal looks like it has rather slow rise/fall times, and that will not work with FreqMeasureMulti. Can you add a schmitt trigger on your input?
+>
 > [PJRC](https://forum.pjrc.com/index.php?threads/teensy-4-1freqmeasuremulti-library.75304/#post-345574)
 
 OPA2365 ($3.17/1) has specified overload recovery time < 0.1μs and RRIO. Use 2k current-limiting input resistor (<10mA) then rely on protection diodes.

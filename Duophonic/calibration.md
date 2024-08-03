@@ -46,23 +46,45 @@ Current [panel](./Panel.md) has per-voice tuning inputs.
 
 ### MIDI Tune Request
 
-Respond to F6 Tune Request by tuning both channels. Will only work if the oscillator outputs are looked back to the tune inputs.
+Respond to F6 Tune Request by tuning both channels. Will only work if the oscillator outputs are looped back to the tune inputs.
 
 ### Tune-in conditioning circuitry
 
 Level from oscillator should be plenty high, no need for amplification. May need some low-pass filtering to get rid of above-audio signals that could cause false triggering?
 
-Main requirement is to hard clip to a 0..3V3 signal with a rail-to-rail op-amp so it can be fed to the Teensy. Experiment on breadboard.
+Highest note for tuning (**A8** = 7040.00Hz ) so 10kHz low-pass filter on input seems wise.
+
+![sallen-key](./img/sallen-key-schematic.png)
+
+[Sallen-Key low-pass design tool](http://sim.okawa-denshi.jp/en/OPstool.php) R1=R2=47k, C1 = 470pF, C2 = 220pF. Higher input resistance avoids need for buffer on input. Use a dual 072 op-amp with ±12V supplies for interfacing to modular signals.
+
+![response](./img/sallen-key-response.png)
+
+Then hard clip to a 0..3V3 unipolar signal with a dual, rail-to-rail, single supply (3V3) fast recovery op-amp so it can be safely fed to the Teensy. OPA2365 ($3.74/1) has specified overload recovery time < 0.1μs and RRIO. Use 2k current-limiting input resistor (<10mA) then rely on protection diodes.
+
+Better to follow the clamp with a dual Schmitt-trigger (SN74LVC2G17DBVR, SOT-23-6 $0.259/10) also on 3V3 to sharpen up the edge transitions.
+
+Experiment on breadboard.
 
 > The FlexPWM timer used by FreqMeasureMulti requires very fast edges. Your signal looks like it has rather slow rise/fall times, and that will not work with FreqMeasureMulti. Can you add a schmitt trigger on your input?
 >
 > [PJRC](https://forum.pjrc.com/index.php?threads/teensy-4-1freqmeasuremulti-library.75304/#post-345574)
 
-OPA2365 ($3.17/1) has specified overload recovery time < 0.1μs and RRIO. Use 2k current-limiting input resistor (<10mA) then rely on protection diodes.
 
 [Simple and fast bipolar-supply precision clamp with RRIO](https://www.eevblog.com/forum/projects/limiting-op-amp-output/msg441564/#msg441564) and [even simpler, unipolar-supply](https://www.eevblog.com/forum/projects/limiting-op-amp-output/msg732673/#msg732673)
 
 Should this have a Schmidt-trigger inverter or something like that to ensure even low-level signals are square-wave like? Build and test the simple op-amp clamp and check results on scope.
+
+#### Tune-In BOM
+
+(2) Panasonic ECH-U1H471JX5 470pF PPS film 0805 **$0.397/10**
+(2) Panasonic ECH-U1H221JX5 220pF PPS film 0805 **$0.211/10**
+(4) 4k7 0805 nothing special 1%
+(1) TL072 general purpose dual op-amp TL072BIDT **$1.15/10**
+(2) 2k 0805 1%
+(1) TI OPA2365AID RRIO SOIC-8 **$3.74/1**
+(1) TI SN74LVC2G17DBVR SOT-23-06 **$0.259/10**
+(3) 100nF decoupling caps
 
 ### Calibrating the calibrator
 

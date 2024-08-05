@@ -1,0 +1,7 @@
+I'm sketching out some input conditioning circuitry for Teensy 4.1 FreqMeasureMulti, measuring two frequencies at once. Input signals are audio frequency, Eurorack so typically ±5V but could reach ±12 in theory. Input frequencies will be in the range 16Hz to 7040Hz (musical notes A-1 to A8); this is for a two-voice MIDI-to-CV autotune function.
+
+To avoid any interference with the frequency counter, I was thinking a low pass filter at about 10k would be needed. So I start with a second-order Sallen-Key built around the usual TL072 op amp, running off ±12V. Then to clip the waveform to a safe 0 to 3V3 range, after wondering about more complex solutions with clamping diodes, I came across a super simple solution on EEVBlog involving just a current-limiting input resistor feeding a rail-to rail (input and output) fast recovery op-amp such as OPA2365, runing on unipolar 3V3 supply. (Yes, I know this is basically using an op-amp as a comparator). Lastly to firm up the edges a Schmitt-trigger buffer, here 74LVC2G17, again running on unipolar 3V3. That should give a nice square wave for the frequency counters.
+
+I'm away from my workshop for a couple of months and thus can't breadboard or measure, but would value feedback before I lay out a testing board to send to OSH Park. Does this look reasonable? 
+
+The schematic is missing power pins and power decoupling caps for clarity, I was assuming 100nF ceramic for each dual chip. 

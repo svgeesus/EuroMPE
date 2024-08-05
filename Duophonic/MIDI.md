@@ -307,7 +307,8 @@ The short SysEx seems to be sent periodically as a sort of keep-alive? 00H 21H 1
 - [Starting and ending SysEx](http://midi.teragonaudio.com/tech/midispec/sysex.htm)
 - [SysEx IDs](https://midi.org/sysexidtable)
 
-[Reaper: Using the Seaboard RISE & GRAND with Reaper](https://support.roli.com/support/solutions/articles/36000024635-reaper-using-the-seaboard-rise-grand-with-reaper)
+- [Reaper: Using the Seaboard RISE & GRAND with Reaper](https://support.roli.com/support/solutions/articles/36000024635-reaper-using-the-seaboard-rise-grand-with-reaper)
+- [OBLVYN’s tips and tricks for Seaboard RISE 2](https://roli.com/stories/oblvyns-tips-and-tricks-for-seaboard-rise-2?mc_cid=4fa71d55d9)
 
 ### Polybrute 12 MPE
 

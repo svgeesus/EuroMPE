@@ -77,14 +77,14 @@ Should this have a Schmidt-trigger inverter or something like that to ensure eve
 
 #### Tune-In BOM
 
-(2) Panasonic ECH-U1H471JX5 470pF PPS film 0805 **$0.397/10**
-(2) Panasonic ECH-U1H221JX5 220pF PPS film 0805 **$0.211/10**
-(4) 4k7 0805 nothing special 1%
-(1) TL072 general purpose dual op-amp TL072BIDT **$1.15/10**
-(2) 2k 0805 1%
-(1) TI OPA2365AID RRIO SOIC-8 **$3.74/1**
-(1) TI SN74LVC2G17DBVR SOT-23-06 **$0.259/10**
-(3) 100nF decoupling caps
+- (2) Panasonic ECH-U1H471JX5 470pF PPS film 0805 **$0.397/10**
+- (2) Panasonic ECH-U1H221JX5 220pF PPS film 0805 **$0.211/10**
+- (4) 4k7 0805 nothing special 1%
+- (1) TL072 general purpose dual op-amp TL072BIDT **$1.15/10**
+- (2) 2k 0805 1%
+- (1) TI OPA2365AID RRIO SOIC-8 **$3.74/1**
+- (1) TI SN74LVC2G17DBVR SOT-23-06 **$0.259/10**
+- (3) 100nF decoupling caps
 
 ### Calibrating the calibrator
 

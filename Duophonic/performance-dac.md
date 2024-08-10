@@ -258,7 +258,7 @@ or
 - [ ] Lay out panel jack PCB and op-amp PCB, check enough room for connectors and easy to route
 - [x] Lay out perf DAC board, 
 - [x] send DAC board to OSH Park to enable testing a populated DAC board.
-- [ ] Order parts
+- [x] Order parts
 - [ ] Build perf DAC board
 - [ ] Test perf DAC board with 5V5 supplies
 - [ ] Test perf DAC with output to breadboarded op-amp circuit.

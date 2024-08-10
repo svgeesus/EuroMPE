@@ -66,10 +66,10 @@ Rotary encoder for menu scrolling, with integrated switch for "accept".
 
 ## Buttons
 
-1. Back/Escape
-2. Tune
+1. Tune
+2. Cal
 3. Config
-4. Run (normal operation)
+4. Back/Escape
 
 [Thonk C&K Tactile D6R](https://www.thonk.co.uk/shop/radio-music-switch/)
 

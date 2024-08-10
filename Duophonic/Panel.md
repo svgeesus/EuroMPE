@@ -1,6 +1,6 @@
 # Panel
 
-Doepfer standard height is **128.5mm** and 2mm thickness but perhaps for a large panel with many heavy components mounnted behind it, 2.5mm for rigidity is better.
+Doepfer standard height is **128.5mm** and 2mm thickness but perhaps for a large panel with many heavy components mounted behind it, 2.5mm for rigidity is better.
 
 ## Max PCB dimensions
 
@@ -162,27 +162,58 @@ Need global outs, 8 jacks, same as perf dac board but rotated to be 4 wide and 2
 
 USB Host, USB device, DIN Midi (not on PCB; panel mount).
 
-- [Panel mount USB-B to Micro-B cable](https://www.sparkfun.com/products/15463)
+- [Sparkfun Panel mount USB-B to Micro-B cable](https://www.sparkfun.com/products/15463)
 (M3 holes 28.5mm spacing) **GOT**
 - [USB host cable](https://www.pjrc.com/store/cable_usb_host_t36.html) no data sheet; **GOT**
 - [Deltron 650-0500](https://www.mouser.com/ProductDetail/Deltron/650-0500?) **GOT**
+
+### DIN
 
 ![Deltron](./img/Deltron-650-0500.png)
 
 Deltron 5-way 45° needs 8mm radius circular cut-out plus 3.2mm wide 1.2mm rect key. Outer flange is 17.85mm diameter,
 
+### USB-B Device
+
 USB-B socket is 12mm wide, 11.16mm high. Hole is 8.45mm high, 7.78mm wide. Internal block 3.18mm high 5.6mm wide.
 
 ![USB-B](./img/USB-B-receptacle.png)
 
-Dimensions of external bracket unknown, measure. For now assume 34mm wide, 16mm high. Actually measures 36.91mm wide, 14.17mm high.
+<!-- Dimensions of Sparkfun external bracket unknown, measure. For now assume 34mm wide, 16mm high. Actually measures 36.91mm wide, 14.17mm high. -->
 
-![USB-B panel](./img/USB-panel.png)
+<!-- ![USB-B panel](./img/USB-panel.png) -->
+
+<!-- Alternative from [Adafruit](https://www.adafruit.com/product/937) -->
+
+Or [DataPro 1581-01C](https://www.datapro.net/products/usb-2-0-panel-mount-b-to-micro-b-extension.html) has 26mm mounting hole spacing, dia 3.2 (3.3 for safety) and 12.1 wide by 13mm high receptacle with 0.5mm corner radius. Overal dimensions 33.5mm by 14mm. In general has a better, more detailed spec sheet.
+
+<!-- ![USB-B panel](./img/Adafruit-USB-B-panel.png) -->
+![USB-B panel](./img/DataPro-USB-B.png)
+
+<!-- > Two 12mm M3 mounting screws, ~29mm apart (they also say 1.1inch which is 27.94mm _so check_)
+> Bracket 14.6mm wide, 38.6mm long
+> mounting hole spacing 29mm, dia 3.2
+> Receptacle 12.1mm long, 11.0mm wide, corner radisu 0.5mm -->
+
+<!-- ![USB-B photo](./img/Adafruit-USB-B-photo.jpg) -->
+
+
+### USB-A Host
 
 Dimensions of PJRC Host cable 11.15mm high and 38.85mm wide. (33.72 + 24.76) ÷ 2 = 29.24 centers (really?).
 Dimensions of receptacle 12.5mm by 5.12mm.
 
 ![USB-A](./img/USB-A_receptacle.png)
+
+Alternative [DataPro 1590-01C](https://www.datapro.net/products/usb-panel-mount-to-5-pin-socket.html) with 5-pin header has 14.7 by 7.3 cutout, corner radius 1.6mm (!), mounting holes 30mm spacing, overall dimensions 11.5mm by 37.7mm.
+
+![DataPro USB-A](./img/DataPro-USB-A.png)
+
+Although recommended clearance is more conservative, 39mm by 13mm.
+
+![DataPro USB-A clearance](./img/DataPro-USB-A-clearance.png)
+
+In general the DataPro cables are better specified, so order some and maybe switch to using them exclusively. But the USB host panel mount is very tall already, a shorter one is better and taller again might not fit. However max between mounting rails is a little larger than max pcb so maybe can move down 1mm more.
 
 **NO** If adding a TRS MIDI input, use a circuit which accepts either Type-A or Type-B, like [this one](https://github.com/kay-lpzw/LPZW_TRS_MIDI/)
 
@@ -286,34 +317,30 @@ Jacks use 6.3mm dia hole. 10mm between pairs of the same channel, extra 1mm to s
 
 Allow 1mm all round to cope with rounded corners on the front panel.
 
-Mounting bolts are 28.5mm apart, assume m3 bolts for now so 3.6 clearance hole.
+Mounting bolts are 26mm apart,  imperial bolts so 3.2 clearance hole, 3.3 for safety.
 
-- hole 9.78 wide 10.45 high, center (9.49 30.42) corner radius 0.5mmm
-- top mount (9.49 44.67)
-- bottom mount (9.49 16.17)
+- hole 12.1 mm wide 13 mm high, center (9.49 29.42) corner radius 0.5mmm
+- top mount (9.49 43.92)
+- bottom mount (9.49 14.92)
 <!-- thus in FPD coords, x = x +71.4; y = 128.5 - y -->
 <!-- center-x -61.91 center-y 98.08 -->
 <!-- <rect  style="fill: maroon; fill-opacity: 0.3" x="-65.8" y="93.85" width="7.78" height="8.45" /> -->
 
 ### USB-A receptacle
 
-<!-- 12.5mm by 5.12mm -->
-Allow 1mm all round for rounded corners? Mounting bolts 29.24mm apart, assume M3 so 3.6 clearance hole.
-
-- hole 7.12 wide 14.5mm high, center (27.42,30.42)
-- top mount (27.42, 45.04)
-- bottom mount (27.42, 15.8)
+- hole 7.3 wide 14.7mm high, center (27.42,29.42)
+- top mount (27.42, 44.42)
+- bottom mount (27.42, 14.42)
 <!-- center-x -43.98 center-y 98.08 -->
-<!-- <rect  style="fill: maroon; fill-opacity: 0.3" x="-47.54" y="90.75" width="7.12" height="14.5" /> 
--->
+
 
 ### DIN receptacle
 
 16mm circular hole with 3.2 x 2.4 rectangle at top, , center is 0.6mm above circular hole edge.
 Use same y-dimension as the two usb receptacles, was 30.46
 
-- circle (45.45, 30.42) radius 8
-- rectangle center (45.45, 38.42) width 3.2 height 2.4
+- circle (45.45, 29.42) radius 8
+- rectangle center (45.45, 37.42) width 3.2 height 2.4
 
 <!-- thus in FPD coords, x = x +71.4; y = 128.5 - y -->
 <!-- <circle style="fill: maroon; fill-opacity: 0.3" cx="-25.95" cy="98.04" r="7.6"/> -->
@@ -323,8 +350,37 @@ Display width 35.19mm, height 19.0mm
 
 - screen center (38, 101) width 35.19 height 19
 
+### Buttons
+
+Needs testing, probably make this smaller.
+<!-- <rect x="-69" y="18" width="16" height="18" class="keep" style="fill: maroon; fill-opacity: 0.3"/> 
+center x -61 y 27
+but line with center of screen
+-->
+ - hole 16mm wide 18mm tall, center (10.4, 101)
+ - text depends on final button placement
+
+### Mounting holes for MPU board
+
+Position not clear yet
+
+## Cost
+
+> Price calculation for the file: EuroMPE.fpd
+> Based on price list of: Front Panel Express, LLC
+> Price list date: 2022-12-12
+
+> Total:  **$116.06**
+> Estimated weight:  88.3 g
+
 ## Work Plan
 
 - [x] Experiment with font sizes on 128x64 display
 - [x] Order the tact switches **2023-11-04, GOT**
+- [ ] Order a rub-panel just to experiment with fit for the screen, encoder and buttons
+- [ ] Order a sub-panel just for the USB and DIN connectors, to check fit
+- [ ] Order a sub-panel of just the two channels, omitting the rest.
 - [ ] Mock up starting menu with Tune, Conf, Run
+
+
+

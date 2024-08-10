@@ -178,6 +178,12 @@ Useful frequency range for calibration (see [MIDI](./MIDI.md)) is 16.35Hz to 704
 
 [fast rising edges](https://forum.pjrc.com/index.php?threads/can-flexpwm-inputs-be-configured-to-have-hys-schmitt-trigger.73509/#post-331551) perhaps use 74LVC14.
 
+Input signals are audio frequency, Eurorack so typically ±5V but could reach ±12 in theory. Input frequencies will be in the range 16Hz to 7040Hz (musical notes A-1 to A8); this is for a two-voice MIDI-to-CV autotune function.
+
+To avoid any interference with the frequency counter, I was thinking a low pass filter at about 10k would be needed. So I start with a second-order Sallen-Key built around the usual TL072 op amp, running off ±12V. Then to clip the waveform to a safe 0 to 3V3 range, after wondering about more complex solutions with clamping diodes, I came across a super simple solution on EEVBlog involving just a current-limiting input resistor feeding a rail-to rail (input and output) fast recovery op-amp such as OPA2365, running on a unipolar 3V3 supply. (Yes, I know this is basically using an op-amp as a comparator). Lastly to firm up the edges a Schmitt-trigger buffer, here 74LVC2G17, again running on unipolar 3V3. That should give a nice square wave for the frequency counters.
+
+![tune-input](./img/tune-in.png)
+
 ## Gate and Trigger outs
 
 Gate logic outputs. Any convenient pins can be used.

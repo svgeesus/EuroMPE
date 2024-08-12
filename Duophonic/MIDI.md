@@ -126,6 +126,7 @@ TUN (.tun) is textual, one line for each of the 128 notes, while MTS (.mid) is b
 - [scale workshop](https://sevish.com/scaleworkshop/?version=2.5.7) browser-based scale generator
 - [Intro to Microtonality](https://theproaudiofiles.com/microtones/)
 - [My Idiosyncratic Reasons for Using Just Intonation](https://www.kylegann.com/JIreasons.html)
+- Book [The Arithmetic of Listening](https://www.press.uillinois.edu/books/?id=p084416)
 
 ## Combining data sources
 

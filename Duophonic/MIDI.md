@@ -108,6 +108,16 @@ Useful discussion on [Osmose, CC87, CC74 for 14-bit output](https://community.vc
 
 [class MIDIDevice_BigBuffer ](https://github.com/PaulStoffregen/USBHost_t36/blob/b6f94f7605b3f6cb57a10e41cab51b25b47f7736/USBHost_t36.h#L1521C53-L1521C53) required for 480 speed.
 
+## Tunings, and Microtuning
+
+- [MICROTUNING VIRTUAL AND ELECTRONIC HARDWARE INSTRUMENTS: AN OVERVIEW OF FORMATS AND METHODS FOR USING ALTERNATIVE INTONATION SYSTEMS](https://midi.org/microtuning-and-alternative-intonation-systems)
+
+> There are countless other such examples of historical and contemporary musical instrument intonation systems that would be able to easily illustrate the glaring shortcomings of being restricted to only 12 notes repeating at the 2/1. For musicians and composers to be able to encompass the full range of expression and compositional possibilities of using alternative intonation systems in their music – including, but not limited to, 12 Note Octave Repeating Microtunings – it is advised to support those visionary developers who have implemented full-keyboard microtuning in their instruments. With correctly implemented full-keyboard microtuning functionality, there is no compromise in the way that one may microtune their hardware or virtual instruments.
+
+> Virtual instruments that can more easily achieve high-precision full-controller microtuning are those where developers have implemented the use of either the **TUN** or **MTS (MIDI Tuning Standard)** microtuning formats, which enable saving all of the microtuning mapping information into a single tuning data file that may be loaded directly into the instruments, or in the case of MTS, also be transmitted from the timeline of DAWs that allow transmitting SYSEX, such as for example REAPER and Bitwig.
+
+- [How to create a .tun file in Scala](https://sevish.com/2014/how-to-create-a-tun-file-in-scala/)
+
 ## Combining data sources
 
 The SoS [review of the Arturia Polybrute 12](https://www.soundonsound.com/reviews/arturia-polybrute-12) mentions Pluck (short AD) and Touch (key position modified by ADSR) to control filter and VCA.

@@ -116,7 +116,16 @@ Useful discussion on [Osmose, CC87, CC74 for 14-bit output](https://community.vc
 
 > Virtual instruments that can more easily achieve high-precision full-controller microtuning are those where developers have implemented the use of either the **TUN** or **MTS (MIDI Tuning Standard)** microtuning formats, which enable saving all of the microtuning mapping information into a single tuning data file that may be loaded directly into the instruments, or in the case of MTS, also be transmitted from the timeline of DAWs that allow transmitting SYSEX, such as for example REAPER and Bitwig.
 
-- [How to create a .tun file in Scala](https://sevish.com/2014/how-to-create-a-tun-file-in-scala/)
+- [How to create a .tun file in Scala](https://sevish.com/2014/how-to-create-a-tun-file-in-scala/) also describes mts
+- [MIDI tuning frequency data format](https://en.wikipedia.org/wiki/MIDI_tuning_standard#Frequency_Data_Format)
+
+TUN (.tun) is textual, one line for each of the 128 notes, while MTS (.mid) is binary, 3 bytes per note.
+
+- [Mapping microtonal scales to a MIDI keyboard in Scala](https://sevish.com/2017/mapping-microtonal-scales-keyboard-scala/)
+- [re-tuned - same melodies in different tunings](https://sevish.bandcamp.com/album/re-tuned)
+- [scale workshop](https://sevish.com/scaleworkshop/?version=2.5.7) browser-based scale generator
+- [Intro to Microtonality](https://theproaudiofiles.com/microtones/)
+- [My Idiosyncratic Reasons for Using Just Intonation](https://www.kylegann.com/JIreasons.html)
 
 ## Combining data sources
 

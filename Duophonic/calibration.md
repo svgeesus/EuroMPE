@@ -96,6 +96,8 @@ The EuroMPE would need to know which oscillator was connected to which tne input
 
 Reading all temperature sensors rquires just one pin on Teensy.
 
+ - [Interfacing Multiple DS18B20 Digital Temperature Sensors with Arduino](https://lastminuteengineers.com/multiple-ds18b20-arduino-tutorial/)
+
 
 ### Calibrating the calibrator
 

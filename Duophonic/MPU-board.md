@@ -182,7 +182,7 @@ Input signals are audio frequency, Eurorack so typically ±5V but could reach ±
 
 To avoid any interference with the frequency counter, I was thinking a low pass filter at about 10k would be needed. So I start with a second-order Sallen-Key built around the usual TL072 op amp, running off ±12V. Then to clip the waveform to a safe 0 to 3V3 range, after wondering about more complex solutions with clamping diodes, I came across a super simple solution on EEVBlog involving just a current-limiting input resistor feeding a rail-to rail (input and output) fast recovery op-amp such as OPA2365, running on a unipolar 3V3 supply. (Yes, I know this is basically using an op-amp as a comparator). Lastly to firm up the edges a Schmitt-trigger buffer, here 74LVC2G17, again running on unipolar 3V3. That should give a nice square wave for the frequency counters.
 
-![tune-input](./img/tune-in.png)
+![tune-input](./img/Tune-in.png)
 
 ## Gate and Trigger outs
 

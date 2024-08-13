@@ -35,4 +35,4 @@ Mounting holes are 2.5mm
 
 - [wiring 128x64 oleds](https://learn.adafruit.com/monochrome-oled-breakouts/wiring-128x64-oleds)
 
-![schematic](./img/oled_1.3inch_original_schematic.png [PDF](./img/oled_1.3inch_original_schematic.pdf)
+![schematic](./img/oled_1.3inch_original_schematic.png) [PDF](./img/oled_1.3inch_original_schematic.pdf)

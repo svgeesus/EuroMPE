@@ -86,6 +86,17 @@ Should this have a Schmidt-trigger inverter or something like that to ensure eve
 - (1) TI SN74LVC2G17DBVR SOT-23-06 **$0.259/10**
 - (3) 100nF decoupling caps
 
+### Temperature compensation
+
+Measuring the case internal temperature might be helpful and is easy to do, but not clear how well that would predict tracking of individual oscillators.
+
+Not a must-have, and complicates addition and removal and tuning of modules, but one idea is to use thermal epoxy to attach a Dallas DS18B20 thermal sensor to the expo converter of each oscillator, then measure the temperatures and adjust linearization calibration curves based on the temperature, likely through linear interpolation of closest calibrated temperatures. Perhaps a _temperature bus board_ with pluggable conectors?
+
+The EuroMPE would need to know which oscillator was connected to which tne input, which implies messing with the menu. Usefully, each DS18B20 has a unique 64bit serial number which could be used to identify oscillators.
+
+Reading all temperature sensors rquires just one pin on Teensy.
+
+
 ### Calibrating the calibrator
 
 Keysight 34465A as measurement device.

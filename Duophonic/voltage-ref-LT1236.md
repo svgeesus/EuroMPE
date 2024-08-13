@@ -221,7 +221,7 @@ pins are (measured with micrometer) 45.06 ÷ 2 = 22.53mm apart
 - [x] Design v0.1 Vref board with dual op-amp
 - [x] Fab v0.1 board
 - [x] Check existing component inventory
-- [ ] order Vref, op-amp (same as pitch DAC uses)
+- [x] order Vref, op-amp (same as pitch DAC uses)
 - [ ] Build, test
 - [ ] Burn-in
 - [ ] Do stability analysis for innie OPA2192 with 2 R and 1 C

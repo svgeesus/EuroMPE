@@ -28,13 +28,13 @@ Avoid non-linear calibration curves. These are fine for pulling poorly-tracking 
 
 Two stages: analog coarse tune (manual oscilator tuning to a fixed pitch) then digital fine tune and linearization (measuring frequency per-oscillator at a range of voltages, for linearity and for oscillator range).
 
-Output the same voltage (frequency calculated for the given CV, e.g. for 440Hz) on both  pitch channels. Use FreqMeasure library to provide a frequency input, showing the frequency on the LCD screen. This allows each oscilator to be tuned the same. Use the LEDs to visually inndicate high or low (y color) and closeness to exact tuning (slower pulsing means closed to exact).
+Output the same voltage (frequency calculated for the given CV, e.g. for 440Hz) on both  pitch channels. Use FreqMeasure library to provide a frequency input, showing the frequency on the LCD screen. This allows each oscilator to be tuned the same. Use the LEDs to visually indicate high or low (by color) and closeness to exact tuning (slower pulsing means closed to exact).
 
 Once in tune, run a frequency sweep measuring at least 30 steps and calculating a correction factor to account for slope inaccuracy (not exactly 1V/oct) and high frequency droop. Optionally, log the temperature at which tuning was done.
 
 [FreqMeasureMulti](https://github.com/PaulStoffregen/FreqMeasureMulti) can measure multiple inputs simultaneously, providing the option to calibrate both voice channels at the same time. It is best for lower frequencies, 0.1Hz to 1kHz. Available pins 0-9,22-25,28,29,33,36,37,42-47, 48-50(dups),51, 52-53 (dups), 54.
 
-[FreqCountMany](https://github.com/PaulStoffregen/FreqCountMany) also measures multiple inputs,best for 1kHz and up. Available pins 6, 9, 10, 11, 12, 13, 14, 15, 18, 19.
+[FreqCountMany](https://github.com/PaulStoffregen/FreqCountMany) also measures multiple inputs, best for 1kHz and up. Available pins 6, 9, 10, 11, 12, 13, 14, 15, 18, 19.
 
 Current [panel](./Panel.md) has per-voice tuning inputs.
 
@@ -80,7 +80,7 @@ Should this have a Schmidt-trigger inverter or something like that to ensure eve
 - (2) Panasonic ECH-U1H471JX5 470pF PPS film 0805 **$0.397/10**
 - (2) Panasonic ECH-U1H221JX5 220pF PPS film 0805 **$0.211/10**
 - (4) 4k7 0805 nothing special 1%
-- (1) TL072 general purpose dual op-amp TL072BIDT **$1.15/10**
+- (1) TL072 general purpose dual op-amp TL072BIDT **$1.15/10**frequency
 - (2) 2k 0805 1%
 - (1) TI OPA2365AID RRIO SOIC-8 **$3.74/1**
 - (1) TI SN74LVC2G17DBVR SOT-23-06 **$0.259/10**
@@ -101,6 +101,6 @@ Reading all temperature sensors rquires just one pin on Teensy.
 
 ### Calibrating the calibrator
 
-Keysight 34465A as measurement device.
+Keysight 34465A as voltage and frequency measurement device.
 
 Leo Bodnar [LBE-1420 GPS locked clock source](https://www.leobodnar.com/shop/index.php?main_page=product_info&cPath=107&products_id=393&zenid=fef464de4ee6cf4f24df5e55bba72372) as reference.

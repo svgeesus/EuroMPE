@@ -258,6 +258,14 @@ The Eurorack power connector is there.
 
 From the front panel mockup, dimensions are tight: 77mm wide by 39.5mm high. Could expand _one mm_ wider before colliding with the [Gate, LED, Tune](./Gate-LED.md) board, but needs enough room for the micro USB cable (unless using the D+, D- pads). Could expand _very slightly_ higher, constraints are staying within safe rack rail distances and not coliding with or pushing down the [PerfDAC2 (MIDI CC)](./performance-dac.md) board.
 
+Curent in-progress mockup is 76mm by 39mm so just fits within that. However the Eurorack power connector takes up too much space and connections to the DACs and display are suboptimal. SD slot is obstructed, too.
+
+![front](./img/MPU-test.png)
+
+Connectors on back of board go to the display/buttons/encoder board.
+
+![back](./img/MPU-test-back.png)
+
 ## BOM
 
 ### Capacitors

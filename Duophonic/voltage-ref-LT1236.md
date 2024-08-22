@@ -182,6 +182,10 @@ or
 
 (2) Susumu RG2012V-182-P-T1 1.8k 0.02% 5ppm 0805 $2.30/10 = **$23.00 GOT** 6 ordered 8 Dec 2023 **GOT 6 more 24 Feb 2024**
 
+OR
+
+(2) Vishay Precision Group Y16292K50000T9R  2.5k 0.01% ± 0.2 ppm/°C 0805 $12.74/1 = **$25.48** at minimum (need more for multiple boards, for testing).
+
 ### Generic ESR-increasing, trimming, and load resistors
 
 - (2) Yaego RC0805JR-075R1L 5.1R 5% 0805 thick film $0.026/10 = **$0.26** **GOT 10 24 Feb 2024**

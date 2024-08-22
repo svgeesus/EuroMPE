@@ -1,7 +1,7 @@
 
 # Pitch DAC
 
-Use a very linear, well behaved 16-bit DAC per voice (so, two needed).
+Initial plan was to use a very linear, well behaved 16-bit DAC per voice (so, two needed).
 
 Over 10 octaves, at the desired precision, 16 bits is barely sufficient (0.2 cents). More bits would be desirable, to give finer precision and to allow for the loss of precision from using a calibration curve. However, 20bit or 18bit DACs can be expensive, and some are no better than 16bit INL; 24bit DACs are widely available and cheap, but tuned for audio AC performance not DC accuracy and linearity.
 
@@ -76,13 +76,15 @@ See [The 20-Bit DAC Is the Easiest Part of a 1-ppm-Accurate Precision Voltage So
 
 A pair of op-amps (one non inverting for VrefP, one inverting for VrefN) then, per pitch DAC, a pair of unity gain buffers for (required) kelvin connections. DAC Vref input impedance is 5/6.6/? kΩ at midscale, but code dependent.
 
-AD5781 datasheet uses AD8676 (AD8676BRZ $6.89/1) dual op-amp for Vref buffers, which is 12uV typ 50uV max Vos, 2nA Ibias, very low noise rail-to-rail. R/R does not seem to be needed for a 5V output on ±12 or ±9.5 rails. Low input bias is _specifically needed_ to achieve the rated performance.
+Low input bias is _specifically needed_ to achieve the rated performance.
+
+AD5781 datasheet uses AD8676 (AD8676BRZ $6.89/1) dual op-amp for Vref buffers, which is 12uV typ 50uV max Vos, Ibias **±2 nA max** @25C, very low noise rail-to-rail. R/R does not seem to be needed for a 5V output on ±12 or ±9.5 rails. 
 
 _OPA2197ID_ (OPA2197ID $2.97/1) dual is 25uV typ 100uV max Vos, 5nA Ibias so twice as bad at half the price. (Quad OPA4197ID, got 10 May 2020)
 
 **OPA2186D** another (OPA2186DR $2.22/10 newer, more available; SOIC-8) option. 1μV/10μV Vos as it is chopper stabilized. 4.8 max nA Ibias over temp, 55pA @25C. Check **slew rate 0.35 V/μs** is ok for slew limiter, if used. Quad version has _4x worse Vos_ so use duals. The _maximum_ power supply voltage for the OPAx186 is 24 V (±12 V). (Abs Max 26V). So running on ±9.5V looks good.
 
-**OPA2192** ($4.63/10) Vos ±8μV typ, ±50μV max, drift ±0.1 typ, ±0.5 max μV/°C.
+**OPA2192** ($4.63/10) Vos ±8μV typ, ±50μV max, drift ±0.1 typ, ±0.5 max μV/°C. Input bias ±5 pA typ, **±20 pA** max @25C. So much better than the recommended AD5781.
 
 OPA4187IPW (1μV/10μV TSSOP-14 $5.60/10 in stock) quad a bit expensive
 

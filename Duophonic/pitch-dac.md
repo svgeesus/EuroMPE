@@ -72,13 +72,14 @@ DAC output impedance is 3.4k for AD5781ARUZ so buffer with an op-amp on the outp
 
 ## Vref connection
 
-See [The 20-Bit DAC Is the Easiest Part of a 1-ppm-Accurate Precision Voltage Source](https://www.analog.com/en/analog-dialogue/articles/20-bit-dac-and-accurate-precision-voltage-source.html) for general guidance (with the 20 bit version of this DAC, the AD5791).
+See [The 20-Bit DAC Is the Easiest Part of a 1-ppm-Accurate Precision Voltage Source](https://www.analog.com/en/analog-dialogue/articles/20-bit-dac-and-accurate-precision-voltage-source.html) for general guidance (with the 20 bit version of this DAC, the AD5791); also
+[AN-86: A Standards Lab Grade 20-Bit DAC with 0.1ppm/°C Drift](https://www.analog.com/en/resources/app-notes/an-86f.html)
 
 A pair of op-amps (one non inverting for VrefP, one inverting for VrefN) then, per pitch DAC, a pair of unity gain buffers for (required) kelvin connections. DAC Vref input impedance is 5/6.6/? kΩ at midscale, but code dependent.
 
 Low input bias is _specifically needed_ to achieve the rated performance.
 
-AD5781 datasheet uses AD8676 (AD8676BRZ $6.89/1) dual op-amp for Vref buffers, which is 12uV typ 50uV max Vos, Ibias **±2 nA max** @25C, very low noise rail-to-rail. R/R does not seem to be needed for a 5V output on ±12 or ±9.5 rails. 
+AD5781 datasheet uses AD8676 (AD8676BRZ $6.89/1) dual op-amp for Vref buffers, which is 12uV typ 50uV max Vos, Ibias **±2 nA max** @25C, very low noise rail-to-rail. R/R does not seem to be needed for a 5V output on ±12 or ±9.5 rails.
 
 _OPA2197ID_ (OPA2197ID $2.97/1) dual is 25uV typ 100uV max Vos, 5nA Ibias so twice as bad at half the price. (Quad OPA4197ID, got 10 May 2020)
 
@@ -90,7 +91,7 @@ OPA4187IPW (1μV/10μV TSSOP-14 $5.60/10 in stock) quad a bit expensive
 
 ## Output conditioning
 
-With a ±5V ref and an output buffer in the "Unity Gain configuration" from the data sheet Fig. 51 this gives ±5V output (10 octaves) which includes Note-ON voltage, global pitchbend, and per-note pitchbend. Note that this does not cover the full MIDI note range of 128 notes = 10.66 octaves. Not an issue in practice.
+With a ±5V ref and an output buffer in the "Unity Gain configuration" from the data sheet Fig. 51 this gives ±5V output (10 octaves) which includes Note-ON voltage, global pitchbend, and per-note pitchbend. Note that this does not cover the [full MIDI note range](./MIDI.md) of 128 notes = 10.66 octaves. Not an issue in practice.
 
 Op-amps here need a max Vos of 38μV (1LSB at 18bits), preferably better. Input bias current however is not as crucial here (unless Vref buffers and output buffers use the same quad.) 
 
@@ -149,7 +150,7 @@ Board v0.2 [ordered at OSH Park](https://oshpark.com/shared_projects/UpIebEcc) 1
 
 ### DAC
 
-(1) Analog Devices [AD5781ARUZ ](https://www.mouser.com/ProductDetail/Analog-Devices/AD5781ARUZ) $40.96  = **$40.96 GOT** has 1 already, got another 1 for now. Might be enough if no errors :)
+(1) Analog Devices [AD5781ARUZ](https://www.mouser.com/ProductDetail/Analog-Devices/AD5781ARUZ) $40.96  = **$40.96 GOT** has 1 already, got another 1 for now. Might be enough if no errors :)
 
 ### Stabilization film caps
 
@@ -169,9 +170,9 @@ Board v0.2 [ordered at OSH Park](https://oshpark.com/shared_projects/UpIebEcc) 1
 
 ### Resistors
 
-(2) Susumu [RR1220P-472-D ](https://www.mouser.com/ProductDetail/Susumu/RR1220P-472-D) 0805 4k7 0.5% 25ppm $0.13/10 = **$1.30 GOT** 
+(2) Susumu [RR1220P-472-D](https://www.mouser.com/ProductDetail/Susumu/RR1220P-472-D) 0805 4k7 0.5% 25ppm $0.13/10 = **$1.30 GOT** 
 
-(2) Susumu [RR1220P-221-D ](https://www.mouser.com/ProductDetail/Susumu/RR1220P-221-D) 0805 220R 0.5% 25ppm $0.127/10 = **$1.27 GOT** 
+(2) Susumu [RR1220P-221-D](https://www.mouser.com/ProductDetail/Susumu/RR1220P-221-D) 0805 220R 0.5% 25ppm $0.127/10 = **$1.27 GOT** 
 
 (1) Any 0805 10k will do for the pullup. Susumu RR1220P-103-D **GOT**
 

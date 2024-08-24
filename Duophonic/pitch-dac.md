@@ -7,12 +7,12 @@ Over 10 octaves, at the desired precision, 16 bits is barely sufficient (0.2 cen
 
 _AD5542CRZ_ (SOIC-14, now $52.61/1 in stock **got 6 Jan 2018** when they were $35), same as I used in my previous, mono, MIDI2CV project, provides bipolar ±Vref output (so, ±5V) with one bipolar-powered op-amp in the output loop. Power up to +5V5. INL ±0.5LSB (typ) ±1.0LSB (max, = 15ppm) for best (C) grade. DNL is ±1 LSB max = 15ppm. SPI needs 16bit transfer.
 
-**AD5781ARUZ** (TSSOP-20, $40.96/1 no stock til 03 April 2023) 18bit. INL ±1 LSB (max, 5V vref, = 3.6ppm) for B grade, ±4 LSB (max, = 15ppm) for A grade. _Mouser does not stock the best (B) grade. A grade has more resolution, but same INL, as the 16bit AD5542CRZ. Digikey has A grade at $40.96, no stock_    DNL however is ±1 LSB max = 3.6ppm for _both_ grades. Bipolar ±Vref output, power up to ±16.5V. SPI needs 24bit transfer. Needs Schottky diode for power rail syncronization, see datasheet fig. 50. A grade is actually less expensive than AD5542CRZ, with better DNL. Check that the layout is going to be reasonable on a 2-layer board.
+**AD5781ARUZ** (TSSOP-20, $40.96/1 no stock til 03 April 2023) 18bit. INL ±1 LSB (max, 5V vref, = 3.6ppm) for B grade, ±4 LSB (max, = 15ppm) for A grade. Better B grade is $56.04/1. A grade has more resolution, but same INL, as the 16bit AD5542CRZ. Digikey has A grade at $40.96, no stock_    DNL however is ±1 LSB max = 3.6ppm for _both_ grades. Bipolar ±Vref output, power up to ±16.5V. SPI needs 24bit transfer. Needs Schottky diode for power rail syncronization, see datasheet fig. 50. A grade is actually less expensive than AD5542CRZ, with better DNL.
 **Got 1, May 2020**.
 
-_AD5791BRUZ_ (TSSOP-20, $133.24/1 no stock) or _AD5791ARUZ_ (TSSOP-20, $84.45/1 no stock) 20bit, 1ppm linearity, bipolar ±Vref output, power up to ±16.5V. Very expensive.
+_AD5791BRUZ_ (TSSOP-20, $129.80/1 in stock) or _AD5791ARUZ_ (TSSOP-20, $80.46/1 in stock) 20bit, 1ppm linearity, bipolar ±Vref output, power up to ±16.5V. Very expensive. However they are exactly pin-for-pin compatible with AD5781 so could be swapped in if needed.
 
-Conclusion: AD5781ARUZ gives 16bit INL with 18bit DNL at slightly lower cost than AD5542CRZ.
+Conclusion: 18 bit **AD5781ARUZ** gives 16bit INL with 18bit DNL at slightly lower cost than the 16-bit AD5542CRZ.
 
 ![DAC pinout](./img/AD5781-pinout.png)
 
@@ -22,7 +22,11 @@ AD5781ARUZ Vdd and Vss abs max of 16.5V. Spec sheet assumes VDD = +12.5 V to +16
 
 ![Voltage dependent zero-scale errors](./img/Fig20.png)
 
-Advantage of ±12V-derived ±9V5 rails, compared to using Eurorack 5V power, is that filtering and smoothing can be applied, reducing switching PSU noise and increasing decoupling from the digital circuitry running on Eurorack 5V.
+> The AD5781 accepts a positive reference input in the range 5V to VDD – 2.5 V and a negative reference input in the range VSS + 2.5 V to 0 V.
+
+So on ±9V5 positive Vref up to +7V and negative Vref -7V to 0V.
+
+Advantage of ±12V-derived ±9V5 rails, compared to using Eurorack 5V power, is that filtering and smoothing can be applied, reducing switching PSU noise and increasing decoupling from the digital circuitry running on Eurorack 5V. Bipolar supply is required; enables bipolar output and for 0V output, Vss -2.5 or lower is needed.
 
 ## Digital interface
 
@@ -30,7 +34,7 @@ With Teensy 4.1, for AD5781ARUZ no level shifters needed.
 
 Data is written to the AD5781 in a 24-bit word format, which sadly precludes SPI.transfer16() or SPI.transfer32(); however there is an [SPI.transfer(buffer, size)](https://www.arduino.cc/reference/en/language/functions/communication/spi/transfer/), where size would be 3, which might work, see [example](https://forum.pjrc.com/index.php?threads/spi-write-24bits.74194/#post-336450). Another option (without buffer overwrite) is [SPI.transfer(txBuffer, rxBuffer, cnt);](https://forum.pjrc.com/index.php?threads/spi-write-24bits.74194/#post-336456) where rxbuffer can be NULL
 
-Minimum CS (SYNC) high time 48ns. SCLK min cycle time 40ns which is 25MHz. So use well below that (start at 10MHz).
+Datasheet says 35 MHz Schmitt triggered Digital Interface. However, minimum CS (SYNC) high time 48ns. SCLK min cycle time 40ns which is 25MHz. So use well below that (start at 10MHz).
 
 To isolate from digital 0V noise, consider optical isolator. ISO724x high speed quad isolator (got 2, Jan 2018). MOSI, SCLK, CS/SYNC and ?LDAC however AD5781 has separate DGND, AGND pins. Also isolator would need separate, DAC-side 3V3 supply. So, NO.
 
@@ -40,7 +44,7 @@ To isolate from digital 0V noise, consider optical isolator. ISO724x high speed 
 
 1LSB is 10V / 2^18 = 38μV. At 1V/Oct, 12 tones per octave, 100 cents per tone, 1 Cent is 833μV so 1 LSB is about 1/20 cent.
 
-**INL** is ±2 (typ) ±4 (max) LSB for worst (A) grade = 15ppm.
+**INL** is ±2 (typ) ±4 (max) LSB for worst (A) grade = 15ppm = ±153μV max (!!)
 
 **DNL** at 5V vref is ±0.5 (typ) ±1.0 (max) LSB = 3.6ppm.
 
@@ -120,6 +124,33 @@ DAC has a 3k4 output resistance so the feedback resistance [should be the same](
 [Understanding stabilization capacitors](https://northcoastsynthesis.com/news/understanding-stabilization-capacitors/)
 
 [The Tale Of The 1 kΩ Output Resistor](https://www.njohnson.co.uk/index.php?menu=2&submenu=2&subsubmenu=16)
+
+### Simulation results
+
+Initial simulation was a 1nF load (guess at cable capacitance) in parallel with 100k (for the input module). Pulse input was
+
+`y1=0 y2=5 td=1m tr=100n tf=1u tw=1 per=1`
+
+where the pulse starts at 1ms (td), tr is the rise time, tf is the fall time (of less interest here) and pw is the pulse width.
+
+With 2.2nF, overshoot on a 5V step is 95mV, without ringing, and falling to desired output level after 50 μs.
+
+![2.2nF](./img/cvout-2n2.png)
+
+With 4.7nF, overshoot on a 5V step is 40mV, without ringing, and falling to desired output level after 120 μs.
+
+![4.7nF](./img/cvout-4n7.png)
+
+However the typical eurorack patch cable is around 100pF per meter, so the load was reduced to 200pF.
+
+With 4.7nF, overshoot on a 5V step is then 54mV, with some ringing, and falling to desired output level after 260 μs.
+
+![4.7nF with 200pF load](./img/cvout-4n7-200pF.png)
+
+Even increasing the compensation cap to 100nF (!) still leaves the offshoot at 52mV, and slowly rising to correct output level after 920 μs. So at this point it is doing more harm than good in terms of settling time.
+
+I also wonder if the simulation, with an high slew rate step, is no longer accurately representing the actual rise time of the DAC; the datasheet slew rate is 50V/μs (Unbuffered output, 10 MΩ||20 pF load) so for a 5V step thae rise time would be 100ns which is what the simulation shows.
+
 
 ## Schematic
 

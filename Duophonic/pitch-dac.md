@@ -117,7 +117,7 @@ Note:
 
 Should the output buffer be able to drive a capacitive load (so, two resistors and cap in feedback loop). Chosen values (4k7, 3n3) give a 10kHz cuttoff which seems ample.
 
-DAC has a 3k4 output resistance so the feedback resistance [should be the same](https://eng.libretexts.org/Bookshelves/Electrical_Engineering/Electronics/Operational_Amplifiers_and_Linear_Integrated_Circuits_-_Theory_and_Application_(Fiore)/05%3A_Practical_Limitations_of_Op_Amp_Circuits/5.05%3A_Offsets#section_1) to reduce the effect of the input bias current.It is currently 4k7
+DAC has a 3k4 output resistance so the feedback resistance [should be the same](https://eng.libretexts.org/Bookshelves/Electrical_Engineering/Electronics/Operational_Amplifiers_and_Linear_Integrated_Circuits_-_Theory_and_Application_(Fiore)/05%3A_Practical_Limitations_of_Op_Amp_Circuits/5.05%3A_Offsets#section_1) to reduce the effect of the input bias current. It is now 3k4, although the input bias of this op-amp is very low.
 
 ![capacitive load circuits](./img/x2077_capacitive_loads.png)
 
@@ -148,6 +148,10 @@ With 4.7nF, overshoot on a 5V step is then 54mV, with some ringing, and falling 
 ![4.7nF with 200pF load](./img/cvout-4n7-200pF.png)
 
 Even increasing the compensation cap to 100nF (!) still leaves the offshoot at 52mV, and slowly rising to correct output level after 920 μs. So at this point it is doing more harm than good in terms of settling time.
+
+Reducing now to 1.0nF, overshoot is 116mv!
+
+![1.0nF with 200pF load](./img/cvout-1n0-200p.png)
 
 I also wonder if the simulation, with an high slew rate step, is no longer accurately representing the actual rise time of the DAC; the datasheet slew rate is 50V/μs (Unbuffered output, 10 MΩ||20 pF load) so for a 5V step thae rise time would be 100ns which is what the simulation shows.
 

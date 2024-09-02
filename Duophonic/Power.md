@@ -17,9 +17,9 @@ This should reduce digital return currents on analog ground. However, digital 0V
 
 [Pitch DACs](./pitch-dac.md) run at ±9.5V and the Vref for those uses ±9.5V as well. No logic level conversion needed, pitch DAC is 3V3 compatible.
 
-Use LT1763 (SOIC-8, 500mA) adjustable regulators (500mA is ample) to produce 5V5 and 9V5, with 6μ8 C0G output cap. -9V5 from LT1964-BYP adjustable (SOT-23, 200mA still plenty).
+Use LT1763 (SOIC-8, 500mA) adjustable regulators (500mA is ample) to produce 5V5 and 9V5, with 6μ8 C0G output cap. -9V5 from LT1964-BYP adjustable (SOT-23, 200mA still plenty). LT1763 noise (10Hz-100kHz) is 20 μVRMS.
 
-For testing, a 317 regulator with R1 = 240R and R2 = 820R gives 5V5, while with R2 = 1k54 it gives 9V3.
+For testing, a 317 regulator (noise, 10Hz - 100kHz is 165 μVRMS). With R1 = 240R and R2 = 820R gives 5V5, while with R2 = 1k54 it gives 9V3.
 
 ## Microcontroller power
 
@@ -27,9 +27,9 @@ Teensy 4.1 [main board](./MPU-board.md) is a 3V3 device with onboard 3V3 regulat
 
 ## Analog power
 
-Direct from Eurorack, perhaps with Schotsky diodes for reverse power protection. Usual electrolytic caps onboard, and small ceramics by each op-amp package.
+Direct from Eurorack, perhaps with Schottky diodes for reverse power protection. Usual electrolytic caps onboard, and small ceramics by each op-amp package.
 
-Pitch DAC op-amps can run on ±9.5V to handle ±5V CV.
+Pitch DAC op-amps can run on ±9.5V to handle ±5V CV. Perf DAC op-amps, if RRIO, could run on unipolar 5V5 but bipolar 12V makes it easier to hit 0V easily. Depends on opamp choices.
 
 ## Voltage reference power
 

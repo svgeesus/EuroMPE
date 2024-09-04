@@ -114,7 +114,10 @@ Use Sparkfun encoder as placeholder, not clear RGB led is needed here. It does n
 
 Sparkfun 14mm wide 13.2m high but that excludes pins (14mm with pins). M9 threaded shaft, 6mm turning shaft. M9 implies 11mm clearance hole diameter **but check this**
 
-Bourns PEC11 has M7 x0.75 shaft, so 8mm clearance hole diameter **but check this**
+Bourns PEC11 (D shaft) 12.5mm wide 13.4mm high, has M7 x0.75 shaft, so 8mm clearance hole diameter **but check this**
+
+Sifam encoder knob (with skirt to cover nut) is **17mm** dia! 
+Smaller one without skirt is **12.5mm** dia, D shaft only on [Thonk](https://www.thonk.co.uk/shop/sifam-soft-touch-encoder-knobs/).
 
 ## Perf fading pots
 

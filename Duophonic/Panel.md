@@ -13,9 +13,9 @@ Max PCB height **108mm**.
 
 Current design is **24HP** = (24 × 5.08 = 121.92) - about 0.3 = 121.60mm, see [A100 Construction Details](https://www.doepfer.de/a100_man/a100m_e.htm).
 
-[Panel concept](./mock-channel-front-v2-bigscreen-wider.svg) (SVG)
+[Panel concept](./mock-channel-front-v2-bigscreen-wider.svg) (SVG) and in Front Panel Designer [panel](./EuroMPE.fpd) (FPD)
 
-![panel](./img/panel-front.png)
+![panel](./img/EuroMPE-fpd.png)
 
 and also [current panel with boards and components](./mock-channel-v2-bigscreen-wider.svg) (SVG)
 
@@ -31,8 +31,6 @@ which use 6.2mm holes,
 Thoniconn jacks are 12mm high, 9mm wide.
 
 ![Thonkiconn](./img/thonkiconn-pj398sm.jpg)
-
-Staggered spacing allows more room for inserting jacks; single-in-line looked neater but would not fit (9 jacks plus LED all in one line) and impossibly cramped.
 
 Consider using reverse-mounted pin connectors for shallower depth; electronics boards need to be snug against thr jack boards to not foul the MPU board.
 
@@ -55,15 +53,6 @@ Behind that a sandwich (three horizontal boards) two pich dac with the vref in b
 - (2 * 9) + 5.08 = **23.08mm** high
 - (2 * 12) = 5.08? = again 24 to 30mm wide.
 
-With paired outputs they are now 1 high by 4 wide,
-with spacing between the channels for visual grouping.
-Put the jacks vertically in that case,
-so 12mm high for jack body by 4 * 9 = 36mm wide
-in 8HP that leaves (40 - 36) = 4mm between channels,
-even if jacks but exactly against each other!
-
-Stacking headers 2.54mm allow 3mm.
-Tall ones are 8.5 to 11mm above the board; shorter ones are 7mm.
 Ensure good mechanical support (square pins, not blade pins)
 
 - (1 * 12) + (2 * 3) = **18mm** high
@@ -73,27 +62,12 @@ Ensure good mechanical support (square pins, not blade pins)
 
 Board for gate and trigger transistors, level translators for LEDs, horizontal behind jack panel and LED board.
 
-- 9 + 9 + 9 + 2? = 27 - **29mm** high.
-
-Check: 51.24 + 23.08 + 29 +5.08 + 5.08 = 113.48mm so will not fit in 108!
-
-Will need to use staggered or offset jacks, not a single vertical row per channel.
-
-- (1 * 12) + 3 + 9 = **24mm** high
-- (4 * 9) = 36mm wide, minimum plus inter-channel space **40mm**
-
 One edge connector for all connections so:
 
 - 4 for gate and trig
 - 6 for two rgb
 - 4 for gnd
-
-at 40mm max width, 2.54 per connection, up to 15. So 14 wide fits well.
-
 Also needs the two tuning inputs.
-
-Check: 51.24 + 18 + 24 + 5.08 + 5.08 = 103.4 so fits nicely in 108mm.
-But is now super wide and a bit cramped.
 
 5mm LED body is 7.6mm square. Body is 2.5mm above PCB while Thonkicon jacks are 9mm above PCB so need to raise them up by 6.5mm ...  daughter board? Will still shine through if a bit lower, but not that much. LED is 5mm diameter so to be flush with top of a 2.5mm panel, raise by 4mm.
 
@@ -123,13 +97,11 @@ The Adafruit [1.3" 128x64 OLED graphic display](https://www.adafruit.com/product
 
 Group of pushbuttons to left of display, 3 plus "back". See [User Interface](./ui.md)
 
-[Adafruit Mini Soft Touch Push-button Switches](https://www.adafruit.com/product/3983) 6x6mm SMD.
+[Thonk Low profile](https://www.thonk.co.uk/shop/low-profile-push-buttons/) 8.5x8.5mm through-hole.
 
-![tact photo](./img/tact.png)
+![thonk lopro](./img/thonk-lopro.png)
 
-![soft touch](./img/adafruit-soft-touch-push.png)
-
-3.5mm body height above pcb, 5mm to top of button. Will need to be on a small daughter board to be at same height as the top of the screen.
+Does not need daughterboard, use 3.2mm radius circular hole per button. Button caps in several colors, 6mm diameter. Available as momentary or latching, use the momentary ones. Height above PCB 14.3mm similar to the encoder.
 
 ### Encoder
 
@@ -348,16 +320,15 @@ Use same y-dimension as the two usb receptacles, was 30.46
 
 Display width 35.19mm, height 19.0mm
 
-- screen center (38, 101) width 35.19 height 19
+- screen center (40, 101) width 35.19 height 19
 
 ### Buttons
 
-Needs testing, probably make this smaller.
-<!-- <rect x="-69" y="18" width="16" height="18" class="keep" style="fill: maroon; fill-opacity: 0.3"/> 
-center x -61 y 27
-but line with center of screen
--->
- - hole 16mm wide 18mm tall, center (10.4, 101)
+- circle (6 105.75) radius 3.2
+- circle (6 96.25) radius 3.2
+- circle (15.5 105.75) radius 3.2
+- circle (15.5 96.25) radius 3.2
+
  - text depends on final button placement
 
 ### Mounting holes for MPU board

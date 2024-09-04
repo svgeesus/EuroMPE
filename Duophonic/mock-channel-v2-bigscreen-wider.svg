@@ -81,6 +81,14 @@
             <circle r="2.5" style="fill:#997"/>
 
         </symbol>
+        <symbol id="thonk-lopro" height="8.5" width="8.5" viewBox="-4.25 -4.25 8.5 8.5">
+            <!-- origin is center of switch -->
+            <rect x="-4.25" y="-4.25" width="8.5" height="8.5" style="fill:#CC9"/>
+            <rect x="-1.95" y="-1.95" width="3.9" height="3.9" style="fill:#AA9"/>
+            <circle r="3" style="fill:#997" fill-opacity="0.5"/>
+            <circle r="3.2" style="fill:none" />
+
+        </symbol>
         <symbol id="Deltron" height="17.9" width="17.9" viewBox="-8.93 -8.93 17.9 17.9">
         <!-- origin is center of socket -->
             <circle r="7.95"/>
@@ -129,10 +137,10 @@
     <g id="pcb-area" transform="translate(0, 10.25)">
 
 <!-- SVG origin, Y-down -->
-    <circle style="fill: red" cx="0" cy="0" r="2"/>
+    <!-- <circle style="fill: red" cx="0" cy="0" r="2"/> -->
 
     <!-- FPD origin, bottom, left, Y-up -->
-    <circle style="fill: lime; fill-opacity=0.2" cx="-71.4" cy="118.25" r="1"/>
+    <!-- <circle style="fill: lime; fill-opacity=0.2" cx="-71.4" cy="118.25" r="1"/> -->
 
     <!-- gate and trigger and LED -->
     <g transform="translate(8, -76)">
@@ -182,7 +190,7 @@
     <!-- pitch dac -->
 
     <g transform="translate(8, -48.4)">
-    <circle style="fill: orange" cx="-8" cy="48.4" r="1"/>
+    <!-- <circle style="fill: orange" cx="-8" cy="48.4" r="1"/> -->
         <!-- <use href="#Thoniconn-vertical-ud" x="0" y="96"/>  -->
         <use href="#Thoniconn-vertical" x="0" y="88"/> 
         <use href="#Thoniconn-vertical" x="10" y="88"/> 
@@ -327,22 +335,28 @@
     
     <g transform="translate(2, 0)">
         <!-- screen, buttons, encoder-->
-        <use href="#oled13" x="-53" y="11"/>
+        <!-- 
         <use href="#SMDtact" x="-70" y="19.5"/>
         <use href="#SMDtact" x="-62" y="19.5"/>
         <use href="#SMDtact" x="-70" y="29"/>
-        <use href="#SMDtact" x="-62" y="29"/>
-        <rect x="-71" y="18" width="16" height="18" class="keep"/>
+        <use href="#SMDtact" x="-62" y="29"/> -->
+        <use href="#oled13" x="-51" y="11"/>
+        <!-- button centres spaced 9.5mm apart  horizontally and vertically -->
+        <use href="#thonk-lopro" x="-71.5" y="18.2"/>
+        <use href="#thonk-lopro" x="-62" y="18.2"/>
+        <use href="#thonk-lopro" x="-71.5" y="27.7"/>
+        <use href="#thonk-lopro" x="-62" y="27.7"/>
+        <!-- <rect x="-71" y="18" width="16" height="18" class="keep"/> -->
         <use href="#SparkfunRGBencoder" x="-15" y="18"/>
         <!-- display, buttons, encoder board -->
-        <rect x="-72.5" y="10.5" width="77" height="39.5" style="stroke: #966"/>
+        <!-- <rect x="-72.5" y="10.5" width="77" height="39.5" style="stroke: #966"/> -->
     </g>
 
 
 <!-- thus in FPD coords, x = x +71.4; y = 118.25 - y -->
 <!-- screen active area -->
 <!-- (20.4, 100.9) -->
-    <rect class="screen"  x="-51" y="17.35" width="35.19" height="19" style="fill:#744"/>
+    <rect class="screen"  x="-49" y="17.35" width="35.19" height="19" style="fill:#744"/>
 
     <use href="#Teensy4.1horizontal" x="-65" y="24.2"/>
     <!-- MPU board -->
@@ -416,6 +430,4 @@
     <!-- DIN socket 16mm dia  -->
     <circle style="fill: maroon; fill-opacity: 0.3" cx="-25.95" cy="99" r="7.6"/>
 
-    <!-- buttons -->
-    <rect x="-69" y="18" width="16" height="18" class="keep" style="fill: maroon; fill-opacity: 0.3"/>
 </svg>

@@ -49,6 +49,10 @@ Scope shows PWM duty cycle varies between 0.67% and 99.82% at 146.48kHz
 
 So scale resistors appropriately, 270R is too bright for green.
 
+Alternatively [NeoPixel Diffused 5mm Through-Hole LED - 5 Pack](https://www.adafruit.com/product/1938) easy 1-wire control, integrated pwm controller. Needs 5V so use logic level shifter such as SN74LV1T3 (single) 74AHCT125 (quad) or 74HCT245 (octal). Library [includes HSV color model](https://learn.adafruit.com/adafruit-neopixel-uberguide?view=all#hsv-hue-saturation-value-colors-dot-dot-dot-3024464) as well as RGB, and includes [gamma encoding](https://learn.adafruit.com/adafruit-neopixel-uberguide?view=all#dot-dot-dot-and-gamma-correction-3024505) too.
+
+![5mm th neo](./img/1938-01.jpg)
+
 ## Gate & Trigger
 
 Avoid the  [two-transistor gate output from Graham Hinton](https://modwiggler.com/forum/viewtopic.php?p=2720659&sid=8184a7a1e66cf2090d4727f4a460bd16#p2720659) because the description sounds good but buiders report unreliable operation:

@@ -119,6 +119,10 @@ Bourns PEC11 (D shaft) 12.5mm wide 13.4mm high, has M7 x0.75 shaft, so 8mm clear
 Sifam encoder knob (with skirt to cover nut) is **17mm** dia! 
 Smaller one without skirt is **12.5mm** dia, D shaft only on [Thonk](https://www.thonk.co.uk/shop/sifam-soft-touch-encoder-knobs/).
 
+![small](./img/3-05-TPP100.jpg)
+
+![small](./img/Soft-Touch-Encoder-SMALL.jpg)
+
 ## Perf fading pots
 
 Song Huei short trimmer 9mm pots [from Thonk](https://www.thonk.co.uk/shop/short-trimmer-pots/). 10k gives 330μA per pot, *4 is 1.32mA total which seems fine. May be enough to avoid a buffer for the ADC?

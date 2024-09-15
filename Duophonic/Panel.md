@@ -302,9 +302,9 @@ Jacks use 6.3mm dia hole. 10mm between pairs of the same channel, extra 1mm to s
 
 Allow 1mm all round to cope with rounded corners on the front panel.
 
-Mounting bolts are 26mm apart,  imperial bolts so 3.2 clearance hole, 3.3 for safety.
+Mounting bolts are 26mm apart,  imperial bolts so 3.2 clearance hole.
 
-- hole 12.1 mm wide 13 mm high, center (9.49 29.42) corner radius 0.5mmm
+- hole 12.1 mm wide 13 mm high, center (9.49 29.42) corner radius 1.0 mmm (spec allows up to 1.6 mm)
 - top mount (9.49 43.92)
 - bottom mount (9.49 14.92)
 <!-- thus in FPD coords, x = x +71.4; y = 128.5 - y -->

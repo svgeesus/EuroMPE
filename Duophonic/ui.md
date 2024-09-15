@@ -53,6 +53,8 @@ The list of CC names should also include RPNs? How to include NRPN?
 
 Last state should persist over power cycling.
 
+Maybe just select the output A-H, **midi learn**, and then move the associated controller.
+
 ## Screen
 
 Monochrome OLED, 128x64 pixels 1.3 inch diagonal.

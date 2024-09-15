@@ -93,6 +93,8 @@ The Adafruit [1.3" 128x64 OLED graphic display](https://www.adafruit.com/product
 
 ![1.3"](./img/adafruit-1.3-128x64-fabpring.png)
 
+OLED screen is 3mm thick above PCB surface.
+
 ### Buttons
 
 Group of pushbuttons to left of display, 3 plus "back". See [User Interface](./ui.md)
@@ -166,6 +168,8 @@ USB-B socket is 12mm wide, 11.16mm high. Hole is 8.45mm high, 7.78mm wide. Inter
 
 Or [DataPro 1581-01C](https://www.datapro.net/products/usb-2-0-panel-mount-b-to-micro-b-extension.html) has 26mm mounting hole spacing, dia 3.2 (3.3 for safety) and 12.1 wide by 13mm high receptacle with 0.5mm corner radius. Overal dimensions 33.5mm by 14mm. In general has a better, more detailed spec sheet.
 
+![Datapro usb-b](./img/1581_large.jpg)
+
 <!-- ![USB-B panel](./img/Adafruit-USB-B-panel.png) -->
 ![USB-B panel](./img/DataPro-USB-B.png)
 
@@ -185,6 +189,8 @@ Dimensions of receptacle 12.5mm by 5.12mm.
 ![USB-A](./img/USB-A_receptacle.png)
 
 Alternative [DataPro 1590-01C](https://www.datapro.net/products/usb-panel-mount-to-5-pin-socket.html) with 5-pin header has 14.7 by 7.3 cutout, corner radius 1.6mm (!), mounting holes 30mm spacing, overall dimensions 11.5mm by 37.7mm.
+
+![DataPro usb-a](./img/1590_large.jpg)
 
 ![DataPro USB-A](./img/DataPro-USB-A.png)
 

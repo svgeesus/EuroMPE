@@ -103,7 +103,7 @@ Group of pushbuttons to left of display, 3 plus "back". See [User Interface](./u
 
 ![thonk lopro](./img/thonk-lopro.png)
 
-Does not need daughterboard, use 3.2mm radius circular hole per button. Button caps in several colors, 6mm diameter. Available as momentary or latching, use the momentary ones. Height above PCB 14.3mm similar to the encoder.
+Does not need daughterboard, use 3.2mm radius circular hole per button (checked with Thonk). Button caps in several colors, 6mm diameter. Available as momentary or latching, use the momentary ones. Height above PCB 14.3mm similar to the encoder.
 
 ### Encoder
 
@@ -313,6 +313,8 @@ Mounting bolts are 26mm apart,  imperial bolts so 3.2 clearance hole.
 
 ### USB-A receptacle
 
+Mounting bolts are 30mm apart,  imperial bolts so 3.2 clearance hole.
+
 - hole 7.3 wide 14.7mm high, center (27.42,29.42)
 - top mount (27.42, 44.42)
 - bottom mount (27.42, 14.42)
@@ -337,10 +339,10 @@ Display width 35.19mm, height 19.0mm
 
 ### Buttons
 
-- circle (6 105.75) radius 3.2
-- circle (6 96.25) radius 3.2
-- circle (15.5 105.75) radius 3.2
-- circle (15.5 96.25) radius 3.2
+- circle (6 105.75) radius 3.1
+- circle (6 96.25) radius 3.1
+- circle (15.5 105.75) radius 3.1
+- circle (15.5 96.25) radius 3.1
 
  - text depends on final button placement
 

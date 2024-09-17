@@ -101,9 +101,39 @@ Reading all temperature sensors rquires just one pin on Teensy.
 
 ### Calibrating the calibrator
 
-Keysight 34465A as voltage and frequency measurement device.
+#### Keysight 34465A
 
-Leo Bodnar [LBE-1420 GPS locked clock source](https://www.leobodnar.com/shop/index.php?main_page=product_info&cPath=107&products_id=393&zenid=fef464de4ee6cf4f24df5e55bba72372) as reference.
+Bench dmm, voltage (and frequency?) measurement device. **GOT**
+
+Reciprocal counting for frequency.
+
+- DC Voltage (10V scale): 0.0010 + 0.0003 (24hr), 0.0045 + 0.0004 (2 year)
+- Frequency (100 Hz – 1 kHz, 1sec aperture): 0.003 (24hr), 0.010 (2 year) so 440Hz ±0.044 (439.956 - 440.044)
+
+> All frequency counters are susceptible to errors when measuring low–voltage, low–frequency signals. The effects of both internal noise and external noise pickup are critical when measuring "slow" signals. The error is inversely proportional to frequency. Measurement errors also occur if you attempt to measure the frequency (or period) of an input following a DC offset voltage change. You must allow the multimeter's input DC blocking capacitor to fully settle before making frequency measurements.
+
+#### AimTTi [TF930](https://www.aimtti.com/product-category/frequency-counters/aim-tf900series) 
+
+Bench/portable universal counter with USB interface 3GHz **$471**
+
+- Frequency, period, pulse width, frequency ratio, duty cycle, and event counter modes
+- 0.001 Hz to 125 MHz and 80 MHz to 3 GHz range, 0.001mHz resolution
+- high-quality temperature compensated internal frequency reference which
+has a low aging rate and is stable to within ±1ppm over the full temperature range.
+- USB interface, remote controllable
+- accepts 10 MHz clock for GPS conditioning
+
+> Measurement accuracy is timebase accuracy + measurement resolution + 2 counts.
+> Timebase accuracy ± 0.2ppm
+> Eight digits in 1s, nine digits in 10s and ten digits in 100s
+
+So 440Hz (1s) 440.00000 ± 8.8E-5 ± 000.0002 (439.999712 - 440.000288), or 100x better than 35565A even on 1s.
+
+#### Leo Bodnar [LBE-1420 ](https://www.leobodnar.com/shop/index.php?main_page=product_info&cPath=107&products_id=393&zenid=fef464de4ee6cf4f24df5e55bba72372)
+
+GPS locked clock source, as reference. **$155.96**
+
+- Multi-loop digital-analog PLL allows output frequency to be set to any value between 1 Hz and 1.1 GHz with infinite resolution. For example, 144,800,000.025 Hz.
 
 ## Testing results
 

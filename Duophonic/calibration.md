@@ -127,13 +127,22 @@ has a low aging rate and is stable to within ±1ppm over the full temperature ra
 > Timebase accuracy ± 0.2ppm
 > Eight digits in 1s, nine digits in 10s and ten digits in 100s
 
-So 440Hz (1s) 440.00000 ± 8.8E-5 ± 000.0002 (439.999712 - 440.000288), or 100x better than 35565A even on 1s.
+So 440Hz (1s) 440.00000 ± 8.8E-5 ± 000.0002 (439.99971 - 440.00029), or 100x better than 35565A even on 1s.
 
 #### Leo Bodnar [LBE-1420 ](https://www.leobodnar.com/shop/index.php?main_page=product_info&cPath=107&products_id=393&zenid=fef464de4ee6cf4f24df5e55bba72372)
 
 GPS locked clock source, as reference. **$155.96**
 
 - Multi-loop digital-analog PLL allows output frequency to be set to any value between 1 Hz and 1.1 GHz with infinite resolution. For example, 144,800,000.025 Hz.
+
+#### Ian Johnston [PDVS2](https://www.ianjohnston.com/index.php/onlineshop/handheld-precision-digital-voltage-source-v2-detail)
+
+Precision Digital Voltage Source **GOT** Retired, no longer available.
+
+- 0 Vdc to 10 Vdc user adjustable output in 10 V mode (4d.p’s effective, approx. 38uV)
+- [DAC9881S](https://www.ti.com/product/DAC9881) 18bit DAC with an accuracy/stability down in the uV’s (using a PLC filter of 1.0 or higher)
+- Voltage reference = LM399AH (0.5 - 1 ppm/degC temperature coefficient)
+
 
 ## Testing results
 

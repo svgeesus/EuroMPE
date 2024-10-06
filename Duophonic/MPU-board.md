@@ -110,11 +110,13 @@ also (same forum post):
 
 ## UI: Display & Controls
 
+The Encoder, the four buttons, and the display are all mounted on the [display board](./display-board.md) with their signals routed to the MPU board.
+
 ## SPI Display
 
 Using [Adafruit OLED 128x64 1.3inch](./display.md). Needs DC, CS, and RST.
 
-See SPI section, above.
+See SPI section, above and [display](./display.md).
 
 [Advice on ground noise and OLED displays](https://modwiggler.com/forum/viewtopic.php?p=3999696#p3999696)
 
@@ -134,19 +136,20 @@ Encoder circuit (from Bourns PEC12R datasheet) four 10k, two 10nF:
 
 ![filter](./img/encoder-filter.png)
 
-[Hardware debounce vs. software hysteresis for encoders](https://forum.arduino.cc/t/rotary-encoder-debouncing/361438/12)
+- [Hardware debounce vs. software hysteresis for encoders](https://forum.arduino.cc/t/rotary-encoder-debouncing/361438/12)
+- [Measurig bounce on a scope](https://electronics.stackexchange.com/questions/430983/why-cant-i-see-bouncing-of-a-switch-on-an-oscilloscope#answer-431043)
 
 Use encoder switch as OK, needs anther button for "back".
 
 Also needs "Calibrate" "Tune" and "Setup" ? Single button for common functions.
 
-## Mode switch(es)
+## Mode switch(es) ?
 
-Unclear if MPE/non-MPE is needed.
+Unclear if MPE/non-MPE is needed. Could be a menu option.
 
 Duophonic/Unison switch at minimum, perhaps Duophonic/Unison/Harmonic or use another switch (plus the encoder) for Harmonic. Double press to reset.
 
-### Non-MPE channel selector
+### Non-MPE channel selector ?
 
 Could hide this in a menu; main usage is MPE. Also hide MPE behaviour on split (unlikely) in a setup menu.
 
@@ -285,9 +288,12 @@ Connectors on back of board go to the display/buttons/encoder board.
 - [ ] Test I2C display, see if update speed okay and feasible for menus
 - [x] Test SPI display
 - [ ] start on menu/dashboard layout
+- [ ] Measure switch bounce, test software bounce, try hardware debounces
+- [ ] Get Thonk encoders, encoder knobs, buttons
 - [x] Test PWM of RGB LED.
   - [Problems getting to exactly 0 and 100%](https://forum.pjrc.com/index.php?threads/full-range-pwm-for-rgb-led-control.74386/)
   - Solved by special-casing PWM extremes.
+  - Test Adafruit LEDs instead
 - [ ] Test 10V gate output.
 - [ ] Fabricate [Gate-LED](./Gate-LED.md) board.
 - [ ] Test FreqCount

@@ -73,7 +73,7 @@ Rotary encoder for menu scrolling, with integrated switch for "accept".
 3. Config
 4. Back/Escape
 
-[Thonk C&K Tactile D6R](https://www.thonk.co.uk/shop/radio-music-switch/)
+[Thonk Low-Profile Push Buttons](https://www.thonk.co.uk/shop/low-profile-push-buttons/)
 
 ## Development & Testing plan
 

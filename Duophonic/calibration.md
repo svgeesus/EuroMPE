@@ -143,7 +143,6 @@ Precision Digital Voltage Source **GOT** Retired, no longer available.
 - [DAC9881S](https://www.ti.com/product/DAC9881) 18bit DAC with an accuracy/stability down in the uV’s (using a PLC filter of 1.0 or higher)
 - Voltage reference = LM399AH (0.5 - 1 ppm/degC temperature coefficient)
 
-
 ## Testing results
 
 ### PWM loopback frequency measurement results

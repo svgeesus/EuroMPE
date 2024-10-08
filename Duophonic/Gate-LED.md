@@ -77,20 +77,21 @@ See also [Synth DIY: Gate Buffer ](https://synthnerd.wordpress.com/2016/03/17/sy
 
 Gate is +10V. Test droop into low loads like 10k.
 
-Trigger is +10V for 10ms.
+Trigger is +10V for 10ms. Maybe 9V with a small 12V to 9V regulator?
 
 ## Boards
 
 Panel board with 6 jacks on two rows (Gate & Trigger, Tune per voice), 2 LEDs above, one edge connector below.
 
 - 4 for gate and trig
-- 6 for two rgb
+- 1 for NeopPixels
 - 4 for gnd
 
-Circuitry board with power connections (5V for level shifters, 10V for gate/trig),
+Circuitry board with power connections (5V for level shifters, 12V to make gate/trig),
 digital outs (4) for gate and trig,
-pwm outs (6) for two RGB LEDs,
 gnd connection to teensy.
+
+Maybe combine with [tune input](./calibration.md) on one board?
 
 ## Work Plan
 

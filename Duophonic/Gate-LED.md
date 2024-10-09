@@ -12,9 +12,10 @@ _(Older discussion on LED options moved to [old led page](./old-led.md))_
 
 [NeoPixel Diffused 5mm Through-Hole LED - 5 Pack](https://www.adafruit.com/product/1938) easy 1-wire control, integrated pwm controller. Needs 5V so use logic level shifter such as SN74LV1T3 (single) 74AHCT125 (quad) or 74HCT245 (octal). Library [includes HSV color model](https://learn.adafruit.com/adafruit-neopixel-uberguide?view=all#hsv-hue-saturation-value-colors-dot-dot-dot-3024464) as well as RGB, and includes [gamma encoding](https://learn.adafruit.com/adafruit-neopixel-uberguide?view=all#dot-dot-dot-and-gamma-correction-3024505) too.
 
-[Use 100nF](https://learn.adafruit.com/adafruit-neopixel-uberguide?view=all#discrete-neopixel-products-2894456) between 5V and GND beside each LED.
-
-Connects to any random pin (custom bit-banged protocol).
+- [Use 100nF](https://learn.adafruit.com/adafruit-neopixel-uberguide?view=all#discrete-neopixel-products-2894456) between 5V and GND beside each LED.
+- Connects to any random pin (custom bit-banged protocol). 
+- Should have [300R to 500R in the data line, close to the LED](https://learn.adafruit.com/adafruit-neopixel-uberguide/best-practices).
+- Current per LED is 12mA max
 
 Sample code in RGB-NeoPixel-01.ino which works with direct 3V3 input, but a level shifter wold be more robust to small variations in 5V and 3V3 levels.
 

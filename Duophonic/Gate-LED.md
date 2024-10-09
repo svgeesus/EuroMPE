@@ -56,8 +56,9 @@ Maybe combine with [tune input](./calibration.md) on one board?
 
 ## Work Plan
 
-- [ ] experiment with level shifter & Teensy PWM to drive bare RGB LED. Looking for range of colors, flicker, CPU usage
+- [x] experiment with level shifter & Teensy PWM to drive bare RGB LED. Looking for range of colors, flicker, CPU usage **abandones in favor of NeoPixels**
   - _It works fine with no level shifter, just 3v3 is okay. Tested with 270R, use higher value as this is too bright._
+- [x] experiment with through-hole NeoPixels (**works**)
 - [ ] breadboard two-transistor gate
 - [ ] breadboard op-amp gate
 - [ ] sketch to output 10ms pulse with a timer.

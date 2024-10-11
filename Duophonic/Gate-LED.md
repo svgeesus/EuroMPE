@@ -21,6 +21,8 @@ Sample code in RGB-NeoPixel-01.ino which works with direct 3V3 input, but a leve
 
 ![5mm through-hole neopixel](./img/1938-01.jpg)
 
+![dimensions](./img/neopixel-rgb5mm.jpg)
+
 ## Gate & Trigger
 
 Avoid the  [two-transistor gate output from Graham Hinton](https://modwiggler.com/forum/viewtopic.php?p=2720659&sid=8184a7a1e66cf2090d4727f4a460bd16#p2720659) because the description sounds good but buiders report unreliable operation:

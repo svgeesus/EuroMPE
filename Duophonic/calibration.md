@@ -200,7 +200,7 @@ At **100kHz** Keysight reports **100.00122kHz** sd 6.63mHz
 
 At **440Hz** Keysight reports **440.00553Hz** sd 4.06μHz
 
-Results extremely good, 8 figure precision ±1 digit, and constant +12.3ppm error across the range tested. Vastly better than the Keysite Frequency Accuracy Verificatin figures (Operating and Service Guide, p. 517) which are 10Hz ± 3 mHz and 300kHz at ±60 Hz (24 hours) to ±270 Hz (2 years) or the datasheet: 
+Results extremely good, 8 figure precision ±1 digit, and constant +12.3ppm error across the range tested. Vastly better than the Keysight Frequency Accuracy Verificatin figures (Operating and Service Guide, p. 517) which are 10Hz ± 3 mHz and 300kHz at ±60 Hz (24 hours) to ±270 Hz (2 years) or the datasheet: 
 
 - 3Hz-10Hz ±0.1% (24hr)  ±0.1% (2yr)
 - 10Hz-100Hz ±0.03% (24hr)  ±0.035% (2yr)

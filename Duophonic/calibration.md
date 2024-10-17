@@ -64,6 +64,18 @@ Then hard clip to a 0..3V3 unipolar signal with a dual, rail-to-rail, single sup
 
 Better to follow the clamp with a dual Schmitt-trigger (SN74LVC2G17DBVR, SOT-23-6 $0.259/10) also on 3V3 to sharpen up the edge transitions.
 
+![tue in testbed](./img/tune-in-testbed-sch.png)
+
+Paul Stoffregen [said](https://www.facebook.com/photo.php?fbid=7913976078691226&set=p.7913976078691226&type=3)
+
+> That ought to be pretty easy. Unless you're expecting high frequency noise, I'd probably omit the filter and just go with a "simple" voltage comparator using resistors to scale the signal. Hysteresis is the main feature you (probably) need. With an analog comparator you can adjust the feedback resistor to trade off sensitivity versus rejection of noise. It'll also give your hysteresis pretty good temperature stability since the response depends on the resistor ratio which is pretty stable even with cheap resistors, rather than the transistors inside a CMOS chip with vary with temperature.
+
+![paul's sketch](./img/PS-sketch.jpg)
+
+Johny Reckless said:
+
+> I would configure U2A as an inverting integrator with a small time constant (10us or so) to remove any ringing in the response as you square up the edges. Something like 1k / 10nF might work well, maybe a slightly smaller cap if you need faster response. With a decent rail to rail cmos opamp you won't then need the Schmitt trigger.
+
 Experiment on breadboard.
 
 > The FlexPWM timer used by FreqMeasureMulti requires very fast edges. Your signal looks like it has rather slow rise/fall times, and that will not work with FreqMeasureMulti. Can you add a schmitt trigger on your input?
@@ -168,3 +180,30 @@ PWM at **4kHz**, Teensy reports **4,000.0000** while Keysight (AC Filter >20Hz, 
 PWM at **8kHz**, Teensy reports **7999.5732Hz** while Keysight (AC Filter >20Hz, 1s gate) reports **8.000050kHz** sd 50 μHz, an error of **-476 ppm**. Note that **8.372kHz** is upper limit of useful frequencies for a [MIDI-range](./MIDI.md) calibration.
 
 Worryingly with PWM specified as **20kH**z, Teensy reports **20,000Hz** while Keysight (AC Filter >20Hz, 1s gate) reports **18.18kHz** sd 439 Hz (!) implying the PWM frequency is both inaccurate and unstable.
+
+### Leo Bodnar frequency standard vs. Keysight 34465A
+
+Test temperature 19.3 to 21.7C (window slightly ajar for GPS antenna).
+
+Frequencies tested with GPS-locked Leo Bodnar LBE-1420 clock source (assumed accurate) and measured on Keysight 34465A (which uses the reciprocal counting technique) with 1s gate and LPF >20Hz (except 10Hz measurement, which was >3Hz). 1000 samples.
+Connection via 50R BNC cable, with SMA-to-BNC at the Leo Bodnar and BNC-to-pair-4mm at the DMM.
+
+At **10Hz** Keysight reports **10.000125Hz** sd 223nHz
+
+At **100Hz** Keysight reports **100.00124Hz** sd 4.65μHz
+
+At **1kHz** Keysight reports **1.0000123kHz** sd 26.4μHz
+
+At **10kHz** Keysight reports **10.000123kHz** sd 292μHz
+
+At **100kHz** Keysight reports **100.00122kHz** sd 6.63mHz
+
+At **440Hz** Keysight reports **440.00553Hz** sd 4.06μHz
+
+Results extremely good, 8 figure precision ±1 digit, and constant +12.3ppm error across the range tested. Vastly better than the Keysite Frequency Accuracy Verificatin figures (Operating and Service Guide, p. 517) which are 10Hz ± 3 mHz and 300kHz at ±60 Hz (24 hours) to ±270 Hz (2 years) or the datasheet: 
+
+- 3Hz-10Hz ±0.1% (24hr)  ±0.1% (2yr)
+- 10Hz-100Hz ±0.03% (24hr)  ±0.035% (2yr)
+- 100Hz-1kHz ±0.03% (24hr)  ±0.017% (2yr) so 440Hz ± 74.8mHz (439.9252 to 440.0748)
+- 1kHz-300kHz ±0.002% (24hr)  ±0.017% (2yr)
+

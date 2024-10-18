@@ -64,7 +64,13 @@ Then hard clip to a 0..3V3 unipolar signal with a dual, rail-to-rail, single sup
 
 Better to follow the clamp with a dual Schmitt-trigger (SN74LVC2G17DBVR, SOT-23-6 $0.259/10) also on 3V3 to sharpen up the edge transitions.
 
-![tue in testbed](./img/tune-in-testbed-sch.png)
+![tune in testbed](./img/tune-in-testbed-sch.png) ([PDF](./Tune-in-sch.pdf))
+
+![tune in board](./img/tune-in-brd.png) ([PDF](./Tune-in-brd.pdf))
+
+> We detected a 2 layer board of 1.52 x 0.97 inches (38.6 x 24.6mm)
+> 3 boards will cost $7.35
+** Ordered 18 Oct 2024**
 
 Paul Stoffregen [said](https://www.facebook.com/photo.php?fbid=7913976078691226&set=p.7913976078691226&type=3)
 
@@ -92,11 +98,28 @@ Should this have a Schmidt-trigger inverter or something like that to ensure eve
 - (2) Panasonic ECH-U1H471JX5 470pF PPS film 0805 **$0.397/10**
 - (2) Panasonic ECH-U1H221JX5 220pF PPS film 0805 **$0.211/10**
 - (4) 4k7 0805 nothing special 1%
-- (1) TL072 general purpose dual op-amp TL072BIDT **$1.15/10**frequency
+- (1) TL072 general purpose dual op-amp TL072BIDT **$1.15/10** 
 - (2) 2k 0805 1%
 - (1) TI OPA2365AID RRIO SOIC-8 **$3.74/1**
 - (1) TI SN74LVC2G17DBVR SOT-23-06 **$0.259/10**
-- (3) 100nF decoupling caps
+- (3) 100nF decoupling caps 0805
+
+"Reference","Value","Datasheet","Footprint","Qty","DNP"
+"C1,C101","470pF","~","Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder","2",""
+"C2,C102","220pF","~","Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder","2",""
+"C3,C4,C5,C6","100nF","~","Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder","4",""
+"J1","12V power","~","Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical","1",""
+"J2","3V3 Power","~","Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical","1",""
+"J3,J6","Out","~","Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical","2",""
+"J4,J5","In","~","Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical","2",""
+"R1,R2,R101,R102","47k","~","Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder","4",""
+"R3,R103","2k","~","Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder","2",""
+"TP1,TP2,TP3,TP4","TestPoint","~","TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm","4",""
+"U1","TL072","http://www.ti.com/lit/ds/symlink/tl071.pdf","Package_SO:SOIC-8_3.9x4.9mm_P1.27mm","1",""
+"U2","OPA2365","https://www.ti.com/lit/gpn/opa2365","Package_SO:SOIC-8_3.9x4.9mm_P1.27mm","1",""
+"U3","74LVC2G17","http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf","Package_TO_SOT_SMD:SOT-23-6_Handsoldering","1",""
+
+
 
 ### Temperature compensation
 
@@ -200,7 +223,7 @@ At **100kHz** Keysight reports **100.00122kHz** sd 6.63mHz
 
 At **440Hz** Keysight reports **440.00553Hz** sd 4.06μHz
 
-Results extremely good, 8 figure precision ±1 digit, and constant +12.3ppm error across the range tested. Vastly better than the Keysight Frequency Accuracy Verificatin figures (Operating and Service Guide, p. 517) which are 10Hz ± 3 mHz and 300kHz at ±60 Hz (24 hours) to ±270 Hz (2 years) or the datasheet: 
+Results extremely good, 8 figure precision ±1 digit, and constant +12.3ppm error across the range tested. Vastly better than the Keysight Frequency Accuracy Verificatin figures (Operating and Service Guide, p. 517) which are 10Hz ± 3 mHz and 300kHz at ±60 Hz (24 hours) to ±270 Hz (2 years); or the datasheet:
 
 - 3Hz-10Hz ±0.1% (24hr)  ±0.1% (2yr)
 - 10Hz-100Hz ±0.03% (24hr)  ±0.035% (2yr)

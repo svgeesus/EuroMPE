@@ -25,7 +25,7 @@ Sample code in RGB-NeoPixel-01.ino which works with direct 3V3 input, but a leve
 
 ## Gate & Trigger
 
-Avoid the  [two-transistor gate output from Graham Hinton](https://modwiggler.com/forum/viewtopic.php?p=2720659&sid=8184a7a1e66cf2090d4727f4a460bd16#p2720659) because the description sounds good but buiders report unreliable operation:
+**Avoid** the  [two-transistor gate output from Graham Hinton](https://modwiggler.com/forum/viewtopic.php?p=2720659&sid=8184a7a1e66cf2090d4727f4a460bd16#p2720659) because the description sounds good but builders report unreliable operation:
 
 ![gate](./img/Hinton_2955_14vgate_1.png)
 
@@ -35,9 +35,11 @@ Fixing the known inaccuracy in that schematic:
 
 > Try a resistor like 10k between its base and emitter so that it is driven by voltage rather than current.
 
+Instead, trying this one from [Synth DIY: Gate Buffer ](https://synthnerd.wordpress.com/2016/03/17/synth-diy-gate-buffer/):
+
 ![gate2](./img/ramsden-gate-buffer.jpg)
 
-See also [Synth DIY: Gate Buffer ](https://synthnerd.wordpress.com/2016/03/17/synth-diy-gate-buffer/) and [a known bad Gate in the original Arturia Beatstep](https://synthnerd.wordpress.com/arturia-beatstep/) which gives load-dependent 4V gates!
+See also [a known bad Gate in the original Arturia Beatstep](https://synthnerd.wordpress.com/arturia-beatstep/) which gives load-dependent 4V gates!
 
 Gate is +10V. Test droop into low loads like 10k.
 

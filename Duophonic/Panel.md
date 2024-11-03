@@ -69,11 +69,9 @@ One edge connector for all connections so:
 - 4 for gnd
 Also needs the two tuning inputs.
 
-5mm LED body is 7.6mm square. Body is 2.5mm above PCB while Thonkicon jacks are 9mm above PCB so need to raise them up by 6.5mm ...  daughter board? Will still shine through if a bit lower, but not that much. LED is 5mm diameter so to be flush with top of a 2.5mm panel, raise by 4mm.
+[NeoPixel Diffused 5mm Through-Hole LED](https://www.adafruit.com/product/1938) is 5.2mm dia
 
-![LED](./img/FD-115TRGB.png)
-
-Maybe make a tiny panel (2 jacks plus LED) to experiment with.
+![dimensions](./img/neopixel-rgb5mm.jpg)
 
 ## MPU board
 
@@ -335,7 +333,7 @@ Use same y-dimension as the two usb receptacles, was 30.46
 
 Display width 35.19mm, height 19.0mm
 
-- screen center (40, 101) width 35.19 height 19
+- screen center (39, 101) width 35.19 height 19
 
 ### Buttons
 
@@ -345,6 +343,10 @@ Display width 35.19mm, height 19.0mm
 - circle (15.5 96.25) radius 3.1
 
  - text depends on final button placement
+
+### Encoder
+
+- circle (68 101) radius 8
 
 ### Mounting holes for MPU board
 
@@ -356,8 +358,8 @@ Position not clear yet
 > Based on price list of: Front Panel Express, LLC
 > Price list date: 2022-12-12
 
-> Total:  **$116.06**
-> Estimated weight:  88.3 g
+> Total: **$116.55**
+> Estimated weight: 89.3 g
 
 ## Work Plan
 

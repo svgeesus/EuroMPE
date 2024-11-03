@@ -47,6 +47,8 @@ Eurorack power connector, usual 10μF smoothing caps (or greater)?
 Top plane mostly gnd (for low impedance and also cooling) with traces for ±9V5 and for +5V5 outputs;
 bottom plane gnd (again for cooling), well stitched to top, with traces for ±12V inputs.
 
+Maybe locate on back of the perfdac-jack and pots board, which is otherwise unused, and add two standoffs after the pots to make it more stable?
+
 ### LT1763 for 9V5
 
 > Output Capacitance and Transient Response

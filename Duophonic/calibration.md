@@ -119,7 +119,109 @@ Should this have a Schmidt-trigger inverter or something like that to ensure eve
 "U2","OPA2365","https://www.ti.com/lit/gpn/opa2365","Package_SO:SOIC-8_3.9x4.9mm_P1.27mm","1",""
 "U3","74LVC2G17","http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf","Package_TO_SOT_SMD:SOT-23-6_Handsoldering","1",""
 
+<div class="row"><div class="col-md-12"><div class="panel panel-success">
 
+<table border=1 class="table table-striped table-bordered table-hover table-condensed">
+<thead><tr><th title="Field #1">Reference</th>
+<th title="Field #2">Value</th>
+<th title="Field #3">Datasheet</th>
+<th title="Field #4">Footprint</th>
+<th title="Field #5">Qty</th>
+<th title="Field #6">DNP</th>
+</tr></thead>
+<tbody><tr><td>C1,C101</td>
+<td>470pF</td>
+<td>~</td>
+<td>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</td>
+<td align="right">2</td>
+<td> </td>
+</tr>
+<tr><td>C2,C102</td>
+<td>220pF</td>
+<td>~</td>
+<td>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</td>
+<td align="right">2</td>
+<td> </td>
+</tr>
+<tr><td>C3,C4,C5,C6</td>
+<td>100nF</td>
+<td>~</td>
+<td>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</td>
+<td align="right">4</td>
+<td> </td>
+</tr>
+<tr><td>J1</td>
+<td>12V power</td>
+<td>~</td>
+<td>Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical</td>
+<td align="right">1</td>
+<td> </td>
+</tr>
+<tr><td>J2</td>
+<td>3V3 Power</td>
+<td>~</td>
+<td>Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical</td>
+<td align="right">1</td>
+<td> </td>
+</tr>
+<tr><td>J3,J6</td>
+<td>Out</td>
+<td>~</td>
+<td>Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical</td>
+<td align="right">2</td>
+<td> </td>
+</tr>
+<tr><td>J4,J5</td>
+<td>In</td>
+<td>~</td>
+<td>Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical</td>
+<td align="right">2</td>
+<td> </td>
+</tr>
+<tr><td>R1,R2,R101,R102</td>
+<td>47k</td>
+<td>~</td>
+<td>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</td>
+<td align="right">4</td>
+<td> </td>
+</tr>
+<tr><td>R3,R103</td>
+<td>2k</td>
+<td>~</td>
+<td>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</td>
+<td align="right">2</td>
+<td> </td>
+</tr>
+<tr><td>TP1,TP2,TP3,TP4</td>
+<td>TestPoint</td>
+<td>~</td>
+<td>TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm</td>
+<td align="right">4</td>
+<td> </td>
+</tr>
+<tr><td>U1</td>
+<td>TL072</td>
+<td><a href="http://www.ti.com/lit/ds/symlink/tl071.pdf">PDF</a></td>
+<td>Package_SO:SOIC-8_3.9x4.9mm_P1.27mm</td>
+<td align="right">1</td>
+<td> </td>
+</tr>
+<tr><td>U2</td>
+<td>OPA2365</td>
+<td><a href="https://www.ti.com/lit/gpn/opa2365">PDF</a></td>
+<td>Package_SO:SOIC-8_3.9x4.9mm_P1.27mm</td>
+<td align="right">1</td>
+<td> </td>
+</tr>
+<tr><td>U3</td>
+<td>74LVC2G17</td>
+<td><a href="http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf">PDF</a></td>
+<td>Package_TO_SOT_SMD:SOT-23-6_Handsoldering</td>
+<td align="right">1</td>
+<td> </td>
+</tr>
+</tbody></table>
+</div></div></div>
 
 ### Temperature compensation
 
@@ -230,3 +332,4 @@ Results extremely good, 8 figure precision ±1 digit, and constant +12.3ppm erro
 - 100Hz-1kHz ±0.03% (24hr)  ±0.017% (2yr) so 440Hz ± 74.8mHz (439.9252 to 440.0748)
 - 1kHz-300kHz ±0.002% (24hr)  ±0.017% (2yr)
 
+±0.017% is a 0.29428 cent (294 millicent) error, which if the same order of magnitude as the oscillator deviations I am trying to measure. 12.3ppm is an order of magnitude better, 0.02129404784514272 cents (21.29 millicents), ample for the purpose. 

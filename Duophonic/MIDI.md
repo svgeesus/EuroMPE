@@ -156,6 +156,16 @@ And then in the loop:
     usbhostMIDI.read();
 ```
 
+## Host port current
+
+> The USB host port has a [TDP3S014](https://www.ti.com/product/TPD3S014) current limit chip. 
+> So the maximum current is either the limit this chip imposes (~850mA), 
+> or the remaining amount of current available from whatever 
+> power source is powering Teensy 4.1. <br>
+> [PaulStoffregen](https://forum.pjrc.com/index.php?threads/usb-host-teensy-4-1-current-limit.76302/#post-353611)
+
+This also provides D+ D- ESD protection.
+
 ## Controllers
 
 ### Roli Seaboard Rise 1

@@ -21,7 +21,7 @@ and also [current panel with boards and components](./mock-channel-v2-bigscreen-
 
 ![panel](./img/panel.png)
 
-Completely blank 24Hp panel (black anodizing, white infill, no holes at all) is $34.00 and with 4 mounting holes, $38.23.
+Completely blank 24Hp panel (black anodizing, white infill, no holes at all) is $34.00 and with 4 mounting holes, $38.23. Current panel is **$116.55**
 
 ## Front jack spacing for duophonic output
 

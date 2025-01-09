@@ -131,7 +131,19 @@ Song Huei short trimmer 9mm pots [from Thonk](https://www.thonk.co.uk/shop/short
 
 10.6mm wide at PCB footprint, 9.7mm wide body, 6mm shaft. 12.5mm high including pins. Shaft 5.5mm from top of body. Measure width at bushing, hole should be a snap fit for the trimmer.
 
-These are _not threaded_ so cannot be used to attach the front PCB to the panel. Maybe make one PCB for the perfdac jacks and the trimmers?
+These are _not threaded_ so cannot be used to attach the front PCB to the panel. Maybe make [one PCB](./power-jacks-trimmers.md) for the perfdac jacks and the trimmers?
+
+Or (more rigid)
+
+- [Alpha 9mm T18 shaft pot, 10k](https://www.thonk.co.uk/shop/alpha-9mm-pots-vertical-t18/) [GOT]
+- [T18 micro knobs](https://www.thonk.co.uk/shop/micro-knobs/) [GOT]
+
+![pot](./img/thonk-alpha-9mm-t18.png)
+![pot pcb](./img/thonk-alpha-9mm-t18-pcb.png)
+
+11.4mm wide at PCB footprint, 9.5mm wide body, 13.5mm high including pins. T18 shaft. Shaft 15mm from top of body. Bolts to panel, M7 bushing.
+
+**NO** these will not fit vertically in the space.
 
 ## Global outputs
 
@@ -351,6 +363,10 @@ Display width 35.19mm, height 19.0mm
 ### Mounting holes for MPU board
 
 Position not clear yet
+
+### Mounting holes for PerfDAC/faders/PSU board
+
+Not sized yet
 
 ## Cost
 

@@ -6,10 +6,12 @@ Usual (bad) Eurorack power over ribbon cable with +12V, 0V, -12V and optional +5
 
 ## Digital and Analog 0V
 
-Module uses two ribbon cables. 0V on one is treated as digital ground, and +5V on that cable powers digital circuits.
+**NO** Module uses two ribbon cables. 0V on one is treated as digital ground, and +5V on that cable powers digital circuits.
 0V on the other is treated as analog ground, with +12 and -12 powering op-amps and secondary voltage regulators.  
 This means the connection between digital and analog occurs at the PSU busboard. 
 This should reduce digital return currents on analog ground. However, digital 0V to SPI DAC meets analog 0V unless isolator is used, and other connections between grounds will occur due to panel jacks and external patching.
+
+Instead, just one ribbon cable becase DGnd and AGND unavoidably connect at multiple places.
 
 ## DAC power
 
@@ -47,7 +49,8 @@ Eurorack power connector, usual 10μF smoothing caps (or greater)?
 Top plane mostly gnd (for low impedance and also cooling) with traces for ±9V5 and for +5V5 outputs;
 bottom plane gnd (again for cooling), well stitched to top, with traces for ±12V inputs.
 
-Maybe locate on back of the perfdac-jack and pots board, which is otherwise unused, and add two standoffs after the pots to make it more stable?
+Locate on back of the perfdac-jack and pots board, which is otherwise unused, and add two standoffs after the pots to make it more stable.
+See [Power, Jacks and Trimmers](power-jacks-trimmers.md)
 
 ### LT1763 for 9V5
 

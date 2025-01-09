@@ -11,7 +11,11 @@ https://www.tequipment.net/Siglent/SDS1104X-E/Digital-Oscilloscopes/?b=y&v=71471
 
 [ ] Solder rest of vref board. Power up, test it works, monitor output voltage as it stabilises
 
-[ ] Breadboard RGB Pirhana LED with PWM for Teensy 4.x. Check forward voltage sufficient for 3V3 operation, else use level shifter 5V operation.
+[ ] **NO** Breadboard RGB Pirhana LED with PWM for Teensy 4.x. Check forward voltage sufficient for 3V3 operation, else use level shifter 5V operation.
+
+[x] Test Neopixel TH LEDs.
+
+[ ] Start combined jack / trimmer / power board
 
 [ ] Breadboard gate and trigger output circuit.
 

@@ -17,18 +17,18 @@
     <g  class="xhide">
     <defs>
     <!-- jack origin is center of jack socket hole -->
-        <symbol id="Thoniconn-vertical" width="9" height="12" viewBox="-4.5 -6 9 12">
+        <symbol id="Thoniconn-vertical" width="9" height="12.5" viewBox="-4.5 -6 9 12.5">
             <rect x="-4.5" y="-6" width="9" height="10.5" style="fill: #BBB"/>
             <rect x="-4" y="-3" width="8" height="6"/>
-            <rect x="-0.4" y="4.5" width="0.8" height="1.5"/>
+            <rect x="-0.4" y="4.5" width="0.8" height="2"/>
             <circle r="3"/>
             <circle r="1.8"/>
             <circle r="0.7" style="fill:blue"/> 
         </symbol>
-        <symbol id="Thoniconn-vertical-ud" width="9" height="12" viewBox="-4.5 -6 9 12">
+        <symbol id="Thoniconn-vertical-ud" width="9" height="12.5" viewBox="-4.5 -6 9 12.5">
             <rect x="-4.5" y="-4.5" width="9" height="10.5" style="fill: #BBB"/>
             <rect x="-4" y="-3" width="8" height="6"/>
-            <rect x="-0.4" y="-6.0" width="0.8" height="1.5"/>
+            <rect x="-0.4" y="-6.4" width="0.8" height="2"/>
             <circle r="3"/>
             <circle r="1.8"/>
             <circle r="0.7" style="fill:blue"/> 
@@ -216,8 +216,12 @@
     <!-- <circle style="fill: maroon; fill-opacity: 0.3" cx="43.5" cy="45.633" r="1"/> -->
 
     <g transform="translate(8,-17)">
+        <!-- power, trimmers  and jacks -->
+        <rect x="-20.5" y="73" width="56" height="51.8" style="fill: maroon; fill-opacity: 0.2; stroke: #966"/>
+
         <!-- perf DAC -->
         <!-- 13mm center-to-center vertical spacing -->
+        <!-- 21mm horizontal spacing -->
         <use href="#Thoniconn-vertical" x="5" y="73"/> 
         <use href="#Thoniconn-vertical" x="26" y="73"/> 
 
@@ -231,9 +235,8 @@
         <use href="#Thoniconn-vertical" x="26" y="112"/> 
 
         <!-- KiCad PerfDAC board -->
-        <rect x="7" y="82" width="26.27" height="33.68" style="stroke: #686"/>
+        <rect x="7" y="82" width="26.27" height="33.68" style="fill: green; fill-opacity: 0.2; stroke: #686"/>
         <!-- <rect x="10" y="73" width="20" height="50" style="stroke: #686"/> -->
-        <rect x="-16.5" y="73" width="52" height="51.8" style="stroke: #966"/>
 
         <!--  connectors to op-amp board -->
         <rect x="8.05" y="83.2" width="10.28" height="5.2" style="fill:#787"/>
@@ -317,7 +320,7 @@
         <rect x="8" y="72" width="24" height="52.4" style="stroke: #966"/>
 
         <!-- KiCad PerfDAC board -->
-        <rect x="7" y="82" width="26.27" height="33.68" style="stroke: #686"/>
+        <rect x="7" y="82" width="26.27" height="33.68" style="fill: green; fill-opacity: 0.2; stroke: #686"/>
 
         <!--  connectors to op-amp board -->
         <rect x="8.05" y="83.2" width="10.28" height="5.2" style="fill:#787"/>

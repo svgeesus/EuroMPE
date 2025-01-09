@@ -163,9 +163,7 @@ Allow a dead zone at each end so easy to get "fully off" or "fully on" values. E
 - [Alpha 9mm T18 shaft pot, 10k](https://www.thonk.co.uk/shop/alpha-9mm-pots-vertical-t18/) [GOT]
 - [T18 micro knobs](https://www.thonk.co.uk/shop/micro-knobs/) [GOT]
 
-or (takes more space, but easier to see the value)
 
-- [Alpha B50K Slider](https://www.thonk.co.uk/shop/music-thing-modular-sliders-for-voltages/)
 
  Use Responsive Analog Read:
 

@@ -41,11 +41,12 @@
             <circle r="1.8"/>
         </symbol>
         <symbol id="RGBled" height="7.8" width="7.8" viewBox="-3.9 -3.9 7.8 7.8">
-            <rect x="-3.9" y="-3.9" width="7.8" height="7.8" style="fill: #DCC"/>
-            <circle r="2.7" style="fill:#CE6"/>
+            <circle r="2.9" style="fill:#999"/>
+            <circle r="2.5" style="fill:#CE6"/>
         </symbol>
-        <symbol id="SongHuei" height="12.5" width="10.6" viewBox="-5.3 -5.5 10.6 12.5">
+        <symbol id="SongHuei" height="13.5" width="10.6" viewBox="-5.3 -5.5 10.6 13.5">
             <rect x="-4.85" y="-5.5"  height="12.5" width="9.7" style="fill: #BBB"/>
+            <rect x="-3" y="7" height="1" width="6" style="fill: #AAA"/>
             <rect x="-5.3" y="-1.1" height="2.2" width="0.55"/>
             <rect x="4.75" y="-1.1" height="2.2" width="0.55"/>
             <circle r="3.2"/>
@@ -144,57 +145,47 @@
 
     <!-- gate and trigger and LED -->
     <g transform="translate(8, -76)">
-    <!-- <circle style="fill: orange" cx="-8" cy="76" r="2"/> -->
-        <use href="#RGBled" x="5.6" y="76"/>
-        <use href="#RGBled" x="26.6" y="76" />
-        <!-- to gate and trig and LED board 14 at 0.1 inch -->
-        <rect x="2.22" y="84.2" width="35.56" height="2.54" style="fill:#55A"/>
-        <!-- <use href="#Thoniconn-vertical-ud" x="10" y="95.2"/>  -->
-        <use href="#Thoniconn-vertical" x="0" y="87.2"/> 
-        <use href="#Thoniconn-vertical" x="10" y="87.2"/> 
-        <!-- <use href="#Thoniconn-vertical-ud" x="31" y="95.2"/>  -->
-        <use href="#Thoniconn-vertical" x="31" y="87.2"/> 
-        <use href="#Thoniconn-vertical" x="21" y="87.2"/> 
+        <rect x="0" y="76" width="40" height="31.8" style="stroke: #668; fill: #93B; fill-opacity: 0.3"/>
+        <rect x="0" y="76" width="40" height="31.8" style="stroke: #966"/>
+        <use href="#RGBled" x="5.6" y="75.5"/>
+        <use href="#RGBled" x="26.6" y="75.5" />
+ 
+        <use href="#Thoniconn-vertical" x="0" y="83.5"/> 
+        <use href="#Thoniconn-vertical" x="10" y="83.5"/> 
+        <use href="#Thoniconn-vertical" x="31" y="83.5"/> 
+        <use href="#Thoniconn-vertical" x="21" y="83.5"/> 
         <!-- tune -->
-        <use href="#Thoniconn-vertical-ud" x="5" y="99.3"/> 
-        <use href="#Thoniconn-vertical-ud" x="26" y="99.3"/> 
-        <!-- to tune board, 2 groups of 3 at 0.1 inch -->
-        <!-- <rect x="9.5" y="109.3" width="2.54" height="7.62" style="fill:#855"/>
-        <rect x="30.5" y="109.3" width="2.54" height="7.62" style="fill:#855"/> -->
-
-        <rect x="0" y="83" width="40" height="28.4" style="stroke: #668"/>
-
-        <rect x="0" y="76" width="40" height="35.6" style="stroke: #966"/>
+        <use href="#Thoniconn-vertical-ud" x="5" y="95.3"/> 
+        <use href="#Thoniconn-vertical-ud" x="26" y="95.3"/> 
     </g>
 
     <!-- thus in FPD coords, x = x +71.4; y = 118.25 - y -->
     <!-- LEDs -->
     <!--  88.9,  114.35 -->
-    <circle style="fill: maroon; fill-opacity: 0.3" cx="17.5" cy="3.9" r="1"/>
+    <!-- <circle style="fill: maroon; fill-opacity: 0.3" cx="17.5" cy="3.9" r="1"/> -->
     <!--  109.9,  114.35 -->
-    <circle style="fill: maroon; fill-opacity: 0.3" cx="38.5" cy="3.9" r="1"/>
+    <!-- <circle style="fill: maroon; fill-opacity: 0.3" cx="38.5" cy="3.9" r="1"/> -->
     <!-- gate and trigger -->
     <!--  83.9,  101.09 -->
-    <circle style="fill: maroon; fill-opacity: 0.3" cx="12.5" cy="17.16" r="1"/>
+    <!-- <circle style="fill: maroon; fill-opacity: 0.3" cx="12.5" cy="17.16" r="1"/> -->
     <!--  93.9,  101.09 -->
     <!-- 104.9,  101.09 -->
     <!-- 114.9,  101.09 -->
-    <circle style="fill: maroon; fill-opacity: 0.3" cx="43.5" cy="17.16" r="1"/>
+    <!-- <circle style="fill: maroon; fill-opacity: 0.3" cx="43.5" cy="17.16" r="1"/> -->
     <!-- tune-in -->
     <!-- (88.9, 88.93) -->
-    <circle style="fill: maroon; fill-opacity: 0.3" cx="17.5" cy="29.32" r="1"/>
+    <!-- <circle style="fill: maroon; fill-opacity: 0.3" cx="17.5" cy="29.32" r="1"/> -->
     <!-- 109.9 88.93) -->
-    <circle style="fill: maroon; fill-opacity: 0.3" cx="38.5" cy="29.32" r="1"/>
+    <!-- <circle style="fill: maroon; fill-opacity: 0.3" cx="38.5" cy="29.32" r="1"/> -->
 
 
     <!-- pitch dac -->
 
-    <g transform="translate(8, -48.4)">
-    <!-- <circle style="fill: orange" cx="-8" cy="48.4" r="1"/> -->
-        <!-- <use href="#Thoniconn-vertical-ud" x="0" y="96"/>  -->
+    <g transform="translate(8, -51)">
+        <rect x="0" y="84.5" width="40" height="18.7" style="stroke: #966; fill: #263; fill-opacity:0.3"/>
+
         <use href="#Thoniconn-vertical" x="0" y="88"/> 
         <use href="#Thoniconn-vertical" x="10" y="88"/> 
-        <!-- <use href="#Thoniconn-vertical-ud" x="21" y="96"/>  -->
         <use href="#Thoniconn-vertical" x="21" y="88"/> 
         <use href="#Thoniconn-vertical" x="31" y="88"/> 
         <!-- Lower DAC connector 6 at 0.1inch spacing -->
@@ -205,7 +196,6 @@
         <rect x="12.38" y="85" width="15.24" height="2.54" style="fill:#555"/>
         <rect x="5.15" y="85" width="29.7" height="2.54" style="stroke: #696"/>
         <!-- DAC boards are 23.3mm apart at pin centers. seems too much. -->
-        <rect x="0" y="84.5" width="40" height="18.7" style="stroke: #966"/>
     </g>
     <!-- thus in FPD coords, x = x +71.4; y = 118.25 - y -->
     <!-- 83.9,  72.617 -->
@@ -215,24 +205,24 @@
     <!-- 114.9,  72.617 -->
     <!-- <circle style="fill: maroon; fill-opacity: 0.3" cx="43.5" cy="45.633" r="1"/> -->
 
-    <g transform="translate(8,-17)">
+    <g transform="translate(8,-18.9)">
         <!-- power, trimmers  and jacks -->
-        <rect x="-20.5" y="73" width="56" height="51.8" style="fill: maroon; fill-opacity: 0.2; stroke: #966"/>
+        <rect x="-21" y="72" width="57" height="55.4" style="fill: maroon; fill-opacity: 0.2; stroke: #966"/>
 
         <!-- perf DAC -->
         <!-- 13mm center-to-center vertical spacing -->
         <!-- 21mm horizontal spacing -->
-        <use href="#Thoniconn-vertical" x="5" y="73"/> 
-        <use href="#Thoniconn-vertical" x="26" y="73"/> 
+        <use href="#Thoniconn-vertical" x="5" y="72"/> 
+        <use href="#Thoniconn-vertical" x="26" y="72"/> 
 
-        <use href="#Thoniconn-vertical" x="5" y="86"/> 
-        <use href="#Thoniconn-vertical" x="26" y="86"/> 
+        <use href="#Thoniconn-vertical" x="5" y="85.5"/> 
+        <use href="#Thoniconn-vertical" x="26" y="85.5"/> 
 
         <use href="#Thoniconn-vertical" x="5" y="99"/> 
         <use href="#Thoniconn-vertical" x="26" y="99"/> 
 
-        <use href="#Thoniconn-vertical" x="5" y="112"/> 
-        <use href="#Thoniconn-vertical" x="26" y="112"/> 
+        <use href="#Thoniconn-vertical" x="5" y="112.5"/> 
+        <use href="#Thoniconn-vertical" x="26" y="112.5"/> 
 
         <!-- KiCad PerfDAC board -->
         <rect x="7" y="82" width="26.27" height="33.68" style="fill: green; fill-opacity: 0.2; stroke: #686"/>
@@ -250,20 +240,20 @@
         
         <!-- fader pots align with jacks-->
         <g transform="translate(-1.5,0.5)">
-        <use href="#SongHuei" x="-14" y="112"/>
+        <use href="#SongHuei" x="-14" y="112.5"/>
         <use href="#SongHuei" x="-14" y="99"/>
-        <use href="#SongHuei" x="-14" y="86"/>
-        <use href="#SongHuei" x="-14" y="73"/>
+        <use href="#SongHuei" x="-14" y="85.5"/>
+        <use href="#SongHuei" x="-14" y="72"/>
         </g>
 
 
 
         <!-- guide lines -->
         <g transform="translate(5.5, 6)" style="fill:none; stroke:red; stroke-width:0.5; stroke-opacity: 0.2">
-            <line x1="-15" y1="73" x2="32" y2="73"/>
-            <line x1="-15" y1="86" x2="32" y2="86"/>
+            <line x1="-15" y1="72" x2="32" y2="72"/>
+            <line x1="-15" y1="85.5" x2="32" y2="85.5"/>
             <line x1="-15" y1="99" x2="32" y2="99"/>
-            <line x1="-15" y1="112" x2="32" y2="112"/>
+            <line x1="-15" y1="112.5" x2="32" y2="112.5"/>
             <g style="stroke: green">
                 <line x1="-15.5" y1="73" x2="-15.5" y2="33"/>
             </g>
@@ -273,26 +263,26 @@
     <!-- thus in FPD coords, x = x +71.4; y = 118.25 - y -->
     <!-- pots -->
         <!-- (69.17, 56.25) -->
-    <circle style="fill: maroon; fill-opacity: 0.3" cx="-2.23" cy="62.0" r="2.7"/>
+    <!-- <circle style="fill: maroon; fill-opacity: 0.3" cx="-2.23" cy="62.0" r="2.7"/> -->
         <!-- (69.17, 43.25) -->
-    <circle style="fill: maroon; fill-opacity: 0.3" cx="-2.23" cy="75.0" r="2.7"/>
+    <!-- <circle style="fill: maroon; fill-opacity: 0.3" cx="-2.23" cy="75.0" r="2.7"/> -->
         <!-- (69.17, 30.25) -->
-    <circle style="fill: maroon; fill-opacity: 0.3" cx="-2.23" cy="88.0" r="2.7"/>
+    <!-- <circle style="fill: maroon; fill-opacity: 0.3" cx="-2.23" cy="88.0" r="2.7"/> -->
         <!-- (69.17, 17.25) -->
-    <circle style="fill: maroon; fill-opacity: 0.3" cx="-2.23" cy="101.0" r="2.7"/>
+    <!-- <circle style="fill: maroon; fill-opacity: 0.3" cx="-2.23" cy="101.0" r="2.7"/> -->
     <!-- (88.9  56.25) -->
-    <circle style="fill: maroon; fill-opacity: 0.3" cx="17.5" cy="62.0" r="1"/>
+    <!-- <circle style="fill: maroon; fill-opacity: 0.3" cx="17.5" cy="62.0" r="1"/> -->
     <!-- 109.9 56.25) -->
-    <circle style="fill: maroon; fill-opacity: 0.3" cx="38.5" cy="62.0" r="1"/>
+    <!-- <circle style="fill: maroon; fill-opacity: 0.3" cx="38.5" cy="62.0" r="1"/> -->
 
-    <circle style="fill: maroon; fill-opacity: 0.3" cx="17.5" cy="75.0" r="1"/>
-    <circle style="fill: maroon; fill-opacity: 0.3" cx="38.5" cy="75.0" r="1"/>
+    <!-- <circle style="fill: maroon; fill-opacity: 0.3" cx="17.5" cy="75.0" r="1"/> -->
+    <!-- <circle style="fill: maroon; fill-opacity: 0.3" cx="38.5" cy="75.0" r="1"/> -->
 
-    <circle style="fill: maroon; fill-opacity: 0.3" cx="17.5" cy="88.0" r="1"/>
-    <circle style="fill: maroon; fill-opacity: 0.3" cx="38.5" cy="88.0" r="1"/>
+    <!-- <circle style="fill: maroon; fill-opacity: 0.3" cx="17.5" cy="88.0" r="1"/> -->
+    <!-- <circle style="fill: maroon; fill-opacity: 0.3" cx="38.5" cy="88.0" r="1"/> -->
 
-    <circle style="fill: maroon; fill-opacity: 0.3" cx="17.5" cy="101.0" r="1"/>
-    <circle style="fill: maroon; fill-opacity: 0.3" cx="38.5" cy="101.0" r="1"/>
+    <!-- <circle style="fill: maroon; fill-opacity: 0.3" cx="17.5" cy="101.0" r="1"/> -->
+    <!-- <circle style="fill: maroon; fill-opacity: 0.3" cx="38.5" cy="101.0" r="1"/> -->
 
     <!-- that takes it to 109mm high overall, should still fit -->
 

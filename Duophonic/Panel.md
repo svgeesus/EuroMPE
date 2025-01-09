@@ -141,7 +141,7 @@ Or (more rigid)
 ![pot](./img/thonk-alpha-9mm-t18.png)
 ![pot pcb](./img/thonk-alpha-9mm-t18-pcb.png)
 
-11.4mm wide at PCB footprint, 9.5mm wide body, 13.5mm high including pins. T18 shaft. Shaft 15mm from top of body. Bolts to panel, M7 bushing.
+11.4mm wide at PCB footprint, 9.5mm wide body, 13.5mm high including pins and pin pads. T18 shaft. Shaft 15mm from top of body. Bolts to panel, M7 bushing. So, need to widen spacing on pots and on jacks to 13.5mm from 13mm. Will the board fit?
 
 **NO** these will not fit vertically in the space.
 

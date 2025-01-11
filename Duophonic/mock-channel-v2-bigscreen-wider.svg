@@ -225,18 +225,19 @@
         <use href="#Thoniconn-vertical" x="26" y="112.5"/> 
 
         <!-- KiCad PerfDAC board -->
-        <rect x="7" y="82" width="26.27" height="33.68" style="fill: green; fill-opacity: 0.2; stroke: #686"/>
-        <!-- <rect x="10" y="73" width="20" height="50" style="stroke: #686"/> -->
+        <g transform="translate(3, 0)">
+            <rect x="7" y="82" width="26.27" height="33.68" style="fill: green; fill-opacity: 0.2; stroke: #686"/>
 
-        <!--  connectors to op-amp board -->
-        <rect x="8.05" y="83.2" width="10.28" height="5.2" style="fill:#787"/>
-        <rect x="8.05" y="109.60" width="10.28" height="5.2" style="fill:#787"/>
+            <!--  connectors to op-amp board -->
+            <rect x="8.05" y="83.2" width="10.28" height="5.2" style="fill:#787"/>
+            <rect x="8.05" y="109.60" width="10.28" height="5.2" style="fill:#787"/>
 
-        <!-- power -->
-        <rect x="21.01" y="83.34" width="10.28" height="2.66" style="fill:#787"/>
+            <!-- power -->
+            <rect x="21.01" y="83.34" width="10.28" height="2.66" style="fill:#787"/>
 
-        <!-- SPI 22.37 -->
-        <rect x="29.37" y="88.77" height="20.44" width="2.66" style="fill:#787"/>
+            <!-- SPI 22.37 -->
+            <rect x="29.37" y="88.77" height="20.44" width="2.66" style="fill:#787"/>
+        </g>
         
         <!-- fader pots align with jacks-->
         <g transform="translate(-1.5,0.5)">

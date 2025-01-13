@@ -44,6 +44,11 @@ Current [panel](./Panel.md) has per-voice tuning inputs.
 >
 > [Calibr8or firmware for Ornament & Crime](https://learningmodular.com/calibr8or/)
 
+### Calibration curve save/read
+
+> To simplify and put into context - EEPROM.put on the T4 will do the same as .update for you, so use EEPROM.put. If the user constantly saves their settings every hour, 24 hours a day, 7 days a week, it will take them almost 12 years to do 100,000 saves and likely 50-100 years of doing this before wearing from repeated writes may be an issue, so for this use case, don't worry about wearing, its a non-issue for this use case. It's hard to get to 100,000 events with purely human interaction, but easy when machine driven.
+> [--beermat](https://forum.pjrc.com/index.php?threads/best-way-to-store-64-bits-of-user-parameters.76368/#post-353976)
+
 ### MIDI Tune Request
 
 Respond to F6 Tune Request by tuning both channels. Will only work if the oscillator outputs are looped back to the tune inputs.

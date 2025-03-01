@@ -231,5 +231,6 @@ but no those choppers are a _pain in the ass,_ so
 - [x] Lay out v0.1 board, fab
 - [x] Lay out v0.2 board
 - [x] Fab v0.2 board and get stencil, too
+- [ ] Lay out jacks board for panel, to check connector spacing for DAC boards
 - [ ] Build and test one DAC board with (previously tested) VREF board.
 - [ ] If all okay, order 2 more DAC and components for other board. Else refine, redo board.

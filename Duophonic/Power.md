@@ -4,6 +4,12 @@
 
 Usual (bad) Eurorack power over ribbon cable with +12V, 0V, -12V and optional +5V, Gate and CV (latter two not used here). Module assumes each power rail is poorly regulated, with up to 0.5V droop likely.
 
+Given the 5V power draw, a beefier cable seems desirable. ModularAddict [sells those](https://www.modularaddict.com/parts/cables/premium-eurorack-power-cables) in 15cm, 30cm and 45cm lenghths, for 16 to 16 cables.
+
+> instead of using 28AWG IDC connectors, we've changed to a compatible connector that accepts crimped wire connections, and have bumped up to 22AWG.
+
+(16 10-pin and 3 16-pin modules in [existing case](https://modulargrid.net/e/modules_racks/data_sheet/61770) draw 50mA to 170mA and would benefit from beefier cables)
+
 ## Digital and Analog 0V
 
 **NO** Module uses two ribbon cables. 0V on one is treated as digital ground, and +5V on that cable powers digital circuits.
@@ -50,11 +56,13 @@ The 5V on the USB Host port is driven from the 5V source powering the Teensy.
 > The USB host port has a TDP3S014 current limit chip. So the maximum current is either the limit this chip imposes (~850mA), or the remaining amount of current available from whatever power source is powering Teensy 4.1.
 [PaulStoffregen](https://forum.pjrc.com/index.php?threads/usb-host-teensy-4-1-current-limit.76302/#post-353611)
 
-TDP3S014 provides overcurrent, reveral, and short-circuit protection.
+TDP3S014 provides overcurrent, over temperature, reversal, and short-circuit protection. 
 
-Teensy 4.1 current draw is around 100mA
+From the data sheet, the max continuous operating current however is 500mA. Teensy 4.1 current draw is around 100mA. Teensy Vin passes via a 500mA fuse (F1) before splitting to the TDP3S014 and the TLV75733P regulator that powers the Teensy, implying the max available current for the TDP3S014 is (500-100) = 400ma.
 
-Thus the 5V from Eurorack might provide up to 950mA (!)
+Teensy 4.1 schematic shows 100μF ceramic output cpacitance (C33). Input capacitance (shared with the 3V3 regulator) is two 0.22μF capacitors (C9 and C15).
+
+Thus the 5V from Eurorack can, at max, be called on to provide 500mA.
 
 ## Analog power board
 

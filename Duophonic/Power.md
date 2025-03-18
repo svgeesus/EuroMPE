@@ -43,6 +43,19 @@ To be determined. Options for (about) 5V, 8V gates useful. Exact level not criti
 
 Same [Gate and LED board](./Gate-LED.md) needs voltage level conversion and current drive for the two RGB LEDs.
 
+## USB Host
+
+The 5V on the USB Host port is driven from the 5V source powering the Teensy.
+
+> The USB host port has a TDP3S014 current limit chip. So the maximum current is either the limit this chip imposes (~850mA), or the remaining amount of current available from whatever power source is powering Teensy 4.1.
+[PaulStoffregen](https://forum.pjrc.com/index.php?threads/usb-host-teensy-4-1-current-limit.76302/#post-353611)
+
+TDP3S014 provides overcurrent, reveral, and short-circuit protection.
+
+Teensy 4.1 current draw is around 100mA
+
+Thus the 5V from Eurorack might provide up to 950mA (!)
+
 ## Analog power board
 
 Eurorack power connector, usual 10μF smoothing caps (or greater)?

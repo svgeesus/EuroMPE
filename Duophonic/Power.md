@@ -9,6 +9,7 @@ Given the 5V power draw, a beefier cable seems desirable. ModularAddict [sells t
 > instead of using 28AWG IDC connectors, we've changed to a compatible connector that accepts crimped wire connections, and have bumped up to 22AWG.
 
 (16 10-pin and 3 16-pin modules in [existing case](https://modulargrid.net/e/modules_racks/data_sheet/61770) draw 50mA to 170mA and would benefit from beefier cables)
+(they also sell [box headers](https://modularaddict.com/parts/cables/power-cables/box-header-for-eurorack-power))
 
 ## Digital and Analog 0V
 
@@ -58,11 +59,16 @@ The 5V on the USB Host port is driven from the 5V source powering the Teensy.
 
 TDP3S014 provides overcurrent, over temperature, reversal, and short-circuit protection. 
 
-From the data sheet, the max continuous operating current however is 500mA. Teensy 4.1 current draw is around 100mA. Teensy Vin passes via a 500mA fuse (F1) before splitting to the TDP3S014 and the TLV75733P regulator that powers the Teensy, implying the max available current for the TDP3S014 is (500-100) = 400ma.
+From the data sheet, the max continuous operating current however is 500mA. Teensy 4.1 current draw is around 100mA. Teensy Vin passes via a 500mA fuse (F1) before splitting to the TDP3S014 and the TLV75733P LDO regulator that powers the Teensy, implying the max available current for the TDP3S014 is (500-100) = 400ma, assuming no other peripheral is powered from the Teensy 3V3.
+
+> The circuitry on Teensy 4.1 is built around a 0.5 amp maximum current, which is the USB 2.0 spec.
+[PaulStoffregen](https://forum.pjrc.com/index.php?threads/teensy-4-1-usb-host-power-question.70566/#post-308639)
 
 Teensy 4.1 schematic shows 100μF ceramic output cpacitance (C33). Input capacitance (shared with the 3V3 regulator) is two 0.22μF capacitors (C9 and C15).
 
 Thus the 5V from Eurorack can, at max, be called on to provide 500mA.
+
+[code to turn on just the USB Host power, without bringing up the USB stack](https://forum.pjrc.com/index.php?threads/noise-issue-with-teensy-4-1-audio-shield-and-pam8403-amplifier.76400/page-2#post-355223)
 
 ## Analog power board
 

@@ -40,6 +40,8 @@ To isolate from digital 0V noise, consider optical isolator. ISO724x high speed 
 
 [10k pullup on SPI CS line](https://www.pjrc.com/better-spi-bus-design-in-3-steps/).
 
+Use series 100R on MOSI and CLK to reduce reflections and ringing; monitor waveform on a scope with 10x probe.
+
 ## Initial accuracy
 
 1LSB is 10V / 2^18 = 38μV. At 1V/Oct, 12 tones per octave, 100 cents per tone, 1 Cent is 833μV so 1 LSB is about 1/20 cent.

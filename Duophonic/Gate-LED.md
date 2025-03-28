@@ -46,7 +46,7 @@ See also [a known bad Gate in the original Arturia Beatstep](https://synthnerd.w
 
 Gate is +10V. Test droop into low loads like 10k.
 
-Trigger is +10V for 10ms. Maybe 9V with a small 12V to 9V regulator?
+Trigger is +10V for 10ms. Maybe 9V with a small 12V to 9V regulator? Thus, needs a +12V from the power board.
 
 ## Boards
 

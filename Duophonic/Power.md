@@ -75,7 +75,7 @@ Thus the 5V from Eurorack can, at max, be called on to provide 500mA.
 Eurorack power connector, usual 22μF smoothing caps (68μF for +5V due to large power draw).
 
 Top plane mostly gnd (for low impedance and also cooling) with traces for ±9V5 and for +5V5 outputs;
-bottom plane gnd (again for cooling), well stitched to top, with traces for ±12V inputs.
+bottom plane gnd (again for cooling), well stitched to top, with traces for ±12V inputs. Also needs a low current GND,+12V output for the gate and trigger circuits; and a high current (500mA) GND,+5V output to drive the Teensy, the devices powered by Teensy 3V3, and the USB Host power output. Terminal block would have been great but is sadly too big, so I went with a 4-pin connector (two GND, two +5V).
 
 Stacked behind the perfdac-jack and pots board, and add two standoffs after the pots to make it more stable.
 See [Power, Jacks and Trimmers](power-jacks-trimmers.md)
@@ -107,7 +107,6 @@ is required.
 stability range. The minimum ESR needed is set by the
 amount of bypass capacitance used, while maximum
 ESR is 3Ω.
-
 > (source: DEMO MANUAL DC368A)
 
 10μF input cap, 10nF noise bypass cap, 6μ8F to 10μF output cap (see Fig 3. Stability and discussion of ceramic dielectrics: go for X7R).
@@ -209,8 +208,7 @@ At 135C/w, 23.5C above ambient.
 
 ## Work Plan
 
-Measure current draw of perf DAC board (5V5 regulator needs to power 2) before ordering PSU parts, to be sure the SMD 5V5 will be suitable. Might need a 3-pin regulator.
-
-Check min spacing for cables to plug into the power headers!
-
-Check size and spacing of standoff holes, with jacks board and with panel.
+- [ ] Measure current draw of perf DAC board (5V5 regulator needs to power 2) before ordering PSU parts, to be sure the SMD 5V5 will be suitable. Might need a 3-pin regulator.
+- [ ] Check min spacing for cables to plug into the power headers!
+- [ ] Check size and spacing of standoff holes, with jacks board and with panel.
+- [ ] More vias to connect front and back ground planes

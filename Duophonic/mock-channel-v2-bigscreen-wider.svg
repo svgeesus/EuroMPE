@@ -206,8 +206,10 @@
     <!-- <circle style="fill: maroon; fill-opacity: 0.3" cx="43.5" cy="45.633" r="1"/> -->
 
     <g transform="translate(8,-18.9)">
-        <!-- power, trimmers  and jacks -->
+        <!-- trimmers  and jacks -->
         <rect x="-21" y="72" width="57" height="55.4" style="fill: maroon; fill-opacity: 0.2; stroke: #966"/>
+        <!-- power -->
+        <rect x="-21" y="72" width="30" height="55.4" style="fill: lime; fill-opacity: 0.2; stroke: #966"/>
 
         <!-- perf DAC -->
         <!-- 13mm center-to-center vertical spacing -->
@@ -224,7 +226,8 @@
         <use href="#Thoniconn-vertical" x="5" y="112.5"/> 
         <use href="#Thoniconn-vertical" x="26" y="112.5"/> 
 
-        <!-- KiCad PerfDAC board -->
+        <!-- KiCad PerfDAC v1 board -->
+        <!-- v2 needs to be less wide, taller -->
         <g transform="translate(3, 0)">
             <rect x="7" y="82" width="26.27" height="33.68" style="fill: green; fill-opacity: 0.2; stroke: #686"/>
 
@@ -236,7 +239,7 @@
             <rect x="21.01" y="83.34" width="10.28" height="2.66" style="fill:#787"/>
 
             <!-- SPI 22.37 -->
-            <rect x="29.37" y="88.77" height="20.44" width="2.66" style="fill:#787"/>
+            <rect x="29.37" y="88.77" height="20.44" width="2.66" style="fill:#787; "/>
         </g>
         
         <!-- fader pots align with jacks-->

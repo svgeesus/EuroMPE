@@ -72,14 +72,17 @@ Thus the 5V from Eurorack can, at max, be called on to provide 500mA.
 
 ## Analog power board
 
-Eurorack power connector, usual 10μF smoothing caps (or greater)?
+Eurorack power connector, usual 22μF smoothing caps (68μF for +5V due to large power draw).
+
 Top plane mostly gnd (for low impedance and also cooling) with traces for ±9V5 and for +5V5 outputs;
 bottom plane gnd (again for cooling), well stitched to top, with traces for ±12V inputs.
 
-Locate on back of the perfdac-jack and pots board, which is otherwise unused, and add two standoffs after the pots to make it more stable.
+Stacked behind the perfdac-jack and pots board, and add two standoffs after the pots to make it more stable.
 See [Power, Jacks and Trimmers](power-jacks-trimmers.md)
 
-### LT1763 for 9V5
+Available space is limited: 30mm wide, 55.4mm high.
+
+### LT1763 for 9V5 (U1)
 
 > Output Capacitance and Transient Response
 The regulators are designed to be stable with a wide range
@@ -107,9 +110,15 @@ ESR is 3Ω.
 
 > (source: DEMO MANUAL DC368A)
 
-10μF input cap, 1nF noise bypass cap, 6μ8F to 10μF output cap (see Fig 3. Stability and discussion of ceramic dielectrics: go for X7R).
+10μF input cap, 10nF noise bypass cap, 6μ8F to 10μF output cap (see Fig 3. Stability and discussion of ceramic dielectrics: go for X7R).
 
-_Minimum_ top resistor (R2) value is 2.6k. Try with 47k. First approximation:
+Input caps are electrolytics, shared with entire power board.
+
+Bypass is 1206 10nF C0G 5%, use Kemet C1206C103J3GECTU (**$0.249/10**)
+
+Output is 1206 10μF X7R 10%, use Murata GRM31CR71E106KA12K  (**$0.158/10**)
+
+_Minimum_ top resistor (R2) value is 2.6k. Try with **r2 = 47k**. First approximation:
 
 9.5 = 1.22(1 + r2/r1)
 
@@ -121,7 +130,7 @@ r1 = (1.22 × r2)/8.28
 
 r1 = (1.22 × 47000)/8.28
 
-r1 = 6k98 which happily is an E96 value.
+**r1 = 6k98** which happily is an E96 value.
 
 Second approximation:
 
@@ -136,11 +145,17 @@ From datasheet, table 2: use 100mm² top-side ground plus 25000mm² lower ground
 
 But assuming 74C/W, rise above ambient is just 13C.
 
+**Note:** If unused, the SHDN pin must be connected to VIN.
+
 ![lt1763](./img/LT1763-adj.png)
 
-### LT1763 for 5V5
+![U1 schematic](./img/power_9V5_schematic.png)
 
-Higher rise due to bigger voltage drop.
+### LT1763 for 5V5 (U3)
+
+Part no LT1763CS8#PBF **$8.28/1** or **$4.85/10**
+
+Higher rise due to bigger voltage drop. Again **r2 = 47k**
 
 5.5 = 1.22 + 1.22 × r2/r1
 
@@ -148,7 +163,7 @@ Higher rise due to bigger voltage drop.
 
 r1 = (1.22 × 47000)/4.28
 
-r1 = 13k4, closest E96 is 13k3.
+r1 = 13k4, closest E96 is **r1 = 13k3**.
 
 Vout = 1.22(1 + 47000/13300) + 30E-9 ×  47000 = 5.53V.
 
@@ -156,9 +171,11 @@ Power = 50mA × (12.5 - 5.5) + 2mA × 12.5 = 375mW.
 
 At 74C/W, rise above ambient is 28C.
 
-### LT1964-BYP for -9V5
+![U3 schematic](./img/power_5V5_schematic.png)
 
-10μF? input cap, 1nF noise bypass cap, 6μ8F to 10μF output cap
+### LT1964-BYP for -9V5 (U2)
+
+10μF? input cap, 1nF noise bypass cap, 6μ8F to 10μF output cap. Again **r2 = 47k**
 
 -9.5 = -1.22(1 + r2/r1)
 
@@ -170,7 +187,7 @@ r1 = (-1.22 × r2)/-8.28
 
 r1 = (-1.22 × 47000)/-8.28
 
-r1 = 6k98
+Thus **r1 = 6k98**
 
 Vout = -1.22(1 + 47000/6980) - 30E-9 ×  47000 = -9.436V.
 
@@ -178,8 +195,22 @@ Power = -50mA × (-12.5 - -9.5) + -2mA × -12.5 = 175mW.
 
 At 135C/w, 23.5C above ambient.
 
+**Note:** LT1964-BYP does not have SHDN.
+
 ![lt1964](./img/lt1964-adj.png)
+
+![U2 schematic](./img/power_-9V5_schematic.png)
+
+## Board
+
+![front](./img/power-front.png)
+
+![back](./img/power-back.png)
 
 ## Work Plan
 
 Measure current draw of perf DAC board (5V5 regulator needs to power 2) before ordering PSU parts, to be sure the SMD 5V5 will be suitable. Might need a 3-pin regulator.
+
+Check min spacing for cables to plug into the power headers!
+
+Check size and spacing of standoff holes, with jacks board and with panel.

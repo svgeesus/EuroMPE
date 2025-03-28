@@ -359,11 +359,11 @@
     <!-- MPU board -->
     <rect x="-70.5" y="10.5" width="77" height="39.5" style="stroke: #696"/>
     <!-- Europower -->
-    <rect x="-33"  height="9.4" width="28" y="11.8" style="fill:#787; fill-opacity: 0.4"/>
+    <!-- <rect x="-33"  height="9.4" width="28" y="11.8" style="fill:#787; fill-opacity: 0.4"/> -->
     <!-- electrolytic caps -->
-    <circle r="2.5" cx="-1" cy="16" style="fill:#ACF; fill-opacity: 0.4"/>
+    <!-- <circle r="2.5" cx="-1" cy="16" style="fill:#ACF; fill-opacity: 0.4"/>
     <circle r="2.5" cx="-44" cy="16" style="fill:#ACF; fill-opacity: 0.4"/>
-    <circle r="2.5" cx="-38" cy="16" style="fill:#ACF; fill-opacity: 0.4"/>
+    <circle r="2.5" cx="-38" cy="16" style="fill:#ACF; fill-opacity: 0.4"/> -->
 
     <!-- DIN socket -->
     <g transform="translate(-26 99)">

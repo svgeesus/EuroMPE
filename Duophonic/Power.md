@@ -82,6 +82,9 @@ See [Power, Jacks and Trimmers](power-jacks-trimmers.md)
 
 Available space is limited: 30mm wide, 55.4mm high.
 
+> We detected a 2 layer board of 1.26 x 2.17 inches (32.0 x 55.1mm)
+> 3 boards will cost $13.65
+
 ### LT1763 for 9V5 (U1)
 
 > Output Capacitance and Transient Response
@@ -202,13 +205,21 @@ At 135C/w, 23.5C above ambient.
 
 ## Board
 
+![front](./img/power-board-front.png)
+
+![back](./img/power-board-back.png)
+
 ![front](./img/power-front.png)
 
 ![back](./img/power-back.png)
+
+v0.1 ordered from OSH Park 8 April 2025
 
 ## Work Plan
 
 - [ ] Measure current draw of perf DAC board (5V5 regulator needs to power 2) before ordering PSU parts, to be sure the SMD 5V5 will be suitable. Might need a 3-pin regulator.
 - [ ] Check min spacing for cables to plug into the power headers!
-- [ ] Check size and spacing of standoff holes, with jacks board and with panel.
+- [x] Check size and spacing of standoff holes, with jacks board and with panel.
 - [ ] More vias to connect front and back ground planes
+- [ ] Order parts from Mouser
+

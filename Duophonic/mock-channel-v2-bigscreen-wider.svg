@@ -15,7 +15,7 @@
         }
     </style>
     <g  class="xhide">
-    <defs>
+    <defs overflow="visible">
     <!-- jack origin is center of jack socket hole -->
         <symbol id="Thoniconn-vertical" width="9" height="12.5" viewBox="-4.5 -6 9 12.5">
             <rect x="-4.5" y="-6" width="9" height="10.5" style="fill: #BBB"/>
@@ -107,15 +107,18 @@
             <circle r="4.5"/>
             <circle r="3"/>
         </symbol>
-        <symbol id="Teensy4.1vertical" width="18.3" height="61.7" viewbox="0 0 18.3 61.7">
+        <symbol id="Teensy4.1vertical" width="18.3" height="61.7" viewBox="0 0 18.3 61.7">
             <rect x="0" y="0.7" width="18.3" height="61" style="fill:#0602"/>
             <rect x="5.12" y="0" width="8.06" height="5.7"/>
         </symbol>
-        <symbol id="Teensy4.1horizontal" width="61.7" height="18.3" viewbox="0 0 61.7 18.3">
+        <symbol id="Teensy4.1horizontal" width="61.7" height="18.3" viewBox="0 0 61.7 18.3">
             <rect x="0" y="0" width="61" height="18.3" style="fill:#0602"/>
             <rect x="56" y="5.12" width="5.7 " height="8.06"/>
         </symbol>
-
+        <symbol id="standoff" width="6" height="6" viewBox="-3 -3 6 6">
+            <circle r="3" style="fill: #550; fill-opacity:0.5"/>
+            <circle r="1.6" style="fill: #222"/>
+        </symbol>
     </defs>
     
     <!-- outside edge of panel, 16(main)+8(channel) = 24HP  = 121.60mm -->
@@ -207,11 +210,11 @@
 
     <g transform="translate(8,-18.9)">
         <!-- trimmers  and jacks -->
-        <rect x="-21" y="72" width="57" height="55.4" style="fill: maroon; fill-opacity: 0.2; stroke: #966"/>
+        <rect x="-22.5" y="72" width="58.5" height="55.4" style="fill: maroon; fill-opacity: 0.2; stroke: #966"/>
         <!-- power -->
-        <rect x="-21" y="72" width="30" height="55.4" style="fill: lime; fill-opacity: 0.2; stroke: #966"/>
+        <rect x="-22.5" y="72" width="32" height="55.118" style="fill: lime; fill-opacity: 0.2; stroke: #966"/>
 
-        <!-- perf DAC -->
+        <!-- perf DAC jacks and trimmers-->
         <!-- 13mm center-to-center vertical spacing -->
         <!-- 21mm horizontal spacing -->
         <use href="#Thoniconn-vertical" x="5" y="72"/> 
@@ -261,7 +264,33 @@
             <g style="stroke: green">
                 <line x1="-15.5" y1="73" x2="-15.5" y2="33"/>
             </g>
-        </g>        
+        </g>    
+
+<!-- 
+    standoff holes for power
+
+    board top to top hole center (y) 4.826 mm
+    top hole to bottom hole centers (y) 45 mm
+    top hole center to left edge (x) 3.556 mm
+
+    third hole to other hole centers (x) 22 mm @@ move to left, so 20mm
+    board top to third hole center (y) 27.326 mm
+
+    bottom hole center to bottom of board (y) 5.292 mm
+
+    pads are 3mm radius, holes are 1.6mm radius
+
+ -->
+        <g transform="translate(-22.5, 72)" style="fill-opacity: 0.2">
+        <!--  top left of power board is 0,0  -->
+            <circle cx="3.556" cy="4.826" r="3" style="fill: orange"/>
+            <circle cx="3.556" cy="4.826" r="1.6" style="fill: #222"/>
+            <circle cx="3.556" cy="49.826" r="3" style="fill: orange"/>
+            <circle cx="3.556" cy="49.826" r="1.6" style="fill: #222"/>
+            <circle cx="23.556" cy="27.326" r="3" style="fill: orange"/>
+            <circle cx="23.556" cy="27.326" r="1.6" style="fill: #222"/>
+            <!-- <rect width="30" height="55.4" style="fill: yellow; fill-opacity:0.2"/> -->
+        </g>    
     </g>
 
     <!-- thus in FPD coords, x = x +71.4; y = 118.25 - y -->
@@ -296,9 +325,11 @@
     
     </g>
 
-    <g transform="rotate(-90 20 90) translate(26 -68.5)" >
+    <g transform="rotate(-90 20 90) translate(26 -70.5)" >
 <!-- perf DAC 2 -->
-<!-- is going to need a totally different front jack board that mates to the same perfdac board -->
+<!-- is going to need a totally different front jack board that mates to the same perfdac board 
+@@ moved all jacks over by 2mm to make room for power board; @@update the fpd
+-->
         <use href="#Thoniconn-vertical" x="8" y="73"/> 
         <use href="#Thoniconn-vertical" x="23" y="73"/> 
 
@@ -409,14 +440,14 @@
     <!-- thus in FPD coords, x = x +71.4; y = 128.5 - y -->
     <!-- perfDAC 2 -->
         <!-- () -->
-    <circle style="fill: maroon; fill-opacity: 0.3" cx="-59.5" cy="56.47" r="1"/>
-    <circle style="fill: maroon; fill-opacity: 0.3" cx="-46.5" cy="56.47" r="1"/>
-    <circle style="fill: maroon; fill-opacity: 0.3" cx="-33.5" cy="56.47" r="1"/>
-    <circle style="fill: maroon; fill-opacity: 0.3" cx="-20.5" cy="56.47" r="1"/>
-    <circle style="fill: maroon; fill-opacity: 0.3" cx="-59.5" cy="71.47" r="1"/>
-    <circle style="fill: maroon; fill-opacity: 0.3" cx="-46.5" cy="71.47" r="1"/>
-    <circle style="fill: maroon; fill-opacity: 0.3" cx="-33.5" cy="71.47" r="1"/>
-    <circle style="fill: maroon; fill-opacity: 0.3" cx="-20.5" cy="71.47" r="1"/>
+    <circle style="fill: maroon; fill-opacity: 0.3" cx="-61.5" cy="56.47" r="1"/>
+    <circle style="fill: maroon; fill-opacity: 0.3" cx="-48.5" cy="56.47" r="1"/>
+    <circle style="fill: maroon; fill-opacity: 0.3" cx="-35.5" cy="56.47" r="1"/>
+    <circle style="fill: maroon; fill-opacity: 0.3" cx="-22.5" cy="56.47" r="1"/>
+    <circle style="fill: maroon; fill-opacity: 0.3" cx="-61.5" cy="71.47" r="1"/>
+    <circle style="fill: maroon; fill-opacity: 0.3" cx="-48.5" cy="71.47" r="1"/>
+    <circle style="fill: maroon; fill-opacity: 0.3" cx="-35.5" cy="71.47" r="1"/>
+    <circle style="fill: maroon; fill-opacity: 0.3" cx="-22.5" cy="71.47" r="1"/>
 
     <!-- USB-B - Hole is 8.45mm high, 7.78mm wide -->
     <rect  style="fill: maroon; fill-opacity: 0.3" x="-65.8" y="94.85" width="7.78" height="8.45" />

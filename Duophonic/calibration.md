@@ -75,7 +75,8 @@ Better to follow the clamp with a dual Schmitt-trigger (SN74LVC2G17DBVR, SOT-23-
 
 > We detected a 2 layer board of 1.52 x 0.97 inches (38.6 x 24.6mm)
 > 3 boards will cost $7.35
-** Ordered 18 Oct 2024**
+
+Tune-in testing board **Ordered 18 Oct 2024**
 
 Paul Stoffregen [said](https://www.facebook.com/photo.php?fbid=7913976078691226&set=p.7913976078691226&type=3)
 
@@ -240,8 +241,7 @@ Reading all temperature sensors rquires just one pin on Teensy.
 
  - [Interfacing Multiple DS18B20 Digital Temperature Sensors with Arduino](https://lastminuteengineers.com/multiple-ds18b20-arduino-tutorial/)
 
-
-### Calibrating the calibrator
+## Calibrating the calibrator
 
 #### Keysight 34465A
 

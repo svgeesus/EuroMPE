@@ -12,7 +12,9 @@ _(Older discussion on LED options moved to [old led page](./old-led.md))_
 
 [NeoPixel Diffused 5mm Through-Hole LED - 5 Pack](https://www.adafruit.com/product/1938) easy 1-wire control, integrated pwm controller. Needs 5V so use logic level shifter such as 74LV1T34 (single) 74AHCT125 (quad) or 74HCT245 (octal). Library [includes HSV color model](https://learn.adafruit.com/adafruit-neopixel-uberguide?view=all#hsv-hue-saturation-value-colors-dot-dot-dot-3024464) as well as RGB, and includes [gamma encoding](https://learn.adafruit.com/adafruit-neopixel-uberguide?view=all#dot-dot-dot-and-gamma-correction-3024505) too.
 
-74LV1T34 provides 8mA output drive at 5V. 
+Data connection is 3V3 from Teensy.
+
+74LV1T34 provides 8mA output drive at 5V, so needs a +5V power.
 74AHCT125 provides 20mA (max) 8mA (recommended) output drive at 5V. Has output enable, not needed here.
 
 - [Use 100nF](https://learn.adafruit.com/adafruit-neopixel-uberguide?view=all#discrete-neopixel-products-2894456) between 5V and GND beside each LED.
@@ -46,7 +48,7 @@ See also [a known bad Gate in the original Arturia Beatstep](https://synthnerd.w
 
 Gate is +10V. Test droop into low loads like 10k.
 
-Trigger is +10V for 10ms. Maybe 9V with a small 12V to 9V regulator? Thus, needs a +12V from the power board.
+Trigger is around +10V for 10ms. Maybe 9V with a small 12V to 9V regulator? Thus, needs a +12V from the power board (but not -12V.).
 
 ## Boards
 

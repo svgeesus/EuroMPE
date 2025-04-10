@@ -8,8 +8,13 @@ Given the 5V power draw, a beefier cable seems desirable. ModularAddict [sells t
 
 > instead of using 28AWG IDC connectors, we've changed to a compatible connector that accepts crimped wire connections, and have bumped up to 22AWG.
 
+- 28 awg is 0.3211 mm dia, 0.081 mm² cross-section
+- 22 awg is 0.6438 mm dia, 0.3255 mm² cross-section; 4x lower resistance.
+
 (16 10-pin and 3 16-pin modules in [existing case](https://modulargrid.net/e/modules_racks/data_sheet/61770) draw 50mA to 170mA and would benefit from beefier cables)
 (they also sell [box headers](https://modularaddict.com/parts/cables/power-cables/box-header-for-eurorack-power))
+
+Cables and box headers orderd 9 April 2025.
 
 ## Digital and Analog 0V
 
@@ -80,7 +85,7 @@ bottom plane gnd (again for cooling), well stitched to top, with traces for ±12
 Stacked behind the perfdac-jack and pots board, and add two standoffs after the pots to make it more stable.
 See [Power, Jacks and Trimmers](power-jacks-trimmers.md)
 
-Available space is limited: 30mm wide, 55.4mm high.
+Available space is limited: 32mm wide, 55.4mm high.
 
 > We detected a 2 layer board of 1.26 x 2.17 inches (32.0 x 55.1mm)
 > 3 boards will cost $13.65
@@ -214,6 +219,26 @@ At 135C/w, 23.5C above ambient.
 ![back](./img/power-back.png)
 
 v0.1 ordered from OSH Park 8 April 2025
+
+## BOM
+
+For 1 board; get enough for 3 boards
+
+| Num | Description               | Part number |
+|:----|---------------------------|-------------|
+| 3   | 47k 0805                  | [RR1220P-473-D](https://www.mouser.com/ProductDetail/Susumu/RR1220P-473-D?qs=U7dmUkNviFumN%2FTQHe5dYA%3D%3D) |
+| 2   | 6k98 0805                 | [RR1220P-6981-D-M](https://www.mouser.com/ProductDetail/Susumu/RR1220P-6981-D-M?qs=U7dmUkNviFuXqFxi3OHwFA%3D%3D) |
+| 1   | 13k3 0805                 | [RR1220P-1332-D-M](https://www.mouser.com/ProductDetail/Susumu/RR1220P-1332-D-M?qs=nCAm%252BcMdy9x56YMT8S7APg%3D%3D) |
+| 2   | LT1763CS8                 | [LT1763CS8#PBF ](https://www.mouser.com/ProductDetail/Analog-Devices/LT1763CS8PBF?qs=ytflclh7QUWtPSONnyRehg%3D%3D) |
+| 1   | LT1964ES5-BYP             | [LT1964ES5-BYP#TRPBF](https://www.mouser.com/ProductDetail/Analog-Devices/LT1964ES5-BYPTRPBF?qs=ytflclh7QUX1OXX5LOTJoA%3D%3D) |
+| 3   | 10uF X7R 1206             | [CGA5L1X7R1E106K160AC](https://www.mouser.com/ProductDetail/TDK/CGA5L1X7R1E106K160AC?qs=sGAEpiMZZMvsSlwiRhF8qsDt8B2LujiH8edEy30%252BWlo%3D) |
+| 3   | 10nF C0G 1206             | [GRM3195C1E103JA01D ](https://www.mouser.com/ProductDetail/Murata-Electronics/GRM3195C1E103JA01D?qs=sGAEpiMZZMvsSlwiRhF8qvVBufgFfTqrCWHTymdajsk%3D) |
+| 2   | 22uF 25V Nichicon         |   GOT       |
+| 1   | 68uF 25V Nichicon         |   GOT       |
+| 1   | Euro_Power_16pin_Shrouded | [ModularAddict](https://www.modularaddict.com/parts/cables/premium-eurorack-power-cables) |
+| 7   | Conn_01x04_Pin 0.1"       | [ModularAddict](https://modularaddict.com/parts/cables/power-cables/box-header-for-eurorack-power) |
+
+Ordered Mouser and ModularAddict parts 9 April 2025
 
 ## Work Plan
 

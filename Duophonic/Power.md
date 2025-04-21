@@ -245,6 +245,9 @@ Ordered Mouser and ModularAddict parts 9 April 2025
 ### Cabling
 
 [3M 8124/04](https://www.digikey.com/en/products/detail/3m/8124-04/22532397)
+[reasonable tool and connectors kit](https://www.amazon.com/Qibaok-Crimping-Ratcheting-Connectors-0-1-0-5mm%C2%B2/dp/B07ZK5F8HP?ref_=ast_sto_dp)
+
+Can cut longer Adafruit cables in half/to length then re-crimp connectors on the free ends.
 
 ## Work Plan
 

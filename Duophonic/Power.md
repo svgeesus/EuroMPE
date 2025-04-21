@@ -235,10 +235,16 @@ For 1 board; get enough for 3 boards
 | 3   | 10nF C0G 1206             | [GRM3195C1E103JA01D ](https://www.mouser.com/ProductDetail/Murata-Electronics/GRM3195C1E103JA01D?qs=sGAEpiMZZMvsSlwiRhF8qvVBufgFfTqrCWHTymdajsk%3D) |
 | 2   | 22uF 25V Nichicon         |   GOT       |
 | 1   | 68uF 25V Nichicon         |   GOT       |
-| 1   | Euro_Power_16pin_Shrouded | [ModularAddict](https://www.modularaddict.com/parts/cables/premium-eurorack-power-cables) |
-| 7   | Conn_01x04_Pin 0.1"       | [ModularAddict](https://modularaddict.com/parts/cables/power-cables/box-header-for-eurorack-power) |
+| 1   | Euro_Power_16pin_Shrouded | [ModularAddict](https://modularaddict.com/parts/cables/power-cables/box-header-for-eurorack-power)  |
+| 7   | Conn_01x04_Pin 0.1"       |  |
+| 1   | Eurorack 16-pin cable     | [ModularAddict](https://www.modularaddict.com/parts/cables/premium-eurorack-power-cables) |
+
 
 Ordered Mouser and ModularAddict parts 9 April 2025
+
+### Cabling
+
+[3M 8124/04](https://www.digikey.com/en/products/detail/3m/8124-04/22532397)
 
 ## Work Plan
 

@@ -96,6 +96,21 @@ Optional 150nF cap for lower noise on Vref (likely not needed, but place footpri
 
 Quad amps: TL074A is cheap (TL074ACDT 3mV/6mV, $0.867/10) but consider **OPA4172IPW** (200μV/1mV, 10 V/μs, 75mA 60Ω, $3.32/10, TSSOP-14, currently in stock) or **OPA4197ID** (25μV/100μV, 20 V/μs, $3.53/10 **GOT 10**), **OPA4202ID** (20μV/250μV, low slew rate 0.35V/μs, $2.81/10 SOIC-14 in stock) as non-inverting output buffers. Use innie current limiting resistor.
 
+OR to save needing bipolar power, use quad RRIO low voltage single-supply op-amps. Key features are swing to 0V (sing to positive rail not an issue due to 5V signal from DC nd 5V5 rail), current drive, offset. Must allow 5V5 rail. Must be unity gain stable.
+
+| Op-amp    | Swing    | Offset (typ/max)   | Price        |
+|:----------|----------|--------------------|--------------|
+| TLV4316   | -/35 mV  | ±0.75/±3 mV        | **$1.06/10** |
+| OPA4340UA | 1/5 mV   | ±150/±500 μV       | **$7.22/1**  |
+
+Note [OPA4340UA](https://www.mouser.com/ProductDetail/Texas-Instruments/OPA4340UA?qs=wgAEGBTxy7nRw0DNGsw%252Bcg%3D%3D) has both _abs max_ and _recommended_ supply rail at 5V5. Much better swing to rail, 6x lower offset, 7x the price. Somewhat worse swing if load is below 50 kΩ, which is easily possible:
+
+> A class AB output stage with common-source transistors is used to achieve rail-to-rail output. For light resistive loads (> 50 kΩ), the output voltage is typically a few millivolts from the supply rails. With moderate resistive loads (2 kΩ to 50 kΩ), the output can swing to within a few tens of millivolts from the supply rails and maintain high open-loop gain (see Figure 15).
+
+Not exactly clear what they are dodging around, here:
+
+> The OPA340 series operational amplifiers are fully specified from 2.7 V to 5 V. However, supply voltage may range from 2.5 V to 5.5 V. Parameters are ensured over the specified supply range—a unique feature of the OPA340 series.
+
 DAC settling time, 1/4 scale to 3/4 scale is 10μs typ, so 20μs full scale and 40μs for fastest possible square wave = 25kHz in theory (will be slower). Spec sheet slew rate is 0.75 V/μs.
 
 Better to use a slew limiter or low-pass filter on the output to avoid stair-stepping and VCA crackles; so one quad op-amp only does for 2 outputs. See circuit in TI [Single Op-Amp Slew Rate Limiter](http://www.ti.com/lit/pdf/TIDU026) for slew limiter. Needs fast recovery from overload, adequate slew rate. 5V/ms (160Hz lowpass) seems like a good starting point. Breadboard then examine stepped ramp on scope to determine optimal slew rate. "Op-amp slew rate = 10x-100x slew rate limiter value." OPA4202 likely too slow.

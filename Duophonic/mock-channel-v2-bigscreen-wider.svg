@@ -210,7 +210,7 @@
 
     <g transform="translate(8,-18.9)">
         <!-- trimmers  and jacks -->
-        <rect x="-22.5" y="72" width="58.5" height="55.4" style="fill: maroon; fill-opacity: 0.2; stroke: #966"/>
+        <rect x="-22.5" y="72" width="58.5" height="55.4" style="fill: maroon; fill-opacity: 0.4; stroke: #966"/>
         <!-- power -->
         <rect x="-22.5" y="72" width="32" height="55.118" style="fill: lime; fill-opacity: 0.2; stroke: #966"/>
 

@@ -258,7 +258,7 @@ Can cut longer Adafruit cables in half/to length then re-crimp connectors on the
 ## Work Plan
 
 - [ ] Measure current draw of perf DAC board (5V5 regulator needs to power 2) before ordering PSU parts, to be sure the SMD 5V5 will be suitable. Might need a 3-pin regulator.
-- [ ] Check min spacing for cables to plug into the power headers!
+- [x] Check min spacing for cables to plug into the power headers!
 - [x] Check size and spacing of standoff holes, with jacks board and with panel.
 - [ ] More vias to connect front and back ground planes
 - [x] Order parts from Mouser

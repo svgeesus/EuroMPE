@@ -286,6 +286,8 @@ Jacks use 6.3mm dia hole. 10mm between pairs of the same channel, extra 1mm to s
 ### Pots
 
 6mm shaft with bushing so 6.1mm hole
+19.73mm from low channel jacks
+13mm vertically
 
 - strike ( 69.17, 56.25)
 - lift   ( 69.17, 43.25)

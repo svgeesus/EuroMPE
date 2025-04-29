@@ -242,10 +242,16 @@ For 1 board; get enough for 3 boards
 
 Ordered Mouser and ModularAddict parts 9 April 2025
 
+SMD parts soldered with MHP50 hotplate, stock reflow profile, 29 Apr 2025.
+
 ### Cabling
 
-[3M 8124/04](https://www.digikey.com/en/products/detail/3m/8124-04/22532397)
+- [3M 8124/04](https://www.digikey.com/en/products/detail/3m/8124-04/22532397)
 [reasonable tool and connectors kit](https://www.amazon.com/Qibaok-Crimping-Ratcheting-Connectors-0-1-0-5mm%C2%B2/dp/B07ZK5F8HP?ref_=ast_sto_dp)
+- [Hozan P-707](https://www.amazon.com/Hozan-P-707-Open-Barrel-Crimper/dp/B005SUHPSW?th=1) is [supposedly good](https://www.mattmillman.com/info/crimpconnectors/dupont-and-dupont-connectors/#m20)
+- [20awg 2-core for higher current](https://www.amazon.com/Silicone-Electrical-Conductor-Parallel-Flexible/dp/B07K9JKXM9/ref=sr_1_6?crid=2R2JRYGL791I3&dib=eyJ2IjoiMSJ9.ITl7m7w85FkV9-Pzr5BiDuRp3lIPRYGboIPBCjZyrubfra2uiOtHaTyDfUznIkrbTYOWu_jnWKAJrsb_TdZciiuvTMcxN_PVhsO3UaIh1PY3OFqfcZeFaMyKfcS_kLySwdaBTbTN1p5xIVxYUJ54i0pFD5YDpVPOnSgJiONcNU6IOg14qwMHz8SIA2ayxi2JuHCGYhsHYJoSr78w2SbRhdz-sjTPl12AhOzT6_UB0Ja8YhO3XTENxA-DFQ-lJwDXaju1XtJwFBnxZlL9SFWPnBp3bCy_xNw3aulp_kN7z2A.dugg_lapLCq_R66dikiePbcYaGfim5XZTG8cnSqMWLY&dib_tag=se&keywords=20awg%2BSilicone%2BElectrical%2BWire%2B2%2BConductor&qid=1745331952&sprefix=20%2Bawg%2Bsilicone%2Belectrical%2Bwire%2B2%2Bconductor%2Caps%2C141&sr=8-6&th=1)
+
+[wire gauge chart](https://www.rapidtables.com/calc/wire/wire-gauge-chart.html)
 
 Can cut longer Adafruit cables in half/to length then re-crimp connectors on the free ends.
 
@@ -255,5 +261,9 @@ Can cut longer Adafruit cables in half/to length then re-crimp connectors on the
 - [ ] Check min spacing for cables to plug into the power headers!
 - [x] Check size and spacing of standoff holes, with jacks board and with panel.
 - [ ] More vias to connect front and back ground planes
-- [ ] Order parts from Mouser
+- [x] Order parts from Mouser
+- [x] Solder SMD parts
+- [ ] Solder through-hole parts
+- [ ] QA inspection, probe for shorts
+- [ ] Power up and test voltages
 

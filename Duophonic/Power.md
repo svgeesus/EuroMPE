@@ -244,6 +244,8 @@ Ordered Mouser and ModularAddict parts 9 April 2025
 
 SMD parts soldered with MHP50 hotplate, stock reflow profile, 29 Apr 2025.
 
+![smd soldered](./img/power-smd-soldered.jpg)
+
 ### Cabling
 
 - [3M 8124/04](https://www.digikey.com/en/products/detail/3m/8124-04/22532397)

@@ -90,6 +90,8 @@ Available space is limited: 32mm wide, 55.4mm high.
 > We detected a 2 layer board of 1.26 x 2.17 inches (32.0 x 55.1mm)
 > 3 boards will cost $13.65
 
+[Power schematic (PDF)](./power-schematic.pdf)
+
 ### LT1763 for 9V5 (U1)
 
 > Output Capacitance and Transient Response
@@ -180,6 +182,7 @@ At 74C/W, rise above ambient is 28C.
 
 ![U3 schematic](./img/power_5V5_schematic.png)
 
+
 ### LT1964-BYP for -9V5 (U2)
 
 10μF? input cap, 1nF noise bypass cap, 6μ8F to 10μF output cap. Again **r2 = 47k**
@@ -217,6 +220,8 @@ At 135C/w, 23.5C above ambient.
 ![front](./img/power-front.png)
 
 ![back](./img/power-back.png)
+
+[board (PDF)](./power-board.pdf)
 
 v0.1 ordered from OSH Park 8 April 2025
 

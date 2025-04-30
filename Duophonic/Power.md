@@ -246,6 +246,10 @@ SMD parts soldered with MHP50 hotplate, stock reflow profile, 29 Apr 2025.
 
 ![smd soldered](./img/power-smd-soldered.jpg)
 
+Through-hole parts soldered 30 Apr 2025
+
+![all parts](./img/power-with-connectors.jpg)
+
 ### Cabling
 
 - [3M 8124/04](https://www.digikey.com/en/products/detail/3m/8124-04/22532397)
@@ -265,7 +269,7 @@ Can cut longer Adafruit cables in half/to length then re-crimp connectors on the
 - [ ] More vias to connect front and back ground planes? No, pin connectors serve the purpose
 - [x] Order parts from Mouser
 - [x] Solder SMD parts
-- [ ] Solder through-hole parts
-- [ ] QA inspection, probe for shorts
+- [x] Solder through-hole parts
+- [x] QA inspection, probe for shorts
 - [ ] Power up and test voltages
 

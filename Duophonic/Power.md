@@ -266,6 +266,28 @@ Through-hole parts soldered 30 Apr 2025
 
 Can cut longer Adafruit cables in half/to length then re-crimp connectors on the free ends.
 
+## Test Results
+
+Measured with Keysight 34465A 6.5 digit DMM.
+
+### Positive 9.5V
+
+**+9.453V** (unloaded), slight rising trend over 10 minutes.
+
+![plus 9v5](./img/power_plus_9v5.png)
+
+### Negative 9.5V
+
+**-9.453V** (unloaded), slight falling trend over 10 minutes. Larger voltage span from the negative regulator, but no cause for concern.
+
+![minus 9v5](./img/power_minus_9v5.png)
+
+### Positive 5.5V
+
+**+5.519V** (unloaded) slight rising trend over 10 minutes.
+
+![plus 5v5](./img/power_plus_5v5.png)
+
 ## Work Plan
 
 - [ ] Measure current draw of perf DAC board (5V5 regulator needs to power 2) before ordering PSU parts, to be sure the SMD 5V5 will be suitable. Might need a 3-pin regulator.

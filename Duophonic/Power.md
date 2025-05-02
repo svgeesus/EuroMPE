@@ -268,7 +268,7 @@ Can cut longer Adafruit cables in half/to length then re-crimp connectors on the
 
 ## Test Results
 
-Measured with Keysight 34465A 6.5 digit DMM.
+Measured with Keysight 34465A 6.5 digit DMM. 10V range, 100PLC.
 
 ### Positive 9.5V
 
@@ -298,5 +298,5 @@ Measured with Keysight 34465A 6.5 digit DMM.
 - [x] Solder SMD parts
 - [x] Solder through-hole parts
 - [x] QA inspection, probe for shorts
-- [ ] Power up and test voltages
+- [x] Power up and test voltages
 

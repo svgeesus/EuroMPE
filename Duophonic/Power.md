@@ -299,4 +299,6 @@ Measured with Keysight 34465A 6.5 digit DMM. 10V range, 100PLC.
 - [x] Solder through-hole parts
 - [x] QA inspection, probe for shorts
 - [x] Power up and test voltages
+- [ ] Test voltages with 10ma to 100mA loads
+- [ ] Measure 0.1 to 10Hz noise with LNA (positive voltages only!)
 

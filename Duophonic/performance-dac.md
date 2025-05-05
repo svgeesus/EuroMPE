@@ -259,7 +259,11 @@ or
 
 ### Buffer board
 
-![O_C buffer](./img/O_C-T41%20output_buffer.png) Ornament and Crime T41 DAC output buffer has 4x gain (not needed here) and bipolar offset (also not needed). 220R current limiter seems a bit high, but is inside the loop.
+Eight identical copies of this:
+
+![one buffer](./img/perfdac-buffer-schematic-one.png)
+
+Because of limited board space, the buffer board takes 5V5 from the power board then passes it on to the v0.2 DAC board.
 
 ## Workplan
 

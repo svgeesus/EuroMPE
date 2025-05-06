@@ -199,7 +199,7 @@ Maybe use [elapsedMillis](https://www.pjrc.com/teensy/td_timing_elaspedMillis.ht
 Three separate boards, stacking and parallel to panel, for:
 
 - DAC and level shifter (5V5 power)
-- op-amp buffers/slew (±12V power)
+- op-amp buffers/slew (±12V power, now changed to 5V5 power)
 - jacks
 
 SYNC is active-low CS. Din is MOSI. SCLK is SCLK :)
@@ -209,11 +209,11 @@ Better to bring out LDAC through level shifter so there is flexibility on contro
 
 ### DAC board
 
-#### Schematic
+#### Schematic v0.1
 
 ![Schematic](./img/PerfDAC-schematic.png)
 
-#### DAC PCB
+#### DAC PCB v0.1
 
 > We detected a 2 layer board of 1.33 x 1.03 inches (33.8 x 26.3mm)
 > 3 boards will cost $6.85
@@ -232,7 +232,7 @@ Board ordered 29 Jan 2024
 
 _Notice that the buffer board connections are on the other side of the board!_
 
-### DAC BOM  (per DAC board, need 2)
+### DAC BOM v0.1  (per DAC board, need 2)
 
 #### Resistors
 
@@ -248,6 +248,7 @@ or
 (2) C2, C3 Kemet C1206C104K3GEC7210 25V 100nF C0G 1206 ceramics $0.051/100 = **$5.10 GOT**
 
 (1) C4  [Murata GRM31C5C1H154JE02L](https://www.mouser.com/ProductDetail/Murata-Electronics/GRM31C5C1H154JE02L?qs=qSfuJ%252Bfl%2Fd70Xb0PJyHSQA%3D%3D) 50V 0.15μF 1206 C0G $0.241/10 = **$2.41**
+spec sheet says **150nF or higher** and fig 8 shows 4.8μF so try 470nF?
 
 #### DAC
 
@@ -264,6 +265,15 @@ Eight identical copies of this:
 ![one buffer](./img/perfdac-buffer-schematic-one.png)
 
 Because of limited board space, the buffer board takes 5V5 from the power board then passes it on to the v0.2 DAC board.
+
+>  We detected a 2 layer board of 1.83 x 0.94 inches (46.5 x 24.0mm)
+> 3 boards will cost $8.60 
+
+![buffer board](./img/perfDAC_buffer_board.png)
+
+![board 3d front](./img/PerfDAC_buffers_board3D_front.png)
+
+![board 3d back](./img/PerfDAC_buffers_board3D_back.png)
 
 ## Workplan
 

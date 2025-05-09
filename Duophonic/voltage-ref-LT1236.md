@@ -134,7 +134,7 @@ Full bottom ground plane; top ground connections with vias by caps and GND conne
 
 Pin 1 of LT1236 is indicated by a circular mark and is aligned to the top-left corner on this board (indicated by small dot on silkscreen).
 
-Pin 1 of OPA2186 is on the side with the bevel, and is aligned closest to R5 on this board.
+Pin 1 of OPA2186 is on the side with the bevel, and is aligned closest to J3 on this board.
 
 ![soic-8](./img/soic-8.png)
 

@@ -87,6 +87,10 @@ So the OPA2186 is comparable on some criteria and much superior on offset and of
 >
 > Egan, M. _The 20-Bit DAC Is the Easiest Part of a 1-ppm-Accurate Precision Voltage Source_
 
+OPA2192: 0.2 × 0.005 ÷ (10²) = 0.000,01 ppm
+
+AD8676B: 0.2 × 4.5 ÷ (10²) = 0.009 ppm
+
 Maybe try a non-autozero non-chopper op-amp. **OPA2192** looks suitable: Vos ±8μV typ, ±50μV max, drift ±0.1 typ, ±0.5 max μV/°C.
 
 See figs 32 and 33 in the datasheet:

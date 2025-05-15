@@ -277,17 +277,50 @@ Because of limited board space, the buffer board takes 5V5 from the power board 
 
 Two rows of connectors to jacks board are 40.894mm apart, measured from the connector centres.
 
+### Buffers BOM
+
+#### Op Amps
+
+(2) [OPA4340UA SOIC-14](https://www.mouser.com/ProductDetail/Texas-Instruments/OPA4340UA?qs=wgAEGBTxy7nRw0DNGsw%252Bcg%3D%3D)  **$7.22/1** get 6
+
+#### Resistors
+
+(8) [47R 0805](https://www.mouser.com/ProductDetail/YAGEO/RC0805FR-1347RL?qs=m6lXFsvg5e1DgwoB9H70oA%3D%3D) **$0.012/100 = $1.20** get 100
+
+(8) [4k7 0805](https://www.mouser.com/ProductDetail/YAGEO/RC0805FR-134K7L?qs=m6lXFsvg5e0pEdZpmZIKLA%3D%3D) **$0.01/100 = $1.00** get 100
+
+#### Capacitors
+
+(8) [100pF 0805](https://www.mouser.com/ProductDetail/KEMET/C0805C101K3GACTU?qs=8Ol5LxMUegri7nW0mRT3Bw%3D%3D) **$0.077/10 = $0.77** get 30
+
+(2) [100nF 1206](https://www.mouser.com/ProductDetail/KEMET/C1206C104K3GEC7210?qs=55YtniHzbhB4%2FhY0bEvvcQ%3D%3D) **$0.392/10 = $3.92** get 20
+
+|Reference                   |Value             |Qty|
+|----------------------------|------------------|---|
+|C5,C7,C8,C9,C10,C11,C12,C13 |100pF 0805        |8  |
+|C6,C14                      |100nF 1206        |2  |
+|J1,J2                       |Conn_01x06_Pin    |2  |
+|J3,J4                       |Conn_01x05_Socket |2  |
+|PWR1                        |Conn_01x04_Pin    |1  |
+|R3,R6,R9,R10,R15,R16,R17,R18|47R 0805          |8  |
+|R4,R5,R7,R8,R11,R12,R13,R14 |4k7 0805          |8  |
+|U1,U2                       |OPA4340UA SOIC-14 |2  |
+
 ## Workplan
 
 - [ ] Breadboard op-amp slew circuit, test with any DAC stepped at 7bit resolution. Get good capacitor values for sufficient slew.
 - [x] Check existing parts stock, to be sure.
-- [ ] Select an op-amp for post-dac conditioning.
-- [ ] Lay out panel jack PCB and op-amp PCB, check enough room for connectors and easy to route
-- [x] Lay out perf DAC board, 
+- [x] Select an op-amp for post-dac conditioning.
+- [ ] Lay out panel jack PCB check enough room for connectors and easy to route
+- [x] Lay out perf DAC board
 - [x] send DAC board to OSH Park to enable testing a populated DAC board.
-- [x] Order parts
+- [x] Order DAC parts
 - [ ] Build perf DAC board
-- [ ] Test perf DAC board with 5V5 supplies
-- [ ] Test perf DAC with output to breadboarded op-amp circuit.
-- [ ] Order op amp and panel boards from OSH Park
+- [ ] Test perf DAC board with 5V5 supplies.
+- [x] Lay out buffer board
+- [ ] Send buffer board to OSH Park
+- [ ] Order buffer parts
+- [ ] Build and test buffer
+- [ ] Test perf DAC with output to  buffer board
+- [ ] Order panel board from OSH Park
 - [ ] Assemble completed perf DAC, measure, check against panel drawing

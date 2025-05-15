@@ -200,14 +200,7 @@ But maybe better to group these closer to the RGB LED outs as they all get route
 
 ### RGB LED control
 
-Two (Low, High channel) RGB LEDs need 6 PWM outputs. See [PWM Frequency](https://www.pjrc.com/teensy/td_pulse.html) and [freq measure multi on teensy 4.0](https://forum.pjrc.com/index.php?threads/freq-measure-multi-on-teensy-4-0.74384/#post-338376). These are at 4.482 kHz by default:
-
-- 24 Low G (FlexPWM1.2)
-- 25 Low B (FlexPWM1.3)
-- 36 High R (FlexPWM2.3)
-- 37 High G (FlexPWM2.3)
-- 28 Low R (FlexPWM3.1)
-- 29 High B (FlexPWM3.1)
+Now using 2 Neopixels, see [Gate LED](./Gate-LED.md). Needs 3V3, GND and any two data pins.
 
 ### "Fader" pots
 

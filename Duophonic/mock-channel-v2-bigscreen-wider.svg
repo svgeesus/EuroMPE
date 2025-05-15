@@ -210,9 +210,9 @@
 
     <g transform="translate(8,-18.9)">
         <!-- trimmers  and jacks -->
-        <rect x="-22.5" y="72" width="58.5" height="55.4" style="fill: maroon; fill-opacity: 0.4; stroke: #966"/>
+        <rect x="-23.5" y="72" width="59.5" height="55.4" style="fill: maroon; fill-opacity: 0.4; stroke: #966"/>
         <!-- power -->
-        <rect x="-22.5" y="72" width="32" height="55.118" style="fill: lime; fill-opacity: 0.2; stroke: #966"/>
+        <rect x="-23.5" y="72" width="32" height="55.118" style="fill: lime; fill-opacity: 0.2; stroke: #966"/>
 
         <!-- perf DAC jacks and trimmers-->
         <!-- 13mm center-to-center vertical spacing -->
@@ -229,17 +229,22 @@
         <use href="#Thoniconn-vertical" x="5" y="112.5"/> 
         <use href="#Thoniconn-vertical" x="26" y="112.5"/> 
 
-        <!-- KiCad PerfDAC v1 board -->
-        <!-- v2 needs to be less wide, taller -->
-        <g transform="translate(3, 0)">
-            <rect x="7" y="82" width="26.27" height="33.68" style="fill: green; fill-opacity: 0.2; stroke: #686"/>
+        <!-- buffer board -->
+        <rect x="9" y="76" width="24" height="46.5" style="fill: orange; fill-opacity: 0.6; stroke: #966" />
 
-            <!--  connectors to op-amp board -->
-            <rect x="8.05" y="83.2" width="10.28" height="5.2" style="fill:#787"/>
-            <rect x="8.05" y="109.60" width="10.28" height="5.2" style="fill:#787"/>
+        <!-- power 11.2 3.6 -->
+        <rect x="9.3" y="93.65" width="3.6" height="11.2" style="fill: orange"/>
+
+        <!-- buffer to jack connections -->
+        <rect x="13" y="78" width="13.7" height="3.5" style="fill: orange"/>
+
+        <!-- KiCad PerfDAC v2 board -->
+        <!-- v2 needed to be less wide, taller -->
+        <g transform="translate(3.7, 0)">
+            <rect x="9.5" y="77" width="23.5" height="43.68" style="fill: green; fill-opacity: 0.2; stroke: #686"/>
 
             <!-- power -->
-            <rect x="21.01" y="83.34" width="10.28" height="2.66" style="fill:#787"/>
+            <!-- <rect x="21.01" y="83.34" width="10.28" height="2.66" style="fill:#787"/> -->
 
             <!-- SPI 22.37 -->
             <rect x="29.37" y="88.77" height="20.44" width="2.66" style="fill:#787; "/>
@@ -281,7 +286,7 @@
     pads are 3mm radius, holes are 1.6mm radius
 
  -->
-        <g transform="translate(-22.5, 72)" style="fill-opacity: 0.2">
+        <g transform="translate(-23.5, 72)" style="fill-opacity: 0.2">
         <!--  top left of power board is 0,0  -->
             <circle cx="3.556" cy="4.826" r="3" style="fill: orange"/>
             <circle cx="3.556" cy="4.826" r="1.6" style="fill: #222"/>

@@ -230,18 +230,23 @@
         <use href="#Thoniconn-vertical" x="26" y="112.5"/> 
 
         <!-- buffer board -->
-        <rect x="9" y="76" width="24" height="46.5" style="fill: orange; fill-opacity: 0.6; stroke: #966" />
+        <rect x="9" y="76" width="23.4" height="46.5" style="fill: orange; fill-opacity: 0.6; stroke: #966" />
 
         <!-- power 11.2 3.6 -->
         <rect x="9.3" y="93.65" width="3.6" height="11.2" style="fill: orange"/>
 
-        <!-- buffer to jack connections -->
+        <!-- buffer to jack connections, 40.844 apart -->
         <rect x="13" y="78" width="13.7" height="3.5" style="fill: orange"/>
+        <rect x="13" y="118.844" width="13.7" height="3.5" style="fill: orange"/>
+
+        <!-- buffer to DAC connections, 33.274 apart  -->
+        <rect x="16.5" y="81.8" width="16.3" height="3.6" style="fill:#787"/> 
+        <rect x="16.5" y="115.074" width="16.3" height="3.6" style="fill:#787"/> 
 
         <!-- KiCad PerfDAC v2 board -->
         <!-- v2 needed to be less wide, taller -->
         <g transform="translate(3.7, 0)">
-            <rect x="9.5" y="77" width="23.5" height="43.68" style="fill: green; fill-opacity: 0.2; stroke: #686"/>
+            <rect x="9.5" y="81.5" width="23.5" height="34.68" style="fill: green; fill-opacity: 0.2; stroke: #686"/>
 
             <!-- power -->
             <!-- <rect x="21.01" y="83.34" width="10.28" height="2.66" style="fill:#787"/> -->

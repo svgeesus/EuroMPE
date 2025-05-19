@@ -266,8 +266,8 @@ Eight identical copies of this:
 
 Because of limited board space, the buffer board takes 5V5 from the power board then passes it on to the v0.2 DAC board.
 
-> We detected a 2 layer board of 1.83 x 0.94 inches (46.5 x 24.0mm)
-> 3 boards will cost $8.60
+ > We detected a 2 layer board of 1.83 x 0.92 inches (46.5 x 23.4mm)
+> 3 boards will cost $8.40
 
 ![buffer board](./img/perfDAC_buffer_board.png)
 
@@ -276,6 +276,8 @@ Because of limited board space, the buffer board takes 5V5 from the power board 
 ![board 3d back](./img/PerfDAC_buffers_board3D_back.png)
 
 Two rows of connectors to jacks board are 40.894mm apart, measured from the connector centres.
+
+Ordered from OSH Park 19 May 2025.
 
 ### Buffers BOM
 

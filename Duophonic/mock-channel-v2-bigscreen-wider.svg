@@ -335,10 +335,11 @@
     
     </g>
 
-    <g transform="rotate(-90 20 90) translate(26 -70.5)" >
+    <g transform="rotate(-90 20 90) translate(24 -71.5)" >
 <!-- perf DAC 2 -->
 <!-- is going to need a totally different front jack board that mates to the same perfdac board 
 @@ moved all jacks over by 2mm to make room for power board; @@update the fpd
+@@ need to move down to make room, then update fpd
 -->
         <use href="#Thoniconn-vertical" x="8" y="73"/> 
         <use href="#Thoniconn-vertical" x="23" y="73"/> 
@@ -354,18 +355,31 @@
 
         <rect x="8" y="72" width="24" height="52.4" style="stroke: #966"/>
 
-        <!-- KiCad PerfDAC board -->
-        <rect x="7" y="82" width="26.27" height="33.68" style="fill: green; fill-opacity: 0.2; stroke: #686"/>
+        <!-- buffer board -->
+        <rect x="9" y="76" width="23.4" height="46.5" style="fill: orange; fill-opacity: 0.6; stroke: #966" />
 
-        <!--  connectors to op-amp board -->
-        <rect x="8.05" y="83.2" width="10.28" height="5.2" style="fill:#787"/>
-        <rect x="8.05" y="109.60" width="10.28" height="5.2" style="fill:#787"/>
+        <!-- power 11.2 3.6 -->
+        <rect x="9.3" y="93.65" width="3.6" height="11.2" style="fill: orange"/>
 
-        <!-- power -->
-        <rect x="21.01" y="83.34" width="10.28" height="2.66" style="fill:#787"/>
+        <!-- buffer to jack connections, 40.844 apart -->
+        <rect x="13" y="78" width="13.7" height="3.5" style="fill: orange"/>
+        <rect x="13" y="118.844" width="13.7" height="3.5" style="fill: orange"/>
 
-        <!-- SPI 22.37 -->
-        <rect x="29.37" y="88.77" height="20.44" width="2.66" style="fill:#787"/>
+        <!-- buffer to DAC connections, 33.274 apart  -->
+        <rect x="16.5" y="81.8" width="16.3" height="3.6" style="fill:#787"/> 
+        <rect x="16.5" y="115.074" width="16.3" height="3.6" style="fill:#787"/> 
+
+        <!-- KiCad PerfDAC v2 board -->
+        <!-- v2 needed to be less wide, taller -->
+        <g transform="translate(3.7, 0)">
+            <rect x="9.5" y="81.5" width="23.5" height="34.68" style="fill: green; fill-opacity: 0.2; stroke: #686"/>
+
+            <!-- power -->
+            <!-- <rect x="21.01" y="83.34" width="10.28" height="2.66" style="fill:#787"/> -->
+
+            <!-- SPI 22.37 -->
+            <rect x="29.37" y="88.77" height="20.44" width="2.66" style="fill:#787; "/>
+        </g>
     </g>
 
 
@@ -398,7 +412,7 @@
 
     <use href="#Teensy4.1horizontal" x="-65" y="24.2"/>
     <!-- MPU board -->
-    <rect x="-70.5" y="10.5" width="77" height="39.5" style="stroke: #696"/>
+    <rect x="-70.5" y="10.5" width="77" height="38" style="stroke: #696"/>
     <!-- Europower -->
     <!-- <rect x="-33"  height="9.4" width="28" y="11.8" style="fill:#787; fill-opacity: 0.4"/> -->
     <!-- electrolytic caps -->

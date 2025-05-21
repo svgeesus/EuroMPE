@@ -275,7 +275,8 @@ Because of limited board space, the buffer board takes 5V5 from the power board 
 
 ![board 3d back](./img/PerfDAC_buffers_board3D_back.png)
 
-Two rows of connectors to jacks board are 40.894mm apart, measured from the connector centres.
+- Two rows of connectors to jacks board are 40.894mm apart, measured from the connector centres.
+- Two rows of connectors to DAC board are 33.274mm apart.
 
 Ordered from OSH Park 19 May 2025.
 

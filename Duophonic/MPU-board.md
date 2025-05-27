@@ -284,9 +284,9 @@ Connectors on back of board go to the display/buttons/encoder board.
 - [ ] Measure switch bounce, test software bounce, try hardware debounces
 - [ ] Get Thonk encoders, encoder knobs, buttons
 - [x] Test PWM of RGB LED.
-  - [Problems getting to exactly 0 and 100%](https://forum.pjrc.com/index.php?threads/full-range-pwm-for-rgb-led-control.74386/)
-  - Solved by special-casing PWM extremes.
-  - Test Adafruit LEDs instead
+  - [x] [Problems getting to exactly 0 and 100%](https://forum.pjrc.com/index.php?threads/full-range-pwm-for-rgb-led-control.74386/)
+  - [x] Solved by special-casing PWM extremes.
+  - [x] Test Adafruit LEDs instead
 - [ ] Test 10V gate output.
 - [ ] Fabricate [Gate-LED](./Gate-LED.md) board.
 - [ ] Test FreqCount

@@ -22,6 +22,8 @@ Pin 5 is trim, unconnected if not used; different from MAX6226_50 where pin 5 is
 
 Fairly good at 2ppm/C typ, 5ppm/C max, not as good as MAX6226_50 1ppm/C typ, 3ppm/C max.
 
+So a 20C rise gives (5 × 20 / 1E6) × 5V × 1200 = 0.6 cents error, for the positive reference. Negative reference also has the tempco mismatch from the resistors; Susumu RG2012V-182-P-T1 0.02% is 5ppm, adding another 0.6 cents max error.
+
 Bourns wirewound trimmers with 50ppm/C are fearsomely expensive (3057Y-1-503 is $32.91/1) compared to the 100ppm/C cermet types (3296P-1-503LF $2.42/1). As this application is ratiometric, the tempco effect should be diminished.
 
 See [Bourns® Precision Trimming Potentiometers with Improved Linearity and Lower CRV](https://www.bourns.com/docs/technical-documents/technical-library/trimmers/technical-articles/bourns_custom_trimmer_white_paper.pdf?sfvrsn=69fd77f6_9)

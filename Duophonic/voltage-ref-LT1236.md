@@ -232,17 +232,27 @@ pins are (measured with micrometer) 45.06 ÷ 2 = 22.53mm apart
 - [x] Fab v0.1 board
 - [x] Check existing component inventory
 - [x] order Vref, op-amp (same as pitch DAC uses)
-- [ ] Build, test
+- [x] Build, test
 - [ ] Burn-in
 - [ ] Do stability analysis for innie OPA2192 with 2 R and 1 C
-- [ ] Design and fab temporary [power board](./Power.md) to test for ripple, noise, need for isolation resistors
+- [x] Design and fab temporary [power board](./Power.md) to test for ripple, noise, need for isolation resistors
 
 ## Test results - positive reference
 
 ### Initial power-up
 
+![initial](./img/1236-pos-initial.png)
+
+Measured using Keysight 34465A, 10V range, 100PLC. Reference chip 1 **5.01721V**  (range 5.01715 to 5.01722). Climbed fractionally over first 2 minutes (chip warmup?) then stable.
+
+![pos](./img/1236-pos-one-hour.png)
+
+Stable at **5.01724V** over 1 hour (range 5.01721 to 5.01725)
+
 ### Burn-in
 
-### RC filtering
-
 ## Test results - negative reference
+
+![neg](./img/1236-neg-two-hours.png)
+
+Stable at **-501747V** over 2 hours with some cyclic drift (range -5.01749 to -5.01747).

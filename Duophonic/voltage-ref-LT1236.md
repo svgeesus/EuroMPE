@@ -239,20 +239,42 @@ pins are (measured with micrometer) 45.06 ÷ 2 = 22.53mm apart
 
 ## Test results - positive reference
 
+### Power
+
+Measured with Joranalogue Test3, combination of [power board](./Power.md) plus Vref is drawing (peak) 5mA om +12V, 4mA on -12V.
+
 ### Initial power-up
 
 ![initial](./img/1236-pos-initial.png)
 
-Measured using Keysight 34465A, 10V range, 100PLC. Reference chip 1 **5.01721V**  (range 5.01715 to 5.01722). Climbed fractionally over first 2 minutes (chip warmup?) then stable.
+Measured using Keysight 34465A, 10V range, 100PLC. Reference chip 1 **5.01721V**  (range 5.01715 to 5.01722). Climbed fractionally over first minute (chip warmup?) then stable.
 
 ![pos](./img/1236-pos-one-hour.png)
 
 Stable at **5.01724V** over 1 hour (range 5.01721 to 5.01725)
 
+### Trimmed
+
+![trimmed](./img/1236-trimmed.png)
+
+Trimmed to **5.000 025V** an error of 25μV or 0.03 cents.
+
 ### Burn-in
+
+![trimmed-15h](./img/1236-pos-trimmed-15h.png)
+
+Overnight, fairly stable at **5.000 024V** sd 4μV.
 
 ## Test results - negative reference
 
 ![neg](./img/1236-neg-two-hours.png)
 
 Stable at **-501747V** over 2 hours with some cyclic drift (range -5.01749 to -5.01747).
+
+### Burn-in
+
+![neg-trimmed](./img/1236-neg-28h.png)
+
+Positive ref trimmed as noted above. Negative ref is **-5.000 292V** implying the inverting op-amp has an actual gain of -5.000281 ÷ 5.000024 = **-1.00005359974**, a mismatch of -0.0000535 × 100 = -0.00535%. Good result considering the pair of 0.02% resistors used.
+
+Drifting is likely caused by tempco of the matched resistor pair (Susumu RG2012V-182-P-T1 1.8k 0.02% 5ppm/C) as it is not observed on the positive voltage output, only the negative. This rules out Vref tempto (2ppm/C typ, 5ppm/C max). Lacking simultaneous measurement of the positive and negative outputs (only one 6.5 digit DMM) this cannot be completely ruled out, however.

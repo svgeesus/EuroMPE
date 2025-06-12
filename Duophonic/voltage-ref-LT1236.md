@@ -20,11 +20,11 @@ Pin 5 is trim, unconnected if not used; different from MAX6226_50 where pin 5 is
 
 ## Temperature
 
-Fairly good at 2ppm/C typ, 5ppm/C max, not as good as MAX6226_50 1ppm/C typ, 3ppm/C max.
+Fairly good at 2ppm/°C typ, 5ppm/°C max, not as good as MAX6226_50 1ppm/°C typ, 3ppm/°C max.
 
 So a 20C rise gives (5 × 20 / 1E6) × 5V × 1200 = 0.6 cents error, for the positive reference. Negative reference also has the tempco mismatch from the resistors; Susumu RG2012V-182-P-T1 0.02% is 5ppm, adding another 0.6 cents max error.
 
-Bourns wirewound trimmers with 50ppm/C are fearsomely expensive (3057Y-1-503 is $32.91/1) compared to the 100ppm/C cermet types (3296P-1-503LF $2.42/1). As this application is ratiometric, the tempco effect should be diminished.
+Bourns wirewound trimmers with 50ppm/°C are fearsomely expensive (3057Y-1-503 is $32.91/1) compared to the 100ppm/°C cermet types (3296P-1-503LF $2.42/1). As this application is ratiometric, the tempco effect should be diminished.
 
 See [Bourns® Precision Trimming Potentiometers with Improved Linearity and Lower CRV](https://www.bourns.com/docs/technical-documents/technical-library/trimmers/technical-articles/bourns_custom_trimmer_white_paper.pdf?sfvrsn=69fd77f6_9)
 
@@ -102,7 +102,7 @@ See figs 32 and 33 in the datasheet:
 See Figure 69. Precision Reference Buffer in the datasheet (driving a 10μF capacitive load with great stability).
 
 Pair of close-tolerance low thermal drift resistors for the VrefN op-amp.
-Use of Vishay matched-pair resistors [suggested on EEVBlog](https://www.eevblog.com/forum/metrology/max6226-vref-and-ground-planes/msg4725761/#msg4725761) such as [these](https://www.mouser.com/ProductDetail/Vishay-Thin-Film/MPM2002QT3?qs=KOdD7VNvzR83jUiiLOdaaQ%3D%3D) 10k/10k 0.01% ratio, 25ppm/C.
+Use of Vishay matched-pair resistors [suggested on EEVBlog](https://www.eevblog.com/forum/metrology/max6226-vref-and-ground-planes/msg4725761/#msg4725761) such as [these](https://www.mouser.com/ProductDetail/Vishay-Thin-Film/MPM2002QT3?qs=KOdD7VNvzR83jUiiLOdaaQ%3D%3D) 10k/10k 0.01% ratio, 25ppm/°C.
 Is it feasible to make a board that accepts either?
 
 Decoupling caps.
@@ -190,7 +190,7 @@ or
 
 OR
 
-(2) Vishay Precision Group Y16292K50000T9R  2.5k 0.01% ± 0.2 ppm/°C 0805 $12.74/1 = **$25.48** at minimum (need more for multiple boards, for testing).
+(2) Vishay Precision Group Y16292K50000T9R  2.5k 0.01% ± 0.2 ppm/°C 0805 foil $12.74/1 = **$25.48** at minimum (need more for multiple boards, for testing).
 
 ### Generic ESR-increasing, trimming, and load resistors
 
@@ -202,7 +202,6 @@ OR
 ### Diode
 
 (1) 1N4148 Diodes Incorporated 1N4148W-7-F SOD-123 $0.095/10 = **$0.95** **GOT 10 24 Feb 2024**
-
 
 ### Trimmer
 
@@ -233,7 +232,7 @@ pins are (measured with micrometer) 45.06 ÷ 2 = 22.53mm apart
 - [x] Check existing component inventory
 - [x] order Vref, op-amp (same as pitch DAC uses)
 - [x] Build, test
-- [ ] Burn-in
+- [x] Burn-in
 - [ ] Do stability analysis for innie OPA2192 with 2 R and 1 C
 - [x] Design and fab temporary [power board](./Power.md) to test for ripple, noise, need for isolation resistors
 
@@ -251,7 +250,7 @@ Measured using Keysight 34465A, 10V range, 100PLC. Reference chip 1 **5.01721V**
 
 ![pos](./img/1236-pos-one-hour.png)
 
-Stable at **5.01724V** over 1 hour (range 5.01721 to 5.01725)
+Stable at **5.017 24V** over 1 hour (range 5.01721 to 5.01725)
 
 ### Trimmed
 
@@ -265,11 +264,15 @@ Trimmed to **5.000 025V** an error of 25μV or 0.03 cents.
 
 Overnight, fairly stable at **5.000 024V** sd 4μV.
 
+![56hr](./img/1236-pos-65hr.png)
+
+Four days later, still stable at **5.000 021V** sd  2μV.
+
 ## Test results - negative reference
 
 ![neg](./img/1236-neg-two-hours.png)
 
-Stable at **-501747V** over 2 hours with some cyclic drift (range -5.01749 to -5.01747).
+Stable at **-5.017 47V** over 2 hours with some cyclic drift (range -5.01749 to -5.01747).
 
 ### Burn-in
 
@@ -277,4 +280,8 @@ Stable at **-501747V** over 2 hours with some cyclic drift (range -5.01749 to -5
 
 Positive ref trimmed as noted above. Negative ref is **-5.000 292V** implying the inverting op-amp has an actual gain of -5.000281 ÷ 5.000024 = **-1.00005359974**, a mismatch of -0.0000535 × 100 = -0.00535%. Good result considering the pair of 0.02% resistors used.
 
-Drifting is likely caused by tempco of the matched resistor pair (Susumu RG2012V-182-P-T1 1.8k 0.02% 5ppm/C) as it is not observed on the positive voltage output, only the negative. This rules out Vref tempto (2ppm/C typ, 5ppm/C max). Lacking simultaneous measurement of the positive and negative outputs (only one 6.5 digit DMM) this cannot be completely ruled out, however.
+![later](./img/1236-neg-later.png)
+
+Later, mean value drifted only fractionally, to **-5.000 293V**
+
+Drifting is likely caused by tempco of the matched resistor pair (Susumu RG2012V-182-P-T1 1.8k 0.02% 5ppm/°C) as it is not observed on the positive voltage output, only the negative. This rules out Vref tempto (2ppm/°C typ, 5ppm/°C max). Lacking simultaneous measurement of the positive and negative outputs (only one 6.5 digit DMM) this cannot be completely ruled out, however.

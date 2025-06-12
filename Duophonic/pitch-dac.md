@@ -191,7 +191,7 @@ Board v0.2 [ordered at OSH Park](https://oshpark.com/shared_projects/UpIebEcc) 1
 
 ### Stabilization film caps
 
-(2) Cornell Dubilier FCP0805H101J-J1 33pF 0805 $0.526/10 = **$5.26 GOT** [Mouser](https://www.mouser.com/ProductDetail/Cornell-Dubilier-CDE/FCP0805H101J-J1)
+(2) Cornell Dubilier FCP0805H101J-J1 100pF 0805 $0.526/10 = **$5.26 GOT** [Mouser](https://www.mouser.com/ProductDetail/Cornell-Dubilier-CDE/FCP0805H101J-J1)
 
 **need to get the stabilization cap value finalized!**
 

@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "pitchdac")(type "KiCad")(uri "$(KIPRJMOD)/pitchdac.pretty")(options "")(descr ""))
+)

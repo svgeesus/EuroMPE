@@ -91,6 +91,8 @@ _OPA2197ID_ (OPA2197ID $2.97/1) dual is 25uV typ 100uV max Vos, 5nA Ibias so twi
 
 **OPA2186D** another (OPA2186DR $2.22/10 newer, more available; SOIC-8) option. 1μV/10μV Vos as it is chopper stabilized. 4.8 max nA Ibias over temp, 55pA @25C. Check **slew rate 0.35 V/μs** is ok for slew limiter, if used. Quad version has _4x worse Vos_ so use duals. The _maximum_ power supply voltage for the OPAx186 is 24 V (±12 V). (Abs Max 26V). So running on ±9.5V looks good.
 
+But the chopper op-amp was a PITA with the earlier Vref design, while the non-chopper OPA2192 worked great in the new Vref design. So:
+
 **OPA2192** ($4.63/10) Vos ±8μV typ, ±50μV max, drift ±0.1 typ, ±0.5 max μV/°C. Input bias ±5 pA typ, **±20 pA** max @25C. So much better than the recommended AD5781.
 
 OPA4187IPW (1μV/10μV TSSOP-14 $5.60/10 in stock) quad a bit expensive
@@ -157,14 +159,18 @@ Reducing now to 1.0nF, overshoot is 116mv!
 
 I also wonder if the simulation, with an high slew rate step, is no longer accurately representing the actual rise time of the DAC; the datasheet slew rate is 50V/μs (Unbuffered output, 10 MΩ||20 pF load) so for a 5V step thae rise time would be 100ns which is what the simulation shows.
 
-
 ## Schematic
 
-![Schematic](./img/pitchdac-schematic.png) ([PDF](./pitchdac-schematic.pdf))
+![Schematic](./img/pitchdac-schematic-v03.png) ([PDF](./pitchdac-schematic-v03.pdf))
 
 Should CLR and RESET have been tied high? YES oops v.01 board does not, fixed in v.02:
 
 > If the RESET pin is not used, it should be hardwired to IOVCC.
+
+Diode is between V<sub>DD</sub> (positive analog) and **V<sub>CC</sub>** ie positive digital power 
+**not** V<sub>DD</sub> (positive analog) and **V<sub>SS</sub>** negative analog power. Broken in V0.2 board, fixed in V0.3
+
+I guess that gave the opportunity to port from Eagle to KiCad at the same time.
 
 ## Board
 
@@ -183,6 +189,11 @@ Board v0.2 with missing traces from CLR and RESET, corrected.
 
 Board v0.2 [ordered at OSH Park](https://oshpark.com/shared_projects/UpIebEcc) 15 Oct 2023. GOT.
 
+![3d-front](./img/pitchdac-board-front.png)
+![3d-back](./img/pitchdac-board-back.png)
+
+
+
 ## BOM (per DAC board, need 2)
 
 ### DAC
@@ -197,13 +208,11 @@ Board v0.2 [ordered at OSH Park](https://oshpark.com/shared_projects/UpIebEcc) 1
 
 ### Bulk ceramic caps
 
-(2) Kemet C1206X105K3RACTU  25V 1μF X7R 10% 1206 ceramic $0.839/10 = **$8.39 GOT**
-
-(10) Samsung CL31B106KAHNFNE  25V 10μF X7R 10% 1206 ceramic $0.094/10 = **$1.88 GOT**  [Mouser](https://www.mouser.com/ProductDetail/Samsung-Electro-Mechanics/CL31B106KAHNFNE) get 20
+(7) Samsung CL31B106KAHNFNE  25V 10μF X7R 10% 1206 ceramic $0.094/10 = **$1.88 GOT**  [Mouser](https://www.mouser.com/ProductDetail/Samsung-Electro-Mechanics/CL31B106KAHNFNE) get 20
 
 ### Decoupling and NR caps
 
-(10) Kemet C1206C104K3GEC7210 25V 100nF C0G 1206 ceramics $0.051/100 = **$5.10 GOT**
+(7) Kemet C1206C104K3GEC7210 25V 100nF C0G 1206 ceramics $0.051/100 = **$5.10 GOT**
 
 ### Resistors
 

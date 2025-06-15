@@ -176,14 +176,10 @@ I guess that gave the opportunity to port from Eagle to KiCad at the same time.
 
 Separate digital and analog ground planes.
 
-> We detected a 2 layer board of 2.36 x 1.17 inches (59.9 x 29.7mm)
-> 3 boards will cost $13.75
-
-![Board](./img/pitchdac-board.png)
-
 Board v0.1 [ordered at OSH Park](https://oshpark.com/shared_projects/gQY5hg1l) 31 Mar 2023. GOT.
 
-![osh](./img/pitchdac-top-osh.png)
+![osh](./img/pitchdac-top-osh-v03.png)
+![osh back](./img/pitchdac-bottom-osh-v03.png)
 
 Board v0.2 with missing traces from CLR and RESET, corrected.
 
@@ -192,7 +188,10 @@ Board v0.2 [ordered at OSH Park](https://oshpark.com/shared_projects/UpIebEcc) 1
 ![3d-front](./img/pitchdac-board-front.png)
 ![3d-back](./img/pitchdac-board-back.png)
 
+>  We detected a 2 layer board of 2.36 x 1.17 inches (59.9 x 29.7mm)
+> 3 boards will cost $13.75
 
+Bord v0.3 [ordered at OSH Pak](https://oshpark.com/projects/GQX9tlid/view_design) 13 June 2025.
 
 ## BOM (per DAC board, need 2)
 

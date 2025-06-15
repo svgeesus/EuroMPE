@@ -1,11 +1,11 @@
 
 # Performance (Control Change) DAC
 
-One octal DAC does 2 voices  of attack veocity, lift velocity, pressure, glide. 
+One octal 14-bit DAC does 2 voices  of attack veocity, lift velocity, pressure, glide. High Resolution Velocity prefix supported.
 
 *Note* final MPE specification reduces precision of pressure & glide to 7bit. However, later expansion to 14bit not ruled out. Implement 14bit as an experiment; 7bit still supported. See [MIDI](./MIDI.md) on precision, smoothing and update rate.
 
-Similar circuitry also used to provide the global performance controls (mod wheel, sustain, etc).
+Similar circuitry also used to provide the global performance controls (mod wheel, sustain, etc). Can support 14-bit MSB/LSB Control Change, and also RPN and NRPN.
 
 ## Chip selection
 
@@ -232,6 +232,8 @@ Board ordered 29 Jan 2024
 
 _Notice that the buffer board connections are on the other side of the board!_
 
+This board will not fit. Needs a v0.2 with the connectors staggered, see buffer board. However, still build one for testing.
+
 ### DAC BOM v0.1  (per DAC board, need 2)
 
 #### Resistors
@@ -320,9 +322,10 @@ Ordered from OSH Park 19 May 2025.
 - [x] Order DAC parts
 - [ ] Build perf DAC board
 - [ ] Test perf DAC board with 5V5 supplies.
+- [ ] Lay out perf DAC v0.2 board
 - [x] Lay out buffer board
-- [ ] Send buffer board to OSH Park
-- [ ] Order buffer parts
+- [x] Send buffer board to OSH Park
+- [x] Order buffer parts
 - [ ] Build and test buffer
 - [ ] Test perf DAC with output to  buffer board
 - [ ] Order panel board from OSH Park

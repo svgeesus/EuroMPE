@@ -284,4 +284,8 @@ Positive ref trimmed as noted above. Negative ref is **-5.000 292V** implying th
 
 Later, mean value drifted only fractionally, to **-5.000 293V**
 
+![even later](./img/1236-neg-44h.png)
+
+and a week later essentially identical, **-5.000 294V**
+
 Drifting is likely caused by tempco of the matched resistor pair (Susumu RG2012V-182-P-T1 1.8k 0.02% 5ppm/°C) as it is not observed on the positive voltage output, only the negative. This rules out Vref tempto (2ppm/°C typ, 5ppm/°C max). Lacking simultaneous measurement of the positive and negative outputs (only one 6.5 digit DMM) this cannot be completely ruled out, however.

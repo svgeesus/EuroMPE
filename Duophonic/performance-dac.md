@@ -254,7 +254,7 @@ spec sheet says **150nF or higher** and fig 8 shows 4.8μF so try 470nF?
 
 OR
 
-(1) C4 [Murata GRM31C5C1E474JE01L](https://www.mouser.com/ProductDetail/Murata-Electronics/GRM31C5C1E474JE01L?qs=hd1VzrDQEGj8GOC097EZLg%3D%3D) 25V 470nF C0G $0.429/10 = **$4.29**
+(1) C4 [Murata GRM31C5C1E474JE01L](https://www.mouser.com/ProductDetail/Murata-Electronics/GRM31C5C1E474JE01L?qs=hd1VzrDQEGj8GOC097EZLg%3D%3D) 25V 470nF C0G 1206 $0.429/10 = **$4.29**
 
 #### DAC
 
@@ -314,6 +314,8 @@ Ordered from OSH Park 19 May 2025.
 |R3,R6,R9,R10,R15,R16,R17,R18|47R 0805          |8  |
 |R4,R5,R7,R8,R11,R12,R13,R14 |4k7 0805          |8  |
 |U1,U2                       |OPA4340UA SOIC-14 |2  |
+
+![board-photo](./img/buffers-photo.jpg)
 
 ## Workplan
 

@@ -252,9 +252,13 @@ or
 (1) C4  [Murata GRM31C5C1H154JE02L](https://www.mouser.com/ProductDetail/Murata-Electronics/GRM31C5C1H154JE02L?qs=qSfuJ%252Bfl%2Fd70Xb0PJyHSQA%3D%3D) 50V 0.15μF 1206 C0G $0.241/10 = **$2.41**
 spec sheet says **150nF or higher** and fig 8 shows 4.8μF so try 470nF?
 
+OR
+
+(1) C4 [Murata GRM31C5C1E474JE01L](https://www.mouser.com/ProductDetail/Murata-Electronics/GRM31C5C1E474JE01L?qs=hd1VzrDQEGj8GOC097EZLg%3D%3D) 25V 470nF C0G $0.429/10 = **$4.29**
+
 #### DAC
 
-(1) DAC8168ICPW  14-bit octal $25.98/1 = **$25.98 GOT**
+(1) DAC8168ICPW  14-bit octal $28.34/1 = **$28.34 GOT** but _lost_, get 3 more!
 
 #### Logic
 

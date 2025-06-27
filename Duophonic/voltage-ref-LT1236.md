@@ -268,6 +268,18 @@ Overnight, fairly stable at **5.000 024V** sd 4μV.
 
 Four days later, still stable at **5.000 021V** sd  2μV.
 
+![100h](./img/1236-pos-100h.png)
+
+Long-term monitoring (100 hours) slight downward trend as it matures and settles,
+and small spikes due to air conditioning switching on and off during the day.
+Mean is now **5.000 015V**. Reference has been on for over 400 hours now.
+
+![30min](./img/1236-pos-30min.png)
+
+The short term stability (air conditioning off) also looks good.
+sd  2μV
+Accuracy also looks great, 3ppm (15μV) high.
+
 ## Test results - negative reference
 
 ![neg](./img/1236-neg-two-hours.png)
@@ -287,5 +299,8 @@ Later, mean value drifted only fractionally, to **-5.000 293V**
 ![even later](./img/1236-neg-44h.png)
 
 and a week later essentially identical, **-5.000 294V**
+
+Used without correction (i.e. assuming the reference is -5V) 
+that gives an error of 0.000294 × 1,200 = **0.3528 cents**.
 
 Drifting is likely caused by tempco of the matched resistor pair (Susumu RG2012V-182-P-T1 1.8k 0.02% 5ppm/°C) as it is not observed on the positive voltage output, only the negative. This rules out Vref tempto (2ppm/°C typ, 5ppm/°C max). Lacking simultaneous measurement of the positive and negative outputs (only one 6.5 digit DMM) this cannot be completely ruled out, however.

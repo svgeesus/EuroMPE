@@ -190,7 +190,7 @@ or
 
 OR
 
-(2) Vishay Precision Group Y16292K50000T9R  2.5k 0.01% ± 0.2 ppm/°C 0805 foil $12.74/1 = **$25.48** at minimum (need more for multiple boards, for testing).
+(2) Vishay Precision Group Y16292K50000T9R  2.5k 0.01% ± 0.2 ppm/°C 0805 foil $12.74/1 = **$25.48** at minimum (need more for multiple boards, for testing). **GOT 4 26 June 2025**
 
 ### Generic ESR-increasing, trimming, and load resistors
 
@@ -240,7 +240,7 @@ pins are (measured with micrometer) 45.06 ÷ 2 = 22.53mm apart
 
 ### Power
 
-Measured with Joranalogue Test3, combination of [power board](./Power.md) plus Vref is drawing (peak) 5mA om +12V, 4mA on -12V.
+Measured with Joranalogue Test3, combination of [power board](./Power.md) plus Vref is drawing (peak) 5mA on +12V, 4mA on -12V.
 
 ### Initial power-up
 
@@ -304,3 +304,9 @@ Used without correction (i.e. assuming the reference is -5V)
 that gives an error of 0.000294 × 1,200 = **0.3528 cents**.
 
 Drifting is likely caused by tempco of the matched resistor pair (Susumu RG2012V-182-P-T1 1.8k 0.02% 5ppm/°C) as it is not observed on the positive voltage output, only the negative. This rules out Vref tempto (2ppm/°C typ, 5ppm/°C max). Lacking simultaneous measurement of the positive and negative outputs (only one 6.5 digit DMM) this cannot be completely ruled out, however.
+
+![drifting](./img/1236-neg-drift.png)
+
+160 hour monitoring still shows some overall drift and some temperature-relted cycling with the AC.
+
+Plan to build a second board with the Vishay metal film resistors.

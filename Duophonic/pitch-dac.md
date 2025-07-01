@@ -223,7 +223,7 @@ Bord v0.3 [ordered at OSH Pak](https://oshpark.com/projects/GQX9tlid/view_design
 
 ### Op-Amps
 
-(2) TI [OPA2186DR](https://www.mouser.com/ProductDetail/Texas-Instruments/OPA2186DR) $2.22/10 = **$22.20 GOT**
+(2) TI [~~OPA2186DR~~](https://www.mouser.com/ProductDetail/Texas-Instruments/OPA2186DR) $2.22/10 = **$22.20 GOT**
 
 but no those choppers are a _pain in the ass,_ so
 
@@ -239,8 +239,10 @@ but no those choppers are a _pain in the ass,_ so
 - [ ] Check slew rate and corner freq for 10k, 220R, 33pF; breadboard with TL074 to check. (Nope, oscilloscope busted)
 - [x] Get OPA2186DR, other components for one board
 - [x] Lay out v0.1 board, fab
-- [x] Lay out v0.2 board
+- [x] Lay out v0.2 board, fab
+- [x] Lay out v0.3 board in KiCad (!)
 - [x] Fab v0.2 board and get stencil, too
+- [x] Fab v0.3 board and get stencil, too
 - [ ] Lay out jacks board for panel, to check connector spacing for DAC boards
 - [ ] Build and test one DAC board with (previously tested) VREF board.
 - [ ] If all okay, order 2 more DAC and components for other board. Else refine, redo board.

@@ -1,12 +1,14 @@
 # Voltage ref
 
-Linear LT1236LS8 may be an alternative to [MAX6226](./voltage-ref-MAX6226.md) if MAX6226_50 cannot be made to work reliably.
+Linear LT1236LS8 has become the alternative to [MAX6226](./voltage-ref-MAX6226.md) which could not be made to work reliably.
 
-[EEVBlog thread on LT1236LS8 internals](https://www.eevblog.com/forum/metrology/decapping-the-lt1236ls8/msg2933682/#msg2933682)
+[EEVBlog thread on LT1236LS8 internals](https://www.eevblog.com/forum/metrology/decapping-the-lt1236ls8/msg2933682/#msg2933682) and [detailed photos and description (in German)](https://www.richis-lab.de/REF05.htm)
 
 Both use ceramic LS8 package with copper pads underneath the device. This gives improved stability, particularly to moisture and PCB flex, but makes soldering difficult without a reflow oven. Hot air tends to blow the lightweight ceramic chip off the board, so holding in place with tweezers is required.
 
 ![pinout](./img/LT1236LS8-pinout.png)
+
+![internals](./img/richis_05_01.jpg)
 
 Vref board needs to provide both +5V and -5V to drive the pitch DACs.
 

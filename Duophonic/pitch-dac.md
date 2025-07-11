@@ -193,6 +193,18 @@ Board v0.2 [ordered at OSH Park](https://oshpark.com/shared_projects/UpIebEcc) 1
 
 Bord v0.3 [ordered at OSH Pak](https://oshpark.com/projects/GQX9tlid/view_design) 13 June 2025.
 
+### Sizing
+
+![headers](./img/header-stack.jpg)
+
+Stack of PitchDac | pin socket | double pin header (on vref) | pin socket | PitchDAC is way too big: 27.8mm across the outer PitchDAC PCBs.
+
+![no headers](./img/no-header-stack.jpg)
+
+With connectors directly soldered together much slimmer, 12.8mm across the outer PitchDAC PCBs. But then very difficult to modify or repair once assembled. Would need to be soldered in place even for testing.
+
+Maybe [low-profile headers](https://protosupplies.com/product/header-set-low-profile-1x24/) like on the ProtoSupplies Teensy boards, and cut-down double-ended pin headers?
+
 ## BOM (per DAC board, need 2)
 
 ### DAC

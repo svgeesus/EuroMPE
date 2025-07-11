@@ -314,3 +314,11 @@ Drifting is likely caused by tempco of the matched resistor pair (Susumu RG2012V
 160 hour monitoring still shows some overall drift and some temperature-relted cycling with the AC.
 
 Plan to build a second board with the Vishay metal film resistors.
+
+![after restart](./img/1236-neg-restart.png)
+
+After shutting down for 4 days then restarting soak, a shift was observed then a gradual drift over two hours to the previous value.
+
+![over temp](./img/1236-neg-96hr-temp.png)
+
+98 hour soak, second half with AC off and window open so larger temperature swing (18 to 26C) still variation is fairly small. Lowest **-5.000 29V** highest **-5.000 25V**

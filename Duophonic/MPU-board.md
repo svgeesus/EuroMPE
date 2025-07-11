@@ -18,7 +18,14 @@ freq    current
 
 T3.6 ($29.25) had less memory, has 2 DAC outs (not needed here), power draw unspecified (@@measure it) but less than 4.1. Unobtainable due to NXP parts shortage, was discontinued along with 3.5, 3.2 and LC!
 
+![Teensy 4.1](./img/Teensy-4.1-Low-Profile-Headers-with-Sockets-2.jpg)
+
 Ensure USB cable plugged into the micro-USB (which leads to the panel-mount USB socket) clears the back of the [Gate LED board](./Gate-LED.md).
+
+Perhaps use [ProtoSupplies low-profile headers](https://protosupplies.com/product/header-set-low-profile-1x24/) to connect Teensy 4.1 to the MPU board [as seen here](https://forum.pjrc.com/index.php?threads/construction-suggestions-for-midi-synth-project.77136/#post-359959). Also [available pre-soldered to Teensy 4.1](https://protosupplies.com/product/teensy-4-1-low-profile/) with modifications:
+
+- The VUSB/VIN trace is cut
+- An SMD 1A Schottky diode is placed across the VUSB / VIN pads
 
 ## MIDI
 
@@ -247,7 +254,7 @@ Depending on testing of [PerfDAC](), an additional pin for LDAC might be needed.
 ## Schematic
 
 Few components on the board, mainly breaking out to multi-pin connectors to other boards.
-The Eurorack power connector is there.
+The Eurorack power connector is now on a separate [power board](./Power.md).
 
 [MPU on socket in KiCad](https://forum.kicad.info/t/advise-one-choosing-components/51516/5)
 
@@ -255,7 +262,7 @@ The Eurorack power connector is there.
 
 From the front panel mockup, dimensions are tight: 77mm wide by 39.5mm high. Could expand _one mm_ wider before colliding with the [Gate, LED, Tune](./Gate-LED.md) board, but needs enough room for the micro USB cable (unless using the D+, D- pads). Could expand _very slightly_ higher, constraints are staying within safe rack rail distances and not coliding with or pushing down the [PerfDAC2 (MIDI CC)](./performance-dac.md) board.
 
-Curent in-progress mockup is 76mm by 39mm so just fits within that. However the Eurorack power connector takes up too much space and connections to the DACs and display are suboptimal. SD slot is obstructed, too.
+Curent in-progress mockup is 76mm by 39mm so just fits within that. However connections to the DACs and display are suboptimal. SD slot is obstructed, too.
 
 ![front](./img/MPU-test.png)
 
@@ -265,14 +272,7 @@ Connectors on back of board go to the display/buttons/encoder board.
 
 ## BOM
 
-### Capacitors
 
-- 4 Kyocera AVX 0805YA102FAT2A  1nF 16V 1% C0G 0805  $0.361/10 =  **$3.61**
-- 3 Nichicon 10μF 105C 16V **GOT**
-
-### Connectors
-
-- 1 Samtec TST-108-01-L-D 8x2 shrouded header $2.55/1 = **$2.55** 3d model requested 2024-05-11
 
 ## Development & Testing plan
 

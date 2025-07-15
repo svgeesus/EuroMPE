@@ -40,6 +40,8 @@ Datasheet says 35 MHz Schmitt triggered Digital Interface. However, minimum CS (
 
 To write directly to DAC register, the R/W bit is 0 (see datasheet Table 7) and the address bits are 0 0 1 (see Table 8). The 20 bit register data is 18 bit data, pad LSB two bits with zero, although the chip doesn't care. This is the same format as the 20-bit AD5791.
 
+Demo sketch in [pitch_DAC18_explorer_01](sketches/pitch_DAC18_explorer_01).
+
 To isolate from digital 0V noise, consider optical isolator. ISO724x high speed quad isolator (got 2, Jan 2018). MOSI, SCLK, CS/SYNC and ?LDAC however AD5781 has separate DGND, AGND pins. Also isolator would need separate, DAC-side 3V3 supply. So, NO.
 
 [10k pullup on SPI CS line](https://www.pjrc.com/better-spi-bus-design-in-3-steps/).

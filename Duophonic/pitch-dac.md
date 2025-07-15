@@ -32,7 +32,7 @@ Advantage of ±12V-derived ±9V5 rails, compared to using Eurorack 5V power, is 
 
 With Teensy 4.1, for AD5781ARUZ no level shifters needed.
 
-Data is written to the AD5781 in a 24-bit word format, which sadly precludes SPI.transfer16() or SPI.transfer32(); however there is an [SPI.transfer(buffer, size)](https://www.arduino.cc/reference/en/language/functions/communication/spi/transfer/), where size would be 3, which might work, see [example](https://forum.pjrc.com/index.php?threads/spi-write-24bits.74194/#post-336450). Another option (without buffer overwrite) is [SPI.transfer(txBuffer, rxBuffer, cnt);](https://forum.pjrc.com/index.php?threads/spi-write-24bits.74194/#post-336456) where rxbuffer can be NULL
+Data is written to the AD5781 in a 24-bit word format, which sadly precludes SPI.transfer16() or SPI.transfer32(); however there is an [SPI.transfer(buffer, size)](https://docs.arduino.cc/language-reference/en/functions/communication/SPI/transfer/), where size would be 3, which might work, see [example](https://forum.pjrc.com/index.php?threads/spi-write-24bits.74194/#post-336450). Another option (without buffer overwrite) is [SPI.transfer(txBuffer, rxBuffer, cnt);](https://forum.pjrc.com/index.php?threads/spi-write-24bits.74194/#post-336456) where rxbuffer can be NULL
 
 Datasheet says 35 MHz Schmitt triggered Digital Interface. However, minimum CS (SYNC) high time 48ns. SCLK min cycle time 40ns which is 25MHz. So use well below that (start at 10MHz).
 

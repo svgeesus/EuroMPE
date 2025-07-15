@@ -4,7 +4,6 @@
 // Teensy 4.1
 #include <SPI.h>
 
-// Teensy 3.x/LC pins, needs level shifter to 5V
 // CS1 10
 // CS2 8
 // SCLK 13

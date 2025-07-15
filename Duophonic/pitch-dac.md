@@ -173,7 +173,7 @@ Should CLR and RESET have been tied high? YES oops v.01 board does not, fixed in
 
 > If the RESET pin is not used, it should be hardwired to IOVCC.
 
-Diode is between V<sub>DD</sub> (positive analog) and **V<sub>CC</sub>** ie positive digital power 
+Diode is between V<sub>DD</sub> (positive analog) and **V<sub>CC</sub>** ie positive digital power
 **not** V<sub>DD</sub> (positive analog) and **V<sub>SS</sub>** negative analog power. Broken in V0.2 board, fixed in V0.3
 
 I guess that gave the opportunity to port from Eagle to KiCad at the same time.
@@ -194,7 +194,7 @@ Board v0.2 [ordered at OSH Park](https://oshpark.com/shared_projects/UpIebEcc) 1
 ![3d-front](./img/pitchdac-board-front.png)
 ![3d-back](./img/pitchdac-board-back.png)
 
->  We detected a 2 layer board of 2.36 x 1.17 inches (59.9 x 29.7mm)
+> We detected a 2 layer board of 2.36 x 1.17 inches (59.9 x 29.7mm)
 > 3 boards will cost $13.75
 
 Bord v0.3 [ordered at OSH Pak](https://oshpark.com/projects/GQX9tlid/view_design) 13 June 2025.
@@ -203,13 +203,13 @@ Bord v0.3 [ordered at OSH Pak](https://oshpark.com/projects/GQX9tlid/view_design
 
 ![headers](./img/header-stack.jpg)
 
-Stack of PitchDac | pin socket | double pin header (on vref) | pin socket | PitchDAC is way too big: 27.8mm across the outer PitchDAC PCBs.
+Stack of PitchDac | pin socket | double pin header (on vref) | pin socket | PitchDAC is way too big: 27.8mm across the outer PitchDAC PCBs. Space on [current mockup](./mock-channel-v2-bigscreen-wider.svg) is 18.7mm!
 
 ![no headers](./img/no-header-stack.jpg)
 
 With connectors directly soldered together much slimmer, 12.8mm across the outer PitchDAC PCBs. But then very difficult to modify or repair once assembled. Would need to be soldered in place even for testing.
 
-Maybe [low-profile headers](https://protosupplies.com/product/header-set-low-profile-1x24/) like on the ProtoSupplies Teensy boards, and cut-down double-ended pin headers?
+Maybe [low-profile headers](https://protosupplies.com/product/header-set-low-profile-1x24/) like on the ProtoSupplies Teensy boards **ordered 14 July 2025**, and cut-down double-ended pin headers?
 
 ## BOM (per DAC board, need 2)
 

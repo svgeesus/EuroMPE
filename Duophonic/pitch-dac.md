@@ -36,6 +36,10 @@ Data is written to the AD5781 in a 24-bit word format, which sadly precludes SPI
 
 Datasheet says 35 MHz Schmitt triggered Digital Interface. However, minimum CS (SYNC) high time 48ns. SCLK min cycle time 40ns which is 25MHz. So use well below that (start at 10MHz).
 
+![dac register](./img/AD5781-dac-register.png)
+
+To write directly to DAC register, the R/W bit is 0 (see datasheet Table 7) and the address bits are 0 0 1 (see Table 8). The 20 bit register data is 18 bit data, pad LSB two bits with zero, although the chip doesn't care. This is the same format as the 20-bit AD5791.
+
 To isolate from digital 0V noise, consider optical isolator. ISO724x high speed quad isolator (got 2, Jan 2018). MOSI, SCLK, CS/SYNC and ?LDAC however AD5781 has separate DGND, AGND pins. Also isolator would need separate, DAC-side 3V3 supply. So, NO.
 
 [10k pullup on SPI CS line](https://www.pjrc.com/better-spi-bus-design-in-3-steps/).
@@ -247,14 +251,16 @@ but no those choppers are a _pain in the ass,_ so
 
 ## Work Plan
 
-- [x] Have one DAC.
+- [x] Have two DACs.
 - [ ] Check slew rate and corner freq for 10k, 220R, 33pF; breadboard with TL074 to check. (Nope, oscilloscope busted)
 - [x] Get OPA2186DR, other components for one board
+- [x] Get OPA2192IDR
 - [x] Lay out v0.1 board, fab
-- [x] Lay out v0.2 board, fab
+- [x] Lay out v0.2 board
 - [x] Lay out v0.3 board in KiCad (!)
 - [x] Fab v0.2 board and get stencil, too
 - [x] Fab v0.3 board and get stencil, too
+- [x] Order low-profile headers to reduce stacked height
 - [ ] Lay out jacks board for panel, to check connector spacing for DAC boards
 - [ ] Build and test one DAC board with (previously tested) VREF board.
 - [ ] If all okay, order 2 more DAC and components for other board. Else refine, redo board.

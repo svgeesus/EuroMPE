@@ -1,7 +1,7 @@
 {
   "board": {
-    "active_layer": 0,
-    "active_layer_preset": "",
+    "active_layer": 37,
+    "active_layer_preset": "All Layers",
     "auto_track_width": true,
     "hidden_netclasses": [],
     "hidden_nets": [],
@@ -64,7 +64,7 @@
       39,
       40
     ],
-    "visible_layers": "ffdffff_ffffffff",
+    "visible_layers": "fffffff_ffffffff",
     "zone_display_mode": 0
   },
   "git": {
@@ -74,13 +74,13 @@
     "ssh_key": ""
   },
   "meta": {
-    "filename": "PitchDAC.kicad_prl",
+    "filename": "power.kicad_prl",
     "version": 3
   },
   "project": {
     "files": [
       {
-        "name": "PitchDAC.kicad_pcb",
+        "name": "power.kicad_pcb",
         "open": false,
         "window": {
           "display": 0,
@@ -92,8 +92,8 @@
         }
       },
       {
-        "name": "PitchDAC.kicad_sch",
-        "open": true,
+        "name": "power.kicad_sch",
+        "open": false,
         "window": {
           "display": 0,
           "maximized": true,

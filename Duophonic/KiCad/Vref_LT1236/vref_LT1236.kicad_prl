@@ -64,7 +64,7 @@
       39,
       40
     ],
-    "visible_layers": "ffdffff_ffffffff",
+    "visible_layers": "ffdfeff_ffffffff",
     "zone_display_mode": 0
   },
   "git": {
@@ -74,14 +74,14 @@
     "ssh_key": ""
   },
   "meta": {
-    "filename": "PitchDAC.kicad_prl",
+    "filename": "vref_LT1236.kicad_prl",
     "version": 3
   },
   "project": {
     "files": [
       {
-        "name": "PitchDAC.kicad_pcb",
-        "open": false,
+        "name": "vref_LT1236.kicad_sch",
+        "open": true,
         "window": {
           "display": 0,
           "maximized": true,
@@ -92,7 +92,7 @@
         }
       },
       {
-        "name": "PitchDAC.kicad_sch",
+        "name": "vref_LT1236.kicad_pcb",
         "open": true,
         "window": {
           "display": 0,

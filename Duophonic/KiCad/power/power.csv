@@ -1,0 +1,12 @@
+"Id";"Designator";"Footprint";"Quantity";"Designation";"Supplier and ref";
+1;"C6,C4,C9";"C_1206_3216Metric_Pad1.33x1.80mm_HandSolder";3;"10nF";;;
+2;"R1,R7,R3";"R_0805_2012Metric_Pad1.20x1.40mm_HandSolder";3;"47k";;;
+3;"U3,U1";"SO-8_3.9x4.9mm_P1.27mm";2;"LT1763CS8";;;
+4;"C8,C7,C5";"C_1206_3216Metric_Pad1.33x1.80mm_HandSolder";3;"10uF X7R";;;
+5;"R8,R4";"R_0805_2012Metric_Pad1.20x1.40mm_HandSolder";2;"6k98";;;
+6;"R2";"R_0805_2012Metric_Pad1.20x1.40mm_HandSolder";1;"13k3";;;
+7;"U2";"SOT-23-5";1;"LT1964ES5-BYP";;;
+8;"C3,C2";"CP_Radial_D6.3mm_P2.50mm";2;"22uF 25V Nichicon";;;
+9;"J1";"Pins_2x08_2.54mm_TH_EuroPower_Shrouded_reducedsilk";1;"Eurorack_Power_16pin_Shrouded";;;
+10;"J8,J5,J2,J7,J4,J3,J6";"PinHeader_1x04_P2.54mm_Vertical";7;"Conn_01x04_Pin";;;
+11;"C1";"CP_Radial_D6.3mm_P2.50mm";1;"68uF 25V Nichicon";;;

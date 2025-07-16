@@ -2,7 +2,7 @@
   "board": {
     "active_layer": 0,
     "active_layer_preset": "",
-    "auto_track_width": true,
+    "auto_track_width": false,
     "hidden_netclasses": [],
     "hidden_nets": [],
     "high_contrast_mode": 0,
@@ -64,7 +64,7 @@
       39,
       40
     ],
-    "visible_layers": "ffdffff_ffffffff",
+    "visible_layers": "ffcffff_ffffffff",
     "zone_display_mode": 0
   },
   "git": {
@@ -74,26 +74,14 @@
     "ssh_key": ""
   },
   "meta": {
-    "filename": "PitchDAC.kicad_prl",
+    "filename": "PerfDAC_buffers.kicad_prl",
     "version": 3
   },
   "project": {
     "files": [
       {
-        "name": "PitchDAC.kicad_pcb",
+        "name": "PerfDAC_buffers.kicad_pcb",
         "open": false,
-        "window": {
-          "display": 0,
-          "maximized": true,
-          "pos_x": -12,
-          "pos_y": -12,
-          "size_x": 3864,
-          "size_y": 2340
-        }
-      },
-      {
-        "name": "PitchDAC.kicad_sch",
-        "open": true,
         "window": {
           "display": 0,
           "maximized": true,

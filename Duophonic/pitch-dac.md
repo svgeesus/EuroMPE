@@ -235,7 +235,7 @@ Maybe [low-profile headers](https://protosupplies.com/product/header-set-low-pro
 
 (2) Susumu [RR1220P-472-D](https://www.mouser.com/ProductDetail/Susumu/RR1220P-472-D) 0805 4k7 0.5% 25ppm $0.13/10 = **$1.30 GOT** 
 
-(2) Susumu [RR1220P-221-D](https://www.mouser.com/ProductDetail/Susumu/RR1220P-221-D) 0805 220R 0.5% 25ppm $0.127/10 = **$1.27 GOT** 
+(2) Susumu [RR1220P-221-D](https://www.mouser.com/ProductDetail/Susumu/RR1220P-221-D) 0805 220R 0.5% 25ppm $0.127/10 = **$1.27 GOT** changed to 47R for assembly of first board
 
 (1) Any 0805 10k will do for the pullup. Susumu RR1220P-103-D **GOT**
 
@@ -266,3 +266,14 @@ but no those choppers are a _pain in the ass,_ so
 - [ ] Lay out jacks board for panel, to check connector spacing for DAC boards
 - [ ] Build and test one DAC board with (previously tested) VREF board.
 - [ ] If all okay, order 2 more DAC and components for other board. Else refine, redo board.
+
+## Build
+
+![on hotplate](./img/20250717_142023-smaller.jpg)
+
+Initial attempt od MHP50 hotplate discouraging. Plate is too small, required shifting the board with tweezers during melt phase. 
+
+![right](./img/20250717_143201_smaller.jpg)
+![right](./img/20250717_143206_smaller.jpg)
+
+Too thick solder paste so some bridges on the TSSOP-20 DAC, which were fixed with solder wick. Diode did not solder, so fixed with an iron.

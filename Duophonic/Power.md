@@ -276,6 +276,15 @@ Measured with Keysight 34465A 6.5 digit DMM. 10V range, 100PLC.
 
 ![plus 9v5](./img/power_plus_9v5.png)
 
+![18hr](./img/power_9V5_18hr.png)
+
+Longer term soak test shows small cyclic variation 
+but well maintained level within **200μV**
+
+![30 min](./img/power_9V5_30min.png)
+
+30 minute segment of the above shows short-term stability.
+
 ### Negative 9.5V
 
 **-9.453V** (unloaded), slight falling trend over 10 minutes. Larger voltage span from the negative regulator, but no cause for concern.
@@ -291,6 +300,7 @@ Measured with Keysight 34465A 6.5 digit DMM. 10V range, 100PLC.
 ## Work Plan
 
 - [ ] Measure current draw of perf DAC board (5V5 regulator needs to power 2) before ordering PSU parts, to be sure the SMD 5V5 will be suitable. Might need a 3-pin regulator.
+    - Power with Vref board draws 4mA from +12V, 4mA from -12V
 - [x] Check min spacing for cables to plug into the power headers!
 - [x] Check size and spacing of standoff holes, with jacks board and with panel.
 - [ ] More vias to connect front and back ground planes? No, pin connectors serve the purpose

@@ -276,4 +276,8 @@ Initial attempt od MHP50 hotplate discouraging. Plate is too small, required shi
 ![right](./img/20250717_143201_smaller.jpg)
 ![right](./img/20250717_143206_smaller.jpg)
 
-Too thick solder paste so some bridges on the TSSOP-20 DAC, which were fixed with solder wick. Diode did not solder, so fixed with an iron.
+Too thick solder paste so some bridges on the TSSOP-20 DAC, which were fixed with solder wick then checked with multimeter. Diode did not solder, so fixed with an iron.
+
+![built](./img/20250718_151351_smaller.jpg)
+
+Completed board with through-hole connectors added.

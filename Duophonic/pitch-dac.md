@@ -48,6 +48,14 @@ To isolate from digital 0V noise, consider optical isolator. ISO724x high speed 
 
 Use series 100R on MOSI and CLK to reduce reflections and ringing; monitor waveform on a scope with 10x probe.
 
+> After power-on, the AD5781 must be configured for normal
+operating mode before programming the output. To do this, the
+control register must be programmed. The DAC is removed
+from tristate by clearing the DACTRI bit, and the output clamp
+is removed by clearing the OPGND bit. At this point, the output
+goes to VREFN unless an alternative value is first programmed to
+the DAC register.
+
 ## Initial accuracy
 
 1LSB is 10V / 2^18 = 38μV. At 1V/Oct, 12 tones per octave, 100 cents per tone, 1 Cent is 833μV so 1 LSB is about 1/20 cent.
@@ -167,8 +175,6 @@ I also wonder if the simulation, with an high slew rate step, is no longer accur
 
 ## Schematic
 
-![Schematic](./img/pitchdac-schematic-v03.png) ([PDF](./pitchdac-schematic-v03.pdf))
-
 Should CLR and RESET have been tied high? YES oops v.01 board does not, fixed in v.02:
 
 > If the RESET pin is not used, it should be hardwired to IOVCC.
@@ -178,18 +184,16 @@ Diode is between V<sub>DD</sub> (positive analog) and **V<sub>CC</sub>** ie posi
 
 I guess that gave the opportunity to port from Eagle to KiCad at the same time.
 
+![Schematic](./img/pitchdac-schematic.png) ([PDF](./pitchdac-schematic-v04.pdf))
+
 ## Board
 
 Separate digital and analog ground planes.
 
-Board v0.1 [ordered at OSH Park](https://oshpark.com/shared_projects/gQY5hg1l) 31 Mar 2023. GOT.
-
-![osh](./img/pitchdac-top-osh-v03.png)
-![osh back](./img/pitchdac-bottom-osh-v03.png)
-
-Board v0.2 with missing traces from CLR and RESET, corrected.
-
-Board v0.2 [ordered at OSH Park](https://oshpark.com/shared_projects/UpIebEcc) 15 Oct 2023. GOT.
+- Board v0.1 [ordered at OSH Park](https://oshpark.com/shared_projects/gQY5hg1l) 31 Mar 2023. GOT.
+- Board v0.2 with missing traces from CLR and RESET, [ordered at OSH Park](https://oshpark.com/shared_projects/UpIebEcc) 15 Oct 2023. GOT.
+- Board v0.3 [ordered at OSH Pak](https://oshpark.com/projects/GQX9tlid/view_design) 13 June 2025.
+- Board v0.4 relocates diode, adds oR between DGND and AGND
 
 ![3d-front](./img/pitchdac-board-front.png)
 ![3d-back](./img/pitchdac-board-back.png)
@@ -197,7 +201,9 @@ Board v0.2 [ordered at OSH Park](https://oshpark.com/shared_projects/UpIebEcc) 1
 > We detected a 2 layer board of 2.36 x 1.17 inches (59.9 x 29.7mm)
 > 3 boards will cost $13.75
 
-Bord v0.3 [ordered at OSH Pak](https://oshpark.com/projects/GQX9tlid/view_design) 13 June 2025.
+![osh](./img/pitchdac-top-osh-v03.png)
+![osh back](./img/pitchdac-bottom-osh-v03.png)
+
 
 ### Sizing
 

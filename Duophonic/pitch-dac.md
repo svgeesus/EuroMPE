@@ -289,3 +289,7 @@ Too thick solder paste so some bridges on the TSSOP-20 DAC, which were fixed wit
 ![built](./img/20250718_151351_smaller.jpg)
 
 Completed board with through-hole connectors added.
+
+Initial test gave no output from DAC. Re-checked for shorts. Realised there was no connection from DGND to AGND so added a bodge wire. Re-did breadboard wiring to PitchDC board, added 100R resistors in MOSI and SCLK. Reflowed DAC, which may have been a bad idea.
+
+Retest showed rapidly climbing current consumption, up past 100mA so switched off/ No obvious short on digitl pins, hard to access analog pins. Next step may be to build a second bord for testing.

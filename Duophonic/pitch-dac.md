@@ -186,7 +186,7 @@ I guess that gave the opportunity to port from Eagle to KiCad at the same time.
 
 ![Schematic](./img/pitchdac-schematic.png) ([PDF](./pitchdac-schematic-v04.pdf))
 
-Connecting DGND and AGNS, see TI white paper [Grounding in mixed-signal systems demystified, Part 1](https://www.ti.com/lit/an/slyt499/slyt499.pdf)
+Connecting DGND and AGND, see TI white paper [Grounding in mixed-signal systems demystified, Part 1](https://www.ti.com/lit/an/slyt499/slyt499.pdf)
 
 ## Board
 

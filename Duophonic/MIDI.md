@@ -80,6 +80,10 @@ Note that:
 
 - [Duophony on SoS](https://www.soundonsound.com/techniques/duophony)
 
+## Key tracking
+
+- [Keeping track of held MIDI notes?](https://forum.pjrc.com/index.php?threads/keeping-track-of-held-midi-notes.77191/)
+
 ## Note priority
 
 Dispatching key events to the two channels: first one is lowest note priority, second channel is highest note priority. So can be used as one of two popular monosynth styles, as well as duophonic.

@@ -184,7 +184,7 @@ Diode is between V<sub>DD</sub> (positive analog) and **V<sub>CC</sub>** ie posi
 
 I guess that gave the opportunity to port from Eagle to KiCad at the same time.
 
-![Schematic](./img/pitchdac-schematic.png) ([PDF](./pitchdac-schematic-v04.pdf))
+![Schematic](./img/pitchdac-schematic.png) ([Schematic in PDF](./pitchdac-schematic-v04.pdf))
 
 Connecting DGND and AGND, see TI white paper [Grounding in mixed-signal systems demystified, Part 1](https://www.ti.com/lit/an/slyt499/slyt499.pdf)
 

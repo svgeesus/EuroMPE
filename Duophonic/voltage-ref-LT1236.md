@@ -162,6 +162,8 @@ in series provides optimum output bypass.
 ![Vref 3D](./img/vref_LT1236-3D.png)
 ![Vref 3D alternate view](./img/vref_LT1236-b-3D.png)
 
+![board1](./img/vref-board1-photo.jpg)
+
 ## BOM
 
 ### Voltage reference
@@ -180,26 +182,26 @@ U1
 
 ### Bulk ceramic caps
 
-(2) Kemet C1206X105K3RACTU  25V 1μF X7R 10% 1206 ceramic $0.839/10 = **$8.39 GOT**
+(1) C2,C3,C4,C5 Kemet C1206X105K3RACTU  25V 1μF X7R 10% 1206 ceramic $0.839/10 = **$8.39 GOT**
 
 or
 
-(2) muRata GRM31C5C1E474JE01L 25V 0.47μF G0G 5% 1206 ceramic $0.474/10 = **$4.74** **GOT 10 24 Feb 2024**
+(1) C1 muRata GRM31C5C1E474JE01L 25V 0.47μF G0G 5% 1206 ceramic $0.474/10 = **$4.74** **GOT 10 24 Feb 2024**
 
 ### Low-ppm close tolerance resistors
 
-(2) Susumu RG2012V-182-P-T1 1.8k 0.02% 5ppm 0805 $2.30/10 = **$23.00 GOT** 6 ordered 8 Dec 2023 **GOT 6 more 24 Feb 2024**
+(2) R4, R5 Susumu RG2012V-182-P-T1 1.8k 0.02% 5ppm 0805 $2.30/10 = **$23.00 GOT** 6 ordered 8 Dec 2023 **GOT 6 more 24 Feb 2024**
 
 OR
 
-(2) Vishay Precision Group Y16292K50000T9R  2.5k 0.01% ± 0.2 ppm/°C 0805 foil $12.74/1 = **$25.48** at minimum (need more for multiple boards, for testing). **GOT 4 26 June 2025**
+(2) R4, R5 Vishay Precision Group Y16292K50000T9R  2.5k 0.01% ± 0.2 ppm/°C 0805 foil $12.74/1 = **$25.48** at minimum (need more for multiple boards, for testing). **GOT 4 26 June 2025**
 
 ### Generic ESR-increasing, trimming, and load resistors
 
-- (2) Yaego RC0805JR-075R1L 5.1R 5% 0805 thick film $0.026/10 = **$0.26** **GOT 10 24 Feb 2024**
-- (1) Yaego RC0805FR-0710RL  10R 0805 $0.027/10 = **$0.27** **GOT 10 24 Feb 2024**
-- (1) Yaego RC0805FR-0727KL 27k 0805 $0.016/10 = **$0.16** **GOT 10 24 Feb 2024**
-- (1) Yaego RC0805FR-0710KL  10k 0805 $0.016/10 = **$0.16** **GOT 10 24 Feb 2024**
+- (1) R3 Yaego RC0805JR-075R1L 5.1R 5% 0805 thick film $0.026/10 = **$0.26** **GOT 10 24 Feb 2024**
+- (1) R1 Yaego RC0805FR-0710RL  10R 0805 $0.027/10 = **$0.27** **GOT 10 24 Feb 2024**
+- (1) R2 Yaego RC0805FR-0727KL 27k 0805 $0.016/10 = **$0.16** **GOT 10 24 Feb 2024**
+- (1) R6 Yaego RC0805FR-0710KL  10k 0805 $0.016/10 = **$0.16** **GOT 10 24 Feb 2024**
 
 ### Diode
 
@@ -208,6 +210,7 @@ OR
 ### Trimmer
 
 (1) Bourns 3296P-1-503LF $2.13/10  or $2.42/1 get 5 = **$12.10** **GOT 5 24 Feb 2024**
+(Currently out of stock at Mouser, oddly, until Nov 2025)
 
 ### PCB
 
@@ -250,7 +253,7 @@ Measured with Joranalogue Test3, combination of [power board](./Power.md) plus V
 
 ![initial](./img/1236-pos-initial.png)
 
-Measured using Keysight 34465A, 10V range, 100PLC. Reference chip 1 **5.01721V**  (range 5.01715 to 5.01722). Climbed fractionally over first minute (chip warmup?) then stable.
+Board #1 measured using Keysight 34465A, 10V range, 100PLC. Reference chip 1 **5.01721V**  (range 5.01715 to 5.01722). Climbed fractionally over first minute (chip warmup?) then stable.
 
 ![pos](./img/1236-pos-one-hour.png)
 
@@ -260,13 +263,13 @@ Stable at **5.017 24V** over 1 hour (range 5.01721 to 5.01725)
 
 ![trimmed](./img/1236-trimmed.png)
 
-Trimmed to **5.000 025V** an error of 25μV or 0.03 cents.
+Board #1 trimmed to **5.000 025V** an error of 25μV or 0.03 cents.
 
 ### Burn-in
 
 ![trimmed-15h](./img/1236-pos-trimmed-15h.png)
 
-Overnight, fairly stable at **5.000 024V** sd 4μV.
+Board #1 overnight, fairly stable at **5.000 024V** sd 4μV.
 
 ![56hr](./img/1236-pos-65hr.png)
 
@@ -284,17 +287,21 @@ The short term stability (air conditioning off) also looks good.
 sd  2μV
 Accuracy also looks great, 3ppm (15μV) high.
 
+![restart](./img/1236-pos-restart.png)
+
+Restarting the board #1 reference after a couple of weeks off, and discarding the first 10 minutes to allow for warmup, the value started 12ppm low and climbed over 12 hours to the steady-state value of **5.000 031V**
+
 ## Test results - negative reference
 
 ![neg](./img/1236-neg-two-hours.png)
 
-Stable at **-5.017 47V** over 2 hours with some cyclic drift (range -5.01749 to -5.01747).
+Board #1 stable at **-5.017 47V** over 2 hours with some cyclic drift (range -5.01749 to -5.01747).
 
 ### Burn-in
 
 ![neg-trimmed](./img/1236-neg-28h.png)
 
-Positive ref trimmed as noted above. Negative ref is **-5.000 292V** implying the inverting op-amp has an actual gain of -5.000281 ÷ 5.000024 = **-1.00005359974**, a mismatch of -0.0000535 × 100 = -0.00535%. Good result considering the pair of 0.02% resistors used.
+Board #1 positive ref trimmed as noted above. Negative ref is **-5.000 292V** implying the inverting op-amp has an actual gain of -5.000281 ÷ 5.000024 = **-1.00005359974**, a mismatch of -0.0000535 × 100 = -0.00535%. Good result considering the pair of 0.02% resistors used.
 
 ![later](./img/1236-neg-later.png)
 
@@ -305,20 +312,20 @@ Later, mean value drifted only fractionally, to **-5.000 293V**
 and a week later essentially identical, **-5.000 294V**
 
 Used without correction (i.e. assuming the reference is -5V) 
-that gives an error of 0.000294 × 1,200 = **0.3528 cents**.
+board #1  gives an error of 0.000294 × 1,200 = **0.3528 cents**.
 
 Drifting is likely caused by tempco of the matched resistor pair (Susumu RG2012V-182-P-T1 1.8k 0.02% 5ppm/°C) as it is not observed on the positive voltage output, only the negative. This rules out Vref tempto (2ppm/°C typ, 5ppm/°C max). Lacking simultaneous measurement of the positive and negative outputs (only one 6.5 digit DMM) this cannot be completely ruled out, however.
 
 ![drifting](./img/1236-neg-drift.png)
 
-160 hour monitoring still shows some overall drift and some temperature-relted cycling with the AC.
+Board #1 160 hour monitoring still shows some overall drift and some temperature-relted cycling with the AC.
 
 Plan to build a second board with the Vishay metal film resistors.
 
 ![after restart](./img/1236-neg-restart.png)
 
-After shutting down for 4 days then restarting soak, a shift was observed then a gradual drift over two hours to the previous value.
+After shutting down board #1 for 4 days then restarting soak, a shift was observed then a gradual drift over two hours to the previous value.
 
 ![over temp](./img/1236-neg-96hr-temp.png)
 
-98 hour soak, second half with AC off and window open so larger temperature swing (18 to 26C) still variation is fairly small. Lowest **-5.000 29V** highest **-5.000 25V**
+Board #1 98 hour soak, second half with AC off and window open so larger temperature swing (18 to 26C) still variation is fairly small. Lowest **-5.000 29V** highest **-5.000 25V**

@@ -279,7 +279,7 @@ but no those choppers are a _pain in the ass,_ so
 
 ![on hotplate](./img/20250717_142023-smaller.jpg)
 
-Initial attempt od MHP50 hotplate discouraging. Plate is too small, required shifting the board with tweezers during melt phase. 
+Initial attempt on MHP50 hotplate discouraging. Plate is too small, required shifting the board with tweezers during melt phase.
 
 ![right](./img/20250717_143201_smaller.jpg)
 ![right](./img/20250717_143206_smaller.jpg)
@@ -293,3 +293,5 @@ Completed board with through-hole connectors added.
 Initial test gave no output from DAC. Re-checked for shorts. Realised there was no connection from DGND to AGND so added a bodge wire. Re-did breadboard wiring to PitchDC board, added 100R resistors in MOSI and SCLK. Reflowed DAC, which may have been a bad idea.
 
 Retest showed rapidly climbing current consumption, up past 100mA so switched off/ No obvious short on digitl pins, hard to access analog pins. Next step may be to build a second bord for testing.
+
+Completed board #2 draws 12mA on +12 and -12 (power board, one PitchDAC, one Vref board).

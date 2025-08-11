@@ -1,0 +1,19 @@
+[b]Context:[/b] I have an LT1236 LS8-based voltage reference board which is used to supply an accurate +5V and -5V to two AD5781A DACs (in this application, accuracy is more important than precision). OPA2192 is used as unity-gain buffer for +5V and gain -1 buffer for -5V. The datasheet trim circuit with 1N4148 compensation diode is used, and after initial burn-in was adjusted to give +5.000 025V. 
+
+This is a fit it and forget it application (part of a Eurorack MIDI to Pitch CV module) so size and current consumption are critical factors. A heated reference is not feasible here.
+
+LT1763 and LT1964-BYP (on a separate PCB) are used to give a secondary regulated ±9.5V supply from the somewhat noisy, switcher based Eurorack ±12 supply.
+
+This initial "does it work" board #1 uses a pair of Susumu RG2012V-182-P-T1 1.8k 0.02% 5ppm/°C 0805 resistors for the inverting stage; the second board #2 will use Vishay Precision Group Y16292K50000T9R 2.5k 0.01% 0.2 ppm/°C 0805 foil resistors. However, this post concerns the positive output, so those don't affect the result.
+
+[b]Question: [/b]Board #1 now has 500 hours on-time, and the positive output had a stable 5.000 015V sd 5μV output. It was then off for two weeks, and I recently measured it again. The power supply and the meter (Keysight 34465A, 10V range, 100PLC) had both been on for over 2 hours. I powered up the reference, discarded the first 10 minutes measurements to allow for vref warmup, then logged for a couple of days. For 12 hours, there was a steady climb from 4.999 97V to 5.000 03V, then it was level for the remaining time. 
+
+I don't understand the mechanism of action for this long inital climb.
+
+- the meter was warmed up and has a heated LM399 reference so surely this is not meter warmup
+- the vref is not heated, has minimal power draw (the entire thing including secondary regulators, vref and buffer draws 4mA so self-heating can't be it) so surely is warmed up too
+- room is air conditioned and stable 23C ±1C
+
+Is this stress in the the die settling, or something like that?
+
+(Yes I know this is not a metrology grade circuit, but I am looking for metrology-informed answers.)

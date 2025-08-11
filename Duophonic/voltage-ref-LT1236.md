@@ -289,7 +289,11 @@ Accuracy also looks great, 3ppm (15μV) high.
 
 ![restart](./img/1236-pos-restart.png)
 
-Restarting the board #1 reference after a couple of weeks off, and discarding the first 10 minutes to allow for warmup, the value started 12ppm low and climbed over 12 hours to the steady-state value of **5.000 031V**
+Restarting the board #1 reference after a couple of weeks off, and discarding the first 10 minutes to allow for warmup, the value started 12ppm low and climbed over 12 hours to a steady-state value of **5.000 031V**
+
+![after restart](./img/1236-pos-after-restart.png)
+
+A further 72 hours after restart, **5.000 041** sd 4μV
 
 ## Test results - negative reference
 

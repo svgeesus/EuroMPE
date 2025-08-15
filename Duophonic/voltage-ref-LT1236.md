@@ -240,7 +240,7 @@ pins are (measured with micrometer) 45.06 ÷ 2 = 22.53mm apart
 - [x] Burn-in
 - [ ] Do stability analysis for innie OPA2192 with 2 R and 1 C
 - [x] Design and fab temporary [power board](./Power.md) to test for ripple, noise, need for isolation resistors
-- [ ] Build second board, with Vishay metal film resistors
+- [x] Build second board, with Vishay metal film resistors
 - [ ] Burn-in and test second board
 
 ## Test results - positive reference

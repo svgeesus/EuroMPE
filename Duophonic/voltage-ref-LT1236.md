@@ -301,6 +301,10 @@ A further 72 hours after restart, **5.000 041** sd 4μV
 
 Board #1 stable at **-5.017 47V** over 2 hours with some cyclic drift (range -5.01749 to -5.01747).
 
+![neg 2](./img/1236-2-neg-first.png)
+
+Board #2 inital startup **-4.976 49V** over 2 hours
+
 ### Burn-in
 
 ![neg-trimmed](./img/1236-neg-28h.png)
@@ -333,3 +337,7 @@ After shutting down board #1 for 4 days then restarting soak, a shift was observ
 ![over temp](./img/1236-neg-96hr-temp.png)
 
 Board #1 98 hour soak, second half with AC off and window open so larger temperature swing (18 to 26C) still variation is fairly small. Lowest **-5.000 29V** highest **-5.000 25V**
+
+![board 2](./img/1236-2-neg-early.png)
+
+Board #2 still settling in for 20 hours, general trend is lower voltage over time. Total on-time around 24 hours for this board, not yet trimmed.

@@ -301,9 +301,10 @@ but well maintained level within **200μV**
 
 - [ ] Measure current draw of perf DAC board (5V5 regulator needs to power 2) before ordering PSU parts, to be sure the SMD 5V5 will be suitable. Might need a 3-pin regulator.
     - Power with Vref board draws 4mA from +12V, 4mA from -12V
+    - Power with Vref and one PitcDAC -s 12mA (thus 20mA for the full stack of 9V5 boards)
 - [x] Check min spacing for cables to plug into the power headers!
 - [x] Check size and spacing of standoff holes, with jacks board and with panel.
-- [ ] More vias to connect front and back ground planes? No, pin connectors serve the purpose
+- [ ] ~~More vias to connect front and back ground planes? No, pin connectors serve the purpose~~
 - [x] Order parts from Mouser
 - [x] Solder SMD parts
 - [x] Solder through-hole parts

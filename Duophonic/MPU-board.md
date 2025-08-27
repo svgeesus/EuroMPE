@@ -83,7 +83,6 @@ Two [SPI](https://www.pjrc.com/teensy/td_libs_SPI.html) outputs for DACs (use SP
 
 SPI Display is also on SPI1.
 
-
 ### SPI 0
 
 - 8 CS-Pitch2 (not 9 which is used for FreqCount)
@@ -91,6 +90,17 @@ SPI Display is also on SPI1.
 - 11 MOSI pitchDACs
 - _12 MISO not needed_
 - 13 SCLK pitchDAC
+
+The three connectors for SPI 0 are 6-pin whose pinout is (pin1 is square pad)
+
+- GNDD (digital ground)
+- SYNC (CS)
+- MOSI
+- SCLK
+- 3V3
+- GNDD
+
+The two for PitchDAC go off-board with ribbon cables while the third, for the display, connects under the Teensy to the display, encoder, buttons board.
 
 ### SPI 1
 
@@ -103,6 +113,17 @@ SPI Display is also on SPI1.
 - 33 CS3-Display  (any convenient)
 - 34 RST-Display  (any convenient)
 - 35 DC-Display (any convenient)
+
+The two connectors for SPI 1 are 8-pin whose pinout is (pin1 is square pad)
+
+- GND
+- 3V3
+- LDAC
+- CS
+- MOSI
+- SCLK
+- 3V3
+- GND
 
 Use pull-up resistors on chip selects, per 
 [Better SPI Bus Design in 3 Steps](https://www.pjrc.com/better-spi-bus-design-in-3-steps/)

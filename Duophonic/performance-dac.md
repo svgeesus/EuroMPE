@@ -244,6 +244,9 @@ This board will not fit. Needs a v0.2 with the connectors staggered, see buffer 
 
 ![bottom](./img/PerfDac_v02_extbuf-back.png)
 
+> We detected a 2 layer board of 1.51 x 1.03 inches (38.4 x 26.2mm)
+> 3 boards will cost $7.75 
+
 ### DAC BOM v0.1 and v0.2 (per DAC board, need 2)
 
 #### Resistors

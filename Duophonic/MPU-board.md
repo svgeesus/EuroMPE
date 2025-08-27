@@ -104,8 +104,6 @@ The three connectors for SPI 0 are 6-pin whose pinout is (pin1 is square pad)
 - 3V3
 - GNDD
 
-The two for PitchDAC go off-board with ribbon cables while the third, for the display, connects under the Teensy to the display, encoder, buttons board.
-
 ### SPI 1
 
 - 26 MOSI1 perfDACs
@@ -118,7 +116,7 @@ The two for PitchDAC go off-board with ribbon cables while the third, for the di
 - 34 RST-Display  (any convenient)
 - 35 DC-Display (any convenient)
 
-The two connectors for SPI 1 are 8-pin whose pinout is (pin1 is square pad)
+The three connectors for SPI 1 are 8-pin whose pinout is (pin1 is square pad)
 
 - GND
 - 3V3
@@ -128,6 +126,10 @@ The two connectors for SPI 1 are 8-pin whose pinout is (pin1 is square pad)
 - SCLK
 - 3V3
 - GND
+
+The two for PerfDAC go off-board with ribbon cables while the third, for the [display board](./display-board.md), connects under the Teensy to the display, encoder, buttons board.
+
+[Display](./display.md) also uses two more pins, DC and RST.
 
 Use pull-up resistors on chip selects, per 
 [Better SPI Bus Design in 3 Steps](https://www.pjrc.com/better-spi-bus-design-in-3-steps/)
@@ -139,7 +141,6 @@ Experiment with different resistance values for clock and data lines, and monito
 also (same forum post):
 
 > Bursts of 8 clocks is very common for SPI. The gaps between are software overhead. You can usually minimize this with SPI.transfer(buffer, size) rather than calling SPI.transfer(byte) for each individual byte.
-
 
 ## UI: Display & Controls
 

@@ -26,12 +26,14 @@ Mounting holes are 2.5mm
 
 1. MOSI
 2. SCLK
-3. DC 
+3. DC
 4. RST (reset)
 5. CS (chip select)
 6. 3V3 in or out
 7. 5V in (optional)
 8. GND
+
+It might be less noisy to use 5V instead of the 3V3, not clear. Needs testing.
 
 - [wiring 128x64 oleds](https://learn.adafruit.com/monochrome-oled-breakouts/wiring-128x64-oleds)
 

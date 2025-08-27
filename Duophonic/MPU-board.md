@@ -2,19 +2,23 @@
 
 ## Power
 
-Driven by Eurorack 5V power, generates logic 3V3 Vdd (from Teensy onboard, <250mA).
+Driven by 5V from [power board](./Power.md), which in turn derives from Eurorack 5V power; generates logic 3V3 Vdd (from Teensy onboard, <250mA). This powers the Teensy itself (up to 100mA), anything driven from 3V3 such as the fader pots and display, and also the 5V for USB host (fuse limited to 500mA minus whatever the Teensy draws).
 
 ## MCU choice
 
-MPU needs USB host and hardware floating point, so Teensy 3.6 (now discontinued) or **Teensy 4.1**. Both are 3V3-only.
+MPU needs USB host and hardware floating point, so ~~Teensy 3.6~~ (now discontinued) or **Teensy 4.1**. Both are 3V3-only.
 
 T4.1 ($26.85) is somewhat overpowered but has 480Mbit/s on both USB and Host so potentially lower latency (T3.6 was 480 on Host only). T4.1 has 100mA power consumption at full clock speed (or [68mA if you switch off the orange LED and don't use USB Serial](https://forum.pjrc.com/index.php?threads/the-power-consumption-of-teensys-processor.74442/#post-338912)).
 
 [T4 power consumption](https://forum.pjrc.com/threads/69159-Teensy-4-0-at-24Mhz-still-drawing-100mA-Why?p=297146&viewfull=1#post297146):
-freq    current
-24      60mA
-150     80mA
-600     100mA
+
+| freq  | current |
+|-------|---------|
+| 24    |  60mA   |
+| 150   |  80mA   |
+| 600   |  100mA  |
+
+Unlikely to save much here, as adequate performance likely requires full or near-full clock speeds.
 
 T3.6 ($29.25) had less memory, has 2 DAC outs (not needed here), power draw unspecified (@@measure it) but less than 4.1. Unobtainable due to NXP parts shortage, was discontinued along with 3.5, 3.2 and LC!
 
@@ -22,7 +26,7 @@ T3.6 ($29.25) had less memory, has 2 DAC outs (not needed here), power draw unsp
 
 Ensure USB cable plugged into the micro-USB (which leads to the panel-mount USB socket) clears the back of the [Gate LED board](./Gate-LED.md).
 
-Perhaps use [ProtoSupplies low-profile headers](https://protosupplies.com/product/header-set-low-profile-1x24/) to connect Teensy 4.1 to the MPU board [as seen here](https://forum.pjrc.com/index.php?threads/construction-suggestions-for-midi-synth-project.77136/#post-359959). Also [available pre-soldered to Teensy 4.1](https://protosupplies.com/product/teensy-4-1-low-profile/) with modifications:
+Use [ProtoSupplies low-profile headers](https://protosupplies.com/product/header-set-low-profile-1x24/) to connect Teensy 4.1 to the MPU board [as seen here](https://forum.pjrc.com/index.php?threads/construction-suggestions-for-midi-synth-project.77136/#post-359959). Also [available pre-soldered to Teensy 4.1](https://protosupplies.com/product/teensy-4-1-low-profile/) with modifications:
 
 - The VUSB/VIN trace is cut
 - An SMD 1A Schottky diode is placed across the VUSB / VIN pads

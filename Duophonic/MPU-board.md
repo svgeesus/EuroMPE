@@ -116,7 +116,7 @@ The three connectors for SPI 0 are 6-pin whose pinout is (pin1 is square pad)
 - 34 RST-Display  (any convenient)
 - 35 DC-Display (any convenient)
 
-The three connectors for SPI 1 are 8-pin whose pinout is (pin1 is square pad)
+The three connectors for SPI 1 are 8-pin whose pinout is (pin1 is square pad). The two for PerfDAC are:
 
 - GND
 - 3V3
@@ -125,6 +125,17 @@ The three connectors for SPI 1 are 8-pin whose pinout is (pin1 is square pad)
 - MOSI
 - SCLK
 - 3V3
+- GND
+
+The one for display differs (still 8 pins):
+
+- GND
+- 3V3
+- MOSI
+- SCLK
+- DC
+- RST
+- CS
 - GND
 
 The two for PerfDAC go off-board with ribbon cables while the third, for the [display board](./display-board.md), connects under the Teensy to the display, encoder, buttons board.
@@ -282,6 +293,8 @@ Depending on testing of [PerfDAC](), an additional pin for LDAC might be needed.
 Few components on the board, mainly breaking out to multi-pin connectors to other boards.
 The Eurorack power connector is now on a separate [power board](./Power.md).
 
+![MPU](./img/MPU-schematic.png)
+
 [MPU on socket in KiCad](https://forum.kicad.info/t/advise-one-choosing-components/51516/5)
 
 ## Board
@@ -289,6 +302,7 @@ The Eurorack power connector is now on a separate [power board](./Power.md).
 From the front panel mockup, dimensions are tight: 77mm wide by 39.5mm high. Could expand _one mm_ wider before colliding with the [Gate, LED, Tune](./Gate-LED.md) board, but needs enough room for the micro USB cable (unless using the D+, D- pads). Could expand _very slightly_ higher, constraints are staying within safe rack rail distances and not coliding with or pushing down the [PerfDAC2 (MIDI CC)](./performance-dac.md) board.
 
 Curent in-progress mockup is 76mm by 39mm so just fits within that. However connections to the DACs and display are suboptimal. SD slot is obstructed, too.
+
 
 ![front](./img/MPU-test.png)
 

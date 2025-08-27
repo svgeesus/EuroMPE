@@ -234,7 +234,17 @@ _Notice that the buffer board connections are on the other side of the board!_
 
 This board will not fit. Needs a v0.2 with the connectors staggered, see buffer board. However, still build one for testing.
 
-### DAC BOM v0.1  (per DAC board, need 2)
+#### Schematic v0.2
+
+![Schematic](./img/PerfDC-v02-schematic.png) [PDF](./perfdac-v02-schematic.pdf)
+
+#### DAC PCB v0.2
+
+![top](./img/PerfDac_v02_extbuf-front.png)
+
+![bottom](./img/PerfDac_v02_extbuf-back.png)
+
+### DAC BOM v0.1 and v0.2 (per DAC board, need 2)
 
 #### Resistors
 
@@ -328,11 +338,13 @@ Ordered from OSH Park 19 May 2025.
 - [x] Order DAC parts
 - [ ] Build perf DAC board
 - [ ] Test perf DAC board with 5V5 supplies.
-- [ ] Lay out perf DAC v0.2 board
+- [x] Lay out perf DAC v0.2 board
+- [ ] Send perf DAC v0.2 board to OSH Park
+- [ ] Build perf DAC v0.2 board
 - [x] Lay out buffer board
 - [x] Send buffer board to OSH Park
 - [x] Order buffer parts
-- [ ] Build and test buffer
-- [ ] Test perf DAC with output to  buffer board
+- [x] Build and test buffer
+- [ ] Test perf DAC v0.2 with output to  buffer board
 - [ ] Order panel board from OSH Park
 - [ ] Assemble completed perf DAC, measure, check against panel drawing

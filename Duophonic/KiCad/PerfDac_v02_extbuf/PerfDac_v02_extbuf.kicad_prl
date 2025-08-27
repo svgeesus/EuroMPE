@@ -1,7 +1,7 @@
 {
   "board": {
     "active_layer": 0,
-    "active_layer_preset": "All Layers",
+    "active_layer_preset": "",
     "auto_track_width": false,
     "hidden_netclasses": [],
     "hidden_nets": [],
@@ -64,7 +64,7 @@
       39,
       40
     ],
-    "visible_layers": "fffffff_ffffffff",
+    "visible_layers": "ffdffef_ffffffff",
     "zone_display_mode": 0
   },
   "git": {
@@ -74,14 +74,26 @@
     "ssh_key": ""
   },
   "meta": {
-    "filename": "PerfDAC.kicad_prl",
+    "filename": "PerfDac_v02_extbuf.kicad_prl",
     "version": 3
   },
   "project": {
     "files": [
       {
-        "name": "PerfDAC.kicad_sch",
-        "open": true,
+        "name": "PerfDac_v02_extbuf.kicad_sch",
+        "open": false,
+        "window": {
+          "display": 0,
+          "maximized": true,
+          "pos_x": -12,
+          "pos_y": -12,
+          "size_x": 3864,
+          "size_y": 2340
+        }
+      },
+      {
+        "name": "PerfDac_v02_extbuf.kicad_pcb",
+        "open": false,
         "window": {
           "display": 0,
           "maximized": true,

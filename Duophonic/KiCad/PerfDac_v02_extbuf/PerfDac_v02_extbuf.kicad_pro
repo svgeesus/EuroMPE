@@ -448,7 +448,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "PerfDAC.kicad_pro",
+    "filename": "PerfDac_v02_extbuf.kicad_pro",
     "version": 1
   },
   "net_settings": {

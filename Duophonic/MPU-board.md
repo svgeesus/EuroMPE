@@ -281,6 +281,13 @@ So treat the GND between pins 13 and 41/A17 as AGND and the one between Vin and 
 
 Could need analog ins, or I2C, depending on hardware. Not _at all_ a must-have.
 
+Consider [Stemma QT](https://learn.adafruit.com/introducing-adafruit-stemma-qt/technical-specs) aka JST SH 4-pin:
+
+  1. Black for GND
+  2. Red for V+ (3V3 or 5V5)
+  3. Blue for SDA
+  4. Yellow for SCL
+
 ## Overall pinout
 
 _Italic_ items are not immediately needed but, if used, need specific pins, so they are reserved in case.

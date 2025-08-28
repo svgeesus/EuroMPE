@@ -35,6 +35,8 @@ Mounting holes are 2.5mm
 
 It might be less noisy to use 5V instead of the 3V3, not clear. Needs testing.
 
+It may be less noisy to [reduce the refresh rate](https://www.eevblog.com/forum/projects/oled-audible-noise/msg3028706/#msg3028706)
+
 - [wiring 128x64 oleds](https://learn.adafruit.com/monochrome-oled-breakouts/wiring-128x64-oleds)
 
 ![schematic](./img/oled_1.3inch_original_schematic.png) [PDF](./img/oled_1.3inch_original_schematic.pdf)

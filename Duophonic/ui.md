@@ -61,6 +61,9 @@ Monochrome OLED, 128x64 pixels 1.3 inch diagonal.
 
 - [Many fonts for 128x32 displays](https://github.com/datacute/TinyOLED-Fonts/tree/master)
 - [Adafruit TTF font converter](https://github.com/adafruit/Adafruit-GFX-Library/tree/master/fontconvert)
+- [Adafruit GFX Graphics Library](https://learn.adafruit.com/adafruit-gfx-graphics-library)
+- [Adafruit_SSD1306](https://github.com/adafruit/Adafruit_SSD1306) on GitHub
+- [Adafruit SSD1306 OLED Library](https://www.pjrc.com/teensy/td_libs_SSD1306.html)
 
 ## Encoder
 

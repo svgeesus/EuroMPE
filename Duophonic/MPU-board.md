@@ -288,6 +288,12 @@ Consider [Stemma QT](https://learn.adafruit.com/introducing-adafruit-stemma-qt/t
   3. Blue for SDA
   4. Yellow for SCL
 
+![Stemma QT](./img/stemma-qt-jst-sh.png)
+
+![stemma qt](./img/stemma-qt-photo.jpg)
+
+- [The JST-SH buddies](https://hackaday.com/2022/05/04/the-connector-zoo-i2c-ecosystems/)
+
 ## Overall pinout
 
 _Italic_ items are not immediately needed but, if used, need specific pins, so they are reserved in case.

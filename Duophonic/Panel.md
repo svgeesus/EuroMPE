@@ -183,6 +183,14 @@ Or [DataPro 1581-01C](https://www.datapro.net/products/usb-2-0-panel-mount-b-to-
 <!-- ![USB-B panel](./img/Adafruit-USB-B-panel.png) -->
 ![USB-B panel](./img/DataPro-USB-B.png)
 
+Or the [DataPro left-angle version](https://www.datapro.net/products/panel-mount-usb-2-0-type-b-to-left-angle-micro-b-extension.html) (only available with a 2-foot cable, though) wait that would go up, not down. Unless the MPU board is rotated so the Teensy faces the other way. Still worth a shot, order one to try.
+
+![Datapro left](./img/1581R_large.jpg)
+
+Need to measure the cables in-situ taking account of bending radius.
+
+Failing which, cutting off the micro-B end and soldering direct to D+ D- under the Teensy is a last resort. Or pogo pins.
+
 <!-- > Two 12mm M3 mounting screws, ~29mm apart (they also say 1.1inch which is 27.94mm _so check_)
 > Bracket 14.6mm wide, 38.6mm long
 > mounting hole spacing 29mm, dia 3.2

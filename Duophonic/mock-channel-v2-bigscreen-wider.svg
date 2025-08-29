@@ -335,7 +335,7 @@
     
     </g>
 
-    <g transform="rotate(-90 20 90) translate(24 -71.5)" >
+    <g transform="rotate(-90 20 90) translate(23 -71.5)" >
 <!-- perf DAC 2 -->
 <!-- is going to need a totally different front jack board that mates to the same perfdac board 
 @@ moved all jacks over by 2mm to make room for power board; @@update the fpd
@@ -384,14 +384,18 @@
 
 
 
-    
+<!-- thus in FPD coords, x = x +71.4; y = 118.25 - y -->
+    <!-- MPU board -->
+    <rect x="-70.5" y="10.5" width="75.4" height="38" style="stroke: #A86; fill: #A86; fill-opacity: 0.4"/>
+
+    <!-- screen active area -->
+<!-- (20.4, 100.9) -->
+    <rect class="screen"  x="-49" y="17.35" width="35.19" height="19" style="fill:#744"/>
+
+    <use href="#Teensy4.1horizontal" x="-59.121" y="21.295"/>
+
     <g transform="translate(2, 0)">
         <!-- screen, buttons, encoder-->
-        <!-- 
-        <use href="#SMDtact" x="-70" y="19.5"/>
-        <use href="#SMDtact" x="-62" y="19.5"/>
-        <use href="#SMDtact" x="-70" y="29"/>
-        <use href="#SMDtact" x="-62" y="29"/> -->
         <use href="#oled13" x="-51" y="11"/>
         <!-- button centres spaced 9.5mm apart  horizontally and vertically -->
         <use href="#thonk-lopro" x="-71.5" y="18.2"/>
@@ -403,22 +407,6 @@
         <!-- display, buttons, encoder board -->
         <!-- <rect x="-72.5" y="10.5" width="77" height="39.5" style="stroke: #966"/> -->
     </g>
-
-
-<!-- thus in FPD coords, x = x +71.4; y = 118.25 - y -->
-<!-- screen active area -->
-<!-- (20.4, 100.9) -->
-    <rect class="screen"  x="-49" y="17.35" width="35.19" height="19" style="fill:#744"/>
-
-    <use href="#Teensy4.1horizontal" x="-65" y="24.2"/>
-    <!-- MPU board -->
-    <rect x="-70.5" y="10.5" width="77" height="38" style="stroke: #696"/>
-    <!-- Europower -->
-    <!-- <rect x="-33"  height="9.4" width="28" y="11.8" style="fill:#787; fill-opacity: 0.4"/> -->
-    <!-- electrolytic caps -->
-    <!-- <circle r="2.5" cx="-1" cy="16" style="fill:#ACF; fill-opacity: 0.4"/>
-    <circle r="2.5" cx="-44" cy="16" style="fill:#ACF; fill-opacity: 0.4"/>
-    <circle r="2.5" cx="-38" cy="16" style="fill:#ACF; fill-opacity: 0.4"/> -->
 
     <!-- DIN socket -->
     <g transform="translate(-26 99)">

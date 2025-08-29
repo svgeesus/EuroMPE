@@ -191,6 +191,10 @@ Or the [DataPro left-angle version](https://www.datapro.net/products/panel-mount
 
 Need to measure the cables in-situ taking account of bending radius.
 
+[Custom cables](https://www.usbfirewire.com/e-custom.aspx) have up-angle micro-B and panel-mount A female options. Estimate is USD 40.
+
+![custom](./img/custom-usb.png)
+
 Or adapter cable [down-angle micro-B male to micro-B female](https://www.amazon.com/Degree-Extension-Adapter-Charger-Adaptor/dp/B07C2K65NK/ref=sr_1_14)
 
 Or cutting the end off [this](https://www.amazon.com/StarTech-com-Micro-USB-Cable-Cord/dp/B00EBGGXS2/ref=sr_1_8) and splicing (eww!)

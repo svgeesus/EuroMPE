@@ -191,7 +191,7 @@ Or the [DataPro left-angle version](https://www.datapro.net/products/panel-mount
 
 Need to measure the cables in-situ taking account of bending radius.
 
-[Custom cables](https://www.usbfirewire.com/e-custom.aspx) have up-angle micro-B and panel-mount A female options. Estimate is USD 40.
+[Custom cables](https://www.usbfirewire.com/e-custom.aspx) have up-angle micro-B and panel-mount B female options. Estimate is USD 50.
 
 ![custom](./img/custom-usb.png)
 

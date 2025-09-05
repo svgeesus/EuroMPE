@@ -293,6 +293,7 @@
  -->
         <g transform="translate(-23.5, 72)" style="fill-opacity: 0.2">
         <!--  top left of power board is 0,0  -->
+        <!-- mounting holes for M3, 3.2mm hole diameter -->
             <circle cx="3.556" cy="4.826" r="3" style="fill: orange"/>
             <circle cx="3.556" cy="4.826" r="1.6" style="fill: #222"/>
             <circle cx="3.556" cy="49.826" r="3" style="fill: orange"/>
@@ -386,7 +387,23 @@
 
 <!-- thus in FPD coords, x = x +71.4; y = 118.25 - y -->
     <!-- MPU board -->
-    <rect x="-70.5" y="10.5" width="75.4" height="38" style="stroke: #A86; fill: #A86; fill-opacity: 0.4"/>
+    <rect x="-70.5" y="10.5" width="75.4" height="38" style="stroke: #A86; fill: #A86; fill-opacity: 0.4"/> 
+    <g transform="translate(-70.5, 10.5)" style="fill-opacity: 0.2">
+        <!--  top left of MPU board is 0,0  -->
+        <!--  mounting holes for M23 3.2mm dia hole -->
+        <!-- `left edge to hole 3.596 -->
+        <!-- top edge to hole 3.468 -->
+        <!-- top to bottom hole spacing 31mm -->
+        <!-- left to right hole spacing 68mm -->
+        <circle cx="3.596" cy="3.468" r="3" style="fill: orange"/>
+        <circle cx="3.596" cy="3.468" r="1.6" style="fill: #222"/>
+        <circle cx="3.596" cy="34.468" r="3" style="fill: orange"/>
+        <circle cx="3.596" cy="34.468" r="1.6" style="fill: #222"/>
+        <circle cx="70.596" cy="3.468" r="3" style="fill: orange"/>
+        <circle cx="70.596" cy="3.468" r="1.6" style="fill: #222"/>
+        <circle cx="70.596" cy="34.468" r="3" style="fill: orange"/>
+        <circle cx="70.596" cy="34.468" r="1.6" style="fill: #222"/>
+    </g> 
 
     <!-- screen active area -->
 <!-- (20.4, 100.9) -->

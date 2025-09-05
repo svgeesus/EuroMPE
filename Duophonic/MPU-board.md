@@ -53,8 +53,7 @@ Vishay 6N137 max propogation delay to low: 75ns; to high: 75ns.
 NO use 6N137, with transistor for level shift and inversion.
 
 > The PC900 suggested by the specification is still a good choice. (Well, it's discontinued, but "PC900" was just Sharp's way of spelling "H11L1", and the H11L1 is still made by many manufacturers.)
-> The original 6N137 works only at 5 V. LiteOn's model also works at 3.3 V, while other manufacturers offer a separate 3.3 V variant, for a higher price: HCPL-260L, FOD260L, TLP2962. If you do use the LiteOn 6N137, you should ensure that nobody tries to substitute a different 6N137 model later. [source](https://www.midi.org/forum/1475-best-optoisolator-for-3-3v)
-
+> The original 6N137 works only at 5 V. LiteOn's model also works at 3.3 V, while other manufacturers offer a separate 3.3 V variant, for a higher price: HCPL-260L, FOD260L, TLP2962. If you do use the LiteOn 6N137, you should ensure that nobody tries to substitute a different 6N137 model later. [source](https://midi.org/community/midi-hardware/best-optoisolator-for-3-3v#post-2419)
 
 Apparently 6N138 and or H11L1 are too slow per MIDI spec and 6N137 is better. These are not drop-in replacements, the support circuitry differs.
 
@@ -67,6 +66,8 @@ Apparently 6N138 and or H11L1 are too slow per MIDI spec and 6N137 is better. Th
 - [speeding up 6N138 with a pull-down resistor](https://electronics.stackexchange.com/questions/165255/midi-in-many-circuits/165267#165267)
 
 [Vishay 6N137](https://www.mouser.com/ProductDetail/Vishay-Semiconductors/6N137?qs=xCMk%252BIHWTZMrQz4FyDXhMg%3D%3D) PDIP8, $1.76/1.
+
+[OnSemi 6N137TSVM](https://www.mouser.com/ProductDetail/512-6N137TSVM) ordered 4, **GOT** 6 Aug 2025
 
 - 00 RX1
 

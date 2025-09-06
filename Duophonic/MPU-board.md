@@ -59,6 +59,8 @@ Apparently 6N138 and or H11L1 are too slow per MIDI spec and 6N137 is better. Th
 
 > _(6N137 with)_ An NPN transistor with the collector pulled up to 3.3V. This will also give you a second inversion. The diagram below shows my circuit. The difference is you would have R41 pull up to 3.3V (not isolated 5V as in mine). I would probably make it 10K. C2 is a bypass cap, the datasheet recommends it. Put it as close to pins 8 and 5 as you can. [source](https://forum.pjrc.com/threads/66877-Teensy-4-0-serial-optocoupler-6n137s?p=276314&viewfull=1#post276314)
 
+![6N137](./img/6N137-schematic.png)
+
 - [Opto-couple confusion – 6N137 or 6N138?](https://gr33nonline.wordpress.com/2019/05/15/opto-couple-confusion-6n137-or-6n138/)
 - [Teensy 4.0 serial optocoupler 6n137s](https://forum.pjrc.com/threads/66877-Teensy-4-0-serial-optocoupler-6n137s)
 - [MIDI Input with 6N137, 6N138, or 6N139](https://www.kieranreck.co.uk/blog/midi-input-with-6n137-6n138-or-6n139)
@@ -68,6 +70,16 @@ Apparently 6N138 and or H11L1 are too slow per MIDI spec and 6N137 is better. Th
 [Vishay 6N137](https://www.mouser.com/ProductDetail/Vishay-Semiconductors/6N137?qs=xCMk%252BIHWTZMrQz4FyDXhMg%3D%3D) PDIP8, $1.76/1.
 
 [OnSemi 6N137TSVM](https://www.mouser.com/ProductDetail/512-6N137TSVM) ordered 4, **GOT** 6 Aug 2025
+
+### MIDI tester board
+
+Proof of concept, before squeezing onto MPU or MPU-display board.
+
+![midi tester schematic](./img/MIDI_tester_v01_schematic.png)
+
+![midi tester board](./img/MIDI_tester_v01_board.png)
+
+![3d](./img/DIN_MIDI.png)
 
 - 00 RX1
 

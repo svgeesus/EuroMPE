@@ -194,8 +194,8 @@ Separate digital and analog ground planes.
 
 - Board v0.1 [ordered at OSH Park](https://oshpark.com/shared_projects/gQY5hg1l) 31 Mar 2023. GOT.
 - Board v0.2 with missing traces from CLR and RESET, [ordered at OSH Park](https://oshpark.com/shared_projects/UpIebEcc) 15 Oct 2023. GOT.
-- Board v0.3 [ordered at OSH Pak](https://oshpark.com/projects/GQX9tlid/view_design) 13 June 2025.
-- Board v0.4 relocates diode, adds oR between DGND and AGND
+- Board v0.3 [ordered at OSH Park](https://oshpark.com/projects/GQX9tlid/view_design) 13 June 2025.
+- Board v0.4 relocates diode, adds 0R between DGND and AGND
 
 ![3d-front](./img/pitchdac-board-front.png)
 ![3d-back](./img/pitchdac-board-back.png)
@@ -205,7 +205,6 @@ Separate digital and analog ground planes.
 
 ![osh](./img/pitchdac-top-osh-v03.png)
 ![osh back](./img/pitchdac-bottom-osh-v03.png)
-
 
 ### Sizing
 
@@ -290,8 +289,8 @@ Too thick solder paste so some bridges on the TSSOP-20 DAC, which were fixed wit
 
 Completed board with through-hole connectors added.
 
-Initial test gave no output from DAC. Re-checked for shorts. Realised there was no connection from DGND to AGND so added a bodge wire. Re-did breadboard wiring to PitchDC board, added 100R resistors in MOSI and SCLK. Reflowed DAC, which may have been a bad idea.
+Initial test gave no output from DAC. Re-checked for shorts. Realised there was no connection from DGND to AGND so added a bodge wire. Re-did breadboard wiring to PitchDC board, added 100R resistors in MOSI and SCLK. Reflowed DAC, which may have been a bad idea (perhaps caused a short in the solder?).
 
-Retest showed rapidly climbing current consumption, up past 100mA so switched off/ No obvious short on digitl pins, hard to access analog pins. Next step may be to build a second bord for testing.
+Retest showed rapidly climbing current consumption, up past 100mA so switched off/ No obvious short on digital pins, hard to access analog pins. Next step may be to build a second bord for testing.
 
 Completed board #2 draws 12mA on +12 and -12 (power board, one PitchDAC, one Vref board).

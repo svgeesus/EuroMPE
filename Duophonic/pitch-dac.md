@@ -16,6 +16,8 @@ Conclusion: 18 bit **AD5781ARUZ** gives 16bit INL with 18bit DNL at slightly low
 
 ![DAC pinout](./img/AD5781-pinout.png)
 
+If I **totally** can't get this DAC to work then a possible (but inferior) option is MAX5719AGSD+ which is 20bit, though worse INL, limited to unipolar 0 to 5V5 so would need a "double voltage and subtract 5" stage which introduces resistor tolerances into the scheme. Has force, sense input for Vref and GND. It does have internal resistors for bipolar. Looks to be a "good 16/ok 18/we also make a 20" bit device. Midscale error is 80LSB which is 380μV !! **$41.49/1**.
+
 ## Power
 
 AD5781ARUZ Vdd and Vss abs max of 16.5V. Spec sheet assumes VDD = +12.5 V to +16.5 V, VSS = −16.5 V to −12.5 V. Optimal supply for lowest zero-scale and gain errors is ±9.5V (datasheet, figs 20 & 22, _noting results are given for 5V and for ±10V spans while I need a ±5V span_).

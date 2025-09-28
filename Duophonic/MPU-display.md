@@ -8,7 +8,7 @@ For space reasons, the MIDI opto-isolator is also placed here.
 
 ## Board
 
-Connections to the MPU board, optocoupler, are on the front.
+Connections to the MPU board, optocoupler, and buffers for the potentiometers are on the front.
 
 ![front](./img/MPU-Display-front.png)
 

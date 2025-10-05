@@ -17,7 +17,7 @@ Current design is **24HP** = (24 × 5.08 = 121.92) - about 0.3 = 121.60mm, see [
 
 ![panel](./img/EuroMPE-fpd.png)
 
-and also [current panel with boards and components](./mock-channel-v2-bigscreen-wider.svg) (SVG)
+and also [current panel with boards and components](./panel-layout.svg) (SVG)
 
 ![panel](./img/panel.png)
 

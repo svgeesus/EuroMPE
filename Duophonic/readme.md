@@ -108,7 +108,7 @@ Not settled, but this is the [current panel concept](./mock-channel-front-v2-big
 
 ![panel](./img/panel-front.png)
 
-and also [current panel with boards and components](./mock-channel-v2-bigscreen-wider.svg) (SVG)
+and also [current panel with boards and components](./panel-layout.svg) (SVG)
 
 ![panel](./img/panel.png)
 

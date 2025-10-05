@@ -224,7 +224,7 @@ Separate digital and analog ground planes.
 
 ![headers](./img/header-stack.jpg)
 
-Stack of PitchDac | pin socket | double pin header (on vref) | pin socket | PitchDAC is way too big: 27.8mm across the outer PitchDAC PCBs. Space on [current mockup](./mock-channel-v2-bigscreen-wider.svg) is 18.7mm!
+Stack of PitchDac | pin socket | double pin header (on vref) | pin socket | PitchDAC is way too big: 27.8mm across the outer PitchDAC PCBs. Space on [current mockup](./panel-layout.svg) is 18.7mm!
 
 ![no headers](./img/no-header-stack.jpg)
 

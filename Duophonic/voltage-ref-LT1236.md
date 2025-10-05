@@ -338,6 +338,16 @@ After shutting down board #1 for 4 days then restarting soak, a shift was observ
 
 Board #1 98 hour soak, second half with AC off and window open so larger temperature swing (18 to 26C) still variation is fairly small. Lowest **-5.000 29V** highest **-5.000 25V**
 
+### Board #2 (Vishay metal film)
+
 ![board 2](./img/1236-2-neg-early.png)
 
 Board #2 still settling in for 20 hours, general trend is lower voltage over time. Total on-time around 24 hours for this board, not yet trimmed.
+
+![board 2 62hr](./img/1236-2-neg-62hr.png)
+
+Board #2 after 100 hours total burn-in and one month powered off, measured for 62 hours, **-4.977 413V** sd 7μV. Again a gradual shift over the first 12 hours after power-off.
+
+![board2 30min](./img/1236-2-neg-30min.png)
+
+Board #2 short-term stability, **-4.977 419V** sd 2μV.

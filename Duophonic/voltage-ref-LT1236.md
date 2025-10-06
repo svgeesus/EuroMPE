@@ -358,4 +358,4 @@ Board #2 after 100 hours total burn-in and one month powered off, measured for 6
 
 Board #2 short-term stability, **-4.977 419V** sd 2μV.
 
-Resistor matching for board #2: gain is 4.976 508 / -4.977 419 = -0.99981697342 = 0.0183 % (-183 ppm).
+Resistor matching for board #2: gain is 4.976 508 / -4.977 419 = -0.99981697342 = 0.0183% error (-183 ppm).

@@ -295,6 +295,12 @@ Restarting the board #1 reference after a couple of weeks off, and discarding th
 
 A further 72 hours after restart, **5.000 041** sd 4μV
 
+### Board #2 (Vishay metal film)
+
+![board 2](./img/1236-2-pos-20h.png)
+
+Board #2 (untrimmed, after 160 hours burn-in) shows **4.976 508V** sd 2 μV.
+
 ## Test results - negative reference
 
 ![neg](./img/1236-neg-two-hours.png)
@@ -351,3 +357,5 @@ Board #2 after 100 hours total burn-in and one month powered off, measured for 6
 ![board2 30min](./img/1236-2-neg-30min.png)
 
 Board #2 short-term stability, **-4.977 419V** sd 2μV.
+
+Resistor matching for board #2: gain is 4.976 508 / -4.977 419 = -0.99981697342 = 0.0183 % (-183 ppm).

@@ -1,6 +1,6 @@
 # Screen, button, encoder heights
 
-Needs a test panel to check assmebly of encoder, buttons, panel( on daughterboard).
+Needs a test panel to check assembly of encoder, buttons, panel (on daughterboard).
 
 ## Screen
 

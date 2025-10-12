@@ -312,11 +312,12 @@ Board stacks with the sam-size [MPU-display](./MPU-display) board, via 4 stand-o
 - [ ] T4.1 on breadboard, power from +5V, measure current consumption at various clock speeds.
 - [ ] 10k pot, ADC, ResponsiveAnalogRead
 - [ ]  Create comparative DIN-MIDI input board with several alternatives, for testing.
-- [ ] Test I2C display, see if update speed okay and feasible for menus
+- [ ] Test DIN MIDI input
+- [ ] ~~Test I2C display, see if update speed okay and feasible for menus~~
 - [x] Test SPI display
 - [ ] start on menu/dashboard layout
 - [ ] Measure switch bounce, test software bounce, try hardware debounces
-- [ ] Get Thonk encoders, encoder knobs, buttons
+- [x] Get Thonk encoders, encoder knobs, buttons
 - [x] Test PWM of RGB LED.
   - [x] [Problems getting to exactly 0 and 100%](https://forum.pjrc.com/index.php?threads/full-range-pwm-for-rgb-led-control.74386/)
   - [x] Solved by special-casing PWM extremes.
@@ -325,7 +326,6 @@ Board stacks with the sam-size [MPU-display](./MPU-display) board, via 4 stand-o
 - [ ] Fabricate [Gate-LED](./Gate-LED.md) board.
 - [ ] Test FreqCount
 - [x] Test FreqMeasure (and FreqMeasureMulti)
-- [ ] Test DIN MIDI input
 - [x] Sketch [front panel](./Panel.md) to get PCB dimensions.
 - [ ] Fabricate & test [octal perfDAC/CCDAC](./performance-dac.md) board (same board, different CS)
   - DAC and level shift board ordered

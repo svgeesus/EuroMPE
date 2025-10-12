@@ -13,7 +13,7 @@ Max PCB height **108mm**.
 
 Current design is **24HP** = (24 × 5.08 = 121.92) - about 0.3 = 121.60mm, see [A100 Construction Details](https://www.doepfer.de/a100_man/a100m_e.htm).
 
-[Panel concept](./mock-channel-front-v2-bigscreen-wider.svg) (SVG) and in Front Panel Designer [panel](./EuroMPE.fpd) (FPD)
+[Panel concept](./panel-layout.svg) (SVG) and in Front Panel Designer [panel](./EuroMPE.fpd) (FPD)
 
 ![panel](./img/EuroMPE-fpd.png)
 

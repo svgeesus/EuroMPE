@@ -469,14 +469,14 @@
     <!-- thus in FPD coords, x = x +71.4; y = 128.5 - y -->
     <!-- perfDAC 2 -->
         <!-- () -->
-    <circle style="fill: maroon; fill-opacity: 0.3" cx="-61.5" cy="56.47" r="1"/>
+    <!-- <circle style="fill: maroon; fill-opacity: 0.3" cx="-61.5" cy="56.47" r="1"/>
     <circle style="fill: maroon; fill-opacity: 0.3" cx="-48.5" cy="56.47" r="1"/>
     <circle style="fill: maroon; fill-opacity: 0.3" cx="-35.5" cy="56.47" r="1"/>
     <circle style="fill: maroon; fill-opacity: 0.3" cx="-22.5" cy="56.47" r="1"/>
     <circle style="fill: maroon; fill-opacity: 0.3" cx="-61.5" cy="71.47" r="1"/>
     <circle style="fill: maroon; fill-opacity: 0.3" cx="-48.5" cy="71.47" r="1"/>
     <circle style="fill: maroon; fill-opacity: 0.3" cx="-35.5" cy="71.47" r="1"/>
-    <circle style="fill: maroon; fill-opacity: 0.3" cx="-22.5" cy="71.47" r="1"/>
+    <circle style="fill: maroon; fill-opacity: 0.3" cx="-22.5" cy="71.47" r="1"/> -->
 
     <!-- USB-B - Hole is 8.45mm high, 7.78mm wide -->
     <rect  style="fill: maroon; fill-opacity: 0.3" x="-65.8" y="94.85" width="7.78" height="8.45" />

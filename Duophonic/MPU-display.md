@@ -41,12 +41,16 @@ Buttons and [encoder](https://www.pjrc.com/teensy/td_libs_Encoder.html) for opti
 - 16 Button-3
 - 17 Button-4
 
-Encoder circuit (from Bourns PEC12R datasheet) four 10k, two 10nF:
+Encoder circuit (from Bourns PEC12R datasheet) four 10k, two 10nF (obviously connect to 3V3 not 5V):
 
 ![filter](./img/encoder-filter.png)
 
+Encoder is Thonk EC11S-24P-0C-20KQ, T18 switched shaft.
+
+Probably emits 4 counts for one detent forwards or backwards.
+
 - [Hardware debounce vs. software hysteresis for encoders](https://forum.arduino.cc/t/rotary-encoder-debouncing/361438/12)
-- [Measurig bounce on a scope](https://electronics.stackexchange.com/questions/430983/why-cant-i-see-bouncing-of-a-switch-on-an-oscilloscope#answer-431043)
+- [Measuring bounce on a scope](https://electronics.stackexchange.com/questions/430983/why-cant-i-see-bouncing-of-a-switch-on-an-oscilloscope#answer-431043)
 
 Use encoder switch as OK, needs anther button for "back".
 

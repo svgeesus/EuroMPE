@@ -249,6 +249,23 @@ pins are (measured with micrometer) 45.06 ÷ 2 = 22.53mm apart
 
 Measured with Joranalogue Test3, combination of [power board](./Power.md) plus Vref is drawing (peak) 5mA on +12V, 4mA on -12V.
 
+### Poem
+
+From [EEVblog post](https://www.eevblog.com/forum/metrology/lt1236ls8-drift-on-power-restart-mechanism-of-action/msg6009147/#msg6009147)
+
+> O fair silicon, child of heated breath,<br>
+> Thy tender frame swells ‘neath the kindly flame;<br>
+> Yet ceramic walls, cold in steadfast death,<br>
+> Refuse thy plea, nor share thy swelling frame.<br>
+> Now wires of silver strain as captives bound,<br>
+> Their trembling strength bespeaks the coming woe;<br>
+> A crack! — like ice that splits on frozen ground —<br>
+> Proclaims that war ‘twixt heat and cold doth grow.<br>
+> Thus physics writes in bonds both fierce and small,<br>
+> The tale of love where neither side may bend;<br>
+> And so within this package’s fragile wall,<br>
+> Expansion meets resistance — and meets its end.<br>
+
 ### Initial power-up
 
 ![initial](./img/1236-pos-initial.png)

@@ -38,7 +38,7 @@ uint32_t volts_to_code (float volts) {
   }
 }
 
-SPISettings AD5781(10000000, MSBFIRST, SPI_MODE1); // max 35MHz, start at 10 MHz
+SPISettings AD5781(4000000, MSBFIRST, SPI_MODE1); // max 35MHz, start at 4 MHz
 
 void enable () {
   // See datasheet Table 11. Control Register and Table 12. Control Register Functions
@@ -49,9 +49,9 @@ void enable () {
   buffer[1] = 0;
   buffer[0] = 0B00010010; // OPGND to 0, 1 is the default. DACTRI to 0, 1 is default. Leave RBUF at 1. BIN/2sC to binary
   SPI.beginTransaction(AD5781);
-    // See https://ez.analog.com/data_converters/precision_dacs/f/q-a/27109/ad5781---not-working
-  delayMicroseconds(50);
   digitalWriteFast(CS1, LOW);
+      // See https://ez.analog.com/data_converters/precision_dacs/f/q-a/27109/ad5781---not-working
+  delayMicroseconds(50);
   SPI.transfer (buffer, 3); 
   digitalWriteFast(CS1, HIGH);
   SPI.endTransaction();
@@ -83,6 +83,8 @@ void send (uint32_t value) {
 #endif
   SPI.beginTransaction(AD5781);
   digitalWriteFast(CS1, LOW);
+      // See https://ez.analog.com/data_converters/precision_dacs/f/q-a/27109/ad5781---not-working
+  delayMicroseconds(50);
   SPI.transfer (buffer, 3); 
   digitalWriteFast(CS1, HIGH);
   SPI.endTransaction();

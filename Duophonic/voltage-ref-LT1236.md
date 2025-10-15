@@ -385,3 +385,12 @@ Resistor matching for board #2: gain is 4.976 508 / -4.977 419 = -0.999 816 973 
 
 After trimming of positive ref to 4.999 999V, negative ref shows 
 **-5.000 897V** sd 3μV over 24 hours. This is slightly higher than expected given the previous estimate of gain. New gain estimate is -0.999 820 432
+
+
+![board 2 long term](./img/1236-2-neg-150hr.png)
+
+Long-term 150 hour test (no air conditioning, so daily temperature fluctuations) after trim. **-5.000 892V** sd 4μV is _entirely consistent_ with earlier result.
+
+![board 2 short term](./)
+
+After that, a short-term 30-minute run has the same mean value **-5.000 895V** with of course a tighter spread: sd 1μV. These are very good results and the tempco-induced variation in the negative reference is way below musical relevance (4.8 millicents!).

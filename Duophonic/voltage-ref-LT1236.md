@@ -379,12 +379,14 @@ Board #2 after 100 hours total burn-in and one month powered off, measured for 6
 
 Board #2 short-term stability, **-4.977 419V** sd 2μV.
 
-Resistor matching for board #2: gain is 4.976 508 / -4.977 419 = -0.999 816 973 = 0.0183% error (-183 ppm).
+Resistor matching for board #2: gain is -4.977419 ÷ 4.976508 = -1.000 183 (183ppm error)
 
 ![board 2 trimmed](./img/1236-2-neg-trimmed-24h.png)
 
 After trimming of positive ref to 4.999 999V, negative ref shows 
-**-5.000 897V** sd 3μV over 24 hours. This is slightly higher than expected given the previous estimate of gain. New gain estimate is -0.999 820 432
+**-5.000 897V** sd 3μV over 24 hours. 
+
+This is slightly higher than expected given the previous estimate of gain. New gain estimate is -5.000 897 ÷ 4.999 999 = -1.000 179  (179 ppm error).
 
 
 ![board 2 long term](./img/1236-2-neg-150hr.png)

@@ -391,6 +391,6 @@ After trimming of positive ref to 4.999 999V, negative ref shows
 
 Long-term 150 hour test (no air conditioning, so daily temperature fluctuations) after trim. **-5.000 892V** sd 4μV is _entirely consistent_ with earlier result.
 
-![board 2 short term](./)
+![board 2 short term](./img/1236-2-neg-30min-later.png)
 
 After that, a short-term 30-minute run has the same mean value **-5.000 895V** with of course a tighter spread: sd 1μV. These are very good results and the tempco-induced variation in the negative reference is way below musical relevance (4.8 millicents!).

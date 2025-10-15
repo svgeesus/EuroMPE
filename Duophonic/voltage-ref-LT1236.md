@@ -336,7 +336,7 @@ Board #2 inital startup **-4.976 49V** over 2 hours
 
 ![neg-trimmed](./img/1236-neg-28h.png)
 
-Board #1 positive ref trimmed as noted above. Negative ref is **-5.000 292V** implying the inverting op-amp has an actual gain of -5.000281 ÷ 5.000024 = **-1.00005359974**, a mismatch of -0.0000535 × 100 = -0.00535%. Good result considering the pair of 0.02% resistors used.
+Board #1 positive ref trimmed as noted above. Negative ref is **-5.000 292V** implying the inverting op-amp has an actual gain of -5.000281 ÷ 5.000024 = **-1.000 054**, a mismatch of -0.0000535 × 100 = -0.00535% or 51ppm. Good result considering the pair of 0.02% resistors used.
 
 ![later](./img/1236-neg-later.png)
 

@@ -1,7 +1,7 @@
 // Control AD5781 bipolar 18bit DAC for Pitch CV output
 // VRefPos = +5V, VRefNeg = -5V
 // Just test +Vref, 4V, 0V, -4V, -Vref
-// Teensy 4.1
+// Teensy 4.1 using SPI
 // See https://wiki.analog.com/resources/quick-start/ad5791
 
 #include <SPI.h>

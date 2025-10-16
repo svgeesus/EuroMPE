@@ -305,6 +305,8 @@ Completed board with through-hole connectors added.
 
 Initial test gave no output from DAC. Re-checked for shorts. Realised there was no connection from DGND to AGND so added a bodge wire. Re-did breadboard wiring to PitchDC board, added 100R resistors in MOSI and SCLK. Reflowed DAC, which may have been a bad idea (perhaps caused a short in the solder?).
 
-Retest showed rapidly climbing current consumption, up past 100mA so switched off/ No obvious short on digital pins, hard to access analog pins. Next step may be to build a second bord for testing.
+Retest showed rapidly climbing current consumption, up past 100mA so switched off/ No obvious short on digital pins, hard to access analog pins. Next step is to build a second bord for testing.
 
-Completed board #2 draws 12mA on +12 and -12 (power board, one PitchDAC, one Vref board).
+![built 2](./img/pitchdac-board2-photo.jpg)
+
+Completed board #2 draws 12mA on +12 and -12 (power board, one PitchDAC, one Vref board). Diode did not reflow, testing without for now. DAC pins look cleaner than board #1,

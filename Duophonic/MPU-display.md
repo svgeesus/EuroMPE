@@ -55,3 +55,7 @@ Probably emits 4 counts for one detent forwards or backwards.
 Use encoder switch as OK, needs anther button for "back".
 
 Also needs "Calibrate" "Tune" and "Setup" ? Single button for common functions.
+
+```
+encoder1.write(desiredPosition)
+```

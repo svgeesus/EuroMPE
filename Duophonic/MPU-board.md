@@ -303,7 +303,7 @@ Connectors on back of board go to the display/buttons/encoder/pots board.
 
 ![board](./img/MPU-board.png)
 
-Board stacks with the sam-size [MPU-display](./MPU-display) board, via 4 stand-offs and the pin connectors. Stand-offs also anchor these boards to the front panel.
+Board stacks with the sam-size [MPU-display](./MPU-display.md) board, via 4 stand-offs and the pin connectors. Stand-offs also anchor these boards to the front panel.
 
 ## BOM
 

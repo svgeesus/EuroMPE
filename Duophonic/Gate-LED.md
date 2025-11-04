@@ -30,6 +30,16 @@ Sample code in RGB-NeoPixel-01.ino which works with direct 3V3 input, but a leve
 
 ## Gate & Trigger
 
+### Voltage
+
+General agreement that more than 5V _output_ is desirable, 8 to 10V is good, and that all _inputs_ are expected to handle ±12V. Some VCAs need 8V or so to fully open.
+
+- https://modwiggler.com/forum/viewtopic.php?t=96737
+
+Perhaps something like L78L08 **$0.32/1** driven from +12V to give +8V (min 7.2V max 8.8V) would be suitable. Current needs are low so a 100mA or lower regulator would be fine. Smaller size is better, SOT-89 is 4.5 x 2.5mm body. 330nF on input, 100nF on output.
+
+### Circuit
+
 **Avoid** the  [two-transistor gate output from Graham Hinton](https://modwiggler.com/forum/viewtopic.php?p=2720659&sid=8184a7a1e66cf2090d4727f4a460bd16#p2720659) because the description sounds good but builders report unreliable operation:
 
 ![gate](./img/Hinton_2955_14vgate_1.png)
@@ -46,9 +56,9 @@ Instead, trying this one from [Synth DIY: Gate Buffer ](https://synthnerd.wordpr
 
 See also [a known bad Gate in the original Arturia Beatstep](https://synthnerd.wordpress.com/arturia-beatstep/) which gives load-dependent 4V gates!
 
-Gate is +10V. Test droop into low loads like 10k.
+Gate is +8V. Test droop into low loads like 10k.
 
-Trigger is around +10V for 10ms. Maybe 9V with a small 12V to 9V regulator? Thus, needs a +12V from the power board (but not -12V.).
+Trigger is around +8V for 10ms. Maybe 8V with a small 12V to 8V regulator? Thus, needs a +12V from the power board (but not -12V.).
 
 ## Boards
 

@@ -58,12 +58,9 @@ Also needs "Calibrate" "Tune" and "Setup" ? Single button for common functions.
 
 ```
 encoder1.write(desiredPosition)
-
+```
 
 ### MIDI input
 
 We detected a 2 layer board of 1.74 x 1.00 inches (44.2 x 25.3mm)
 3 boards will cost $8.65 
-
-
-```

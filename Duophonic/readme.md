@@ -24,18 +24,18 @@ There are two voice channels, each with:
 
 - color LED for gate and to indicate note played (12 color scale)
 - Gate and Trigger, see [Gate/LED](./Gate-LED.md).
-- Tuning input (from oscillator), see [calibration](./calibration.md)
+- Tuning **input** (from oscillator), see [calibration](./calibration.md)
 - Oscillator pitch CV, highly linear [18bit, low tempco DAC](./pitch-dac.md)
   - includes pitchbend (Glide) and any microtuning
   - See [Pitch DAC](./pitch-dac.md)
-- Second (identical) pitch CV output (for dual oscillator voices, or for filter cutoff)
+- Second (identical, but separately buffered) pitch CV output (for dual oscillator voices, or for filter cutoff)
 - Four MPE-compatible expression outputs (14bit) per voice, see [Performance DAC](./performance-dac.md)
     1. Strike (attack velocity)
     2. Lift (release velocity)
     3. Slide (forward-back, CC 74)
     4. Press (aftertouch)
 
-Any per-channel calibration curves are still applied, so in monophonic mode two different oscillators which have been calibrated will play in unison.
+Any per-channel calibration curves are still applied, so in monophonic mode two different oscillators which have each been calibrated will play in unison.
 
 ## Analog general CC CV
 
@@ -90,7 +90,7 @@ Like the original polyphonic EuroMPE, there is a [tuning input](./calibration.md
 
 ## Voltage reference
 
-For the pitch DAC, a Max 6226 hermetic ceramic is used, see [Vref MAX6226](./voltage-ref-MAX6226.md). As that prototype had problems, and alternative is the [Vref LT1236](./voltage-ref-LT1236.md).
+For the pitch DAC, a Max 6226 hermetic ceramic was originally planned, see [Vref MAX6226](./voltage-ref-MAX6226.md). As that prototype had problems, thee replacement is the [Vref LT1236](./voltage-ref-LT1236.md).
 
 For the performance DACs, the internal reference on the octal DAC is easily sufficient.
 

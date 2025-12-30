@@ -158,9 +158,11 @@ The two for PerfDAC go off-board with ribbon cables while the third, for the [di
 Use pull-up resistors on chip selects, per 
 [Better SPI Bus Design in 3 Steps](https://www.pjrc.com/better-spi-bus-design-in-3-steps/)
 
+Use anti-ringing resistors at the transmit end of SCLK and MOSI:
+
 > The rising and falling edges of the SPI clock have very high bandwidth, even though the actual clock rate is only 1 MHz. High bandwidth signals on long cables have all sorts of difficult problems when the source impedance isn't matched to the cable's characteristic impedance. The most common solution is to place a resistor in series close to Teensy pin 13 (SCK). Same of MOSI. [Paul Stoffregen](https://forum.pjrc.com/index.php?threads/weird-spi-clock-signal-on-teensey-4-1-pin-13.74169/#post-336114)
 
-Experiment with different resistance values for clock and data lines, and monitor with scope to find optimal values for the cable length in use. Around 50 to 75 ohm seems like a good start.
+Experiment with different resistance values for clock and data lines, and monitor with scope to find optimal values for the cable length in use. Around 50 to 100 ohm seems like a good start.
 
 also (same forum post):
 

@@ -284,6 +284,11 @@ but no those choppers are a _pain in the ass,_ so
 - [x] Fab v0.2 board and get stencil, too
 - [x] Fab v0.3 board and get stencil, too
 - [x] Order low-profile headers to reduce stacked height
+- [ ] SPI:
+  - [ ] Breadboard a known working SPI device such as an oled display
+  - [ ] Use scope to capture the SPI clock (without interpretation)
+  - [ ] Use scope with SPI decoding to capture cs, clock and data
+  - [ ] Capture SPI from pitchdac, at same clock speed
 - [ ] Lay out jacks board for panel, to check connector spacing for DAC boards
 - [ ] Build and test one DAC board with (previously tested) VREF board.
 - [ ] If all okay, order 2 more DAC and components for other board. Else refine, redo board.

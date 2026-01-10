@@ -24,6 +24,8 @@ Doesn't yet exist as a library but verious sketches implement parts.
 
 Voice allocation is not in that library, module specific.
 
+Useful [addition for usbMIDI to control Note On 0 handling](https://forum.pjrc.com/index.php?threads/midi-on-messages-with-velocity-0-being-changed-to-note-off.77565/#post-364423) could also be added to usb host MIDI.
+
 ## Note range
 
 Range of [musical frequencies for MIDI notes](https://www.inspiredacoustics.com/en/MIDI_note_numbers_and_center_frequencies) assuming :

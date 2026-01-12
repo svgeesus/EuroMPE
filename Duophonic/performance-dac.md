@@ -145,6 +145,8 @@ Op-amp board needs bipolar supply OR R/R in and out op-amps to ensure accurate 0
 
 ## Code
 
+SPI Mode 1, MSBFIRST
+
 Enable internal ref (disabled by default) in setup: command 090A0000h.
 
 Then use broadcast mode to set all channels to zero (but zero is the C-grade power-on default).
@@ -164,6 +166,8 @@ pinMode(PerfDAC_CS2, OUTPUT);
 pinMode(PerfDAC_CS3, OUTPUT);
 SPI1.beginTransaction(SPISettings(24000000, MSBFIRST, SPI_MODE1));
 ```
+
+There is an [existing library for the same-family DAC8568 (16 bit)](https://github.com/fuchsat93/teensy-dac8568) which can be configured for DC8168. And for comparison [a Rust library](https://github.com/ost-ing/dac8568/blob/main/README.md)
 
 ## Fading (all voice 'attenuators')
 

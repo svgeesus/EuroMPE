@@ -167,7 +167,9 @@ pinMode(PerfDAC_CS3, OUTPUT);
 SPI1.beginTransaction(SPISettings(24000000, MSBFIRST, SPI_MODE1));
 ```
 
-There is an [existing library for the same-family DAC8568 (16 bit)](https://github.com/fuchsat93/teensy-dac8568) which can be configured for DC8168. And for comparison [a Rust library](https://github.com/ost-ing/dac8568/blob/main/README.md)
+There is an [existing library for the same-family DAC8568 (16 bit)](https://github.com/fuchsat93/teensy-dac8568) which can be configured for DC8168. Also some [working code](https://forum.pjrc.com/index.php?threads/interfacing-with-ti-dac856x-dac816x-or-dac756x.26974/#post-57321).
+
+And for comparison [a Rust library](https://github.com/ost-ing/dac8568/blob/main/README.md)
 
 ## Fading (all voice 'attenuators')
 

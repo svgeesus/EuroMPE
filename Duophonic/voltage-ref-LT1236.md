@@ -322,6 +322,9 @@ Board #2 (untrimmed, after 160 hours burn-in) shows **4.976 508V** sd 2 μV.
 
 Board #2 after trimming. The early part of this trace shows the mechanical settling of the trimmer screw after trimming. The last portion shows the effect of air conditioning switching on and blowing gusts of cold air across the board. This indicates that the board should be insulated with wadding above and below. The central trace showed **4.999 999V** sd 2μV.
 
+Board #2 after 3 months storage (unpowered) shows a slight rise 
+to **5.000 080V** sd 2 μV.
+
 ## Test results - negative reference
 
 ![neg](./img/1236-neg-two-hours.png)

@@ -322,8 +322,8 @@ Board #2 (untrimmed, after 160 hours burn-in) shows **4.976 508V** sd 2 μV.
 
 Board #2 after trimming. The early part of this trace shows the mechanical settling of the trimmer screw after trimming. The last portion shows the effect of air conditioning switching on and blowing gusts of cold air across the board. This indicates that the board should be insulated with wadding above and below. The central trace showed **4.999 999V** sd 2μV.
 
-Board #2 after 3 months storage (unpowered) shows a slight rise 
-to **5.000 080V** sd 2 μV.
+Board #2 after 3 months storage (unpowered) shows a small rise (17ppm)
+to **5.000 087V** sd 1 μV.
 
 ## Test results - negative reference
 
@@ -399,3 +399,7 @@ Long-term 150 hour test (no air conditioning, so daily temperature fluctuations)
 ![board 2 short term](./img/1236-2-neg-30min-later.png)
 
 After that, a short-term 30-minute run has the same mean value **-5.000 895V** with of course a tighter spread: sd 1μV. These are very good results and the tempco-induced variation in the negative reference is way below musical relevance (4.8 millicents!).
+
+Feb 2026: the negative reference now emits a zero voltage. Possibly the badly-soldered precision resistor pair? Removed then from the board, measured resistnce (hard to do on such tiny components) seemed ok and no obvious shorts.
+
+Plan to make a third board from scratch because attempting to re-solder the resistors by hand was difficult with other large components already fitted.

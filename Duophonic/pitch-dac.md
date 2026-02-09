@@ -236,7 +236,7 @@ Maybe [low-profile headers](https://protosupplies.com/product/header-set-low-pro
 
 ### DAC
 
-(1) Analog Devices [AD5781ARUZ](https://www.mouser.com/ProductDetail/Analog-Devices/AD5781ARUZ) $40.96  = **$40.96 GOT** has 1 already, got another 1 for now. Might be enough if no errors :)
+(1) Analog Devices [AD5781ARUZ](https://www.mouser.com/ProductDetail/Analog-Devices/AD5781ARUZ) $40.96  = **$40.96 GOT** has 1 already, got another 1 for now. Might be enough if no errors :) **GOT 1 more 8 Feb 2026**
 
 ### Stabilization film caps
 

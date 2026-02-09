@@ -163,13 +163,14 @@ in series provides optimum output bypass.
 ![Vref 3D alternate view](./img/vref_LT1236-b-3D.png)
 
 ![board1](./img/vref-board1-photo.jpg)
+Board 1, with Susumu 0.02% 5ppm resistors.
 
 ## BOM
 
 ### Voltage reference
 
 (1) [LT1236AILS8-5#PBF ](https://www.mouser.com/ProductDetail/Analog-Devices/LT1236AILS8-5PBF?qs=ytflclh7QUXCvMb52%2F4eDQ%3D%3D) Ceramic LCC $11.77/1 = **$11.77** **GOT 4 24 Feb 2024**
-IC1
+IC1 now **$15.84/1** and **GOT 3 more 8 Feb 2026**
 
 ### Low Vos low Ibias precision op-amp (dual)
 
@@ -194,7 +195,8 @@ or
 
 OR
 
-(2) R4, R5 Vishay Precision Group Y16292K50000T9R  2.5k 0.01% ± 0.2 ppm/°C 0805 foil $12.74/1 = **$25.48** at minimum (need more for multiple boards, for testing). **GOT 4 26 June 2025**
+(2) R4, R5 Vishay Precision Group Y16292K50000T9R  2.5k 0.01% ± 0.2 ppm/°C 0805 foil $12.74/1 = **$25.48** at minimum (need more for multiple boards, for testing). **GOT 4 26 June 2025** and **GOT 4 more 8 Feb 2026** which were cheaper, **$8.53/1**
+Note these are metalized _one side only_, difficult to hand-solder!
 
 ### Generic ESR-increasing, trimming, and load resistors
 
@@ -214,15 +216,15 @@ OR
 
 ### PCB
 
-Ordered OSH Park 10 Feb 2024.
+Ordered OSH Park 10 Feb 2024. 3 more ordered 8 Feb 2026.
 
 ### Pin connectors
 
 Right-angle 0.1" connectors
 (1) Adafruit Break-away 0.1" 36-pin strip right-angle male header (10 pack) **$5.95**
-https://www.adafruit.com/product/1540 out of stock
+https://www.adafruit.com/product/1540 **still** out of stock
 
-TE 9-103329-0 40-position **$2.31/1** **GOT 3**
+Mouser [TE 9-103329-0 40-position](https://www.mouser.com/ProductDetail/TE-Connectivity/9-103329-0?qs=UDe5jPXu0mTGA7O7jC9MlQ%3D%3D) **$2.31/1** **GOT 3** 
 
 Double ended connectors
 Adafruit Extra-long break-away 0.1" 16-pin strip male header (5 pieces) **$3.00 GOT**
@@ -241,7 +243,8 @@ pins are (measured with micrometer) 45.06 ÷ 2 = 22.53mm apart
 - [ ] Do stability analysis for innie OPA2192 with 2 R and 1 C
 - [x] Design and fab temporary [power board](./Power.md) to test for ripple, noise, need for isolation resistors
 - [x] Build second board, with Vishay metal film resistors
-- [ ] Burn-in and test second board
+- [x] Burn-in and test second board
+- [ ] Burn-in and test third board, sigh
 
 ## Test results - positive reference
 
@@ -251,7 +254,9 @@ Measured with Joranalogue Test3, combination of [power board](./Power.md) plus V
 
 ### Poem
 
-From [EEVblog post](https://www.eevblog.com/forum/metrology/lt1236ls8-drift-on-power-restart-mechanism-of-action/msg6009147/#msg6009147)
+From [EEVblog post](https://www.eevblog.com/forum/metrology/lt1236ls8-drift-on-power-restart-mechanism-of-action/msg6009147/#msg6009147),
+explaining why even a hermetic, ceramic package
+shows medium and long term drift over power cycles:
 
 > O fair silicon, child of heated breath,<br>
 > Thy tender frame swells ‘neath the kindly flame;<br>

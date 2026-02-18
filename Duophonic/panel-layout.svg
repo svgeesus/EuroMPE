@@ -230,7 +230,7 @@
         <use href="#Thoniconn-vertical" x="26" y="112.5"/> 
 
         <!-- buffer board -->
-        <rect x="9" y="76" width="23.4" height="46.5" style="fill: orange; fill-opacity: 0.6; stroke: #966" />
+        <rect x="9" y="76.5" width="23.4" height="46.5" style="fill: orange; fill-opacity: 0.6; stroke: #966" />
 
         <!-- power 11.2 3.6 -->
         <rect x="9.3" y="93.65" width="3.6" height="11.2" style="fill: orange"/>
@@ -246,13 +246,13 @@
         <!-- KiCad PerfDAC v2 board -->
         <!-- v2 needed to be less wide, taller -->
         <g transform="translate(3.7, 0)">
-            <rect x="9.5" y="81.5" width="23.5" height="34.68" style="fill: green; fill-opacity: 0.2; stroke: #686"/>
+            <rect x="10.5" y="80.9" width="26.2" height="38.4" style="fill: lime; fill-opacity: 0.2; stroke: #686"/>
 
             <!-- power -->
             <!-- <rect x="21.01" y="83.34" width="10.28" height="2.66" style="fill:#787"/> -->
 
             <!-- SPI 22.37 -->
-            <rect x="29.37" y="88.77" height="20.44" width="2.66" style="fill:#787; "/>
+            <rect x="32.75" y="88.77" height="20.44" width="2.66" style="fill:#787; "/>
         </g>
         
         <!-- fader pots align with jacks-->
@@ -336,7 +336,7 @@
     
     </g>
 
-    <g transform="rotate(-90 20 90) translate(23 -71.5)" >
+    <g transform="rotate(-90 20 90) translate(21.5 -71.5)" >
 <!-- perf DAC 2 -->
 <!-- is going to need a totally different front jack board that mates to the same perfdac board 
 @@ moved all jacks over by 2mm to make room for power board; @@update the fpd
@@ -373,7 +373,7 @@
         <!-- KiCad PerfDAC v2 board -->
         <!-- v2 needed to be less wide, taller -->
         <g transform="translate(3.7, 0)">
-            <rect x="9.5" y="81.5" width="23.5" height="34.68" style="fill: green; fill-opacity: 0.2; stroke: #686"/>
+            <rect x="9.5" y="81.5" width="26.2" height="38.4" style="fill: lime; fill-opacity: 0.2; stroke: #686"/>
 
             <!-- power -->
             <!-- <rect x="21.01" y="83.34" width="10.28" height="2.66" style="fill:#787"/> -->
@@ -426,13 +426,13 @@
     </g>
 
     <!-- DIN socket -->
-    <g transform="translate(-26 99)">
+    <g transform="translate(-26 100)">
         <circle r="7.95"/>  <!-- 15.9 / 2 -->
         <circle r="8.925"/> <!-- 17.85 / 2 -->
     </g>
 
     <!-- DataPro USB-B receptacle, vertical -->
-    <g transform="translate(-62 99)">
+    <g transform="translate(-62 100)">
         <circle cy="-13" r="6.05" style="stroke:none; fill: #333"/>
         <circle cy="13" r="6.05" style="stroke:none; fill: #333"/>
         <rect y="-13" x="-6.05" height="25.2" width="12.1" style="stroke:none; fill: #333"/>
@@ -449,7 +449,7 @@
     <!-- are these too close together to plug/unplug easily? -->
     <!-- DataPro USB-A receptacle, vertical -->
     <!-- assume 9.6mm diameter for end stops -->
-    <g transform="translate(-44 99)">
+    <g transform="translate(-44 100)">
         <circle cy="-14.05" r="4.8" style="stroke:none; fill: #996"/>
         <circle cy="14.05" r="4.8" style="stroke:none; fill: #996"/>
         <rect y="-14.05" x="-4.8" height="28.1" width="9.6" style="stroke:none; fill: #996"/>

@@ -220,6 +220,10 @@ Separate digital and analog ground planes.
 ![osh](./img/pitchdac-top-osh-v03.png)
 ![osh back](./img/pitchdac-bottom-osh-v03.png)
 
+### Jacks board
+
+Spacing of the two pitch DC boards may vary due to tolerances on trimming the upper and lower connectors from the [Vref board](./voltage-ref-LT1236.md) and so the front panel jacks board should make connections using drilled slots rather than round holes. These re natively supported in KiCad (unlike Eagle) and supported by OSH Park ([details](https://docs.oshpark.com/submitting-orders/slots/)).
+
 ### Sizing
 
 ![headers](./img/header-stack.jpg)

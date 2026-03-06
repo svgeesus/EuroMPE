@@ -408,3 +408,13 @@ After that, a short-term 30-minute run has the same mean value **-5.000 895V** w
 Feb 2026: the negative reference now emits a zero voltage. Possibly the badly-soldered precision resistor pair? Removed then from the board, measured resistnce (hard to do on such tiny components) seemed ok and no obvious shorts.
 
 Plan to make a third board from scratch because attempting to re-solder the resistors by hand was difficult with other large components already fitted.
+
+### Board #1 (again)
+
+![board 1 restart](./img/1236-1-neg-restart.png)
+
+March 2026: A quick retest of board #1 shows a three-hour settling-in period followed by stability at **-5.000 297V**, similar to the previous value of **-5.000 269V**
+
+![board 1 longer term](./img/1236-1-neg-mar2026.png)
+
+Overnight test shows **-5.000 294V** sd 4μV.

@@ -330,6 +330,12 @@ Board #2 after trimming. The early part of this trace shows the mechanical settl
 Board #2 after 3 months storage (unpowered) shows a small rise (17ppm)
 to **5.000 087V** sd 1 μV.
 
+### Board #1 (again)
+
+![100hr](./img/1236-1-pos-mar2026-100hr.png)
+
+After a one hour warmup, a hundred hour log shows a slow settling (perhaps die stress settling) from **5.000 04V** to **5.000 08V**. While noteworthy from a metrological perspective, this 40μV rise corresponds to 48 milli-cents and is thus musically insignificant.
+
 ## Test results - negative reference
 
 ![neg](./img/1236-neg-two-hours.png)

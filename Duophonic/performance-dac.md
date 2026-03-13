@@ -272,16 +272,17 @@ or
 
 (2) C2, C3 Kemet C1206C104K3GEC7210 25V 100nF C0G 1206 ceramics $0.051/100 = **$5.10 GOT**
 
-(1) C4  [Murata GRM31C5C1H154JE02L](https://www.mouser.com/ProductDetail/Murata-Electronics/GRM31C5C1H154JE02L?qs=qSfuJ%252Bfl%2Fd70Xb0PJyHSQA%3D%3D) 50V 0.15μF 1206 C0G $0.241/10 = **$2.41**
+(1) C4  [Murata GRM31C5C1H154JE02L](https://www.mouser.com/ProductDetail/Murata-Electronics/GRM31C5C1H154JE02L?qs=qSfuJ%252Bfl%2Fd70Xb0PJyHSQA%3D%3D) 50V 0.15μF 1206 C0G $0.241/10 = **$2.41** ordered 10, 13 Mar 2026
+
 spec sheet says **150nF or higher** and fig 8 shows 4.8μF so try 470nF?
 
 OR
 
-(1) C4 [Murata GRM31C5C1E474JE01L](https://www.mouser.com/ProductDetail/Murata-Electronics/GRM31C5C1E474JE01L?qs=hd1VzrDQEGj8GOC097EZLg%3D%3D) 25V 470nF C0G 1206 $0.429/10 = **$4.29**
+(1) C4 [Murata GRM31C5C1E474JE01L](https://www.mouser.com/ProductDetail/Murata-Electronics/GRM31C5C1E474JE01L?qs=hd1VzrDQEGj8GOC097EZLg%3D%3D) 25V 470nF C0G 1206 $0.429/10 = **$4.29** ordered 10, 13 Mar 2026
 
 #### DAC
 
-(1) DAC8168ICPW  14-bit octal $28.34/1 = **$28.34 GOT** but _lost_, get 3 more!
+(1) DAC8168ICPW  14-bit octal $28.34/1 = **$28.34 GOT** but _lost_, ordered 3 more 13 Mar 2026
 
 #### Logic
 

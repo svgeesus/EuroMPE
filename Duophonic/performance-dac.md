@@ -350,15 +350,15 @@ Ordered from OSH Park 19 May 2025.
 - [x] Lay out perf DAC board
 - [x] send DAC board to OSH Park to enable testing a populated DAC board.
 - [x] Order DAC parts
-- [ ] Build perf DAC board
-- [ ] Test perf DAC board with 5V5 supplies.
+- [ ] ~~Build perf DAC v0.1 board~~
+- [ ] ~~Test perf DAC v0.1 board with 5V5 supplies.~~
 - [x] Lay out perf DAC v0.2 board
-- [ ] Send perf DAC v0.2 board to OSH Park
+- [x] Send perf DAC v0.2 board to OSH Park
 - [ ] Build perf DAC v0.2 board
 - [x] Lay out buffer board
 - [x] Send buffer board to OSH Park
 - [x] Order buffer parts
 - [x] Build and test buffer
-- [ ] Test perf DAC v0.2 with output to  buffer board
+- [ ] Test perf DAC v0.2 with output to buffer board
 - [ ] Order panel board from OSH Park
 - [ ] Assemble completed perf DAC, measure, check against panel drawing

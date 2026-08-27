@@ -51,6 +51,7 @@ Probably emits 4 counts for one detent forwards or backwards.
 
 - [Hardware debounce vs. software hysteresis for encoders](https://forum.arduino.cc/t/rotary-encoder-debouncing/361438/12)
 - [Measuring bounce on a scope](https://electronics.stackexchange.com/questions/430983/why-cant-i-see-bouncing-of-a-switch-on-an-oscilloscope#answer-431043)
+- [RC filtering for encoders](https://www.dream-dimensions.de/2015/10/using-rotary-encoders/)
 
 Use encoder switch as OK, needs anther button for "back".
 

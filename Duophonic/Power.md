@@ -94,6 +94,8 @@ Available space is limited: 32mm wide, 55.4mm high.
 
 ### LT1763 for 9V5 (U1)
 
+Nominal 500mA, low noise, LDO positive regulator.
+
 > Output Capacitance and Transient Response
 The regulators are designed to be stable with a wide range
 of output capacitors. Output capacitor ESR affects stability,
@@ -126,6 +128,8 @@ Input caps are electrolytics, shared with entire power board.
 Bypass is 1206 10nF C0G 5%, use Kemet C1206C103J3GECTU (**$0.249/10**)
 
 Output is 1206 10μF X7R 10%, use Murata GRM31CR71E106KA12K  (**$0.158/10**)
+
+#### Voltage
 
 _Minimum_ top resistor (R2) value is 2.6k. Try with **r2 = 47k**. First approximation:
 
@@ -160,9 +164,26 @@ But assuming 74C/W, rise above ambient is just 13C.
 
 ![U1 schematic](./img/power_9V5_schematic.png)
 
+#### Current
+
+- 10mA load - one 1k 1/8W (0.125W): current **9.5mA** power **0.090W**
+- 100mA load - ten parallel 1k 1/8W giving 100R 1.25W: current **95mA** power **0.91W**
+
+Solder load across pins 1 and 2.
+
+- 100mA load, actual resistance 99.72Ω.
+- 10mA load, actual resistance Ω.
+
+
+Same load fixture, reversed, for -9.5V testing as the +9V5 and -9V5 pins are at opposite ends with GND on the middle two.
+
 ### LT1763 for 5V5 (U3)
 
+Nominal 500mA, low noise, LDO positive regulator.
+
 Part no LT1763CS8#PBF **$8.28/1** or **$4.85/10**
+
+#### Voltage
 
 Higher rise due to bigger voltage drop. Again **r2 = 47k**
 
@@ -182,8 +203,17 @@ At 74C/W, rise above ambient is 28C.
 
 ![U3 schematic](./img/power_5V5_schematic.png)
 
+#### Current
+
+- 10mA load - one 470R 1/8W (0.125W): current **11.7mA** power **0.064W**
+- 100mA load - five parallel 270R 1/8W giving 54R 0.625W: current **102mA** power **0.56W**
+
+Solder load across pins 1 and 4.
+
 
 ### LT1964-BYP for -9V5 (U2)
+
+Nominal 200mA, low noise, LDO positive regulator.
 
 10μF? input cap, 1nF noise bypass cap, 6μ8F to 10μF output cap. Again **r2 = 47k**
 
@@ -301,7 +331,8 @@ but well maintained level within **200μV**
 
 - [ ] Measure current draw of perf DAC board (5V5 regulator needs to power 2) before ordering PSU parts, to be sure the SMD 5V5 will be suitable. Might need a 3-pin regulator.
     - Power with Vref board draws 4mA from +12V, 4mA from -12V
-    - Power with Vref and one PitcDAC -s 12mA (thus 20mA for the full stack of 9V5 boards)
+    - Power with Vref and one PitchDAC is 12mA (thus, 20mA for the full stack of 9V5 boards)
+    - Power with PerfDAC and buffer is 
 - [x] Check min spacing for cables to plug into the power headers!
 - [x] Check size and spacing of standoff holes, with jacks board and with panel.
 - [ ] ~~More vias to connect front and back ground planes? No, pin connectors serve the purpose~~
@@ -311,5 +342,11 @@ but well maintained level within **200μV**
 - [x] QA inspection, probe for shorts
 - [x] Power up and test voltages
 - [ ] Test voltages with 10ma to 100mA loads
+    - 5V5 10ma
+    - 5V5 100ma
+    - +9V5, 10ma
+    - +9V5, 100ma
+    - -9V5, 10ma
+    - -9V5, 100ma
 - [ ] Measure 0.1 to 10Hz noise with LNA (positive voltages only!)
 

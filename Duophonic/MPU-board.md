@@ -307,6 +307,15 @@ Connectors on back of board go to the display/buttons/encoder/pots board.
 
 Board stacks with the sam-size [MPU-display](./MPU-display.md) board, via 4 stand-offs and the pin connectors. Stand-offs also anchor these boards to the front panel.
 
+### Pitch SPI pinout
+
+Teensy 4.0 for breadboard testing, Teensy 4.1 for final module. Both using SPI(0) so same pinout. CS for second PitchDAC is 8, not 10.
+
+| Board      | GNDD                | CS | MOSI | SCLK | 3V3               | GNDD                |
+|------------|---------------------|----|------|------|-------------------|---------------------|
+| T4.1 (SPI) | (between 13 & 41)   | 10 | 11   | 13   | (between 12 & 24) | (between 13 & 41)   |
+| T4.0 (SPI) | (before 0)          | 10 | 11   | 13   | (after 23)        | (before 0)          |
+
 ## BOM
 
 ## Development & Testing plan
@@ -317,10 +326,11 @@ Board stacks with the sam-size [MPU-display](./MPU-display.md) board, via 4 stan
 - [ ] Test DIN MIDI input
 - [ ] ~~Test I2C display, see if update speed okay and feasible for menus~~
 - [x] Test SPI display
+- [ ] Update all board graphics to use latest versions, some are old.
 - [ ] start on menu/dashboard layout
 - [ ] Measure switch bounce, test software bounce, try hardware debounces
 - [x] Get Thonk encoders, encoder knobs, buttons
-- [x] Test PWM of RGB LED.
+- [x] ~~Test PWM of RGB LED.~~
   - [x] [Problems getting to exactly 0 and 100%](https://forum.pjrc.com/index.php?threads/full-range-pwm-for-rgb-led-control.74386/)
   - [x] Solved by special-casing PWM extremes.
   - [x] Test Adafruit LEDs instead
@@ -329,9 +339,9 @@ Board stacks with the sam-size [MPU-display](./MPU-display.md) board, via 4 stan
 - [ ] Test FreqCount
 - [x] Test FreqMeasure (and FreqMeasureMulti)
 - [x] Sketch [front panel](./Panel.md) to get PCB dimensions.
-- [ ] Fabricate & test [octal perfDAC/CCDAC](./performance-dac.md) board (same board, different CS)
+- [x] Fabricate & test [octal perfDAC/CCDAC](./performance-dac.md) board (same board, different CS)
   - DAC and level shift board ordered
-- [ ] Fabricate [pitch CV](./pitch-dac.md) board, test
+- [x] Fabricate [pitch CV](./pitch-dac.md) board, test
 - [ ] Write higher-level, MPE-capable MIDI library
 - [ ] Fabricate MCU and display carrier board
 - [ ] Front panel

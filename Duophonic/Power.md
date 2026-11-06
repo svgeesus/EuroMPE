@@ -255,6 +255,22 @@ At 135C/w, 23.5C above ambient.
 
 v0.1 ordered from OSH Park 8 April 2025
 
+### 9V5 pinout
+
+Right (nearest upper mounting hole) to left: -9V5, GND, GND, +9V5
+
+### 5V5 pinout
+
+Bottom (nearest middle mounting hole) to top: GND, GND, +5V5, +5V5
+
+### Unregulated 5V (teensy) pinout
+
+The side of the Eurorack connector _without_ caps: Bottom (nearest lower mounting hole) to top: GND, GND, +5V, +5V
+
+### Multi-voltage unregulated pinout
+
+The side of the Eurorack connector _with_ caps: Bottom to top: -12V, GND, +12V, +5V
+
 ## BOM
 
 For 1 board; get enough for 3 boards
